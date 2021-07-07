@@ -364,7 +364,7 @@ class SaveMapping{
 
 							case 'AIOSEO':
 								$all_seo_instance = AllInOneSeoImport::getInstance();
-								$all_seo_instance->set_all_seo_values($header_array ,$value_array , $map['AIOSEO'], $post_id , $selected_type);
+								$all_seo_instance->set_all_seo_values($header_array ,$value_array , $map['AIOSEO'], $post_id , $selected_type,$get_mode);
 								break;
 							case 'RANKMATH':
 								$rankmath_instance = RankMathImport::getInstance();

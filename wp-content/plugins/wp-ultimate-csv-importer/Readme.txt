@@ -1,9 +1,9 @@
-=== Import and Export WordPress Data as CSV or XML ===
+=== WordPress Import Data as CSV/XML ===
 Contributors: smackcoders, smacksupport
 Requires at least: 5.0 
-Tested up to: 5.7
-Stable tag: 6.2.3
-Version: 6.2.3
+Tested up to: 5.7.1
+Stable tag: 6.2.4
+Version: 6.2.4
 Requires PHP: 5.2.4
 Author: smackcoders
 Author URI: http://profiles.wordpress.org/smackcoders/
@@ -13,148 +13,83 @@ License: GPLv2 or later
 Simple and powerful CSV / XML Import plugin even for advanced and novice users.
 
 == Description ==
-Now both CSV and XML import options available within the core plugin. 
+WP Ultimate CSV Importer provides all data import features in one bundle. With the easy to understand import steps anyone gets familiar with the plugin on its first try. There is no limit for records to import with CSV Importer and you can import any WordPress content prepared as CSV or XML file following a few simple steps. Migrating your website data to WordPress and updating content on WordPress tasks becomes easier now with CSV Importer. 
 
-Ultimate CSV Importer provides all the necessary Import and Export features in one bundle with simplified steps to follow. Note the added export, woocommerce and User import feature available as add-ons, you can install below add-ons to benefit those features
+If you are planning to migrate your wordpress content from the old site to the new site, use our support add-on [WP Ultimate Exporter](https://wordpress.org/plugins/wp-ultimate-exporter/). With the Exporter plugin, you will be able to export Posts, Pages, Custom Posts, Comments, Customer Reviews, WooCommerce Products, Users, SEO data, BBpress fields data, LearnPress fields data, and more. 
 
-1. [Export any WordPress data](https://wordpress.org/plugins/ultimate-exporter)
+= WordPress Import primarily adds features like =
+
+* Import any WordPress data types: Easy WordPress Posts, Pages, CustomPosts Import with inline images and featured images support.
+* SEO-friendly Import: Supports importing SEO fields of the most popular SEO plugins like All in One SEO and Rank Math SEO.
+* E-Commerce data import: Perform faster import of your WooCommerce Products along with Images, Categories, Attributes, and Tags.
+* Comments & Reviews: Other important imports like WordPress Comments and Customer Reviews import can be done.
+* Supports default WordPress Custom Fields Import.
+
+Glad news for you that we have upgraded this WordPress Import plugin by adding compatibility for the popular SEO plugin, All In One SEO version 4.1.0.2
+Please download the latest version of our plugin to unbox this feature.
+
+= Some of the prominent features of WP Ultimate CSV Importer =
+
+* Simple and Advanced mode for uploading files.
+* Upload any files types: .csv, .xml, .txt, .zip files.
+* Support for CSV and XML files import.
+* Maintenance mode option to notify your visitors while importing data at backend.
+* Get Import logs.
+* Import WordPress Users data
+* bbPress and LearnPress data import
+* WPML multilingual data import
+* WP Customer Reviews import
+* WooCommerce Products import
+* AIOSEO, RANKMATH SEO FREE plugin fields import
+* Comments Import
+* Navigation Menus and Widgets Import
+
+Note the Export features, Woocommerce Product Import, and WordPress Users import are available separately as addons.
+
+= Supported Addons of WordPress Import plugin =
+The below listed three supported addons can be jointly used with the WordPress Import data as CSV/XML plugin.
+
+1. [Export any WordPress data](https://wordpress.org/plugins/wp-ultimate-exporter/)
 2. [Product Import Export for WooCommerce](https://wordpress.org/plugins/import-woocommerce/)
-
-WooCommerce CSV Import Tutorial – Eay steps using WP Ultimate CSV Importer
-
-[youtube https://www.youtube.com/watch?v=b3Ix0WB3Bwg&feature=youtu.be]
-
 3. [Import Export WordPress Users](https://wordpress.org/plugins/import-users/)
 
-How to import data to your WordPress?
+= Supported Third Party Plugins =
 
-There are 3 simple steps to follow, 
+* BBPress Plugin – Topic, Reply, and Forum Import.
+* LearnPress Plugin – Courses, Lessons, Quizzes, Orders and Questions Import.
+* WooCommerce – Products with categories, attributes, tags, and Images Import.
+* All in One SEO Plugin – SEO Fields Import.
+* RANK MATH SEO Plugin - SEO Fields Import.
+* WP Customer Reviews – Reviews Import.
+* MultiLanguage by Websoft.
+* Post Expirator Plugin.
+* WooCommerce Product Bundles Plugin.
 
-1. Upload your CSV or XML file.
-2. Relate or map your CSV or XML fields with WP fields using drag and drop or simple left/right pick list method.
-3. Click Import once you finished your field mappings.
-
-Overview: Whats new with WP Ultimate CSV Importer Latest version
-[youtube https://www.youtube.com/watch?v=yg9Z6yJqRfo&feature=youtu.be]
-
-There are more features bundled to make even complicated post data import simplified. 
-
-= 1.Upload your CSV/XML =
-
-* Upload your CSV or XML file from different sources like desktop, FTP/SFTP, remote URLs or a location from your host server.
-* CSV, Zip, txt and XMl data (pro) file types supported. 
-* Once uploaded, choose New items if you want to import as new posts. 
-* Choose existing option in case to import the data to update or replace existing posts records. 
-* Pick a post type like Post, Page, Custom Post, Comments or any other from the drop down.
-* This is under which post type your data gets imported.
-* It can be a complete post content replacement or partial update like selected set of fields for each post in CSV/XML.
-* Click continue button.
-
-= 2.Relate or map your CSV or XML fields to WP fields =
-
-In mapping section, CSV or XML Importer plugin allows you to relate the uploaded data set against WordPress fields. There are two methods available to relate your data set.
-
-* A simple left and right drop downs that allows you to map your CSV/XML data with the related WordPress fields.
-* You can choose each field from left side and assign a field from right to where it should go.
-
-= Drag 'n' Drop method  =
-
-* You can visually drag field by field from the right side bar and drop it to post create view like place holder.
-* For e.g. you can drag title filed and drop it under post title box. 
-* To make it easier you can see both field label and sample record in side bar, which allows you to understand how data placed.
-* In top side bar header, you can rotate this sample records by choosing a row item no. in case the default sample data is not helpful.
-
-= 3. Click Import =
-
-* Once the mapping completed, click import to start the import process.
-* In import view, if required you can also pause and resume the import process.
-* A section shows post count and status of successful imports with a timer.
-* A log section shows you detailed real time log of the process step by step. 
-* Log is downloadable using the link provided.
-
-= What can you import in WordPress =
-Core Modules – Post, Page, Custom Post, Comments.
-Users – Import Users add-on to import your WordPress Users
-Custom Post – CPT UI, Pods, Toolset, Custom Press and default WordPress Custom Post.
-Custom Field – WordPress default Text and Text area fields.
-
-= Supported thirdparty plugins = 
-BBPress Plugin - Topic, Reply, and Forum Import.
-LearnPress Plugin - Courses, Lessons, Quizzes, Orders and Questions Import.
-WooCommerce - Products with categories, attributes, tags, and Images Import.
-All in One SEO Plugin - .SEO Fields Import.
-WP Customer Reviews – Reviews Import.
-MultiLanguage by Websoft.
-Post Expirator Plugin.
-WooCommerce Product Bundles Plugin.
-
-
-= Highlights =
-* High performance, much comparable & much faster than all the other available plugins.
-* Can handle 1000s of records on the fly.
-* Supports WordPress Custom Fields, Custom Press fields, WP Customer Reviews and All in One SEO fields.
-* Media images from any external URL like Google Images, pixabay, shutterstock, or any domain you own can be imported.
-* Image import processed from the background using WP-CRON to improve the performance.
-* Import with duplicate handling for optimized database.
-* Free add-on to Import Users <link> to upload user info into WordPress.
-* WordPress core custom fields registered dynamically on the flow of CSV/XML import.
-* Post type import with terms & taxonomies with any of depth of parent-child values.
-* WordPress multisite import supported.
-* Post Type CSV or XML import along with multi category & multi tag.
-* Import CSV with any delimiter in UTF-8 format can be imported.
-* Free export add-on to export <link> all your WP content in CSV file.
-
-= Important Notes =
-* Featured image import from any publicly accessible external URL.
-* All languages supported by WordPress imported in UTF-8 without BOM format.
-
-= Other useful tools =
-* Dashboard
-* General settings >> Scheduled log emails, send password in users get imported etc.
-* Database optimization
-* Security and performance monitoring
-* Manager >>File manager, log manager
-* Support >> Documentation
+= What You can Import with this WordPress Importer =
+Core Modules - Post, Page, Custom Post, Comments.
+Users - Use Import Users add-on to import your WordPress Users.
+Custom Post - CPT UI, Pods, Toolset, Jet engine, Custom Press and default WordPress Custom Post.
+Custom Field - WordPress default Text and Text area fields.
 
 = Premium Features =
-* CSV and XML import
-* Reusable Mapping Templates with Template manager
-* Smart Schedule/Recurring Import to run import periodically without any manual interaction.
-* Toolset Types Import – Custom fields, Post Relation, Intermediate post, Repeatable Field & Repeater Field Group support
-* Multilingual import – support for the import of WPML & qTranslate X add-on
-* WooCommerce product import along with six WooCommerce add-on
-* Handles Custom Fields of ACF (FREE & Pro), Types, Pods and WordPress fields with the flow of import
-* Import history i.e. detailed log maintained in the Log manager.
-* Import all the supported features with Rest API.
-* Extendable for your needs with API.
+* Upload files from desktop, FTP/SFTP, external URL or server.
+* Existing WordPress content update with new data.
+* Effective handling of duplicate records when importing.
+* Import data from Google Sheets & Dropbox.
+* Smart schedule import to run without any human intervention.
+* Export any WordPress data types with advanced filters & in different file formats.
+* Reusable mapping templates.
+* eCommerce data import with plugins like WooCommerce, WPeCommerce and Marketpress.
+* WooCommerce Import along with 6 WooCommerce addons.
+* Toolset Types – Custom fields, Post Relation, Intermediate post, Repeatable Field & Repeater Field Group import.
+* Multilingual Import with WPML & qTranslate X add-on.
+* Custom fields import- Supported custom field plugins like ACF(Free & Pro), Toolset Types, Pods, CMB2, CFS, CustomPress, Jet Engine, and WordPress custom fields.
+* SEO data import with plugins like Yoast SEO(free & pro), All in One SEO(free & pro), RANK MATH SEO Free & Pro plugin.
+* Importing data of Events Manager Free & Pro plugin.
+* Bulk image import into NextGEN Gallery plugin.
+* Free technical support via email.
 
-= HELPFUL LINKS =
-[Documentation](https://www.smackcoders.com/documentation/ultimate-csv-importer-pro/how-to-import-csv?utm_source=web&utm_campaign=readme&utm_medium=wp_org)
-
-[Try our live demo here](https://demo.smackcoders.com/wordpress/wp-admin/admin.php?page=com.smackcoders.csvimporternewpro.menu)
-
-[Request a free trial by visiting here](https://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) and Click Try Now option to generate your own WordPress test environment.
-
-[For samples and tutorials, visit our blog](https://www.smackcoders.com/blog.html?utm_source=wp.org&utm_medium=plugin&utm_campaign=readme)
-
-== Translations ==
-
-Many thanks to the generous efforts of our translators:
-
-* French (fr_FR) -- [the French translation team](https://translate.wordpress.org/locale/fr/default/wp-plugins/wp-ultimate-csv-importer)
-* Italian (it_IT) -- [the Italian translation team](https://translate.wordpress.org/locale/it/default/wp-plugins/wp-ultimate-csv-importer)
-* Spanish (es_ES) -- [the Spanish translation team](https://translate.wordpress.org/locale/es/default/wp-plugins/wp-ultimate-csv-importer)
-* German (de_DE) -- [the German translation team](https://translate.wordpress.org/locale/de/default/wp-plugins/wp-ultimate-csv-importer)
-* Japanese (ja) -- [the Japanese translation team](https://translate.wordpress.org/locale/ja/default/wp-plugins/wp-ultimate-csv-importer)
-* Russian (ru_RU) -- [the Russian translation team](https://translate.wordpress.org/locale/ru/default/wp-plugins/wp-ultimate-csv-importer)
-* Dutch (nl_NL) -- [the Dutch translation team](https://translate.wordpress.org/locale/nl/default/wp-plugins/wp-ultimate-csv-importer)
-* Turkish (tr_TR) -- [the Turkish translation team](https://translate.wordpress.org/locale/tr/default/wp-plugins/wp-ultimate-csv-importer)
-* English (en_CA) -- [the English (Canadian) translation team](https://translate.wordpress.org/locale/en-ca/default/wp-plugins/wp-ultimate-csv-importer)
-* English (en_GB) -- [the English (British) translation team](https://translate.wordpress.org/locale/en-gb/default/wp-plugins/wp-ultimate-csv-importer)
-* English (en_ZA) -- [the English (South African) translation team](https://translate.wordpress.org/locale/en-za/default/wp-plugins/wp-ultimate-csv-importer)
-* French (fr_BE) -- [the French (Belgium) translation team](https://translate.wordpress.org/locale/fr-be/default/wp-plugins/wp-ultimate-csv-importer)
-
-If you'd like to help out by translating this plugin, please [sign up for an account and dig in](https://translate.wordpress.org/projects/wp-plugins/wp-ultimate-csv-importer).
+If you need any one of the above features, [purchase our pro plugin here](https://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) for the best price.
 
 == Screenshots ==
 1. Dashboard view of the importer.
@@ -169,13 +104,13 @@ If you'd like to help out by translating this plugin, please [sign up for an acc
 == Frequently Asked Questions ==
 
 * What is a CSV file?
-A CSV or comma separated value file is a simple text based file format to store tabular data. In general, a character like a comma used as a separator between commas separated values as tables.
+A CSV or Comma Separated Value file is a simple text based file format to store the tabular data. In general, a character like, a comma used as a separator between commas separated values as tables.
 
-* How to open or edit CSV file?
-A CSV file could be edited in any program like notepad or notepad+. However, a spreadsheet editor like MS Office, Open Office Calc is more useful to directly edit as tabled structure.
+* How to open or edit a CSV file?
+A CSV file could be edited in any text editors like notepad or notepad+. However, spreadsheet editors like MS Office, Open Office Calc are more useful to directly edit as table structure.
 
 * What are the types of CSV files?
-Most common type is csv or comma separated value file. The other one is delimited file where a character like a tab or a semicolon used instead of comma as a delimiter.
+Most common type is csv or comma separated value file. The other one is a delimited file where a character like a tab or a semicolon is used instead of comma as a delimiter.
 
 * What is CSV file format?
 There are different file formats available based on encode like ANSI, UTF-8, UTF-8 without BOM, USC-2 BE BOM and USC-2 LE BOM. For WordPress, the default format will be UTF-8 and for non-Latin character data, UTF-8 without BOM used.
@@ -183,29 +118,39 @@ There are different file formats available based on encode like ANSI, UTF-8, UTF
 * How to validate a CSV?
 You can validate a csv file using [CSV Lint](https://csvlint.io/). Your CSV may miss escaping characters and misplaced/skipped character, which may cause the import to cease. Validate any csv file for issues or warning and fix them before importing it to WordPress.
 
-* What is a XML file?
+* What is an XML file?
 An XML document is a basic unit of XML information composed of elements and other markup in an orderly package. An XML document can contains wide variety of data.
 
 * How to import content to WordPress?
-Import to WordPress done in different methods based on content source type, platform, and file types. The most common types of imports are XML, CSV and DB files. 
-1. Xml method needs advanced knowledge to edit/update them in case of any changes required on source data. Otherwise, users are limited to do import without any changes to source file. Hence, editing done post by post in WordPress only possible after import.
-2. CSV methods allow any users with basic excel or any spreadsheet knowledge can audit, change, edit or update the data visually in bulk before importing. So painful manual works avoided and time saved. Also, CSV file is the most preferred method for any offline programs. 
+Import to WordPress done in different methods based on content source type, platform, and file types. The most common types of imports are XML, CSV and DB files.
+1. Xml method needs advanced knowledge to edit/update them in case of any changes required on source data. Otherwise, users are limited to import without any changes to the source file. Hence, editing done post by post in WordPress is only possible after import.
+2. CSV methods allow any users with basic excel or any spreadsheet knowledge to audit, change, edit or update the data visually in bulk before importing. So painful manual work is avoided and time saved. Also, the CSV file is the most preferred method for any offline programs.
 
-* How to import bulk images as csv in wordpress
+* How to import data with Ultimate CSV Importer plugin?
+You can import data into WordPress by following four simple steps. Start by uploading a CSV/XML file, map the CSV/XML fields with appropriate WP fields, enable the media handling option if you want to import any external images and finally click the ‘Import’ button to import all your data into WordPress in one go.
 
-[youtube https://www.youtube.com/watch?v=6NqFduZUmHI&feature=youtu.be]
+* Can I get any demo data or sample files for test import?
+Yes, you can get [sample CSVs here to test import](https://www.smackcoders.com/blog/wordpress-ultimate-csv-importer-csv-sample-files-and-updates.html?utm_source=web&utm_medium=wp_org&utm_campaign=readme) with WP Ultimate CSV Importer.
 
-* How to handle Types Custom Fields Import in wordpress
+* In WordPress, how to import xml?
+It is simple with the Ultimate CSV Importer. You can import either XML or CSV using the same methods or UI. Upload your XML file using the browse and upload option. Then follow mapping steps as normal to import the data.
 
-[youtube https://www.youtube.com/watch?v=G_6vwYCDOOk&feature=youtu.be]
+For more FAQ’s please check out this [FAQ article for CSV Importer](https://www.smackcoders.com/blog/wp-ultimate-csv-importer-questions.html?utm_source=web&utm_medium=wp_org&utm_campaign=readme).
 
+= Other Useful Links to guide you =
 
-* How to import google sheets data to WordPress
+Check out our [Documentation](https://www.smackcoders.com/documentation/ultimate-csv-importer-pro/how-to-import-csv?utm_source=web&utm_campaign=readme&utm_medium=wp_org) here to know further details about import & export. Watch out our [youtube video tutorials](https://www.youtube.com/watch?v=S1P8KebpLaU&list=PL2k3Ck1bFtbTtSX3hEFoBvK_Ka0pfYwp_) for better learning.
 
-[youtube https://www.youtube.com/watch?v=8P8xtRY3bCM&feature=youtu.be]
+[Try our live demo here](https://demo.smackcoders.com/wordpress/wp-admin/admin.php?page=com.smackcoders.csvimporternewpro.menu)
+
+[Request a free trial by visiting here](https://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) and Click Try Now option to generate your own WordPress test environment.
 
 
 == Changelog ==
+= 6.2.4 =
+* Added: Compatibility for WordPress 5.7
+* Added: Compatibility for All in One SEO latest version 4.1.0.2
+
 = 6.2.3 =
 * Added: Compatibility for WordPress 5.7
 * Added: Import support for Rank Math SEO PRO Plugin.
@@ -302,7 +247,7 @@ Import to WordPress done in different methods based on content source type, plat
 * Improved: UI - Show export tab by default. If user have not installed the exporter plugin, It contains the download link.
 * Improved: UI - In plugins page inside csv importer. If a plugin is installed show it as already installed.
 * Fixed: : Timer not stopping after import issue.
-* Modified: Changed video url in documentation. In settings changed “file_uploads” and “allow_url_fopen” to “on” instead of 1.
+* Modified: Changed video url in documentation. In settings changed â€œfile_uploadsâ€ and â€œallow_url_fopenâ€ to â€œonâ€ instead of 1.
 = 6.0 =
 * Improved: user interface and performance.
 * Added: Header Manipulation fields can now hold static text content along with any CSV header content.
@@ -687,6 +632,8 @@ Import to WordPress done in different methods based on content source type, plat
 * Initial release version. Tested and found works well without any issues.
 
 == Upgrade Notice ==
+= 6.2.4 =
+* Added: Upgrade now for latest updates.
 = 6.2.3 =
 * Added: Upgrade now for latest updates.
 = 6.2.2 =

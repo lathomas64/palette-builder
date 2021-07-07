@@ -23,9 +23,8 @@ class CommentsImport {
     }
 
     public function comments_import_function($data_array , $mode , $hash_key , $line_number) {
-		global $wpdb;
+		global $wpdb,$core_instance;
 		$core_instance = CoreFieldsImport::getInstance();
-		global $core_instance;
 		$helpers_instance = ImportHelpers::getInstance();
 		$log_table_name = $wpdb->prefix ."import_detail_log";
 		$returnArr = [];
@@ -48,14 +47,25 @@ class CommentsImport {
 		$data_array['comment_approved'] = trim($data_array['comment_approved']);
 		if(!empty($data_array['user_id'])){
 			$user_login=$data_array['user_id'];
-				$u_id =  $wpdb->get_results("SELECT ID FROM {$wpdb->prefix}users WHERE  user_login = '$user_login'");		
+			$u_id =  $wpdb->get_results("SELECT ID FROM {$wpdb->prefix}users WHERE  user_login = '$user_login'");		
 			foreach($u_id as $user_id){
-				$users=$user_id->ID;
-				$data_array['user_id']=$users;
-			}
+					$users=$user_id->ID;
+					$data_array['user_id']=$users;
+				}
 			}
 		if ($post_exists) {
 			if($mode == 'Insert'){
+				$comment_result =  $wpdb->get_results("SELECT comment_content FROM {$wpdb->prefix}comments WHERE comment_post_ID = $post_id and comment_content = '{$data_array['comment_content']}' and comment_approved != 'trash' order by comment_ID DESC ");		
+				
+				$mode_of_affect = 'Inserted';
+
+				if ( is_array( $comment_result ) && ! empty( $comment_result ) ) {
+						$core_instance->detailed_log[$line_number]['Message'] = "Skipped, Due to Duplicated Comment from Same User.";
+						$wpdb->get_results("UPDATE $log_table_name SET skipped = $skipped_count WHERE hash_key = '$hash_key'");
+						$returnArr['MODE'] = $mode_of_affect;
+						return $returnArr;
+				}
+
 				$retID = wp_insert_comment($data_array);
 				$mode_of_affect = 'Inserted';
 				

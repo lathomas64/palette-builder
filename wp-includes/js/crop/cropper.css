@@ -5,7 +5,7 @@
 	cursor: crosshair;
 }
 
-/* an extra classname is applied for Opera < 9.0 to fix it's lack of opacity support */
+/* an extra classname is applied for Opera < 9.0 to fix its lack of opacity support */
 .imgCrop_wrap.opera8 .imgCrop_overlay,
 .imgCrop_wrap.opera8 .imgCrop_clickArea { 
 	background-color: transparent;
@@ -15,9 +15,6 @@
 .imgCrop_wrap,
 .imgCrop_wrap * {
 	font-size: 0;
-	line-height: 0;
-	opacity: 1;
-	filter:alpha(opacity=100);
 }
 
 .imgCrop_overlay {
@@ -66,23 +63,6 @@
 	background: transparent url(marqueeVert.gif) repeat-y 0 0;
 	z-index: 3;
 }
-
-/* 
- *  FIX MARCHING ANTS IN IE
- *	As IE <6 tries to load background images we can uncomment the follwoing hack 
- *  to remove that issue, not as pretty - but is anything in IE?
- *  And yes I do know that 'filter' is evil, but it will make it look semi decent in IE
- *
-* html .imgCrop_marqueeHoriz,
-* html .imgCrop_marqueeVert {
-	background: transparent;
-	filter: Invert; 
-}
-* html .imgCrop_marqueeNorth { border-top: 1px dashed #000; }
-* html .imgCrop_marqueeEast  { border-right: 1px dashed #000; }
-* html .imgCrop_marqueeSouth { border-bottom: 1px dashed #000; }
-* html .imgCrop_marqueeWest  { border-left: 1px dashed #000; }
-*/
 
 .imgCrop_marqueeNorth { top: 0; left: 0; }
 .imgCrop_marqueeEast  { top: 0; right: 0; }
@@ -152,7 +132,7 @@
 	top: 0;
 	left: -3px;
 	/* margin-top: 49%;  @done_in_js */
-	cursor: w-resize;
+	cursor: e-resize;
 }
 
 .imgCrop_handleNW {
