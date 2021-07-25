@@ -24,7 +24,7 @@
 
 	/**TYPE VALUES**/
 	--e-global-typography-primary-font-family: bilo;
-	--e-global-typography-secondary-font-family: bebas neue pro;
+	--e-global-typography-secondary-font-family: bebas-neue-pro;
 	--type-weight-bold: 700;
 	--type-weight-regular: 500;
 	--type-weight-light: 400;
@@ -51,7 +51,7 @@
 	--font-Sidebar-Icon-Label: var(--type-weight-light) var(--type-size-16) / var(--type-size-16) var(--e-global-typography-secondary-font-family);
 	--font-Micro-Labels: var(--type-weight-regular) var(--type-size-14) / var(--type-size-16) var(--e-global-typography-primary-font-family);
 	--font-Body-Small: var(--type-weight-light) var(--type-size-16) / var(--type-size-18) var(--e-global-typography-primary-font-family);
-	--font-Panel-Title: var(--type-weight-regular) var(--type-size-32) / var(--type-size-32) var(--e-global-typography-secondary-font-family);
+	--font-Panel-Title: var(--type-weight-bold) var(--type-size-32) / var(--type-size-32) var(--e-global-typography-secondary-font-family);
 	--font-Panel-Section-Title: var(--type-weight-bold) var(--type-size-18) / var(--type-size-21) var(--e-global-typography-secondary-font-family);
 	--font-text-button-small: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
 	--font-input-label: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);

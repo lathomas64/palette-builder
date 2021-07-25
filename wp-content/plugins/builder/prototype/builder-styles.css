@@ -1,443 +1,3 @@
-@supports (-webkit-appearance: none) or (-moz-appearance: none) {
-	input[type="checkbox"],
-	select {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-	}
-}
-
-:focus-visible {
-	outline-color: var(--FDBL-Green-Light);
-}
-
-* {
-	transition: all 0.1s ease-in-out;
-	box-sizing: border-box;
-}
-/**STRUCTURE AND SUCH**/
-
-body {
-	margin: 0;
-	font: var(--font-Body-Small);
-}
-
-section {
-	position: relative;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-}
-
-a {
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.Container {
-	display: flex;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.Column {
-	display: flex;
-	flex-flow: column nowrap;
-}
-
-.Row {
-	display: flex;
-	flex-flow: row wrap;
-}
-
-.Gap_4 {
-	gap: 4px;
-}
-.Gap_8 {
-	gap: 8px;
-}
-.Gap_16 {
-	gap: 16px;
-}
-
-.Gap_24 {
-	gap: 24px;
-}
-
-.Gap_32 {
-	gap: 32px;
-}
-
-.Gap_40 {
-	gap: 40px;
-}
-
-.Justify_Content_Space_Between,
-.Space_Between {
-	justify-content: space-between;
-}
-
-.Justify_Content_Center {
-	justify-content: center;
-}
-
-.Justify_Content_Left {
-	justify-content: left;
-}
-
-.Align_Content_Center {
-	align-content: center;
-}
-
-.Align_Items_Center {
-	align-items: center;
-}
-
-.Align_Content_Top {
-	align-content: flex-start;
-}
-
-.Arrangement_Space {
-	width: 60%;
-	height: 100vh;
-}
-
-.Right_Panel {
-	width: 40%;
-	height: 100%;
-}
-
-.Inner_Section_Wrap {
-	display: flex;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	box-shadow: var(--Table-Rest-Shadow);
-}
-
-/**STORY SIZES**/
-
-.Story_Container.Landscape {
-	width: var(--Story-Container-Size);
-}
-
-.Story_Container.Portrait_Square {
-	height: var(--Story-Container-Size);
-}
-
-.Story_Container ~ .Disclaimer {
-	width: var(--Story-Container-Size);
-}
-
-/**LANDSCAPE SIZES **/
-.Story_Size_6w_3t {
-	aspect-ratio: 2 / 1;
-}
-
-.Story_Size_4t_6w {
-	aspect-ratio: 3 / 2;
-}
-
-.Story_Size_4w_3t {
-	aspect-ratio: 4 / 3;
-}
-.Story_Size_5w_4t {
-	aspect-ratio: 5 / 4;
-}
-.Story_Size_7w_2t {
-	aspect-ratio: 7 / 2;
-}
-
-.Story_Size_7w_5t {
-	aspect-ratio: 7 / 5;
-}
-
-.Story_Size_7w_6t {
-	aspect-ratio: 7 / 6;
-}
-
-.Story_Size_11w_8t {
-	aspect-ratio: 11 / 8;
-}
-
-/**PORTRAIT_SQUARE_SIZES **/
-.Story_Size_3w_3t,
-.Story_Size_5w_5t {
-	aspect-ratio: 1 / 1;
-}
-
-.Story_Size_7w_9t {
-	aspect-ratio: 7 / 9;
-}
-
-.Story_Size_8w_9t {
-	aspect-ratio: 8 / 9;
-}
-
-.Story_Size_8w_11t {
-	aspect-ratio: 8 / 11;
-}
-
-/**BASIC STYLES**/
-.Heading {
-	margin: 0;
-	color: var(--FDBL-Black);
-	font-family: var(--e-global-typography-secondary-font-family), Sans-serif;
-	font-weight: var(--type-weight-bold);
-	padding: 0px 0px 8px 0px;
-	border-bottom: var(--Standard-Border);
-	text-transform: capitalize;
-}
-
-.Body {
-	font-family: var(--e-global-typography-primary-font-family);
-	color: var(--FDBL-Black);
-	font-weight: var(--type-weight-regular);
-}
-
-.Heading h4 {
-	font: var(--font-Panel-Title);
-}
-
-.Panel_Title {
-	font: var(--font-Panel-Title);
-}
-
-.Filter_Section .Heading {
-	font: var(--font-Panel-Section-Title);
-	padding-bottom: 4px;
-}
-
-.Right_Panel_Nav .Panel_Title {
-	font-size: var(--type-size-16);
-	line-height: var(--type-size-21);
-	text-align: center;
-	padding-bottom: 4px;
-	border-color: var(--FDBL-Black);
-}
-
-.Singles_Filter .Panel_Title .Heading {
-	border: 0;
-	padding: 0;
-}
-
-.Helper_Box .Heading {
-	font-size: var(--type-size-24);
-	line-height: var(--type-size-24);
-	border: 0;
-	padding: 0;
-}
-
-/**BUTTON STYLES**/
-
-button {
-	cursor: pointer;
-}
-
-button.Dismiss {
-	font-family: var(--e-global-typography-primary-font-family);
-	font-size: 20px;
-	padding: 0;
-	background: none;
-	border: 0;
-	line-height: 0;
-	margin-top: -5px;
-}
-
-button.Dismiss:hover,
-button.Dismiss:focus {
-	color: var(--FDBL-Green-Light);
-	font-weight: var(--type-weight-bold);
-}
-
-button.Dismiss .Close {
-	opacity: 0;
-	color: var(--FDBL-Black);
-	font-weight: var(--type-weight-light);
-	font-size: var(--type-size-16);
-}
-
-button.Dismiss:hover .Close,
-button.Dismiss:focus .Close {
-	opacity: 1;
-}
-
-.Check_List.Filterable li:hover input[type="checkbox" i],
-.Check_List.Filterable li:focus input[type="checkbox" i] {
-	background-color: var(--FDBL-Green-Light);
-}
-
-.Check_List.Filterable input[type="checkbox" i] {
-	margin: 0;
-	padding: 4px;
-	height: 16px;
-	width: 16px;
-	border: var(--Shadow-Border);
-	border-radius: 2px;
-}
-
-.Check_List.Filterable input[type="checkbox" i]:after {
-	content: "";
-	opacity: 0;
-	display: block;
-	width: 3px;
-	height: 7px;
-	border: 2px solid var(--FDBL-Black);
-	border-top: 0;
-	border-left: 0;
-	position: relative;
-	top: -3px;
-	left: 1px;
-	transform: rotate(45deg);
-}
-
-.Filter_Button input[type="checkbox"] {
-	position: absolute;
-	opacity: 0;
-}
-
-.Button_Group ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-li.Filter_Button {
-	display: block;
-}
-.Filter_Button label {
-	padding: 4px 8px;
-	background: var(--System-White);
-	border: var(--Standard-Border);
-	border-radius: var(--Standard-Border-Radius);
-	font: var(--font-Filter-Button);
-	display: block;
-}
-
-.Filter_Button label:hover,
-.Filter_Button label:focus {
-	box-shadow: var(--Lift-Shadow);
-	border: var(--Shadow-Border);
-}
-
-.Filter_Button label:active {
-	box-shadow: var(--Drag-Shadow);
-	border: var(--Shadow-Border);
-}
-
-.Filter_Button input[type="checkbox"]:checked + label {
-	box-shadow: var(--button-selected);
-	border: var(--Shadow-Border);
-	background-color: var(--FDBL-Light-Gray);
-	color: var(--FDBL-Black);
-}
-
-.Filter_Button .Icon_Container {
-	width: 9px;
-	height: 8px;
-}
-
-.Icon_Button svg {
-	width: 100%;
-	height: 100%;
-	fill: var(--FDBL-Black);
-}
-
-.Button_Micro .Icon_Container {
-	width: 15px;
-	height: 15px;
-}
-.Button_Micro div {
-	font: var(--font-Micro-Labels);
-	color: var(--FDBL-Dark-Gray);
-}
-
-.Button_Micro svg {
-	fill: var(--FDBL-Dark-Gray);
-}
-
-a.Button_Micro:hover *,
-a.Button_Micro:focus * {
-	color: var(--FDBL-Black);
-	fill: var(--FDBL-Black);
-}
-
-a.Button_Micro:active * {
-	color: var(--FDBL-Dark-Gray);
-	fill: var(--FDBL-Dark-Gray);
-}
-
-button.Search {
-	background: none;
-	border: none;
-	margin-right: 8px;
-	color: var(--FDBL-Green-Dark);
-	font: var(--font-text-button-small);
-	text-transform: uppercase;
-}
-
-button.Search:hover,
-button.Search:focus {
-	color: var(--FDBL-Green-Light);
-}
-
-button.Search:active {
-	color: var(--FDBL-Yellow-Medium);
-}
-
-.Nav_Icon {
-	display: inline-block;
-	width: 56px;
-	height: 56px;
-	box-sizing: content-box;
-	background-color: var(--FDBL-Green-Dark);
-	border-radius: 50%;
-	overflow: hidden;
-	text-align: center;
-}
-
-.Nav_Icon svg {
-	margin-top: 11px;
-	width: 32px;
-	height: 32px;
-	fill: var(--FDBL-White-Text);
-}
-
-a.Nav_Button {
-	text-decoration: none;
-}
-
-.Nav_Button .Heading {
-	border: none;
-	font: var(--font-Sidebar-Icon-Label);
-	text-align: center;
-	text-transform: capitalize;
-	padding: 0;
-}
-
-a.Nav_Button:hover .Nav_Icon,
-a.Nav_Button:focus .Nav_Icon {
-	background-color: var(--FDBL-Yellow-Medium);
-	box-shadow: var(--Lift-Shadow);
-}
-
-a.Nav_Button:hover svg,
-a.Nav_Button:focus svg {
-	fill: var(--FDBL-Dark-Teal);
-}
-
-a.Nav_Button:active .Nav_Icon {
-	box-shadow: var(--Drag-Shadow);
-}
-
-a.Nav_Button:hover .Heading,
-a.Nav_Button:focus .Heading {
-	font-weight: var(--type-weight-bold);
-}
-
 /**ARRANGEMENT SPACE**/
 
 .Arrangement_Space {
@@ -499,6 +59,7 @@ a.Nav_Button:focus .Heading {
 	height: 150px;
 	background-color: black;
 }
+
 /**RIGHT PANEL**/
 
 .Search_And_Filter {
@@ -526,6 +87,14 @@ a.Nav_Button:focus .Heading {
 .Grid {
 	width: 100%;
 	justify-content: flex-start;
+}
+
+.Multi_Select {
+	margin-top: 4px;
+}
+
+.Multi_Select .Search {
+	margin-bottom: 4px;
 }
 
 /** CARD STYLES**/
@@ -736,6 +305,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 
 .Check_List.Filterable li label {
 	font-weight: 300;
+	font: var(--font-Body-Small);
 }
 
 .Select_Range select {
@@ -751,6 +321,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	background-size: 8px;
 	font: var(--font-Body-Small);
 }
+
 /* Hide arrow icon in IE browsers */
 .Select_Range select::-ms-expand {
 	display: none;
@@ -788,10 +359,6 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	border-color: #aaa;
 }
 
-body {
-	margin: 2rem;
-}
-
 input:not([type="submit"]):not([type="file"]) {
 	padding: 8px;
 	border: var(--Standard-Border);
@@ -802,52 +369,14 @@ label {
 	font: var(--font-input-label);
 }
 
-.Dark label {
-	background-color: var(--System-Black);
-	color: var(--FDBL-White-Text);
-}
-.Light label {
-	background-color: var(--System-White);
-	color: var(--FDBL-Black);
+/**ACCORDION ADVANCED SEARCH**/
+
+.Drawer_Overlay {
+	width: 100%;
+	height: 100vh;
+	background-color: #0e444b;
+	opacity: 0.8;
 }
 
-.Red label {
-	background-color: rgba(239, 3, 3, 1);
-}
-.Orange label {
-	background-color: rgba(255, 128, 0, 1);
-}
-.Yellow label {
-	background-color: rgba(255, 255, 28, 1);
-}
-.Green label {
-	background-color: rgba(7, 255, 7, 1);
-}
-.Blue label {
-	background-color: rgba(8, 255, 255, 1);
-}
-.Indigo label {
-	background-color: rgba(92, 11, 255, 1);
-}
-.Violet label {
-	background-color: rgba(172, 5, 255, 1);
-}
-.Neutral label {
-	background-color: rgba(68, 50, 3, 1);
-}
-
-.Matte label {
-	background: ;
-}
-.Satin label {
-	background: ;
-}
-.Shimmer label {
-	background: ;
-}
-.Metallic label {
-	background: ;
-}
-.Sparkle label {
-	background: ;
+.Advanced_Search_Filter {
 }
