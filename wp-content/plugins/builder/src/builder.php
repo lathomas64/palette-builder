@@ -1,11 +1,10 @@
-<?php include "header.php" ?>
 <head>
+	<?php include "header.php" ?>
 	<meta charset="UTF-8" />
 	<title>Universal Palette Builder – Firedrake Beauty Labs</title>
 	<link rel="stylesheet" type="text/css" href="../css/variables.css" />
 	<link rel="stylesheet" type="text/css" href="../css/basic-styles.css" />
 	<link rel="stylesheet" type="text/css" href="../css/builder-styles.css" />
-	<link rel="stylesheet" type="text/css" href="../css/builder.css" />
 	<link rel="stylesheet" href="https://use.typekit.net/mxy5ujb.css" />
 </head>
 <body>
@@ -184,8 +183,8 @@
 							<div class="Container">
 								<div class="Search_And_Filter">
 									<div class="Column Gap_32">
-										<div class="Heading Title_Base">
-											<h4>Find Eyeshadows</h4>
+										<div class="Panel_Title">
+											<div class="Heading">Find Eyeshadows</div>
 										</div>
 										<div class="Helper_Box">
 											<div class="Column Gap_8">
