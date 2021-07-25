@@ -1,0 +1,54 @@
+#pb-header{
+  font-family: Bebas Neue Pro;
+  justify-content: space-between;
+}
+
+#pb-footer{
+    font-family: Bebas Neue Pro;
+    background-color: #09262A;
+    color: #fcffff;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+}
+
+#build-list{
+  background: #f8e968;
+  border-radius: 4px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+}
+
+.matte {
+  
+}
+.satin {
+  background: linear-gradient(270deg, #09262A 0%, rgba(9, 38, 42, 0.6) 51.56%, #09262A 100%);
+border-radius: 12px;
+}
+.shimmer {
+  background: linear-gradient(270deg, #09262A 0%, rgba(9, 38, 42, 0.4) 51.56%, #09262A 100%);
+border-radius: 12px;
+}
+.metalic {
+  background: linear-gradient(270deg, #09262A 0%, rgba(9, 38, 42, 0) 51.56%, #09262A 100%);
+border-radius: 12px;
+}
+
+.sparkle {}

@@ -1,0 +1,19 @@
+#pb-header{
+  font-family: Bebas Neue Pro;
+  justify-content: space-between;
+}
+
+#pb-footer{
+    font-family: Bebas Neue Pro;
+    background-color: #09262A;
+    color: #fcffff;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+}
+
+#build-list{
+  background: #f8e968;
+  border-radius: 4px;
+}
