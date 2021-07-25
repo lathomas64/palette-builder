@@ -55,13 +55,14 @@
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 				$brand = get_field('brand');
 			?>
-			<a data-country='<?php echo get_post_field('country', $brand[0]); ?>' data-brand='<?php echo get_post_field('post_title', $brand[0]);?>' data-price='<?php echo get_field('price') ?>' id='<?php the_ID(); ?>' class='shadow' draggable="true" ondragstart="drag(event)" class="Single_Pan_Card" href="#">
+			<a data-country='<?php echo get_post_field('country', $brand[0]); ?>' data-brand='<?php echo get_post_field('post_title', $brand[0]);?>' data-price='<?php echo get_field('price') ?>' id='<?php the_ID(); ?>' draggable="true" ondragstart="drag(event)" class="Single_Pan_Card" href="#">
 				<div class="Card_Container Column Gap_8">
 					<div class="Shadow_Name"><?php the_title(); ?></div>
 					<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Square">
 						<div class="Wrapper">
 							<img src="<?php echo get_field('pan_photo'); ?>" />
 							<div class="Pan_Shadow"></div>
+							<p>colors:<?php echo var_dump(get_field('colors')); ?></p>
 						</div>
 					</div>
 				</div>
