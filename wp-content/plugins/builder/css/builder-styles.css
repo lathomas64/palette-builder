@@ -1,5 +1,6 @@
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
 	input[type="checkbox"],
+	input[type="search"],
 	select {
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -295,9 +296,60 @@ button.Dismiss:focus .Close {
 	transform: rotate(45deg);
 }
 
+::-webkit-input-placeholder {
+	/* Edge */
+	font: 300 16px/16px bilo;
+	font-weight: 300;
+	opacity: 1;
+	color: #09262a;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	font: 300 16px/16px bilo;
+	font-weight: 300;
+	opacity: 1;
+	color: #09262a;
+}
+
+::placeholder {
+	font: 300 16px/16px bilo;
+	font-weight: 300;
+	opacity: 1;
+	color: #09262a;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	height: 0.75em;
+	width: 0.75em;
+	border-radius: 50em;
+	background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+	background-size: contain;
+	opacity: 0;
+	pointer-events: none;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+	opacity: 0.3;
+	pointer-events: all;
+}
+
+input[type="search"].dark::-webkit-search-cancel-button {
+	filter: invert(1);
+}
+
+input {
+	font: 300 16px/16px bilo;
+	font-weight: 500;
+	opacity: 1;
+	color: #09262a;
+}
+
 .Filter_Button input[type="checkbox"] {
 	position: absolute;
 	opacity: 0;
+	top: 0;
 }
 
 .Button_Group ul {
@@ -305,24 +357,35 @@ button.Dismiss:focus .Close {
 	padding: 0;
 	margin: 0;
 }
-li.Filter_Button {
-	display: block;
-}
+
+button.Filter_Button,
 .Filter_Button label {
 	padding: 4px 8px;
 	background: var(--System-White);
 	border: var(--Standard-Border);
 	border-radius: var(--Standard-Border-Radius);
 	font: var(--font-Filter-Button);
+}
+
+li.Filter_Button label {
 	display: block;
 }
 
+.Check_List li {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+
+button.Filter_Button:hover,
+button.Filter_Button:focus,
 .Filter_Button label:hover,
 .Filter_Button label:focus {
 	box-shadow: var(--Lift-Shadow);
 	border: var(--Shadow-Border);
 }
 
+button.Filter_Button:active,
 .Filter_Button label:active {
 	box-shadow: var(--Drag-Shadow);
 	border: var(--Shadow-Border);
@@ -526,6 +589,14 @@ a.Nav_Button:focus .Heading {
 .Grid {
 	width: 100%;
 	justify-content: flex-start;
+}
+
+.Multi_Select {
+	margin-top: 4px;
+}
+
+.Multi_Select .Search {
+	margin-bottom: 4px;
 }
 
 /** CARD STYLES**/
@@ -736,6 +807,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 
 .Check_List.Filterable li label {
 	font-weight: 300;
+	font: var(--font-Body-Small);
 }
 
 .Select_Range select {
