@@ -24,7 +24,7 @@ $count = $loop->found_posts;
 			<span> Showing <?php echo $count; ?> shadows </span>
 		</div>
 		<div class="Row Space_Between Gap_8 Align_Items_Center">
-			<button onclick="document.getElementById('modal-shadow-filter').style.display = 'block'" class="Filter_Button Icon_Button Align_Items_Center Row Gap_4">
+			<button onclick="document.getElementById('Modal_Shadow_Filter').style.display = 'block'" class="Filter_Button Icon_Button Align_Items_Center Row Gap_4">
 				<div class="Icon_Container">
 					<svg width="13" height="14" viewBox="0 0 13 14" fill="#09262A" xmlns="http://www.w3.org/2000/svg">
 						<path
