@@ -8,7 +8,7 @@
 }
 
 :focus-visible {
-	outline-color: var(--FDBL-Green-Light);
+	outline-color: var(--FDBL-green-light);
 }
 
 * {
@@ -19,7 +19,7 @@
 
 body {
 	margin: 0;
-	font: var(--font-Body-Small);
+	font: var(--font-body-small);
 }
 
 section {
@@ -84,6 +84,10 @@ a {
 	justify-content: left;
 }
 
+.Justify_Content_Flex_End {
+	justify-content: flex-end;
+}
+
 .Align_Content_Center {
 	align-content: center;
 }
@@ -110,20 +114,20 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	box-shadow: var(--Table-Rest-Shadow);
+	box-shadow: var(--table-rest-shadow);
 }
 /**STORY SIZES**/
 
 .Story_Container.Landscape {
-	width: var(--Story-Container-Size);
+	width: var(--story-container-size);
 }
 
 .Story_Container.Portrait_Square {
-	height: var(--Story-Container-Size);
+	height: var(--story-container-size);
 }
 
 .Story_Container ~ .Disclaimer {
-	width: var(--Story-Container-Size);
+	width: var(--story-container-size);
 }
 
 /**LANDSCAPE SIZES **/
@@ -175,12 +179,12 @@ a {
 	aspect-ratio: 8 / 11;
 }
 .Dark label {
-	background-color: var(--System-Black);
-	color: var(--FDBL-White-Text);
+	background-color: var(--system-black);
+	color: var(--FDBL-white-text);
 }
 .Light label {
-	background-color: var(--System-White);
-	color: var(--FDBL-Black);
+	background-color: var(--system-white);
+	color: var(--FDBL-black);
 }
 .Red label {
 	background-color: rgba(239, 3, 3, 1);
@@ -225,26 +229,26 @@ a {
 
 .Heading {
 	margin: 0;
-	color: var(--FDBL-Black);
+	color: var(--FDBL-black);
 	font-family: var(--e-global-typography-secondary-font-family), Sans-serif;
 	font-weight: var(--type-weight-bold);
 	padding: 0px 0px 8px 0px;
-	border-bottom: var(--Standard-Border);
+	border-bottom: var(--standard-border);
 	text-transform: capitalize;
 }
 
 .Body {
 	font-family: var(--e-global-typography-primary-font-family);
-	color: var(--FDBL-Black);
+	color: var(--FDBL-black);
 	font-weight: var(--type-weight-regular);
 }
 
 .Panel_Title {
-	font: var(--font-Panel-Title);
+	font: var(--font-panel-title);
 }
 
 .Filter_Section .Heading {
-	font: var(--font-Panel-Section-Title);
+	font: var(--font-panel-section-title);
 	padding-bottom: 4px;
 }
 
@@ -253,7 +257,7 @@ a {
 	line-height: var(--type-size-21);
 	text-align: center;
 	padding-bottom: 4px;
-	border-color: var(--FDBL-Black);
+	border-color: var(--FDBL-black);
 }
 
 .Singles_Filter .Panel_Title .Heading {
@@ -270,14 +274,14 @@ a {
 
 .Check_List.Filterable li:hover input[type="checkbox" i],
 .Check_List.Filterable li:focus input[type="checkbox" i] {
-	background-color: var(--FDBL-Green-Light);
+	background-color: var(--FDBL-green-light);
 }
 .Check_List.Filterable input[type="checkbox" i] {
 	margin: 0;
 	padding: 4px;
 	height: 16px;
 	width: 16px;
-	border: var(--Shadow-Border);
+	border: var(--shadow-border);
 	border-radius: 2px;
 }
 .Check_List.Filterable input[type="checkbox" i]:after {
@@ -286,7 +290,7 @@ a {
 	display: block;
 	width: 3px;
 	height: 7px;
-	border: 2px solid var(--FDBL-Black);
+	border: 2px solid var(--FDBL-black);
 	border-top: 0;
 	border-left: 0;
 	position: relative;
@@ -347,7 +351,89 @@ input {
 
 button {
 	cursor: pointer;
+	border: 0;
 }
+
+/**BLOCK BUTTONS**/
+
+.Block_Button {
+	padding: 6px 24px;
+	background: var(--FDBL-yellow-light);
+	border-radius: 4px;
+	color: var(--FDBL-black);
+	font: var(--font-block-button);
+}
+
+.Block_Button:hover {
+	padding: 6px 24px;
+	background: var(--FDBL-yellow-medium);
+	border-radius: 4px;
+	color: var(--FDBL-black);
+	font: var(--font-block-button);
+	box-shadow: var(--lift-shadow);
+}
+
+.Block_Button:active {
+	box-shadow: var(--drag-shadow);
+}
+
+.Block_Button.Dark {
+	background: var(--FDBL-dark-teal);
+	color: var(--FDBL-white-text);
+}
+
+.Block_Button.Dark:hover {
+	background: var(--FDBL-green-medium);
+}
+
+/**TEXT BUTTONS**/
+
+button.Text_Button {
+	background: none;
+	border: none;
+	margin-right: 8px;
+	color: var(--FDBL-green-dark);
+	font: var(--font-text-button-small);
+	text-transform: uppercase;
+	padding: 0;
+}
+
+button.Text_Button:hover,
+button.Text_Button:focus {
+	color: var(--FDBL-green-light);
+}
+
+button.Text_Button:active {
+	color: var(--FDBL-yellow-medium);
+}
+/**MICRO BUTTONS**/
+
+.Button_Micro .Icon_Container {
+	width: 15px;
+	height: 15px;
+}
+.Button_Micro div {
+	font: var(--font-micro-labels);
+	color: var(--FDBL-dark-gray);
+	text-transform: capitalize;
+}
+
+.Button_Micro svg {
+	fill: var(--FDBL-dark-gray);
+}
+
+.Button_Micro:hover *,
+.Button_Micro:focus * {
+	color: var(--FDBL-black);
+	fill: var(--FDBL-black);
+}
+
+.Button_Micro:active * {
+	color: var(--FDBL-dark-gray);
+	fill: var(--FDBL-dark-gray);
+}
+
+/**FILTER BUTTONS**/
 
 button.Dismiss {
 	font-family: var(--e-global-typography-primary-font-family);
@@ -361,7 +447,7 @@ button.Dismiss {
 
 button.Dismiss:hover,
 button.Dismiss:focus {
-	color: var(--FDBL-Green-Light);
+	color: var(--FDBL-green-light);
 	font-weight: var(--type-weight-bold);
 }
 
@@ -373,7 +459,7 @@ button.Dismiss:focus {
 
 button.Dismiss .Close {
 	opacity: 0;
-	color: var(--FDBL-Black);
+	color: var(--FDBL-black);
 	font-weight: var(--type-weight-light);
 	font-size: var(--type-size-16);
 }
@@ -385,13 +471,13 @@ button.Dismiss:focus .Close {
 button.Filter_Button,
 .Filter_Button label {
 	padding: 4px 8px;
-	border: var(--Standard-Border);
-	border-radius: var(--Standard-Border-Radius);
-	font: var(--font-Filter-Button);
+	border: var(--standard-border);
+	border-radius: var(--standard-border-radius);
+	font: var(--font-filter-button);
 }
 
 button.Filter_Button {
-	background-color: var(--System-White);
+	background-color: var(--system-white);
 }
 
 li.Filter_Button label {
@@ -408,24 +494,24 @@ button.Filter_Button:hover,
 button.Filter_Button:focus,
 .Filter_Button label:hover,
 .Filter_Button label:focus {
-	box-shadow: var(--Lift-Shadow);
-	border: var(--Shadow-Border);
+	box-shadow: var(--lift-shadow);
+	border: var(--shadow-border);
 }
 
 button.Filter_Button:active,
 .Filter_Button label:active {
-	box-shadow: var(--Drag-Shadow);
-	border: var(--Shadow-Border);
+	box-shadow: var(--drag-shadow);
+	border: var(--shadow-border);
 }
 
 .Filter_Button input[type="checkbox"]:checked + label {
 	box-shadow: var(--button-selected);
-	border: var(--Shadow-Border);
-	background-color: var(--FDBL-Light-Gray);
-	color: var(--FDBL-Black);
+	border: var(--shadow-border);
+	background-color: var(--FDBL-light-gray);
+	color: var(--FDBL-black);
 }
 
-.Filter_Button .Icon_Container {
+.Icon_Container {
 	width: 9px;
 	height: 8px;
 }
@@ -433,49 +519,7 @@ button.Filter_Button:active,
 .Icon_Button svg {
 	width: 100%;
 	height: 100%;
-	fill: var(--FDBL-Black);
-}
-
-.Button_Micro .Icon_Container {
-	width: 15px;
-	height: 15px;
-}
-.Button_Micro div {
-	font: var(--font-Micro-Labels);
-	color: var(--FDBL-Dark-Gray);
-}
-
-.Button_Micro svg {
-	fill: var(--FDBL-Dark-Gray);
-}
-
-a.Button_Micro:hover *,
-a.Button_Micro:focus * {
-	color: var(--FDBL-Black);
-	fill: var(--FDBL-Black);
-}
-
-a.Button_Micro:active * {
-	color: var(--FDBL-Dark-Gray);
-	fill: var(--FDBL-Dark-Gray);
-}
-
-button.Search {
-	background: none;
-	border: none;
-	margin-right: 8px;
-	color: var(--FDBL-Green-Dark);
-	font: var(--font-text-button-small);
-	text-transform: uppercase;
-}
-
-button.Search:hover,
-button.Search:focus {
-	color: var(--FDBL-Green-Light);
-}
-
-button.Search:active {
-	color: var(--FDBL-Yellow-Medium);
+	fill: var(--FDBL-black);
 }
 
 .Nav_Icon {
@@ -483,7 +527,7 @@ button.Search:active {
 	width: 56px;
 	height: 56px;
 	box-sizing: content-box;
-	background-color: var(--FDBL-Green-Dark);
+	background-color: var(--FDBL-green-dark);
 	border-radius: 50%;
 	overflow: hidden;
 	text-align: center;
@@ -493,7 +537,7 @@ button.Search:active {
 	margin-top: 11px;
 	width: 32px;
 	height: 32px;
-	fill: var(--FDBL-White-Text);
+	fill: var(--FDBL-white-text);
 }
 
 a.Nav_Button {
@@ -502,7 +546,7 @@ a.Nav_Button {
 
 .Nav_Button .Heading {
 	border: none;
-	font: var(--font-Sidebar-Icon-Label);
+	font: var(--font-sidebar-icon-label);
 	text-align: center;
 	text-transform: capitalize;
 	padding: 0;
@@ -510,17 +554,17 @@ a.Nav_Button {
 
 a.Nav_Button:hover .Nav_Icon,
 a.Nav_Button:focus .Nav_Icon {
-	background-color: var(--FDBL-Yellow-Medium);
-	box-shadow: var(--Lift-Shadow);
+	background-color: var(--FDBL-yellow-medium);
+	box-shadow: var(--lift-shadow);
 }
 
 a.Nav_Button:hover svg,
 a.Nav_Button:focus svg {
-	fill: var(--FDBL-Dark-Teal);
+	fill: var(--FDBL-dark-teal);
 }
 
 a.Nav_Button:active .Nav_Icon {
-	box-shadow: var(--Drag-Shadow);
+	box-shadow: var(--drag-shadow);
 }
 
 a.Nav_Button:hover .Heading,

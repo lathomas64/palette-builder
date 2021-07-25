@@ -2,25 +2,25 @@
 	/**SIZES**/
 	--pan-size-37: 120px;
 	--pan-size-26: 84px;
-	--Story-Container-Size: 80%;
+	--story-container-size: 80%;
 
 	/**COLOR VALUES**/
-	--FDBL-Black: #09262a;
-	--System-Black: #000000;
-	--FDBL-White-Text: #faf9f7;
-	--System-White: #ffffff;
-	--FDBL-Light-Gray: #ededed;
-	--FDBL-Medium-Gray: #cccccc;
-	--FDBL-Dark-Gray: #959595;
-	--FDBL-Dark-Teal: #0e444b;
-	--FDBL-Green-Dark: #04473a;
-	--FDBL-Green-Medium: #48715c;
-	--FDBL-Green-Medium-2: rgba(68, 173, 145, 1);
-	--FDBL-Green-Light: rgba(83, 212, 177, 1);
-	--FDBL-Yellow-Medium: #cebd63;
-	--FDBL-Orange-Light: #f08f5d;
-	--FDBL-Yellow-Light: #f8e968;
-	--FDBL-Red-Medium: #c7505f;
+	--FDBL-black: #09262a;
+	--system-black: #000000;
+	--FDBL-white-text: #faf9f7;
+	--system-white: #ffffff;
+	--FDBL-light-gray: #ededed;
+	--FDBL-medium-gray: #cccccc;
+	--FDBL-dark-gray: #959595;
+	--FDBL-dark-teal: #0e444b;
+	--FDBL-green-dark: #04473a;
+	--FDBL-green-medium: #48715c;
+	--FDBL-green-medium-2: rgba(68, 173, 145, 1);
+	--FDBL-green-light: rgba(83, 212, 177, 1);
+	--FDBL-yellow-medium: #cebd63;
+	--FDBL-orange-light: #f08f5d;
+	--FDBL-yellow-light: #f8e968;
+	--FDBL-red-medium: #c7505f;
 
 	/**TYPE VALUES**/
 	--e-global-typography-primary-font-family: bilo;
@@ -46,27 +46,30 @@
 
 	/**FONT STYLES**/
 	/**font: font-style font-variant font-weight font-size/line-height font-family**/
-	--font-Filter-Button: var(--type-weight-regular) var(--type-size-14) / var(--type-size-18) var(--e-global-typography-primary-font-family);
-	--font-Listing-Card-Title: var(--type-weight-bold) var(--type-size-16) / var(--type-size-16) var(--e-global-typography-secondary-font-family);
-	--font-Sidebar-Icon-Label: var(--type-weight-light) var(--type-size-16) / var(--type-size-16) var(--e-global-typography-secondary-font-family);
-	--font-Micro-Labels: var(--type-weight-regular) var(--type-size-14) / var(--type-size-16) var(--e-global-typography-primary-font-family);
-	--font-Body-Small: var(--type-weight-light) var(--type-size-16) / var(--type-size-18) var(--e-global-typography-primary-font-family);
-	--font-Panel-Title: var(--type-weight-bold) var(--type-size-32) / var(--type-size-32) var(--e-global-typography-secondary-font-family);
-	--font-Panel-Section-Title: var(--type-weight-bold) var(--type-size-18) / var(--type-size-21) var(--e-global-typography-secondary-font-family);
+	--font-heading-5: var(--type-weight-bold) var(--type-size-24) / var(--type-size-24) var(--e-global-typography-secondary-font-family);
+	--font-filter-button: var(--type-weight-regular) var(--type-size-14) / var(--type-size-18) var(--e-global-typography-primary-font-family);
+	--font-listing-card-title: var(--type-weight-bold) var(--type-size-16) / var(--type-size-16) var(--e-global-typography-secondary-font-family);
+	--font-sidebar-icon-label: var(--type-weight-light) var(--type-size-16) / var(--type-size-16) var(--e-global-typography-secondary-font-family);
+	--font-micro-labels: var(--type-weight-regular) var(--type-size-14) / var(--type-size-16) var(--e-global-typography-primary-font-family);
+	--font-body-small: var(--type-weight-light) var(--type-size-16) / var(--type-size-18) var(--e-global-typography-primary-font-family);
+	--font-panel-title: var(--type-weight-bold) var(--type-size-32) / var(--type-size-32) var(--e-global-typography-secondary-font-family);
+	--font-panel-section-title: var(--type-weight-bold) var(--type-size-18) / var(--type-size-21) var(--e-global-typography-secondary-font-family);
 	--font-text-button-small: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
 	--font-input-label: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
+	--font-block-button: var(--type-weight-regular) var(--type-size-18) / var(--type-size-18) var(--e-global-typography-secondary-font-family);
+	--font-heading-5: var(--type-weight-bold) var(--type-size-24) / var(--type-size-24) var(--e-global-typography-secondary-font-family);
 
 	/**SHADOWS**/
-	--Shadow-Invisible: 3px 3px 0px rgb(0 0 0 / 0%);
-	--Table-Rest-Shadow: -4px 0px 8px 0px rgb(0 0 0 / 10%);
-	--Lift-Shadow: 3px 3px 0px var(--FDBL-Black);
-	--Drag-Shadow: 1px 1px 0px var(--FDBL-Black);
-	--Inner-Pan-Shadow: inset 0px 0px 6px rgb(0 0 0 / 35%);
-	--button-selected: inset 2px 2px 1px 0px var(--FDBL-Dark-Gray);
+	--shadow-invisible: 3px 3px 0px rgb(0 0 0 / 0%);
+	--table-rest-shadow: -4px 0px 8px 0px rgb(0 0 0 / 10%);
+	--lift-shadow: 3px 3px 0px var(--FDBL-black);
+	--drag-shadow: 1px 1px 0px var(--FDBL-black);
+	--inner-pan-shadow: inset 0px 0px 6px rgb(0 0 0 / 35%);
+	--button-selected: inset 2px 2px 1px 0px var(--FDBL-dark-gray);
 
 	/**BORDERS**/
-	--Shadow-Border: 1px solid var(--FDBL-Black);
-	--Standard-Border: 1px solid var(--FDBL-Medium-Gray);
-	--Standard-Border-Radius: 4px;
-	--Pan-Border: 1px solid var(--FDBL-Dark-Gray);
+	--shadow-border: 1px solid var(--FDBL-black);
+	--standard-border: 1px solid var(--FDBL-medium-gray);
+	--standard-border-radius: 4px;
+	--pan-border: 1px solid var(--FDBL-dark-gray);
 }

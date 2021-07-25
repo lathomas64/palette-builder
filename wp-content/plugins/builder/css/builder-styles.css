@@ -65,7 +65,7 @@
 .Search_And_Filter {
 	width: 89%;
 	padding: 32px;
-	border: 1px solid var(--FDBL-Medium-Gray);
+	border: 1px solid var(--FDBL-medium-gray);
 	height: 100vh;
 	overflow: scroll;
 }
@@ -73,15 +73,15 @@
 .Right_Panel_Nav {
 	width: 11%;
 	padding: 40px 8px 16px 8px;
-	background-color: var(--FDBL-White-Text);
+	background-color: var(--FDBL-white-text);
 }
 
 .Helper_Box {
-	border: var(--Shadow-Border);
-	background-color: var(--System-White);
-	box-shadow: var(--Lift-Shadow);
+	border: var(--shadow-border);
+	background-color: var(--system-white);
+	box-shadow: var(--lift-shadow);
 	padding: 19px 23px;
-	border-radius: var(--Standard-Border-Radius);
+	border-radius: var(--standard-border-radius);
 }
 
 .Grid {
@@ -110,7 +110,7 @@
 }
 
 .Shadow_Image_Container .Wrapper {
-	box-shadow: var(--Shadow-Invisible);
+	box-shadow: var(--shadow-invisible);
 }
 
 .Pan_Shadow {
@@ -118,8 +118,8 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(255, 255, 255, 0);
-	box-shadow: var(--Inner-Pan-Shadow);
-	border: var(--Pan-Border);
+	box-shadow: var(--inner-pan-shadow);
+	border: var(--pan-border);
 	position: relative;
 	bottom: 100%;
 }
@@ -129,10 +129,10 @@
 }
 .Shadow_Name {
 	display: inline-block;
-	color: var(--FDBL-Dark-Gray);
-	background-color: var(--System-White);
+	color: var(--FDBL-dark-gray);
+	background-color: var(--system-white);
 	margin: -11px auto 0 0;
-	font: var(--font-Listing-Card-Title);
+	font: var(--font-listing-card-title);
 	padding: 0 4px 0 0;
 }
 
@@ -145,7 +145,7 @@ a.Single_Pan_Card {
 .Pan_Shadow::after {
 	content: "Drag To Palette";
 	opacity: 0;
-	color: var(--FDBL-Black);
+	color: var(--FDBL-black);
 	font-size: var(--type-size-16);
 	font-family: var(--e-global-typography-secondary-font-family);
 	font-weight: var(--type-weight-bold);
@@ -191,23 +191,23 @@ a.Single_Pan_Card {
 
 a.Single_Pan_Card:hover .Shadow_Name,
 a.Single_Pan_Card:focus .Shadow_Name {
-	color: var(--FDBL-Black);
+	color: var(--FDBL-black);
 }
 
 a.Single_Pan_Card:hover .Container,
 a.Single_Pan_Card:focus .Container {
-	border-top: 3px solid var(--FDBL-Green-Light);
+	border-top: 3px solid var(--FDBL-green-light);
 }
 
 a.Single_Pan_Card:hover .Wrapper,
 a.Single_Pan_Card:focus .Wrapper {
-	box-shadow: var(--Lift-Shadow);
+	box-shadow: var(--lift-shadow);
 }
 
 /**CARD ACTIVE STYLES**/
 
 a.Single_Pan_Card:active .Wrapper {
-	box-shadow: var(--Drag-Shadow);
+	box-shadow: var(--drag-shadow);
 }
 
 a.Single_Pan_Card:active .Pan_Size_26 .Pan_Shadow::after {
@@ -247,9 +247,9 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	padding: 24px;
 	width: 576px;
 	height: 488px;
-	background: var(--System-White);
-	border: var(--Standard-Border);
-	box-shadow: var(--Lift-Shadow);
+	background: var(--system-white);
+	border: var(--standard-border);
+	box-shadow: var(--lift-shadow);
 }
 
 .Singles_Filter .Content {
@@ -258,7 +258,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 
 .Singles_Filter .Panel_Title {
 	padding-bottom: 8px;
-	border-bottom: var(--Standard-Border);
+	border-bottom: var(--standard-border);
 }
 
 .Filter_Groups > .Column {
@@ -274,13 +274,13 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 .Check_List.Filterable {
 	height: 174px;
 	overflow: scroll;
-	border-bottom: var(--Standard-Border);
+	border-bottom: var(--standard-border);
 	padding: 8px;
 }
 
 .Check_List.Filterable li:hover input[type="checkbox" i],
 .Check_List.Filterable li:focus input[type="checkbox" i] {
-	background-color: var(--FDBL-Green-Light);
+	background-color: var(--FDBL-green-light);
 }
 
 .Check_List.Filterable input[type="checkbox" i] {
@@ -288,7 +288,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	padding: 4px;
 	height: 16px;
 	width: 16px;
-	border: var(--Shadow-Border);
+	border: var(--shadow-border);
 	border-radius: 2px;
 }
 
@@ -298,7 +298,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	display: block;
 	width: 3px;
 	height: 7px;
-	border: 2px solid var(--FDBL-Black);
+	border: 2px solid var(--FDBL-black);
 	border-top: 0;
 	border-left: 0;
 	position: relative;
@@ -308,12 +308,12 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 }
 
 .Check_List.Filterable ul li input[type="checkbox" i]:checked {
-	background-color: var(--FDBL-Green-Light);
+	background-color: var(--FDBL-green-light);
 }
 
 .Check_List.Filterable ul li:hover input[type="checkbox" i]:checked,
 .Check_List.Filterable ul li:focus input[type="checkbox" i]:checked {
-	background-color: var(--FDBL-Green-Medium-2);
+	background-color: var(--FDBL-green-medium-2);
 }
 
 .Check_List.Filterable input[type="checkbox" i]:checked:after {
@@ -322,7 +322,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 
 .Check_List.Filterable li label {
 	font-weight: 300;
-	font: var(--font-Body-Small);
+	font: var(--font-body-small);
 }
 
 .Select_Range select {
@@ -336,7 +336,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	background-repeat: no-repeat, repeat;
 	background-position: right 0.7em top 55%, 0 0;
 	background-size: 8px;
-	font: var(--font-Body-Small);
+	font: var(--font-body-small);
 }
 
 /* Hide arrow icon in IE browsers */
@@ -346,8 +346,8 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 /* Hover style */
 .Select_Range select:hover,
 .Select_Range select:focus {
-	border-color: var(--Shadow-Border);
-	box-shadow: var(--Lift-Shadow);
+	border-color: var(--shadow-border);
+	box-shadow: var(--lift-shadow);
 }
 
 /* Set options to normal weight */
@@ -378,7 +378,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 
 input:not([type="submit"]):not([type="file"]) {
 	padding: 8px;
-	border: var(--Standard-Border);
+	border: var(--standard-border);
 	border-radius: 2px;
 }
 
@@ -386,14 +386,45 @@ label {
 	font: var(--font-input-label);
 }
 
-/**ACCORDION ADVANCED SEARCH**/
-
 .Drawer_Overlay {
 	width: 100%;
 	height: 100vh;
 	background-color: #0e444b;
-	opacity: 0.8;
 }
 
 .Advanced_Search_Filter {
+	padding: 40px 48px;
+	background-color: var(--system-white);
+	width: 33%;
+	height: 100%;
+}
+
+.Advanced_Search_Filter .Text_Button {
+	margin-right: 0;
+}
+
+.Accordion_Panel {
+	background: var(--FBDL-white-text);
+	border: var(--standard-border);
+	border-radius: 2px;
+}
+.Accordion_Trigger {
+	background: var(--FDBL-dark-teal);
+	border: var(--standard-border);
+	border-radius: 4px;
+	padding: 16px;
+}
+.Accordion_Title .Heading {
+	color: var(--FDBL-white-text);
+	font: var(--font-heading-5);
+	padding: 0;
+	border: 0;
+}
+.Accordion_Trigger .Icon_Container {
+	width: auto;
+	height: 100%;
+}
+.Accordion_Content {
+	padding: 24px 24px;
+	background: var(--system-white);
 }
