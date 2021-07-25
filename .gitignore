@@ -23,3 +23,7 @@ node_modules/
 *.sqlite
 
 .nova/
+
+wp-content/plugins/builder/.DS_Store
+
+wp-content/plugins/builder/src/.DS_Store

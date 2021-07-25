@@ -1,22 +1,22 @@
 <?php
-	ini_set('display_errors', '1');
-	ini_set('display_startup_errors', '1');
-	error_reporting(E_ALL);
-	if ( ! defined('ABSPATH') ) {
-	    /** Set up WordPress environment */
-	    require_once( '/usr/share/wordpress/wp-load.php' );
-	}
-	 $args = array(  
-		'post_type' => 'cpt_shadow',
-		'post_status' => 'publish',
-		'posts_per_page' => -1, 
-		'orderby' => 'title', 
-		'order' => 'ASC',
-		'cat' => 'home',
-	);
-	
-	$loop = new WP_Query( $args );
-	$count = $loop->found_posts; 
+ini_set("display_errors", "1");
+ini_set("display_startup_errors", "1");
+error_reporting(E_ALL);
+if (!defined("ABSPATH")) {
+	/** Set up WordPress environment */
+	require_once "/usr/share/wordpress/wp-load.php";
+}
+$args = [
+	"post_type" => "cpt_shadow",
+	"post_status" => "publish",
+	"posts_per_page" => -1,
+	"orderby" => "title",
+	"order" => "ASC",
+	"cat" => "home",
+];
+
+$loop = new WP_Query($args);
+$count = $loop->found_posts;
 ?>
 <div class="Results Column Gap_24">
 	<div class="Row Space_Between Align_Items_Center">
@@ -44,33 +44,35 @@
 			</button>
 		</div>
 	</div>
-	<div id='modal-shadow-filter' class='modal'>
-		<button class="close" onclick="document.getElementById('modal-shadow-filter').style.display = 'none'">&times;</button>
-		<div class="modal-content">
-			<?php include "shadow-filters.php" ?>
+	<div id='Modal_Shadow_Filter' class='Modal'>
+		<button class="Close" onclick="document.getElementById('Modal_Shadow_Filter').style.display = 'none'">&times;</button>
+		<div class="Modal_Content">
+			<?php include "shadow-filters.php"; ?>
 		</div>					
 	</div>
 	<div class="Grid Row Gap_16">
 		<?php
-		while ( $loop->have_posts() ) : $loop->the_post(); 
-				$brand = get_field('brand');
-			?>
-			<a data-country='<?php echo get_post_field('country', $brand[0]); ?>' data-brand='<?php echo get_post_field('post_title', $brand[0]);?>' data-price='<?php echo get_field('price') ?>' id='<?php the_ID(); ?>' draggable="true" ondragstart="drag(event)" class="Single_Pan_Card" href="#">
+  while ($loop->have_posts()):
+
+  	$loop->the_post();
+  	$brand = get_field("brand");
+  	?>
+			<a data-country='<?php echo get_post_field("country", $brand[0]); ?>' data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>' data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>' draggable="true" ondragstart="drag(event)" class="Single_Pan_Card" href="#">
 				<div class="Card_Container Column Gap_8">
 					<div class="Shadow_Name"><?php the_title(); ?></div>
 					<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Square">
 						<div class="Wrapper">
-							<img src="<?php echo get_field('pan_photo'); ?>" />
+							<img src="<?php echo get_field("pan_photo"); ?>" />
 							<div class="Pan_Shadow"></div>
-							<p>colors:<?php echo var_dump(get_field('colors')); ?></p>
+							<p>colors:<?php echo var_dump(get_field("colors")); ?></p>
 						</div>
 					</div>
 				</div>
 			</a>
 		<?php
-		endwhile;
+  endwhile;
 
-		wp_reset_postdata();
-		?>
+  wp_reset_postdata();
+  ?>
 	</div>
 </div>
