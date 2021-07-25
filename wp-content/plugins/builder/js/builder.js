@@ -184,4 +184,4 @@ var currentStory = new Object();
 	    }
 	  }
 	}
-	init();
+	//init();

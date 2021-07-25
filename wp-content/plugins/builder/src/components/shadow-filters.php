@@ -22,7 +22,7 @@
 							<div class="Button_Group">
 								<ul class="Row Gap_4 Justify_Content_Flex_Start">
 									<li class="Filter_Button Red Dark">
-										<input id="Red" type="checkbox" />
+										<input onclick='filter(event);' id="Red" type="checkbox" />
 										<label for="Red">Red</label>
 									</li>
 									<li class="Filter_Button Orange Light">
