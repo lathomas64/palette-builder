@@ -15,8 +15,26 @@ $args = [
 	"cat" => "home",
 ];
 
-$loop = new WP_Query($args);
-$count = $loop->found_posts;
+$shadows = new WP_Query($args);
+$args = [
+	"post_type" => "cpt_shadow",
+	"post_status" => "publish",
+	"posts_per_page" => -1,
+	"orderby" => "title",
+	"order" => "ASC",
+	"cat" => "home",
+];
+$brands = new WP_Query($args);
+$args = [
+	"post_type" => "cpt_shadow",
+	"post_status" => "publish",
+	"posts_per_page" => -1,
+	"orderby" => "title",
+	"order" => "ASC",
+	"cat" => "home",
+];
+$series = new WP_Query($args);
+$count = $shadows->found_posts;
 ?>
 <div class="Results Column Gap_24">
 	<div class="Row Space_Between Align_Items_Center">
@@ -52,9 +70,9 @@ $count = $loop->found_posts;
 	</div>
 	<div class="Grid Row Gap_16">
 		<?php
-  while ($loop->have_posts()):
+  while ($shadows->have_posts()):
 
-  	$loop->the_post();
+  	$shadows->the_post();
   	$brand = get_field("brand");
   	$colors = get_field("colors");
   	?>

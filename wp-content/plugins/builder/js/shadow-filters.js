@@ -29,13 +29,29 @@ function update(){
 	//filter characteristics
 	//filter countries
 	console.log('update called');
-	console.log('or filters:');
-	console.log(OR_FILTERS);
-	console.log('and filters:');
-	console.log(AND_FILTERS);
-}
-
-
-funcion match_red(element) {
-	
+	console.log('local filters');
+	console.log(FILTERS);
+	jQuery.ajax({
+          url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+          method: 'POST',
+          data: {
+              'action':'palette_builder_filter', // This is our PHP function below
+              'sanity': 'check',
+              'colors': Array.from(FILTERS['colors']),
+              'finishes': Array.from(FILTERS['finishes']),
+              'characteristics': Array.from(FILTERS['characteristics']),
+              'countries': Array.from(FILTERS['countries']),
+              'price_min': PRICE_MIN,
+              'price_max': PRICE_MAX
+          },
+          success:function(data) {
+      // This outputs the result of the ajax request (The Callback)
+      		  console.log('ajax successful');
+              console.log(data);
+          },
+          error: function(errorThrown){
+          	  console.log('ajax error');
+              console.log(errorThrown);
+          }
+      });
 }
