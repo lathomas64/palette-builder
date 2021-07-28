@@ -71,6 +71,14 @@ a {
 	gap: 40px;
 }
 
+.Column.Reverse {
+	flex-direction: column-reverse;
+}
+
+.Row.Reverse {
+	flex-direction: row-reverse;
+}
+
 .Justify_Content_Space_Between,
 .Space_Between {
 	justify-content: space-between;
@@ -178,52 +186,59 @@ a {
 .Story_Size_8w_11t {
 	aspect-ratio: 8 / 11;
 }
-.Dark label {
+.Dark {
 	background-color: var(--system-black);
 	color: var(--FDBL-white-text);
 }
-.Light label {
+.Light {
 	background-color: var(--system-white);
 	color: var(--FDBL-black);
 }
-.Red label {
-	background-color: rgba(239, 3, 3, 1);
+.Red {
+	background-color: rgba(255, 0, 0, 1);
 }
-.Orange label {
+.Orange {
 	background-color: rgba(255, 128, 0, 1);
 }
-.Yellow label {
+.Yellow {
 	background-color: rgba(255, 255, 28, 1);
 }
-.Green label {
+.Green {
 	background-color: rgba(7, 255, 7, 1);
 }
-.Blue label {
+.Blue {
 	background-color: rgba(8, 255, 255, 1);
 }
-.Indigo label {
+.Indigo {
 	background-color: rgba(92, 11, 255, 1);
 }
-.Violet label {
+.Violet {
 	background-color: rgba(172, 5, 255, 1);
 }
-.Neutral label {
+.Neutral {
 	background-color: rgba(68, 50, 3, 1);
 }
+.Warm_Toned {
+	filter: hue-rotate(20deg) brightness(112%);
+}
 
-.Matte label {
+.Cool_Toned {
+	filter: hue-rotate(-20deg) brightness(120%);
+}
+
+.Matte {
 	background: ;
 }
-.Satin label {
+.Satin {
 	background: ;
 }
-.Shimmer label {
+.Shimmer {
 	background: ;
 }
-.Metallic label {
+.Metallic {
 	background: ;
 }
-.Sparkle label {
+.Sparkle {
 	background: ;
 }
 
@@ -388,7 +403,8 @@ button {
 
 /**TEXT BUTTONS**/
 
-button.Text_Button {
+button.Text_Button,
+label.Text_Button {
 	background: none;
 	border: none;
 	margin-right: 8px;
@@ -396,14 +412,21 @@ button.Text_Button {
 	font: var(--font-text-button-small);
 	text-transform: uppercase;
 	padding: 0;
+	cursor: pointer;
 }
 
 button.Text_Button:hover,
-button.Text_Button:focus {
+label.Text_Button:hover {
 	color: var(--FDBL-green-light);
 }
 
-button.Text_Button:active {
+button.Text_Button:hover svg,
+label.Text_Button:hover svg {
+	fill: var(--FDBL-green-light);
+}
+
+button.Text_Button:active,
+label.Text_Button:active {
 	color: var(--FDBL-yellow-medium);
 }
 /**MICRO BUTTONS**/
@@ -413,17 +436,17 @@ button.Text_Button:active {
 	height: 15px;
 }
 .Button_Micro div {
-	font: var(--font-micro-labels);
+	font: var(--font-micro-s);
 	color: var(--FDBL-dark-gray);
 	text-transform: capitalize;
+	font-weight: var(--type-weight-regular);
 }
 
 .Button_Micro svg {
 	fill: var(--FDBL-dark-gray);
 }
 
-.Button_Micro:hover *,
-.Button_Micro:focus * {
+.Button_Micro:hover * {
 	color: var(--FDBL-black);
 	fill: var(--FDBL-black);
 }
@@ -445,13 +468,16 @@ button.Dismiss {
 	margin-top: -5px;
 }
 
-button.Dismiss:hover,
-button.Dismiss:focus {
+button.Dismiss:hover {
 	color: var(--FDBL-green-light);
 	font-weight: var(--type-weight-bold);
 }
 
-.Filter_Button input[type="checkbox"] {
+input[type="checkbox"].Filter_Button,
+input[type="checkbox"].Trigger,
+input[type="checkbox"].Text_Button,
+.Filter_Button input[type="checkbox"],
+.Panel > input[type="checkbox"] {
 	position: absolute;
 	opacity: 0;
 	top: 0;
@@ -464,12 +490,11 @@ button.Dismiss .Close {
 	font-size: var(--type-size-16);
 }
 
-button.Dismiss:hover .Close,
-button.Dismiss:focus .Close {
+button.Dismiss:hover .Close {
 	opacity: 1;
 }
 button.Filter_Button,
-.Filter_Button label {
+.Filter_Button {
 	padding: 4px 8px;
 	border: var(--standard-border);
 	border-radius: var(--standard-border-radius);
@@ -480,7 +505,7 @@ button.Filter_Button {
 	background-color: var(--system-white);
 }
 
-li.Filter_Button label {
+label.Filter_Button {
 	display: block;
 }
 
@@ -491,20 +516,18 @@ li.Filter_Button label {
 }
 
 button.Filter_Button:hover,
-button.Filter_Button:focus,
-.Filter_Button label:hover,
-.Filter_Button label:focus {
+.Filter_Button:hover {
 	box-shadow: var(--lift-shadow);
 	border: var(--shadow-border);
 }
 
 button.Filter_Button:active,
-.Filter_Button label:active {
+label.Filter_Button:active {
 	box-shadow: var(--drag-shadow);
 	border: var(--shadow-border);
 }
 
-.Filter_Button input[type="checkbox"]:checked + label {
+input[type="checkbox"].Filter_Button:checked + label {
 	box-shadow: var(--button-selected);
 	border: var(--shadow-border);
 	background-color: var(--FDBL-light-gray);
@@ -552,14 +575,12 @@ a.Nav_Button {
 	padding: 0;
 }
 
-a.Nav_Button:hover .Nav_Icon,
-a.Nav_Button:focus .Nav_Icon {
+a.Nav_Button:hover .Nav_Icon {
 	background-color: var(--FDBL-yellow-medium);
 	box-shadow: var(--lift-shadow);
 }
 
-a.Nav_Button:hover svg,
-a.Nav_Button:focus svg {
+a.Nav_Button:hover svg {
 	fill: var(--FDBL-dark-teal);
 }
 
@@ -567,7 +588,6 @@ a.Nav_Button:active .Nav_Icon {
 	box-shadow: var(--drag-shadow);
 }
 
-a.Nav_Button:hover .Heading,
-a.Nav_Button:focus .Heading {
+a.Nav_Button:hover .Heading {
 	font-weight: var(--type-weight-bold);
 }

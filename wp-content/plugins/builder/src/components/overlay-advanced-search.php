@@ -13,7 +13,9 @@
 	 <div class="Row Justify_Content_Flex_End">
 		 <button class="Text_Button Icon_Button Row Gap_4 Align_Items_Center">
 	  <div class="Icon_Container">
-	   <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7.05333L3.05533 4L8 0.94L6.47773 0L0 4L6.47773 8L8 7.05333Z" fill="#0E444B"></path></svg></div>
+	   <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7.05333L3.05533 4L8 0.94L6.47773 0L0 4L6.47773 8L8 7.05333Z"></path>
+   </svg>
+			</div>
 	  <div>go back </div></button>
 	 </div>
 	 <div class="Panel_Content Column Gap_40">
@@ -25,45 +27,112 @@
 		<button class="Text_Button Button_Micro Row Gap_4 Align_Items_Center">
 		 <div class="Icon_Container Column Justify_Content_Center">
 		  <svg width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1.57254L0 1.57254L0 0.429688L8 0.429688V1.57254Z" fill="#959595"></path></svg></div>
-		 <div class="go_away">Hide Panel</div>
+		 <div>Open All</div>
 		</button>
-		<button class="Text_Button Row Gap_4 Align_Items_Center">
+		<button class="Text_Button Icon_Button Row Gap_4 Align_Items_Center">
 		 <div class="Icon_Container">
-		  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.571429 8L0 7.42857L3.42857 4L0 0.571429L0.571429 0L4 3.42857L7.42857 0L8 0.571429L4.57143 4L8 7.42857L7.42857 8L4 4.57143L0.571429 8Z" fill="#48715C"></path>
-	  	</svg>
+		 	<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.571429 8L0 7.42857L3.42857 4L0 0.571429L0.571429 0L4 3.42857L7.42857 0L8 0.571429L4.57143 4L8 7.42857L7.42857 8L4 4.57143L0.571429 8Z" ></path>
+			</svg>
 	  	</div>
-		 <div class="Text_Button">clear filters</div>
+		 <div class="Text_Button">reset filters</div>
 		</button>
 	    </div>
-<div class="Accordion_Panel">
-	 <div class="Accordion_Trigger">
-	  <div class="Row Space_Between Align_Items_Center">
-	   <div class="Accordion_Title">
-	    <div class="Heading">Price &amp; Shipping</div>
-	   </div>
-	   <div class="Icon_Container">
-	    <svg width="15" height="1" viewBox="0 0 15 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.3999 0.643136H0.399902V0.357422H14.3999V0.643136Z" fill="#F8E968"></path></svg></div>
-	  </div>
-	 </div>
-	 <div class="Accordion_Content">
-	  <div class="Column Gap_24">
-	  <div class="Filter_Section Column Gap_8">
-		  <?php include "../filter-sections/price-range.php"; ?>
-	  </div>
-	  <div class="Filter_Section Column Gap_8"><?php include "../filter-sections/shipping-countries.php"; ?>
-	    </div>
-	  <div class="Row Justify_Content_Flex_End">
-		    <button class="Block_Button Dark">Save and Close Section</button></div>
-	  </div>
-	  
-	 </div>
-	</div>
+					<div class="Accordion">
+						<div class="Panel">
+									<input class="Trigger" type="checkbox" id="panel1">
+									<label class="Trigger Title Row Space_Between Align_Items_Center" for="panel1">
+										<div class="Row Gap_16 Justify_Content_Flex_Start Align_Items_Center">
+											<div class="Heading">Price &amp; Shipping</div>
+											<div class="Intro">Property 1 | Property 2 | Prop...</div>
+										</div>
+										</label>
+							 <div class="Content">
+							  <div class="Column Gap_24">
+							  	<div class="Filter_Section Column Gap_8">
+								  <?php include "../filter-sections/price-range.php"; ?>
+							  </div>
+							  	<div class="Filter_Section Column Gap_8">
+										<?php include "../filter-sections/shipping-countries.php"; ?>
+							  </div>
+	  							<div class="Row Justify_Content_Flex_End">
+		    				<button class="Block_Button Dark">Save and Close Section</button>
+									</div>
+								</div>
+	 					</div>
+						</div>
+						<div class="Panel">
+							<input class="Trigger" type="checkbox" id="panel2" checked>
+							<label class="Trigger Title Row Space_Between Align_Items_Center" for="panel2">
+								<div class="Row Gap_16 Justify_Content_Flex_Start Align_Items_Center">
+									<div class="Heading">Shadow Properties</div>
+									<div class="Intro">Property 1 | Property 2 | Prop...</div>
+								</div>
+								</label>
+								<div class="Content">
+									<div class="Column Gap_24">
+										<div class="Filter_Section Column Gap_16">
+											<?php include "../filter-sections/color-family.php"; ?>
+										</div>
+								<div class="Filter_Section Column Gap_8">
+										<?php include "../filter-sections/finish.php"; ?>
+									</div>
+										<div class="Row Justify_Content_Flex_End">
+										<button class="Block_Button Dark">Save and Close Section</button>
+									</div>
+								</div>
+							</div>
+				</div>
+						<div class="Panel">
+							<input class="Trigger" type="checkbox" id="panel3">
+							<label class="Trigger Title Row Space_Between Align_Items_Center" for="panel3">
+								<div class="Row Gap_16 Justify_Content_Flex_Start Align_Items_Center">
+									<div class="Heading">Pan Format</div>
+									<div class="Intro">Property 1 | Property 2 | Prop...</div>
+								</div>
+								</label>
+								<div class="Content">
+									<div class="Column Gap_24">
+										<div class="Filter_Section Column Gap_8">
+										<?php include "../filter-sections/price-range.php"; ?>
+									</div>
+										<div class="Filter_Section Column Gap_8">
+										<?php include "../filter-sections/shipping-countries.php"; ?>
+									</div>
+										<div class="Row Justify_Content_Flex_End">
+										<button class="Block_Button Dark">Save and Close Section</button>
+									</div>
+								</div>
+							</div>
+				</div>
+				<div class="Panel">
+					<input class="Trigger" type="checkbox" id="panel4">
+					<label class="Trigger Title Row Space_Between Align_Items_Center" for="panel4">
+						<div class="Row Gap_16 Justify_Content_Flex_Start Align_Items_Center">
+							<div class="Heading">Brand</div>
+							<div class="Intro">Property 1 | Property 2 | Prop...</div>
+						</div>
+						</label>
+						<div class="Content">
+							<div class="Column Gap_24">
+								<div class="Filter_Section Column Gap_8">
+								<?php include "../filter-sections/price-range.php"; ?>
+							</div>
+								<div class="Filter_Section Column Gap_8">
+								<?php include "../filter-sections/shipping-countries.php"; ?>
+							</div>
+								<div class="Row Justify_Content_Flex_End">
+								<button class="Block_Button Dark">Save and Close Section</button>
+							</div>
+						</div>
+					</div>
+		</div>
+						</div>
+					</div>
 	    <div class="Row Justify_Content_Flex_End">
-<button class="Block_Button Row Justify_Content_Center">
+			<button class="Block_Button Row Justify_Content_Center">
 	 <div>Apply All Filters and Close Search</div>
 	</button>
 	    </div>
-	   
 	  </div>
 	 </div>
 	
