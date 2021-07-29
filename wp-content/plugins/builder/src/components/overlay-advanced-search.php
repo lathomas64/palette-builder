@@ -74,7 +74,8 @@
 											<?php include "../filter-sections/color-family.php"; ?>
 										</div>
 								<div class="Filter_Section Column Gap_8">
-										<?php include "../filter-sections/finish.php"; ?>
+										<?php include "../filter-sections/vividness.php"; ?>
+										<?php include "../filter-sections/lightness.php"; ?>
 									</div>
 										<div class="Row Justify_Content_Flex_End">
 										<button class="Block_Button Dark">Save and Close Section</button>
