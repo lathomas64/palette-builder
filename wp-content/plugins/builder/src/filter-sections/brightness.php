@@ -1,5 +1,5 @@
 <div class="Section_Title Lightness">
-	<div class="Heading">Lightness</div>
+	<div class="Heading">Brightness</div>
 </div>
 <div class="Button_Group">
 	<ul class="Row Gap_4">

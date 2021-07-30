@@ -12,7 +12,7 @@
 				<div class="Filter_Groups Row Gap_24">
 					<div class="Left Column Gap_24">
 						<div class="Filter_Section Column Gap_8">
-							<?php include "filter-sections/color-family.php"; ?>
+							<?php include "filter-sections/color.php"; ?>
 						</div>
 						<div class="Filter_Section Column Gap_8">
 							<?php include "filter-sections/finish.php"; ?>
