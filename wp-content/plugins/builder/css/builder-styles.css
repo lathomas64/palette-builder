@@ -136,6 +136,14 @@
 	padding: 0 4px 0 0;
 }
 
+.Pan_Format .Shadow_Name {
+	color: var(--FDBL-black);
+}
+
+.Pan_Format .Pan_Shadow {
+	box-shadow: none;
+}
+
 a.Single_Pan_Card {
 	text-decoration: none;
 	padding-top: 11px;
@@ -184,7 +192,8 @@ a.Single_Pan_Card {
 .Pan_Shape_Square {
 }
 
-.Pan_Shape_Irregular {
+.Pan_Shape_Irregular .Wrapper {
+	height: initial;
 }
 
 /**CARD HOVER STYLES**/
@@ -200,13 +209,15 @@ a.Single_Pan_Card:focus .Container {
 }
 
 a.Single_Pan_Card:hover .Wrapper,
-a.Single_Pan_Card:focus .Wrapper {
+a.Single_Pan_Card:focus .Wrapper,
+label.Single_Pan_Card:hover .Wrapper {
 	box-shadow: var(--lift-shadow);
 }
 
 /**CARD ACTIVE STYLES**/
 
-a.Single_Pan_Card:active .Wrapper {
+a.Single_Pan_Card:active .Wrapper,
+label.Single_Pan_Card:active .Wrapper {
 	box-shadow: var(--drag-shadow);
 }
 
@@ -442,6 +453,10 @@ label {
 	background-color: var(--FDBL-dark-teal);
 }
 
+.Accordion input:checked + label.Trigger:hover {
+	background-color: var(--FDBL-green-medium);
+}
+
 .Accordion label.Trigger:hover .Heading,
 .Accordion input:checked + label.Trigger .Heading {
 	color: var(--FDBL-white-text);
@@ -496,12 +511,20 @@ label.Trigger .Intro_Populated {
 	text-align: center;
 }
 
-.Accordion .Color_Family li {
-	flex-basis: 24%;
+.Accordion .Button_Group li {
+	flex: 1;
 }
 
-.Accordion .Temperature_Options li {
-	flex-basis: 32%;
+.Accordion .Color_Family li {
+	flex: 1 1 20%;
+}
+
+.Color.Heading {
+	font: var(--font-accordion-section-title);
+}
+
+.Indent {
+	padding-left: 8px;
 }
 
 .Temperature_Options .Content {
@@ -512,4 +535,14 @@ label.Trigger .Intro_Populated {
 
 .Temperature_Options input:checked.Text_Button ~ .Content {
 	max-height: 100vh;
+}
+
+.Finish .Filter_Button,
+.Chroma .Filter_Button {
+	background-color: var(--system-white);
+	color: var(--FDBL-black);
+}
+
+input:checked + label.Single_Pan_Card:hover .Wrapper {
+	box-shadow: none;
 }

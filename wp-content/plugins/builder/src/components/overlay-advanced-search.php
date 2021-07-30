@@ -61,7 +61,7 @@
 	 					</div>
 						</div>
 						<div class="Panel">
-							<input class="Trigger" type="checkbox" id="panel2" checked>
+							<input class="Trigger" type="checkbox" id="panel2">
 							<label class="Trigger Title Row Space_Between Align_Items_Center" for="panel2">
 								<div class="Row Gap_16 Justify_Content_Flex_Start Align_Items_Center">
 									<div class="Heading">Shadow Properties</div>
@@ -70,12 +70,22 @@
 								</label>
 								<div class="Content">
 									<div class="Column Gap_24">
-										<div class="Filter_Section Column Gap_16">
-											<?php include "../filter-sections/color-family.php"; ?>
-										</div>
-								<div class="Filter_Section Column Gap_8">
+										<div class="Color Filter_Section Column Gap_16">
+											<div class="Column Gap_8">
+												<div class="Color Heading">Advanced Color Selection</div>
+												<div class="Intro">The view of the earth from the moon fascinated me - a small disk, 240,000 mniles away.</div>
+												</div>
+												<div class="Indent Column Gap_16">
+										<?php include "../filter-sections/color.php"; ?>
 										<?php include "../filter-sections/vividness.php"; ?>
-										<?php include "../filter-sections/lightness.php"; ?>
+										<?php include "../filter-sections/brightness.php"; ?>
+												</div>
+									</div>
+									<div class="Filter_Section Column Gap_8">
+									<?php include "../filter-sections/finish.php"; ?>
+									</div>
+									<div class="Filter_Section Column Gap_8">
+									<?php include "../filter-sections/chroma-shifts.php"; ?>
 									</div>
 										<div class="Row Justify_Content_Flex_End">
 										<button class="Block_Button Dark">Save and Close Section</button>
@@ -93,12 +103,7 @@
 								</label>
 								<div class="Content">
 									<div class="Column Gap_24">
-										<div class="Filter_Section Column Gap_8">
-										<?php include "../filter-sections/price-range.php"; ?>
-									</div>
-										<div class="Filter_Section Column Gap_8">
-										<?php include "../filter-sections/shipping-countries.php"; ?>
-									</div>
+										<?php include "../filter-sections/pan-format.php"; ?>
 										<div class="Row Justify_Content_Flex_End">
 										<button class="Block_Button Dark">Save and Close Section</button>
 									</div>
@@ -106,7 +111,7 @@
 							</div>
 				</div>
 				<div class="Panel">
-					<input class="Trigger" type="checkbox" id="panel4">
+					<input class="Trigger" type="checkbox" id="panel4" checked>
 					<label class="Trigger Title Row Space_Between Align_Items_Center" for="panel4">
 						<div class="Row Gap_16 Justify_Content_Flex_Start Align_Items_Center">
 							<div class="Heading">Brand</div>
@@ -116,10 +121,7 @@
 						<div class="Content">
 							<div class="Column Gap_24">
 								<div class="Filter_Section Column Gap_8">
-								<?php include "../filter-sections/price-range.php"; ?>
-							</div>
-								<div class="Filter_Section Column Gap_8">
-								<?php include "../filter-sections/shipping-countries.php"; ?>
+								<?php include "../filter-sections/brand-characteristics.php"; ?>
 							</div>
 								<div class="Row Justify_Content_Flex_End">
 								<button class="Block_Button Dark">Save and Close Section</button>

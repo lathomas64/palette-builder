@@ -108,6 +108,9 @@ a {
 	align-content: flex-start;
 }
 
+.Indent {
+}
+
 .Arrangement_Space {
 	width: 60%;
 	height: 100vh;
@@ -187,15 +190,13 @@ a {
 	aspect-ratio: 8 / 11;
 }
 .Dark {
-	background-color: var(--system-black);
 	color: var(--FDBL-white-text);
 }
 .Light {
-	background-color: var(--system-white);
 	color: var(--FDBL-black);
 }
 .Red {
-	background-color: rgba(255, 0, 0, 1);
+	background-color: #ff1a1a;
 }
 .Orange {
 	background-color: rgba(255, 128, 0, 1);
@@ -226,21 +227,70 @@ a {
 	filter: hue-rotate(-20deg) brightness(120%);
 }
 
+.Sat_Level_1 {
+	background-color: hsl(0, 37%, 93%);
+}
+.Sat_Level_2 {
+	background-color: hsl(0, 100%, 85%);
+}
+.Sat_Level_3 {
+	background-color: hsl(0, 100%, 75%);
+}
+.Sat_Level_4 {
+	background-color: hsl(0, 100%, 65%);
+}
+.Sat_Level_5 {
+	background-color: hsl(0, 100%, 55%);
+}
+
+.Light_Level_5 {
+	background-color: hsl(0, 26%, 16%);
+}
+.Light_Level_4 {
+	background-color: hsl(0, 25%, 32%);
+}
+.Light_Level_3 {
+	background-color: hsl(0, 25%, 48%);
+}
+.Light_Level_2 {
+	background-color: hsl(0, 37%, 68%);
+}
+.Light_Level_1 {
+	background-color: hsl(0, 100%, 95%);
+}
+
+/**.Shift_Level_1 {
+	background-color: var(--FDBL-yellow-medium);
+}
+.Shift_Level_2 {
+	background-color: hsl(0, 25%, 32%);
+}
+.Shift_Level_3 {
+	background: linear-gradient(90deg, #cfbd63 0%, #44ad91 105.39%);
+}
+.Shift_Level_4 {
+	background: linear-gradient(90deg, #cfbd63 0%, #44ad91 49.16%, #09262a 105.39%);
+}
+.Shift_Level_5 {
+}
+
 .Matte {
-	background: ;
+	background-color: var(--FDBL-black);
 }
 .Satin {
-	background: ;
+	background: linear-gradient(270deg, #09262a 0%, rgba(9, 38, 42, 0.6) 51.56%, #09262a 100%);
 }
 .Shimmer {
-	background: ;
+	background: linear-gradient(270deg, #09262a 0%, rgba(9, 38, 42, 0.4) 51.56%, #09262a 100%);
 }
 .Metallic {
-	background: ;
+	background: linear-gradient(270deg, #09262a 0%, rgba(9, 38, 42, 0) 51.56%, #09262a 100%);
 }
 .Sparkle {
-	background: ;
-}
+	background-image: url("/wp-content/plugins/builder/assets/sparkle-bg.svg");
+	background-color: var(--FDBL-black);
+	background-size: contain;
+}**/
 
 .Heading {
 	margin: 0;
@@ -265,6 +315,17 @@ a {
 .Filter_Section .Heading {
 	font: var(--font-panel-section-title);
 	padding-bottom: 4px;
+}
+
+.Accordion .Filter_Section .Heading {
+	font: var(--font-accordion-section-title);
+	padding-bottom: 4px;
+}
+
+.Color .Filter_Section .Heading {
+	border: 0;
+	padding: 0;
+	font: var(--font-panel-section-title);
 }
 
 .Right_Panel_Nav .Panel_Title {
@@ -476,6 +537,7 @@ button.Dismiss:hover {
 input[type="checkbox"].Filter_Button,
 input[type="checkbox"].Trigger,
 input[type="checkbox"].Text_Button,
+input[type="checkbox"].Single_Pan_Card,
 .Filter_Button input[type="checkbox"],
 .Panel > input[type="checkbox"] {
 	position: absolute;
@@ -527,7 +589,8 @@ label.Filter_Button:active {
 	border: var(--shadow-border);
 }
 
-input[type="checkbox"].Filter_Button:checked + label {
+input[type="checkbox"].Filter_Button:checked + label,
+.Pan_Format input[type="checkbox"]:checked + label .Pan_Shadow {
 	box-shadow: var(--button-selected);
 	border: var(--shadow-border);
 	background-color: var(--FDBL-light-gray);

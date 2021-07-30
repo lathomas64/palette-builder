@@ -58,6 +58,7 @@
 	--font-input-label: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
 	--font-block-button: var(--type-weight-regular) var(--type-size-18) / var(--type-size-18) var(--e-global-typography-secondary-font-family);
 	--font-heading-5: var(--type-weight-bold) var(--type-size-24) / var(--type-size-24) var(--e-global-typography-secondary-font-family);
+	--font-accordion-section-title: var(--type-weight-bold) var(--type-size-21) / var(--type-size-21) var(--e-global-typography-secondary-font-family);
 
 	/**SHADOWS**/
 	--shadow-invisible: 3px 3px 0px rgb(0 0 0 / 0%);
