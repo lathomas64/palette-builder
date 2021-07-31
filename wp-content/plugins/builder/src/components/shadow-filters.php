@@ -17,13 +17,15 @@
 						<div class="Filter_Section Column Gap_8">
 							<?php include "filter-sections/finish.php"; ?>
 						</div>
-						<div class="Filter_Section Column Gap_8"><?php include "filter-sections/price-range.php"; ?></div>
+						<div class="Filter_Section Column Gap_8">
+							<?php include "filter-sections/price-range.php"; ?></div>
 					</div>
 					<div class="Right Column Gap_24">
 						<div class="Filter_Section Column Gap_8">
 							<?php include "filter-sections/brand-characteristics.php"; ?>
 						</div>
-						<div class="Filter_Section Column Gap_8"><?php include "filter-sections/shipping-countries.php"; ?></div>
+						<div class="Filter_Section Column Gap_8"
+						><?php include "filter-sections/shipping-countries.php"; ?></div>
 					</div>
 				</div>
 			</div>

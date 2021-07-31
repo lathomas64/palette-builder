@@ -18,10 +18,10 @@
 		</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "finishes");' class="Single_Pan_Card"id="Square" type="checkbox" />
-			<label class="Single_Pan_Card" for="Square"><div class="Card_Container Column Gap_8">
-				<div class="Shadow_Name">Square</div>
-				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_37 Pan_Shape_Square">
+			<input onclick='Toggle_Filter(event, "finishes");' class="Single_Pan_Card"id="37mm" type="checkbox"/>
+			<label class="Single_Pan_Card" for="37mm"><div class="Card_Container Column Gap_8">
+				<div class="Shadow_Name">37mm</div>
+				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_37 Pan_Shape_37mm">
 					<div class="Wrapper">
 						<img src="/wp-content/plugins/builder/assets/square.svg" />
 						<div class="Pan_Shadow"></div>

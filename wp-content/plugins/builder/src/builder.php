@@ -1,5 +1,5 @@
 <head>
-	<?php include "header.php" ?>
+	<?php include "header.php"; ?>
 	<meta charset="UTF-8" />
 	<title>Universal Palette Builder – Firedrake Beauty Labs</title>
 	<link rel="stylesheet" type="text/css" href="../css/variables.css" />
@@ -201,7 +201,7 @@
 												<div class="Body Small_Text">Non vitae, ac pellentesque fusce ut.Turpis posuere mauris sed vitae. Sed elementum nibh adipiscing eu sit fringilla pharetra elementum.</div>
 											</div>
 										</div>
-										<?php include 'components/shadow-list.php' ?>
+										<?php include "components/shadow-list.php"; ?>
 									</div>
 								</div>
 								<div class="Right_Panel_Nav">
@@ -233,7 +233,7 @@
 														</svg>
 													</span>
 												</div>
-												<div class="Heading">Shadow Search</div>
+												<div class="Heading">Find Shadows</div>
 											</a>
 											<a href="#" class="Nav_Button Column Gap_8 Align_Items_Center">
 												<div class="Nav_Icon_Wrapper">
