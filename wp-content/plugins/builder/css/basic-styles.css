@@ -7,6 +7,15 @@
 	}
 }
 
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 :focus-visible {
 	outline-color: var(--FDBL-green-light);
 }
@@ -127,6 +136,40 @@ a {
 	align-content: flex-start;
 	box-shadow: var(--table-rest-shadow);
 }
+
+.Builder_Top {
+	width: 100%;
+	height: 88px;
+}
+
+.Builder {
+	width: 100%;
+	height: 100%;
+}
+
+.Story_Container {
+	background-image: url("../assets/palette-frame-paper-pattern.jpg");
+	background-repeat: repeat;
+	padding: 4%;
+	border-radius: 4px;
+}
+
+.Story_Grid {
+	background-color: #202020;
+	box-shadow: var(--inner-palette-shadow);
+	border-radius: 4px;
+}
+
+.Advanced_Search_Container {
+	display: none;
+	opacity: 0;
+}
+
+.Builder_Bottom {
+	height: 150px;
+	background-color: black;
+}
+
 /**STORY SIZES**/
 
 .Story_Container.Landscape {
@@ -153,6 +196,12 @@ a {
 .Story_Size_4w_3t {
 	aspect-ratio: 4 / 3;
 }
+
+.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_26 {
+	width: calc(100% / 4);
+	height: auto;
+}
+
 .Story_Size_5w_4t {
 	aspect-ratio: 5 / 4;
 }
@@ -189,74 +238,120 @@ a {
 .Story_Size_8w_11t {
 	aspect-ratio: 8 / 11;
 }
+
+.Builder .Shadow_Image_Container.Pan_Size_37 {
+	width: var(--pan-size-37);
+	height: var(--pan-size-37);
+}
+
+/**COLORS AND BACKGROUNDS**/
+
 .Dark {
 	color: var(--FDBL-white-text);
 }
 .Light {
 	color: var(--FDBL-black);
 }
-.Red {
+.Red,
+#Red + label,
+#warm + label,
+#cool + label,
+#neutralt + label {
 	background-color: #ff1a1a;
 }
-.Orange {
+.Orange,
+#Orange + label {
 	background-color: rgba(255, 128, 0, 1);
 }
-.Yellow {
+.Yellow,
+#Yellow + label {
 	background-color: rgba(255, 255, 28, 1);
 }
-.Green {
+.Green,
+#Green + label {
 	background-color: rgba(7, 255, 7, 1);
 }
-.Blue {
+.Blue,
+#Blue + label {
 	background-color: rgba(8, 255, 255, 1);
 }
-.Indigo {
+.Indigo,
+#Indigo + label {
 	background-color: rgba(92, 11, 255, 1);
 }
-.Violet {
+.Violet,
+#Violet + label {
 	background-color: rgba(172, 5, 255, 1);
 }
-.Neutral {
+.Neutral,
+#Neutral + label {
 	background-color: rgba(68, 50, 3, 1);
 }
-.Warm_Toned {
+.Warm_Toned,
+input#Warm + label {
 	filter: hue-rotate(20deg) brightness(112%);
 }
 
-.Cool_Toned {
+.Cool_Toned,
+#Cool.Red + label {
 	filter: hue-rotate(-20deg) brightness(120%);
 }
 
-.Sat_Level_1 {
+.Neutral_Toned,
+#neutralt.Red + label {
+	filter: hue-rotate(-20deg) brightness(120%);
+}
+
+.Sat_Level_1,
+#Sat_Level_1 + label {
 	background-color: hsl(0, 37%, 93%);
 }
-.Sat_Level_2 {
+.Sat_Level_2,
+#Sat_Level_2 + label {
 	background-color: hsl(0, 100%, 85%);
 }
-.Sat_Level_3 {
+.Sat_Level_3,
+#Sat_Level_3 + label {
 	background-color: hsl(0, 100%, 75%);
 }
-.Sat_Level_4 {
+.Sat_Level_4,
+#Sat_Level_4 + label {
 	background-color: hsl(0, 100%, 65%);
 }
-.Sat_Level_5 {
+.Sat_Level_5,
+#Sat_Level_5 + label {
 	background-color: hsl(0, 100%, 55%);
 }
 
-.Light_Level_5 {
+.Light_Level_5,
+#Light_Level_5 + label {
 	background-color: hsl(0, 26%, 16%);
 }
-.Light_Level_4 {
+.Light_Level_4,
+#Light_Level_4 + label {
 	background-color: hsl(0, 25%, 32%);
 }
-.Light_Level_3 {
+.Light_Level_3,
+#Light_Level_3 + label {
 	background-color: hsl(0, 25%, 48%);
 }
-.Light_Level_2 {
+.Light_Level_2,
+#Light_Level_2 + label {
 	background-color: hsl(0, 37%, 68%);
 }
-.Light_Level_1 {
+.Light_Level_1,
+#Light_Level_1 + label {
 	background-color: hsl(0, 100%, 95%);
+}
+
+.Color .Colors input:checked + label {
+	filter: brightness(90%);
+	-webkit-filter: brightness(90%);
+	-moz-filter: brightness(90%);
+}
+
+.Color .Colors input:checked + label.Light {
+	color: var(--FDBL-black);
 }
 
 /**.Shift_Level_1 {
@@ -421,6 +516,7 @@ input {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	overflow: visible;
 }
 
 /**BUTTON STYLES**/
@@ -569,6 +665,7 @@ button.Filter_Button {
 
 label.Filter_Button {
 	display: block;
+	background-color: var(--FDBL-light-gray);
 }
 
 .Check_List li {
@@ -593,8 +690,9 @@ input[type="checkbox"].Filter_Button:checked + label,
 .Pan_Format input[type="checkbox"]:checked + label .Pan_Shadow {
 	box-shadow: var(--button-selected);
 	border: var(--shadow-border);
-	background-color: var(--FDBL-light-gray);
-	color: var(--FDBL-black);
+	background-color: var(--FDBL-green-medium);
+	color: var(--FDBL-white-text);
+	z-index: initial;
 }
 
 .Icon_Container {

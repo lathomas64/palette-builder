@@ -108,68 +108,98 @@
 							<div class="Story_Grid Row Justify_Content_Left">
 								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
 									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
+										<img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Mochi.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Mood-Ring.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Bittermelon.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/4th-Dimension.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Gamma-Ray.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Helix-Nebula.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Hot-Spiced-Cider.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Icono.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Buttercupcake.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/Icono.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
 									</div>
 								</div>
 								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
 									<div class="Wrapper">
 										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
-										<div class="Pan_Shadow"></div>
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
 									</div>
 								</div>
 							</div>

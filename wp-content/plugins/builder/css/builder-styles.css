@@ -5,11 +5,6 @@
 	background-blend-mode: multiply, normal;
 }
 
-.Builder_Top {
-	width: 100%;
-	height: 88px;
-}
-
 .Site_Menu_Trigger {
 	padding: 0 0 0 32px;
 	opacity: 0.3;
@@ -27,37 +22,114 @@
 	height: 40px;
 }
 
-.Builder {
+.Story_Grid .Shadow_Image_Container .Wrapper {
+	box-shadow: var(--inner-palette-shadow);
+}
+
+.Story_Grid .Shadow_Image_Container {
+	border: var(--grid-lines);
+	border-radius: 0;
+}
+
+.Story_Grid .Shadow_Image_Container .Wrapper {
+	box-shadow: var(--pan-shadow-on-palette);
+}
+
+.Story_Grid .Shadow_Image_Container .Pan_Shadow {
+	border: 0;
+}
+
+.Story_Grid .Shadow_Image_Container img {
+	width: 100%;
+	z-index: 0;
+	position: relative;
+}
+
+.Shadow_Image_Container .Wrapper img {
+	clip-path: circle(50% at center);
+}
+.Story_Grid .Shadow_Image_Container .Wrapper {
+	width: 100%;
+	height: auto;
+}
+
+.Builder .Shadow_Image_Container .Pan_Shadow {
+	z-index: 1;
+}
+
+.Builder .Shadow_Controls {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
+	padding: 4px;
+	transition-delay: 0.1s;
 }
 
-.Story_Container {
-	border: 50px solid black;
+.Shadow_Controls .Icon_Container {
+	height: auto;
+	width: auto;
+	border-radius: 50%;
+	padding: 4px;
+	background-color: var(--FDBL-green-medium);
 }
 
-.Builder .Shadow_Image_Container img {
-	width: 100%;
+.Shadow_Controls .Remove .Icon_Container,
+.Shadow_Controls .Place_Aside .Icon_Container {
+	background: none;
 }
 
-.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_26 {
-	width: calc(100% / 4);
+.Shadow_Controls .Icon_Container svg {
+	fill: rgb(258 249 247 / 50%);
+	width: 14px;
 	height: auto;
 }
 
-.Builder .Shadow_Image_Container .Wrapper {
-	width: 100%;
-	height: auto;
+.Shadow_Controls .Shadow_Name {
+	font: var(--font-text-button-small);
+	text-transform: uppercase;
+	margin: 0;
+	padding: 4px;
+	color: var(--system-white);
+	background: none;
+	border-radius: 4px;
+	background-color: var(--FDBL-green-medium);
+	flex-wrap: wrap;
+	flex: 1;
+	text-align: center;
+	margin: 0 8px;
 }
 
-.Builder .Shadow_Image_Container.Pan_Size_37 {
-	width: var(--pan-size-37);
-	height: var(--pan-size-37);
+.Builder .Pan_Shadow {
+	mix-blend-mode: luminosity;
 }
 
-.Builder_Bottom {
-	height: 150px;
-	background-color: black;
+.Story_Grid .Shadow_Image_Container:hover,
+.Story_Grid .Shadow_Image_Container:focus {
+	border: var(--grid-lines-hover);
+}
+
+.Story_Grid .Shadow_Image_Container:active {
+	border: var(--grid-lines-active);
+}
+
+.Builder .Shadow_Image_Container:hover .Shadow_Controls {
+	opacity: 1;
+	transition-duration: 0.3s;
+	transition-delay: 0.5s;
+}
+
+.Shadow_Controls .Icon_Container:hover {
+	background-color: var(--FDBL-black);
+	opacity: 1;
+}
+
+.Shadow_Controls .Icon_Container:hover svg,
+.Shadow_Controls .Icon_Container:hover svg {
+	fill: var(--FDBL-light-gray);
+	opacity: 1;
 }
 
 /**RIGHT PANEL**/
@@ -111,6 +183,7 @@
 
 .Shadow_Image_Container .Wrapper {
 	box-shadow: var(--shadow-invisible);
+	position: relative;
 }
 
 .Pan_Shadow {
@@ -120,9 +193,12 @@
 	background-color: rgba(255, 255, 255, 0);
 	box-shadow: var(--inner-pan-shadow);
 	border: var(--pan-border);
-	position: relative;
-	bottom: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
+
 .Single_Pan_Card img {
 	width: 100%;
 	height: 100%;
@@ -243,15 +319,21 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	left: 0;
 	z-index: $zindex-modal;
 	display: none;
-	width: 100%;
+	/**width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow: hidden;**/
+	/** Gina took this out to play with some animation stuff, but do we really need the container to cover the whole screen?**/
+
 	// Prevent Chrome on Windows from adding a focus outline. For details, see
 	// https://github.com/twbs/bootstrap/pull/10951.
 	outline: 0;
 	// We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
 	// gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
 	// See also https://github.com/twbs/bootstrap/issues/17695
+	/**Gina's addition**/
+	display: block;
+	padding-left: 55%;
+	padding-top: 16%;
 }
 
 .Singles_Filter {
@@ -261,6 +343,11 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	background: var(--system-white);
 	border: var(--standard-border);
 	box-shadow: var(--lift-shadow);
+	animation-duration: 0.1s;
+	animation-name: fade-in;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	overflow: hidden;
 }
 
 .Singles_Filter .Content {
@@ -276,7 +363,13 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	width: calc(50% - 12px);
 }
 
-.Singles_Filter .Temperature_Options {
+.Filter_Column div {
+	flex: 1 1 50%;
+}
+
+.Singles_Filter .Temperature_Options,
+.Singles_Filter .Brand_Name,
+.Singles_Filter .Owner_Demographics {
 	display: none;
 }
 
@@ -287,7 +380,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 }
 
 .Check_List.Filterable {
-	height: 174px;
+	height: 50%;
 	overflow: scroll;
 	border-bottom: var(--standard-border);
 	padding: 8px;
@@ -340,6 +433,10 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	font: var(--font-body-small);
 }
 
+.Price_Shipping .Filter_Intro {
+	line-height: 10px;
+}
+
 .Select_Range select {
 	display: block;
 	padding: 0.6em 1.4em 0.5em 0.8em;
@@ -352,6 +449,11 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	background-position: right 0.7em top 55%, 0 0;
 	background-size: 8px;
 	font: var(--font-body-small);
+}
+
+.Singles_Filter .Select_Range select {
+	padding: 8px 20px 8px 12px;
+	background-position: right 10px top 58%;
 }
 
 /* Hide arrow icon in IE browsers */
@@ -404,7 +506,7 @@ label {
 .Drawer_Overlay {
 	width: 100%;
 	height: 100vh;
-	background-color: #0e444b;
+	background-color: var(--FDBL-black);
 }
 
 .Advanced_Search_Filter {
@@ -419,8 +521,22 @@ label {
 	margin-right: 0;
 }
 
+.Advanced_Search_Filter .Close_Modal {
+	margin-top: -20px;
+}
+
+.Close_Modal .Text_Button {
+	color: var(--FDBL-dark-gray);
+	padding: 20px 0;
+}
+
+.Close_Modal .Icon_Container svg {
+	fill: var(--FDBL-dark-gray);
+}
+
 .Accordion {
 }
+
 .Accordion label.Trigger {
 	background: var(--system-white);
 	color: var(--FDBL-black);
@@ -438,7 +554,7 @@ label {
 
 .Accordion label.Trigger .Intro {
 	font: var(--font-body-small);
-	opacity: 0;
+	display: none;
 }
 
 .Accordion label.Trigger::after {
@@ -473,7 +589,7 @@ label {
 
 .Accordion .Content {
 	padding: 0;
-	background: var(--FDBL-white-text);
+	background: var(--system-white);
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.3s ease-in-out;
@@ -489,7 +605,7 @@ label {
 /** FOR JS USE. WHEN USER SELECTS OPTIONS, THIS SHOULD POPULATE W/ CONTENT AND BECOME APPARENT TO USER. 
 label.Trigger .Intro_Populated {
 	font: var(--font-body-small);
-	opacity:1;
+	display:block;
 } **/
 
 .Accordion input:checked ~ .Content {
@@ -519,6 +635,10 @@ label.Trigger .Intro_Populated {
 	flex: 1 1 20%;
 }
 
+.Accordion .Brand_Search li {
+	flex: initial;
+}
+
 .Color.Heading {
 	font: var(--font-accordion-section-title);
 }
@@ -530,19 +650,33 @@ label.Trigger .Intro_Populated {
 .Temperature_Options .Content {
 	max-height: 0vh;
 	overflow: hidden;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease;
 }
 
 .Temperature_Options input:checked.Text_Button ~ .Content {
 	max-height: 100vh;
 }
 
-.Finish .Filter_Button,
-.Chroma .Filter_Button {
-	background-color: var(--system-white);
-	color: var(--FDBL-black);
-}
-
 input:checked + label.Single_Pan_Card:hover .Wrapper {
 	box-shadow: none;
+}
+
+.Accordion .Multi_Select {
+	margin-top: 0;
+}
+
+.Accordion .Check_List {
+	background-color: white;
+	border: var(--standard-border);
+	padding: 16px;
+}
+
+.Accordion .Check_List {
+	background-color: white;
+	border: var(--standard-border);
+	padding: 16px;
+}
+
+.Accordion .Single_Pan_Card .Wrapper {
+	border: var(--pan-border);
 }
