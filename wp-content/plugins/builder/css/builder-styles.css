@@ -45,16 +45,17 @@
 	position: relative;
 }
 
-.Shadow_Image_Container .Wrapper img {
-	clip-path: circle(50% at center);
-}
 .Story_Grid .Shadow_Image_Container .Wrapper {
 	width: 100%;
 	height: auto;
 }
 
-.Builder .Shadow_Image_Container .Pan_Shadow {
-	z-index: 1;
+.Pan_Shape_Round .Wrapper img {
+	clip-path: circle(50% at center);
+}
+
+.Pan_Shape_Square .Wrapper img {
+	clip-path: none;
 }
 
 .Builder .Shadow_Controls {
@@ -100,6 +101,7 @@
 	flex: 1;
 	text-align: center;
 	margin: 0 8px;
+	cursor: pointer;
 }
 
 .Builder .Pan_Shadow {
@@ -109,6 +111,7 @@
 .Story_Grid .Shadow_Image_Container:hover,
 .Story_Grid .Shadow_Image_Container:focus {
 	border: var(--grid-lines-hover);
+	cursor: pointer;
 }
 
 .Story_Grid .Shadow_Image_Container:active {
@@ -117,8 +120,9 @@
 
 .Builder .Shadow_Image_Container:hover .Shadow_Controls {
 	opacity: 1;
-	transition-duration: 0.3s;
+	transition-duration: 0.1s;
 	transition-delay: 0.2s;
+	cursor: pointer;
 }
 
 .Shadow_Controls .Icon_Container:hover {
@@ -269,7 +273,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
 }
 
 .Single_Pan_Card img {
@@ -407,6 +410,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	display: block;
 	padding-left: 55%;
 	padding-top: 16%;
+	z-index: 1;
 }
 
 .Singles_Filter {
