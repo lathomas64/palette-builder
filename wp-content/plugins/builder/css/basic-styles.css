@@ -200,6 +200,11 @@ a {
 .Story_Size_6w_3t {
 	aspect-ratio: 2 / 1;
 }
+.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc(100% / 6);
+	height: auto;
+}
 
 .Story_Size_4t_6w {
 	aspect-ratio: 3 / 2;
@@ -209,14 +214,27 @@ a {
 	aspect-ratio: 4 / 3;
 }
 
-.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_26 {
+.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_Irregular {
 	width: calc(100% / 4);
+	height: auto;
+}
+
+.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_37 {
+	width: calc((100% / 4) * 1.42);
 	height: auto;
 }
 
 .Story_Size_5w_4t {
 	aspect-ratio: 5 / 4;
 }
+
+.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc(100% / 5);
+	height: auto;
+}
+
 .Story_Size_7w_2t {
 	aspect-ratio: 7 / 2;
 }
@@ -249,11 +267,6 @@ a {
 
 .Story_Size_8w_11t {
 	aspect-ratio: 8 / 11;
-}
-
-.Builder .Shadow_Image_Container.Pan_Size_37 {
-	width: var(--pan-size-37);
-	height: var(--pan-size-37);
 }
 
 /**COLORS AND BACKGROUNDS**/

@@ -68,7 +68,7 @@
 	--inner-pan-shadow: inset 0px 0px 6px rgb(0 0 0 / 35%);
 	--button-selected: inset 2px 2px 1px 0px var(--FDBL-green-dark);
 	--inner-palette-shadow: inset 0px 0px 24px rgb(0 0 0);
-	--pan-shadow-on-palette: 0px 0px 6px 0px rgb(0 0 0 / 35%);
+	--pan-shadow-on-palette: 0px 0px 6px 0px rgb(0 0 0);
 
 	/**BORDERS**/
 	--shadow-border: 1px solid var(--FDBL-black);

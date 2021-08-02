@@ -35,8 +35,8 @@
 	box-shadow: var(--pan-shadow-on-palette);
 }
 
-.Story_Grid .Shadow_Image_Container .Pan_Shadow {
-	border: 0;
+.Story_Grid {
+	align-content: flex-start;
 }
 
 .Story_Grid .Shadow_Image_Container img {
