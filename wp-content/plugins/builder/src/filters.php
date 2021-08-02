@@ -44,9 +44,7 @@
     function filter_red($colors){
         if($colors){
             foreach ($colors as $color){
-                var_dump($color);
                 $hsl = hex_to_hsl($color);
-                var_dump($hsl);
                 if ($hsl['h'] < 15 or $hsl['h'] > 345){
                     return true;
                 }
@@ -102,7 +100,6 @@
         ];
         $filtered_shadows = [];
         $shadows = new WP_Query($args);
-        echo 'pb_filter reached';
          if ( isset($_REQUEST) ) {
             $filters = $_REQUEST;
             $filtered_shadows = [];
@@ -119,8 +116,7 @@
                 }
                 array_push($filtered_shadows, $shadow_id);
             endwhile;
-            var_dump($filtered_shadows);
-            var_dump($filters);
+            echo json_encode($filtered_shadows);
         }
         die();
     }
