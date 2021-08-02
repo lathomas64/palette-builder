@@ -50,7 +50,7 @@
 			<div>Show Temperature Options </div>
 		</div>
 	</label>
-		<div class="Content Button_Group Column Gap_8">
+		<div class="Temperature_Options Content Button_Group Column Gap_8">
 			<div>Select temperatures to refine color choices above.</div>
 			<ul class="Row Gap_4 Justify_Content_Flex_Start">
 				<li>
@@ -62,8 +62,8 @@
 					<label class="Filter_Button Red  Dark"for="neutralt">Neutral-Toned</label>
 				</li>
 				<li >
-					<input onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="yellow" type="checkbox" />
-					<label class="Filter_Button Red Cool_Toned  Dark"for="yellow">Cool-Toned</label>
+					<input onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="cool" type="checkbox" />
+					<label class="Filter_Button Red Cool_Toned  Dark"for="cool">Cool-Toned</label>
 				</li>
 			</ul>
 	</div>

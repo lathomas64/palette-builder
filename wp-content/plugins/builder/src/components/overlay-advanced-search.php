@@ -10,7 +10,7 @@
 	<section class="Row Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
 		<div class="Advanced_Search_Filter"> 
-	 <div class="Row Justify_Content_Flex_End">
+	 <div class="Close_Modal Row Justify_Content_Flex_Start">
 		 <button class="Text_Button Icon_Button Row Gap_4 Align_Items_Center">
 	  <div class="Icon_Container">
 	   <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7.05333L3.05533 4L8 0.94L6.47773 0L0 4L6.47773 8L8 7.05333Z"></path>
@@ -48,12 +48,7 @@
 										</label>
 							 <div class="Content">
 							  <div class="Column Gap_24">
-							  	<div class="Filter_Section Column Gap_8">
-								  <?php include "../filter-sections/price-range.php"; ?>
-							  </div>
-							  	<div class="Filter_Section Column Gap_8">
-										<?php include "../filter-sections/shipping-countries.php"; ?>
-							  </div>
+								  <?php include "../filter-sections/price-shipping.php"; ?>
 	  							<div class="Row Justify_Content_Flex_End">
 		    				<button class="Block_Button Dark">Save and Close Section</button>
 									</div>
@@ -61,7 +56,7 @@
 	 					</div>
 						</div>
 						<div class="Panel">
-							<input class="Trigger" type="checkbox" id="panel2" checked>
+							<input class="Trigger" type="checkbox" id="panel2">
 							<label class="Trigger Title Row Space_Between Align_Items_Center" for="panel2">
 								<div class="Row Gap_16 Justify_Content_Flex_Start Align_Items_Center">
 									<div class="Heading">Shadow Properties</div>
@@ -70,12 +65,22 @@
 								</label>
 								<div class="Content">
 									<div class="Column Gap_24">
-										<div class="Filter_Section Column Gap_16">
-											<?php include "../filter-sections/color-family.php"; ?>
-										</div>
-								<div class="Filter_Section Column Gap_8">
+										<div class="Color Filter_Section Column Gap_16">
+											<div class="Column Gap_8">
+												<div class="Color Heading">Advanced Color Selection</div>
+												<div class="Intro">The view of the earth from the moon fascinated me - a small disk, 240,000 mniles away.</div>
+												</div>
+												<div class="Indent Column Gap_16">
+										<?php include "../filter-sections/color.php"; ?>
 										<?php include "../filter-sections/vividness.php"; ?>
-										<?php include "../filter-sections/lightness.php"; ?>
+										<?php include "../filter-sections/brightness.php"; ?>
+												</div>
+									</div>
+									<div class="Filter_Section Column Gap_8">
+									<?php include "../filter-sections/finish.php"; ?>
+									</div>
+									<div class="Filter_Section Column Gap_8">
+									<?php include "../filter-sections/chroma-shifts.php"; ?>
 									</div>
 										<div class="Row Justify_Content_Flex_End">
 										<button class="Block_Button Dark">Save and Close Section</button>
@@ -93,12 +98,7 @@
 								</label>
 								<div class="Content">
 									<div class="Column Gap_24">
-										<div class="Filter_Section Column Gap_8">
-										<?php include "../filter-sections/price-range.php"; ?>
-									</div>
-										<div class="Filter_Section Column Gap_8">
-										<?php include "../filter-sections/shipping-countries.php"; ?>
-									</div>
+										<?php include "../filter-sections/pan-format.php"; ?>
 										<div class="Row Justify_Content_Flex_End">
 										<button class="Block_Button Dark">Save and Close Section</button>
 									</div>
@@ -115,12 +115,7 @@
 						</label>
 						<div class="Content">
 							<div class="Column Gap_24">
-								<div class="Filter_Section Column Gap_8">
-								<?php include "../filter-sections/price-range.php"; ?>
-							</div>
-								<div class="Filter_Section Column Gap_8">
-								<?php include "../filter-sections/shipping-countries.php"; ?>
-							</div>
+								<?php include "../filter-sections/brand-characteristics.php"; ?>
 								<div class="Row Justify_Content_Flex_End">
 								<button class="Block_Button Dark">Save and Close Section</button>
 							</div>
@@ -136,8 +131,6 @@
 	    </div>
 	  </div>
 	 </div>
-	
-	
 			</div>
 		</div>
 	</section>

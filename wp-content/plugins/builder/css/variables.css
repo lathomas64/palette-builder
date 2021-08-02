@@ -2,12 +2,12 @@
 	/**SIZES**/
 	--pan-size-37: 120px;
 	--pan-size-26: 84px;
-	--story-container-size: 80%;
+	--story-container-size: 70%;
 
 	/**COLOR VALUES**/
 	--FDBL-black: #09262a;
 	--system-black: #000000;
-	--FDBL-white-text: #faf9f7;
+	--FDBL-white-text: rgb(258 249 247);
 	--system-white: #ffffff;
 	--FDBL-light-gray: #ededed;
 	--FDBL-medium-gray: #cccccc;
@@ -58,6 +58,7 @@
 	--font-input-label: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
 	--font-block-button: var(--type-weight-regular) var(--type-size-18) / var(--type-size-18) var(--e-global-typography-secondary-font-family);
 	--font-heading-5: var(--type-weight-bold) var(--type-size-24) / var(--type-size-24) var(--e-global-typography-secondary-font-family);
+	--font-accordion-section-title: var(--type-weight-bold) var(--type-size-21) / var(--type-size-21) var(--e-global-typography-secondary-font-family);
 
 	/**SHADOWS**/
 	--shadow-invisible: 3px 3px 0px rgb(0 0 0 / 0%);
@@ -65,11 +66,17 @@
 	--lift-shadow: 3px 3px 0px var(--FDBL-black);
 	--drag-shadow: 1px 1px 0px var(--FDBL-black);
 	--inner-pan-shadow: inset 0px 0px 6px rgb(0 0 0 / 35%);
-	--button-selected: inset 2px 2px 1px 0px var(--FDBL-dark-gray);
+	--button-selected: inset 2px 2px 1px 0px var(--FDBL-green-dark);
+	--inner-palette-shadow: inset 0px 0px 24px rgb(0 0 0);
+	--pan-shadow-on-palette: 0px 0px 6px 0px rgb(0 0 0 / 35%);
 
 	/**BORDERS**/
 	--shadow-border: 1px solid var(--FDBL-black);
 	--standard-border: 1px solid var(--FDBL-medium-gray);
 	--standard-border-radius: 4px;
 	--pan-border: 1px solid var(--FDBL-dark-gray);
+	--grid-lines: 1px solid rgb(149 149 149 / 5%);
+	--grid-lines-hover: 1px solid rgb(149 149 149 / 20%);
+	--grid-lines-active: 2px solid rgb(206 189 99 / 80%);
+	--grid-lines-drag: 1px solid rrgb(206 189 99 / 10%);
 }
