@@ -103,8 +103,27 @@
 							</div>
 						</div>
 					</div>
-					<div class="Builder Column Gap_16 Justify_Content_Center Align_Items_Center">
-						<div class="Story_Container Landscape Story_Size_4w_3t Container">
+					<div class="Builder Row Gap_0 Justify_Content_Flex_Start Align_Items_Center">
+						<div class="Set_Aside Column Gap_0">
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="Column Gap_16 Landscape">
+						<div class="Story_Container Story_Size_4w_3t Container">
 							<div class="Story_Grid Row Justify_Content_Left">
 								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
 									<div class="Wrapper">
@@ -206,6 +225,7 @@
 						</div>
 						<div class="Disclaimer">
 							<div>Reminder: Your shopping list will not include a palette</div>
+						</div>
 						</div>
 					</div>
 					<div class="Builder_Bottom"></div>

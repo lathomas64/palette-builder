@@ -16,6 +16,15 @@
 	}
 }
 
+@keyframes slide-right {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 24px;
+	}
+}
+
 :focus-visible {
 	outline-color: var(--FDBL-green-light);
 }
@@ -152,6 +161,7 @@ a {
 	background-repeat: repeat;
 	padding: 4%;
 	border-radius: 4px;
+	width: 100%;
 }
 
 .Story_Grid {
@@ -172,8 +182,10 @@ a {
 
 /**STORY SIZES**/
 
-.Story_Container.Landscape {
+.Landscape {
 	width: var(--story-container-size);
+	flex: 1;
+	padding: 0 10%;
 }
 
 .Story_Container.Portrait_Square {
