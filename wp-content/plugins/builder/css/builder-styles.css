@@ -35,8 +35,8 @@
 	box-shadow: var(--pan-shadow-on-palette);
 }
 
-.Story_Grid .Shadow_Image_Container .Pan_Shadow {
-	border: 0;
+.Story_Grid {
+	align-content: flex-start;
 }
 
 .Story_Grid .Shadow_Image_Container img {
@@ -45,16 +45,17 @@
 	position: relative;
 }
 
-.Shadow_Image_Container .Wrapper img {
-	clip-path: circle(50% at center);
-}
 .Story_Grid .Shadow_Image_Container .Wrapper {
 	width: 100%;
 	height: auto;
 }
 
-.Builder .Shadow_Image_Container .Pan_Shadow {
-	z-index: 1;
+.Pan_Shape_Round .Wrapper img {
+	clip-path: circle(50% at center);
+}
+
+.Pan_Shape_Square .Wrapper img {
+	clip-path: none;
 }
 
 .Builder .Shadow_Controls {
@@ -100,6 +101,7 @@
 	flex: 1;
 	text-align: center;
 	margin: 0 8px;
+	cursor: pointer;
 }
 
 .Builder .Pan_Shadow {
@@ -109,6 +111,7 @@
 .Story_Grid .Shadow_Image_Container:hover,
 .Story_Grid .Shadow_Image_Container:focus {
 	border: var(--grid-lines-hover);
+	cursor: pointer;
 }
 
 .Story_Grid .Shadow_Image_Container:active {
@@ -117,8 +120,9 @@
 
 .Builder .Shadow_Image_Container:hover .Shadow_Controls {
 	opacity: 1;
-	transition-duration: 0.3s;
-	transition-delay: 0.5s;
+	transition-duration: 0.1s;
+	transition-delay: 0.2s;
+	cursor: pointer;
 }
 
 .Shadow_Controls .Icon_Container:hover {
@@ -129,6 +133,79 @@
 .Shadow_Controls .Icon_Container:hover svg,
 .Shadow_Controls .Icon_Container:hover svg {
 	fill: var(--FDBL-light-gray);
+	opacity: 1;
+}
+
+.Story_Grid .Shadow_Image_Container:active .Shadow_Controls {
+	opacity: 0;
+	transition-delay: 0s;
+}
+
+/**SET_ASIDE**/
+
+.Set_Aside {
+	width: 60px;
+	align-items: flex-end;
+	height: 100%;
+	justify-content: center;
+	border: 2px dashed #ccc;
+	border-left: 0;
+	border-radius: 4px;
+	padding: 8px;
+	background-color: rgb(255 255 255 / 40%);
+	position: relative;
+	opacity: 0.5;
+}
+
+.Set_Aside:after {
+	content: "maybe shadows";
+	font: var(--font-micro-labels);
+	color: var(--FDBL-dark-gray);
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+
+.Set_Aside .Shadow_Image_Container {
+	width: var(--pan-size-37);
+	height: auto;
+	position: relative;
+	left: 0;
+	transition: 0.2s;
+}
+
+.Set_Aside .Shadow_Image_Container img {
+	width: 100%;
+	filter: saturate(0%);
+}
+
+.Set_Aside .Shadow_Image_Container .Wrapper {
+	width: 100%;
+	height: auto;
+}
+
+.Set_Aside .Shadow_Image_Container:hover .Shadow_Controls {
+	display: none;
+}
+
+.Set_Aside:hover .Shadow_Image_Container img {
+	filter: saturate(100%);
+}
+
+.Set_Aside .Shadow_Image_Container:hover,
+.Set_Aside .Shadow_Image_Container:focus {
+	position: relative;
+	left: 24px;
+	transition: 0.2s;
+}
+
+.Set_Aside .Shadow_Image_Container:active {
+	left: 36px;
+	box-shadow: var(--lift-shadow);
+}
+
+.Set_Aside:hover {
 	opacity: 1;
 }
 
@@ -196,7 +273,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
 }
 
 .Single_Pan_Card img {
@@ -334,6 +410,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	display: block;
 	padding-left: 55%;
 	padding-top: 16%;
+	z-index: 1;
 }
 
 .Singles_Filter {

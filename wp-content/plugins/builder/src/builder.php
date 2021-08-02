@@ -103,60 +103,71 @@
 							</div>
 						</div>
 					</div>
-					<div class="Builder Column Gap_16 Justify_Content_Center Align_Items_Center">
-						<div class="Story_Container Landscape Story_Size_4w_3t Container">
-							<div class="Story_Grid Row Justify_Content_Left">
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+					<div class="Builder Row Gap_0 Justify_Content_Flex_Start Align_Items_Center">
+						<div class="Set_Aside Column Gap_0">
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/Helix-Nebula.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Square">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/ACM14.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/Buttercupcake.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Square">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/ACD00.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_Irregular Pan_Shape_Irregular">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/burnish.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Square">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/ACD4.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Round">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/Gamma-Ray.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="Column Gap_16 Landscape">
+						<div class="Story_Container Story_Size_4w_3t Container">
+							<div class="Story_Grid Row Justify_Content_Left Align_Items_Center">
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Round">
 									<div class="Wrapper">
 										<img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Mochi.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Mood-Ring.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Bittermelon.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/4th-Dimension.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Gamma-Ray.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Helix-Nebula.jpg" />
 										<div class="Pan_Shadow">
 											<?php include "components/pan-controls.php"; ?>
 										</div>
@@ -170,9 +181,17 @@
 										</div>
 									</div>
 								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Round">
 									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Icono.jpg" />
+										<img src="../assets/temp-shadow-imgs/Mochi.jpg" />
+										<div class="Pan_Shadow">
+											<?php include "components/pan-controls.php"; ?>
+										</div>
+									</div>
+								</div>
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Square">
+									<div class="Wrapper">
+										<img src="../assets/temp-shadow-imgs/ACS34.jpg" />
 										<div class="Pan_Shadow">
 											<?php include "components/pan-controls.php"; ?>
 										</div>
@@ -180,23 +199,15 @@
 								</div>
 								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
 									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Buttercupcake.jpg" />
+										<img src="../assets/temp-shadow-imgs/Bittermelon.jpg" />
 										<div class="Pan_Shadow">
 											<?php include "components/pan-controls.php"; ?>
 										</div>
 									</div>
 								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_Irregular Pan_Shape_Irregular">
 									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Icono.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/06/Turtle.png" />
+										<img src="../assets/temp-shadow-imgs/burnish.jpg" />
 										<div class="Pan_Shadow">
 											<?php include "components/pan-controls.php"; ?>
 										</div>
@@ -206,6 +217,7 @@
 						</div>
 						<div class="Disclaimer">
 							<div>Reminder: Your shopping list will not include a palette</div>
+						</div>
 						</div>
 					</div>
 					<div class="Builder_Bottom"></div>
@@ -228,7 +240,7 @@
 														<div>×</div>
 													</button>
 												</div>
-												<div class="Body Small_Text">Non vitae, ac pellentesque fusce ut.Turpis posuere mauris sed vitae. Sed elementum nibh adipiscing eu sit fringilla pharetra elementum.</div>
+												<div class="Body Small_Text">When we return this rock or some of the others like it to Houston, we'd like to share a piece of this rock with so many of the countries throughout the world. </div>
 											</div>
 										</div>
 										<?php include "components/shadow-list.php"; ?>
