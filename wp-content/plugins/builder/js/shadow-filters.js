@@ -46,8 +46,17 @@ function update(){
           },
           success:function(data) {
       // This outputs the result of the ajax request (The Callback)
-      		  console.log('ajax successful');
-              console.log(data);
+            let pans = document.getElementsByClassName("Single_Pan_Card");
+            for(let i = 0; i < pans.length; i++){
+            	if(data.includes(parseInt(pans[i].id))){
+            		pans[i].style.display="block";
+            	}
+            	else {
+            		pans[i].style.display="None";
+            	}
+            }
+            console.log('ajax successful');
+            console.log(data);
           },
           error: function(errorThrown){
           	  console.log('ajax error');
