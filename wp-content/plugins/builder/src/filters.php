@@ -20,7 +20,7 @@
             $d = $max - $min;
             $s = $l > 0.5 ? $d / (2 - $max - $min) : $d / ($max + $min);
             switch($max){
-                case $r: 
+                case $r:
                     $h = ($g - $b) / $d + ($g < $b ? 6: 0);
                     break;
                 case $g:
@@ -91,42 +91,34 @@
     function pb_filter()
     {
         if ( isset($_REQUEST) ) {
-            $filters = $_REQUEST;
-            $flatten_filters = json_encode($filters);
-            $cache_file = plugin_dir_path(__FILE__)."cache/".hash('md5', $flatten_filters).".html";
-            if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 86400 ))) {
-                $file = file_get_contents($cache_file); // Get the file from the cache.
-                echo $file; // echo the file out to the browser.
-            } else {
-                $args = [
-                "post_type" => "cpt_shadow",
-                "post_status" => "publish",
-                "posts_per_page" => -1,
-                "orderby" => "title",
-                "order" => "ASC",
-                "cat" => "home",
-                ];
-                $filtered_shadows = [];
-                $shadows = new WP_Query($args);
-                
-                $filtered_shadows = [];
-                $shadows = new WP_Query($args);
-                while ($shadows->have_posts()):
-                    $shadows->the_post();
-                    $shadow_id = get_the_ID();
-                    if ( array_key_exists('colors',$filters)) {
-                        $colors = get_field("colors");
-                        if(!filter_color($colors, $filters['colors'])) {
-                            //If we don't match on color filter skip to the next shadow
-                            continue;
-                        }
-                    }
-                    array_push($filtered_shadows, $shadow_id);
-                endwhile;
-                $result = json_encode($filtered_shadows);
-                file_put_contents($cache_file, $result, LOCK_EX);
-                echo $result;
-            }
+          $filters = $_REQUEST;
+          $flatten_filters = json_encode($filters);
+          $args = [
+          "post_type" => "cpt_shadow",
+          "post_status" => "publish",
+          "posts_per_page" => -1,
+          "orderby" => "title",
+          "order" => "ASC",
+          "cat" => "home",
+          "tax_query" => array(
+            'relation' => 'AND'
+          )
+          ];
+          if(array_key_exists('colors', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_color_family',
+              'field' => 'name',
+              'terms' => $filters['colors']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          $filtered_shadows = [];
+          $shadows = new WP_Query($args);
+          $filtered_shadows = wp_list_pluck($shadows->posts, "ID");
+
+          $result = json_encode($filtered_shadows);
+          echo $result;
         }
         die();
     }
