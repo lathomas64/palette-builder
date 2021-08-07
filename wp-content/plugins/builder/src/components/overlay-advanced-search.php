@@ -73,7 +73,7 @@
 												<div class="Indent Column Gap_16">
 										<?php include "../filter-sections/color.php"; ?>
 										<?php include "../filter-sections/vividness.php"; ?>
-										<?php include "../filter-sections/brightness.php"; ?>
+										<?php include "../filter-sections/lightness.php"; ?>
 												</div>
 									</div>
 									<div class="Filter_Section Column Gap_8">
