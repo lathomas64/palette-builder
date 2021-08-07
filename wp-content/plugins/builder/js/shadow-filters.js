@@ -18,6 +18,15 @@ function Toggle_Filter(event, filterset) {
 	update();
 }
 
+function Update_Price(event, min_or_max) {
+
+	console.log(event);
+	console.log(min_or_max);
+	let index = event.target.options.selectedIndex;
+	let price = event.target.options[index].value;
+	console.log(price);
+}
+
 function update(){
 	let matched = new Set();
 	let unmatched = new Set();

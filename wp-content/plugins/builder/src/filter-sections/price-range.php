@@ -6,7 +6,7 @@
   <div class="Row Gap_8 Align_Items_Center">
 	  <div class="Select_Range Row Gap_4 Align_Items_Center">
 		  $
-		  <select>
+		  <select onchange='Update_Price(event, "min");'>
 			  <option>Price</option>
 			  <option>1.00</option>
 			  <option>1.00</option>
@@ -17,7 +17,7 @@
 	  <div>and</div>
 	  <div class="Select_Range Row Gap_4 Align_Items_Center">
 		  $
-		  <select>
+		  <select onchange='Update_Price(event, "max");'>
 			  <option>Price</option>
 			  <option>1.00</option>
 			  <option>1.00</option>
