@@ -41,6 +41,53 @@
         return $result;
     }
 
+    function filter_red($colors){
+        if($colors){
+            foreach ($colors as $color){
+                $hsl = hex_to_hsl($color);
+                if ($hsl['h'] < 15 or $hsl['h'] > 345){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    function filter_orange($colors){
+        if($colors){
+            foreach ($colors as $color){
+                $hsl = hex_to_hsl($color);
+                if (20 < $hsl['h'] and $hsl['h'] < 40){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    function filter_yellow($colors){
+        if($colors){
+            foreach ($colors as $color){
+                $hsl = hex_to_hsl($color);
+                if (40 < $hsl['h'] and $hsl['h'] < 60){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    function filter_color($colors, $filters) {
+        //echo 'filter_color reached';
+        foreach ($filters as $filter) {
+            $func = 'filter_' . strtolower($filter);
+            if($func($colors)) {
+                return True;
+            }
+        }
+        return False;
+    }
+
     function pb_filter()
     {
         if ( isset($_REQUEST) ) {
@@ -54,6 +101,9 @@
           "order" => "ASC",
           "cat" => "home",
           "tax_query" => array(
+            'relation' => 'AND'
+          ),
+          'meta_query' => array(
             'relation' => 'AND'
           )
           ];
@@ -78,11 +128,27 @@
           if(array_key_exists('characteristics', $filters)){
             //color filter stuff will go here;
             $subquery = array(
-              'taxonomy' => 'tax_brand_characteristic',
-              'field' => 'slug',
-              'terms' => array_map("strtolower", $filters['characteristics'])
+              'taxonomy' => 'tax_finish',
+              'field' => 'name',
+              'terms' => $filters['finishes']
             );
             $args['tax_query'][] = $subquery;
+          }
+          if($filters['price_min'] != -1){
+            $subquery = array(
+              'key' => 'price',
+              'value' => (int) $filters['price_min'],
+              'compare' => '>='
+            );
+            $args['meta_query'][] = $subquery;
+          }
+          if($filters['price_max'] != -1){
+            $subquery = array(
+              'key' => 'price',
+              'value' => (int) $filters['price_max'],
+              'compare' => '<='
+            );
+            $args['meta_query'][] = $subquery;
           }
           $filtered_shadows = [];
           $shadows = new WP_Query($args);
