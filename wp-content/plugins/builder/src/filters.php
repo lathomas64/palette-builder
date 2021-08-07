@@ -113,6 +113,24 @@
             );
             $args['tax_query'][] = $subquery;
           }
+          if(array_key_exists('finishes', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_finish',
+              'field' => 'name',
+              'terms' => $filters['finishes']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('characteristics', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_finish',
+              'field' => 'name',
+              'terms' => $filters['finishes']
+            );
+            $args['tax_query'][] = $subquery;
+          }
           $filtered_shadows = [];
           $shadows = new WP_Query($args);
           $filtered_shadows = wp_list_pluck($shadows->posts, "ID");
