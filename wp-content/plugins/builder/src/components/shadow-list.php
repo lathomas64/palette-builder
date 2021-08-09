@@ -68,6 +68,12 @@ $count = $shadows->found_posts;
 			<?php include "shadow-filters.php"; ?>
 		</div>
 	</div>
+	<div id='Modal_Shadow_Advanced_Filter' class='Modal'>
+		<button class="Close" onclick="document.getElementById('Modal_Shadow_Advanced_Filter').style.display = 'none'">&times;</button>
+		<div class="Modal_Content">
+			<?php include "overlay-advanced-search.php"; ?>
+		</div>
+	</div>
 	<div class="Grid Row Gap_16">
 		<?php
   while ($shadows->have_posts()):

@@ -9,7 +9,7 @@
 <body>
 	<section class="Row Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
-		<div class="Advanced_Search_Filter"> 
+		<div class="Advanced_Search_Filter">
 	 <div class="Close_Modal Row Justify_Content_Flex_Start">
 		 <button class="Text_Button Icon_Button Row Gap_4 Align_Items_Center">
 	  <div class="Icon_Container">
@@ -135,5 +135,3 @@
 		</div>
 	</section>
 </body>
-
-
