@@ -17,7 +17,7 @@ $args = [
 
 $shadows = new WP_Query($args);
 $args = [
-	"post_type" => "cpt_shadow",
+	"post_type" => "cpt_brand",
 	"post_status" => "publish",
 	"posts_per_page" => -1,
 	"orderby" => "title",
@@ -26,7 +26,7 @@ $args = [
 ];
 $brands = new WP_Query($args);
 $args = [
-	"post_type" => "cpt_shadow",
+	"post_type" => "tax_series",
 	"post_status" => "publish",
 	"posts_per_page" => -1,
 	"orderby" => "title",
@@ -39,7 +39,7 @@ $count = $shadows->found_posts;
 <div class="Results Column Gap_24">
 	<div class="Row Space_Between Align_Items_Center">
 		<div class="Body Small_Text">
-			<span> Showing <?php echo $count; ?> shadows </span>
+			<span id='Shadow_Count'> Showing <?php echo $count; ?> shadows </span>
 		</div>
 		<div class="Row Space_Between Gap_8 Align_Items_Center">
 			<button onclick="document.getElementById('Modal_Shadow_Filter').style.display = 'block'" class="Filter_Button Icon_Button Align_Items_Center Row Gap_4">
@@ -66,7 +66,13 @@ $count = $shadows->found_posts;
 		<button class="Close" onclick="document.getElementById('Modal_Shadow_Filter').style.display = 'none'">&times;</button>
 		<div class="Modal_Content">
 			<?php include "shadow-filters.php"; ?>
-		</div>					
+		</div>
+	</div>
+	<div id='Modal_Shadow_Advanced_Filter' class='Modal'>
+		<button class="Close" onclick="document.getElementById('Modal_Shadow_Advanced_Filter').style.display = 'none'">&times;</button>
+		<div class="Modal_Content">
+			<?php include "overlay-advanced-search.php"; ?>
+		</div>
 	</div>
 	<div class="Grid Row Gap_16">
 		<?php
@@ -76,10 +82,10 @@ $count = $shadows->found_posts;
   	$brand = get_field("brand");
   	$colors = get_field("colors");
   	?>
-			<a <?php 
+			<a <?php
 				if ($colors) {
 					echo "data-colors='[";
-					foreach ($colors as $index => $color){							
+					foreach ($colors as $index => $color){
 						echo '"' . $color['color'] . '"';
 						if ($index < count($colors)-1){
 							echo ",";

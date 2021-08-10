@@ -102,6 +102,9 @@
           "cat" => "home",
           "tax_query" => array(
             'relation' => 'AND'
+          ),
+          'meta_query' => array(
+            'relation' => 'AND'
           )
           ];
           if(array_key_exists('colors', $filters)){
@@ -112,6 +115,167 @@
               'terms' => $filters['colors']
             );
             $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('temperature', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_temperature',
+              'field' => 'name',
+              'terms' => $filters['colors']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('vividness', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_vividness',
+              'field' => 'name',
+              'terms' => $filters['vividness']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('lightness', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_lightness',
+              'field' => 'name',
+              'terms' => $filters['lightness']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('shift', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_shift',
+              'field' => 'name',
+              'terms' => $filters['shift']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('pan_size', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_pan_size',
+              'field' => 'name',
+              'terms' => $filters['pan_size']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('pan_shape', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_pan_shape',
+              'field' => 'name',
+              'terms' => $filters['pan_shape']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('demographics', $filters)){
+            $brand_args = [
+            "post_type" => "cpt_brand",
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "orderby" => "title",
+            "order" => "ASC",
+            "cat" => "home",
+            "tax_query" => array(
+              'relation' => 'AND',
+              array(
+                'taxonomy' => 'tax_demographic',
+                'field' => 'name',
+                'terms' => $filters['demographics']
+              )
+            )
+            ];
+            $brands = new WP_Query($brand_args);
+            $brand_ids = wp_list_pluck($brands->posts, "ID");
+            $subquery = array(
+              'key' => 'brand',
+              'value' => $brand_ids,
+              'compare' => 'in'
+            );
+            $args['meta_query'][] = $subquery;
+          }
+          //brands should be ids of brands
+          if(array_key_exists('brands', $filters)){
+            $brand_args = [
+            "post_type" => "cpt_brand",
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "orderby" => "title",
+            "order" => "ASC",
+            "cat" => "home",
+            "post__in" => $filters['brands'],
+            ];
+            $brands = new WP_Query($brand_args);
+            $brand_ids = wp_list_pluck($brands->posts, "ID");
+            $subquery = array(
+              'key' => 'brand',
+              'value' => $brand_ids,
+              'compare' => 'in'
+            );
+            $args['meta_query'][] = $subquery;
+          }
+          if(array_key_exists('shipping_country', $filters)){
+            //TODO I don't think this one will work how do we get around this?
+            $brand_args = [
+            "post_type" => "cpt_brand",
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "orderby" => "title",
+            "order" => "ASC",
+            "cat" => "home",
+            "meta_query" => array(
+              'relation' => 'AND',
+              array(
+                'key' => 'shipping_country',
+                'value' => $filters['shipping_country'],
+                'compare' => 'in'
+              )
+            )
+            ];
+            $brands = new WP_Query($brand_args);
+            $brand_ids = wp_list_pluck($brands->posts, "ID");
+            $subquery = array(
+              'key' => 'brand',
+              'value' => $brand_ids,
+              'compare' => 'in'
+            );
+            $args['meta_query'][] = $subquery;
+          }
+          if(array_key_exists('finishes', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_finish',
+              'field' => 'name',
+              'terms' => $filters['finishes']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if(array_key_exists('characteristics', $filters)){
+            //color filter stuff will go here;
+            $subquery = array(
+              'taxonomy' => 'tax_finish',
+              'field' => 'name',
+              'terms' => $filters['finishes']
+            );
+            $args['tax_query'][] = $subquery;
+          }
+          if($filters['price_min'] != -1){
+            $subquery = array(
+              'key' => 'price',
+              'value' => (int) $filters['price_min'],
+              'compare' => '>='
+            );
+            $args['meta_query'][] = $subquery;
+          }
+          if($filters['price_max'] != -1){
+            $subquery = array(
+              'key' => 'price',
+              'value' => (int) $filters['price_max'],
+              'compare' => '<='
+            );
+            $args['meta_query'][] = $subquery;
           }
           $filtered_shadows = [];
           $shadows = new WP_Query($args);

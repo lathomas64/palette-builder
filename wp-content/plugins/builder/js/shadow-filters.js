@@ -18,6 +18,21 @@ function Toggle_Filter(event, filterset) {
 	update();
 }
 
+function Update_Price(event, min_or_max) {
+
+	console.log(event);
+	console.log(min_or_max);
+	let index = event.target.options.selectedIndex;
+	let price = event.target.options[index].value;
+	if(min_or_max == "min"){
+		PRICE_MIN = price;
+	} else {
+		PRICE_MAX = price;
+	}
+	console.log(price);
+	update();
+}
+
 function update(){
 	let matched = new Set();
 	let unmatched = new Set();
@@ -47,14 +62,19 @@ function update(){
           success:function(data) {
       // This outputs the result of the ajax request (The Callback)
             let pans = document.getElementsByClassName("Single_Pan_Card");
+						let count_element = document.getElementById('Shadow_Count');
+						let count = 0;
             for(let i = 0; i < pans.length; i++){
             	if(data.includes(parseInt(pans[i].id))){
             		pans[i].style.display="block";
+								count++;
             	}
             	else {
             		pans[i].style.display="None";
             	}
             }
+
+						count_element.textContent = "Showing " + count + " shadow" + (count > 1? "s":"");
             console.log('ajax successful');
             console.log(data);
           },
