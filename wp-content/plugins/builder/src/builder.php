@@ -13,8 +13,8 @@
 <body>
 	<div class="Wrap">
 		<section class="Section">
-			<div class="Container">
-				<div class="Column Arrangement_Space">
+			<div class="Grid_Container Page">
+				<div class="Grid_Container Arrangement_Space">
 					<div class="Builder_Top Row Justify_Content_Left Align_Items_Center">
 						<div class="Site_Menu_Trigger Column">
 							<div class="Logos_Small_Small_Black">
@@ -103,7 +103,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="Builder Row Gap_0 Justify_Content_Flex_Start Align_Items_Center">
+					<div class="Builder Grid_Container Gap_0 Justify_Content_Flex_Start Align_Items_Center">
 						<div class="Set_Aside Column Gap_0">
 							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
@@ -163,7 +163,7 @@
 							</div>
 						</div>
 						<div class="Column Gap_16 Landscape">
-						<div class="Story_Container Story_Size_4w_3t Container">
+						<div class="Story_Container Story_Size_4w_3t Flex_Container">
 							<div class="Story_Grid Row Justify_Content_Left Align_Items_Center">
 								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Round">
 									<div class="Wrapper">
@@ -222,10 +222,10 @@
 					</div>
 					<div class="Builder_Bottom"></div>
 				</div>
-				<div class="Row Right_Panel">
+				<div class="Column Right_Panel">
 					<div class="Inner_Section_Wrap">
 						<section class="Inner_Section">
-							<div class="Container">
+							<div class="Flex_Container">
 								<div class="Search_And_Filter">
 									<div class="Column Gap_32">
 										<div class="Panel_Title">

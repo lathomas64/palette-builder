@@ -63,6 +63,7 @@
 	/**SHADOWS**/
 	--shadow-invisible: 3px 3px 0px rgb(0 0 0 / 0%);
 	--table-rest-shadow: -4px 0px 8px 0px rgb(0 0 0 / 10%);
+	--palette-frame-rest: 1px ​6px 11px;
 	--lift-shadow: 3px 3px 0px var(--FDBL-black);
 	--drag-shadow: 1px 1px 0px var(--FDBL-black);
 	--inner-pan-shadow: inset 0px 0px 6px rgb(0 0 0 / 35%);
@@ -78,5 +79,9 @@
 	--grid-lines: 1px solid rgb(149 149 149 / 5%);
 	--grid-lines-hover: 1px solid rgb(149 149 149 / 20%);
 	--grid-lines-active: 2px solid rgb(206 189 99 / 80%);
-	--grid-lines-drag: 1px solid rrgb(206 189 99 / 10%);
+	--grid-lines-drag: 1px solid rgb(206 189 99 / 10%);
+
+/**FILLS**/
+--translucent-black-bg: rgb(9 38 42 / 85%);
 }
+

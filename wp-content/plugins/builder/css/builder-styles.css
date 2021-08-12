@@ -144,7 +144,7 @@
 /**SET_ASIDE**/
 
 .Set_Aside {
-	width: 60px;
+	/**Commented out to expriment with grid width: 60px;**/
 	align-items: flex-end;
 	height: 100%;
 	justify-content: center;
@@ -168,16 +168,24 @@
 }
 
 .Set_Aside .Shadow_Image_Container {
-	width: var(--pan-size-37);
-	height: auto;
 	position: relative;
 	left: 0;
 	transition: 0.2s;
 }
 
+.Set_Aside .Shadow_Image_Container.Pan_Size_26, .Set_Aside .Shadow_Image_Container.Pan_Size_Irregular {
+	height: var(--pan-size-26);
+	width: var(--pan-size-26);
+}
+
+.Set_Aside .Shadow_Image_Container.Pan_Size_37{
+	height: var(--pan-size-37);
+	width: var(--pan-size-37);
+}
+
 .Set_Aside .Shadow_Image_Container img {
-	width: 100%;
 	filter: saturate(0%);
+	width: 100%;
 }
 
 .Set_Aside .Shadow_Image_Container .Wrapper {
@@ -202,6 +210,9 @@
 
 .Set_Aside .Shadow_Image_Container:active {
 	left: 36px;
+}
+
+.Set_Aside .Shadow_Image_Container:active .Wrapper{
 	box-shadow: var(--lift-shadow);
 }
 
@@ -581,9 +592,12 @@ label {
 }
 
 .Drawer_Overlay {
-	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
 	height: 100vh;
-	background-color: var(--FDBL-black);
+	background-color: var(--translucent-black-bg);
 }
 
 .Advanced_Search_Filter {
