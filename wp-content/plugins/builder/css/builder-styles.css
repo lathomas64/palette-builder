@@ -37,6 +37,8 @@
 
 .Story_Grid {
 	align-content: flex-start;
+	width: 100%;
+	overflow: hidden;
 }
 
 .Story_Grid .Shadow_Image_Container img {
@@ -144,17 +146,19 @@
 /**SET_ASIDE**/
 
 .Set_Aside {
-	/**Commented out to expriment with grid width: 60px;**/
-	align-items: flex-end;
-	height: 100%;
-	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+	flex-flow: column nowrap;
 	border: 2px dashed #ccc;
 	border-left: 0;
 	border-radius: 4px;
 	padding: 8px;
 	background-color: rgb(255 255 255 / 40%);
-	position: relative;
 	opacity: 0.5;
+	position:relative;	
+	flex: 0 0 12%;
+	padding: 0 8px;
+	height:100%;
 }
 
 .Set_Aside:after {
@@ -174,21 +178,22 @@
 }
 
 .Set_Aside .Shadow_Image_Container.Pan_Size_26, .Set_Aside .Shadow_Image_Container.Pan_Size_Irregular {
-	height: var(--pan-size-26);
-	width: var(--pan-size-26);
+width: 84%;
+height: auto;
 }
 
 .Set_Aside .Shadow_Image_Container.Pan_Size_37{
-	height: var(--pan-size-37);
-	width: var(--pan-size-37);
+width: 100%;
+height: auto;
 }
 
-.Set_Aside .Shadow_Image_Container img {
+.Set_Aside .Shadow_Image_Container .Wrapper img {
 	filter: saturate(0%);
 	width: 100%;
 }
 
 .Set_Aside .Shadow_Image_Container .Wrapper {
+	display:block;
 	width: 100%;
 	height: auto;
 }
@@ -219,6 +224,66 @@
 .Set_Aside:hover {
 	opacity: 1;
 }
+
+/**BUILDER BOTTOM META**/
+
+.Builder_Assistance_Info{
+	padding: 0 32px;
+}
+
+.Palette_Meta .Controls {
+	padding:16px;
+	padding-bottom:8px;
+}
+
+.Palette_Meta {
+overflow:hidden;
+}
+
+.Info_Bar {
+	width:100%;
+	max-height:100%;
+	overflow:hidden;
+}
+
+.Info_Bar .Container {
+	padding: 24px 24px;
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+	background-color: var(--FDBL-black);
+	color: var(--FDBL-white-text);
+}
+
+.Palette_Meta input:checked ~ .Info_Bar {
+	max-height: 0;
+	transition: .3s;
+}
+
+.Info_Bar_Left .Panel_Title {
+	font:var(--font-subsection-title);
+	color: var(--FDBL-white-text);
+	line-height: 40px;
+}
+
+.Meta_Label .Title, .Price_Widget .Title {
+	font:var(--font-meta-title);
+
+}
+.Meta_Label .Value {
+	font:var(--font-panel-title);
+
+}
+
+.Price_Widget .Price .Price_Value {
+	font:var(--font-heading-3);
+
+}
+
+.Price_Widget .Price .Price_Units {
+	font:var(	--font-micro-labels);
+
+}
+
 
 /**RIGHT PANEL**/
 
@@ -638,7 +703,7 @@ label {
 }
 
 .Accordion label.Trigger .Heading {
-	font: var(--font-heading-5);
+	font: var(--font-subsection-title);
 	padding: 0;
 	border: 0;
 }

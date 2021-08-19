@@ -1,3 +1,5 @@
+body, html { width: 100%; height: 100%; cursor:default;}
+
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
 	input[type="checkbox"],
 	input[type="search"],
@@ -58,6 +60,10 @@ a {
 	cursor: pointer;
 }
 
+.Button_Micro, .Button_Block, input, input label {
+	cursor:pointer;
+}
+
 .Grid_Container {
 	display: grid;
 }
@@ -71,6 +77,8 @@ a {
 	grid-template-columns: 6fr 4fr;
 	grid-template-rows: 1fr;
 	gap: 0;
+	max-height:100vh;
+	overflow:hidden;
 }
 
 .Column {
@@ -81,6 +89,10 @@ a {
 	display: flex;
 	flex-flow: row wrap;
 }
+.Gap_2 {
+	gap: 2px;
+}
+
 .Gap_4 {
 	gap: 4px;
 }
@@ -98,6 +110,9 @@ a {
 }
 .Gap_40 {
 	gap: 40px;
+}
+.Gap_48 {
+	gap: 48px;
 }
 
 .Column.Reverse {
@@ -125,37 +140,36 @@ a {
 	justify-content: flex-end;
 }
 
-.Align_Content_Center {
-	align-content: center;
+.Justify_Content_Flex_Start {
+	justify-content: flex-start;
 }
 
-.Align_Items_Center {
-	align-items: center;
+.Align_Content_Center {
+	align-content: center;
 }
 
 .Align_Content_Top {
 	align-content: flex-start;
 }
 
+.Align_Items_Stretch {
+	align-items: Stretch;
+}/**Gina don't delete this it's item's not content**/
+
+.Align_Items_Center {
+	align-items: center;
+}
+
+.Align_Items_Flex_End {
+	align-items: flex-end;
+}
+
 .Indent {
 }
 
 .Arrangement_Space {
-grid-template-columns: 1fr;
-grid-template-rows: 72px 1fr 150px;
-grid-row-gap: 16px;
-}
-
-/**Commented out to experiment w/ Grid
-.Arrangement_Space {
-	width: 60%;
 	height: 100vh;
 }
-
-.Right_Panel {
-	width: 40%;
-	height: 100%;
-}**/
 
 .Inner_Section_Wrap {
 	display: flex;
@@ -165,28 +179,26 @@ grid-row-gap: 16px;
 }
 
 .Builder_Top {
-	/**Grid play comment out	
 	width: 100%;
 	height: 88px;
-	padding: 24px 0;**/
+	padding: 24px 0;
 }
 
-.Grid_Container.Builder {
-	display: grid;
-	grid-template-rows: 1fr;
-	grid-template-columns: 60px 1fr;
-/**Grid play comment out	
+.Builder {
 	width: 100%;
-	height: 100%;**/
+	height: calc(100% - 88px - 150px);
 }
 
-.Story_Container {
+.Palette {
 	background-image: url("../assets/palette-frame-paper-pattern.jpg");
 	background-repeat: repeat;
 	padding: 4%;
 	border-radius: 4px;
-	width: 100%;
 	box-shadow: var(--palette-frame-rest);
+}
+
+.Palette.Story_Size_8w_11t, .Palette.Story_Size_8w_9t, .Palette.Story_Size_11w_8t {
+	padding:2%;
 }
 
 .Story_Grid {
@@ -200,65 +212,50 @@ grid-row-gap: 16px;
 	opacity: 0;
 }
 
-.Builder_Bottom {
-	height: 150px;
-	background-color: black;
+.Annoyed_Gina {
+	height: 100%;
+	flex:1;
 }
 
 /**STORY SIZES**/
 
-.Landscape {
-	/**Commented out to expriment with grid 
-	width: var(--story-container-size);**/
-	flex: 1;
-	padding: 0 10%;
+.Palette_Container.Landscape {
+width: 100%;
+padding:32px;
+
 }
 
-.Story_Container.Portrait_Square {
-	height: var(--story-container-size);
+.Landscape .Palette {
+	width:100%;
 }
 
-.Story_Container ~ .Disclaimer {
-	width: var(--story-container-size);
+.Palette_Container.Portrait_Square {
+	height: 100%;
+	padding:16px 0;
+
+}
+
+.Portrait_Square .Palette {
+	height: 100%;
 }
 
 /**LANDSCAPE SIZES **/
-.Story_Size_6w_3t {
-	aspect-ratio: 2 / 1;
-}
-.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_26,
-.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_Irregular {
-	width: calc(100% / 6);
-	height: auto;
-}
-
-.Story_Size_4t_6w {
-	aspect-ratio: 3 / 2;
-}
 
 .Story_Size_4w_3t {
 	aspect-ratio: 4 / 3;
-}
-
-.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_26,
-.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_Irregular {
-	width: calc(100% / 4);
-	height: auto;
-}
-
-.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_37 {
-	width: calc((100% / 4) * 1.42);
-	height: auto;
+	width:85%!important;
 }
 
 .Story_Size_5w_4t {
 	aspect-ratio: 5 / 4;
 }
 
-.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_26,
-.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_Irregular {
-	width: calc(100% / 5);
-	height: auto;
+.Story_Size_6w_3t {
+	aspect-ratio: 2 / 1;
+}
+
+.Story_Size_6w_4t {
+	aspect-ratio: 3 / 2;
 }
 
 .Story_Size_7w_2t {
@@ -281,6 +278,7 @@ grid-row-gap: 16px;
 .Story_Size_3w_3t,
 .Story_Size_5w_5t {
 	aspect-ratio: 1 / 1;
+	height:85%!important;
 }
 
 .Story_Size_7w_9t {
@@ -294,6 +292,114 @@ grid-row-gap: 16px;
 .Story_Size_8w_11t {
 	aspect-ratio: 8 / 11;
 }
+
+/**PAN SCALING FOR PALETTE RATIOS**/
+
+/*3-wide Stories*/
+
+.Story_Size_3w_3t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_3w_3t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc(100% / 3);
+	height: auto;
+}
+
+.Story_Size_3w_3t .Shadow_Image_Container.Pan_Size_37 {
+	width: calc((100% / 3) * 1.42);
+	height: auto;
+}
+
+/*4-wide Stories*/
+
+.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc(100% / 4);
+	height: auto;
+}
+
+.Story_Size_4w_3t .Shadow_Image_Container.Pan_Size_37 {
+	width: calc((100% / 4) * 1.42);
+	height: auto;
+}
+
+/*5-wide Stories*/
+.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_Irregular, 
+.Story_Size_5w_5t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_5w_5t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc(100% / 5);
+	height: auto;
+}
+
+.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_37, 
+.Story_Size_5w_5t .Shadow_Image_Container.Pan_Size_37 {
+	width: calc((100% / 5) * 1.42);
+	height: auto;
+}
+
+/*6-wide stories*/
+.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_Irregular, 
+.Story_Size_6w_4t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_6w_4t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc(100% / 6);
+	height: auto;
+}
+
+.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_37,
+.Story_Size_6w_4t .Shadow_Image_Container.Pan_Size_37
+{
+	width: calc((100% / 6) * 1.42);
+	height: auto;
+}
+
+/*7-wide stories*/
+.Story_Size_7w_2t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_7w_2t .Shadow_Image_Container.Pan_Size_Irregular, 
+.Story_Size_7w_5t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_7w_5t .Shadow_Image_Container.Pan_Size_Irregular,
+.Story_Size_7w_6t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_7w_6t .Shadow_Image_Container.Pan_Size_Irregular,
+.Story_Size_7w_9t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_7w_9t .Shadow_Image_Container.Pan_Size_Irregular  {
+	width: calc(100% / 7);
+	height: auto;
+}
+
+
+.Story_Size_7w_2t .Shadow_Image_Container.Pan_Size_37,
+.Story_Size_7w_5t .Shadow_Image_Container.Pan_Size_37,
+.Story_Size_7w_6t .Shadow_Image_Container.Pan_Size_37,
+.Story_Size_7w_9t .Shadow_Image_Container.Pan_Size_37
+{
+	width: calc((100% / 7) * 1.42);
+	height: auto;
+}
+
+/*8-wide stories*/
+.Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_26, .Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_Irregular,
+.Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_26,.Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_Irregular  {
+	width: calc(100% / 8); 
+	height:auto;	
+	}
+	
+.Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_37, 
+.Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_37 {
+	width: calc((100% / 8) * 1.42);
+	height:auto;	
+	}
+	
+	/*11-wide stories*/
+
+.Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_26, .Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc(100% / 11); 
+	height:auto;	
+	}
+	
+	.Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_37, 
+	.Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_37 {
+		width: calc((100% / 11) * 1.42);
+		height:auto;	
+		}
 
 /**COLORS AND BACKGROUNDS**/
 
@@ -579,15 +685,16 @@ button {
 
 /**BLOCK BUTTONS**/
 
-.Block_Button {
+.Button_Block {
 	padding: 6px 24px;
 	background: var(--FDBL-yellow-light);
 	border-radius: 4px;
 	color: var(--FDBL-black);
 	font: var(--font-block-button);
+	text-transform:capitalize;
 }
 
-.Block_Button:hover {
+.Button_Block:hover {
 	padding: 6px 24px;
 	background: var(--FDBL-yellow-medium);
 	border-radius: 4px;
@@ -596,16 +703,16 @@ button {
 	box-shadow: var(--lift-shadow);
 }
 
-.Block_Button:active {
+.Button_Block:active {
 	box-shadow: var(--drag-shadow);
 }
 
-.Block_Button.Dark {
+.Button_Block.Dark {
 	background: var(--FDBL-dark-teal);
 	color: var(--FDBL-white-text);
 }
 
-.Block_Button.Dark:hover {
+.Button_Block.Dark:hover {
 	background: var(--FDBL-green-medium);
 }
 
@@ -644,7 +751,7 @@ label.Text_Button:active {
 	height: 15px;
 }
 .Button_Micro div {
-	font: var(--font-micro-s);
+	font: var(--font-micro-labels);
 	color: var(--FDBL-dark-gray);
 	text-transform: capitalize;
 	font-weight: var(--type-weight-regular);

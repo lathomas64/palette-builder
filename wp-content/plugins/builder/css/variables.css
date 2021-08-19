@@ -46,19 +46,77 @@
 
 	/**FONT STYLES**/
 	/**font: font-style font-variant font-weight font-size/line-height font-family**/
-	--font-heading-5: var(--type-weight-bold) var(--type-size-24) / var(--type-size-24) var(--e-global-typography-secondary-font-family);
-	--font-filter-button: var(--type-weight-regular) var(--type-size-14) / var(--type-size-18) var(--e-global-typography-primary-font-family);
-	--font-listing-card-title: var(--type-weight-bold) var(--type-size-16) / var(--type-size-16) var(--e-global-typography-secondary-font-family);
-	--font-sidebar-icon-label: var(--type-weight-light) var(--type-size-16) / var(--type-size-16) var(--e-global-typography-secondary-font-family);
-	--font-micro-labels: var(--type-weight-regular) var(--type-size-14) / var(--type-size-16) var(--e-global-typography-primary-font-family);
+	
+	/**HEADINGS**/
+--font-heading-3: 
+		var(--type-weight-bold) 
+		var(--type-size-40) / var(--type-size-40) 
+		var(--e-global-typography-secondary-font-family);
+	--font-heading-5: 
+		var(--type-weight-bold) 
+		var(--type-size-24) / var(--type-size-24) 
+		var(--e-global-typography-secondary-font-family);
+	
+
+	--font-panel-title: 
+		var(--type-weight-bold) 
+		var(--type-size-32) / var(--type-size-32) 
+		var(--e-global-typography-secondary-font-family);
+		--font-subsection-title: 
+		var(--type-weight-bold) 
+		var(--type-size-24) / var(--type-size-24) 
+		var(--e-global-typography-secondary-font-family);
+	--font-accordion-section-title: 
+		var(--type-weight-bold) 
+		var(--type-size-21) / var(--type-size-21) 
+		var(--e-global-typography-secondary-font-family);
+	--font-panel-section-title: 
+		var(--type-weight-bold) 
+		var(--type-size-18) / var(--type-size-21) 
+		var(--e-global-typography-secondary-font-family);
+	--font-listing-card-title: 
+		var(--type-weight-bold) 
+		var(--type-size-16) / var(--type-size-16) 
+		var(--e-global-typography-secondary-font-family);
+	--font-meta-title: 
+		var(--type-weight-regular) 
+		var(--type-size-16) / var(--type-size-12) 
+		var(--e-global-typography-secondary-font-family);
+	
+	
+	/**BUTTONS**/
+	--font-block-button: 
+		var(--type-weight-regular) 
+		var(--type-size-18) / var(--type-size-18) 
+		var(--e-global-typography-secondary-font-family);
+	--font-sidebar-icon-label: 
+		var(--type-weight-light) 
+		var(--type-size-16) / var(--type-size-16) 
+		var(--e-global-typography-secondary-font-family);
+	--font-filter-button: 
+		var(--type-weight-regular) 
+		var(--type-size-14) / var(--type-size-18) 
+		var(--e-global-typography-primary-font-family);
+	--font-micro-labels: 
+		var(--type-weight-regular) 
+		var(--type-size-14) / var(--type-size-16) 
+		var(--e-global-typography-primary-font-family);
+	--font-text-button-small: 
+		var(--type-weight-bold) 
+		var(--type-size-12) / var(--type-size-12) 
+		var(--e-global-typography-primary-font-family);
+	
+
+
+
+
 	--font-body-small: var(--type-weight-light) var(--type-size-16) / var(--type-size-18) var(--e-global-typography-primary-font-family);
-	--font-panel-title: var(--type-weight-bold) var(--type-size-32) / var(--type-size-32) var(--e-global-typography-secondary-font-family);
-	--font-panel-section-title: var(--type-weight-bold) var(--type-size-18) / var(--type-size-21) var(--e-global-typography-secondary-font-family);
-	--font-text-button-small: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
+
+/**FORMS AND INPUTS**/
+
 	--font-input-label: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
-	--font-block-button: var(--type-weight-regular) var(--type-size-18) / var(--type-size-18) var(--e-global-typography-secondary-font-family);
-	--font-heading-5: var(--type-weight-bold) var(--type-size-24) / var(--type-size-24) var(--e-global-typography-secondary-font-family);
-	--font-accordion-section-title: var(--type-weight-bold) var(--type-size-21) / var(--type-size-21) var(--e-global-typography-secondary-font-family);
+
+
 
 	/**SHADOWS**/
 	--shadow-invisible: 3px 3px 0px rgb(0 0 0 / 0%);

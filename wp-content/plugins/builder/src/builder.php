@@ -14,7 +14,7 @@
 	<div class="Wrap">
 		<section class="Section">
 			<div class="Grid_Container Page">
-				<div class="Grid_Container Arrangement_Space">
+				<div class="Arrangement_Space Column">
 					<div class="Builder_Top Row Justify_Content_Left Align_Items_Center">
 						<div class="Site_Menu_Trigger Column">
 							<div class="Logos_Small_Small_Black">
@@ -103,17 +103,16 @@
 							</div>
 						</div>
 					</div>
-					<div class="Builder Grid_Container Gap_0 Justify_Content_Flex_Start Align_Items_Center">
+					<div class="Builder Row Gap_0 Space_Between">
 						<div class="Set_Aside Column Gap_0">
-							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
 									<img src="../assets/temp-shadow-imgs/Helix-Nebula.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
 								</div>
-							</div>
-							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Square">
+								</div>							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Square">
 								<div class="Wrapper">
 									<img src="../assets/temp-shadow-imgs/ACM14.jpg" />
 									<div class="Pan_Shadow">
@@ -121,7 +120,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
+							<div class="Shadow_Image_Container Column Pan_Size_37 Pan_Shape_Round">
 								<div class="Wrapper">
 									<img src="../assets/temp-shadow-imgs/Buttercupcake.jpg" />
 									<div class="Pan_Shadow">
@@ -129,7 +128,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Square">
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Square">
 								<div class="Wrapper">
 									<img src="../assets/temp-shadow-imgs/ACD00.jpg" />
 									<div class="Pan_Shadow">
@@ -137,7 +136,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_Irregular Pan_Shape_Irregular">
+							<div class="Shadow_Image_Container Column Pan_Size_Irregular Pan_Shape_Irregular">
 								<div class="Wrapper">
 									<img src="../assets/temp-shadow-imgs/burnish.jpg" />
 									<div class="Pan_Shadow">
@@ -145,7 +144,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Square">
+							<div class="Shadow_Image_Container Column Pan_Size_37 Pan_Shape_Square">
 								<div class="Wrapper">
 									<img src="../assets/temp-shadow-imgs/ACD4.jpg" />
 									<div class="Pan_Shadow">
@@ -153,74 +152,81 @@
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Round">
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Square">
 								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/Gamma-Ray.jpg" />
+									<img src="../assets/temp-shadow-imgs/ACD4.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="Column Gap_16 Landscape">
-						<div class="Story_Container Story_Size_4w_3t Flex_Container">
-							<div class="Story_Grid Row Justify_Content_Left Align_Items_Center">
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
+							<div class="Annoyed_Gina Flex_Container Justify_Content_Center">
+							<div class="Palette_Container Flex_Container Column Landscape Justify_Content_Center Align_Items_Center">
+							<div class="Palette Story_Size_11w_8t Flex_Container">
+								<div class="Story_Grid Row Justify_Content_Left Align_Items_Center"><?php include "../assets/demo-content/demo-uniform-pans.php"; ?></div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="Builder_Bottom">
+						<div class="Builder_Assistance_Info">
+								<div class="Builder_Info_Container	Flex_Container Row Justify_Content_Flex_End Gap_32">
+									<div class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+										<div class="Icon_Container">
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7391 6.19565C11.7391 6.28214 11.7048 6.36508 11.6436 6.42623C11.5825 6.48738 11.4995 6.52174 11.413 6.52174H6.19565C6.10917 6.52174 6.02623 6.48738 5.96507 6.42623C5.90392 6.36508 5.86957 6.28214 5.86957 6.19565C5.86957 6.10917 5.90392 6.02623 5.96507 5.96507C6.02623 5.90392 6.10917 5.86957 6.19565 5.86957H11.413C11.4995 5.86957 11.5825 5.90392 11.6436 5.96507C11.7048 6.02623 11.7391 6.10917 11.7391 6.19565ZM11.413 8.47826H6.19565C6.10917 8.47826 6.02623 8.51262 5.96507 8.57377C5.90392 8.63492 5.86957 8.71786 5.86957 8.80435C5.86957 8.89083 5.90392 8.97377 5.96507 9.03493C6.02623 9.09608 6.10917 9.13043 6.19565 9.13043H11.413C11.4995 9.13043 11.5825 9.09608 11.6436 9.03493C11.7048 8.97377 11.7391 8.89083 11.7391 8.80435C11.7391 8.71786 11.7048 8.63492 11.6436 8.57377C11.5825 8.51262 11.4995 8.47826 11.413 8.47826ZM15 0.978261V14.0217C14.9997 14.2811 14.8965 14.5297 14.7131 14.7131C14.5297 14.8965 14.2811 14.9997 14.0217 15H0.978261C0.718903 14.9997 0.470254 14.8965 0.28686 14.7131C0.103465 14.5297 0.000302056 14.2811 0 14.0217V0.978261C0.000302056 0.718903 0.103465 0.470254 0.28686 0.28686C0.470254 0.103465 0.718903 0.000302056 0.978261 0H14.0217C14.2811 0.000302056 14.5297 0.103465 14.7131 0.28686C14.8965 0.470254 14.9997 0.718903 15 0.978261ZM0.978261 14.3478H3.26087V0.652174H0.978261C0.89181 0.652282 0.808932 0.686672 0.747802 0.747802C0.686672 0.808932 0.652282 0.89181 0.652174 0.978261V14.0217C0.652282 14.1082 0.686672 14.1911 0.747802 14.2522C0.808932 14.3133 0.89181 14.3477 0.978261 14.3478ZM14.3478 0.978261C14.3477 0.89181 14.3133 0.808932 14.2522 0.747802C14.1911 0.686672 14.1082 0.652282 14.0217 0.652174H3.91304V14.3478H14.0217C14.1082 14.3477 14.1911 14.3133 14.2522 14.2522C14.3133 14.1911 14.3477 14.1082 14.3478 14.0217V0.978261Z" fill="#959595"></path></svg></div>
+										<div class="none">Disclaimers</div>
+									</div>
+									<div class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+										<div class="Icon_Container">
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 0.789474C6.61871 0.789526 5.74606 0.96316 4.93187 1.30046C4.11769 1.63777 3.37791 2.13213 2.75478 2.75534C2.13165 3.37854 1.63737 4.11837 1.30016 4.9326C0.962954 5.74683 0.789422 6.6195 0.789474 7.50079C0.789525 8.38208 0.96316 9.25473 1.30046 10.0689C1.63777 10.8831 2.13213 11.6229 2.75534 12.246C3.37854 12.8691 4.11837 13.3634 4.9326 13.7006C5.74683 14.0378 6.6195 14.2114 7.50079 14.2113C9.28064 14.2112 10.9875 13.5041 12.246 12.2455C13.5045 10.9868 14.2114 9.27985 14.2113 7.5C14.2112 5.72015 13.5041 4.01325 12.2455 2.75478C10.9868 1.49631 9.27985 0.789369 7.5 0.789474ZM7.5 0C9.48912 0 11.3968 0.790176 12.8033 2.1967C14.2098 3.60322 15 5.51088 15 7.5C15 9.48912 14.2098 11.3968 12.8033 12.8033C11.3968 14.2098 9.48912 15 7.5 15C5.51088 15 3.60322 14.2098 2.1967 12.8033C0.790176 11.3968 0 9.48912 0 7.5C0 5.51088 0.790176 3.60322 2.1967 2.1967C3.60322 0.790176 5.51088 0 7.5 0ZM7.10526 11.0526H7.89474V12.6316H7.10526V11.0526ZM7.5 2.36842C8.23284 2.36842 8.93566 2.65954 9.45385 3.17773C9.97204 3.69592 10.2632 4.39874 10.2632 5.13158C10.2632 5.83974 9.71132 6.33079 9.12711 6.84947L8.38895 7.56237C7.92474 8.09447 7.87421 9.10579 7.89395 9.45079V9.47368H7.10526C7.10211 9.43263 7.02474 7.92316 7.79526 7.04289L8.60211 6.25974C9.06947 5.84447 9.47368 5.48526 9.47368 5.13158C9.47368 4.60813 9.26574 4.10611 8.89561 3.73597C8.52547 3.36584 8.02345 3.15789 7.5 3.15789C6.97655 3.15789 6.47453 3.36584 6.10439 3.73597C5.73426 4.10611 5.52632 4.60813 5.52632 5.13158H4.73684C4.73684 4.39874 5.02796 3.69592 5.54615 3.17773C6.06435 2.65954 6.76717 2.36842 7.5 2.36842Z" fill="#959595"></path></svg></div>
+										<div class="none">Help</div>
 									</div>
 								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Hot-Spiced-Cider.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
+						</div>
+						<div class="Palette_Meta Flex_Container Row Justify_Content_Flex_Start">
+							<input class="Trigger Button_Micro" type="checkbox" id="hideMeta">
+							<label class="Trigger Controls Button_Micro Row Gap_4 Justify_Content_Space_Between" for="hideMeta">
+										<div class="Icon_Container Flex_Container Column Align_Items_Center Justify_Content_Center">
+											<svg width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1.40336H0V0.260498H8V1.40336Z" fill="#959595"></path></svg>
+										</div>
+										<div>Hide Panel</div>
+								</label>
+							<div class="Info_Bar">
+								<div class="Container Flex_Container Row Space_Between">
+									<div class="Info_Bar_Left Flex_Container Row Align_Items_Center Justify_Content_Center Gap_48">
+										<div class="Panel_Title">Your Palette:</div>
+										<div class="Flex_Container Row Gap_32">
+											<div class="Meta_Label Flex_Container Column Gap_2">
+												<div class="Title">Shadows</div>
+												<div class="Value">06</div>
+											</div>
+											<div class="Meta_Label Flex_Container Column Gap_2">
+												<div class="Title">Brands</div>
+												<div class="Value">06</div>
+											</div>
+											<div class="Meta_Label Flex_Container Column Gap_2">
+												<div class="Title">Countries</div>
+												<div class="Value">06</div>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Mochi.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
+									<div class="Info_Bar_Right Flex_Container Row Align_Items_Center Justify_Content_Center Gap_48">
+										<div class="Price_Widget Flex_Container Column Gap_2">
+											<div class="Title">Price Before Shipping</div>
+											<div class="Price Flex_Container Row Gap_2 Align_Items_Flex_End">
+												<div class="Price_Value">$84.00</div>
+												<div class="Price_Units">USD</div>
+											</div>
 										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_37 Pan_Shape_Square">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/ACS34.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/Bittermelon.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
-										</div>
-									</div>
-								</div>
-								<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_Irregular Pan_Shape_Irregular">
-									<div class="Wrapper">
-										<img src="../assets/temp-shadow-imgs/burnish.jpg" />
-										<div class="Pan_Shadow">
-											<?php include "components/pan-controls.php"; ?>
+										<div class="Button_Block">
+											<div class="none">build shopping list</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="Disclaimer">
-							<div>Reminder: Your shopping list will not include a palette</div>
-						</div>
-						</div>
 					</div>
-					<div class="Builder_Bottom"></div>
 				</div>
 				<div class="Column Right_Panel">
 					<div class="Inner_Section_Wrap">
