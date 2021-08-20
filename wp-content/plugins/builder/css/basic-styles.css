@@ -186,7 +186,7 @@ a {
 
 .Builder {
 	width: 100%;
-	height: calc(100% - 88px - 150px);
+	flex:1;
 }
 
 .Palette {
@@ -197,7 +197,7 @@ a {
 	box-shadow: var(--palette-frame-rest);
 }
 
-.Palette.Story_Size_8w_11t, .Palette.Story_Size_8w_9t, .Palette.Story_Size_11w_8t {
+.Palette.Story_Size_8w_11t, .Palette.Story_Size_8w_9t, .Palette.Story_Size_11w_8t, .Palette.Story_Size_7w_9t {
 	padding:2%;
 }
 

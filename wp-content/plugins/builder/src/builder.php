@@ -107,54 +107,54 @@
 						<div class="Set_Aside Column Gap_0">
 							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/Helix-Nebula.jpg" />
+									<img src="../assets/temp-shadow-imgs/Cognac.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
 								</div>
-								</div>							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Square">
+								</div>							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/ACM14.jpg" />
-									<div class="Pan_Shadow">
-										<?php include "components/pan-controls.php"; ?>
-									</div>
-								</div>
-							</div>
-							<div class="Shadow_Image_Container Column Pan_Size_37 Pan_Shape_Round">
-								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/Buttercupcake.jpg" />
+									<img src="../assets/temp-shadow-imgs/Salvaje.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Square">
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/ACD00.jpg" />
+									<img src="../assets/temp-shadow-imgs/Ritmo.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Pan_Size_Irregular Pan_Shape_Irregular">
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/burnish.jpg" />
+									<img src="../assets/temp-shadow-imgs/Radiation.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Pan_Size_37 Pan_Shape_Square">
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/ACD4.jpg" />
+									<img src="../assets/temp-shadow-imgs/Moonwalk.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
 								</div>
 							</div>
-							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Square">
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
-									<img src="../assets/temp-shadow-imgs/ACD4.jpg" />
+									<img src="../assets/temp-shadow-imgs/Por-la-Noche.jpg" />
+									<div class="Pan_Shadow">
+										<?php include "components/pan-controls.php"; ?>
+									</div>
+								</div>
+							</div>
+							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
+								<div class="Wrapper">
+									<img src="../assets/temp-shadow-imgs/Orions-Belt.jpg" />
 									<div class="Pan_Shadow">
 										<?php include "components/pan-controls.php"; ?>
 									</div>
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="Builder_Bottom">
+					<div class="Builder_Bottom Flex_Container Column Align_Content_Flex_End">
 						<div class="Builder_Assistance_Info">
 								<div class="Builder_Info_Container	Flex_Container Row Justify_Content_Flex_End Gap_32">
 									<div class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
@@ -184,7 +184,7 @@
 									</div>
 								</div>
 						</div>
-						<div class="Palette_Meta Flex_Container Row Justify_Content_Flex_Start">
+						<div class="Palette_Meta Flex_Container Row Justify_Content_Flex_Start Align_Items_Flex_End">
 							<input class="Trigger Button_Micro" type="checkbox" id="hideMeta">
 							<label class="Trigger Controls Button_Micro Row Gap_4 Justify_Content_Space_Between" for="hideMeta">
 										<div class="Icon_Container Flex_Container Column Align_Items_Center Justify_Content_Center">
