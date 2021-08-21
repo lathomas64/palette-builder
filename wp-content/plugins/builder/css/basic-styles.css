@@ -27,6 +27,28 @@ body, html { width: 100%; height: 100%; cursor:default;}
 	}
 }
 
+@keyframes slideOutRight {
+	0% {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+	to {
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+}
+
+@keyframes slideInRight {
+	0% {
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+	to {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+}
+
 :focus-visible {
 	outline-color: var(--FDBL-green-light);
 }
@@ -78,7 +100,7 @@ a {
 	grid-template-rows: 1fr;
 	gap: 0;
 	max-height:100vh;
-	overflow:hidden;
+	/* overflow:hidden; */
 }
 
 .Column {
@@ -116,11 +138,11 @@ a {
 }
 
 .Column.Reverse {
-	flex-direction: column-reverse;
+	flex-flow: column-reverse;
 }
 
 .Row.Reverse {
-	flex-direction: row-reverse;
+	flex-flow: row-reverse;
 }
 
 .Justify_Content_Space_Between,
@@ -216,6 +238,7 @@ a {
 	height: 100%;
 	flex:1;
 }
+
 
 /**STORY SIZES**/
 
@@ -882,8 +905,9 @@ input[type="checkbox"].Filter_Button:checked + label,
 	fill: var(--FDBL-white-text);
 }
 
-a.Nav_Button {
+button.Nav_Button {
 	text-decoration: none;
+	background:none;
 }
 
 .Nav_Button .Heading {
@@ -894,19 +918,32 @@ a.Nav_Button {
 	padding: 0;
 }
 
-a.Nav_Button:hover .Nav_Icon {
+button.Nav_Button.Active_Panel .Nav_Icon,button.Nav_Button.Active_Panel:hover .Nav_Icon {
+	background-color: var(--FDBL-yellow-medium);
+	box-shadow: var(--button-selected);
+}
+
+button.Nav_Button.Active_Panel svg, button.Nav_Button.Active_Panel:hover svg {
+	fill: var(--FDBL-dark-teal);
+}
+
+button.Nav_Button.Active_Panel .Heading, button.Nav_Button.Active_Panel:hover .Heading {
+	font-weight: var(--type-weight-bold);
+}
+
+button.Nav_Button:hover .Nav_Icon {
 	background-color: var(--FDBL-yellow-medium);
 	box-shadow: var(--lift-shadow);
 }
 
-a.Nav_Button:hover svg {
+button.Nav_Button:hover svg {
 	fill: var(--FDBL-dark-teal);
 }
 
-a.Nav_Button:active .Nav_Icon {
+button.Nav_Button:active .Nav_Icon {
 	box-shadow: var(--drag-shadow);
 }
 
-a.Nav_Button:hover .Heading {
+button.Nav_Button:hover .Heading {
 	font-weight: var(--type-weight-bold);
 }

@@ -228,11 +228,7 @@ height: auto;
 
 /**BUILDER BOTTOM META**/
 
-.Builder_Bottom{
-	flex: 0 1 auto;
- min-height: 0;
-	transition: .3s;
-}
+
 
 .Builder_Assistance_Info{
 	padding: 0 32px;
@@ -245,15 +241,12 @@ height: auto;
 
 .Palette_Meta {
 overflow:hidden;
-height:100%;
-transition: .3s;
+
 }
 
 .Info_Bar {
 	width:100%;
-	max-height:100%;
-	overflow:hidden;
-	transition: .3s;
+
 }
 
 .Info_Bar .Container {
@@ -264,9 +257,20 @@ transition: .3s;
 	color: var(--FDBL-white-text);
 }
 
-.Palette_Meta input:checked ~ .Info_Bar {
-	max-height: 0;
-	transition: .3s;
+.Palette_Meta .Controls.Minimized_Tab {
+	background-color: var(--FDBL-yellow-light);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding: 8px;
+	margin-left: 16px;
+}
+
+.Palette_Meta .Controls.Minimized_Tab:hover {
+		box-shadow: var(--lift-shadow);
+}
+
+.Minimized_Tab #controlLabel {
+	color: var(--FDBL-black);
 }
 
 .Info_Bar_Left .Panel_Title {
@@ -298,11 +302,23 @@ transition: .3s;
 /**RIGHT PANEL**/
 
 .Search_And_Filter {
-	width: 89%;
 	padding: 32px;
 	border: 1px solid var(--FDBL-medium-gray);
 	height: 100vh;
-	overflow: scroll;
+	overflow: hidden;
+}
+
+.Search_And_Filter .Search_Filter_Panel {
+	transform: translateX(100px);
+	opacity: 0;
+	transition:.3s;
+}
+
+.Search_And_Filter .Search_Filter_Panel.Active_Panel {
+	order:-1;
+	transform: translateX(0);
+	opacity: 1;
+	transition:.3s;
 }
 
 .Right_Panel_Nav {
