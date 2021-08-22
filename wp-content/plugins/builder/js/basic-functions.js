@@ -26,8 +26,8 @@ $(document).ready(function(){
 });
 
 
-	$(".Results .Search_Grid_Card.Undefined").each(
-	function(){
+	$(".Results .Search_Grid_Card").each(
+	function(index, element){
 		var classes = $(this).attr("class");
 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
 		var width = widthxheight[1];
@@ -38,17 +38,15 @@ $(document).ready(function(){
 			"grid-template-columns" : "1fr 1fr 1fr"
 		}
 		);
-		
+
 		var circle = $("#circleTemplate");
-		
 		for (
 			let circles = 0; 
 			circles < width * height; 
 			circles++
 		) {
-			$("#circletemplate").clone().appendTo(".Wrapper");
-		};
-		$(this).removeClass("Undefined");
+			$(element).find('.Wrapper').append(circle.clone());
+		}
 });
 	
 }); //end of document ready			$("button.temp").click(function(){
