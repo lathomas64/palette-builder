@@ -1,12 +1,3 @@
-<head>
-	<meta charset="UTF-8" />
-	<title>Universal Palette Builder – Firedrake Beauty Labs</title>
-	<link rel="stylesheet" type="text/css" href="../../css/variables.css" />
-	<link rel="stylesheet" type="text/css" href="../../css/basic-styles.css" />
-	<link rel="stylesheet" type="text/css" href="../../css/builder-styles.css" />
-	<link rel="stylesheet" href="https://use.typekit.net/mxy5ujb.css" />
-</head>
-<body>
 	<section class="Row Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
 		<div class="Advanced_Search_Filter">
@@ -48,9 +39,9 @@
 										</label>
 							 <div class="Content">
 							  <div class="Column Gap_24">
-								  <?php include "../filter-sections/price-shipping.php"; ?>
+								  <?php include "/filter-sections/price-shipping.php"; ?>
 	  							<div class="Row Justify_Content_Flex_End">
-		    				<button class="Block_Button Dark">Save and Close Section</button>
+		    				<button class="Button_Block Dark">Save and Close Section</button>
 									</div>
 								</div>
 	 					</div>
@@ -83,7 +74,7 @@
 									<?php include "../filter-sections/chroma-shifts.php"; ?>
 									</div>
 										<div class="Row Justify_Content_Flex_End">
-										<button class="Block_Button Dark">Save and Close Section</button>
+										<button class="Button_Block Dark">Save and Close Section</button>
 									</div>
 								</div>
 							</div>
@@ -100,7 +91,7 @@
 									<div class="Column Gap_24">
 										<?php include "../filter-sections/pan-format.php"; ?>
 										<div class="Row Justify_Content_Flex_End">
-										<button class="Block_Button Dark">Save and Close Section</button>
+										<button class="Button_Block Dark">Save and Close Section</button>
 									</div>
 								</div>
 							</div>
@@ -117,7 +108,7 @@
 							<div class="Column Gap_24">
 								<?php include "../filter-sections/brand-characteristics.php"; ?>
 								<div class="Row Justify_Content_Flex_End">
-								<button class="Block_Button Dark">Save and Close Section</button>
+								<button class="Button_Block Dark">Save and Close Section</button>
 							</div>
 						</div>
 					</div>
@@ -125,11 +116,10 @@
 						</div>
 					</div>
 	    <div class="Row Justify_Content_Flex_End">
-			<button class="Block_Button Row Justify_Content_Center">
+			<button class="Button_Block Row Justify_Content_Center">
 	 <div>Apply All Filters and Close Search</div>
 	</button>
 	    </div>
 	  </div>
 	 </div>
 	</section>
-</body>

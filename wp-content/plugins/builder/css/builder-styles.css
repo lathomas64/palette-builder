@@ -377,11 +377,11 @@ overflow:hidden;
 	left: 0;
 }
 
-.Single_Pan_Card img {
+.Single_Pan_Card img, .Card_Image_Container img {
 	width: 100%;
 	height: 100%;
 }
-.Shadow_Name {
+.Shadow_Name, .Card_Title {
 	display: inline-block;
 	color: var(--FDBL-dark-gray);
 	background-color: var(--system-white);
@@ -398,10 +398,10 @@ overflow:hidden;
 	box-shadow: none;
 }
 
-a.Single_Pan_Card {
+a.Single_Pan_Card, a.Search_Grid_Card {
 	text-decoration: none;
 	padding-top: 11px;
-	flex-grow: 4;
+	flex: 0 1 auto;
 }
 
 .Pan_Shadow::after {
@@ -861,4 +861,57 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 
 .Accordion .Single_Pan_Card .Wrapper {
 	border: var(--pan-border);
+}
+
+.Search_Grid_Card .Card_Container {
+ border: 1px solid var(--FDBL-medium-gray);
+	padding:8px;
+
+}
+
+.Search_Grid_Card .Card_Title {
+ margin-top:-16px;
+	padding: 0px 4px 0px 6px;
+
+}
+
+.Search_Grid_Card:hover .Card_Container, .Search_Grid_Card:active .Card_Container, .Search_Grid_Card:focus .Card_Container {
+	padding: 7px;
+
+}
+
+.Search_Grid_Card:hover .Card_Container {
+ border: 2px solid var(--FDBL-green-light);
+ box-shadow: var(--lift-shadow);
+}
+
+.Search_Grid_Card:active .Card_Container, {
+ border: 2px solid var(--FDBL-yellow-medium);
+}
+
+.Search_Grid_Card:hover .Card_Title {
+ color:var(--FDBL-black);
+ transition: .3s;
+
+
+}
+
+.Search_Grid_Card::after {
+	content: "Change Story Size";
+	display:none;
+	opacity: 0;
+	color: var(--FDBL-black);
+	font-size: var(--type-size-16);
+	font-family: var(--e-global-typography-secondary-font-family);
+	font-weight: var(--type-weight-bold);
+	padding-top: 8px;
+	text-align:center;
+	transition: .2s;
+}
+
+.Search_Grid_Card:hover::after {
+	content: "Change Story Size";
+	display:block;
+	opacity: 1;
+		transition: .2s;
 }

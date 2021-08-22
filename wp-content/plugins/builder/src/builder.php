@@ -165,7 +165,7 @@
 							<div class="Annoyed_Gina Flex_Container Justify_Content_Center">
 							<div class="Palette_Container Flex_Container Column Landscape Justify_Content_Center Align_Items_Center">
 							<div class="Palette Story_Size_11w_8t Flex_Container">
-								<div class="Story_Grid Row Justify_Content_Left Align_Items_Center"><?php include "../assets/demo-content/demo-uniform-pans.php"; ?></div>
+								<div id="Story_Grid" class="Story_Grid Row Justify_Content_Left Align_Items_Center"><?php include "components/grid-shadow.php"; ?></div>
 							</div>
 							</div>
 						</div>

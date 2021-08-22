@@ -51,10 +51,10 @@
 								</div>
 							</div>
 							<div id="tabs" class="Search_And_Filter Row">
-									<div class="Search_Filter_Panel" id="Story_Size">
+									<div class="Search_Filter_Panel Active_Panel" id="Story_Size">
 									<?php include "search-panels/story-size.php"; ?>
 								</div>
-								<div class="Search_Filter_Panel Active_Panel" id="Shadow_Search">
+								<div class="Search_Filter_Panel" id="Shadow_Search">
 									<?php include "search-panels/shadow-search.php"; ?>
 								</div>
 								<div class="Search_Filter_Panel" id="Community_Stories">

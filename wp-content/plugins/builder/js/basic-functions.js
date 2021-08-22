@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function(){
   $(".Info_Bar").slideToggle(300, function(){
@@ -12,7 +11,7 @@ $(document).ready(function(){
 	});
 	
 	
-	// Acc
+	// Changing panels with button click
 	$(".Right_Panel_Nav button").click(
 		function(){
 	var numberIndex = $(this).index();
@@ -23,12 +22,33 @@ $(document).ready(function(){
 
 		$(this).addClass("Active_Panel");
 		$(".Search_And_Filter").find(".Search_Filter_Panel").eq(numberIndex).addClass("Active_Panel");
-
-//		var listItemHeight = $(".naccs ul")
-//			.find("li:eq(" + numberIndex + ")")
-//			.innerHeight();
-//		$(".naccs ul").height(listItemHeight + "px");
 	}
 });
 
+$(".Story_Size .Search_Grid_Card").each(
+	function(){
+		var classes = $(this).attr("class");
+		var widthxheight = classes.match(/(\d+)w_(\d+)/);
+		var width = widthxheight[1];
+		var height = widthxheight[2];
+		
+		$(".Wrapper").css({
+			"display" : "grid",
+			"grid-template-rows" : height,
+			"grid-template-columns" : width
+			}
+		);
+		
+		var circle = $("#circleTemplate");
+			
+		for (
+			let circles = 0; 
+			circles < width * height; 
+			circles++
+		) {
+			$(".Wrapper").appendChild(circle);
+		};
+			
+	});
+	
 }); //end of document ready

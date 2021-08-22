@@ -947,3 +947,9 @@ button.Nav_Button:active .Nav_Icon {
 button.Nav_Button:hover .Heading {
 	font-weight: var(--type-weight-bold);
 }
+
+
+.Results #circleTemplate {
+	display:none;
+	
+}
