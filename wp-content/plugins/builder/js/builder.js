@@ -51,19 +51,18 @@ var currentStory = new Object();
 		var shadows = [];
 		for (var index = 0; index < height * width; index++)
 		{
-			if (currentStory.shadows.length > index) {
-				row.appendChild(currentStory.shadows[index])
-			} else {
+			if(index >= currentStory.shadows.length){
 				let clone = prototype.cloneNode(true);
 				clone.setAttribute('data-index', index);
 				clone.setAttribute('ondrop','drop(event, this)');
 				clone.removeAttribute('style');
-				//col.style = 'border:1px solid black;';
 				clone.setAttribute('ondragover','allowDrop(event)');
-				//col.innerHTML='&nbsp;';
-				//row.appendChild(col);
 				grid.appendChild(clone);
 				currentStory.shadows[index] = clone;
+			}else if (currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
+				//this may be unecessary but we want to make sure the shadows reflect the story
+				//this should load new shadows when the story changes
+				updateShadow(index, currentStory.shadows[index].getAttribute('data-shadow-id'));
 			}
 		}
 		currentStory.height = height;
@@ -114,10 +113,6 @@ var currentStory = new Object();
 	}
 	function rotate() {
 		//TODO CSS rotate here instead
-		var width = currentStory.height;
-		var height = currentStory.width;
-		console.log(currentStory);
-		buildGrid(false, height, width);
 	}
 
 	function getUrlVars() {
@@ -141,10 +136,27 @@ var currentStory = new Object();
 		buildGrid(false, currentStory.height, currentStory.width);
 	}
 
+	function cascadeShadows(index, shadow)
+	{
+		console.log(index);
+		console.log(currentStory.shadows.length);
+		if (index >= currentStory.shadows.length) {
+			console.log('we are exiting cascade without checking anything');
+			return;//we cannot do anything greater then the current length
+		}
+		if(index < currentStory.shadows.length && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
+			cascadeShadows(parseInt(index)+1, currentStory.shadows[index].getAttribute('data-shadow-id'));
+		}
+		updateShadow(index, shadow);
+
+	}
+
 	function addShadow(index, shadow)
 	{
-		// TODO handle logic for bumping things down
-		updateShadow(index, shadow);
+		//handle area and possibility of bumping shadows from end of list.
+		cascadeShadows(index, shadow);
+		//handle area and possibility of bumping shadows from end of list.
+		
 	}
 
 	function updateShadow(index, shadow)
@@ -153,8 +165,27 @@ var currentStory = new Object();
 		console.log(index);
 		console.log(shadow);
 		grid_shadow = currentStory.shadows[index];
-		shadow_data = $('#'+shadow)[0]
-		grid_shadow.getElementsByTagName('img')[0].src = shadow_data.getElementsByTagName('img')[0].src;
+		shadow_data = $('#'+shadow)[0];
+		image_element = null;
+		if( grid_shadow.getElementsByTagName('img').length > 0)
+		{
+			image_element = grid_shadow.getElementsByTagName('img')[0];
+		} else {
+			image_element = document.createElement("img");
+			grid_shadow.getElementsByClassName('wrapper')[0].appendChild(image_element);
+		}
+		image_element.src = shadow_data.getElementsByTagName('img')[0].src;
+
+		shadow_attributes = shadow_data.attributes;
+		for(index = 0; index < shadow_attributes.length; index++)
+		{
+			let attribute = shadow_attributes[index];
+			if(attribute.name.includes("data-")){
+				grid_shadow.setAttribute(attribute.name, attribute.value);
+			}
+		}
+		grid_shadow.setAttribute('data-shadow-id', shadow);
+
 		console.log('end update shadow');
 	}
 

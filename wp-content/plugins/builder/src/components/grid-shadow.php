@@ -4,7 +4,6 @@
 		<!-- when we have an image add the image to the wrapper
     <img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
     -->
-    <img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
 		<div class="Pan_Shadow">
 			<?php include "components/pan-controls.php"; ?>
 		</div>
