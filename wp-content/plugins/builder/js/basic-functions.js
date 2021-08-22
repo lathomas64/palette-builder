@@ -25,30 +25,54 @@ $(document).ready(function(){
 	}
 });
 
-$(".Story_Size .Search_Grid_Card").each(
+
+	$(".Results .Search_Grid_Card.Undefined").each(
 	function(){
 		var classes = $(this).attr("class");
 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
 		var width = widthxheight[1];
 		var height = widthxheight[2];
 		
-		$(".Wrapper").css({
-			"display" : "grid",
-			"grid-template-rows" : height,
-			"grid-template-columns" : width
-			}
+		$(".Results .Search_Grid_Card .Wrapper").css({
+			"grid-template-rows" : "1fr 1fr 1fr",
+			"grid-template-columns" : "1fr 1fr 1fr"
+		}
 		);
 		
 		var circle = $("#circleTemplate");
-			
+		
 		for (
 			let circles = 0; 
 			circles < width * height; 
 			circles++
 		) {
-			$(".Wrapper").appendChild(circle);
+			$("#circletemplate").clone().appendTo(".Wrapper");
 		};
-			
-	});
+		$(this).removeClass("Undefined");
+});
 	
-}); //end of document ready
+}); //end of document ready			$("button.temp").click(function(){
+// 	$(".Results .Search_Grid_Card").each(
+// 	function(){
+// 		var classes = $(this).attr("class");
+// 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
+// 		var width = widthxheight[1];
+// 		var height = widthxheight[2];
+// 		
+// 		$(".Results .Search_Grid_Card .Wrapper").css(
+// 			"grid-template-rows", width
+// 		);
+// 		
+// 		var circle = $("#circleTemplate");
+// 			
+// 		for (
+// 			let circles = 0; 
+// 			circles < width * height; 
+// 			circles++
+// 		) {
+// 			$(".Results .Search_Grid_Card .Wrapper").append(circle);
+// 		};
+// 			
+// 	});
+// 	
+// });
