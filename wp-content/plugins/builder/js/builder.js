@@ -167,6 +167,11 @@ var currentStory = new Object();
 		grid_shadow = currentStory.shadows[index];
 		shadow_data = $('#'+shadow)[0];
 		image_element = null;
+		$(grid_shadow).removeClass("Pan_Shape_Round Pan_Shape_Square Pan_Shape_Rectangle");
+		$(grid_shadow).removeClass("Pan_Size_26 Pan_Size_37 Pan_Size_Irregular");
+
+		$(grid_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
+		$(grid_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
 		if( grid_shadow.getElementsByTagName('img').length > 0)
 		{
 			image_element = grid_shadow.getElementsByTagName('img')[0];
@@ -183,6 +188,7 @@ var currentStory = new Object();
 			if(attribute.name.includes("data-")){
 				grid_shadow.setAttribute(attribute.name, attribute.value);
 			}
+
 		}
 		grid_shadow.setAttribute('data-shadow-id', shadow);
 
