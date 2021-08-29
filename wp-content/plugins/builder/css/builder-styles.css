@@ -305,7 +305,7 @@ overflow:hidden;
 	padding: 32px;
 	border: 1px solid var(--FDBL-medium-gray);
 	height: 100vh;
-	overflow: hidden;
+	overflow: scroll;
 }
 
 .Search_And_Filter .Search_Filter_Panel {
@@ -864,9 +864,15 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 .Search_Grid_Card .Card_Container {
- border: 1px solid var(--FDBL-medium-gray);
+ border: var(--pan-border);
 	padding:8px;
+	flex: 1 0 auto;
+}
 
+
+.Search_Grid_Card .Card_Container > .Column {
+	flex: 1 0 auto;
+ justify-content: center;
 }
 
 .Search_Grid_Card .Card_Title {
@@ -885,18 +891,32 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
  box-shadow: var(--lift-shadow);
 }
 
-.Search_Grid_Card:active .Card_Container, {
+.Search_Grid_Card:active .Card_Container {
  border: 2px solid var(--FDBL-yellow-medium);
+	box-shadow: var(--drag-shadow);
 }
 
 .Search_Grid_Card:hover .Card_Title {
  color:var(--FDBL-black);
  transition: .3s;
-
-
 }
 
-.Search_Grid_Card::after {
+.Results #circleTemplate {
+	display:none;
+	
+}
+
+.Results .Search_Grid_Card #circleTemplate {
+	display:block;
+	border-radius: 50%;
+	border: var(--standard-border);
+	width: 100%;
+ height: auto;}
+
+.Results .Search_Grid_Card .Wrapper { 
+	display: grid;
+
+/* .Search_Grid_Card::after {
 	content: "Change Story Size";
 	display:none;
 	opacity: 0;
@@ -914,4 +934,4 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	display:block;
 	opacity: 1;
 		transition: .2s;
-}
+} */

@@ -33,9 +33,9 @@ $(document).ready(function(){
 		var width = widthxheight[1];
 		var height = widthxheight[2];
 		
-		$(".Results .Search_Grid_Card .Wrapper").css({
-			"grid-template-rows" : "1fr 1fr 1fr",
-			"grid-template-columns" : "1fr 1fr 1fr"
+		$(element).find('.Wrapper').css({
+			"grid-template-columns" : "repeat(" + width + ", 1fr)",
+			"grid-template-rows" : "repeat(" + height + ", 1fr)"
 		}
 		);
 

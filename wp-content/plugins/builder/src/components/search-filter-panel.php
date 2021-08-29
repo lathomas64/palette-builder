@@ -5,7 +5,7 @@
 								<div class="Column Gap_24">
 										<div class="Panel_Title">Find Stuff</div>
 									<div class="Nav_Buttons_Container Column Gap_16">
-										<button class="Nav_Button Story_Size Column Gap_8 Align_Items_Center">
+										<button class="Active_Panel Nav_Button Story_Size Column Gap_8 Align_Items_Center">
 											<div class="Nav_Icon_Wrapper">
 												<span class="Nav_Icon">
 													<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">															<path d="M0 0H3.5V31.5H35V35H0V0Z"></path>
@@ -16,7 +16,7 @@
 											</div>
 											<div class="Heading">Story Size</div>
 										</button>
-										<button class="Active_Panel Nav_Button Shadow_Search Column Gap_8 Align_Items_Center">
+										<button class="Nav_Button Shadow_Search Column Gap_8 Align_Items_Center">
 											<div class="Nav_Icon_Wrapper">
 												<span class="Nav_Icon">
 													<svg width="35" height="35" viewBox="0 0 35 35" fill="#53D4B1" xmlns="http://www.w3.org/2000/svg">															<path
