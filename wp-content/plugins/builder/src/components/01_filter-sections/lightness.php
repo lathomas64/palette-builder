@@ -17,12 +17,12 @@
 				<label class="Light_Level_3 Filter_Button Dark" for="Light_Level_3"><nobr>Mid-Toned</nobr></label>
 			</li>
 			<li>
-				<input  class="Filter_Button"id="Light_Level_4 " type="checkbox" />
-				<label class="Light_Level_4 Filter_Button Dark"for="Light_Level_4 ">Dark</label>
+				<input  class="Filter_Button"id="Light_Level_4" type="checkbox" />
+				<label class="Light_Level_4 Filter_Button Dark" for="Light_Level_4 ">Dark</label>
 			</li>
 			<li>
-				<input  class="Filter_Button"id="Light_Level_5 " type="checkbox" />
-				<label class="Light_Level_5 Filter_Button Dark"for="Light_Level_5 ">Blackened</label>
+				<input  class="Filter_Button"id="Light_Level_5" type="checkbox" />
+				<label class="Light_Level_5 Filter_Button Dark" for="Light_Level_5 ">Blackened</label>
 			</li>
 		</ul>
 	</div>
