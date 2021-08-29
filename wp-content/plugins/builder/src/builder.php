@@ -202,15 +202,15 @@
 										<div class="Flex_Container Row Gap_32">
 											<div class="Meta_Label Flex_Container Column Gap_2">
 												<div class="Title">Shadows</div>
-												<div class="Value">06</div>
+												<div id="Footer_Shadow_Count" class="Value">06</div>
 											</div>
 											<div class="Meta_Label Flex_Container Column Gap_2">
 												<div class="Title">Brands</div>
-												<div class="Value">06</div>
+												<div id="Footer_Brand_Count" class="Value">06</div>
 											</div>
 											<div class="Meta_Label Flex_Container Column Gap_2">
 												<div class="Title">Countries</div>
-												<div class="Value">06</div>
+												<div id="Footer_Country_Count" class="Value">06</div>
 											</div>
 										</div>
 									</div>
@@ -218,7 +218,7 @@
 										<div class="Price_Widget Flex_Container Column Gap_2">
 											<div class="Title">Price Before Shipping</div>
 											<div class="Price Flex_Container Row Gap_2 Align_Items_Flex_End">
-												<div class="Price_Value">$84.00</div>
+												<div id="Footer_Story_Price" class="Price_Value">$84.00</div>
 												<div class="Price_Units">USD</div>
 											</div>
 										</div>
