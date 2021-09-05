@@ -9,8 +9,8 @@ $(document).ready(function(){
 			$("#hideMeta").toggleClass("Minimized_Tab");
 		});
 	});
-	
-	
+
+
 	// Changing panels with button click
 	$(".Right_Panel_Nav button").click(
 		function(){
@@ -32,7 +32,8 @@ $(document).ready(function(){
 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
 		var width = widthxheight[1];
 		var height = widthxheight[2];
-		
+		$(this).attr("onclick", "buildGrid("+width+","+height+")");
+
 		$(element).find('.Wrapper').css({
 			"grid-template-columns" : "repeat(" + width + ", 1fr)",
 			"grid-template-rows" : "repeat(" + height + ", 1fr)"
@@ -41,14 +42,14 @@ $(document).ready(function(){
 
 		var circle = $("#circleTemplate");
 		for (
-			let circles = 0; 
-			circles < width * height; 
+			let circles = 0;
+			circles < width * height;
 			circles++
 		) {
 			$(element).find('.Wrapper').append(circle.clone());
 		}
 });
-	
+
 }); //end of document ready			$("button.temp").click(function(){
 // 	$(".Results .Search_Grid_Card").each(
 // 	function(){
@@ -56,21 +57,21 @@ $(document).ready(function(){
 // 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
 // 		var width = widthxheight[1];
 // 		var height = widthxheight[2];
-// 		
+//
 // 		$(".Results .Search_Grid_Card .Wrapper").css(
 // 			"grid-template-rows", width
 // 		);
-// 		
+//
 // 		var circle = $("#circleTemplate");
-// 			
+//
 // 		for (
-// 			let circles = 0; 
-// 			circles < width * height; 
+// 			let circles = 0;
+// 			circles < width * height;
 // 			circles++
 // 		) {
 // 			$(".Results .Search_Grid_Card .Wrapper").append(circle);
 // 		};
-// 			
+//
 // 	});
-// 	
+//
 // });

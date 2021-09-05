@@ -25,9 +25,9 @@ var currentStory = new Object();
 		var price=0;
 		for (var index = 0; index < currentStory.height * currentStory.width; index++)
 		{
-			if (currentStory.shadows[index].children.length){
+			if (currentStory.shadows[index].getAttribute('data-shadow-id') != null){
 					shadowCount++;
-					shadow = currentStory.shadows[index].children[0];
+					shadow = currentStory.shadows[index];
 					brands.push(shadow.getAttribute('data-brand'));
 					countries.push(shadow.getAttribute('data-country'));
 					price += Number(shadow.getAttribute('data-price'));
@@ -35,10 +35,10 @@ var currentStory = new Object();
 		}
 		brands = unique(brands);
 		countries = unique(countries);
-		document.getElementById('shadow-count').innerHTML=shadowCount;
-		document.getElementById('story-brands').innerHTML=brands.length;
-		document.getElementById('story-countries').innerHTML=countries.length;
-		document.getElementById('story-price').innerHTML=price;
+		document.getElementById('Footer_Shadow_Count').innerHTML=shadowCount.toLocaleString("en-US", {"minimumIntegerDigits":2});
+		document.getElementById('Footer_Brand_Count').innerHTML=brands.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
+		document.getElementById('Footer_Country_Count').innerHTML=countries.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
+		document.getElementById('Footer_Story_Price').innerHTML="$"+price.toFixed(2);
 
 	}
 	function buildGrid(evt, height, width) {
@@ -156,7 +156,7 @@ var currentStory = new Object();
 		//handle area and possibility of bumping shadows from end of list.
 		cascadeShadows(index, shadow);
 		//handle area and possibility of bumping shadows from end of list.
-		
+
 	}
 
 	function updateShadow(index, shadow)
@@ -167,6 +167,11 @@ var currentStory = new Object();
 		grid_shadow = currentStory.shadows[index];
 		shadow_data = $('#'+shadow)[0];
 		image_element = null;
+		$(grid_shadow).removeClass("Pan_Shape_Round Pan_Shape_Square Pan_Shape_Rectangle");
+		$(grid_shadow).removeClass("Pan_Size_26 Pan_Size_37 Pan_Size_Irregular");
+
+		$(grid_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
+		$(grid_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
 		if( grid_shadow.getElementsByTagName('img').length > 0)
 		{
 			image_element = grid_shadow.getElementsByTagName('img')[0];
@@ -183,6 +188,7 @@ var currentStory = new Object();
 			if(attribute.name.includes("data-")){
 				grid_shadow.setAttribute(attribute.name, attribute.value);
 			}
+
 		}
 		grid_shadow.setAttribute('data-shadow-id', shadow);
 
