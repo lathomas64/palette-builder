@@ -131,9 +131,25 @@ var currentStory = new Object();
 		return urlparameter;
 	}
 
-	function reset() {
+	function resize(height, width) {
+		let old_shadows = currentStory.shadows;
+		let length = Math.min(currentStory.shadows.length, height * width);
+		let size_class = "Story_Size_"+width+"w_"+height+"t"
+		reset(height, width);
+		for (var index = 0; index < length; index++)
+		{
+			if (old_shadows[index].getAttribute("data-shadow-id") != null) {
+				updateShadow(index, old_shadows[index].getAttribute("data-shadow-id"));
+			}
+		}
+
+		$(".Palette")[0].setAttribute("class", "Palette "+size_class+" Flex_Container")
+
+	}
+
+	function reset(height=currentStory.height, width=currentStory.width) {
 		currentStory.shadows = [];
-		buildGrid(false, currentStory.height, currentStory.width);
+		buildGrid(false, height, width);
 	}
 
 	function cascadeShadows(index, shadow)

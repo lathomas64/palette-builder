@@ -32,7 +32,7 @@ $(document).ready(function(){
 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
 		var width = widthxheight[1];
 		var height = widthxheight[2];
-		$(this).attr("onclick", "buildGrid("+width+","+height+")");
+		$(this).attr("onclick", "resize("+width+","+height+");return false;");
 
 		$(element).find('.Wrapper').css({
 			"grid-template-columns" : "repeat(" + width + ", 1fr)",
