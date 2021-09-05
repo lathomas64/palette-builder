@@ -131,10 +131,38 @@ var currentStory = new Object();
 		return urlparameter;
 	}
 
-	function resize(height, width) {
+	function shift_left(index)
+	{
+		position = index % currentStory.width;
+		if(position == 0)
+		{
+			// TODO what do we do if they try to move left on the edge
+			//target = currentStory.width-1;
+			return;
+		} else {
+			swap(index, index-1);
+		}
+	}
+
+	function swap(index1, index2)
+	{
+		shadow1 = currentStory.shadows[index1].getAttribute("data-shadow-id");
+		shadow2 = currentStory.shadows[index2].getAttribute("data-shadow-id");
+		updateShadow(index2, shadow1);
+		updateShadow(index1, shadow2);
+		//temp = currentStory.shadows[index1];
+		//currentStory.shadows[index1] = currentStory.shadows[index2];
+		//currentStory.shadows[index2] = temp;
+
+		currentStory.shadows[index1].setAttribute("data-index", index1);
+		currentStory.shadows[index2].setAttribute("data-index", index2);
+	}
+
+	function resize(width, height) {
 		let old_shadows = currentStory.shadows;
 		let length = Math.min(currentStory.shadows.length, height * width);
 		let size_class = "Story_Size_"+width+"w_"+height+"t"
+		let orientation = height > width ? "Portrait" : "Landscape";
 		reset(height, width);
 		for (var index = 0; index < length; index++)
 		{
@@ -144,7 +172,7 @@ var currentStory = new Object();
 		}
 
 		$(".Palette")[0].setAttribute("class", "Palette "+size_class+" Flex_Container")
-
+		$(".Palette_Container")[0].setAttribute("class", "Palette_Container Flex_Container Column "+orientation+" Justify_Content_Center Align_Items_Center")
 	}
 
 	function reset(height=currentStory.height, width=currentStory.width) {
@@ -186,8 +214,12 @@ var currentStory = new Object();
 		$(grid_shadow).removeClass("Pan_Shape_Round Pan_Shape_Square Pan_Shape_Rectangle");
 		$(grid_shadow).removeClass("Pan_Size_26 Pan_Size_37 Pan_Size_Irregular");
 
-		$(grid_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
-		$(grid_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
+		if (shadow != null){
+			$(grid_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
+			$(grid_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
+		} else {
+			$(grid_shadow).addClass("Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round");
+		}
 		if( grid_shadow.getElementsByTagName('img').length > 0)
 		{
 			image_element = grid_shadow.getElementsByTagName('img')[0];
@@ -195,19 +227,35 @@ var currentStory = new Object();
 			image_element = document.createElement("img");
 			grid_shadow.getElementsByClassName('wrapper')[0].appendChild(image_element);
 		}
-		image_element.src = shadow_data.getElementsByTagName('img')[0].src;
+		if(shadow != null) {
+			image_element.src = shadow_data.getElementsByTagName('img')[0].src;
 
-		shadow_attributes = shadow_data.attributes;
-		for(index = 0; index < shadow_attributes.length; index++)
-		{
-			let attribute = shadow_attributes[index];
-			if(attribute.name.includes("data-")){
-				grid_shadow.setAttribute(attribute.name, attribute.value);
+			shadow_attributes = shadow_data.attributes;
+			for(index = 0; index < shadow_attributes.length; index++)
+			{
+				let attribute = shadow_attributes[index];
+				if(attribute.name.includes("data-")){
+					grid_shadow.setAttribute(attribute.name, attribute.value);
+				}
+
 			}
-
+			grid_shadow.setAttribute('data-shadow-id', shadow);
+		} else {
+			console.log('null removing grid shadow data attributes:');
+			console.log(grid_shadow);
+			image_element.remove();
+			remove_list = [];
+			shadow_attributes = grid_shadow.attributes;
+			for(index = 0; index < shadow_attributes.length; index++)
+			{
+				let attribute = shadow_attributes[index];
+				if(attribute.name.includes("data-")){
+					remove_list.push(attribute.name);
+				}
+			}
+			remove_list.forEach(attribute=>grid_shadow.removeAttribute(attribute));
+			console.log(grid_shadow);
 		}
-		grid_shadow.setAttribute('data-shadow-id', shadow);
-
 		console.log('end update shadow');
 	}
 
@@ -225,8 +273,11 @@ var currentStory = new Object();
 		reset();
 		for (var index = 0; index < currentStory.height * currentStory.width; index++)
 		{
-			if (getUrlParam('shadows['+index+']', false)) {
-				updateShadow(index, document.getElementById(getUrlParam('shadows['+index+']', false)));
+			shadow = getUrlParam('shadows['+index+']', false);
+			if (shadow) {
+				console.log('trying to set a shadow:'+index);
+				console.log('shadow is:'+shadow)
+				updateShadow(index, shadow);
 			}
 		}
 		updateFooter();
