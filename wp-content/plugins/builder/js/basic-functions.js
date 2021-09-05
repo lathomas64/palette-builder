@@ -33,6 +33,7 @@ $(document).ready(function(){
 		var width = widthxheight[1];
 		var height = widthxheight[2];
 		$(this).attr("onclick", "resize("+width+","+height+");return false;");
+		$(element).find('.Card_Title').text(width * height + " Pans");
 
 		$(element).find('.Wrapper').css({
 			"grid-template-columns" : "repeat(" + width + ", 1fr)",
