@@ -39,7 +39,7 @@
 										</label>
 							 <div class="Content">
 							  <div class="Column Gap_24">
-								  <?php include "/filter-sections/price-shipping.php"; ?>
+								  <?php include "components/01_filter-sections/price-shipping.php"; ?>
 	  							<div class="Row Justify_Content_Flex_End">
 		    				<button class="Button_Block Dark">Save and Close Section</button>
 									</div>
@@ -62,16 +62,16 @@
 												<div class="Intro">The view of the earth from the moon fascinated me - a small disk, 240,000 mniles away.</div>
 												</div>
 												<div class="Indent Column Gap_16">
-										<?php include "../filter-sections/color.php"; ?>
-										<?php include "../filter-sections/vividness.php"; ?>
-										<?php include "../filter-sections/lightness.php"; ?>
+										<?php include "components/01_filter-sections/color.php"; ?>
+										<?php include "components/01_filter-sections/vividness.php"; ?>
+										<?php include "components/01_filter-sections/lightness.php"; ?>
 												</div>
 									</div>
 									<div class="Filter_Section Column Gap_8">
-									<?php include "../filter-sections/finish.php"; ?>
+									<?php include "components/01_filter-sections/finish.php"; ?>
 									</div>
 									<div class="Filter_Section Column Gap_8">
-									<?php include "../filter-sections/chroma-shifts.php"; ?>
+									<?php include "components/01_filter-sections/chroma-shifts.php"; ?>
 									</div>
 										<div class="Row Justify_Content_Flex_End">
 										<button class="Button_Block Dark">Save and Close Section</button>
@@ -89,7 +89,7 @@
 								</label>
 								<div class="Content">
 									<div class="Column Gap_24">
-										<?php include "../filter-sections/pan-format.php"; ?>
+										<?php include "components/01_filter-sections/pan-format.php"; ?>
 										<div class="Row Justify_Content_Flex_End">
 										<button class="Button_Block Dark">Save and Close Section</button>
 									</div>
@@ -106,7 +106,7 @@
 						</label>
 						<div class="Content">
 							<div class="Column Gap_24">
-								<?php include "../filter-sections/brand-characteristics.php"; ?>
+								<?php include "components/01_filter-sections/brand-characteristics.php"; ?>
 								<div class="Row Justify_Content_Flex_End">
 								<button class="Button_Block Dark">Save and Close Section</button>
 							</div>

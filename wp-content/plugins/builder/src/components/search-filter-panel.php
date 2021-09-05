@@ -5,7 +5,7 @@
 								<div class="Column Gap_24">
 										<div class="Panel_Title">Find Stuff</div>
 									<div class="Nav_Buttons_Container Column Gap_16">
-										<button class="Active_Panel Nav_Button Story_Size Column Gap_8 Align_Items_Center">
+										<button class="Nav_Button Story_Size Column Gap_8 Align_Items_Center">
 											<div class="Nav_Icon_Wrapper">
 												<span class="Nav_Icon">
 													<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">															<path d="M0 0H3.5V31.5H35V35H0V0Z"></path>
@@ -16,7 +16,7 @@
 											</div>
 											<div class="Heading">Story Size</div>
 										</button>
-										<button class="Nav_Button Shadow_Search Column Gap_8 Align_Items_Center">
+										<button class="Active_Panel Nav_Button Shadow_Search Column Gap_8 Align_Items_Center">
 											<div class="Nav_Icon_Wrapper">
 												<span class="Nav_Icon">
 													<svg width="35" height="35" viewBox="0 0 35 35" fill="#53D4B1" xmlns="http://www.w3.org/2000/svg">															<path
@@ -51,17 +51,17 @@
 								</div>
 							</div>
 							<div id="tabs" class="Search_And_Filter Row">
-									<div class="Search_Filter_Panel Active_Panel" id="Story_Size">
-									<?php include "search-panels/story-size.php"; ?>
+									<div class="Search_Filter_Panel" id="Story_Size">
+									<?php include "components/02_search-panels/story-size.php"; ?>
 								</div>
-								<div class="Search_Filter_Panel" id="Shadow_Search">
-									<?php include "search-panels/shadow-search.php"; ?>
+								<div class="Search_Filter_Panel Active_Panel" id="Shadow_Search">
+									<?php include "components/02_search-panels/shadow-search.php"; ?>
 								</div>
 								<div class="Search_Filter_Panel" id="Community_Stories">
-									<?php include "search-panels/community-stories.php"; ?>
+									<?php include "components/02_search-panels/community-stories.php"; ?>
 								</div>
 								<div class="Search_Filter_Panel" id="User_Stories">
-									<?php include "search-panels/user-stories.php"; ?>
+									<?php include "components/02_search-panels/user-stories.php"; ?>
 								</div>
 							</div>
 						</div>

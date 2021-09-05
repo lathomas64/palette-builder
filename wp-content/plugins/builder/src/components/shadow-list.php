@@ -79,11 +79,17 @@ $count = $shadows->found_posts;
 			$size = $height;
 			if($width != $height){
 				$size = "Irregular";
+			} else if($width == ""){
+					$size = 26;
+					$height = 26;
+					$width = 26;
 			}
 		} else {
 			$series = 'undefined';
 			$shape = 'Round';
-			$size = $height = $width = 26;
+			$size = 26;
+			$height = 26;
+			$width = 26;
 
 		}
   	?>
