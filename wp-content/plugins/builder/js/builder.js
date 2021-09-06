@@ -57,6 +57,10 @@ var currentStory = new Object();
 				clone.setAttribute('ondrop','drop(event, this)');
 				clone.removeAttribute('style');
 				clone.setAttribute('ondragover','allowDrop(event)');
+				$(clone).find('.Up_Arrow')[0].setAttribute("onclick", "shift_up("+index+")");
+				$(clone).find('.Right_Arrow')[0].setAttribute("onclick", "shift_right("+index+")");
+				$(clone).find('.Down_Arrow')[0].setAttribute("onclick", "shift_down("+index+")");
+				$(clone).find('.Left_Arrow')[0].setAttribute("onclick", "shift_left("+index+")");
 				grid.appendChild(clone);
 				currentStory.shadows[index] = clone;
 			}else if (currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
@@ -141,6 +145,42 @@ var currentStory = new Object();
 			return;
 		} else {
 			swap(index, index-1);
+		}
+	}
+
+	function shift_right(index)
+	{
+		position = index % currentStory.width;
+		if(position == currentStory.width-1)
+		{
+			// TODO what do we do if they try to move right on the edge
+			return;
+		} else {
+			swap(index, index+1);
+		}
+	}
+
+	function shift_up(index)
+	{
+		row = Math.floor(index / currentStory.width);
+		if(row == 0)
+		{
+			// TODO what do we do if they try to move up on the edge
+			return;
+		} else {
+			swap(index, index-currentStory.width);
+		}
+	}
+
+	function shift_down(index)
+	{
+		row = Math.floor(index / currentStory.width);
+		if(row == currentStory.height-1)
+		{
+			// TODO what do we do if they try to move down on the edge
+			return;
+		} else {
+			swap(index, index+currentStory.width);
 		}
 	}
 
