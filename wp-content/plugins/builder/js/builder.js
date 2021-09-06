@@ -10,9 +10,9 @@ var currentStory = new Object();
 		for (var index = 0; index < currentStory.height * currentStory.width; index++)
 		{
 			var cell = currentStory.shadows[index];
-			if(cell.children.length){
+			if(cell.getAttribute("data-shadow-id")){
 				var shadow = cell.children[0];
-				query += "&shadows["+index+"]="+shadow.getAttribute('id');
+				query += "&shadows["+index+"]="+cell.getAttribute("data-shadow-id");
 			}
 		}
 		console.log(query);
