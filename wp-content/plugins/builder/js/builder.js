@@ -3,7 +3,7 @@ var currentStory = new Object();
 		return Array.from(new Set(list))
 	}
 	function share() {
-		var query = "?page_id=2";
+		var query = "?source=share";
 		var link = window.location.origin;
 		query += "&height="+currentStory.height;
 		query += "&width="+currentStory.width;
