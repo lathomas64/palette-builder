@@ -57,6 +57,7 @@ var currentStory = new Object();
 				clone.setAttribute('ondrop','drop(event, this)');
 				clone.removeAttribute('style');
 				clone.setAttribute('ondragover','allowDrop(event)');
+				clone.setAttribute('ondragStart','drag(event, '+index+')');
 				$(clone).find('.Up_Arrow')[0].setAttribute("onclick", "shift_up("+index+")");
 				$(clone).find('.Right_Arrow')[0].setAttribute("onclick", "shift_right("+index+")");
 				$(clone).find('.Down_Arrow')[0].setAttribute("onclick", "shift_down("+index+")");
@@ -74,10 +75,18 @@ var currentStory = new Object();
 		currentStory.width = width;
 		updateFooter();
 	}
-	function drag(evt) {
+	function drag(evt, index) {
 		console.log('dragging...');
 		console.log(evt);
-	  evt.dataTransfer.setData("shadow", evt.target.id);
+		if(index != undefined)
+		{
+			//do internal drag stuff here
+			console.log('we need the index and the shadow here but how to grab?');
+			console.log(evt.target);
+			evt.dataTransfer.setData("index", index);
+		} else {
+	  	evt.dataTransfer.setData("shadow", evt.target.id);
+		}
 	}
 	function allowDrop(evt) {
 	  evt.preventDefault();
@@ -86,21 +95,23 @@ var currentStory = new Object();
 		evt.preventDefault();
 		console.log(evt);
 		var data = evt.dataTransfer.getData("shadow");
-		var swap = caller.getElementsByClassName("shadow")
-		console.log('start')
-		console.log(data)
-		console.log(caller)
-		console.log(swap)
-		index = caller.getAttribute('data-index')
-		id = data;
-		addShadow(index, id);
-		// TODO add actual dropping logic here
-		/* if(swap.length){
-			document.getElementById(data).parentElement.appendChild(swap[0])
+		if(!data)
+		{
+				let index = evt.dataTransfer.getData("index");
+				let swap_index = caller.getAttribute('data-index');
+				swap(index, swap_index);
 		}
-		caller.appendChild(document.getElementById(data));*/
-		updateFooter();
-		console.log(evt);
+		else
+		{
+			console.log('start')
+			console.log(data)
+			console.log(caller)
+			index = caller.getAttribute('data-index')
+			id = data;
+			addShadow(index, id);
+			updateFooter();
+			console.log(evt);
+		}
 	}
 
 	function openTab(evt, sectionName) {
@@ -247,6 +258,7 @@ var currentStory = new Object();
 	{
 		updateShadow(index, null)
 		currentStory.shadows[index].setAttribute('data-index', index);
+		updateFooter();
 	}
 	function updateShadow(index, shadow)
 	{
