@@ -239,11 +239,33 @@ var currentStory = new Object();
 		}
 	}
 
-	function resize(width, height) {
+	function resize(width, height, undo=false) {
 		let old_shadows = currentStory.shadows;
 		let length = Math.min(currentStory.shadows.length, height * width);
 		let size_class = "Story_Size_"+width+"w_"+height+"t"
 		let orientation = height >= width ? "Portrait_Square" : "Landscape";
+
+		if(!undo){
+			original = []
+			for (var i = 0; i < currentStory.height * currentStory.width; i++)
+			{
+				original[i] = currentStory.shadows[i].getAttribute("data-shadow-id");
+			}
+			restore_list.push(original);
+			old_height = currentStory.height;
+			old_width = currentStory.width;
+			undo_stack.push(()=>{
+				console.log('undoing resize...');
+				resize(old_width, old_height,true);
+				restore = restore_list.pop();
+				for(var i = 0; i < restore.length; i++)
+				{
+					updateShadow(i, restore[i]);
+					currentStory.shadows[i].setAttribute('data-index', i);
+				}
+				redo_stack.push(()=>resize(width, height));
+			});
+		}
 		reset(height, width);
 		for (var index = 0; index < length; index++)
 		{
