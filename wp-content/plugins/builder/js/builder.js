@@ -1,6 +1,7 @@
 var currentStory = new Object();
 	undo_stack = [];
 	redo_stack = [];
+	restore_list = [];
 	function undo()
 	{
 		if(undo_stack.length > 0)
@@ -287,10 +288,28 @@ var currentStory = new Object();
 	{
 		//TODO undo for cascade goes here
 		//handle area and possibility of bumping shadows from end of list.
-		cascadeShadows(index, shadow);
-		//handle area and possibility of bumping shadows from end of list.
 
+		//handle area and possibility of bumping shadows from end of list.
+		//undo_stack.push(()=>deleteShadow(index, true));
+		original = []
+		for (var i = 0; i < currentStory.height * currentStory.width; i++)
+		{
+			original[i] = currentStory.shadows[i].getAttribute("data-shadow-id");
+		}
+		cascadeShadows(index, shadow);
+		restore_list.push(original);
+		undo_stack.push(()=>{
+			console.log('undoing add shadow...');
+			restore = restore_list.pop();
+			for(var i = 0; i < restore.length; i++)
+			{
+				updateShadow(i, restore[i]);
+				currentStory.shadows[i].setAttribute('data-index', i);
+			}
+			redo_stack.push(()=>addShadow(index,shadow));
+		});
 	}
+
 	function deleteShadow(index, undo=false)
 	{
 		current_shadow = currentStory.shadows[index].getAttribute("data-shadow-id");
@@ -299,10 +318,23 @@ var currentStory = new Object();
 		updateFooter();
 		if(undo)
 		{
-			redo_stack.push(()=>updateShadow(index,current_shadow));
+			redo_stack.push(()=>undeleteShadow(index,current_shadow));
 		}
 		else {
-			undo_stack.push(()=>updateShadow(index,current_shadow, true));
+			undo_stack.push(()=>undeleteShadow(index,current_shadow, true));
+		}
+	}
+
+	function undeleteShadow(index, shadow, undo=false)
+	{
+		updateShadow(index, shadow);
+		updateFooter();
+		if(undo)
+		{
+			redo_stack.push(()=>deleteShadow(index));
+		}
+		else {
+			undo_stack.push(()=>deleteShadow(index, true));
 		}
 	}
 	function updateShadow(index, shadow)
