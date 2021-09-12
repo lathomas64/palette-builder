@@ -311,6 +311,7 @@ var currentStory = new Object();
 		currentStory.height = getUrlParam("height", 3);
 		currentStory.width = getUrlParam("width", 3);
 		reset();
+		resize(currentStory.height, currentStory.width);
 		for (var index = 0; index < currentStory.height * currentStory.width; index++)
 		{
 			shadow = getUrlParam('shadows['+index+']', false);
