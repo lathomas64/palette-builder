@@ -202,7 +202,7 @@ var currentStory = new Object();
 		let old_shadows = currentStory.shadows;
 		let length = Math.min(currentStory.shadows.length, height * width);
 		let size_class = "Story_Size_"+width+"w_"+height+"t"
-		let orientation = height > width ? "Portrait" : "Landscape";
+		let orientation = height >= width ? "Portrait_Square" : "Landscape";
 		reset(height, width);
 		for (var index = 0; index < length; index++)
 		{
