@@ -242,7 +242,11 @@ var currentStory = new Object();
 		//handle area and possibility of bumping shadows from end of list.
 
 	}
-
+	function deleteShadow(index)
+	{
+		updateShadow(index, null)
+		currentStory.shadows[index].setAttribute('data-index', index);
+	}
 	function updateShadow(index, shadow)
 	{
 		console.log('updateShadow');
