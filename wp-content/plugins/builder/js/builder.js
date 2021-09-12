@@ -61,6 +61,7 @@ var currentStory = new Object();
 				$(clone).find('.Right_Arrow')[0].setAttribute("onclick", "shift_right("+index+")");
 				$(clone).find('.Down_Arrow')[0].setAttribute("onclick", "shift_down("+index+")");
 				$(clone).find('.Left_Arrow')[0].setAttribute("onclick", "shift_left("+index+")");
+				$(clone).find('.Remove')[0].setAttribute("onclick", "deleteShadow("+index+")");
 				grid.appendChild(clone);
 				currentStory.shadows[index] = clone;
 			}else if (currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
