@@ -68,7 +68,7 @@
 								</a>
 							</div>
 							<div class="Working_Actions Row Justify_Content_Left Gap_24">
-								<a href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+								<a onclick="redo();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
 									<div class="Builder_Redo">
 										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -79,7 +79,7 @@
 									</div>
 									<div>Redo</div>
 								</a>
-								<a href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+								<a onclick="undo();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
 									<div class="Builder_Undo">
 										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -162,7 +162,7 @@
 								</div>
 							</div>
 						</div>
-							<div class="Annoyed_Gina Flex_Container Justify_Content_Center">
+							<div class="Annoyed_Gina Flex_Container Justify_Content_Center Column">
 							<div class="Palette_Container Flex_Container Column Landscape Justify_Content_Center Align_Items_Center">
 							<div class="Palette Story_Size_11w_8t Flex_Container">
 								<div id="Story_Grid" class="Story_Grid Row Justify_Content_Left Align_Items_Center"><?php include "components/grid-shadow.php"; ?></div>

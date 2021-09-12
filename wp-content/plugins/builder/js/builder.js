@@ -1,4 +1,25 @@
 var currentStory = new Object();
+	undo_stack = [];
+	redo_stack = [];
+	function undo()
+	{
+		if(undo_stack.length > 0)
+		{
+			undo_stack.pop()();
+		} else {
+			console.log('no actions to undo');
+		}
+
+	}
+	function redo()
+	{
+		if(redo_stack.length > 0)
+		{
+			redo_stack.pop()();
+		} else {
+			console.log('no actions to redo');
+		}
+	}
 	function unique(list) {
 		return Array.from(new Set(list))
 	}
@@ -196,7 +217,7 @@ var currentStory = new Object();
 		}
 	}
 
-	function swap(index1, index2)
+	function swap(index1, index2, undo=false)
 	{
 		shadow1 = currentStory.shadows[index1].getAttribute("data-shadow-id");
 		shadow2 = currentStory.shadows[index2].getAttribute("data-shadow-id");
@@ -208,6 +229,13 @@ var currentStory = new Object();
 
 		currentStory.shadows[index1].setAttribute("data-index", index1);
 		currentStory.shadows[index2].setAttribute("data-index", index2);
+		if(undo)
+		{
+			redo_stack.push(()=>swap(index1,index2));
+		}
+		else {
+			undo_stack.push(()=>swap(index1,index2, true));
+		}
 	}
 
 	function resize(width, height) {
@@ -221,6 +249,14 @@ var currentStory = new Object();
 			if (old_shadows[index].getAttribute("data-shadow-id") != null) {
 				updateShadow(index, old_shadows[index].getAttribute("data-shadow-id"));
 			}
+		}
+
+		if(orientation == "Landscape")
+		{
+			$('.Story_Grid')[0].setAttribute("class", "Story_Grid Row Justify_Content_Left Align_Items_Center");
+		}
+		else {
+			$('.Story_Grid')[0].setAttribute("class", "Story_Grid Column Justify_Content_Left Align_Items_Center");
 		}
 
 		$(".Palette")[0].setAttribute("class", "Palette "+size_class+" Flex_Container")
@@ -249,16 +285,25 @@ var currentStory = new Object();
 
 	function addShadow(index, shadow)
 	{
+		//TODO undo for cascade goes here
 		//handle area and possibility of bumping shadows from end of list.
 		cascadeShadows(index, shadow);
 		//handle area and possibility of bumping shadows from end of list.
 
 	}
-	function deleteShadow(index)
+	function deleteShadow(index, undo=false)
 	{
+		current_shadow = currentStory.shadows[index].getAttribute("data-shadow-id");
 		updateShadow(index, null)
 		currentStory.shadows[index].setAttribute('data-index', index);
 		updateFooter();
+		if(undo)
+		{
+			redo_stack.push(()=>updateShadow(index,current_shadow));
+		}
+		else {
+			undo_stack.push(()=>updateShadow(index,current_shadow, true));
+		}
 	}
 	function updateShadow(index, shadow)
 	{
