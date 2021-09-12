@@ -192,7 +192,7 @@ var currentStory = new Object();
 			// TODO what do we do if they try to move down on the edge
 			return;
 		} else {
-			swap(index, index+currentStory.width);
+			swap(index, index+parseInt(currentStory.width));
 		}
 	}
 
@@ -328,7 +328,7 @@ var currentStory = new Object();
 		currentStory.height = getUrlParam("height", 3);
 		currentStory.width = getUrlParam("width", 3);
 		reset();
-		resize(currentStory.height, currentStory.width);
+		resize(currentStory.width, currentStory.height);
 		for (var index = 0; index < currentStory.height * currentStory.width; index++)
 		{
 			shadow = getUrlParam('shadows['+index+']', false);
