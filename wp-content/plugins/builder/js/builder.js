@@ -4,7 +4,7 @@ var currentStory = new Object();
 	}
 	function share() {
 		var query = "?source=share";
-		var link = window.location.origin;
+		var link = window.location.origin+window.location.pathname;
 		query += "&height="+currentStory.height;
 		query += "&width="+currentStory.width;
 		for (var index = 0; index < currentStory.height * currentStory.width; index++)
