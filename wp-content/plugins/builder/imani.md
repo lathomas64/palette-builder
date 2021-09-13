@@ -16,6 +16,9 @@
     - [ ] update all shadows based on shadows in story.
     - [ ] Figure out how to handle empty spaces
 - [ ] Users.
+  - [ ] associate stories to users (admin for now)
+  - [ ] save story if you are logged in.
+  - [ ] save button behavior if you are not logged in.
 - [x] Share button doesn't give correct base url
 - [x] Trash Button on pan controls doesn't work.
 - [x] Drag shadows in palette to do swap.
