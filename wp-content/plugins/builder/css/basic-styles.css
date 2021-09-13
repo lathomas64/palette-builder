@@ -207,6 +207,7 @@ a {
 
 .Builder {
 	height: calc(100vh - 158px - 88px);
+	flex-flow: nowrap;
 }
 
 .Builder_Bottom {
@@ -256,7 +257,10 @@ padding:32px;
 
 .Palette_Container.Portrait_Square {
 	flex: 1 1 auto;
-	padding:32px 0;
+	padding: 32px 0;
+ max-height: 100%;
+ max-width: 100%;
+	
 }
 
 .Landscape .Palette {
