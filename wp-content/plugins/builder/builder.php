@@ -11,6 +11,9 @@ remove_filter( 'the_excerpt', 'wpautop' );
 add_action('init', 'build_builder_redirect');
 add_action('wp_ajax_palette_builder_filter', 'pb_filter');
 add_action('wp_ajax_nopriv_palette_builder_filter', 'pb_filter');
+add_action('wp_ajax_user_stories', 'user_stories');
+add_action('wp_ajax_community_stories', 'community_stories');
+add_action('wp_ajax_nopriv_community_stories', 'community_stories');
 
 function build_builder_redirect()
 {
@@ -18,5 +21,6 @@ function build_builder_redirect()
 }
 
 include 'src/filters.php';
+include 'src/stories.php';
 
 ?>

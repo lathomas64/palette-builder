@@ -420,6 +420,40 @@ var currentStory = new Object();
 		console.log('end update shadow');
 	}
 
+	function save() {
+		console.log('This should save the current story to the current logged in user');
+		name = prompt('What do you want to name the current story?');
+		currentStory.name = name;
+	}
+
+	function pull_user_stories() {
+		console.log('pull a list of stories for the current logged in user');
+		jQuery.ajax({
+						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+						method: 'POST',
+						data: {
+								'action':'user_stories', // This is our PHP function below
+						},
+						success:function(data) {
+							console.log(data);
+						}
+		});
+	}
+
+	function pull_community_stories() {
+		console.log('pull a list of stories for the current logged in user');
+		jQuery.ajax({
+						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+						method: 'POST',
+						data: {
+								'action':'community_stories', // This is our PHP function below
+						},
+						success:function(data) {
+							console.log(data);
+						}
+		});
+	}
+
 	function init() {
 		try {
 			openTab(false, 'size');

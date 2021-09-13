@@ -50,7 +50,7 @@ function update(){
           url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
           method: 'POST',
           data: {
-              'action':'palette_builder_filter', // This is our PHP function below
+              'action':'palette_builder_filter',
               'sanity': 'check',
               'colors': Array.from(FILTERS['colors']),
               'finishes': Array.from(FILTERS['finishes']),
