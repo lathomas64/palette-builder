@@ -420,10 +420,33 @@ var currentStory = new Object();
 		console.log('end update shadow');
 	}
 
+	function flatten_story() {
+		story = []
+		for(var index = 0; index < currentStory.shadows.length; index++)
+		{
+			story.push(currentStory.shadows[index].getAttribute('data-shadow-id'));
+		}
+		return story;
+	}
+
 	function save() {
 		console.log('This should save the current story to the current logged in user');
 		name = prompt('What do you want to name the current story?');
 		currentStory.name = name;
+		jQuery.ajax({
+						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+						method: 'POST',
+						data: {
+								'action':'save_story', // This is our PHP function below
+								'name': name,
+								'height': currentStory.height,
+								'width': currentStory.width,
+								'story': flatten_story()
+						},
+						success:function(data) {
+							console.log(data);
+						}
+		});
 	}
 
 	function pull_user_stories() {

@@ -9,4 +9,12 @@ function user_stories() {
   die();
 }
 
+function save_story() {
+  if ( isset($_REQUEST) ) {
+    print_r($_REQUEST);
+  }
+  echo 'save story not implemented yet';
+  die();
+}
+
 ?>
