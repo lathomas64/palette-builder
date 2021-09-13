@@ -2,6 +2,7 @@ var currentStory = new Object();
 	undo_stack = [];
 	redo_stack = [];
 	restore_list = [];
+	overflow_shadows = [];
 	function undo()
 	{
 		if(undo_stack.length > 0)
@@ -284,6 +285,7 @@ var currentStory = new Object();
 
 		$(".Palette")[0].setAttribute("class", "Palette "+size_class+" Flex_Container")
 		$(".Palette_Container")[0].setAttribute("class", "Palette_Container Flex_Container Column "+orientation+" Justify_Content_Center Align_Items_Center")
+		updateFooter();
 	}
 
 	function reset(height=currentStory.height, width=currentStory.width) {
@@ -299,11 +301,13 @@ var currentStory = new Object();
 			console.log('we are exiting cascade without checking anything');
 			return;//we cannot do anything greater then the current length
 		}
-		if(index < currentStory.shadows.length && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
+		if(index < currentStory.shadows.length-1 && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
 			cascadeShadows(parseInt(index)+1, currentStory.shadows[index].getAttribute('data-shadow-id'));
+		} else if(index == currentStory.shadows.length-1 && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
+			console.log('overflow');
+			overflow_shadows.push(currentStory.shadows[index].getAttribute('data-shadow-id'));
 		}
 		updateShadow(index, shadow);
-
 	}
 
 	function addShadow(index, shadow)
@@ -328,6 +332,7 @@ var currentStory = new Object();
 				updateShadow(i, restore[i]);
 				currentStory.shadows[i].setAttribute('data-index', i);
 			}
+			updateFooter();
 			redo_stack.push(()=>addShadow(index,shadow));
 		});
 	}
