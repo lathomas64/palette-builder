@@ -1,5 +1,6 @@
 ## Tasks
 ### Imani
+- [ ] refresh wp database from airtable. (limited brands, clarify with Gina)
 - [ ] Save Stories
 - [ ] Overflow Stories go to
 - [ ] Shopping list.

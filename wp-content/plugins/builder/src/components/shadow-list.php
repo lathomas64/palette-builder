@@ -115,7 +115,7 @@ $count = $shadows->found_posts;
 					<div class="Shadow_Name"><?php the_title(); ?></div>
 					<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_<?php echo $size; ?> Pan_Shape_<?php echo $shape; ?>">
 						<div class="Wrapper">
-							<img src="<?php echo get_field("pan_photo"); ?>" />
+							<img src="<?php echo get_the_post_thumbnail_url(); ?>" />
 							<div class="Pan_Shadow"></div>
 						</div>
 					</div>
