@@ -441,6 +441,11 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 	height: var(--pan-size-26);
 }
 
+.Pan_Size_Irregular .Wrapper {
+	width: var(--pan-size-24);
+	height: var(--pan-size-21);
+}
+
 .Pan_Shape_Round {
 }
 
@@ -499,12 +504,21 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	display: none;
 	outline: 0;
 	z-index: 1;
+	width:100%;
+	height:100%;
+}
+
+.On {
+	display:block;
+	
 }
 
 .Singles_Filter {
-	padding: 24px;
-	width: 576px;
-	height: 488px;
+ padding: 24px;
+ width: 100%;
+ height: auto;
+ position: absolute;
+ top: 260px;
 	background: var(--system-white);
 	border: var(--standard-border);
 	box-shadow: var(--lift-shadow);
@@ -514,6 +528,8 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	animation-timing-function: ease-in-out;
 	overflow: hidden;
 }
+
+
 
 .Singles_Filter .Content {
 	width: 100%;
@@ -617,7 +633,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 }
 
 .Singles_Filter .Select_Range select {
-	padding: 8px 20px 8px 12px;
+ padding: 8px 12px 8px 12px;
 	background-position: right 10px top 58%;
 }
 

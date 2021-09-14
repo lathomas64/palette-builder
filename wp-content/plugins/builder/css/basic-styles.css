@@ -905,6 +905,17 @@ input[type="checkbox"].Filter_Button:checked + label,
 	z-index: initial;
 }
 
+button.Filter_Button.Selected {
+	box-shadow: var(--button-selected);
+ border: var(--shadow-border);
+ background-color: var(--FDBL-dark-gray);
+ color: var(--FDBL-white-text);
+}
+
+button.Filter_Button.Selected svg {
+	fill: var(--FDBL-white-text);
+}
+
 .Icon_Container {
 	width: 9px;
 	height: 8px;

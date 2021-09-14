@@ -16,4 +16,6 @@
 		</div>
 	</div>
 	<?php include "components/shadow-list.php"; ?>
+	<!-- Basic Filter Modal -->
+			<?php include "components/03_modals/shadow-filters.php"; ?>
 </div>

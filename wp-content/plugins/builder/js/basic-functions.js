@@ -23,9 +23,9 @@ $(document).ready(function(){
 		$(this).addClass("Active_Panel");
 		$(".Search_And_Filter").find(".Search_Filter_Panel").eq(numberIndex).addClass("Active_Panel");
 	}
-});
+	});
 
-
+//Draw circles for story cards
 	$(".Results .Search_Grid_Card").each(
 	function(index, element){
 		var classes = $(this).attr("class");
@@ -51,28 +51,48 @@ $(document).ready(function(){
 		}
 });
 
-}); //end of document ready			$("button.temp").click(function(){
-// 	$(".Results .Search_Grid_Card").each(
-// 	function(){
-// 		var classes = $(this).attr("class");
-// 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
-// 		var width = widthxheight[1];
-// 		var height = widthxheight[2];
-//
-// 		$(".Results .Search_Grid_Card .Wrapper").css(
-// 			"grid-template-rows", width
-// 		);
-//
-// 		var circle = $("#circleTemplate");
-//
-// 		for (
-// 			let circles = 0;
-// 			circles < width * height;
-// 			circles++
-// 		) {
-// 			$(".Results .Search_Grid_Card .Wrapper").append(circle);
-// 		};
-//
-// 	});
-//
-// });
+
+//MODAL TOGGLES
+
+////Shadow Filter Basic Dropdown
+
+//////Button Activation
+	$("#shadowFilterBtn").click(function(){
+		$("#shadowFilterBasic").toggleClass("On");
+		$("#shadowFilterBtn").toggleClass("Selected");
+		$("html").toggleClass("Close_Ready");
+		// $(".Close_Ready").click(function(){
+		// 	if (!$(this).is("#shadowFilterBtn")) {
+		// 		$("#shadowFilterBasic").removeClass("On");
+		// 		$("#shadowFilterBtn").removeClass("Selected");
+		// 	}
+		// 	else if (!$(this).is("#shadowFilterBasic")) {
+		// 		$("#shadowFilterBasic").removeClass("On");
+		// 		$("#shadowFilterBtn").removeClass("Selected");
+		// 	}
+		// });
+	});
+
+//////Close When Out-Click
+
+
+////Advanced Filter Overlay
+
+//////Button Activation
+	$("#openAdvancedFilter").click(function(){
+		$("#Shadow_Advanced_Filter").addClass("On");
+	});
+	
+		$("#closeAFOverlay").click(function(){
+		$("#Shadow_Advanced_Filter").removeClass("On");
+	});
+	
+
+
+
+//////Close When Out-Click
+
+}); //end of document ready		
+
+
+
