@@ -910,6 +910,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 
 .Results .Search_Grid_Card .Wrapper { 
 	display: grid;
+}
 
 /* .Search_Grid_Card::after {
 	content: "Change Story Size";
@@ -930,3 +931,98 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	opacity: 1;
 		transition: .2s;
 } */
+
+/***SHADOW HOVER DETAIL**/
+
+.Shadow_Detail_Panel {
+ border: var(--standard-border);
+ box-shadow: var(--lift-shadow);
+ width: 314px;
+ height: fit-content;
+ padding: 16px 24px;
+ margin-left: 100px;
+}
+
+.Shadow_Detail_Panel .Card_Container {
+
+	border:none;
+}
+
+.Shadow_Detail_Panel .Shadow_Image_Container {
+	width:200px;
+	height:200px;
+}
+
+.Shadow_Detail_Panel .Pan_Size_26 .Wrapper, .Pan_Size_37 .Wrapper {
+	aspect-ratio: 1 / 1;
+	width:100%;
+	height:auto;
+}
+
+.Shadow_Detail_Panel .Pan_Width_24.Pan_Height_21 .Wrapper {
+	aspect-ratio: 8 / 7;
+	width:100%;
+	height:auto;
+}
+
+.Shadow_Detail_Panel .Shadow_Detail_Panel .Wrapper img {
+	width:100%;
+	height:100%;
+	object-fit:fill;
+}
+
+.Eyeshadow_ID {
+	text-align: center;
+}
+
+.Properties_Table {
+	
+}
+
+.Properties_Table ul {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+}
+
+.Property_Name {
+	text-transform:uppercase;
+	font: var(--font-property-label);
+	color: var(--FDBL-black);
+	
+}
+
+li.Property {
+ padding: 8px;
+ border-bottom: var(--standard-border);
+}
+
+.Property_Description {
+	font: var(--font-body-small);
+	font-weight: var(--type-weight-regular);
+	
+}
+
+.Badge {
+	padding: 4px 8px;
+	border: var(--standard-border);
+	border-radius: var(--standard-border-radius);
+	font: var(--font-filter-button);
+}
+
+.Badge .Icon_Container {
+	height: initial;
+	width: initial;
+}
+
+.Brand_Characteristics {
+	padding: 0 8px;
+}
+
+.Brand_Characteristics .Badge {
+	background-color: var(--FDBL-light-gray);
+}

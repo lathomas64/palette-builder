@@ -84,7 +84,10 @@
 		var(--type-weight-regular) 
 		var(--type-size-16) / var(--type-size-12) 
 		var(--e-global-typography-secondary-font-family);
-	
+		--font-property-label: 
+		var(--type-weight-bold) 
+		var(--type-size-14) / var(--type-size-14) 
+		var(--e-global-typography-primary-font-family);
 	
 	/**BUTTONS**/
 	--font-block-button: 

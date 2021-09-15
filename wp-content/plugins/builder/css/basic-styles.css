@@ -650,8 +650,10 @@ input#Light_Level_4 + label {
 }
 
 .Body {
-	font-family: var(--e-global-typography-primary-font-family);
-	color: var(--FDBL-black);
+	font: var(--font-body-small);
+}
+
+.Small_Text {
 	font-weight: var(--type-weight-regular);
 }
 
@@ -809,6 +811,20 @@ button {
 
 .Button_Block.Dark:hover {
 	background: var(--FDBL-green-medium);
+}
+
+.Button_Block.GoogleoAuth {
+	background-color: red;
+	color:white;
+}
+
+.Button_Block.GoogleoAuth .Icon_Container {
+	width: initial;
+	height:initial;
+}
+
+.Button_Block.GoogleoAuth .Icon_Container svg {
+	fill: var(--system-white);
 }
 
 /**TEXT BUTTONS**/
