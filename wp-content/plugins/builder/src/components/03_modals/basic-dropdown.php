@@ -1,4 +1,4 @@
-<div class="Column Basic_Dropdown">
+<div id="shadowSortBasic" class="Modal Column Basic_Dropdown">
  <div class="Column Gap_16">
   <div class="Panel_Title">
    <div class="Heading">Sort</div>
@@ -21,27 +21,27 @@
   <div class="Column Gap_0">
 							<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
-				Publish Date: New to Old
+				Price: High to Low
 				</label>
 				<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
-				Publish Date: Old to New
+				Price: Low to High
 				</label>
 				<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
-				Story Price: High to Low
+				Color
 				</label>
 			<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
-				Story Price: Low to High
+				Color Reverse
 				</label>
 				<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
-				Story Size: Large to Small
+				Light to Dark
 				</label>
 				<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
-				Story Size: Small to Large
+				Dark to Light
 				</label>
 				<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
@@ -50,6 +50,14 @@
 				<input class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
 				Name: Z to A
+				</label>
+				<input class="Single_Select" type="radio" id="sort1">
+				<label class="Single_Select" for="sort1">
+				Shadow Brand: Z to A
+				</label>
+				<input class="Single_Select" type="radio" id="sort1">
+				<label class="Single_Select" for="sort1">
+				Shadow Brand: A to Z
 				</label>
 		</div>
   

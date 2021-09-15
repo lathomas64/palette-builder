@@ -18,7 +18,16 @@ body, html { width: 100%; height: 100%; cursor:default;}
 	}
 }
 
-@keyframes slide-right {
+@keyframes foldClosed {
+	0% {
+		height: 100%;
+	}
+	100% {
+		max-height:0px;
+	}
+}
+
+/* @keyframes slide-right {
 	0% {
 		left: 0;
 	}
@@ -47,7 +56,7 @@ body, html { width: 100%; height: 100%; cursor:default;}
 		-webkit-transform: translateZ(0);
 		transform: translateZ(0);
 	}
-}
+} */
 
 :focus-visible {
 	outline-color: var(--FDBL-green-light);
@@ -342,9 +351,13 @@ height: auto;
 
 /*3-wide Stories*/
 
-.Story_Size_3w_3t .Shadow_Image_Container.Pan_Size_26,
-.Story_Size_3w_3t .Shadow_Image_Container.Pan_Size_Irregular {
+.Story_Size_3w_3t .Shadow_Image_Container.Pan_Size_26 {
 	width: calc(100% / 3);
+	height: auto;
+}
+
+.Story_Size_3w_3t .Shadow_Image_Container.Pan_Size_Irregular {
+	width: calc((100% / 3) * .92);
 	height: auto;
 }
 
@@ -989,15 +1002,36 @@ button.Nav_Button:hover .Heading {
 	font-weight: var(--type-weight-bold);
 }
 
+/**MODAL CONTROLS**/
+
+.Modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	outline: 0;
+	z-index: 1;
+	width:100%;
+	height:100%;
+}
+
+.On {
+	display:block;
+	
+}
 
 /**BASIC DROPDOWN**/
 
 .Basic_Dropdown {
- width: 310px;
-  box-shadow: var(--lift-shadow);
-  padding:24px 0px;
-  border: var(--standard-border);
-  margin-left:50px;
+	position: absolute;
+ left: 265px;
+ top: 261px;
+ width: fit-content;
+ height: auto;
+ box-shadow: var(--lift-shadow);
+ padding: 24px 0px;
+ border: var(--standard-border);
+ background-color: var(--system-white);
 }
 
 .Basic_Dropdown .Panel_Title {

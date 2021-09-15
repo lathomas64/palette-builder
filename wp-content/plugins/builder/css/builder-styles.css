@@ -43,13 +43,14 @@
 
 .Story_Grid .Shadow_Image_Container img {
 	width: 100%;
+	height:100%;
 	z-index: 0;
 	position: relative;
 }
 
 .Story_Grid .Shadow_Image_Container .Wrapper {
 	width: 100%;
-	height: auto;
+	height: 100%;
 }
 
 .Pan_Shape_Round .Wrapper img {
@@ -126,6 +127,7 @@
 	transition-duration: 0.1s;
 	transition-delay: 0.2s;
 	cursor: pointer;
+	z-index:1;
 }
 
 .Shadow_Controls .Icon_Container:hover {
@@ -334,6 +336,17 @@ overflow:hidden;
 	box-shadow: var(--lift-shadow);
 	padding: 19px 23px;
 	border-radius: var(--standard-border-radius);
+		animation-duration: 0.1s;
+	animation-name: foldClosed;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	overflow: hidden;
+}
+
+.Helper_Box.Closed {
+
+
+	
 }
 
 .Grid {
@@ -497,24 +510,9 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 
 /**BASIC FILTER DROPDOWN**/
 
-.Modal {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
-	outline: 0;
-	z-index: 1;
-	width:100%;
-	height:100%;
-}
-
-.On {
-	display:block;
-	
-}
-
 .Singles_Filter {
  padding: 24px;
+	padding-bottom: 32px;
  width: 100%;
  height: auto;
  position: absolute;
@@ -528,8 +526,6 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	animation-timing-function: ease-in-out;
 	overflow: hidden;
 }
-
-
 
 .Singles_Filter .Content {
 	width: 100%;
@@ -561,7 +557,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 }
 
 .Check_List.Filterable {
-	height: 50%;
+	height: 96px;
 	overflow: scroll;
 	border-bottom: var(--standard-border);
 	padding: 8px;

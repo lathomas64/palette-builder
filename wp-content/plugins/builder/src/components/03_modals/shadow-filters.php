@@ -3,7 +3,7 @@
 		<div class="Content Column Gap_24">
 			<div class="Panel_Title Row Space_Between">
 				<div class="Heading">Search for Shadows</div>
-				<button id="openAdvancedFilter" class="Text_Button Search">Open Advanced Search</button>
+				<button id="advancedFilterBtn" class="Text_Button Search">Open Advanced Search</button>
 			</div>
 			<div class="Filter_Groups Row Gap_24">
 				<div class="Left Column Gap_24">

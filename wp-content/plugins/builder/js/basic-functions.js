@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function(){
   $(".Info_Bar").slideToggle(300, function(){
@@ -51,6 +52,13 @@ $(document).ready(function(){
 		}
 });
 
+//HELPER BOX DISMISSES
+
+	$("#dismissShadowHelperbtn").click(function(){
+  $("#shadowHelper").slideUp(200);
+		$("#shadowHelper").fadeOut(200);
+	});
+
 
 //MODAL TOGGLES
 
@@ -60,36 +68,63 @@ $(document).ready(function(){
 	$("#shadowFilterBtn").click(function(){
 		$("#shadowFilterBasic").toggleClass("On");
 		$("#shadowFilterBtn").toggleClass("Selected");
-		$("html").toggleClass("Close_Ready");
-		// $(".Close_Ready").click(function(){
-		// 	if (!$(this).is("#shadowFilterBtn")) {
-		// 		$("#shadowFilterBasic").removeClass("On");
-		// 		$("#shadowFilterBtn").removeClass("Selected");
-		// 	}
-		// 	else if (!$(this).is("#shadowFilterBasic")) {
-		// 		$("#shadowFilterBasic").removeClass("On");
-		// 		$("#shadowFilterBtn").removeClass("Selected");
-		// 	}
-		// });
 	});
+	
+//////Close on out-click
+	$(document).click(function() {
+    var container = $("#shadowFilterBasic");
+				var shadowFilterBtn = $("#shadowFilterBtn");
+				var advancedFilterBtn = $("advancedFilterBtn")
+    if (
+					!container.is(event.target) && 
+					!container.has(event.target).length && 
+					!shadowFilterBtn.is(event.target) &&
+					!shadowFilterBtn.has(event.target).length
+				) {
+     container.removeClass("On");
+					$("#shadowFilterBtn").removeClass("Selected");
+    }
 
-//////Close When Out-Click
+});
 
+////Shadow Sort Basic Dropdown
+
+//////Button Activation
+	$("#shadowSortBtn").click(function(){
+		$("#shadowSortBasic").toggleClass("On");
+		$("#shadowSortBtn").toggleClass("Selected");
+	});
+	
+	//////Close on out-click
+	$(document).click(function() {
+    var container = $("#shadowSortBasic");
+				var shadowFilterBtn = $("#shadowSortBtn");
+    if (
+					!container.is(event.target) && 
+					!container.has(event.target).length && 
+					!shadowFilterBtn.is(event.target) &&
+					!shadowFilterBtn.has(event.target).length
+				) {
+     container.removeClass("On");
+					$("#shadowSortBtn").removeClass("Selected");
+    }
+
+});
 
 ////Advanced Filter Overlay
 
 //////Button Activation
-	$("#openAdvancedFilter").click(function(){
+	$("#advancedFilterBtn").click(function(){
 		$("#Shadow_Advanced_Filter").addClass("On");
+		$("#shadowFilterBtn").removeClass("Selected")
+		$("#shadowFilterBasic").removeClass("On")
 	});
 	
-		$("#closeAFOverlay").click(function(){
+//////Button Close	
+		$("#afCloseBtn").click(function(){
 		$("#Shadow_Advanced_Filter").removeClass("On");
 	});
 	
-
-
-
 //////Close When Out-Click
 
 }); //end of document ready		

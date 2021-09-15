@@ -2,11 +2,11 @@
 	<div class="Panel_Title">
 		<div class="Heading">Find Eyeshadows</div>
 	</div>
-	<div class="Helper_Box">
+	<div id="shadowHelper" class="Helper_Box">
 		<div class="Column Gap_8">
 			<div class="Row Space_Between Align_Items_Center">
 				<div class="Heading">About This Panel</div>
-				<button type="button" class="Dismiss Row Gap_8 Align_Items_Center" id="dismiss">
+				<button id="dismissShadowHelperbtn" type="button" class="Dismiss Row Gap_8 Align_Items_Center">
 					<span class="Close"> close message </span>
 					<div>×</div>
 				</button>
@@ -18,4 +18,6 @@
 	<?php include "components/shadow-list.php"; ?>
 	<!-- Basic Filter Modal -->
 			<?php include "components/03_modals/shadow-filters.php"; ?>
+	<!-- Sort Dropdown -->
+	<?php include "components/03_modals/basic-dropdown.php"; ?>
 </div>
