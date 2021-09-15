@@ -1,4 +1,18 @@
-	<div id="advancedFilterDrawer" class="Modal Fade_In">
+<head>
+	<?php include "header.php"; ?>
+	<meta charset="UTF-8" />
+	<title>Universal Palette Builder – Firedrake Beauty Labs</title>
+	<link rel="stylesheet" type="text/css" href="../css/variables.css" />
+	<link rel="stylesheet" type="text/css" href="../css/basic-styles.css" />
+	<link rel="stylesheet" type="text/css" href="../css/builder-styles.css" />
+	<link rel="stylesheet" href="https://use.typekit.net/mxy5ujb.css" />
+	<link href="vivify.min.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="../js/builder.js"></script>
+	<script src="../js/shadow-filters.js"></script>
+	<script src="../js/basic-functions.js"></script>
+</head>
+	<div id="saveLoginDrawer" class="Modal Fade_In">
 	<div class="Row Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
 		<div class="Advanced_Search_Filter Fade_Out_Right">

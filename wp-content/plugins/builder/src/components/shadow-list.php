@@ -48,7 +48,7 @@ $count = $shadows->found_posts;
 				</div>
 				<div class="Tab_Label">Filter</div>
 			</button>
-			<button class="Filter_Button Icon_Button Row Gap_4 Align_Items_Center">
+			<button id="shadowSortBtn" class="Filter_Button Icon_Button Row Gap_4 Align_Items_Center">
 				<div class="Icon_Container">
 					<svg fill="#09262A" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M11.9 9.8H14L11.2 12.6L8.4 9.8H10.5V0H11.9V9.8ZM0 9.8H7V11.2H0V9.8ZM2.8 1.4V2.8H0V1.4H2.8ZM0 5.6H4.9V7H0V5.6Z" />

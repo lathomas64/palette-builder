@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function(){
-  $(".Info_Bar").slideToggle(300, function(){
+  $(".Info_Bar").slideToggle(100, function(){
 			$("#controlLabel").text(
 				$(this).is(':visible') ? "Hide Panel" : "Show Panel");
 			$('#svgPlus').toggle();
@@ -55,8 +55,7 @@ $(document).ready(function(){
 //HELPER BOX DISMISSES
 
 	$("#dismissShadowHelperbtn").click(function(){
-  $("#shadowHelper").slideUp(200);
-		$("#shadowHelper").fadeOut(200);
+  $("#shadowHelper").addClass("Closed");
 	});
 
 
@@ -115,15 +114,18 @@ $(document).ready(function(){
 
 //////Button Activation
 	$("#advancedFilterBtn").click(function(){
-		$("#Shadow_Advanced_Filter").addClass("On");
+		$("#advancedFilterDrawer").addClass("On");
+		$("#advancedFilterDrawer").addClass("Fade_In_Right");
 		$("#shadowFilterBtn").removeClass("Selected")
 		$("#shadowFilterBasic").removeClass("On")
 	});
 	
 //////Button Close	
 		$("#afCloseBtn").click(function(){
-		$("#Shadow_Advanced_Filter").removeClass("On");
+		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
+		$("#advancedFilterDrawer").delay(3000).removeClass("On");
 	});
+
 	
 //////Close When Out-Click
 

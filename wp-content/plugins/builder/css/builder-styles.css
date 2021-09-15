@@ -336,16 +336,18 @@ overflow:hidden;
 	box-shadow: var(--lift-shadow);
 	padding: 19px 23px;
 	border-radius: var(--standard-border-radius);
-		animation-duration: 0.1s;
-	animation-name: foldClosed;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	overflow: hidden;
+
 }
 
 .Helper_Box.Closed {
 
-
+	max-height: 0px;
+ opacity: 0;
+ padding: 0px;
+ overflow: hidden;
+ box-shadow: none;
+ border: 0;
+ transition: .2s;
 	
 }
 
@@ -520,11 +522,6 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	background: var(--system-white);
 	border: var(--standard-border);
 	box-shadow: var(--lift-shadow);
-	animation-duration: 0.1s;
-	animation-name: fade-in;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	overflow: hidden;
 }
 
 .Singles_Filter .Content {

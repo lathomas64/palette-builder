@@ -1,4 +1,4 @@
-<div id="shadowFilterBasic" class="Modal Singles_Filter">
+<div id="shadowFilterBasic" class="Modal Singles_Filter Fade_In">
 	<div class="Column">
 		<div class="Content Column Gap_24">
 			<div class="Panel_Title Row Space_Between">
