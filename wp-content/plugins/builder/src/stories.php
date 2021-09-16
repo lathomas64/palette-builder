@@ -8,7 +8,7 @@ function extract_stories($story_query){
     $story_query->the_post();
     $story = array();
     $story["name"] = get_field("name");
-    $term = get_terms(array('taxonomy'=>'tax_story_size'))[0];
+    $term = get_the_terms(get_the_ID(), 'tax_story_size')[0];
     $story["height"] = get_field("height", $term);
     $story["width"] = get_field("width", $term);
     $story["community"] = get_field("community");

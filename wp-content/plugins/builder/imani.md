@@ -12,7 +12,7 @@
 - [ ] Close about this panel
 - [ ] Sort options
 - [x] Community Stories
-  - [ ] Stories aren't pulling size correctly.
+  - [x] Stories aren't pulling size correctly.
   - [x] ajax call to pull down stories where community == True
     * look at shadow-filters.js for example ajax calls
   - [x] Populate community tab with stories from response.

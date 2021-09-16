@@ -454,7 +454,7 @@ var currentStory = new Object();
 		console.log(event.target);
 		var story = JSON.parse(event.target.getAttribute("data-story-json"));
 		console.log(story);
-		resize(story.height, story.width);
+		resize(story.width, story.height);
 		for(var index = 0; index < story.shadows.length; index++){
 			updateShadow(index, story.shadows[index]);
 		}
