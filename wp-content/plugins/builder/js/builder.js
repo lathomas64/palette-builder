@@ -386,7 +386,9 @@ var currentStory = new Object();
 			image_element = grid_shadow.getElementsByTagName('img')[0];
 		} else {
 			image_element = document.createElement("img");
-			grid_shadow.getElementsByClassName('wrapper')[0].appendChild(image_element);
+			//grid_shadow.getElementsByClassName('wrapper')[0].appendChild(image_element);
+			wrapper = grid_shadow.getElementsByClassName('wrapper')[0];
+			wrapper.insertBefore(image_element, wrapper.firstChild);
 		}
 		if(shadow != null) {
 			image_element.src = shadow_data.getElementsByTagName('img')[0].src;
@@ -448,6 +450,16 @@ var currentStory = new Object();
 						}
 		});
 	}
+	function load_story(event) {
+		console.log(event.target);
+		var story = JSON.parse(event.target.getAttribute("data-story-json"));
+		console.log(story);
+		resize(story.height, story.width);
+		for(var index = 0; index < story.shadows.length; index++){
+			updateShadow(index, story.shadows[index]);
+		}
+
+	}
 
 	function pull_user_stories() {
 		console.log('pull a list of stories for the current logged in user');
@@ -473,6 +485,15 @@ var currentStory = new Object();
 						},
 						success:function(data) {
 							console.log(data);
+							parsed = JSON.parse(data);
+							for(var index = 0; index < parsed.length; index++){
+								console.log(parsed[index]);
+								temp = document.createElement("div");
+								temp.textContent = parsed[index]["name"]
+								temp.setAttribute("data-story-json", JSON.stringify(parsed[index]));
+								temp.setAttribute("onclick", "load_story(event)");
+								$(".Community_Story_Target")[0].appendChild(temp);
+							}
 						}
 		});
 	}
