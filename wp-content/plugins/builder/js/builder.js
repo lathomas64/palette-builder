@@ -463,39 +463,51 @@ var currentStory = new Object();
 
 	function pull_user_stories() {
 		console.log('pull a list of stories for the current logged in user');
-		jQuery.ajax({
-						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
-						method: 'POST',
-						data: {
-								'action':'user_stories', // This is our PHP function below
-						},
-						success:function(data) {
-							console.log(data);
-						}
-		});
+		if($("#User_Story_Target")[0].children.length == 0) {
+			jQuery.ajax({
+							url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+							method: 'POST',
+							data: {
+									'action':'user_stories', // This is our PHP function below
+							},
+							success:function(data) {
+								console.log(data);
+								parsed = JSON.parse(data);
+								for(var index = 0; index < parsed.length; index++){
+									console.log(parsed[index]);
+									temp = document.createElement("div");
+									temp.textContent = parsed[index]["name"]
+									temp.setAttribute("data-story-json", JSON.stringify(parsed[index]));
+									temp.setAttribute("onclick", "load_story(event)");
+									$("#User_Story_Target")[0].appendChild(temp);
+								}
+							}
+			});
+		}
 	}
 
 	function pull_community_stories() {
-		console.log('pull a list of stories for the current logged in user');
-		jQuery.ajax({
-						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
-						method: 'POST',
-						data: {
-								'action':'community_stories', // This is our PHP function below
-						},
-						success:function(data) {
-							console.log(data);
-							parsed = JSON.parse(data);
-							for(var index = 0; index < parsed.length; index++){
-								console.log(parsed[index]);
-								temp = document.createElement("div");
-								temp.textContent = parsed[index]["name"]
-								temp.setAttribute("data-story-json", JSON.stringify(parsed[index]));
-								temp.setAttribute("onclick", "load_story(event)");
-								$(".Community_Story_Target")[0].appendChild(temp);
+		if($("#Community_Story_Target")[0].children.length == 0){
+			jQuery.ajax({
+							url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+							method: 'POST',
+							data: {
+									'action':'community_stories', // This is our PHP function below
+							},
+							success:function(data) {
+								console.log(data);
+								parsed = JSON.parse(data);
+								for(var index = 0; index < parsed.length; index++){
+									console.log(parsed[index]);
+									temp = document.createElement("div");
+									temp.textContent = parsed[index]["name"]
+									temp.setAttribute("data-story-json", JSON.stringify(parsed[index]));
+									temp.setAttribute("onclick", "load_story(event)");
+									$("#Community_Story_Target")[0].appendChild(temp);
+								}
 							}
-						}
-		});
+			});
+		}
 	}
 
 	function init() {

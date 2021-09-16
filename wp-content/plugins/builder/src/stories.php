@@ -26,9 +26,11 @@ function community_stories(){
   "orderby" => "title",
   "order" => "ASC",
   "meta_query" => array(
-    'key' => 'community',
-    'value' => true,
-    'compare' => '='
+    array(
+      'key' => 'community',
+      'value' => true,
+      'compare' => '='
+    )
   )
   ];
 
@@ -65,10 +67,32 @@ function user_stories() {
 }
 
 function save_story() {
-  if ( isset($_REQUEST) ) {
-    print_r($_REQUEST);
+  print_r($_REQUEST);
+  $custom_tax = array(
+    'tax_story_size' => array(
+      $_REQUEST["width"]."x".$_REQUEST["height"]
+    )
+  );
+  $post_data = array(
+    'post_title' => $_REQUEST['name'],
+    'post_type' => 'cpt_story',
+    'post_status' => 'publish',
+    'tax_input' => $custom_tax
+  );
+  $post_id = wp_insert_post($post_data);
+  update_field('name', $_REQUEST['name'], $post_id);
+  $shadows = $_REQUEST['story'];
+  $shadow_field = array();
+  foreach($shadows as $shadow)
+  {
+    $temp = get_post($shadow);
+    print_r($temp);
+    $shadow_field[] = array("shadow" => array('ID'=>$shadow));
   }
-  echo 'save story not implemented yet';
+  update_field("shadows", $shadow_field, $post_id);
+  //shadows
+  //story size
+  echo $post_id;
   die();
 }
 

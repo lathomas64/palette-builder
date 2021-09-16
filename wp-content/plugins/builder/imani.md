@@ -1,24 +1,28 @@
 ## Tasks
 ### Imani
-- [ ] refresh wp database from airtable. (limited brands, clarify with Gina)
-- [ ] Save Stories
+- [x] refresh wp database from airtable.
+  * Glamshop, Terra Moons, Clionadh
+  * remove other old_shadows
+  * Ignore extra fields
+- [x] Save Stories
 - [ ] Overflow Stories go to
 - [ ] Shopping list.
 - [ ] Disclaimers
 - [ ] Help
 - [ ] Close about this panel
 - [ ] Sort options
-- [ ] Community Stories
-  - [ ] ajax call to pull down stories where community == True
+- [x] Community Stories
+  - [ ] Stories aren't pulling size correctly.
+  - [x] ajax call to pull down stories where community == True
     * look at shadow-filters.js for example ajax calls
-  - [ ] Populate community tab with stories from response.
-  - [ ] update story grid when community story is selected.
-    - [ ] Resize based on size of story.
-    - [ ] update all shadows based on shadows in story.
+  - [x] Populate community tab with stories from response.
+  - [x] update story grid when community story is selected.
+    - [x] Resize based on size of story.
+    - [x] update all shadows based on shadows in story.
     - [ ] Figure out how to handle empty spaces
 - [ ] Users.
-  - [ ] associate stories to users (admin for now)
-  - [ ] save story if you are logged in.
+  - [x] associate stories to users (admin for now)
+  - [x] save story if you are logged in.
   - [ ] save button behavior if you are not logged in.
 - [x] Share button doesn't give correct base url
 - [x] Trash Button on pan controls doesn't work.

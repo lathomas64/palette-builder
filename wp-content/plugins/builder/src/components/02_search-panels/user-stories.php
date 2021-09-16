@@ -14,5 +14,6 @@
 			<div class="Body Small_Text">When we return this rock or some of the others like it to Houston, we'd like to share a piece of this rock with so many of the countries throughout the world. </div>
 		</div>
 	</div>
-
+	<div id="User_Story_Target">
+	</div>
 </div>

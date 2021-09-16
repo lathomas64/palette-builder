@@ -22,11 +22,11 @@
 											<svg width="35" height="35" viewBox="0 0 35 35" fill="#53D4B1" xmlns="http://www.w3.org/2000/svg">															<path
 													d="M22.75 0C26.145 0 29.0325 1.225 31.4125 3.5875C33.775 5.9675 35 8.855 35 12.25C35 14.98 34.125 17.43 32.515 19.6C30.87 21.7525 28.77 23.2225 26.1975 23.975L26.25 23.415V22.75C26.25 18.9175 24.9025 15.6275 22.1375 12.8625C19.3725 10.0975 16.0825 8.75 12.25 8.75H11.6025L11.025 8.8025C11.7775 6.23 13.2475 4.13 15.4 2.485C17.57 0.875 20.02 0 22.75 0ZM12.25 10.5C15.4989 10.5 18.6147 11.7906 20.9121 14.0879C23.2094 16.3853 24.5 19.5011 24.5 22.75C24.5 25.9989 23.2094 29.1147 20.9121 31.4121C18.6147 33.7094 15.4989 35 12.25 35C9.0011 35 5.88526 33.7094 3.58794 31.4121C1.29062 29.1147 0 25.9989 0 22.75C0 19.5011 1.29062 16.3853 3.58794 14.0879C5.88526 11.7906 9.0011 10.5 12.25 10.5ZM12.25 14C9.92936 14 7.70376 14.9219 6.06282 16.5628C4.42187 18.2038 3.5 20.4294 3.5 22.75C3.5 25.0706 4.42187 27.2962 6.06282 28.9372C7.70376 30.5781 9.92936 31.5 12.25 31.5C13.3991 31.5 14.5369 31.2737 15.5985 30.8339C16.6601 30.3942 17.6247 29.7497 18.4372 28.9372C19.2497 28.1247 19.8942 27.1601 20.3339 26.0985C20.7737 25.0369 21 23.8991 21 22.75C21 21.6009 20.7737 20.4631 20.3339 19.4015C19.8942 18.3399 19.2497 17.3753 18.4372 16.5628C17.6247 15.7503 16.6601 15.1058 15.5985 14.6661C14.5369 14.2263 13.3991 14 12.25 14Z"
 												/>
-											
+
 									</svg></span></div>
 									<div class="Heading">Find Shadows</div>
 								</button>
-								<button class="Nav_Button Community_Stories Column Gap_8 Align_Items_Center">
+								<button onclick="pull_community_stories();" class="Nav_Button Community_Stories Column Gap_8 Align_Items_Center">
 									<div class="Nav_Icon_Wrapper">
 										<span class="Nav_Icon">
 											<svg width="36" height="22" viewBox="0 0 36 22" fill="#53D4B1" xmlns="http://www.w3.org/2000/svg">															<path
@@ -35,7 +35,7 @@
 								</svg></span></div>
 									<div class="Heading">Community Stories</div>
 								</button>
-								<button class="Nav_Button User_Stories Column Gap_8 Align_Items_Center">
+								<button onclick="pull_user_stories();" class="Nav_Button User_Stories Column Gap_8 Align_Items_Center">
 									<div class="Nav_Icon_Wrapper">
 										<span class="Nav_Icon">
 											<svg width="35" height="27" viewBox="0 0 35 27" fill="#53D4B1" xmlns="http://www.w3.org/2000/svg">

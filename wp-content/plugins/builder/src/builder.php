@@ -45,7 +45,7 @@
 									</div>
 									<div>Start Over</div>
 								</a>
-								<a href="#" class="Button_Micro Row Gap_8 Justify_Content_Space_Between">
+								<a onclick="save();return false;" href="#" class="Button_Micro Row Gap_8 Justify_Content_Space_Between">
 									<div class="Builder_Save">
 										<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
