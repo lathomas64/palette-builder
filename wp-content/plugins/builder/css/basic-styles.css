@@ -1063,6 +1063,7 @@ button.Nav_Button:hover .Heading {
 
 .On {
 	display:flex;
+	transition: .1s;
 	
 }
 

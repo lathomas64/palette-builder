@@ -1,4 +1,35 @@
 $(document).ready(function(){
+
+//Temporary hover JS for demo
+
+		var shadowDetail = $("#shadowDetail");
+		
+$(".Single_Pan_Card").mouseenter(function() {
+					setTimeout (function() {
+						shadowDetail.addClass("On");
+					}, 1000);
+		}).mouseleave(function () {
+	  if (
+				!$("#shadowDetail:hover").length !=0
+			) {
+		   setTimeout (function() {
+						shadowDetail.removeClass("On");
+					}, 1000);
+	  }
+	});
+	
+	$("#shadowDetail").mouseleave(function () {
+	  if (
+				!$(".Single_Pan_Card:hover").length !=0
+			) {
+		   setTimeout (function() {
+						shadowDetail.removeClass("On");
+					}, 1000);
+	  }
+	});
+
+	
+	//on mouse leave, check tos ee if the cursor is in the detail panel. If it's not, delay 2000s and close the panel
 	
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function(){

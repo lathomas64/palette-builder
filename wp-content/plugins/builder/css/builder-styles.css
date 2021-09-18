@@ -935,7 +935,9 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 /***SHADOW HOVER DETAIL**/
 
 .Shadow_Detail_Panel {
+	background-color: var(--system-white);
  border: var(--standard-border);
+	border-color: var(--FDBL-black);
  box-shadow: var(--lift-shadow);
  width: 314px;
  height: fit-content;
@@ -944,13 +946,14 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 .Shadow_Detail_Panel .Card_Container {
-
 	border:none;
+	width:initial;
+	flex-flow:column-reverse;
 }
 
 .Shadow_Detail_Panel .Shadow_Image_Container {
-	width:200px;
-	height:200px;
+	width:calc(var(--pan-size-37) * 1.5);
+	height:calc(var(--pan-size-37) * 1.5);
 }
 
 .Shadow_Detail_Panel .Pan_Size_26 .Wrapper, .Pan_Size_37 .Wrapper {
@@ -965,14 +968,21 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	height:auto;
 }
 
-.Shadow_Detail_Panel .Shadow_Detail_Panel .Wrapper img {
+.Shadow_Detail_Panel .Wrapper img {
 	width:100%;
 	height:100%;
 	object-fit:fill;
 }
 
-.Eyeshadow_ID {
-	text-align: center;
+.Shadow_Detail_Panel .Shadow_Name {
+  font: var(--font-subsection-title);
+  color: var(--FDBL-black);
+  display: initial;
+  margin: 0;
+}
+
+.Shadow_Detail_Panel .Shadow_Brand {
+	font:var(--font-body-small);
 }
 
 .Properties_Table {
@@ -1012,8 +1022,9 @@ li.Property {
 	border: var(--standard-border);
 	border-radius: var(--standard-border-radius);
 	font: var(--font-filter-button);
+		border-color: var(--FDBL-black);
+	box-shadow: var(--drag-shadow);
 }
-
 .Badge .Icon_Container {
 	height: initial;
 	width: initial;
@@ -1023,6 +1034,6 @@ li.Property {
 	padding: 0 8px;
 }
 
-.Brand_Characteristics .Badge {
-	background-color: var(--FDBL-light-gray);
+.Brand_Characteristic.Badge {
+	background-color: var(--system-white);
 }

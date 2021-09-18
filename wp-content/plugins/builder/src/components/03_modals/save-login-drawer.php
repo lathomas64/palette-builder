@@ -1,5 +1,4 @@
-<head>
-	<?php include "header.php"; ?>
+<!-- <head>
 	<meta charset="UTF-8" />
 	<title>Universal Palette Builder – Firedrake Beauty Labs</title>
 	<link rel="stylesheet" type="text/css" href="../../../css/variables.css" />
@@ -11,7 +10,7 @@
 	<script src="../../../js/builder.js"></script>
 	<script src="../../../js/shadow-filters.js"></script>
 	<script src="../../../js/basic-functions.js"></script>
-</head>
+</head> -->
 	<div id="advancedFilterDrawer" class="Modal Fade_In">
 	<div class="Row Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
