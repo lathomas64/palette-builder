@@ -47,7 +47,7 @@ function user_stories() {
   {
     $args = [
     "post_type" => "cpt_story",
-    'author' => $current_user->ID,
+    'author' => wp_get_current_user()->ID, //$current_user doesnt work here
     "post_status" => "publish",
     "posts_per_page" => -1,
     "orderby" => "title",
