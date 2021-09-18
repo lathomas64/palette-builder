@@ -19,7 +19,7 @@
 	<!-- Basic Filter Modal -->
 			<?php include "components/03_modals/shadow-filters.php"; ?>
 	<!-- Sort Dropdown -->
-	<?php include "components/03_modals/basic-dropdown.php"; ?>
+	<?php include "components/03_modals/shadow-sort.php"; ?>
 		<!-- Basic Filter Modal -->
 	<?php include "components/03_modals/shadow-detail-panel.php"; ?>
 </div>

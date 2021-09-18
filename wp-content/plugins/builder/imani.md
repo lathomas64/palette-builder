@@ -9,7 +9,7 @@
 - [ ] Users.
   - [x] associate stories to users (admin for now)
   - [x] save story if you are logged in.
-  - [ ] Stories not limited by author properly.
+  - [x] Stories not limited by author properly.
   - [ ] save button behavior if you are not logged in..
 - [ ] Calculations for shadow sizes/full palette.
 - [ ] arrows being finnicky default.
