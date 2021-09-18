@@ -19,16 +19,16 @@
 			</div>
 		</div>
   <div class="Column Gap_0">
-							<input class="Single_Select" type="radio" id="sort1">
+							<input onclick="sort('data-price', 'Single_Pan_Card', false);" class="Single_Select" type="radio" id="sort1">
 				<label class="Single_Select" for="sort1">
 				Price: High to Low
 				</label>
-				<input class="Single_Select" type="radio" id="sort1">
-				<label class="Single_Select" for="sort1">
+				<input onclick="sort('data-price', 'Single_Pan_Card', true);" class="Single_Select" type="radio" id="sort2">
+				<label class="Single_Select" for="sort2">
 				Price: Low to High
 				</label>
-				<input class="Single_Select" type="radio" id="sort1">
-				<label class="Single_Select" for="sort1">
+				<input class="Single_Select" type="radio" id="sort3">
+				<label class="Single_Select" for="sort3">
 				Color
 				</label>
 			<input class="Single_Select" type="radio" id="sort1">

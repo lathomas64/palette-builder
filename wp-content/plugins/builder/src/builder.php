@@ -11,6 +11,7 @@
 	<script src="../js/builder.js"></script>
 	<script src="../js/shadow-filters.js"></script>
 	<script src="../js/basic-functions.js"></script>
+	<script src="../js/sort.js"></script>
 </head>
 <body>
 	<div class="Wrap">
