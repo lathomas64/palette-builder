@@ -12,7 +12,11 @@ function extract_stories($story_query){
     $story["height"] = get_field("height", $term);
     $story["width"] = get_field("width", $term);
     $story["community"] = get_field("community");
+    $story["published"] = get_the_date();
+    $story["size"] = $story["height"] * $story["width"];
+    //publish date, story price, story size,
     $story["shadows"] = wp_list_pluck(wp_list_pluck(get_field("shadows"), "shadow"), "ID");
+    $story["price"] = array_sum(wp_list_pluck(wp_list_pluck(get_field("shadows"), "shadow"), "price"));
     $stories[] = $story;
   }
   return $stories;

@@ -76,14 +76,14 @@
 			</div>
 		</a>
 		<a class="Search_Grid_Card Column Justify_Content_Center Story_Size_6w_4t" href="#">
-	<div class="Card_Container Column Gap_8">
-		<div class="Card_Title">9 Pans</div>
-			<div class="Column Align_Items_Center">
-				<div class="Wrapper">
-				</div>
+			<div class="Card_Container Column Gap_8">
+				<div class="Card_Title">9 Pans</div>
+					<div class="Column Align_Items_Center">
+						<div class="Wrapper">
+						</div>
+					</div>
 			</div>
-	</div>
-</a>
+		</a>
 		<a class="Search_Grid_Card Column Story_Size_5w_5t" href="#">
 			<div class="Card_Container Column Gap_8">
 				<div class="Card_Title">9 Pans</div>
@@ -130,14 +130,14 @@
 			</div>
 		</a>
 		<a class="Search_Grid_Card Column Justify_Content_Center Story_Size_3w_3t" href="#">
-	<div class="Card_Container Column Gap_8">
-		<div class="Card_Title">9 Pans</div>
-			<div class="Column Align_Items_Center">
-				<div class="Wrapper">
-				</div>
+			<div class="Card_Container Column Gap_8">
+				<div class="Card_Title">9 Pans</div>
+					<div class="Column Align_Items_Center">
+						<div class="Wrapper">
+						</div>
+					</div>
 			</div>
-	</div>
-</a>
+		</a>
 		<a class="Search_Grid_Card Column Story_Size_8w_9t" href="#">
 			<div class="Card_Container Column Gap_8">
 				<div class="Card_Title">9 Pans</div>
@@ -166,6 +166,15 @@
 			</div>
 		</a>
 	</div>
+	<a class="Search_Grid_Card_Template Hidden" href="#">
+		<div class="Card_Container Column Gap_8">
+			<div class="Card_Title">6 Rings</div>
+				<div class="Column Align_Items_Center">
+					<div class="Wrapper">
+					</div>
+				</div>
+		</div>
+	</a>
 	<svg id="circleTemplate" width="87" height="86" viewBox="0 0 87 86" fill="white" xmlns="http://www.w3.org/2000/svg">
 <title id="roundPanTitle">Image representing eyeshadow pans with that are circular or round.</title>
 <desc id="roundPanDesc">A white circle with a gray border</desc>

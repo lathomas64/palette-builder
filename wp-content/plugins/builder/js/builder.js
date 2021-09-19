@@ -450,64 +450,87 @@ var currentStory = new Object();
 						}
 		});
 	}
-	function load_story(event) {
-		console.log(event.target);
-		var story = JSON.parse(event.target.getAttribute("data-story-json"));
-		console.log(story);
-		resize(story.width, story.height);
-		for(var index = 0; index < story.shadows.length; index++){
-			updateShadow(index, story.shadows[index]);
+	function load_story(event, element) {
+		var story = JSON.parse(element.getAttribute("data-story-json"));
+		if(story != null){
+			console.log(story);
+			resize(story.width, story.height);
+			for(var index = 0; index < story.shadows.length; index++){
+				updateShadow(index, story.shadows[index]);
+			}
+			updateFooter();
 		}
+	}
+	function build_story_card(story){
+		template = $(".Search_Grid_Card_Template")[0];
+		width = story["width"];
+		height = story["height"];
+		card = $(template).clone();
+		card_class = "Search_Grid_card Column Story_Size_"+width+"w_"+height+"t"
+		card.attr("class", card_class);
+		card.attr("onclick", "load_story(event, this);");
+		card.find('.Card_Title').text(story["name"]);
+		card.attr("data-publish-date", story["published"]);
+		card.attr("data-name", story["name"]);
+		card.attr("data-size", story["size"]);
+		card.attr("data-price", story["price"]);
+		card.attr("data-story-json", JSON.stringify(story));
 
+		card.find('.Wrapper').css({
+			"grid-template-columns" : "repeat(" + width + ", 1fr)",
+			"grid-template-rows" : "repeat(" + height + ", 1fr)"
+		}
+		);
+
+		var circle = $("#circleTemplate");
+		for (
+			let circles = 0;
+			circles < width * height;
+			circles++
+		) {
+			card.find('.Wrapper').append(circle.clone());
+		}
+		return card;
 	}
 
 	function pull_user_stories() {
-		console.log('pull a list of stories for the current logged in user');
-		if($("#User_Story_Target")[0].children.length == 0) {
-			jQuery.ajax({
-							url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
-							method: 'POST',
-							data: {
-									'action':'user_stories', // This is our PHP function below
-							},
-							success:function(data) {
-								console.log(data);
-								parsed = JSON.parse(data);
-								for(var index = 0; index < parsed.length; index++){
-									console.log(parsed[index]);
-									temp = document.createElement("div");
-									temp.textContent = parsed[index]["name"]
-									temp.setAttribute("data-story-json", JSON.stringify(parsed[index]));
-									temp.setAttribute("onclick", "load_story(event)");
-									$("#User_Story_Target")[0].appendChild(temp);
-								}
+		jQuery.ajax({
+						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+						method: 'POST',
+						data: {
+								'action':'user_stories', // This is our PHP function below
+						},
+						success:function(data) {
+							console.log(data);
+							parsed = JSON.parse(data);
+							grid = $("#User_Story_Target .Story_Size")
+							for(var index = 0; index < parsed.length; index++){
+								console.log(parsed[index]);
+								card = build_story_card(parsed[index]);
+								$("#User_Story_Target .Story_Size").append(card);
 							}
-			});
-		}
+						}
+		});
 	}
 
 	function pull_community_stories() {
-		if($("#Community_Story_Target")[0].children.length == 0){
-			jQuery.ajax({
-							url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
-							method: 'POST',
-							data: {
-									'action':'community_stories', // This is our PHP function below
-							},
-							success:function(data) {
-								console.log(data);
-								parsed = JSON.parse(data);
-								for(var index = 0; index < parsed.length; index++){
-									console.log(parsed[index]);
-									temp = document.createElement("div");
-									temp.textContent = parsed[index]["name"]
-									temp.setAttribute("data-story-json", JSON.stringify(parsed[index]));
-									temp.setAttribute("onclick", "load_story(event)");
-									$("#Community_Story_Target")[0].appendChild(temp);
-								}
+		jQuery.ajax({
+						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+						method: 'POST',
+						data: {
+								'action':'community_stories', // This is our PHP function below
+						},
+						success:function(data) {
+							console.log(data);
+							parsed = JSON.parse(data);
+							grid = $("#Community_Story_Target .Story_Size")
+							for(var index = 0; index < parsed.length; index++){
+								console.log(parsed[index]);
+								card = build_story_card(parsed[index]);
+								$("#Community_Story_Target .Story_Size").append(card);
 							}
-			});
-		}
+						}
+		});
 	}
 
 	function init() {
