@@ -99,13 +99,9 @@ var currentStory = new Object();
 		updateFooter();
 	}
 	function drag(evt, index) {
-		console.log('dragging...');
-		console.log(evt);
 		if(index != undefined)
 		{
 			//do internal drag stuff here
-			console.log('we need the index and the shadow here but how to grab?');
-			console.log(evt.target);
 			evt.dataTransfer.setData("index", index);
 		} else {
 	  	evt.dataTransfer.setData("shadow", evt.target.id);
@@ -544,10 +540,7 @@ var currentStory = new Object();
 	function register_modal(buttonTarget, modalTarget)
 	{
 		$(buttonTarget).click(function(){
-			console.log(modalTarget);
-			console.log($(modalTarget));
 			$(modalTarget).toggleClass("On");
-			console.log($(modalTarget));
 			$(buttonTarget).toggleClass("Selected");
 		});
 		$(document).click(function() {
@@ -560,10 +553,6 @@ var currentStory = new Object();
 						!shadowFilterBtn.is(event.target) &&
 						!shadowFilterBtn.has(event.target).length
 					) {
-						console.log('so we meet again...');
-						console.log(event);
-						console.log(container);
-						console.log(shadowFilterBtn);
 	     			container.removeClass("On");
 						$(buttonTarget).removeClass("Selected");
 	    }
@@ -587,8 +576,6 @@ var currentStory = new Object();
 		{
 			shadow = getUrlParam('shadows['+index+']', false);
 			if (shadow) {
-				console.log('trying to set a shadow:'+index);
-				console.log('shadow is:'+shadow)
 				updateShadow(index, shadow);
 			}
 		}

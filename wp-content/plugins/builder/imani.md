@@ -6,6 +6,7 @@
 - [ ] Help
 - [ ] Close about this panel
 - [ ] Sort options
+- [ ] Share modal/automatic copy to clipboard.
 - [ ] Users.
   - [x] associate stories to users (admin for now)
   - [x] save story if you are logged in.
@@ -20,3 +21,6 @@
 
 ### Gina
 - [ ] CSS for rotate
+
+
+### Uncategorized
