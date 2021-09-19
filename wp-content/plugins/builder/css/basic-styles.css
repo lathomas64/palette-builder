@@ -254,7 +254,7 @@ a {
 	
 }
 
-.Palette {
+.Palette, .Palette_Summary .Palette {
 	background-image: url("../assets/palette-frame-paper-pattern.jpg");
 	background-repeat: repeat;
 	padding: 4%;
@@ -266,7 +266,7 @@ a {
 	padding:2%;
 }
 
-.Story_Grid {
+.Story_Grid, .Palette_Summary .Wrapper {
 	background-color: #202020;
 	box-shadow: var(--inner-palette-shadow);
 	border-radius: 4px;
@@ -1096,7 +1096,7 @@ label.Check_Select {
 	padding-left:0px;
 }
 
-input.Single_Select {
+.Hidden, input.Single_Select {
 	display:none;
 
 }

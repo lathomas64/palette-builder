@@ -3,18 +3,26 @@ $(document).ready(function(){
 //Temporary hover JS for demo
 
 		var shadowDetail = $("#shadowDetail");
-		
+		var searchPanel = $(".Right_Panel");
+		var arrangementSpace = $(".Builder");
+		var builderWidth = arrangementSpace.outerWidth();
+  var detailPanelWidth = shadowDetail.outerWidth();
+
 $(".Single_Pan_Card").mouseenter(function() {
 					setTimeout (function() {
 						shadowDetail.addClass("On");
+						shadowDetail.css(
+							"left", builderWidth - detailPanelWidth
+						);
 					}, 1000);
 		}).mouseleave(function () {
 	  if (
-				!$("#shadowDetail:hover").length !=0
+				!$("#shadowDetail:hover").length !=0 &&
+				!$("#shadowDetail").length !=0
 			) {
 		   setTimeout (function() {
 						shadowDetail.removeClass("On");
-					}, 1000);
+					}, 2000);
 	  }
 	});
 	
@@ -24,12 +32,9 @@ $(".Single_Pan_Card").mouseenter(function() {
 			) {
 		   setTimeout (function() {
 						shadowDetail.removeClass("On");
-					}, 1000);
+					}, 2000);
 	  }
 	});
-
-	
-	//on mouse leave, check tos ee if the cursor is in the detail panel. If it's not, delay 2000s and close the panel
 	
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function(){
@@ -58,7 +63,7 @@ $(".Single_Pan_Card").mouseenter(function() {
 	});
 
 //Draw circles for story cards
-	$(".Results .Search_Grid_Card").each(
+	$(".Search_Grid_Card").each(
 	function(index, element){
 		var classes = $(this).attr("class");
 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
@@ -89,58 +94,6 @@ $(".Single_Pan_Card").mouseenter(function() {
   $("#shadowHelper").addClass("Closed");
 	});
 
-
-//MODAL TOGGLES
-
-////Shadow Filter Basic Dropdown
-
-//////Button Activation
-	$("#shadowFilterBtn").click(function(){
-		$("#shadowFilterBasic").toggleClass("On");
-		$("#shadowFilterBtn").toggleClass("Selected");
-	});
-	
-//////Close on out-click
-	$(document).click(function() {
-    var container = $("#shadowFilterBasic");
-				var shadowFilterBtn = $("#shadowFilterBtn");
-				var advancedFilterBtn = $("advancedFilterBtn")
-    if (
-					!container.is(event.target) && 
-					!container.has(event.target).length && 
-					!shadowFilterBtn.is(event.target) &&
-					!shadowFilterBtn.has(event.target).length
-				) {
-     container.removeClass("On");
-					$("#shadowFilterBtn").removeClass("Selected");
-    }
-
-});
-
-////Shadow Sort Basic Dropdown
-
-//////Button Activation
-	$("#shadowSortBtn").click(function(){
-		$("#shadowSortBasic").toggleClass("On");
-		$("#shadowSortBtn").toggleClass("Selected");
-	});
-	
-	//////Close on out-click
-	$(document).click(function() {
-    var container = $("#shadowSortBasic");
-				var shadowFilterBtn = $("#shadowSortBtn");
-    if (
-					!container.is(event.target) && 
-					!container.has(event.target).length && 
-					!shadowFilterBtn.is(event.target) &&
-					!shadowFilterBtn.has(event.target).length
-				) {
-     container.removeClass("On");
-					$("#shadowSortBtn").removeClass("Selected");
-    }
-
-});
-
 ////Advanced Filter Overlay
 
 //////Button Activation
@@ -160,7 +113,19 @@ $(".Single_Pan_Card").mouseenter(function() {
 	
 //////Close When Out-Click
 
+	//Show and Hide Palette Summary LIst
+	$("#toggleListBtn").click(function(){
+  $(".Palette_Contents").slideToggle(100, function(){
+			$("#toggleListBtn").text(
+				$(this).is(':visible') ? "Hide List" : "Show List");
+			$(".Text_Button").find('.svgPlus').toggle();
+   $(".Text_Button").find('.svgMinus').toggle();
+		}), function () {
+			//This next part is good, just need to figure out how to get it to call back or settimeout
+			if ($(".Palette_Contents").prop('scrollHeight') > $(".Palette_Contents").outerHeight() ) {
+				alert("this element is overflowing !!");
+			}};
+	});
+
 }); //end of document ready		
-
-
 

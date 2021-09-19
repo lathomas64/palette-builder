@@ -901,14 +901,14 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	
 }
 
-.Results .Search_Grid_Card #circleTemplate {
+.Search_Grid_Card #circleTemplate, .Palette_Summary #circleTemplate {
 	display:block;
 	border-radius: 50%;
 	border: var(--standard-border);
 	width: 100%;
  height: auto;}
 
-.Results .Search_Grid_Card .Wrapper { 
+.Search_Grid_Card .Wrapper { 
 	display: grid;
 }
 
@@ -934,15 +934,18 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 
 /***SHADOW HOVER DETAIL**/
 
-.Shadow_Detail_Panel {
+.Shadow_Detail_Panel, .Story_Detail_Panel {
 	background-color: var(--system-white);
- border: var(--standard-border);
+	border: var(--standard-border);
 	border-color: var(--FDBL-black);
- box-shadow: var(--lift-shadow);
- width: 314px;
- height: fit-content;
- padding: 16px 24px;
- margin-left: 100px;
+	box-shadow: var(--lift-shadow);
+	width: 314px;
+	height: fit-content;
+	padding: 16px;
+	top: 50%;
+	transform: translatey(-50%);
+	/* max-height: 800px; */
+	overflow: scroll;
 }
 
 .Shadow_Detail_Panel .Card_Container {
@@ -974,14 +977,14 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	object-fit:fill;
 }
 
-.Shadow_Detail_Panel .Shadow_Name {
+.Shadow_Detail_Panel .Shadow_Name, .Palette_Summary .Card_Title {
   font: var(--font-subsection-title);
   color: var(--FDBL-black);
   display: initial;
   margin: 0;
 }
 
-.Shadow_Detail_Panel .Shadow_Brand {
+.Shadow_Detail_Panel .Shadow_Brand, .Palette_Summary .Shadow_Brand {
 	font:var(--font-body-small);
 }
 
@@ -1036,4 +1039,54 @@ li.Property {
 
 .Brand_Characteristic.Badge {
 	background-color: var(--system-white);
+}
+
+/**STORY DETAIL PANEL**/
+
+.Palette_Summary.Search_Grid_Card .Card_Container {
+ width: 100%;
+ padding: 0;
+ border: none;
+}
+
+.Palette_Summary .Search_Grid_Card .Card_Container {
+	border:none;
+}
+
+.Properties_Table ul.Palette_Contents  {
+ width: 100%;
+ margin-top:16px;
+	max-height: 300px;
+ overflow: scroll;
+}
+
+ul.Palette_Contents li {
+	padding: 0;
+}
+
+.Palette_Contents > li {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 8px;
+ border-bottom:none;
+
+}
+
+li.Shadow_Name {
+	display:block;
+	margin:0;
+	font: var(--font-body-small);
+ color: var(--FDBL-black);
+}
+
+ul.Shadow_List, ul.Palette_Contents {
+	display:flex;
+}
+
+.Palette_Contents .Brand_Name {
+ font-weight: 500;
+}
+
+.Search_Grid_Card:hover .Card_Container {
+	box-shadow:none;
 }
