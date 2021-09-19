@@ -36,3 +36,10 @@ function sort(attr, item_class, asc)
   sorted_items = [...item_parent.children].sort(compare_attribute(attr, asc))
   sorted_items.forEach(node=>item_parent.appendChild(node));
 }
+
+function init() {
+  $("#Community_Story_Target .Filter_Button_Filter").click(function(){
+		$("#communityFilterBasic").toggleClass("On");
+		$("#Community_Story_Target .Filter_Button_Filter").toggleClass("Selected");
+	});
+}

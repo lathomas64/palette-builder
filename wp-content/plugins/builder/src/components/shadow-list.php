@@ -106,6 +106,9 @@ $count = $shadows->found_posts;
 				}
 				?> data-size='<?php echo $size; ?>' data-shape='<?php echo $shape ?>'
 						data-series='<?php echo $series; ?>'
+						data-name='<?php the_title(); ?>'
+						data-color='figure out which value goes here'
+						data-lightness='add lightness value here'
 						data-country='<?php echo get_post_field("country", $brand[0]); ?>'
 						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
 						data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>'

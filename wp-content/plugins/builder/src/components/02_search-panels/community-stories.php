@@ -15,5 +15,6 @@
 		</div>
 	</div>
 	<div id="Community_Story_Target">
+		<?php include "components/story-size-list.php"; ?>
 	</div>
 </div>
