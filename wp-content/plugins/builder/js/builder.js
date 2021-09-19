@@ -534,6 +534,7 @@ var currentStory = new Object();
 							for(var index = 0; index < parsed.length; index++){
 								console.log(parsed[index]);
 								card = build_story_card(parsed[index]);
+								card.addClass("Community_Story_Card");
 								$("#Community_Story_Target .Story_Size").append(card);
 							}
 						}
@@ -543,18 +544,26 @@ var currentStory = new Object();
 	function register_modal(buttonTarget, modalTarget)
 	{
 		$(buttonTarget).click(function(){
+			console.log(modalTarget);
+			console.log($(modalTarget));
 			$(modalTarget).toggleClass("On");
+			console.log($(modalTarget));
 			$(buttonTarget).toggleClass("Selected");
 		});
 		$(document).click(function() {
 	    var container = $(modalTarget);
 			var shadowFilterBtn = $(buttonTarget);
+
 			if (
 						!container.is(event.target) &&
 						!container.has(event.target).length &&
 						!shadowFilterBtn.is(event.target) &&
 						!shadowFilterBtn.has(event.target).length
 					) {
+						console.log('so we meet again...');
+						console.log(event);
+						console.log(container);
+						console.log(shadowFilterBtn);
 	     			container.removeClass("On");
 						$(buttonTarget).removeClass("Selected");
 	    }
@@ -587,10 +596,10 @@ var currentStory = new Object();
 	}
 	$(document).ready(function(){
 		init();
-		register_modal("#Community_Story_Target .Filter_Button_Filter", "#storyFilterBasic");
-		register_modal("#User_Story_Target .Filter_Button_Filter", "#storyFilterBasic");
-		register_modal("#Community_Story_Target .Filter_Button_Sort", "#storySortBasic");
-		register_modal("#User_Story_Target .Filter_Button_Sort", "#storySortBasic");
+		register_modal("#Community_Story_Target .Filter_Button_Filter", "#CommunityStoryFilterBasic");
+		register_modal("#User_Story_Target .Filter_Button_Filter", "#UserStoryFilterBasic");
+		register_modal("#Community_Story_Target .Filter_Button_Sort", "#CommunityStorySortBasic");
+		register_modal("#User_Story_Target .Filter_Button_Sort", "#UserStorySortBasic");
 		register_modal("#shadowSortBtn", "#shadowSortBasic");
 		register_modal("#shadowFilterBtn", "#shadowFilterBasic");
 	});

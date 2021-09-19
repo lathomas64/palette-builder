@@ -1,0 +1,3 @@
+<div id="CommunityStorySortBasic" class="Modal Column Basic_Dropdown Fade_In">
+  <?php include 'story-sort.php' ?>
+</div>

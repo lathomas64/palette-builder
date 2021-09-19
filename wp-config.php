@@ -1,4 +1,8 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
+
 /***
  *
  * WordPress's Debianised default master config file
@@ -62,4 +66,6 @@ define('FS_METHOD', 'direct');
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', true );
+define('WP_MEMORY_LIMIT', '256M');
+define( 'WP_MAX_MEMORY_LIMIT', '256M' );
 ?>
