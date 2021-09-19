@@ -466,7 +466,7 @@ var currentStory = new Object();
 		width = story["width"];
 		height = story["height"];
 		card = $(template).clone();
-		card_class = "Search_Grid_card Column Story_Size_"+width+"w_"+height+"t"
+		card_class = "Search_Grid_Card Story_Card Column Story_Size_"+width+"w_"+height+"t"
 		card.attr("class", card_class);
 		card.attr("onclick", "load_story(event, this);");
 		card.find('.Card_Title').text(story["name"]);
@@ -494,6 +494,7 @@ var currentStory = new Object();
 	}
 
 	function pull_user_stories() {
+		$("#User_Story_Target .Filter_Button_Filter");
 		jQuery.ajax({
 						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
 						method: 'POST',
@@ -539,6 +540,27 @@ var currentStory = new Object();
 		});
 	}
 
+	function register_modal(buttonTarget, modalTarget)
+	{
+		$(buttonTarget).click(function(){
+			$(modalTarget).toggleClass("On");
+			$(buttonTarget).toggleClass("Selected");
+		});
+		$(document).click(function() {
+	    var container = $(modalTarget);
+			var shadowFilterBtn = $(buttonTarget);
+			if (
+						!container.is(event.target) &&
+						!container.has(event.target).length &&
+						!shadowFilterBtn.is(event.target) &&
+						!shadowFilterBtn.has(event.target).length
+					) {
+	     			container.removeClass("On");
+						$(buttonTarget).removeClass("Selected");
+	    }
+		});
+	}
+
 	function init() {
 		try {
 			openTab(false, 'size');
@@ -565,4 +587,10 @@ var currentStory = new Object();
 	}
 	$(document).ready(function(){
 		init();
+		register_modal("#Community_Story_Target .Filter_Button_Filter", "#storyFilterBasic");
+		register_modal("#User_Story_Target .Filter_Button_Filter", "#storyFilterBasic");
+		register_modal("#Community_Story_Target .Filter_Button_Sort", "#storySortBasic");
+		register_modal("#User_Story_Target .Filter_Button_Sort", "#storySortBasic");
+		register_modal("#shadowSortBtn", "#shadowSortBasic");
+		register_modal("#shadowFilterBtn", "#shadowFilterBasic");
 	});
