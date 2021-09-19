@@ -503,7 +503,10 @@ var currentStory = new Object();
 						success:function(data) {
 							console.log(data);
 							parsed = JSON.parse(data);
-							grid = $("#User_Story_Target .Story_Size")
+							grid = $("#User_Story_Target .Story_Size");
+							while(grid.children().length){
+								grid.children()[0].remove();
+							}
 							for(var index = 0; index < parsed.length; index++){
 								console.log(parsed[index]);
 								card = build_story_card(parsed[index]);
@@ -524,6 +527,9 @@ var currentStory = new Object();
 							console.log(data);
 							parsed = JSON.parse(data);
 							grid = $("#Community_Story_Target .Story_Size")
+							while(grid.children().length){
+								grid.children()[0].remove();
+							}
 							for(var index = 0; index < parsed.length; index++){
 								console.log(parsed[index]);
 								card = build_story_card(parsed[index]);
