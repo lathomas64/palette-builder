@@ -3,38 +3,77 @@ $(document).ready(function(){
 //Temporary hover JS for demo
 
 		var shadowDetail = $("#shadowDetail");
+		var shadowCard = $(".Results .Single_Pan_Card");
 		var searchPanel = $(".Right_Panel");
 		var arrangementSpace = $(".Builder");
 		var builderWidth = arrangementSpace.outerWidth();
   var detailPanelWidth = shadowDetail.outerWidth();
 
-$(".Single_Pan_Card").mouseenter(function() {
-					setTimeout (function() {
-						shadowDetail.addClass("On");
-						shadowDetail.css(
-							"left", builderWidth - detailPanelWidth
-						);
-					}, 1000);
+shadowCard.mouseenter(function() {
+		$(this).addClass("Gina");
+		setTimeout (function() {
+			shadowDetail.addClass("On");
+			shadowDetail.css(
+				"left", builderWidth - detailPanelWidth
+			);
+		}, 1000);
 		}).mouseleave(function () {
-	  if (
-				!$("#shadowDetail:hover").length !=0 &&
-				!$("#shadowDetail").length !=0
+			$(this).removeClass("Gina");
+	   setTimeout (function() {
+			  if (
+						$(".Gina").length == 0
 			) {
-		   setTimeout (function() {
-						shadowDetail.removeClass("On");
-					}, 2000);
-	  }
+				console.log("sup");
+				shadowDetail.removeClass("On");
+					}
+				}, 1500);
 	});
 	
-	$("#shadowDetail").mouseleave(function () {
-	  if (
-				!$(".Single_Pan_Card:hover").length !=0
-			) {
-		   setTimeout (function() {
-						shadowDetail.removeClass("On");
-					}, 2000);
-	  }
+	shadowDetail.mouseenter(function() {
+		$(this).addClass("Gina");
+	}).mouseleave(function () {
+		$(this).removeClass("Gina");
+  setTimeout (function() {
+		  if ($(".Gina").length == 0) {
+				shadowDetail.removeClass("On");
+					}
+				}, 1500);
 	});
+	
+		var storyDetail = $("#storyDetail");
+		var storyCard = $(".Story_Size .Search_Grid_Card")
+
+storyCard.mouseenter(function() {
+		$(this).addClass("Gina");
+		setTimeout (function() {
+			storyDetail.addClass("On");
+			storyDetail.css(
+				"left", builderWidth - detailPanelWidth
+			);
+		}, 1000);
+		}).mouseleave(function () {
+			$(this).removeClass("Gina");
+	   setTimeout (function() {
+			  if (
+						$(".Gina").length == 0
+			) {
+				console.log("sup");
+				storyDetail.removeClass("On");
+					}
+				}, 1500);
+	});
+	
+	storyDetail.mouseenter(function() {
+		$(this).addClass("Gina");
+	}).mouseleave(function () {
+		$(this).removeClass("Gina");
+  setTimeout (function() {
+		  if ($(".Gina").length == 0) {
+				storyDetail.removeClass("On");
+					}
+				}, 1500);
+	});
+
 	
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function(){
@@ -113,18 +152,21 @@ $(".Single_Pan_Card").mouseenter(function() {
 	
 //////Close When Out-Click
 
-	//Show and Hide Palette Summary LIst
+	//Show and Hide Palette Summary List
 	$("#toggleListBtn").click(function(){
   $(".Palette_Contents").slideToggle(100, function(){
 			$("#toggleListBtn").text(
 				$(this).is(':visible') ? "Hide List" : "Show List");
 			$(".Text_Button").find('.svgPlus').toggle();
    $(".Text_Button").find('.svgMinus').toggle();
-		}), function () {
-			//This next part is good, just need to figure out how to get it to call back or settimeout
-			if ($(".Palette_Contents").prop('scrollHeight') > $(".Palette_Contents").outerHeight() ) {
-				alert("this element is overflowing !!");
-			}};
+		}); 
+		setTimeout (function() {
+			if (
+				$(".Palette_Contents").prop('scrollHeight') > $(".Palette_Contents").outerHeight() 
+			) {
+				$(".Scroll_Prompt").show();
+			}
+		}, 100);
 	});
 
 }); //end of document ready		
