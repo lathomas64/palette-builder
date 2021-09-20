@@ -418,6 +418,47 @@ var currentStory = new Object();
 		console.log('end update shadow');
 	}
 
+	function update_shadow_detail(shadow)
+	{
+		source_img = shadow.find('img').attr('src');
+		shape = shadow.attr('data-shape');
+		size = shadow.attr('data-size');
+		height = shadow.attr('data-height');
+		width = shadow.attr('data-width');
+		name = shadow.attr('data-name');
+		brand = shadow.attr('data-brand');
+		//price shift finish color-family color-temp vivdness lightness
+		price = shadow.attr('data-price');
+		shift = shadow.attr('data-shift');
+		finish = shadow.attr('data-finish');
+		family = shadow.attr('data-color-family');
+		temp = shadow.attr('data-color-temp');
+		vividness = shadow.attr('data-vividness');
+		lightness = shadow.attr('data-lightness');
+		image_classes = "Shadow_Image_Container Column Align_Items_Center ";
+		image_classes += "Justify_Content_Center Pan_Size_";
+		image_classes += size;
+		image_classes += " Pan_Shape_";
+		image_classes += shape;
+		image_classes += " Pan_Height_";
+		image_classes += height;
+		image_classes += " Pan_Width_";
+		image_classes += width;
+		$("#shadowDetail img").attr("src", source_img);
+		$("#shadowDetail .Shadow_Image_Container").attr("class", image_classes);
+		$("#shadowDetail .Shadow_Name").text(name);
+		$("#shadowDetail .Shadow_Brand").text(brand);
+		$('#shadowDetail ul').children()[0].children[1].textContent = size;
+		$('#shadowDetail ul').children()[1].children[1].textContent = shape;
+		$('#shadowDetail ul').children()[2].children[1].textContent = price;
+		$('#shadowDetail ul').children()[3].children[1].textContent = shift;
+		$('#shadowDetail ul').children()[4].children[1].textContent = finish;
+		$('#shadowDetail ul').children()[5].children[1].textContent = family;
+		$('#shadowDetail ul').children()[6].children[1].textContent = temp;
+		$('#shadowDetail ul').children()[7].children[1].textContent = vividness;
+		$('#shadowDetail ul').children()[8].children[1].textContent = lightness;
+	}
+
 	function flatten_story() {
 		story = []
 		for(var index = 0; index < currentStory.shadows.length; index++)
@@ -558,6 +599,8 @@ var currentStory = new Object();
 	    }
 		});
 	}
+
+
 
 	function init() {
 		try {

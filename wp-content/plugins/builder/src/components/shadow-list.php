@@ -6,6 +6,25 @@ if (!defined("ABSPATH")) {
 	/** Set up WordPress environment */
 	require_once "/usr/share/wordpress/wp-load.php";
 }
+function extract_tax($tax_name, $the_tax)
+{
+	if(array_key_exists($tax_name, $the_tax))
+	{
+		$term = $the_tax[$tax_name];
+		$explode = explode("=", $term);
+		$slug = $explode[1];
+		$term = substr($slug, 0,-1);
+		$term_details = get_terms($tax_name, array('slug'=>$term));
+		if($term_details){
+			$term_name = $term_details[0]->name;
+			return $term_name;
+		} else {
+			return "unknown";
+		}
+	} else {
+		return "unknown";
+	}
+}
 $args = [
 	"post_type" => "cpt_shadow",
 	"post_status" => "publish",
@@ -76,6 +95,7 @@ $count = $shadows->found_posts;
 			$shape = get_field('shape', $details[0]);
 			$height = get_field('height', $details[0]);
 			$width = get_field('width', $details[0]);
+			$brand_series = get_field('brand', $details[0]);
 			$size = $height;
 			if($width != $height){
 				$size = "Irregular";
@@ -84,6 +104,15 @@ $count = $shadows->found_posts;
 					$height = 26;
 					$width = 26;
 			}
+
+
+
+			$shift = extract_tax("tax_shift", $the_tax);
+			$finish = extract_tax("tax_finish", $the_tax);
+			$family = extract_tax("tax_color_family", $the_tax);
+			$temperature = extract_tax("tax_temperature", $the_tax);
+			$vividness = extract_tax("tax_vividness", $the_tax);
+			$lightness = extract_tax("tax_lightness", $the_tax);
 		} else {
 			$series = 'undefined';
 			$shape = 'Round';
@@ -104,13 +133,26 @@ $count = $shadows->found_posts;
 					}
 					echo "]'";
 				}
-				?> data-size='<?php echo $size; ?>' data-shape='<?php echo $shape ?>'
+				?> data-size='<?php echo $size; ?>'
+						data-height='<?php echo $height; ?>'
+						data-width='<?php echo $width; ?>'
+						data-shape='<?php echo $shape ?>'
 						data-series='<?php echo $series; ?>'
 						data-name='<?php the_title(); ?>'
-						data-color='figure out which value goes here'
-						data-lightness='add lightness value here'
+						data-shift='<?php echo $shift; ?>'
+						data-finish='<?php echo $finish; ?>'
+						data-color-family='<?php echo $family; ?>'
+						data-color-temp='<?php echo $temperature; ?>'
+						data-vividness='<?php echo $vividness; ?>'
+						data-lightness='<?php echo $lightness; ?>'
+						<?php if ($brand) { ?>
 						data-country='<?php echo get_post_field("country", $brand[0]); ?>'
 						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
+						<?php } else { ?>
+						data-country='unknown'
+						data-brand='unknown'
+						<?php } ?>
+						data-brand-series='<?php echo $brand_series; ?>'
 						data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>'
 						draggable="true" ondragstart="drag(event)"
 						class="Single_Pan_Card" href="#">
