@@ -48,11 +48,15 @@ shadowCard.mouseenter(function() {
 
 storyCard.mouseenter(function() {
 		$(this).addClass("Hovered");
-		setTimeout (function() {
-			storyDetail.addClass("On");
-			storyDetail.css(
+		update_shadow_detail($(this));
+		storyDetail.css(
 				"left", builderWidth - detailPanelWidth
 			);
+						storyDetail.css(
+				"display", "flex"
+			);
+		setTimeout (function() {
+			storyDetail.addClass("Fade_In");
 		}, 1000);
 		}).mouseleave(function () {
 			$(this).removeClass("Hovered");
@@ -60,9 +64,9 @@ storyCard.mouseenter(function() {
 			  if (
 						$(".Hovered").length == 0
 			) {
-				storyDetail.removeClass("On");
+				storyDetail.removeClass("Fade_In");
 					}
-				}, 1500);
+				}, 1000);
 	});
 	
 	storyDetail.mouseenter(function() {
@@ -71,9 +75,9 @@ storyCard.mouseenter(function() {
 		$(this).removeClass("Hovered");
   setTimeout (function() {
 		  if ($(".Hovered").length == 0) {
-				storyDetail.removeClass("On");
+				storyDetail.removeClass("Fade_In");
 					}
-				}, 1500);
+				}, 1000);
 	});
 
 	
