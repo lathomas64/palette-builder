@@ -83,6 +83,7 @@ $count = $shadows->found_posts;
 
   	$shadows->the_post();
   	$brand = get_field("brand");
+
   	$colors = get_field("colors");
 		$the_tax = get_the_taxonomies(0, array('term_template' => '%1$s'));
 		if(array_key_exists('tax_series', $the_tax)){
@@ -95,7 +96,13 @@ $count = $shadows->found_posts;
 			$shape = get_field('shape', $details[0]);
 			$height = get_field('height', $details[0]);
 			$width = get_field('width', $details[0]);
-			$brand_series = get_field('brand', $details[0]);
+			if(!$brand){
+				$brand_series = get_field('brand', $details[0]);
+				if($brand_series){
+						$brand = $brand_series; //how do we get the name from this?
+				}
+
+			}
 			$size = $height;
 			if($width != $height){
 				$size = "Irregular";
@@ -152,7 +159,6 @@ $count = $shadows->found_posts;
 						data-country='unknown'
 						data-brand='unknown'
 						<?php } ?>
-						data-brand-series='<?php echo $brand_series; ?>'
 						data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>'
 						draggable="true" ondragstart="drag(event)"
 						class="Single_Pan_Card" href="#">
