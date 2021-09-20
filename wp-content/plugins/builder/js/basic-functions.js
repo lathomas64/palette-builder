@@ -10,41 +10,44 @@ $(document).ready(function(){
   var detailPanelWidth = shadowDetail.outerWidth();
 
 shadowCard.mouseenter(function() {
-		$(this).addClass("Gina");
-		setTimeout (function() {
-			shadowDetail.addClass("On");
-			shadowDetail.css(
+		$(this).addClass("Hovered");
+		update_shadow_detail($(this));
+		shadowDetail.css(
 				"left", builderWidth - detailPanelWidth
 			);
+						shadowDetail.css(
+				"display", "flex"
+			);
+		setTimeout (function() {
+			shadowDetail.addClass("Fade_In");
 		}, 1000);
 		}).mouseleave(function () {
-			$(this).removeClass("Gina");
+			$(this).removeClass("Hovered");
 	   setTimeout (function() {
 			  if (
-						$(".Gina").length == 0
+						$(".Hovered").length == 0
 			) {
-				console.log("sup");
-				shadowDetail.removeClass("On");
+				shadowDetail.removeClass("Fade_In");
 					}
-				}, 1500);
+				}, 1000);
 	});
 	
 	shadowDetail.mouseenter(function() {
-		$(this).addClass("Gina");
+		$(this).addClass("Hovered");
 	}).mouseleave(function () {
-		$(this).removeClass("Gina");
+		$(this).removeClass("Hovered");
   setTimeout (function() {
-		  if ($(".Gina").length == 0) {
-				shadowDetail.removeClass("On");
+		  if ($(".Hovered").length == 0) {
+				shadowDetail.removeClass("Fade_In");
 					}
-				}, 1500);
+				}, 1000);
 	});
 	
 		var storyDetail = $("#storyDetail");
 		var storyCard = $(".Story_Size .Search_Grid_Card")
 
 storyCard.mouseenter(function() {
-		$(this).addClass("Gina");
+		$(this).addClass("Hovered");
 		setTimeout (function() {
 			storyDetail.addClass("On");
 			storyDetail.css(
@@ -52,23 +55,22 @@ storyCard.mouseenter(function() {
 			);
 		}, 1000);
 		}).mouseleave(function () {
-			$(this).removeClass("Gina");
+			$(this).removeClass("Hovered");
 	   setTimeout (function() {
 			  if (
-						$(".Gina").length == 0
+						$(".Hovered").length == 0
 			) {
-				console.log("sup");
 				storyDetail.removeClass("On");
 					}
 				}, 1500);
 	});
 	
 	storyDetail.mouseenter(function() {
-		$(this).addClass("Gina");
+		$(this).addClass("Hovered");
 	}).mouseleave(function () {
-		$(this).removeClass("Gina");
+		$(this).removeClass("Hovered");
   setTimeout (function() {
-		  if ($(".Gina").length == 0) {
+		  if ($(".Hovered").length == 0) {
 				storyDetail.removeClass("On");
 					}
 				}, 1500);
