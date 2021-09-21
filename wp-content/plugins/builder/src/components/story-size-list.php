@@ -1,7 +1,7 @@
 <div class="Results Column Gap_24">
 	<div class="Row Space_Between Align_Items_Center">
 		<div class="Body Small_Text">
-			<span id="Shadow_Count"> Showing 1310 shadows </span>
+			<span id="Story_Size_Count"> Showing 1310 shadows </span>
 		</div>
 	<div class="Row Space_Between Gap_8 Align_Items_Center">
 		<button class="Filter_Button_Filter Filter_Button Icon_Button Align_Items_Center Row Gap_4">
