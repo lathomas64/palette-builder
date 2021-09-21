@@ -34,6 +34,7 @@
 	--type-size-0: 0px;
 	--type-size-10: 10px;
 	--type-size-12: 12px;
+		--type-size-13: 13px;
 	--type-size-14: 14px;
 	--type-size-16: 16px;
 	--type-size-18: 18px;
@@ -116,20 +117,23 @@
 
 
 	--font-body-small: var(--type-weight-light) var(--type-size-16) / var(--type-size-18) var(--e-global-typography-primary-font-family);
+		--font-body-regular: var(--type-weight-light) var(--type-size-18) / var(--type-size-21) var(--e-global-typography-primary-font-family);
 
 /**FORMS AND INPUTS**/
 
-	--font-input-label: var(--type-weight-bold) var(--type-size-12) / var(--type-size-12) var(--e-global-typography-primary-font-family);
+	--font-input-label: var(--type-weight-bold) var(--type-size-13) / var(--type-size-12) var(--e-global-typography-primary-font-family);
 
 
 
 	/**SHADOWS**/
 	--shadow-invisible: 3px 3px 0px rgb(0 0 0 / 0%);
 	--table-rest-shadow: -4px 0px 8px 0px rgb(0 0 0 / 10%);
-	--palette-frame-rest: 1px ​6px 11px;
+	
+	h-offset v-offset blur spread color
+	--palette-frame-rest: 11px 6px 11px 11px rgb(0 0 0 / 20%);
 	--lift-shadow: 3px 3px 0px var(--FDBL-black);
 	--drag-shadow: 1px 1px 0px var(--FDBL-black);
-	--inner-pan-shadow: inset 0px 0px 6px rgb(0 0 0 / 35%);
+	--inner-pan-shadow: inset 0px 0px 6px rgba(0 0 0 / 35%);
 	--button-selected: inset 2px 2px 1px 0px var(--FDBL-green-dark);
 	--inner-palette-shadow: inset 0px 0px 24px rgb(0 0 0);
 	--pan-shadow-on-palette: 0px 0px 6px 0px rgb(0 0 0);

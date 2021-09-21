@@ -17,17 +17,19 @@ body, html { width: 100%; height: 100%; cursor:default;}
 		opacity: 1;
 	}
 }
-.Fade_In {
-	animation-duration: 0.1s;
-	animation-name: fadeIn;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	overflow: hidden;
-}
 
 .Fade_Out {
 	animation-name: fadeIn;
 	animation-direction: reverse;
+}
+
+.Fade_In {
+	animation-duration: .1s;
+	  -webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	animation-timing-function: ease-in-out;
+	  -webkit-animation-timing-function: ease-in-out;
+	overflow: hidden;
 }
 
 @keyframes fadeInRight {
@@ -55,40 +57,15 @@ body, html { width: 100%; height: 100%; cursor:default;}
 	}
 		
 
-
-/* @keyframes slide-right {
-	0% {
-		left: 0;
-	}
-	100% {
-		left: 24px;
-	}
-}
-
-@keyframes slideOutRight {
-	0% {
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-	}
-	to {
-		-webkit-transform: translate3d(100%, 0, 0);
-		transform: translate3d(100%, 0, 0);
-	}
-}
-
-@keyframes slideInRight {
-	0% {
-		-webkit-transform: translate3d(100%, 0, 0);
-		transform: translate3d(100%, 0, 0);
-	}
-	to {
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-	}
-} */
-
 :focus-visible {
 	outline-color: var(--FDBL-green-light);
+	padding: 8px;
+}
+
+.Stick {
+	position: fixed;
+	top:0;
+	width:100%;
 }
 
 * {
@@ -118,6 +95,16 @@ h6 {
 a {
 	text-decoration: none;
 	cursor: pointer;
+	color: var(--FDBL-green-medium);
+	transition: .1s;
+}
+
+a:hover {
+	color: var(--FDBL-orange-light);
+}
+
+p {
+	margin:0;
 }
 
 .Button_Micro, .Button_Block, input, input label {
@@ -224,6 +211,10 @@ a {
 	align-items: flex-end;
 }
 
+.Align_Items_Flex_Start {
+	align-items: flex-start;
+}
+
 .Indent {
 }
 
@@ -274,11 +265,6 @@ a {
 
 .Story_Grid.Column {
 	flex-flow: wrap;
-}
-
-.Advanced_Search_Container {
-	display: none;
-	opacity: 0;
 }
 
 .Annoyed_Gina {
@@ -661,6 +647,19 @@ input#Light_Level_4 + label {
 	font: var(--font-panel-title);
 }
 
+.Subsection_Title {
+	font:var(--font-subsection-title);
+}
+
+.PreHeading {
+	font: var(--font-body-small);
+ font-weight: 600;
+ text-transform: uppercase;
+ font-size: 14px;
+ color: var(--FDBL-medium-gray);
+	
+}
+
 .Filter_Section .Heading {
 	font: var(--font-panel-section-title);
 	padding-bottom: 4px;
@@ -697,11 +696,15 @@ input#Light_Level_4 + label {
 	padding: 0;
 }
 
-.Check_List.Filterable li:hover input[type="checkbox" i],
-.Check_List.Filterable li:focus input[type="checkbox" i] {
+label.checkbox:hover + input[type="checkbox" i], input[type="checkbox" i]:hover {
 	background-color: var(--FDBL-green-light);
 }
-.Check_List.Filterable input[type="checkbox" i] {
+
+label.checkbox:hover + input[type="checkbox" i]:checked, input[type="checkbox" i]:checked:hover {
+	background-color: var(--FDBL-green-medium-2);
+}
+
+input[type="checkbox" i]{
 	margin: 0;
 	padding: 4px;
 	height: 16px;
@@ -709,7 +712,8 @@ input#Light_Level_4 + label {
 	border: var(--shadow-border);
 	border-radius: 2px;
 }
-.Check_List.Filterable input[type="checkbox" i]:after {
+
+input[type="checkbox" i]:after{
 	content: "";
 	opacity: 0;
 	display: block;
@@ -723,6 +727,13 @@ input#Light_Level_4 + label {
 	left: 1px;
 	transform: rotate(45deg);
 }
+
+input[type="checkbox" i]:checked:after {
+	opacity:1;
+ top: -5px;
+ left: -2px;
+}
+
 ::-webkit-input-placeholder {
 	/* Edge */
 	font: 300 16px/16px bilo;
@@ -813,18 +824,48 @@ button {
 	background: var(--FDBL-green-medium);
 }
 
-.Button_Block.GoogleoAuth {
-	background-color: red;
+.Button_Block.Invalid {
+	background: var(--FDBL-medium-gray);
+}
+
+.Button_Block.Invalid:hover {
+	box-shadow: var(--drag-shadow);
+}
+
+.Button_Block.oAuth {
+	padding: 12px 16px;
+	letter-spacing: .5px;
+	flex:1;
+}
+
+.Button_Block.Google.oAuth {
+	background-color: #4284F3;
 	color:white;
 }
 
-.Button_Block.GoogleoAuth .Icon_Container {
+
+
+.Button_Block.Google.oAuth .Icon_Container, .Button_Block.Instagram.oAuth .Icon_Container {
 	width: initial;
 	height:initial;
 }
 
-.Button_Block.GoogleoAuth .Icon_Container svg {
+.Button_Block.Google.oAuth .Icon_Container svg {
 	fill: var(--system-white);
+}
+
+button.Instagram.oAuth svg {
+	fill: var(--system-white);
+}
+
+button.Instagram.oAuth {
+  color: #fff;
+  background: #f09433; 
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+
 }
 
 /**TEXT BUTTONS**/
@@ -1131,4 +1172,10 @@ label.Check_Select {
     font: var(--font-body-small);
     color: var(--FDBL-white-text);
     background-color: var(--FDBL-green-light);
+}
+
+.Results_Control_Bar {
+ padding-bottom: 20px;
+ border-bottom: var(--standard-border);
+ border-color: var(--FDBL-light-gray);
 }

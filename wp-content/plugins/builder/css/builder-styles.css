@@ -308,7 +308,7 @@ overflow:hidden;
 	padding: 32px;
 	border: 1px solid var(--FDBL-medium-gray);
 	height: 100vh;
-	overflow: scroll;
+	overflow: hidden;
 }
 
 .Search_And_Filter .Search_Filter_Panel {
@@ -322,6 +322,11 @@ overflow:hidden;
 	transform: translateX(0);
 	opacity: 1;
 	transition:.3s;
+}
+
+.Results_Container {
+	padding-top: 24px;
+	overflow:scroll;
 }
 
 .Right_Panel_Nav {
@@ -547,6 +552,29 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	display: none;
 }
 
+#Filter_By_Text {
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	padding:0px;
+	padding-bottom:4px;
+	padding-left:4px;
+}
+
+#Filter_By_Text::placeholder {
+	font-size:14px;
+	position:relative;
+	top:0;
+	transition: .1s;
+	
+}
+
+#Filter_By_Text:focus-visible::placeholder {
+	top:2px;
+	transition: .1s;
+
+}
+
 .Check_List.Filterable ul {
 	list-style: none;
 	padding: 0;
@@ -686,7 +714,7 @@ label {
 	background-color: var(--translucent-black-bg);
 }
 
-.Advanced_Search_Filter {
+.Drawer_Container {
 	padding: 40px 48px;
 	background-color: var(--system-white);
 	width: 33%;
@@ -694,11 +722,11 @@ label {
 	overflow: scroll;
 }
 
-.Advanced_Search_Filter .Text_Button {
+.Drawer_Container .Text_Button {
 	margin-right: 0;
 }
 
-.Advanced_Search_Filter .Close_Modal {
+.Drawer_Container .Close_Modal {
 	margin-top: -20px;
 }
 
@@ -901,6 +929,12 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	
 }
 
+.Results .Body.Small_Text {
+	font-weight:400;
+	padding-right: 16px;
+	border-right: var(--standard-border);
+}
+
 .Search_Grid_Card #circleTemplate, .Palette_Summary #circleTemplate {
 	display:block;
 	border-radius: 50%;
@@ -1056,8 +1090,9 @@ li.Property {
 .Properties_Table ul.Palette_Contents  {
  width: 100%;
  margin-top:16px;
-	max-height: 300px;
+ max-height: 300px;
  overflow: scroll;
+ position: relative;
 }
 
 ul.Palette_Contents li {
@@ -1089,4 +1124,85 @@ ul.Shadow_List, ul.Palette_Contents {
 
 .Search_Grid_Card:hover .Card_Container {
 	box-shadow:none;
+}
+
+.Scroll_Prompt {
+ position: fixed;
+ bottom: 24px;
+ right: 24px;
+ background-color: var(--system-white);
+}
+
+#shadowDetail.Modal, #storyDetail.Modal {
+	opacity:0;
+	transition: .3s;
+}
+
+#shadowDetail.Fade_In, #storyDetail.Fade_In {
+		  -webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	animation-duration: .25s;
+	opacity:1;
+}
+
+/**LOGIN DRAWER**/
+
+label.Remember {
+	font: var(--font-body-small);
+	font-size: 14px;
+}
+
+#signinCloseBtn .Icon_Container svg {
+	transform: scaleX(-1)
+}
+
+.Panel_Title .PreHeading {
+ padding-bottom: 0px;
+ border-color: var(--FDBL-light-gray);
+}
+
+/**Registration Panel **/
+
+.Image_Card {
+	flex:1;
+}
+
+.Image_Placeholder {
+	background-color: var(--FDBL-green-light);
+}
+
+.Image_Card .Feature {
+	font: var(--FDBL-body-regular);
+}
+
+.Pay_Box {
+	padding:32px;
+	box-shadow: -8px 8px 0px rgba(72, 113, 92, 1);
+	background-color: var(--FDBL-light-gray);
+}
+
+.Pay_Box .PreHeading {
+	color: var(--FDBL-dark-gray);
+}
+
+.Pay_Box .Heading {
+	font:var(--font-heading-5);
+}
+
+.Filter_Button.Price {
+	background-color: var(--FDBL-green-dark);
+	color: var(--FDBL-white-text);
+}
+
+.Filter_Button.Price:hover{
+	background-color: var(--FDBL-black);
+}
+
+.Filter_Button.Price:active{
+	background-color: var(--FDBL-yellow-medium);
+	color:var(--FDBL-black);
+}
+
+.Filter_Button.Price .Icon_Container svg {
+	fill:var(--FDBL-white-text);
 }

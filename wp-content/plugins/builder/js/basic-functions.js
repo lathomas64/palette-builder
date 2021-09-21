@@ -1,4 +1,10 @@
 $(document).ready(function(){
+	
+	var resultsContainerHeight = $(window).height(); - $("Panel_Title").outerHeight(); - $("Results_Control_Bar").outerHeight();
+	
+	$(".Results_Container").css(
+		"height", resultsContainerHeight
+	);
 
 //Temporary hover JS for demo
 
@@ -137,7 +143,12 @@ storyCard.mouseenter(function() {
 
 	$("#dismissShadowHelperbtn").click(function(){
   $("#shadowHelper").addClass("Closed");
+		setTimeout (function() {
+			$("#shadowHelper").addClass("Hidden");
+		}, 300);
 	});
+	
+
 
 ////Advanced Filter Overlay
 
@@ -175,5 +186,6 @@ storyCard.mouseenter(function() {
 		}, 100);
 	});
 
-}); //end of document ready		
 
+
+}); //end of document ready		
