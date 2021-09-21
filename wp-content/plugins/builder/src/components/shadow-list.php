@@ -63,7 +63,7 @@ $count = $shadows->found_posts;
 		<div class="Row Gap_24 Align_Items_Center">
 			<div class="Search">
 			<label class="Hidden">Start Typing to Filter List</label>
-			<input id="Filter_By_Text" class="Input" placeholder="Search by name" type="search" />
+			<input onkeyup="search_shadows(this.value)" id="Filter_By_Text" class="Input" placeholder="Search by name" type="search" />
 	</div>
 			<div class="Row Gap_8">
 			<button id="shadowFilterBtn" class="Filter_Button Icon_Button Align_Items_Center Row Gap_4">

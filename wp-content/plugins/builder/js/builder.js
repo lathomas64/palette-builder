@@ -470,7 +470,6 @@ var currentStory = new Object();
 				{
 					count += 1;
 					card.removeClass("Hidden");
-					console.log(card);
 				} else {
 					card.addClass("Hidden");
 				}
