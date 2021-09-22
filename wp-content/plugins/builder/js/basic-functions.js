@@ -26,7 +26,6 @@ else {
 
 $(document).ready(function(){
 
-$(document).ready(
 	resultsHeight
 	);
 
@@ -101,7 +100,7 @@ storyCard.mouseenter(function() {
 				storyDetail.removeClass("Fade_In");
 					}
 				}, 1000);
-	});
+			});
 	
 	storyDetail.mouseenter(function() {
 		$(this).addClass("Hovered");

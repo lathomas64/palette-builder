@@ -598,21 +598,29 @@ var currentStory = new Object();
 
 	function register_modal(buttonTarget, modalTarget)
 	{
-		$(buttonTarget).click(function(){
-			$(modalTarget).toggleClass("On");
-			$(buttonTarget).toggleClass("Selected");
+		var container = $(modalTarget);
+		var dropdownBtn = $(buttonTarget);
+		
+		dropdownBtn.click(function(){
+			
+		var activePanel = dropdownBtn.closest('.Active_Panel');
+		var dropdownLoc = activePanel.find('.Helper_Box').outerHeight() + activePanel.find(".Results_Control_Bar").outerHeight() + $(".Active_Panel .Helper_Box:not('.Closed')").length * 32;
+
+					container.css(
+						"top", dropdownLoc
+					);
+		container.toggleClass("On");
+		dropdownBtn.toggleClass("Selected");
 		});
 		$(document).click(function() {
-	    var container = $(modalTarget);
-			var shadowFilterBtn = $(buttonTarget);
-
+   
 			if (
 						!container.is(event.target) &&
 						!container.has(event.target).length &&
-						!shadowFilterBtn.is(event.target) &&
-						!shadowFilterBtn.has(event.target).length
+						!dropdownBtn.is(event.target) &&
+						!dropdownBtn.has(event.target).length
 					) {
-	     			container.removeClass("On");
+	     container.removeClass("On");
 						$(buttonTarget).removeClass("Selected");
 	    }
 		});
