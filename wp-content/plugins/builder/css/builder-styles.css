@@ -1206,3 +1206,22 @@ label.Remember {
 .Filter_Button.Price .Icon_Container svg {
 	fill:var(--FDBL-white-text);
 }
+
+
+.Results .Single_Pan_Card {
+	opacity: 0;
+ animation: fadeInBounce 0.3s cubic-bezier(.16,.75,.42,1.23) both;
+}
+
+
+@keyframes fadeInBounce {
+ 0% {
+		opacity: 0;
+		transform: translate3d(30%, 0, 0);
+	}
+	100% {
+    text-shadow: none;
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}

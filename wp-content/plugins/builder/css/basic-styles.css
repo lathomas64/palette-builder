@@ -215,6 +215,10 @@ p {
 	align-items: flex-start;
 }
 
+.Align_Items_Baseline {
+	align-items:baseline;
+}
+
 .Indent {
 }
 
@@ -684,6 +688,10 @@ input#Light_Level_4 + label {
 	border-color: var(--FDBL-black);
 }
 
+.Helper_Box div {
+	flex: 1 1 0;
+}
+
 .Singles_Filter .Panel_Title .Heading {
 	border: 0;
 	padding: 0;
@@ -928,10 +936,8 @@ label.Text_Button:active {
 button.Dismiss {
 	font-family: var(--e-global-typography-primary-font-family);
 	font-size: 20px;
-	padding: 0;
 	background: none;
 	border: 0;
-	line-height: 0;
 	margin-top: -5px;
 }
 

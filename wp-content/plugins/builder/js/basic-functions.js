@@ -1,10 +1,38 @@
-$(document).ready(function(){
-	
-	var resultsContainerHeight = $(window).height(); - $("Panel_Title").outerHeight(); - $("Results_Control_Bar").outerHeight();
-	
+//SHADOW RESULTS HEIGHT CALC
+
+function resultsHeight(event){		
+	if($(event.target).is(".Dismiss")) {
+		var helperBox = $(event.target).closest(".Helper_Box");
+		helperBox.addClass("Closed");
+		setTimeout (function() {
+			helperBox.addClass("Hidden");
+		}, 300);
+			var resultsContainerHeight = $(".Right_Panel").outerHeight() - helperBox.outerHeight() - $(".Results_Control_Bar").outerHeight();
+				console.log("executed if");
+		$(".Results_Container").css(
+		"height", resultsContainerHeight
+		);
+}	
+else {
+		var resultsContainerHeight = $(".Right_Panel").outerHeight() - $('.Helper_Box').outerHeight() - $(".Results_Control_Bar").outerHeight() - (48);
+
 	$(".Results_Container").css(
 		"height", resultsContainerHeight
 	);
+			console.log("line executed else");
+}
+};
+
+
+$(document).ready(function(){
+
+$(document).ready(
+	resultsHeight
+	);
+
+$(".Dismiss").click(	
+	resultsHeight
+);
 
 //Temporary hover JS for demo
 
@@ -138,18 +166,7 @@ storyCard.mouseenter(function() {
 			$(element).find('.Wrapper').append(circle.clone());
 		}
 });
-
-//HELPER BOX DISMISSES
-
-	$("#dismissShadowHelperbtn").click(function(){
-  $("#shadowHelper").addClass("Closed");
-		setTimeout (function() {
-			$("#shadowHelper").addClass("Hidden");
-		}, 300);
-	});
 	
-
-
 ////Advanced Filter Overlay
 
 //////Button Activation
