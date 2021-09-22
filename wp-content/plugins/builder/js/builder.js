@@ -605,7 +605,6 @@ var currentStory = new Object();
 			
 		var activePanel = dropdownBtn.closest('.Active_Panel');
 		var dropdownLoc = activePanel.find('.Helper_Box').outerHeight() + activePanel.find(".Results_Control_Bar").outerHeight() + $(".Active_Panel .Helper_Box:not('.Closed')").length * 32;
-
 					container.css(
 						"top", dropdownLoc
 					);

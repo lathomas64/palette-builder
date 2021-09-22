@@ -315,6 +315,7 @@ overflow:hidden;
 	transform: translateX(100px);
 	opacity: 0;
 	transition:.3s;
+	flex:1 1 auto;
 }
 
 .Search_And_Filter .Search_Filter_Panel.Active_Panel {
@@ -521,7 +522,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
  padding: 24px;
 	padding-bottom: 32px;
  width: 100%;
- height: auto;
+ height: fit-content;
  position: absolute;
  top: 260px;
 	background: var(--system-white);
@@ -1224,4 +1225,8 @@ label.Remember {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
+}
+
+.Story_Size.Results_Container {
+	padding-top:0;
 }

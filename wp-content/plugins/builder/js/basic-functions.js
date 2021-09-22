@@ -26,6 +26,7 @@ else {
 
 $(document).ready(function(){
 
+$(document).ready(
 	resultsHeight
 	);
 

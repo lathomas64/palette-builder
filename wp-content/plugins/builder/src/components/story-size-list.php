@@ -39,7 +39,7 @@
 					</div>
 			</div>
 		</a>
-		<a class="Search_Grid_Card Column Story_Size_7w_2t" href="#">
+		<!-- <a class="Search_Grid_Card Column Story_Size_7w_2t" href="#">
 			<div class="Card_Container Column Gap_8">
 				<div class="Card_Title">9 Pans</div>
 					<div class="Column Align_Items_Center">
@@ -164,7 +164,7 @@
 						</div>
 					</div>
 			</div>
-		</a>
+		</a> -->
 	</div>
 	<a class="Search_Grid_Card_Template Hidden" href="#">
 		<div class="Card_Container Column Gap_8">
