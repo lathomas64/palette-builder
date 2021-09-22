@@ -1,15 +1,3 @@
-<!-- <head>
-	<meta charset="UTF-8" />
-	<title>Universal Palette Builder – Firedrake Beauty Labs</title>
-	<link rel="stylesheet" type="text/css" href="../../../css/variables.css" />
-	<link rel="stylesheet" type="text/css" href="../../../css/basic-styles.css" />
-	<link rel="stylesheet" type="text/css" href="../../../css/builder-styles.css" />
-	<link rel="stylesheet" href="https://use.typekit.net/mxy5ujb.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="../../../js/builder.js"></script>
-	<script src="../../../js/shadow-filters.js"></script>
-	<script src="../../../js/basic-functions.js"></script>
-</head> -->
 <div id="registerLoginDrawer" class="Modal Fade_In">
 	<div class="Row Reverse Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
@@ -27,4 +15,5 @@
 		 	<?php include "01_login_register_content/register-content.php"; ?>	
 			</div>
 		</div>
+	</div>
 </div>
