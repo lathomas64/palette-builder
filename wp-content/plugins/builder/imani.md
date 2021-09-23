@@ -1,3 +1,15 @@
+## Gina's Notes For Imani
+
+### Changes/Additions
+— Single click should also add shadow to palette — Top left-most available space
+
+### Bugs
+— Hover panel doesn’t display image when filters are engaged
+— Can’t drag into rightmost column of palette?
+	—I tried hiding the detail panel on drag but still seems to be blocking it. (Have since removed)
+— Pre-created stories are empty now
+
+
 ## Tasks
 ### Imani
 - [ ] Overflow Stories go to
