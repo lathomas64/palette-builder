@@ -1022,15 +1022,15 @@ function auxin_the_post_thumbnail( $post_id = null, $width = null , $height = nu
         $crop = empty( $crop ) ? $crop : auxin_is_true( $crop );
 
         // Make sure there is a valid $size value passed
-        if( is_array( $size ) ){
-            if( empty( $size['width'] ) && empty( $size['height'] ) ){
-                $size = 'medium_large';
-            }
-            // since the size is a custom width and height, the hard crop is required
-            if( is_null( $crop ) ){
-                $crop = true;
-            }
-        }
+        // if( is_array( $size ) ){
+        //     if( empty( $size['width'] ) && empty( $size['height'] ) ){
+        //         $size = 'medium_large';
+        //     }
+        //     // since the size is a custom width and height, the hard crop is required
+        //     if( is_null( $crop ) ){
+        //         $crop = true;
+        //     }
+        // }
 
         // Get the $size dimensions
         $dimensions = $size;

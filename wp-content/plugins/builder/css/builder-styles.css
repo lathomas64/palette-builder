@@ -1136,13 +1136,13 @@ ul.Shadow_List, ul.Palette_Contents {
 
 #shadowDetail.Modal, #storyDetail.Modal {
 	opacity:0;
-	transition: .3s;
+	transition: .1s;
 }
 
 #shadowDetail.Fade_In, #storyDetail.Fade_In {
 		  -webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
-	animation-duration: .25s;
+	animation-duration: .1s;
 	opacity:1;
 }
 

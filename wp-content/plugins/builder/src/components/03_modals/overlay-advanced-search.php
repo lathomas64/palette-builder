@@ -1,7 +1,7 @@
 	<div id="advancedFilterDrawer" class="Modal Fade_In">
 	<div class="Row Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
-		<div class="Advanced_Search_Filter Fade_Out_Right">
+		<div class="Drawer_Container Fade_Out_Right">
 	 <div class="Close_Modal Row Justify_Content_Flex_Start">
 		 <button id="afCloseBtn" class="Text_Button Icon_Button Row Gap_4 Align_Items_Center">
 	  <div class="Icon_Container">

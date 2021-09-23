@@ -3,7 +3,7 @@
 		<div class="Column Gap_8">
 			<div class="Row Space_Between Align_Items_Baseline">
 					<div class="Row Panel_Title">
-		<div class="Heading">Discover Your Best Shades with our Shadow Finder</div>
+						<div class="Heading">Discover Your Best Shades with our Shadow Finder</div>
 	</div>
 				<button id="dismissShadowHelperbtn" type="button" class="Dismiss Row Gap_8 Align_Items_Center">
 					<span class="Close Dismiss"> close message </span>

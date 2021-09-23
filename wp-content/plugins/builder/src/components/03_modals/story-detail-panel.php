@@ -1,4 +1,4 @@
-<div id="storyDetail" class="Modal On Story_Detail_Panel Flex_Container Column Justify_Content_Flex_Start Gap_16">
+<div id="storyDetail" class="Modal Story_Detail_Panel Flex_Container Column Justify_Content_Flex_Start Gap_16">
 		<div class="Search_Grid_Card Palette_Summary Row Justify_Content_Center Story_Size_3w_3t" href="#">
 			<div class="Card_Container Column Gap_16 Reverse">
 				<div class="Column Align_Items_Center">
@@ -82,7 +82,11 @@
 												<li class="Shadow_Name">Light Year</li>
 							</ul>
 						</li>
-
+						<div class="Scroll_Prompt Row Justify_Content_Flex_End" style="display:none;">
+							<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.645 0L7 5.355L12.355 0L14 1.65667L7 8.65667L0 1.65667L1.645 0Z" fill="#09262A"/>
+								</svg>
+	  	</div>
 					</ul>
 				</li>
 			</ul>

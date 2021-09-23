@@ -54,7 +54,7 @@ shadowCard.mouseenter(function() {
 			);
 		setTimeout (function() {
 			shadowDetail.addClass("Fade_In");
-		}, 1000);
+		}, 500);
 		}).mouseleave(function () {
 			$(this).removeClass("Hovered");
 	   setTimeout (function() {
@@ -63,7 +63,7 @@ shadowCard.mouseenter(function() {
 			) {
 				shadowDetail.removeClass("Fade_In");
 					}
-				}, 1000);
+				}, 500);
 	});
 	
 	shadowDetail.mouseenter(function() {
