@@ -9,6 +9,7 @@
 	     —I tried hiding the detail panel on drag but still seems to be blocking it. (Have since removed)
        — nvm I found a solution
 - [ ] Pre-created stories are empty now
+- [ ] Can't drag shadows when on palette (pan controls likely getting in way)
 
 
 ## Tasks
