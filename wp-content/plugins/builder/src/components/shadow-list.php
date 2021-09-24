@@ -168,6 +168,7 @@ $count = $shadows->found_posts;
 						<?php } ?>
 						data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>'
 						draggable="true" ondragstart="drag(event)"
+						onclick="addShadow(0,<?php the_ID(); ?>);"
 						class="Single_Pan_Card" href="#">
 				<div class="Card_Container Column Gap_8">
 					<div class="Shadow_Name"><?php the_title(); ?></div>
