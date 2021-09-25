@@ -5,7 +5,7 @@
 - none presently
 
 ### Bugs
-- [ ] Hover panel doesn’t display image when filters are engaged
+- [x] Hover panel doesn’t display image when filters are engaged
 - [x] Can't drag shadows when on palette (pan controls likely getting in way)
 
 ## Tasks

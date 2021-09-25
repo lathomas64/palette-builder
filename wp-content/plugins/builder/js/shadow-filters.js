@@ -61,17 +61,18 @@ function update(){
           },
           success:function(data) {
       // This outputs the result of the ajax request (The Callback)
-            let pans = document.getElementsByClassName("Single_Pan_Card");
+            let pans = $(".Results .Single_Pan_Card");
 						let count_element = document.getElementById('Shadow_Count');
 						let count = 0;
             for(let i = 0; i < pans.length; i++){
             	if(data.includes(parseInt(pans[i].id))){
-            		pans[i].style.display="block";
+            		//pans[i].style.display="block";
+								pans[i].classList.remove("Hidden");
 								count++;
             	}
             	else {
-            		pans[i].style.display="None";
-            	}
+								pans[i].classList.add("Hidden");
+							}
             }
 
 						count_element.textContent = "Showing " + count + " shadow" + (count > 1? "s":"");
