@@ -1,17 +1,10 @@
 ## Gina's Notes For Imani
 
 ### Changes/Additions
-- [x] Single click should also add shadow to palette — Top left-most available space
 
 ### Bugs
 - [ ] Hover panel doesn’t display image when filters are engaged
-- [x] Can’t drag into rightmost column of palette?
-	     —I tried hiding the detail panel on drag but still seems to be blocking it. (Have since removed)
-       — nvm I found a solution
-- [ ] Pre-created stories are empty now
-    - The connection appears to have been lost in the shadow shuffle. reconnecting in the backend and they work. story functionality is still working okay
-- [ ] Can't drag shadows when on palette (pan controls likely getting in way)
-
+- [x] Can't drag shadows when on palette (pan controls likely getting in way)
 
 ## Tasks
 ### Imani
@@ -23,9 +16,6 @@
 - [ ] Sort options
 - [ ] Share modal/automatic copy to clipboard.
 - [ ] Users.
-  - [x] associate stories to users (admin for now)
-  - [x] save story if you are logged in.
-  - [x] Stories not limited by author properly.
   - [ ] save button behavior if you are not logged in..
 - [ ] Calculations for shadow sizes/full palette.
 - [ ] arrows being finnicky default.
@@ -36,6 +26,6 @@
 
 ### Gina
 - [ ] CSS for rotate
-
+- [ ] Generic Modal markup
 
 ### Uncategorized

@@ -81,6 +81,7 @@ var currentStory = new Object();
 				clone.removeAttribute('style');
 				clone.setAttribute('ondragover','allowDrop(event)');
 				clone.setAttribute('ondragStart','drag(event, '+index+')');
+				clone.setAttribute('draggable', 'true');
 				$(clone).find('.Up_Arrow')[0].setAttribute("onclick", "shift_up("+index+")");
 				$(clone).find('.Right_Arrow')[0].setAttribute("onclick", "shift_right("+index+")");
 				$(clone).find('.Down_Arrow')[0].setAttribute("onclick", "shift_down("+index+")");
@@ -600,9 +601,9 @@ var currentStory = new Object();
 	{
 		var container = $(modalTarget);
 		var dropdownBtn = $(buttonTarget);
-		
+
 		dropdownBtn.click(function(){
-			
+
 		var activePanel = dropdownBtn.closest('.Active_Panel');
 		var dropdownLoc = activePanel.find('.Helper_Box').outerHeight() + activePanel.find(".Results_Control_Bar").outerHeight() + $(".Active_Panel .Helper_Box:not('.Closed')").length * 32;
 					container.css(
@@ -612,7 +613,7 @@ var currentStory = new Object();
 		dropdownBtn.toggleClass("Selected");
 		});
 		$(document).click(function() {
-   
+
 			if (
 						!container.is(event.target) &&
 						!container.has(event.target).length &&
