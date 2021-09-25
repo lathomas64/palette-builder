@@ -14,7 +14,7 @@
 - [ ] Shopping list.
 - [ ] Disclaimers
 - [ ] Help
-- [ ] Close about this panel
+- [x] Close about this panel
 - [ ] Sort options
 - [ ] Share modal/automatic copy to clipboard.
 - [ ] Users.
