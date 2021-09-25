@@ -1,6 +1,8 @@
-## Gina's Notes For Imani
+### Gina's Notes For Imani
+- none presently
 
 ### Changes/Additions
+- none presently
 
 ### Bugs
 - [ ] Hover panel doesn’t display image when filters are engaged
@@ -29,3 +31,4 @@
 - [ ] Generic Modal markup
 
 ### Uncategorized
+- nothing to see here rn
