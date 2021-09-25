@@ -92,6 +92,7 @@ $count = $shadows->found_posts;
   	$brand = get_field("brand");
 
   	$colors = get_field("colors");
+		$avg_hue = get_field("masstone")
 		$the_tax = get_the_taxonomies(0, array('term_template' => '%1$s'));
 		if(array_key_exists('tax_series', $the_tax)){
 			$series = $the_tax['tax_series'];
@@ -155,6 +156,7 @@ $count = $shadows->found_posts;
 						data-name='<?php the_title(); ?>'
 						data-shift='<?php echo $shift; ?>'
 						data-finish='<?php echo $finish; ?>'
+						data-avg-hue='<?php echo $avg_hue; ?>'
 						data-color-family='<?php echo $family; ?>'
 						data-color-temp='<?php echo $temperature; ?>'
 						data-vividness='<?php echo $vividness; ?>'

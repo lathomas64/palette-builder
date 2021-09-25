@@ -7,6 +7,8 @@
 ### Bugs
 - [x] Hover panel doesn’t display image when filters are engaged
 - [x] Can't drag shadows when on palette (pan controls likely getting in way)
+- [ ] color family net being represented
+- [ ] color temperature not being represented
 
 ## Tasks
 ### Imani
