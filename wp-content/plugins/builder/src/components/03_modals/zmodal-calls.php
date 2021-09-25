@@ -6,3 +6,5 @@
 	<?php include "components/03_modals/02_modal-content/04_hover-detail-panel/shadow-detail-panel.php"; ?>
 		<!-- Story Detail Hover Panel -->
 	<?php include "components/03_modals/02_modal-content/04_hover-detail-panel/story-detail-panel.php"; ?>
+	<!-- general purpose modal -->
+	<?php include "components/03_modals/generic-modal.php"; ?>
