@@ -1,4 +1,4 @@
-	<div class="Column Gap_8">
+	<div id="loginContent" class="Column Gap_8 Hidden">
   <div class="Panel_Title">
    <div class="Heading">Let's Get You Logged In!</div>
   </div>

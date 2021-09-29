@@ -1,7 +1,7 @@
 /**ARRANGEMENT SPACE**/
 
 .Arrangement_Space {
-	background-image: url(http://pb.rainbowcapitalism.com/wp-content/uploads/2021/07/8px.svg), linear-gradient(180deg, rgba(250, 249, 247, 1) 0%, rgba(250, 249, 247, 0) 50%, rgba(237, 237, 237, 1) 100%);
+	background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/10per.svg) repeat 0/100px;
 	background-blend-mode: multiply, normal;
 }
 
@@ -399,7 +399,7 @@ overflow:hidden;
 	left: 0;
 }
 
-.Single_Pan_Card img, .Card_Image_Container img {
+.Single_Pan_Card img, .Card_Image_Container img, .Shadow_Image_Container img {
 	width: 100%;
 	height: 100%;
 }
@@ -1056,16 +1056,18 @@ li.Property {
 }
 
 .Badge {
-	padding: 4px 8px;
-	border: var(--standard-border);
-	border-radius: var(--standard-border-radius);
-	font: var(--font-filter-button);
-		border-color: var(--FDBL-black);
-	box-shadow: var(--drag-shadow);
+	padding-right: 0;
+	/* border-right: var(--standard-border); */
+	border-radius: 0;
+	/* font: var(--font-filter-button); */
+	border-color: var(--FDBL-black);
+	/* box-shadow: var(--drag-shadow); */
+	font: var(--font-body-small);
+	font-weight: var(--type-weight-regular);
 }
 .Badge .Icon_Container {
-	height: initial;
-	width: initial;
+	height: 14px;
+	width: 14px;
 }
 
 .Brand_Characteristics {
@@ -1073,7 +1075,11 @@ li.Property {
 }
 
 .Brand_Characteristic.Badge {
-	background-color: var(--system-white);
+ background-color: var(--FDBL-cool-white);
+ padding: 2px 4px;
+ border: var(--pan-border);
+ border-radius: 4px;
+ font: var(--font-filter-button);
 }
 
 /**STORY DETAIL PANEL**/
@@ -1230,3 +1236,116 @@ label.Remember {
 .Story_Size.Results_Container {
 	padding-top:0;
 }
+
+.Shadow_Detail_Panel .Single_Pan_Card * {
+	transition: none;
+}
+
+.Palette .Invisible .Shadow_Controls {
+	display:none;
+}
+.Palette .Invisible .Wrapper, .Palette .Invisible .Pan_Shadow {
+	box-shadow:none;
+}
+
+.Palette .Invisible .Pan_Shadow {
+	border:none;
+}
+
+.Badge .Icon_Container  {
+  width: 16px;
+		height: 16px;
+	}
+
+.Badge .Icon_Container svg {
+  width: 100%;
+  height: 100%;
+  fill: rgb(9, 38, 42, 0.90);
+	}
+	
+	.Brand_Charateristics .Property_Name {
+		padding-bottom: 4px;
+	}
+	
+	/**SHOPPING LIST**/
+		
+	.Build_List_Title .Panel_Title {
+ color: var(--FDBL-white-text);
+ font: var(--font-hero-heading);
+}
+
+.Build_List_Carousel .Panel_Title {
+ color: var(--FDBL-white-text);
+ font: var(--font-heading-2);
+}
+
+.Build_List_Carousel .Drawer_Container {
+ width: initial;
+	border-radius:4px;
+}
+
+.Summary_Data .Heading {
+ font: var(--font-heading-4);
+ border-bottom: 0;
+ padding-bottom: 0;
+}
+
+.Itemized_List {
+	
+}
+
+.Brand_Group {
+	
+}
+
+.Brand_Group .Heading {
+ font: var(--font-heading-4);
+}
+
+.List_Tile {
+	grid-template-columns: 8.5fr 1.5fr;
+	gap:16px;
+	padding-bottom:16px;
+	border-bottom: var(--standard-border);
+	border-color: var(--FDBL-light-gray);
+}
+
+.List_Tile .Shade_Name {
+ font: var(--font-heading-6);
+}
+
+.List_Tile .Pan_Shadow {
+	box-shadow: var(--inner-pan-shadow-small);
+}
+
+.Shadow.Grid_Container {
+ grid-template-columns: 1fr 9fr;
+}
+
+.Grid_Container .Shadow_Image_Container {
+ width: 100%;
+ height: auto;
+}
+
+.Shadow.Grid_Container .Shadow_Image_Container {
+ width: initial;
+ height: initial;
+}
+
+.Shadow.Grid_Container .Wrapper {
+ width: initial;
+ height: initial;
+}
+
+.List_Tile .Price_Widget .Price_Value {
+ font: var(--font-heading-5);
+}
+
+.List_Tile .Price_Widget .Title {
+ color: var(--FDBL-dark-gray);
+	font: var(--font-nano-labels);
+	}	
+	
+.Brand_Group .Brand_Name {
+		font-size: 26px;
+	}

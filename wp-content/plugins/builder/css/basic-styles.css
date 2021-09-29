@@ -1145,7 +1145,6 @@ label.Check_Select {
 
 .Hidden, input.Single_Select {
 	display:none;
-
 }
 
 .Check_Row {
@@ -1169,19 +1168,74 @@ label.Check_Select {
 /*HOVER STYLES*/
 
 .Basic_Dropdown label.Single_Select:hover {
-    font: var(--font-body-small);
-    color: var(--FDBL-white-text);
-    background-color: var(--FDBL-black);
+ font: var(--font-body-small);
+ color: var(--FDBL-white-text);
+ background-color: var(--FDBL-black);
 }
 
 .Basic_Dropdown label.Single_Select:active {
-    font: var(--font-body-small);
-    color: var(--FDBL-white-text);
-    background-color: var(--FDBL-green-light);
+ font: var(--font-body-small);
+ color: var(--FDBL-white-text);
+ background-color: var(--FDBL-green-light);
 }
 
 .Results_Control_Bar {
  padding-bottom: 20px;
  border-bottom: var(--standard-border);
  border-color: var(--FDBL-light-gray);
+}
+
+.drop-indicator {
+ position: absolute;
+ background: rgba(255, 255, 255, 0.2);
+ border: 2px solid #fff;
+ box-sizing: border-box;
+ border-radius: 0.2rem;
+ pointer-events: none;
+ opacity: 0;
+ transition: opacity 0.2s ease, transform 0.2s ease;
+ transform: scale(0.9);
+ z-index: 21;}
+	
+	label.Filter_Button  {/**Test to see how it goes**/
+ display: block;
+ background-color: rgba(237 237 237 / 50%);
+ border: var(--shadow-border);
+}
+
+.Number_Icon {
+	aspect-ratio: 1/1;
+ background-color: var(--FDBL-yellow-medium);
+ width: 40px;
+ height: auto;
+ text-align: center;
+ border-radius: 50%;
+ color: var(--FDBL-white-text);
+	font: var(--font-cta-text-small);
+	line-height: 38px;
+}
+	
+.Grid_Test{
+ padding: 80px;
+ grid-template-columns: 5fr 5fr;
+ gap: 80px;
+ }
+	
+	
+.Shopping_List_Summary {
+ padding: 24px;
+ background-color: #F7F7F7;
+ border: var(--standard-border);
+ border-radius: 2px;
+	grid-template-columns: 3fr 7fr;
+}
+
+.vr {
+	border-right: var(--standard-border);
+	width: 0px;
+}
+
+.Shadow.Badge {
+ font: var(--font-filter-button);
+	font-weight: 400;
 }

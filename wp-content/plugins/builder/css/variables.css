@@ -11,6 +11,7 @@
 	--system-black: #000000;
 	--FDBL-white-text: rgb(258 249 247);
 	--system-white: #ffffff;
+	--FDBL-cool-white: #F7F7F7;
 	--FDBL-light-gray: #ededed;
 	--FDBL-medium-gray: #cccccc;
 	--FDBL-dark-gray: #959595;
@@ -34,7 +35,7 @@
 	--type-size-0: 0px;
 	--type-size-10: 10px;
 	--type-size-12: 12px;
-		--type-size-13: 13px;
+	--type-size-13: 13px;
 	--type-size-14: 14px;
 	--type-size-16: 16px;
 	--type-size-18: 18px;
@@ -51,6 +52,14 @@
 	/**font: font-style font-variant font-weight font-size/line-height font-family**/
 	
 	/**HEADINGS**/
+	--font-heading-2: 
+		var(--type-weight-bold) 
+		var(--type-size-48) / var(--type-size-40) 
+		var(--e-global-typography-secondary-font-family);
+	--font-heading-4: 
+		var(--type-weight-bold) 
+		var(--type-size-32) / var(--type-size-32) 
+		var(--e-global-typography-secondary-font-family);
 --font-heading-3: 
 		var(--type-weight-bold) 
 		var(--type-size-40) / var(--type-size-40) 
@@ -58,6 +67,14 @@
 	--font-heading-5: 
 		var(--type-weight-bold) 
 		var(--type-size-24) / var(--type-size-24) 
+		var(--e-global-typography-secondary-font-family);
+		--font-heading-6: 
+		var(--type-weight-bold) 
+		var(--type-size-21) / var(--type-size-21) 
+		var(--e-global-typography-secondary-font-family);
+		--font-hero-heading: 
+		var(--type-weight-bold) 
+		96px / 56px 
 		var(--e-global-typography-secondary-font-family);
 	
 
@@ -89,6 +106,10 @@
 		var(--type-weight-bold) 
 		var(--type-size-14) / var(--type-size-14) 
 		var(--e-global-typography-primary-font-family);
+		--font-cta-text-small: 
+		var(--type-weight-bold) 
+		var(--type-size-29) / var(--type-size-32) 
+		var(--e-global-typography-primary-font-family);
 	
 	/**BUTTONS**/
 	--font-block-button: 
@@ -106,6 +127,10 @@
 	--font-micro-labels: 
 		var(--type-weight-regular) 
 		var(--type-size-14) / var(--type-size-16) 
+		var(--e-global-typography-primary-font-family);
+		--font-nano-labels: 
+		var(--type-weight-regular) 
+		var(--type-size-12) / var(--type-size-12) 
 		var(--e-global-typography-primary-font-family);
 	--font-text-button-small: 
 		var(--type-weight-bold) 
@@ -134,6 +159,7 @@
 	--lift-shadow: 3px 3px 0px var(--FDBL-black);
 	--drag-shadow: 1px 1px 0px var(--FDBL-black);
 	--inner-pan-shadow: inset 0px 0px 6px rgba(0 0 0 / 35%);
+	--inner-pan-shadow-small: inset 0px 0px 2px rgb(0 0 0 / 35%);
 	--button-selected: inset 2px 2px 1px 0px var(--FDBL-green-dark);
 	--inner-palette-shadow: inset 0px 0px 24px rgb(0 0 0);
 	--pan-shadow-on-palette: 0px 0px 6px 0px rgb(0 0 0);
@@ -149,6 +175,6 @@
 	--grid-lines-drag: 1px solid rgb(206 189 99 / 10%);
 
 /**FILLS**/
---translucent-black-bg: rgb(9 38 42 / 85%);
+--translucent-black-bg: rgb(9 38 42 / 95%);
 }
 
