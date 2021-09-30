@@ -7,6 +7,8 @@ none presently
 ### Bugs
 - [ ] color family, color temperature, and finish display as unknown if multiple values present.
   * just pick the first if we have multiples
+- [ ] Attempting to load user color story breaks the whole thing
+  
 ## Tasks
 ### Imani
 - [ ] Overflow Stories go to
