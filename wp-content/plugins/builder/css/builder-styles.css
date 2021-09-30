@@ -1322,10 +1322,10 @@ label.Remember {
  grid-template-columns: 1fr 9fr;
 }
 
-.Grid_Container .Shadow_Image_Container {
+/* .Grid_Container .Shadow_Image_Container {
  width: 100%;
  height: auto;
-}
+} */
 
 .Shadow.Grid_Container .Shadow_Image_Container {
  width: initial;
