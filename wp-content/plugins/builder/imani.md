@@ -49,6 +49,7 @@
 #### Airtable
 - [ ] Colourpop shade names need fixing
 - [ ] Differentiation between yellow and green may need tweaking
+- [ ] ID #s for brands and series
 
 #### Wordpress/Import/back-end stuff
 - [ ] Potential import problem: using same images doesn't map image correctly (Utopia TM & Clionadh)
