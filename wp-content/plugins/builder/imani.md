@@ -4,15 +4,17 @@
 ### Changes/Additions
 - [ ] Need to overwrite, save new saved palette
 - [ ] how to remove saved palettes
+- [ ] Remember closing help boxes
 
 ### Bugs
 - [ ] color family, color temperature, and finish display as unknown if multiple values present.
   * just pick the first if we have multiples
 - [ ] Attempting to load user color story breaks the whole thing
-- [ ] 2x when building a larger story, clicking on the right side of the palette made the size reset to 3x3
+- [X] 2x when building a larger story, clicking on the right side of the palette made the size reset to 3x3
   
 ## Tasks
 ### Imani
+- [ ] Make pink filter functional
 - [ ] Make maybe pile active/workable
 - [ ] Overflow Stories go to
 - [ ] Shopping list.
@@ -40,7 +42,10 @@
 - [ ] Re-arrange filters so that basic is all shadow info & advanced is brand and such?
 - [ ] Clear filters by section and all
 - [ ] Re-factor JS to work so that modals have separate container and content that turns on
-- [ ] 
+- [ ] Scaling pan controls
+
+#### Potential help box info
+- [ ] How to get black/white/gray shadows
 
 ### Uncategorized
 - nothing to see here rn
