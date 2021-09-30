@@ -375,8 +375,10 @@ var currentStory = new Object();
 		if (shadow != null){
 			$(grid_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
 			$(grid_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
+			$(grid_shadow).removeClass("Invisible");
+			
 		} else {
-			$(grid_shadow).addClass("Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round");
+			$(grid_shadow).addClass("Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round Invisible");
 		}
 		if( grid_shadow.getElementsByTagName('img').length > 0)
 		{
@@ -422,6 +424,7 @@ var currentStory = new Object();
 	function update_shadow_detail(shadow)
 	{
 		source_img = shadow.find('img').attr('src');
+		console.log(source_img);
 		shape = shadow.attr('data-shape');
 		size = shadow.attr('data-size');
 		height = shadow.attr('data-height');
