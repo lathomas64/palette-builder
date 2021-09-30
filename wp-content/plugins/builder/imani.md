@@ -7,9 +7,10 @@
 - [ ] Remember closing help boxes
 
 ### Bugs
+- [ ] Using X to clear search field does not update list
 - [ ] Light/Dark and Dark/light sort are switched
 - [ ] color family, color temperature, and finish display as unknown if multiple values present.
-  * Note on this: when filtering by color family, some shadows show up with "unknown" in the CF field that clearly don't belong in the results, but not *all* of those kinds of shadows do. Gina can show behavior if needed. 
+  * Gina changed color family & color temperature to one combined field. Take the first color tag and display here.  
   * just pick the first if we have multiples (for now. Gina may have different schema later)
 - [ ] Attempting to load user color story breaks the whole thing
 - [X] 2x when building a larger story, clicking on the right side of the palette made the size reset to 3x3
@@ -24,6 +25,8 @@
 #### Wordpress/Import/back-end stuff
 - [ ] Data import: Brand doesn't seem to be mapping to shadow or series. 
   * Addt'l info: In the importer, doesn't show the ACF Brand field as relationship 
+  - [ ] site siezes up sometimes -- maybe better with cache plugin?
+      * Gina note: I'd be interested to see what insight Linode has. The size seizes even if I am just saving settings too often. I wonder if there's a cap on requests to the server.
 
 #### Front-end Builder
 - [x] Make pink filter functional
@@ -40,7 +43,7 @@
 - [ ] Calculations for shadow sizes/full palette.
 - [ ] arrows being finnicky default.
 - [ ] Mouse needs to go with their cursor.
-- [ ] site siezes up sometimes -- maybe better with cache plugin?
+
 - [ ] remove most console logs before launch
 
 
@@ -49,10 +52,12 @@
 #### Airtable
 - [ ] Colourpop shade names need fixing
 - [ ] Differentiation between yellow and green may need tweaking
-- [ ] ID #s for brands and series
+- [x] ID #s for brands and series
 
 #### Wordpress/Import/back-end stuff
 - [ ] Potential import problem: using same images doesn't map image correctly (Utopia TM & Clionadh)
+- [ ] Eyeshadow import sometimes gives a shadow to two series
+
 
 #### Front-end Builder
 ##### Needs Build
@@ -67,6 +72,7 @@
 - [ ] CSS for rotate
 - [ ] Figure out a way to make hover panel less intrusive
 - [ ] Make filter panels drawers?
+- [ ] Advanced Filter just cover right panel?
 ###### Filters
 - [x] Pink Filter button
 - [ ] Re-arrange filters so that basic is all shadow info & advanced is brand and such?
