@@ -130,10 +130,14 @@ $count = $shadows->found_posts;
 			$shift = extract_tax("tax_shift", $the_tax);
 			$finish = extract_tax("tax_finish", $the_tax);
 			$color_tag = extract_tax("tax_color_tag", $the_tax);
-			$temperature = extract_tax("tax_temperature", $the_tax);
 			$vividness = extract_tax("tax_vividness", $the_tax);
 			$lightness = extract_tax("tax_lightness", $the_tax);
 		} else {
+			$shift = "none";
+			$finish = "none";
+			$color_tag = "none";
+			$vividness = "none";
+			$lightness = "none";
 			$series = 'undefined';
 			$shape = 'Round';
 			$size = 26;
