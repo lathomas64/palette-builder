@@ -16,6 +16,8 @@
   * just pick the first if we have multiples (for now. Gina may have different schema later)
 - [ ] Attempting to load user color story breaks the whole thing
 - [X] 2x when building a larger story, clicking on the right side of the palette made the size reset to 3x3
+- [ ] Neutral filter button doesn't work. 
+      * Gina's note: I've been thinking about adding neutral as a color family taxonomy, if that would make it easier. 
 
 ## Tasks
 ### Imani

@@ -1,4 +1,5 @@
 <div id="shadowDetail" class="Modal Shadow_Detail_Panel Flex_Container Column Justify_Content_Center Gap_16">
+	<a class="Post_edit" href="#">edit shadow</a>
 <div class="Single_Pan_Card">
 				<div class="Card_Container Column Gap_8 Align_Items_Center">
 					<div class="Column Align_Items_Center">
@@ -39,10 +40,6 @@
 				<li class="Property Row Space_Between">
 					<div class="Property_Name Column Justify_Content_Center">Color Family</div>
 					<div class="Property_Description">Green</div>
-				</li>
-				<li class="Property Row Space_Between">
-					<div class="Property_Name Column Justify_Content_Center">Color Temperature</div>
-					<div class="Property_Description">Cool</div>
 				</li>
 				<li class="Property Row Space_Between">
 					<div class="Property_Name Column Justify_Content_Center">Vividness</div>
