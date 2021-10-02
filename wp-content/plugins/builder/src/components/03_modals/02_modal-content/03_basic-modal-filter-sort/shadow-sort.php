@@ -12,27 +12,27 @@
 				<label class="Single_Select" for="shadow_sort2">
 				Price: Low to High
 				</label>
-				<input onclick="sort_children('data-avg-hue', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort3">
+				<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort3">
 				<label class="Single_Select" for="shadow_sort3">
 				Color
 				</label>
-			<input onclick="sort_children('data-avg-hue', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort4">
+			<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort4">
 				<label class="Single_Select" for="shadow_sort4">
 				Color Reverse
 				</label>
-				<input onclick="sort_children('data-lightness', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort5">
+				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort5">
 				<label class="Single_Select" for="shadow_sort5">
 				Light to Dark
 				</label>
-				<input onclick="sort_children('data-lightness', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort6">
+				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort6">
 				<label class="Single_Select" for="shadow_sort6">
 				Dark to Light
 				</label>
-        <input onclick="sort_children('data-vividness', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_vividness_vm">
+        <input onclick="sort_children('data-vividness-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_vividness_vm">
 				<label class="Single_Select" for="shadow_sort_vividness_vm">
 				Vivid to Muted
 				</label>
-				<input onclick="sort_children('data-vividness', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_vividness_mv">
+				<input onclick="sort_children('data-vividness-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_vividness_mv">
 				<label class="Single_Select" for="shadow_sort_vividness_mv">
 				Muted to Vivid
 				</label>
