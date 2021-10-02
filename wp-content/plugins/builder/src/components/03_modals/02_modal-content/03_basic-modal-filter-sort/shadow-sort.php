@@ -4,28 +4,28 @@
    <div class="Heading">Sort Shadows</div>
   </div>
   <div class="Column Gap_0">
-							<input onclick="sort_children('data-price', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort1">
-				<label class="Single_Select" for="shadow_sort1">
+							<input onclick="sort_children('data-price', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_price_high_low">
+				<label class="Single_Select" for="shadow_sort_price_high_low">
 				Price: High to Low
 				</label>
-				<input onclick="sort_children('data-price', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort2">
-				<label class="Single_Select" for="shadow_sort2">
+				<input onclick="sort_children('data-price', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_price_low_high">
+				<label class="Single_Select" for="shadow_sort_price_low_high">
 				Price: Low to High
 				</label>
-				<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort3">
-				<label class="Single_Select" for="shadow_sort3">
+				<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_color">
+				<label class="Single_Select" for="shadow_sort_color">
 				Color
 				</label>
-			<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort4">
-				<label class="Single_Select" for="shadow_sort4">
+			<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_color_reverse">
+				<label class="Single_Select" for="shadow_sort_color_reverse">
 				Color Reverse
 				</label>
-				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort5">
-				<label class="Single_Select" for="shadow_sort5">
+				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_lightness_light_dark">
+				<label class="Single_Select" for="shadow_sort_lightness_light_dark">
 				Light to Dark
 				</label>
-				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort6">
-				<label class="Single_Select" for="shadow_sort6">
+				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_lightness_dark_light">
+				<label class="Single_Select" for="shadow_sort_lightness_dark_light">
 				Dark to Light
 				</label>
         <input onclick="sort_children('data-vividness-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_vividness_vm">
@@ -36,20 +36,20 @@
 				<label class="Single_Select" for="shadow_sort_vividness_mv">
 				Muted to Vivid
 				</label>
-				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort7">
-				<label class="Single_Select" for="shadow_sort7">
+				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_name_az">
+				<label class="Single_Select" for="shadow_sort_name_az">
 				Name: A to Z
 				</label>
-				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort8">
-				<label class="Single_Select" for="shadow_sort8">
+				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_name_za">
+				<label class="Single_Select" for="shadow_sort_name_za">
 				Name: Z to A
 				</label>
-				<input onclick="sort_children('data-brand', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort9">
-				<label class="Single_Select" for="shadow_sort9">
+				<input onclick="sort_children('data-brand', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_brand_za">
+				<label class="Single_Select" for="shadow_sort_brand_za">
 				Shadow Brand: Z to A
 				</label>
-				<input onclick="sort_children('data-brand', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort10">
-				<label class="Single_Select" for="shadow_sort10">
+				<input onclick="sort_children('data-brand', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_brand_az">
+				<label class="Single_Select" for="shadow_sort_brand_az">
 				Shadow Brand: A to Z
 				</label>
 		</div>
