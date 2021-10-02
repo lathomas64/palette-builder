@@ -92,7 +92,9 @@ $count = $shadows->found_posts;
   	$brand = get_field("brand");
 
   	$colors = get_field("colors");
-		$avg_hue = get_field("masstone")
+		$avg_hue = get_field("avg_hue");
+		$avg_lightness = get_field("avg_lightness");
+		$avg_saturation = get_field("avg_saturation");
 		$the_tax = get_the_taxonomies(0, array('term_template' => '%1$s'));
 		if(array_key_exists('tax_series', $the_tax)){
 			$series = $the_tax['tax_series'];
@@ -156,11 +158,13 @@ $count = $shadows->found_posts;
 						data-name='<?php the_title(); ?>'
 						data-shift='<?php echo $shift; ?>'
 						data-finish='<?php echo $finish; ?>'
-						data-avg-hue='<?php echo $avg_hue; ?>'
 						data-color-family='<?php echo $family; ?>'
 						data-color-temp='<?php echo $temperature; ?>'
 						data-vividness='<?php echo $vividness; ?>'
+						data-vividness-sort='<?php echo $avg_saturation; ?>'
 						data-lightness='<?php echo $lightness; ?>'
+						data-lightness-sort='<?php echo $avg_lightness; ?>'
+						data-color-sort='<?php echo $avg_hue; ?>'
 						<?php if ($brand) { ?>
 						data-country='<?php echo get_post_field("country", $brand[0]); ?>'
 						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
