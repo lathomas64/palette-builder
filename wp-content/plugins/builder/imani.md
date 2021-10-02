@@ -6,6 +6,7 @@
 - [ ] how to remove saved palettes
 - [ ] Remember closing help boxes
 - [ ] Sort should show which sort is currently active
+- [ ] When there's no value, default = none (replaces "unknown")
 
 ### Bugs
 - [ ] Using X to clear search field does not update list
