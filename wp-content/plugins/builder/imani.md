@@ -5,6 +5,7 @@
 - [ ] Need to overwrite, save new saved palette
 - [ ] how to remove saved palettes
 - [ ] Remember closing help boxes
+- [ ] Sort should show which sort is currently active
 
 ### Bugs
 - [ ] Using X to clear search field does not update list
