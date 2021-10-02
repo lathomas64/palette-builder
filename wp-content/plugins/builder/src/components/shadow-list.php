@@ -11,18 +11,21 @@ function extract_tax($tax_name, $the_tax)
 	if(array_key_exists($tax_name, $the_tax))
 	{
 		$term = $the_tax[$tax_name];
-		$explode = explode("=", $term);
+		$explode = explode("and", $term)[0];
+		$explode = explode(",", $explode)[0];
+		$explode = explode("=", $explode);
 		$slug = $explode[1];
-		$term = substr($slug, 0,-1);
+		//$term = substr($slug, 0,-1);
+		$term = $slug;
 		$term_details = get_terms($tax_name, array('slug'=>$term));
 		if($term_details){
 			$term_name = $term_details[0]->name;
 			return $term_name;
 		} else {
-			return "unknown";
+			return "none";
 		}
 	} else {
-		return "unknown";
+		return "none";
 	}
 }
 $args = [
@@ -126,7 +129,7 @@ $count = $shadows->found_posts;
 
 			$shift = extract_tax("tax_shift", $the_tax);
 			$finish = extract_tax("tax_finish", $the_tax);
-			$family = extract_tax("tax_color_family", $the_tax);
+			$color_tag = extract_tax("tax_color_tag", $the_tax);
 			$temperature = extract_tax("tax_temperature", $the_tax);
 			$vividness = extract_tax("tax_vividness", $the_tax);
 			$lightness = extract_tax("tax_lightness", $the_tax);
@@ -158,8 +161,7 @@ $count = $shadows->found_posts;
 						data-name='<?php the_title(); ?>'
 						data-shift='<?php echo $shift; ?>'
 						data-finish='<?php echo $finish; ?>'
-						data-color-family='<?php echo $family; ?>'
-						data-color-temp='<?php echo $temperature; ?>'
+						data-color-tag='<?php echo $color_tag; ?>'
 						data-vividness='<?php echo $vividness; ?>'
 						data-vividness-sort='<?php echo $avg_saturation; ?>'
 						data-lightness='<?php echo $lightness; ?>'
@@ -169,8 +171,8 @@ $count = $shadows->found_posts;
 						data-country='<?php echo get_post_field("country", $brand[0]); ?>'
 						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
 						<?php } else { ?>
-						data-country='unknown'
-						data-brand='unknown'
+						data-country='none'
+						data-brand='none'
 						<?php } ?>
 						data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>'
 						draggable="true" ondragstart="drag(event)"
