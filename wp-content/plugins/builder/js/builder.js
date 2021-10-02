@@ -458,9 +458,8 @@ var currentStory = new Object();
 		$('#shadowDetail ul').children()[3].children[1].textContent = shift;
 		$('#shadowDetail ul').children()[4].children[1].textContent = finish;
 		$('#shadowDetail ul').children()[5].children[1].textContent = color_tag;
-		$('#shadowDetail ul').children()[6].children[1].textContent = temp;
-		$('#shadowDetail ul').children()[7].children[1].textContent = vividness;
-		$('#shadowDetail ul').children()[8].children[1].textContent = lightness;
+		$('#shadowDetail ul').children()[6].children[1].textContent = vividness;
+		$('#shadowDetail ul').children()[7].children[1].textContent = lightness;
 	}
 
 	function search_shadows(query)
