@@ -376,7 +376,7 @@ var currentStory = new Object();
 			$(grid_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
 			$(grid_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
 			$(grid_shadow).removeClass("Invisible");
-			
+
 		} else {
 			$(grid_shadow).addClass("Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round Invisible");
 		}
@@ -435,7 +435,7 @@ var currentStory = new Object();
 		price = shadow.attr('data-price');
 		shift = shadow.attr('data-shift');
 		finish = shadow.attr('data-finish');
-		family = shadow.attr('data-color-family');
+		color_tag = shadow.attr('data-color-tag');
 		temp = shadow.attr('data-color-temp');
 		vividness = shadow.attr('data-vividness');
 		lightness = shadow.attr('data-lightness');
@@ -457,7 +457,7 @@ var currentStory = new Object();
 		$('#shadowDetail ul').children()[2].children[1].textContent = price;
 		$('#shadowDetail ul').children()[3].children[1].textContent = shift;
 		$('#shadowDetail ul').children()[4].children[1].textContent = finish;
-		$('#shadowDetail ul').children()[5].children[1].textContent = family;
+		$('#shadowDetail ul').children()[5].children[1].textContent = color_tag;
 		$('#shadowDetail ul').children()[6].children[1].textContent = temp;
 		$('#shadowDetail ul').children()[7].children[1].textContent = vividness;
 		$('#shadowDetail ul').children()[8].children[1].textContent = lightness;

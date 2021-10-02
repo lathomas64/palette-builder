@@ -12,7 +12,7 @@
 				<label class="Single_Select" for="shadow_sort_price_low_high">
 				Price: Low to High
 				</label>
-				<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_color">
+				<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_color">
 				<label class="Single_Select" for="shadow_sort_color">
 				Color
 				</label>
