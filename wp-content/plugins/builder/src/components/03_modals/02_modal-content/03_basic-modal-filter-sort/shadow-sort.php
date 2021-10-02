@@ -36,11 +36,11 @@
 				<label class="Single_Select" for="shadow_sort_vividness_mv">
 				Muted to Vivid
 				</label>
-				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort7">
+				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort7">
 				<label class="Single_Select" for="shadow_sort7">
 				Name: A to Z
 				</label>
-				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort8">
+				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort8">
 				<label class="Single_Select" for="shadow_sort8">
 				Name: Z to A
 				</label>
