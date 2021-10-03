@@ -452,7 +452,12 @@ var currentStory = new Object();
 		$("#shadowDetail .Shadow_Image_Container").attr("class", image_classes);
 		$("#shadowDetail .Shadow_Name").text(name);
 		$("#shadowDetail .Shadow_Brand").text(brand);
-		$('#shadowDetail ul').children()[0].children[1].textContent = size;
+		if(width == height)
+		{
+			$('#shadowDetail ul').children()[0].children[1].textContent = width + "mm";
+		} else {
+			$('#shadowDetail ul').children()[0].children[1].textContent = width + "mm x " + height + "mm";
+		}
 		$('#shadowDetail ul').children()[1].children[1].textContent = shape;
 		$('#shadowDetail ul').children()[2].children[1].textContent = price;
 		$('#shadowDetail ul').children()[3].children[1].textContent = shift;

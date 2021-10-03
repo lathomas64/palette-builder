@@ -108,9 +108,9 @@ $count = $shadows->found_posts;
 		$width = extract_tax("pan-width", $the_tax);
 		$shape = extract_tax("pan-shape", $the_tax);
 		if($height == $width) {
-			$size = $height . "mm";
+			$size = $width;
 		} else {
-			$size = $width . "mm x " . $height . "mm";
+			$size = "Irregular";
 		}
 		if(array_key_exists('tax_series', $the_tax)){
 			$series = $the_tax['tax_series'];
