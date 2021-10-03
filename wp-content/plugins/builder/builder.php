@@ -22,7 +22,7 @@ function build_builder_redirect()
     add_rewrite_rule( 'builder.php$', 'wp-content/plugins/builder/src/index.php', 'top' );
 }
 
-include 'src/filters.php';
-include 'src/stories.php';
+include 'src/actions/filters.php';
+include 'src/actions/stories.php';
 
 ?>

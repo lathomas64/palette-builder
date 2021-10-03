@@ -80,7 +80,7 @@ function delete_story($story_id)
       wp_delete_post($story_id);
       echo "success";
   } else {
-    echo "id is not a story."
+    echo "id is not a story.";
   }
   die();
 }
