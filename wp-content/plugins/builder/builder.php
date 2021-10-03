@@ -15,6 +15,7 @@ add_action('wp_ajax_user_stories', 'user_stories');
 add_action('wp_ajax_community_stories', 'community_stories');
 add_action('wp_ajax_nopriv_community_stories', 'community_stories');
 add_action('wp_ajax_save_story', 'save_story');
+add_action('wp_ajax_delete_story', 'delete_story');
 
 function build_builder_redirect()
 {

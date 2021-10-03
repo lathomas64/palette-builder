@@ -8,6 +8,7 @@ function extract_stories($story_query){
     $story_query->the_post();
     $story = array();
     $story["name"] = get_field("name");
+    $story["id"] = get_the_ID();
     $term = get_the_terms(get_the_ID(), 'tax_story_size')[0];
     $story["height"] = get_field("height", $term);
     $story["width"] = get_field("width", $term);
@@ -66,6 +67,20 @@ function user_stories() {
   } else {
     $result = array("error"=> "Not logged in");
     echo json_encode($result);
+  }
+  die();
+}
+
+function delete_story($story_id)
+{
+  // TODO confirm the id is a story before deleting?
+  $type = get_post_type($story_id);
+  if ($type == "cpt_story")
+  {
+      wp_delete_post($story_id);
+      echo "success";
+  } else {
+    echo "id is not a story."
   }
   die();
 }
