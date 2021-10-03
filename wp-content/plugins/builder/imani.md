@@ -1,29 +1,27 @@
 ### Gina's Notes For Imani
 - none presently
 
+### Imani's Notes For Gina
+- none presently
+
 ### Changes/Additions
 - [ ] Need to overwrite, save new saved palette
 - [ ] how to remove saved palettes
 - [ ] Remember closing help boxes
 - [ ] Sort should show which sort is currently active
-- [x] When there's no value, default = none (replaces "unknown")
 
 ### Bugs
 - [ ] Using X to clear search field does not update list
-- [x] Vivid/muted and Muted/Vivid sort are switched
-- [x] color family, color temperature, and finish display as unknown if multiple values present.
-  * Gina changed color family & color temperature to one combined field. Take the first color tag and display here.  
-  * just pick the first if we have multiples (for now. Gina may have different schema later)
-- [ ] Attempting to load user color story breaks the whole thing
-- [X] 2x when building a larger story, clicking on the right side of the palette made the size reset to 3x3
-- [ ] Neutral filter button doesn't work. 
-      * Gina's note: I've been thinking about adding neutral as a color family taxonomy, if that would make it easier. 
+- [ ] Attempting to load user color story breaks the whole thing.
+  * Imani's note: can you provide more detail?
+- [ ] Neutral filter button doesn't work.
+      * Gina's note: I've been thinking about adding neutral as a color family taxonomy, if that would make it easier.
+      * Imani's note: yes all the color filters are looking at color family currently and that would make the neutral filter work.
 
 ## Tasks
 ### Imani
 
 #### Airtable
-- [x] Data processing: fix Airtable photo export so that it pulls more than 100 images
 - [ ] Builder Front-End Interface Data processing: fix Shopify JSON flatten
 
 #### Wordpress/Import/back-end stuff
