@@ -6,12 +6,12 @@
 - [ ] how to remove saved palettes
 - [ ] Remember closing help boxes
 - [ ] Sort should show which sort is currently active
-- [ ] When there's no value, default = none (replaces "unknown")
+- [x] When there's no value, default = none (replaces "unknown")
 
 ### Bugs
 - [ ] Using X to clear search field does not update list
 - [x] Vivid/muted and Muted/Vivid sort are switched
-- [ ] color family, color temperature, and finish display as unknown if multiple values present.
+- [x] color family, color temperature, and finish display as unknown if multiple values present.
   * Gina changed color family & color temperature to one combined field. Take the first color tag and display here.  
   * just pick the first if we have multiples (for now. Gina may have different schema later)
 - [ ] Attempting to load user color story breaks the whole thing
@@ -23,7 +23,7 @@
 ### Imani
 
 #### Airtable
-- [ ] Data processing: fix Airtable photo export so that it pulls more than 100 images
+- [x] Data processing: fix Airtable photo export so that it pulls more than 100 images
 - [ ] Builder Front-End Interface Data processing: fix Shopify JSON flatten
 
 #### Wordpress/Import/back-end stuff
@@ -33,6 +33,7 @@
       * Gina note: I'd be interested to see what insight Linode has. The size seizes even if I am just saving settings too often. I wonder if there's a cap on requests to the server.
 
 #### Front-end Builder
+- [ ] remap width, height, and shape to pull from new taxonomies.
 - [x] Make pink filter functional
 - [ ] Advanced filter options activate
 - [ ] Populate & map shipping country filters

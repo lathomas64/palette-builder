@@ -99,6 +99,19 @@ $count = $shadows->found_posts;
 		$avg_lightness = get_field("avg_lightness");
 		$avg_saturation = get_field("avg_saturation");
 		$the_tax = get_the_taxonomies(0, array('term_template' => '%1$s'));
+		$shift = extract_tax("tax_shift", $the_tax);
+		$finish = extract_tax("tax_finish", $the_tax);
+		$color_tag = extract_tax("tax_color_tag", $the_tax);
+		$vividness = extract_tax("tax_vividness", $the_tax);
+		$lightness = extract_tax("tax_lightness", $the_tax);
+		$height = extract_tax("pan-height", $the_tax);
+		$width = extract_tax("pan-width", $the_tax);
+		$shape = extract_tax("pan-shape", $the_tax);
+		if($height == $width) {
+			$size = $height . "mm";
+		} else {
+			$size = $width . "mm x " . $height . "mm";
+		}
 		if(array_key_exists('tax_series', $the_tax)){
 			$series = $the_tax['tax_series'];
 			$explode = explode("=", $series);
@@ -106,9 +119,6 @@ $count = $shadows->found_posts;
 			$series = substr($slug, 0,-1);
 
 			$details = get_terms('tax_series', array('slug'=>$series));
-			$shape = get_field('shape', $details[0]);
-			$height = get_field('height', $details[0]);
-			$width = get_field('width', $details[0]);
 			if(!$brand){
 				$brand_series = get_field('brand', $details[0]);
 				if($brand_series){
@@ -116,34 +126,6 @@ $count = $shadows->found_posts;
 				}
 
 			}
-			$size = $height;
-			if($width != $height){
-				$size = "Irregular";
-			} else if($width == ""){
-					$size = 26;
-					$height = 26;
-					$width = 26;
-			}
-
-
-
-			$shift = extract_tax("tax_shift", $the_tax);
-			$finish = extract_tax("tax_finish", $the_tax);
-			$color_tag = extract_tax("tax_color_tag", $the_tax);
-			$vividness = extract_tax("tax_vividness", $the_tax);
-			$lightness = extract_tax("tax_lightness", $the_tax);
-		} else {
-			$shift = "none";
-			$finish = "none";
-			$color_tag = "none";
-			$vividness = "none";
-			$lightness = "none";
-			$series = 'undefined';
-			$shape = 'Round';
-			$size = 26;
-			$height = 26;
-			$width = 26;
-
 		}
   	?>
 			<a <?php
