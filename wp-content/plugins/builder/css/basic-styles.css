@@ -525,6 +525,10 @@ height: auto;
 #Violet + label {
 	background-color: rgba(172, 5, 255, 1);
 }
+.Pink,
+#Pink + label {
+	background-color: hsla(310, 98%, 49%, 1);
+}
 .Neutral,
 #Neutral + label {
 	background-color: rgba(68, 50, 3, 1);
@@ -832,11 +836,11 @@ button {
 	background: var(--FDBL-green-medium);
 }
 
-.Button_Block.Invalid {
+.Button_Block.Invalid, .Invalid .Button_Block {
 	background: var(--FDBL-medium-gray);
 }
 
-.Button_Block.Invalid:hover {
+.Button_Block.Invalid:hover, .Invalid .Block_Button:hover {
 	box-shadow: var(--drag-shadow);
 }
 

@@ -716,7 +716,7 @@ label {
 }
 
 .Drawer_Container {
-	padding: 40px 48px;
+	padding: 40px;
 	background-color: var(--system-white);
 	width: 33%;
 	height: 100%;
@@ -1076,10 +1076,11 @@ li.Property {
 
 .Brand_Characteristic.Badge {
  background-color: var(--FDBL-cool-white);
- padding: 2px 4px;
- border: var(--pan-border);
+ padding: 4px;
+ border: var(--standard-border);
  border-radius: 4px;
  font: var(--font-filter-button);
+	height: fit-content;
 }
 
 /**STORY DETAIL PANEL**/
@@ -1282,15 +1283,20 @@ label.Remember {
 .Build_List_Carousel .Drawer_Container {
  width: initial;
 	border-radius:4px;
+ max-height: 640px;
+ overflow: scroll;
+	padding: 40px;
 }
 
 .Summary_Data .Heading {
- font: var(--font-heading-4);
+ font: var(--font-heading-3);
  border-bottom: 0;
  padding-bottom: 0;
 }
 
-.Itemized_List {
+.Itemized_List .List_Tile:last-child {
+ border-bottom: none;
+}
 	
 }
 
@@ -1300,14 +1306,22 @@ label.Remember {
 
 .Brand_Group .Heading {
  font: var(--font-heading-4);
+	font-size:28px;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .List_Tile {
-	grid-template-columns: 8.5fr 1.5fr;
-	gap:16px;
-	padding-bottom:16px;
+	grid-template-columns: 9.25fr .25fr;
 	border-bottom: var(--standard-border);
 	border-color: var(--FDBL-light-gray);
+	transition: 1s;
+	/* padding-bottom: 16px; */
+}
+
+.Shadow_Details {
+	grid-template-columns: 9fr 1fr;
+	padding-bottom: 16px;
 }
 
 .List_Tile .Shade_Name {
@@ -1320,6 +1334,7 @@ label.Remember {
 
 .Shadow.Grid_Container {
  grid-template-columns: 1fr 9fr;
+ /* margin-bottom:16px; */
 }
 
 /* .Grid_Container .Shadow_Image_Container {
@@ -1347,5 +1362,125 @@ label.Remember {
 	}	
 	
 .Brand_Group .Brand_Name {
-		font-size: 26px;
-	}
+	font-size: 26px;
+}
+
+.Remove_Item {
+	padding: 0px;
+	background: #c7505f;
+	border-radius: 0;
+	height: 100%;
+	width: 0%;
+	opacity: 0;
+}
+
+.Remove_Item svg {
+	fill: var(--FDBL-white-text);
+	width: 8px;
+	height: 8px;
+}
+
+.List_Tile:hover .Remove_Item {
+	width: 100%;
+	padding: 8px;
+	opacity: 1;
+	height: 100%;
+	border-radius: 4px;
+}
+
+.Remove_Item:hover {
+  background-color: #943B47;
+  box-shadow: var(--lift-shadow);
+}
+
+.Remove_Item:active {
+  box-shadow: var(--drag-shadow);
+}
+
+.Build_List_Title .Text_Button {
+	color: var(--FDBL-medium-gray);
+}
+.Build_List_Title .Text_Button svg {
+	fill: var(--FDBL-medium-gray);
+}
+
+.Build_List_Title .Subheading {
+	font: var(--font-heading-1);
+	color: var(--FDBL-green-light);
+}
+
+.Build_List_Carousel .Section_Title {
+ font: var(--font-heading-3);
+ text-transform: uppercase;
+}
+
+.Code_Copy {
+ border: 4px dashed #CFBD63;
+ background-color: var(--FDBL-green-dark);
+ padding: 24px;
+}
+
+.Code_Copy:hover {
+ background-color: var(--FDBL-yellow-medium);
+ border-color: var(--FDBL-black);
+}
+
+.Code_Copy:hover button {
+ background-color: var(--FDBL-black);
+ border-color: var(--FDBL-yellow-medium);
+	color: var(--FDBL-yellow-medium);
+}
+
+.Code_Copy:hover .Panel_Title {
+	color: var(--FDBL-black);
+}
+
+.Code_Copy.Copied {
+ background-color: var(--FDBL-green-light);
+ border-color: var(--FDBL-yellow-light);
+}
+
+.Code_Copy.Copied .Panel_title {
+ color: var(--FDBL-dark-teal)
+}
+
+.Code_Copy.Copied button {
+ background-color: var(--FDBL-green-dark);
+ border-color: var(--FDBL-white-text);
+	color: var(--FDBL-white-text);
+}
+
+.Copy_Code .Drawer_Container, .Buy_Shadows .Drawer_Container {
+ height: fit-content;
+}
+
+.Terms_Conditions {
+	flex-flow: row nowrap;
+}
+
+.Terms_Conditions label {
+	font: var(--font-body-small);
+}
+
+.Open_Links {
+	padding: 24px;
+	border-radius:4px;
+	border: var(--standard-border);
+}
+
+.Open_Links.Valid {
+ background-color: var(--FDBL-green-light);
+}
+
+.Open_Links .Panel_Title {
+ color: var(--FDBL-black);
+ font: var(--font-heading-4);
+}
+
+.Open_Links.Invalid {
+ background-color: var(--FDBL-light-gray);
+}
+
+.Open_Links.Invalid .Panel_Title {
+	color: var(--FDBL-dark-gray);
+}

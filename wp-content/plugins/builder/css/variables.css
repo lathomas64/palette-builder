@@ -52,6 +52,10 @@
 	/**font: font-style font-variant font-weight font-size/line-height font-family**/
 	
 	/**HEADINGS**/
+	--font-heading-1:
+		var(--type-weight-bold) 
+		var(--type-size-56) / var(--type-size-56) 
+		var(--e-global-typography-secondary-font-family);
 	--font-heading-2: 
 		var(--type-weight-bold) 
 		var(--type-size-48) / var(--type-size-40) 
