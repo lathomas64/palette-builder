@@ -33,7 +33,7 @@
       * Gina note: I'd be interested to see what insight Linode has. The size seizes even if I am just saving settings too often. I wonder if there's a cap on requests to the server.
 
 #### Front-end Builder
-- [ ] remap width, height, and shape to pull from new taxonomies.
+- [x] remap width, height, and shape to pull from new taxonomies.
 - [x] Make pink filter functional
 - [ ] Advanced filter options activate
 - [ ] Populate & map shipping country filters
@@ -48,7 +48,6 @@
 - [ ] Calculations for shadow sizes/full palette.
 - [ ] arrows being finnicky default.
 - [ ] Mouse needs to go with their cursor.
-
 - [ ] remove most console logs before launch
 
 
