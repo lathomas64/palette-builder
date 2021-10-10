@@ -16,6 +16,7 @@
 
 ### Bugs
 - [ ] Using X to clear search field does not update list
+- [ ] X to clear search field does not appear in firefox
 - [x] Attempting to load user color story breaks the whole thing.
   * Imani's note: can you provide more detail?
 - [ ] Neutral filter button doesn't work. *With Gina to make Neutral a color tag*
@@ -86,4 +87,3 @@
 
 #### Potential help box info
 - [ ] How to get black/white/gray shadows
-
