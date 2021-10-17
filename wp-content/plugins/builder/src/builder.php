@@ -107,7 +107,7 @@
 						</div>
 					</div>
 					<div class="Builder Row Gap_0 Space_Between">
-						<div class="Set_Aside Column Gap_0">
+						<div class="Set_Aside Column Gap_0"><!--
 							<div class="Shadow_Image_Container Column Pan_Size_26 Pan_Shape_Round">
 								<div class="Wrapper">
 									<img src="../assets/temp-shadow-imgs/Cognac.jpg" />
@@ -163,7 +163,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+					-->	</div>
 							<div class="Annoyed_Gina Flex_Container Justify_Content_Center Column">
 							<div class="Palette_Container Flex_Container Column Landscape Justify_Content_Center Align_Items_Center">
 							<div class="Palette Story_Size_11w_8t Flex_Container">

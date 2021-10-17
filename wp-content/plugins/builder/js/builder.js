@@ -41,6 +41,35 @@ var currentStory = new Object();
 		console.log(query);
 		alert(link+query);
 	}
+
+	function setAside(shadow)
+	{
+		prototype = $(".Results_Container .Grid")[0].children[0];
+		aside_shadow = prototype.cloneNode(true);
+		aside_shadow.removeAttribute("id");
+		shadow_data = $('#'+shadow)[0];
+		$(aside_shadow).removeClass("Pan_Shape_Round Pan_Shape_Square Pan_Shape_Rectangle");
+		$(aside_shadow).removeClass("Pan_Size_26 Pan_Size_37 Pan_Size_Irregular");
+		$(aside_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
+		$(aside_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
+		$(aside_shadow).removeClass("Invisible");
+		image_element = aside_shadow.getElementsByTagName('img')[0];
+		image_element.src = shadow_data.getElementsByTagName('img')[0].src;
+
+		shadow_attributes = shadow_data.attributes;
+		for(index = 0; index < shadow_attributes.length; index++)
+		{
+			let attribute = shadow_attributes[index];
+			if(attribute.name.includes("data-")){
+				aside_shadow.setAttribute(attribute.name, attribute.value);
+			}
+
+		}
+		aside_shadow.setAttribute('data-shadow-id', shadow);
+		$('.Set_Aside').append(aside_shadow);
+		//add aside_shadow to the set aside list
+	}
+
 	function updateFooter() {
 		var shadowCount=0;
 		var brands=[];
@@ -337,6 +366,7 @@ var currentStory = new Object();
 	function deleteShadow(index, undo=false)
 	{
 		current_shadow = currentStory.shadows[index].getAttribute("data-shadow-id");
+		setAside(current_shadow);
 		updateShadow(index, null)
 		currentStory.shadows[index].setAttribute('data-index', index);
 		updateFooter();
