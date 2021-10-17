@@ -27,3 +27,5 @@ node_modules/
 wp-content/plugins/builder/.DS_Store
 
 wp-content/plugins/builder/src/.DS_Store
+
+wp-content/plugins/builder/docs/.obsidian/
