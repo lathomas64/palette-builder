@@ -225,7 +225,7 @@
 											</div>
 										</div>
 										<div class="Button_Block">
-											<div class="none">build shopping list</div>
+											<div onclick="$('.Shopping_List_Modal').addClass('On');">build shopping list</div>
 										</div>
 									</div>
 								</div>
@@ -237,5 +237,5 @@
 			</div>
 		</section>
 	</div>
-<?php include "components/03_modals/modal-calls.php"; ?>
+<?php include "components/03_modals/zmodal-calls.php"; ?>
 </body>
