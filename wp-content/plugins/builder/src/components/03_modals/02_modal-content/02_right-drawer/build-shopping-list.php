@@ -55,7 +55,7 @@
 														<div id="Footer_Story_Price" class="Price_Value">$0.00</div>
 														<div class="Price_Units">USD</div>
 													</div>
-												</div>    
+												</div>
 		     </div>
 		    </div>
 			  </div>
@@ -79,7 +79,7 @@
 					<?php include "components/shopping-list-shadow-card.php"; ?>
 					<?php include "components/shopping-list-shadow-card.php"; ?>
 					<?php include "components/shopping-list-shadow-card.php"; ?>
-									
+
 				</div>
    </div>
    <div class="Brand_Group Column Gap_24">
@@ -293,7 +293,7 @@
 						<div class="Open_Links Invalid Row Space_Between Align_Items_Center">
 						<span class="Panel_Title">Ready to get your shadows?</span>
 						<button class="Button_Block">Open Your List in (9) Tabs</button>
-					</div>				
+					</div>
 				</div>
 			</div>
 	</div>
