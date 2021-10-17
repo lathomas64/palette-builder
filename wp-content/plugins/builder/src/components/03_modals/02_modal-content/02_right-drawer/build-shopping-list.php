@@ -1,4 +1,4 @@
-<div class="Modal Fade_In On">
+<div class="Modal Fade_In">
 	<div class="Grid_Container Grid_Test Space_Between Drawer_Overlay">
 		<div class="Build_List_Title Column Gap_24">
 			<div class="Panel_Title">You're almost finished!</div>

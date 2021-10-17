@@ -1,4 +1,4 @@
-	<div id="advancedFilterDrawer" class="Modal Fade_In Hidden">
+	<div id="advancedFilterDrawer" class="Modal Fade_In">
 	<div class="Row Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
 		<div class="Drawer_Container Fade_Out_Right">
@@ -14,3 +14,5 @@
 	 </div>
 	</div>
 	</div>
+	
+	

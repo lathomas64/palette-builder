@@ -17,8 +17,8 @@
 	<div id="Community_Story_Target">
 		<?php include "components/story-size-list.php"; ?>
 		<!-- Basic Filter Modal -->
-				<?php include "components/03_modals/community-filters.php"; ?>
+				<?php include "components/03_modals/02_modal-content/03_basic-modal-filter-sort/community-filters.php"; ?>
 		<!-- Sort Dropdown -->
-		<?php include "components/03_modals/community-sort.php"; ?>
+		<?php include "components/03_modals/02_modal-content/03_basic-modal-filter-sort/community-sort.php"; ?>
 	</div>
 </div>

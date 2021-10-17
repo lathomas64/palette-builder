@@ -1,3 +1,6 @@
+//Functions for showing left & right drawers
+// When X button is clicked, call drawer function and function to reveal content 
+
 //SHADOW RESULTS HEIGHT CALC
 
 function resultsHeight(event){		
@@ -19,13 +22,11 @@ else {
 	$(".Results_Container").css(
 		"height", resultsContainerHeight
 	);
-			console.log("line executed else");
 }
 };
 
-
-$(document).ready(function(){
-
+$(document).ready(function(event){
+	
 $(document).ready(
 	resultsHeight
 	);
@@ -54,7 +55,7 @@ shadowCard.mouseenter(function() {
 			);
 		setTimeout (function() {
 			shadowDetail.addClass("Fade_In");
-		}, 500);
+		}, 1000);
 		}).mouseleave(function () {
 			$(this).removeClass("Hovered");
 	   setTimeout (function() {
@@ -62,9 +63,35 @@ shadowCard.mouseenter(function() {
 						$(".Hovered").length == 0
 			) {
 				shadowDetail.removeClass("Fade_In");
+				shadowDetail.css(
+				"left", ""
+			);
+						shadowDetail.css(
+				"display", ""
+			);
 					}
-				}, 500);
-	});
+				}, 1000);
+	}).mousedown(function(){
+		shadowDetail.removeClass("Fade_In");
+		setTimeout (function() {
+			shadowDetail.css(
+				"left", ""
+			);
+						shadowDetail.css(
+				"display", ""
+			);
+		}, 101);
+	}).mouseup(function() {
+		$(this).addClass("Hovered");
+		update_shadow_detail($(this));
+		shadowDetail.css(
+				"left", builderWidth - detailPanelWidth
+			);
+						shadowDetail.css(
+				"display", "flex"
+			);
+			shadowDetail.addClass("Fade_In");
+		});
 	
 	shadowDetail.mouseenter(function() {
 		$(this).addClass("Hovered");
@@ -99,11 +126,37 @@ storyCard.mouseenter(function() {
 						$(".Hovered").length == 0
 			) {
 				storyDetail.removeClass("Fade_In");
+				storyDetail.css(
+				"left", ""
+			);
+				storyDetail.css(
+				"display", ""
+			);
 					}
 				}, 1000);
-			});
+			}).mousedown(function(){
+		storyDetail.removeClass("Fade_In");
+		setTimeout (function() {
+			storyDetail.css(
+				"left", ""
+			);
+						storyDetail.css(
+				"display", ""
+			);
+		}, 101);
+	}).mouseup(function() {
+		$(this).addClass("Hovered");
+		update_shadow_detail($(this));
+		storyDetail.css(
+				"left", builderWidth - detailPanelWidth
+			);
+						storyDetail.css(
+				"display", "flex"
+			);
+			storyDetail.addClass("Fade_In");
+		});
 	
-	storyDetail.mouseenter(function() {
+storyDetail.mouseenter(function() {
 		$(this).addClass("Hovered");
 	}).mouseleave(function () {
 		$(this).removeClass("Hovered");

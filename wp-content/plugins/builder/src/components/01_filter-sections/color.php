@@ -33,6 +33,10 @@
 				<label 	class="Filter_Button Violet Dark"for="Violet">Violet</label>
 			</li>
 			<li>
+				<input onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Pink" type="checkbox" />
+				<label 	class="Filter_Button Pink Dark"for="Pink">Pink</label>
+			</li>
+			<li>
 				<input onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Neutral" type="checkbox" />
 				<label 	class="Filter_Button Neutral Dark "for="Neutral">Neutral</label>
 			</li>

@@ -1,4 +1,4 @@
-	<div id="loginContent" class="Column Gap_8 Hidden">
+	<div class="Login_Content Column Gap_8 Hidden">
   <div class="Panel_Title">
    <div class="Heading">Let's Get You Logged In!</div>
   </div>
@@ -27,7 +27,7 @@
 		   <div class="Heading Preheading">Or</div>
 		  </div>
 		</div>
-			<form action="/action_page.php" method="post">
+			<form action="null" method="post">
 			 <div class="Column Gap_16">
 					<div class="Input Column Gap_4">
 			   <label class="Input_Label" for="username">Username</label>

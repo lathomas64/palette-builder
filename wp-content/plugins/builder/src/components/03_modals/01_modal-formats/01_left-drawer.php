@@ -12,7 +12,8 @@
 			</button>
 	 </div>
 		 <div class="Panel_Content Column Gap_40">
-		 	<?php include "01_login_register_content/register-content.php"; ?>	
+		 	<?php include "/components/03_modals/02_modal-content/01_left-drawer/log-in-content.php"; ?>	
+						 	<?php include "/components/03_modals/02_modal-content/01_left-drawer/register-content.php"; ?>	
 			</div>
 		</div>
 	</div>

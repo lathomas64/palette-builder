@@ -17,8 +17,8 @@
 	<div id="User_Story_Target">
 		<?php include "components/story-size-list.php"; ?>
 		<!-- Basic Filter Modal -->
-				<?php include "components/03_modals/user-filters.php"; ?>
+				<?php include "components/03_modals/02_modal-content/03_basic-modal-filter-sort/user-filters.php"; ?>
 		<!-- Sort Dropdown -->
-		<?php include "components/03_modals/user-sort.php"; ?>
+		<?php include "components/03_modals/02_modal-content/03_basic-modal-filter-sort/user-sort.php"; ?>
 	</div>
 </div>

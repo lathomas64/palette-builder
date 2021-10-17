@@ -16,7 +16,7 @@
 	</div>
 	<?php include "components/shadow-list.php"; ?>
 	<!-- Basic Filter Modal -->
-			<?php include "components/03_modals/shadow-filters.php"; ?>
+			<?php include "components/03_modals/02_modal-content/03_basic-modal-filter-sort/shadow-filters.php"; ?>
 	<!-- Sort Dropdown -->
-	<?php include "components/03_modals/shadow-sort.php"; ?>
+	<?php include "components/03_modals/02_modal-content/03_basic-modal-filter-sort/shadow-sort.php"; ?>
 </div>

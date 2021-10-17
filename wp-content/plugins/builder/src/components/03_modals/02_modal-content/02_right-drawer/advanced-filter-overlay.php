@@ -1,4 +1,4 @@
-<div id="advancedFilterContent" class="Panel_Content Advanced_Filters Column Gap_40">
+<div id="advancedFilterContent" class="Panel_Content  Advanced_Filters Column Gap_40">
 	  <div class="Panel_Title">
 	   <div class="Heading">Advanced Search</div>
 	  </div>

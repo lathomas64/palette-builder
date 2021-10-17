@@ -38,7 +38,7 @@
 					<div class="Property_Description">Matte</div>
 				</li>
 				<li class="Property Row Space_Between">
-					<div class="Property_Name Column Justify_Content_Center">Color Family</div>
+					<div class="Property_Name Column Justify_Content_Center">Main Color</div>
 					<div class="Property_Description">Green</div>
 				</li>
 				<li class="Property Row Space_Between">

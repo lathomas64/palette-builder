@@ -1,4 +1,4 @@
-	<div id="registerContent" class="Column Gap_8 Hidden">
+	<div class="Register_Content Column Gap_8 Hidden">
   <div class="Panel_Title">
    <div class="Heading">Register for the Builder</div>
   </div>
