@@ -1,0 +1,6 @@
+- [ ] spillover area for shadows
+- [ ] shopping list
+- [ ] user signup
+- [ ] share
+- [ ] story filter/sort
+- [ ] story circle fill
