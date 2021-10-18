@@ -8,8 +8,8 @@
 
 						</div>Go back to your palette</button>
 			</div>
-		<div class="Build_List_Carousel Column Gap_32">
-		<div class="Active_Panel Gap_32 Hidden">
+		<div class="Build_List_Carousel Review_List Column Gap_32">
+		<div class="Active_Panel Gap_32">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">1.</div>
 		  <div class="Panel_Title">Double Check Your List</div>
@@ -275,7 +275,7 @@
 				</div>
 			</div>
 	</div>
-		<div class="Build_List_Carousel Buy_Shadows Column Gap_32">
+		<div class="Build_List_Carousel Buy_Shadows Column Gap_32 Hidden">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">3.</div>
 		  <div class="Panel_Title">Buy Shadows from Brand Sites</div>
