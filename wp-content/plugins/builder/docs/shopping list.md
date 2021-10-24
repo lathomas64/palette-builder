@@ -1,0 +1,7 @@
+- story details
+	- thumbnail
+	- number of shadows
+	- number of brands
+	- number of countries
+	- price
+- list by brand

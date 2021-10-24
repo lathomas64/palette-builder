@@ -92,6 +92,11 @@ var currentStory = new Object();
 		document.getElementById('Footer_Country_Count').innerHTML=countries.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
 		document.getElementById('Footer_Story_Price').innerHTML="$"+price.toFixed(2);
 
+		document.getElementById('Shopping_List_Shadow_Count').innerHTML=shadowCount.toLocaleString("en-US", {"minimumIntegerDigits":2});
+		document.getElementById('Shopping_List_Brand_Count').innerHTML=brands.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
+		document.getElementById('Shopping_List_Country_Count').innerHTML=countries.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
+		document.getElementById('Shopping_List_Story_Price').innerHTML="$"+price.toFixed(2);
+
 	}
 	function buildGrid(evt, height, width) {
 		console.log('buildGrid called');

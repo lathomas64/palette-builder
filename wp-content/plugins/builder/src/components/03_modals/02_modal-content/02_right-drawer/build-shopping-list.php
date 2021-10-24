@@ -31,14 +31,14 @@
 		      <div class="Row Gap_24">
 									<div class="Meta_Label Flex_Container Row Gap_2 Align_items_baseline reverse align_content_baseline">
 														<div class="Title">Shadows</div>
-														<div id="Footer_Shadow_Count" class="Value">00</div>
+														<div id="Shopping_List_Shadow_Count" class="Value">00</div>
 													</div>
 													<div class="Meta_Label Flex_Container Row Gap_2 Align_items_baseline reverse align_content_baseline">
 														<div class="Title">Brands</div>
-														<div id="Footer_Brand_Count" class="Value">00</div>
+														<div id="Shopping_List_Brand_Count" class="Value">00</div>
 													</div><div class="Meta_Label Flex_Container Row Gap_2 Align_items_baseline reverse align_content_baseline">
 														<div class="Title">Countries</div>
-														<div id="Footer_Country_Count" class="Value">00</div>
+														<div id="Shopping_List_Country_Count" class="Value">00</div>
 													</div></div>
 		     </div>
 		      <div class="Total_Row Row Space_Between Align_Items_Flex_End">
@@ -52,7 +52,7 @@
 		      <div class="Price_Widget Flex_Container Column Gap_2 Align_Items_Flex_End">
 													<div class="Title Flex_Container">Price Before Shipping</div>
 													<div class="Price Flex_Container Row Gap_2 Align_Items_Flex_End">
-														<div id="Footer_Story_Price" class="Price_Value">$0.00</div>
+														<div id="Shopping_List_Story_Price" class="Price_Value">$0.00</div>
 														<div class="Price_Units">USD</div>
 													</div>
 												</div>

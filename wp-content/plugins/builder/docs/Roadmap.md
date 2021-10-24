@@ -1,5 +1,5 @@
 - [ ] spillover area for shadows
-- [ ] shopping list
+- [ ] [[shopping list]]
 - [ ] user signup
 - [ ] share
 - [ ] story filter/sort
