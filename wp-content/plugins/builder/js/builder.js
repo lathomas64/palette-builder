@@ -87,6 +87,8 @@ var currentStory = new Object();
 		}
 		brands = unique(brands);
 		countries = unique(countries);
+		currentStory.brands = brands;
+		currentStory.countries = countries;
 		document.getElementById('Footer_Shadow_Count').innerHTML=shadowCount.toLocaleString("en-US", {"minimumIntegerDigits":2});
 		document.getElementById('Footer_Brand_Count').innerHTML=brands.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
 		document.getElementById('Footer_Country_Count').innerHTML=countries.length.toLocaleString("en-US", {"minimumIntegerDigits":2});

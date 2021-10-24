@@ -124,7 +124,15 @@ $count = $shadows->found_posts;
 				if($brand_series){
 						$brand = $brand_series; //how do we get the name from this?
 				}
-
+			}
+			if ($brand) {
+				//get country from brand
+				$country_details = wp_get_post_terms($brand[0], 'tax_countries');
+				if($country_details)
+				{
+					//$country = get_field('name', $country_details[0]);
+					$country = $country_details[0]->name;
+				}
 			}
 		}
   	?>
@@ -153,8 +161,10 @@ $count = $shadows->found_posts;
 						data-lightness='<?php echo $lightness; ?>'
 						data-lightness-sort='<?php echo $avg_lightness; ?>'
 						data-color-sort='<?php echo $avg_hue; ?>'
+						debug-brand='<?php print_r($brand); ?>'
+						debug-country='<?php print_r($country); ?>'
 						<?php if ($brand) { ?>
-						data-country='<?php echo get_post_field("country", $brand[0]); ?>'
+						data-country='<?php echo $country; ?>'
 						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
 						<?php } else { ?>
 						data-country='none'
