@@ -5,3 +5,16 @@
 	- number of countries
 	- price
 - list by brand
+	- brand name
+	- brand characteristics
+	- shadows
+		- image
+		- name
+		- finish
+		- shift
+		- color
+		- vividness
+		- lightness
+		- shape
+		- size
+		- price
