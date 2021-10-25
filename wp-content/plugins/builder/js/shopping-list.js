@@ -1,14 +1,14 @@
 function populate_brand(brand_shadows, brand_div)
 {
-    prototype_div = $($(brand_div).find('.List_Title')[0]);
+    prototype_div = $($(brand_div).find('.List_Tile')[0]);
     for(let index=0;index < brand_shadows.length; index++)
     {
       shadow = brand_shadows[index];
-      shadow_div = $(brand_div).find('.List_Title')[index];
+      shadow_div = $(brand_div).find('.List_Tile')[index];
       if(shadow_div == undefined)
       {
         shadow_div = prototype_div.clone();
-        $(brand_div).find('.List_Title').append(shadow_div);
+        $(brand_div).find('.List_Tile').append(shadow_div);
       }
       $(shadow_div).find('.Shade_Name')[0].textContent = brand_shadows[0].getAttribute('data-name');
       $(shadow_div).find('.Shade_Finish')[0].textContent = brand_shadows[0].getAttribute('data-finish');
