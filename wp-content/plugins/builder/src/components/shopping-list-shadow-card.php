@@ -12,19 +12,19 @@
 	   <div class="Row Gap_8">
 	    <div class="Align_Items_Baseline Shadow_Info Row Gap_8">
 	     <div class="Shade_Name">On a Whimsy</div>
-	     <div class="vr">&nbsp;</div><div class="Shadow Badge">Metallic</div><div class="vr">&nbsp;</div>
-	    <div class="Shadow Badge">Duochrome</div>
+	     <div class="vr">&nbsp;</div><div class="Shadow Badge Shade_Finish">Metallic</div><div class="vr">&nbsp;</div>
+	    <div class="Shadow Badge Shade_Shift">Duochrome</div>
 					<div class="vr">&nbsp;</div>
-	    <div class="Shadow Badge">Warm Neutral </div>
+	    <div class="Shadow Badge Shade_Color">Warm Neutral </div>
 					<div class="vr">&nbsp;</div>
-	    <div class="Shadow Badge">Muted</div>
+	    <div class="Shadow Badge Shade_Vividness">Muted</div>
 					<div class="vr">&nbsp;</div>
-	    <div class="Shadow Badge">Light</div>
-						
+	    <div class="Shadow Badge Shade_Lightness">Light</div>
+
 	    </div>
 	   </div>
 	   <div class="Row Gap_8">
-					<div class="Shadow Badge">Round, 26mm</div>
+					<div class="Shadow Badge Shade_Size_Shape">Round, 26mm</div>
 	    </div>
 	   </div>
 	  </div>
