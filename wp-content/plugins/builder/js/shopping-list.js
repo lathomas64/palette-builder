@@ -54,7 +54,7 @@ function build_shopping_list()
       populate_brand(brand_shadows[brands[index]], extra_div);
     }
     //we have no brand[index] but do have div[index] -> hide div
-    else if index >= brands.length && index < brand_divs.length{
+    else if(index >= brands.length && index < brand_divs.length){
       $(brand_divs[index]).addClass('Hidden');
     } else {
       console.log('this should never happen something has gone seriously wrong in build_shopping_list');

@@ -25,6 +25,16 @@ else {
 }
 };
 
+function modalOpen(event){
+		if(
+			$(event.target).is(".Modal_Trigger.Center")
+			//Other 
+		) {
+			$('#leftDrawer').addClass("On");
+			//check what id and show content
+		}
+};
+
 $(document).ready(function(event){
 	
 $(document).ready(

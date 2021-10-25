@@ -1,17 +1,70 @@
-## Left To Do
-- [ ] Share modal/automatic copy to clipboard. *With Gina for Styling*
-- [ ] Shopping list *With Gina for HTML/CSS*
+## PRIRORITY RED
+*Advanced Filters*
+  - [I] Populate data into needed fields
+  - [I] Make Advanced Filters work on list
+*Shopping List*
+  - [G] HTML/CSS Edits
+  - [G] Interactivity
+  - [I] Data population
+*Fill Story Shadows*
+  - [I] Populate shadow data into stories card & have drawn svgs lazy load shadow image. (color > img)
+*Populate Shadow Names in Palette*
+  - [I] Have shadow name display on hover
+*Login/Signup Path*
+  - [G] HTML/CSS Edits
+  - [G] JS Interactivity
+  - [I] User acct creation
+  - [I] Making forms do things
+  - [ ] Gumroad...stuff
+    - [G] Create Account
+    - [I] Dev integration
+  - [I] oAuth research/implementation  
+*Story Filter/Sort*
+  - [I] Activate Filter and sort options for Stories
+  
+## PRIORITY BLUE
+*Maybe / Overflow area*
+  - [G] HTML/CSS Edits
+  - [G] Interactivity
+*Site Menu*
+  - [G] HTML/CSS
+  - [G] Interactivity
+*Generic Modal*
+  - [G] HTML/CSS Edits
+  - [G] JS to display content
+*Share*
+  - [G] HTML/CSS Edits
+  - [G] JS Interactivity
+  - [I] Data Magic
+  
+## Bugs/Problems
 
-### Changes/Additions
-- [ ] Need to overwrite, save new saved palette *With Gina for interface*
-- [ ] how to remove saved palettes *With Gina for interface*
-- [ ] Builder should remember when a user has closed a help box and not show it to them again unles reset (reset will be in generic help modal)
-- [ ] Sort should show which sort is currently active *With Gina for styling*
+- [G] Scale Pan Controls
+- [G] Clear text search x / clear (interface)
+- [G] Neutral filter
+- [I] Clear palette/scale palette up shadow repeat
+- [I] Chrome loading issues
+- [I] Server sux issues
+- [G] Refactor Modal JS
+- [G] Exit modal clicking off
+- [I] Change single-click add behavior
+- [G] Rotate Palette CSS
+- [I] Overflow shadows to set-aside
 
-### Bugs
-- [ ] Using X to clear search field does not update list
-- [x] Attempting to load user color story breaks the whole thing.
-  * Imani's note: can you provide more detail?
-- [ ] Neutral filter button doesn't work. *With Gina to make Neutral a color tag*
-      * Gina's note: I've been thinking about adding neutral as a color family taxonomy, if that would make it easier.
-      * Imani's note: yes all the color filters are looking at color family currently and that would make the neutral filter work.
+## Tweaks/Enhancements 
+*Overwrite story by name*
+  - [G] Interface
+  - [I] Make do
+*Remove Saved palettes*
+  - [G] Interface
+  - [I] Make do
+- [I] Help box caching
+- [G] Active sort styling
+- [G] Selected filter style tweak
+- [G] Filter/dropdown/hoverpanel tweaks
+- [G] Filter clears
+- [G] Set Aside Clear
+
+
+
+

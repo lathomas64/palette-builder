@@ -11,6 +11,7 @@
 	<script src="../js/builder.js"></script>
 	<script src="../js/shadow-filters.js"></script>
 	<script src="../js/basic-functions.js"></script>
+	<script src="../js/shopping-list.js"></script>
 	<script src="../js/sort.js"></script>
 </head>
 <body>
@@ -225,7 +226,7 @@
 											</div>
 										</div>
 										<div class="Button_Block">
-											<div onclick="$('.Shopping_List_Modal').addClass('On');">build shopping list</div>
+											<div onclick="build_shopping_list();$('.Shopping_List_Modal').addClass('On');">build shopping list</div>
 										</div>
 									</div>
 								</div>

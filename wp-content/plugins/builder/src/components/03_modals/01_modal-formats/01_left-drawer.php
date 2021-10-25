@@ -1,4 +1,4 @@
-<div id="registerLoginDrawer" class="Modal Fade_In">
+<div id="leftDrawer" class="Modal Fade_In">
 	<div class="Row Reverse Space_Between Drawer_Overlay">
 		<div class="">&nbsp;</div>
 		<div class="Drawer_Container Fade_Out_Right">
