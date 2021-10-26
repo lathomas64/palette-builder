@@ -1101,7 +1101,7 @@ button.Nav_Button:hover .Heading {
 
 /**MODAL CONTROLS**/
 
-.Modal {
+.Modal, .Dropdown {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1242,4 +1242,15 @@ label.Check_Select {
 .Shadow.Badge {
  font: var(--font-filter-button);
 	font-weight: 400;
+}
+
+#centerModal .Drawer_Overlay {
+  justify-content: center;
+  align-items: center;
+}
+
+#centerModal .Drawer_Container {
+  aspect-ratio: 1 / 1;
+  height: 65%;
+  width: auto;
 }

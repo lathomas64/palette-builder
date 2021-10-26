@@ -1,5 +1,8 @@
+let debug = null;
 function populate_brand(brand_shadows, brand_div)
 {
+    debug = brand_div;
+    console.log(brand_div);
     prototype_div = $($(brand_div).find('.List_Tile')[0]);
     for(let index=0;index < brand_shadows.length; index++)
     {
@@ -10,6 +13,7 @@ function populate_brand(brand_shadows, brand_div)
         shadow_div = prototype_div.clone();
         $(brand_div).find('.List_Tile').append(shadow_div);
       }
+      console.log(shadow_div);
       $(shadow_div).find('.Shade_Name')[0].textContent = brand_shadows[0].getAttribute('data-name');
       $(shadow_div).find('.Shade_Finish')[0].textContent = brand_shadows[0].getAttribute('data-finish');
       $(shadow_div).find('.Shade_Shift')[0].textContent = brand_shadows[0].getAttribute('data-shift');

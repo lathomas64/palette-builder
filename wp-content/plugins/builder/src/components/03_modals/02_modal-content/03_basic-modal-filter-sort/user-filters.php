@@ -1,3 +1,3 @@
-<div id="UserStoryFilterBasic" class="Modal Singles_Filter Fade_In">
+<div id="UserStoryFilterBasic" class="Dropdown Singles_Filter Fade_In">
   <?php include 'story-filters.php' ?>
 </div>

@@ -1,9 +1,9 @@
-<div id="shadowFilterBasic" class="Modal Singles_Filter Fade_In">
+<div id="shadowFilterBasic" class="Dropdown Singles_Filter Fade_In">
 	<div class="Column">
 		<div class="Content Column Gap_24">
 			<div class="Panel_Title Row Space_Between">
 				<div class="Heading">Search for Shadows</div>
-				<button id="advancedFilterBtn" class="Text_Button Search">Open Advanced Search</button>
+				<button id="advancedFilterBtn" class="Modal_Trigger Right Text_Button Search">Open Advanced Search</button>
 			</div>
 			<div class="Filter_Groups Row Gap_24">
 				<div class="Left Column Gap_24">

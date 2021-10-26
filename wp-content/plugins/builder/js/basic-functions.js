@@ -3,7 +3,7 @@
 
 //SHADOW RESULTS HEIGHT CALC
 
-function resultsHeight(event){		
+function resultsHeight(event){	
 	if($(event.target).is(".Dismiss")) {
 		var helperBox = $(event.target).closest(".Helper_Box");
 		helperBox.addClass("Closed");
@@ -11,7 +11,6 @@ function resultsHeight(event){
 			helperBox.addClass("Hidden");
 		}, 300);
 			var resultsContainerHeight = $(".Right_Panel").outerHeight() - helperBox.outerHeight() - $(".Results_Control_Bar").outerHeight();
-				console.log("executed if");
 		$(".Results_Container").css(
 		"height", resultsContainerHeight
 		);
@@ -26,23 +25,51 @@ else {
 };
 
 function modalOpen(event){
-		if(
-			$(event.target).is(".Modal_Trigger.Center")
-			//Other 
-		) {
-			$('#leftDrawer').addClass("On");
-			//check what id and show content
-		}
+	console.log(event.target);
+	if(
+		$(event.target).is(".Modal_Trigger.Center")
+	) {
+		$('#centerModal').addClass("On");
+	}
+	if(
+		$(event.target).is(".Modal_Trigger.Left")
+	) {
+		$('#leftDrawer').addClass("On");
+	}
+	if(
+		$(event.target).is(".Modal_Trigger.Right")
+	) {
+		$('#rightDrawer').addClass("On");
+	}
+if(
+		$(event.target).is(".Modal_Trigger.List")
+	) {
+		$('#listDrawer').addClass("On");
+	}
 };
+
+function modalClose(event) {
+	if (
+			$(".Modal").hasClass("On") && !$(event.target).is(".Drawer_Container") && !$(event.target).is(".Singles_Filter")
+		) {
+			$(".Modal").removeClass("On");
+		}
+}
 
 $(document).ready(function(event){
 	
-$(document).ready(
-	resultsHeight
-	);
+$(resultsHeight);
 
 $(".Dismiss").click(	
 	resultsHeight
+);
+
+$(".Modal_Trigger").click(	
+	modalOpen
+);
+
+$(".Modal").click(	
+	modalClose
 );
 
 //Temporary hover JS for demo
@@ -232,10 +259,12 @@ storyDetail.mouseenter(function() {
 	
 ////Advanced Filter Overlay
 
+//NOTE: advancedFilterDrawer & advancedFilterBtn were removed in refactoring. Code below needs to be reworked
+
 //////Button Activation
 	$("#advancedFilterBtn").click(function(){
-		$("#advancedFilterDrawer").addClass("On");
-		$("#advancedFilterDrawer").addClass("Fade_In_Right");
+		// $("#advancedFilterDrawer").addClass("On");
+		// $("#advancedFilterDrawer").addClass("Fade_In_Right");
 		$("#shadowFilterBtn").removeClass("Selected")
 		$("#shadowFilterBasic").removeClass("On")
 	});

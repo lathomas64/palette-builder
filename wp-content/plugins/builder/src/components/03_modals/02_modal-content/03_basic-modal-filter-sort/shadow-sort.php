@@ -1,4 +1,4 @@
-<div id="shadowSortBasic" class="Modal Column Basic_Dropdown Fade_In">
+<div id="shadowSortBasic" class="Dropdown Column Basic_Dropdown Fade_In">
  <div class="Column Gap_16">
   <div class="Panel_Title">
    <div class="Heading">Sort Shadows</div>
