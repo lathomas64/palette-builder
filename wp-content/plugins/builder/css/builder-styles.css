@@ -1141,7 +1141,7 @@ ul.Shadow_List, ul.Palette_Contents {
  background-color: var(--system-white);
 }
 
-#shadowDetail.Dropdown, #storyDetail.Dropdown {
+#shadowDetail.Modal, #storyDetail.Modal {
 	opacity:0;
 	transition: .1s;
 }

@@ -82,7 +82,7 @@ $(".Modal").click(
   var detailPanelWidth = shadowDetail.outerWidth();
 
 shadowCard.mouseenter(function() {
-	$(this).addClass("Hovered");
+		$(this).addClass("Hovered");
 		update_shadow_detail($(this));
 		shadowDetail.css(
 				"left", builderWidth - detailPanelWidth
@@ -92,7 +92,7 @@ shadowCard.mouseenter(function() {
 			);
 		setTimeout (function() {
 			shadowDetail.addClass("Fade_In");
-		}, 3000);
+		}, 1000);
 		}).mouseleave(function () {
 			$(this).removeClass("Hovered");
 	   setTimeout (function() {
@@ -138,7 +138,7 @@ shadowCard.mouseenter(function() {
 		  if ($(".Hovered").length == 0) {
 				shadowDetail.removeClass("Fade_In");
 					}
-				}, 3000);
+				}, 1000);
 	});
 	
 		var storyDetail = $("#storyDetail");
@@ -170,7 +170,7 @@ storyCard.mouseenter(function() {
 				"display", ""
 			);
 					}
-				}, 3000);
+				}, 1000);
 			}).mousedown(function(){
 		storyDetail.removeClass("Fade_In");
 		setTimeout (function() {
@@ -201,7 +201,7 @@ storyDetail.mouseenter(function() {
 		  if ($(".Hovered").length == 0) {
 				storyDetail.removeClass("Fade_In");
 					}
-				}, 3000);
+				}, 1000);
 	});
 
 	
