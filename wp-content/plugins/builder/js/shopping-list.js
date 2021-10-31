@@ -1,9 +1,11 @@
 let debug = null;
 function populate_brand(brand_shadows, brand_div)
 {
-    debug = brand_div;
-    console.log(brand_div);
     prototype_div = $($(brand_div).find('.List_Tile')[0]);
+    while($(brand_div).find('.List_Tile').length > 1)
+    {
+      $(brand_div).find('.List_Tile')[1].remove();
+    }
     for(let index=0;index < brand_shadows.length; index++)
     {
       shadow = brand_shadows[index];
@@ -13,15 +15,15 @@ function populate_brand(brand_shadows, brand_div)
         shadow_div = prototype_div.clone();
         $(brand_div).find('.List_Tile').append(shadow_div);
       }
-      console.log(shadow_div);
-      $(shadow_div).find('.Shade_Name')[0].textContent = brand_shadows[0].getAttribute('data-name');
-      $(shadow_div).find('.Shade_Finish')[0].textContent = brand_shadows[0].getAttribute('data-finish');
-      $(shadow_div).find('.Shade_Shift')[0].textContent = brand_shadows[0].getAttribute('data-shift');
-      $(shadow_div).find('.Shade_Color')[0].textContent = brand_shadows[0].getAttribute('data-color-tag');
-      $(shadow_div).find('.Shade_Vividness')[0].textContent = brand_shadows[0].getAttribute('data-vividness');
-      $(shadow_div).find('.Shade_Lightness')[0].textContent = brand_shadows[0].getAttribute('data-lightness');
-      $(shadow_div).find('.Shade_Size_Shape')[0].textContent = brand_shadows[0].getAttribute('data-shape')+", "+brand_shadows[0].getAttribute('data-size')+"mm";
-      $(shadow_div).find('.Price_Value')[0].textContent = brand_shadows[0].getAttribute('data-price');
+      $(shadow_div).find('img')[0].src = $(brand_shadows[index]).find('img')[0].src;
+      $(shadow_div).find('.Shade_Name')[0].textContent = brand_shadows[index].getAttribute('data-name');
+      $(shadow_div).find('.Shade_Finish')[0].textContent = brand_shadows[index].getAttribute('data-finish');
+      $(shadow_div).find('.Shade_Shift')[0].textContent = brand_shadows[index].getAttribute('data-shift');
+      $(shadow_div).find('.Shade_Color')[0].textContent = brand_shadows[index].getAttribute('data-color-tag');
+      $(shadow_div).find('.Shade_Vividness')[0].textContent = brand_shadows[index].getAttribute('data-vividness');
+      $(shadow_div).find('.Shade_Lightness')[0].textContent = brand_shadows[index].getAttribute('data-lightness');
+      $(shadow_div).find('.Shade_Size_Shape')[0].textContent = brand_shadows[index].getAttribute('data-shape')+", "+brand_shadows[index].getAttribute('data-size')+"mm";
+      $(shadow_div).find('.Price_Value')[0].textContent = brand_shadows[index].getAttribute('data-price');
     }
     $(brand_div).removeClass('Hidden');
 }

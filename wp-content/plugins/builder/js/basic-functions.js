@@ -1,9 +1,9 @@
 //Functions for showing left & right drawers
-// When X button is clicked, call drawer function and function to reveal content 
+// When X button is clicked, call drawer function and function to reveal content
 
 //SHADOW RESULTS HEIGHT CALC
 
-function resultsHeight(event){	
+function resultsHeight(event){
 	if($(event.target).is(".Dismiss")) {
 		var helperBox = $(event.target).closest(".Helper_Box");
 		helperBox.addClass("Closed");
@@ -14,7 +14,7 @@ function resultsHeight(event){
 		$(".Results_Container").css(
 		"height", resultsContainerHeight
 		);
-}	
+}
 else {
 		var resultsContainerHeight = $(".Right_Panel").outerHeight() - $('.Helper_Box').outerHeight() - $(".Results_Control_Bar").outerHeight() - (48);
 
@@ -44,6 +44,10 @@ function modalOpen(event){
 if(
 		$(event.target).is(".Modal_Trigger.List")
 	) {
+		$(".Review_List").addClass("Active_Panel");
+		$(".Copy_Code").removeClass("Active_Panel");
+		$(".Buy_Shadows").removeClass("Active_Panel");
+		build_shopping_list();
 		$('#listDrawer').addClass("On");
 	}
 };
@@ -57,18 +61,18 @@ function modalClose(event) {
 }
 
 $(document).ready(function(event){
-	
+
 $(resultsHeight);
 
-$(".Dismiss").click(	
+$(".Dismiss").click(
 	resultsHeight
 );
 
-$(".Modal_Trigger").click(	
+$(".Modal_Trigger").click(
 	modalOpen
 );
 
-$(".Modal").click(	
+$(".Modal").click(
 	modalClose
 );
 
@@ -129,7 +133,7 @@ shadowCard.mouseenter(function() {
 			);
 			shadowDetail.addClass("Fade_In");
 		});
-	
+
 	shadowDetail.mouseenter(function() {
 		$(this).addClass("Hovered");
 	}).mouseleave(function () {
@@ -140,7 +144,7 @@ shadowCard.mouseenter(function() {
 					}
 				}, 3000);
 	});
-	
+
 		var storyDetail = $("#storyDetail");
 		var storyCard = $(".Story_Size .Search_Grid_Card")
 
@@ -192,7 +196,7 @@ storyCard.mouseenter(function() {
 			);
 			storyDetail.addClass("Fade_In");
 		});
-	
+
 storyDetail.mouseenter(function() {
 		$(this).addClass("Hovered");
 	}).mouseleave(function () {
@@ -204,7 +208,7 @@ storyDetail.mouseenter(function() {
 				}, 3000);
 	});
 
-	
+
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function(){
   $(".Info_Bar").slideToggle(100, function(){
@@ -256,7 +260,7 @@ storyDetail.mouseenter(function() {
 			$(element).find('.Wrapper').append(circle.clone());
 		}
 });
-	
+
 ////Advanced Filter Overlay
 
 //NOTE: advancedFilterDrawer & advancedFilterBtn were removed in refactoring. Code below needs to be reworked
@@ -268,14 +272,14 @@ storyDetail.mouseenter(function() {
 		$("#shadowFilterBtn").removeClass("Selected")
 		$("#shadowFilterBasic").removeClass("On")
 	});
-	
-//////Button Close	
+
+//////Button Close
 		$("#afCloseBtn").click(function(){
 		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
 		$("#advancedFilterDrawer").delay(3000).removeClass("On");
 	});
 
-	
+
 //////Close When Out-Click
 
 	//Show and Hide Palette Summary List
@@ -285,10 +289,10 @@ storyDetail.mouseenter(function() {
 				$(this).is(':visible') ? "Hide List" : "Show List");
 			$(".Text_Button").find('.svgPlus').toggle();
    $(".Text_Button").find('.svgMinus').toggle();
-		}); 
+		});
 		setTimeout (function() {
 			if (
-				$(".Palette_Contents").prop('scrollHeight') > $(".Palette_Contents").outerHeight() 
+				$(".Palette_Contents").prop('scrollHeight') > $(".Palette_Contents").outerHeight()
 			) {
 				$(".Scroll_Prompt").show();
 			}
@@ -297,4 +301,4 @@ storyDetail.mouseenter(function() {
 
 
 
-}); //end of document ready		
+}); //end of document ready
