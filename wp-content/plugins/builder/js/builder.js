@@ -44,13 +44,15 @@ var currentStory = new Object();
 
 	function setAside(shadow)
 	{
-		prototype = $(".Results_Container .Grid")[0].children[0];
-		aside_shadow = prototype.cloneNode(true);
-		aside_shadow.removeAttribute("id");
 		shadow_data = $('#'+shadow)[0];
-		$(aside_shadow).removeClass("Pan_Shape_Round Pan_Shape_Square Pan_Shape_Rectangle");
-		$(aside_shadow).removeClass("Pan_Size_26 Pan_Size_37 Pan_Size_Irregular");
-		$(aside_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
+		if(shadow_data !== undefined)
+		{
+			prototype = $(".Results_Container .Grid")[0].children[0];
+			aside_shadow = prototype.cloneNode(true);
+			aside_shadow.removeAttribute("id");
+			$(aside_shadow).removeClass("Pan_Shape_Round Pan_Shape_Square Pan_Shape_Rectangle");
+			$(aside_shadow).removeClass("Pan_Size_26 Pan_Size_37 Pan_Size_Irregular");
+			$(aside_shadow).addClass("Pan_Shape_"+shadow_data.getAttribute("data-shape"));
 		$(aside_shadow).addClass("Pan_Size_"+shadow_data.getAttribute("data-size"));
 		$(aside_shadow).removeClass("Invisible");
 		image_element = aside_shadow.getElementsByTagName('img')[0];
@@ -103,7 +105,26 @@ var currentStory = new Object();
 	function buildGrid(evt, height, width) {
 		console.log('buildGrid called');
 		grid = document.getElementById('Story_Grid');
-		prototype = grid.firstChild;
+		//updateShadow(0, null); //clear out first shadow for prototype
+		prototype = grid.firstChild.cloneNode(true);
+
+		image_element = prototype.getElementsByTagName('img')[0];
+		if(image_element !== undefined)
+		{
+				image_element.remove();
+		}
+		remove_list = [];
+		shadow_attributes = prototype.attributes;
+		for(index = 0; index < shadow_attributes.length; index++)
+		{
+			let attribute = shadow_attributes[index];
+			if(attribute.name.includes("data-")){
+				remove_list.push(attribute.name);
+			}
+		}
+		$(prototype).addClass('Invisible');
+		remove_list.forEach(attribute=>prototype.removeAttribute(attribute));
+
 		while (grid.firstChild) {
 			grid.removeChild(grid.firstChild);
 		}

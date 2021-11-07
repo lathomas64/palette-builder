@@ -9,7 +9,7 @@
 *Fill Story Shadows*
   - [I] Populate shadow data into stories card & have drawn svgs lazy load shadow image. (color > img)
 *Populate Shadow Names in Palette*
-  - [I] Have shadow name display on hover
+  - [x] Have shadow name display on hover
 *Login/Signup Path*
   - [G] HTML/CSS Edits
   - [G] JS Interactivity
@@ -42,7 +42,7 @@
 - [G] Scale Pan Controls
 - [G] Clear text search x / clear (interface)
 - [G] Neutral filter
-- [I] Clear palette/scale palette up shadow repeat
+- [x] Clear palette/scale palette up shadow repeat
 - [I] Chrome loading issues
 - [I] Server sux issues
 - [G] Refactor Modal JS
