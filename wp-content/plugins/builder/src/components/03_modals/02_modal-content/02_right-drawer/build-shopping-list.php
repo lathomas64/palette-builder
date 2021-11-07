@@ -266,7 +266,7 @@
 			  <div class="Section_Title">At checkout, paste the code into the discount area to save between 10% – 20%!</div>
 					<div class="Code_Copy Row Space_Between Align_Items_Center">
 						<span class="Affiliate_Code Panel_title">FIREDRAKEBEAUTYLABS</span>
-						<button class="Button_Block">Copy Code</button>
+						<button onclick="navigator.clipboard.writeText('FIREDRAKEBEAUTYLABS');" class="Button_Block">Copy Code</button>
 					</div>
 					<div class="Helper_Box Column Gap_8 Disclaimer_Explanation">
 					 <div class="Heading">Why are we asking you to do this?</div>
