@@ -1,4 +1,5 @@
 let debug = null;
+let brand_shadows = {};//shopping list shadows separated by brand
 function populate_brand(brand_shadows, brand_div)
 {
     prototype_div = $($(brand_div).find('.List_Tile')[0]);
@@ -70,4 +71,11 @@ function build_shopping_list()
   {
     brand_divs.append(divs_to_append[index]);
   }
+}
+
+function remove_shopping_shadow(shadow_div)
+{
+  shadow_div = $(shadow_div).parent();
+  console.log(shadow_div);
+  //remove a shadow from the shopping list
 }
