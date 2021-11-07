@@ -1270,9 +1270,27 @@ label.Remember {
 	
 	/**SHOPPING LIST**/
 		
-	.Build_List_Title .Panel_Title {
- color: var(--FDBL-white-text);
- font: var(--font-hero-heading);
+.Build_List_Carousel > div {
+	transform: translateX(100px);
+	opacity: 0;
+	transition:.3s;
+}
+
+.Build_List_Carousel > div.Active_Panel {
+	order:-1;
+	transform: translateX(0);
+	opacity: 1;
+	transition:.3s;
+}
+
+.Build_List_Carousel > div.Prev_Panel {
+	transform: translateX(-100px);
+	transition:.3s;
+}
+		
+.Build_List_Title .Panel_Title {
+	color: var(--FDBL-white-text);
+	font: var(--font-hero-heading);
 }
 
 .Build_List_Carousel .Panel_Title {
@@ -1318,6 +1336,9 @@ label.Remember {
 	transition: 1s;
 	/* padding-bottom: 16px; */
 }
+
+.List_Tile:hover {
+ gap: 16px; }
 
 .Shadow_Details {
 	grid-template-columns: 9fr 1fr;
@@ -1414,7 +1435,7 @@ label.Remember {
  text-transform: uppercase;
 }
 
-.Code_Copy {
+.Code_Copy.Not_Copied {
  border: 4px dashed #CFBD63;
  background-color: var(--FDBL-green-dark);
  padding: 24px;
@@ -1483,4 +1504,17 @@ label.Remember {
 
 .Open_Links.Invalid .Panel_Title {
 	color: var(--FDBL-dark-gray);
+}
+
+button.Prev_Slide {
+	background-color: var(--FDBL-dark-teal);
+	color: var(--system-white);
+}
+
+button.Next_Slide div::after {
+	content: " >";
+}
+
+button.Prev_Slide div::before {
+	content: "< ";
 }

@@ -65,6 +65,10 @@
 - [G] Filter clears
 - [G] Set Aside Clear
 
+## Additions
 
+- [ ] Scroll to top button for filter list
+- [ ] re-filtering shadows brings user to top of list
+- [ ] Reset modals on exit
 
 
