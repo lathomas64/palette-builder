@@ -439,6 +439,7 @@ var currentStory = new Object();
 
 			}
 			grid_shadow.setAttribute('data-shadow-id', shadow);
+			$(grid_shadow).find('.Shadow_Name').text(grid_shadow.getAttribute('data-name'));
 		} else {
 			console.log('null removing grid shadow data attributes:');
 			console.log(grid_shadow);
