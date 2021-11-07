@@ -1,19 +1,33 @@
 ## PRIRORITY RED
 *Advanced Filters*
   - [I] Populate data into needed fields
+  	- [ ] populate price dropdown
+  	- [ ] populate shipping list
+  	- [ ] ask gina about show temperature options button
+  	- [ ] brand name 
   - [I] Make Advanced Filters work on list
+  	- [ ] copy from basic filters where possible
+  	- [ ] add convenience variables in javascript if needed/helpful
+  	- [ ] reduce that list! go go go
 *Shopping List*
   - [G] HTML/CSS Edits
   - [G] Interactivity
   - [I] Data population
+  	- [ ] show shadows from story on first tab
+  	- [ ] remove shadows from list if x is clicked
+  	- [ ] make list of links for 3rd panel
+		- [ ] group or not based on brand
+		- [ ] pull data for where to link
 *Fill Story Shadows*
   - [I] Populate shadow data into stories card & have drawn svgs lazy load shadow image. (color > img)
+  	- [ ] ids in story -> colors/imgs for shadow image 
 *Populate Shadow Names in Palette*
   - [x] Have shadow name display on hover
 *Login/Signup Path*
   - [G] HTML/CSS Edits
   - [G] JS Interactivity
   - [I] User acct creation
+  	- [ ]  
   - [I] Making forms do things
   - [ ] Gumroad...stuff
     - [G] Create Account
