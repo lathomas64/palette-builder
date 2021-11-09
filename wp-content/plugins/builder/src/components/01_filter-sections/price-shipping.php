@@ -1,34 +1,6 @@
 <div class="Price_Shipping Filter_Section Column Gap_24">
 	<div class="Filter_Section Column Gap_16">
-		  <div class="Section_Title">
-	  <div class="Heading">Price Per Pan</div>
-  </div>
-		<div class="Column Gap_8">
-  <div class="Filter_Intro">I'm interested in eyeshadows between...</div>
-  <div class="Row Gap_8 Align_Items_Center">
-	  <div class="Select_Range Row Gap_4 Align_Items_Center">
-		  $
-		  <select>
-			  <option>Price</option>
-			  <option>1.00</option>
-			  <option>1.00</option>
-			  <option>1.00</option>
-			  <option>10.00</option>
-		  </select>
-	  </div>
-	  <div>and</div>
-	  <div class="Select_Range Row Gap_4 Align_Items_Center">
-		  $
-		  <select>
-			  <option>Price</option>
-			  <option>1.00</option>
-			  <option>1.00</option>
-			  <option>1.00</option>
-			  <option>10.00</option>
-		  </select>
-	  </div>
-  </div>
-	</div>
+		<?php include "components/01_filter-sections/price-range.php"; ?>
 	</div>
 		<div class="Filter_Section Column Gap_16">
 			<div class="Section_Title">

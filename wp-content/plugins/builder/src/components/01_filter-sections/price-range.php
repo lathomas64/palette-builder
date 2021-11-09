@@ -1,4 +1,3 @@
-
   <div class="Section_Title">
 	  <div class="Heading">Price Per Pan</div>
   </div>
