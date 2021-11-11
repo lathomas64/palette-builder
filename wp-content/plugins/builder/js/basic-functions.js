@@ -25,7 +25,6 @@ else {
 };
 
 function modalOpen(event){
-	console.log(event.target);
 	if(
 		$(event.target).is(".Modal_Trigger.Center")
 	) {
@@ -44,7 +43,7 @@ function modalOpen(event){
 if(
 		$(event.target).is(".Modal_Trigger.List")
 	) {
-		$(".Review_List").addClass("Active_Panel");
+		$(".Check_List").addClass("Active_Panel");
 		$(".Copy_Code").removeClass("Active_Panel");
 		$(".Buy_Shadows").removeClass("Active_Panel");
 		build_shopping_list();
@@ -54,10 +53,18 @@ if(
 
 function modalClose(event) {
 	if (
-			$(".Modal").hasClass("On") && !$(event.target).parents().is(".Drawer_Container")
+			$(".Modal").hasClass("On") && 
+			!$(event.target).parents().is(".Drawer_Container")
 		) {
 			$(".Modal").removeClass("On");
 		}
+}
+
+function shoppingListSlider (event){
+	if ($(event.target).is("Next_Slide")) {
+		$(this).closest("Active_Panel").removeClass("Active_Panel");		
+		$(this).next().addClass("Active_Panel");
+	}
 }
 
 $(document).ready(function(event){
@@ -76,6 +83,10 @@ $(".Modal").click(
 	modalClose
 );
 
+$("#listDrawer button").click(
+	shoppingListSlider
+);
+
 //Temporary hover JS for demo
 
 		var shadowDetail = $("#shadowDetail");
@@ -86,7 +97,7 @@ $(".Modal").click(
   var detailPanelWidth = shadowDetail.outerWidth();
 
 shadowCard.mouseenter(function() {
-		$(this).addClass("Hovered");
+	$(this).addClass("Hovered");
 		update_shadow_detail($(this));
 		shadowDetail.css(
 				"left", builderWidth - detailPanelWidth
@@ -96,7 +107,7 @@ shadowCard.mouseenter(function() {
 			);
 		setTimeout (function() {
 			shadowDetail.addClass("Fade_In");
-		}, 1000);
+		}, 3000);
 		}).mouseleave(function () {
 			$(this).removeClass("Hovered");
 	   setTimeout (function() {
@@ -142,7 +153,7 @@ shadowCard.mouseenter(function() {
 		  if ($(".Hovered").length == 0) {
 				shadowDetail.removeClass("Fade_In");
 					}
-				}, 1000);
+				}, 3000);
 	});
 
 		var storyDetail = $("#storyDetail");
@@ -174,7 +185,7 @@ storyCard.mouseenter(function() {
 				"display", ""
 			);
 					}
-				}, 1000);
+				}, 3000);
 			}).mousedown(function(){
 		storyDetail.removeClass("Fade_In");
 		setTimeout (function() {
@@ -205,7 +216,7 @@ storyDetail.mouseenter(function() {
 		  if ($(".Hovered").length == 0) {
 				storyDetail.removeClass("Fade_In");
 					}
-				}, 1000);
+				}, 3000);
 	});
 
 
@@ -221,7 +232,7 @@ storyDetail.mouseenter(function() {
 	});
 
 
-	// Changing panels with button click
+// Changing panels with button click
 	$(".Right_Panel_Nav button").click(
 		function(){
 	var numberIndex = $(this).index();
@@ -234,6 +245,9 @@ storyDetail.mouseenter(function() {
 		$(".Search_And_Filter").find(".Search_Filter_Panel").eq(numberIndex).addClass("Active_Panel");
 	}
 	});
+
+
+
 
 //Draw circles for story cards
 	$(".Search_Grid_Card").each(

@@ -57,8 +57,8 @@
 									</div>
 									<div>Save</div>
 								</a>
-								<div class="Button_Micro Row Gap_8 Justify_Content_Space_Between">
-									<div class="Builder_Share">
+								<div class="Button_Micro Row Gap_8 Justify_Content_Space_Between Modal_Trigger Center">
+									<div class=" Modal_Trigger CenterBuilder_Share">
 										<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
 												d="M12 0.5H6C5.20435 0.5 4.44129 0.749529 3.87868 1.19369C3.31607 1.63786 3 2.24028 3 2.86842V6.02632H4V2.86842C4 2.44966 4.21071 2.04805 4.58579 1.75194C4.96086 1.45583 5.46957 1.28947 6 1.28947H12C12.5304 1.28947 13.0391 1.45583 13.4142 1.75194C13.7893 2.04805 14 2.44966 14 2.86842V13.1316C14 13.5503 13.7893 13.952 13.4142 14.2481C13.0391 14.5442 12.5304 14.7105 12 14.7105H6C5.46957 14.7105 4.96086 14.5442 4.58579 14.2481C4.21071 13.952 4 13.5503 4 13.1316V9.97368H3V13.1316C3 13.7597 3.31607 14.3621 3.87868 14.8063C4.44129 15.2505 5.20435 15.5 6 15.5H12C12.7956 15.5 13.5587 15.2505 14.1213 14.8063C14.6839 14.3621 15 13.7597 15 13.1316V2.86842C15 2.24028 14.6839 1.63786 14.1213 1.19369C13.5587 0.749529 12.7956 0.5 12 0.5ZM0 7.60526H10.25L7 5.03947L7.664 4.44737L12.164 8L7.664 11.5526L7 10.9605L10.25 8.39474H0V7.60526Z"
@@ -66,7 +66,7 @@
 											></path>
 										</svg>
 									</div>
-									<div>Share</div>
+									<div class="Modal_Trigger Center">Share</div>
 								</div>
 							</div>
 							<div class="Working_Actions Row Justify_Content_Left Gap_24">
