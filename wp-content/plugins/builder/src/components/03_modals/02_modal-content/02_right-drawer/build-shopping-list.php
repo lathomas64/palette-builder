@@ -7,7 +7,7 @@
 					  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.645 12.3433L3.30167 7L8.645 1.645L7 0L0 7L7 14L8.645 12.3433Z"></path></svg>
 						</div>Go back to your palette</button>
 			</div>
-		<div class="Build_List_Carousel Column Gap_32">
+		<div class="Build_List_Carousel Row">
 		<div class="Check_List Column Active_Panel Gap_32">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">1.</div>
@@ -262,7 +262,7 @@
   </div>
  </div>
  </div>
-		<div class="Copy_Code Column Gap_32 Hidden">
+		<div class="Copy_Code Column Gap_32">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">2.</div>
 		  <div class="Panel_Title">Copy Our Affiliate Code</div>
@@ -288,7 +288,7 @@
 				</div>
 			</div>
 	</div>
-		<div class="Buy_Shadows Column Gap_32 Hidden">
+		<div class="Buy_Shadows Column Gap_32">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">3.</div>
 		  <div class="Panel_Title">Buy Shadows from Brand Sites</div>
