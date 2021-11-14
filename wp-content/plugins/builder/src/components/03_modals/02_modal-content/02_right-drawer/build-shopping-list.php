@@ -1,4 +1,4 @@
-<div id="listDrawer" class="Modal Shopping_List_Modal Fade_In">
+<div id="listDrawer" class="Modal Fade_In">
 	<div class="Grid_Container Grid_Test Space_Between Drawer_Overlay">
 		<div class="Build_List_Title Column Gap_24">
 			<div class="Panel_Title">You're almost finished!</div>
@@ -7,7 +7,7 @@
 					  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.645 12.3433L3.30167 7L8.645 1.645L7 0L0 7L7 14L8.645 12.3433Z"></path></svg>
 						</div>Go back to your palette</button>
 			</div>
-		<div class="Build_List_Carousel Column Gap_32">
+		<div class="Build_List_Carousel Row">
 		<div class="Check_List Column Active_Panel Gap_32">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">1.</div>
@@ -253,17 +253,16 @@
     			</div>
    			</div>
 					<div class="Row Space_Between">
-						<button class="Button_Block Prev_Slide">
-							<div>Check Your List</div>
+						<button disabled class="Button_Block Prev_Slide">
+							Check Your List
 						</button>
-						<button class="Button_Block Next_Slide">
-							<div>Next: Help Out the Builder</div>
+						<button class="Button_Block Next_Slide">Next: Help Out the Builder
 						</button>
 					</div>
   </div>
  </div>
  </div>
-		<div class="Copy_Code Column Gap_32 Hidden">
+		<div class="Copy_Code Column Gap_32">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">2.</div>
 		  <div class="Panel_Title">Copy Our Affiliate Code</div>
@@ -281,16 +280,15 @@
 					</div>
 					<div class="Row Space_Between">
 						<button class="Button_Block Prev_Slide">
-							<div>Check Your List</div>
+							Check Your List
 						</button>
-						<button class="Button_Block Next_Slide">
-							<div>Next: Help Out the Builder</div>
+						<button class="Button_Block Next_Slide">Next: Help Out the Builder
 						</button>
 					</div>
 				</div>
 			</div>
 	</div>
-		<div class="Buy_Shadows Column Gap_32 Hidden">
+		<div class="Buy_Shadows Column Gap_32">
 		 <div class="Row Gap_16 Align_Items_Center">
 		  <div class="Number_Icon">3.</div>
 		  <div class="Panel_Title">Buy Shadows from Brand Sites</div>
@@ -310,10 +308,8 @@
 						<button class="Button_Block">Open Your List in (9) Tabs</button>
 					</div>
 					<div class="Row Space_Between">
-	  			<button class="Button_Block Prev_Slide">
-	   			<div>Check Your List</div>
-	  			</button>
-	  			<button class="Button_Block Next_Slide">
+	  			<button class="Button_Block Prev_Slide">Check Your List</button>
+	  			<button disabled class="Button_Block Next_Slide">
 	   			<div>Next: Help Out the Builder</div>
 	  			</button>
 	 			</div>

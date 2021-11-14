@@ -54,17 +54,24 @@ if(
 function modalClose(event) {
 	if (
 			$(".Modal").hasClass("On") && 
-			!$(event.target).parents().is(".Drawer_Container")
+			!$(event.target).parents().is(".Drawer_Overlay")
 		) {
 			$(".Modal").removeClass("On");
 		}
 }
 
 function shoppingListSlider (event){
-	if ($(event.target).is("Next_Slide")) {
-		$(this).closest("Active_Panel").removeClass("Active_Panel");		
-		$(this).next().addClass("Active_Panel");
-	}
+	console.log(event.target);
+	if ($(event.target).is(".Next_Slide") && 
+				!$(event.target).attr("disabled")) {
+					$(this).closest(".Active_Panel").next().addClass("Active_Panel")
+					$(this).closest(".Active_Panel").removeClass("Active_Panel")	
+				}
+	if ($(event.target).is(".Prev_Slide") && 
+				!$(event.target).attr("disabled")) {
+					$(this).closest(".Active_Panel").prev().addClass("Active_Panel")
+					$(this).closest(".Active_Panel").removeClass("Active_Panel")
+				}
 }
 
 $(document).ready(function(event){

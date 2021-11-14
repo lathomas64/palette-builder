@@ -1518,3 +1518,13 @@ button.Next_Slide div::after {
 button.Prev_Slide div::before {
 	content: "< ";
 }
+
+.Build_List_Carousel {
+ flex-flow: row nowrap;
+ overflow: hidden;
+}
+
+.Build_List_Carousel > div {
+ flex: 1 0 100%;
+ height: fit-content;
+}
