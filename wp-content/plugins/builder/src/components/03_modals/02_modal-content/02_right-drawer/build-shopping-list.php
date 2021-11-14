@@ -1,4 +1,4 @@
-<div id="listDrawer" class="Modal Shopping_List_Modal Fade_In">
+<div id="listDrawer" class="Modal Fade_In">
 	<div class="Grid_Container Grid_Test Space_Between Drawer_Overlay">
 		<div class="Build_List_Title Column Gap_24">
 			<div class="Panel_Title">You're almost finished!</div>
@@ -253,11 +253,10 @@
     			</div>
    			</div>
 					<div class="Row Space_Between">
-						<button class="Button_Block Prev_Slide">
-							<div>Check Your List</div>
+						<button disabled class="Button_Block Prev_Slide">
+							Check Your List
 						</button>
-						<button class="Button_Block Next_Slide">
-							<div>Next: Help Out the Builder</div>
+						<button class="Button_Block Next_Slide">Next: Help Out the Builder
 						</button>
 					</div>
   </div>
@@ -281,10 +280,9 @@
 					</div>
 					<div class="Row Space_Between">
 						<button class="Button_Block Prev_Slide">
-							<div>Check Your List</div>
+							Check Your List
 						</button>
-						<button class="Button_Block Next_Slide">
-							<div>Next: Help Out the Builder</div>
+						<button class="Button_Block Next_Slide">Next: Help Out the Builder
 						</button>
 					</div>
 				</div>
@@ -310,10 +308,8 @@
 						<button class="Button_Block">Open Your List in (9) Tabs</button>
 					</div>
 					<div class="Row Space_Between">
-	  			<button class="Button_Block Prev_Slide">
-	   			<div>Check Your List</div>
-	  			</button>
-	  			<button class="Button_Block Next_Slide">
+	  			<button class="Button_Block Prev_Slide">Check Your List</button>
+	  			<button disabled class="Button_Block Next_Slide">
 	   			<div>Next: Help Out the Builder</div>
 	  			</button>
 	 			</div>

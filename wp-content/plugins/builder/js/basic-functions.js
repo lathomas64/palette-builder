@@ -61,10 +61,17 @@ function modalClose(event) {
 }
 
 function shoppingListSlider (event){
-	if ($(event.target).is("Next_Slide")) {
-		$(this).closest("Active_Panel").removeClass("Active_Panel");		
-		$(this).next().addClass("Active_Panel");
-	}
+	console.log(event.target);
+	if ($(event.target).is(".Next_Slide") && 
+				!$(event.target).attr("disabled") {
+					$(this).closest(".Active_Panel").next().addClass("Active_Panel").removeClass("Hidden");
+					$(this).closest(".Active_Panel").removeClass("Active_Panel").addClass("Hidden");		
+				}
+	if ($(event.target).is(".Prev_Slide") && 
+				!$(event.target).attr("disabled")) {
+					$(this).closest(".Active_Panel").prev().addClass("Active_Panel").removeClass("Hidden");
+					$(this).closest(".Active_Panel").removeClass("Active_Panel").addClass("Hidden");		
+				}
 }
 
 $(document).ready(function(event){
