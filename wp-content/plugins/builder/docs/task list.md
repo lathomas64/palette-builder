@@ -1,7 +1,7 @@
 ## PRIRORITY RED
 *Advanced Filters*
   - [I] Populate data into needed fields
-  	- [ ] populate price dropdown
+  	- [x] populate price dropdown
   	- [ ] populate shipping list
   	- [ ] ask gina about show temperature options button
   	- [ ] brand name 
