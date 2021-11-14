@@ -133,6 +133,11 @@ $count = $shadows->found_posts;
 					//$country = get_field('name', $country_details[0]);
 					$country = $country_details[0]->name;
 				}
+				$shipping_details = wp_get_post_terms ($brand[0], 'tax_shipping');
+				if($shipping_details)
+				{
+					$ships = $shipping_details[0]->name;
+				}
 			}
 		}
   	?>
@@ -161,10 +166,9 @@ $count = $shadows->found_posts;
 						data-lightness='<?php echo $lightness; ?>'
 						data-lightness-sort='<?php echo $avg_lightness; ?>'
 						data-color-sort='<?php echo $avg_hue; ?>'
-						debug-brand='<?php print_r($brand); ?>'
-						debug-country='<?php print_r($country); ?>'
 						<?php if ($brand) { ?>
 						data-country='<?php echo $country; ?>'
+						data-ships='<?php echo $ships; ?>'
 						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
 						<?php } else { ?>
 						data-country='none'

@@ -3,9 +3,13 @@
   - [I] Populate data into needed fields
   	- [x] populate price dropdown
   	- [ ] populate shipping list
-  	- [ ] ask gina about show temperature options button
+		- [x] add shipping data to shadows
+		- [ ] use shipping data to create list for shipping input
+	- [G] Markup for show temperature options button 
   	- [ ] brand name 
   - [I] Make Advanced Filters work on list
+  	- [ ] add shipping to existing filter functions 
+  	- [ ] add temperature options to filter functions
   	- [ ] copy from basic filters where possible
   	- [ ] add convenience variables in javascript if needed/helpful
   	- [ ] reduce that list! go go go
