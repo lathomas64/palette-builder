@@ -3,9 +3,12 @@
 		<div class="Build_List_Title Column Gap_24">
 			<div class="Panel_Title">You're almost finished!</div>
 			<div class="Subheading">Just a few things first</div>
-			<button onclick="$('.Shopping_List_Modal').removeClass('On')" class="Text_Button Row Gap_4 Align_Items_Center"><div class="Icon_Container Column Justify_Content_Center">
+			<button class="Text_Button Row Gap_4 Align_Items_Center Close">
+				<div class="Icon_Container Column Justify_Content_Center">
 					  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.645 12.3433L3.30167 7L8.645 1.645L7 0L0 7L7 14L8.645 12.3433Z"></path></svg>
-						</div>Go back to your palette</button>
+						</div>
+						Go back to your palette
+			</button>
 			</div>
 		<div class="Build_List_Carousel Row">
 		<div class="Check_List Column Active_Panel Gap_32">
@@ -254,9 +257,9 @@
    			</div>
 					<div class="Row Space_Between">
 						<button disabled class="Button_Block Prev_Slide">
-							Check Your List
+							<div class="Prev_Slide">Check Your List</div>
 						</button>
-						<button class="Button_Block Next_Slide">Next: Help Out the Builder
+						<button class="Button_Block Next_Slide"><div class="Next_Slide">Next: Help Out the Builder</div>
 						</button>
 					</div>
   </div>
@@ -270,7 +273,7 @@
 			<div class="Column Gap_24 Drawer_Container">
 				<div class="Column Gap_48">
 			  <div class="Section_Title">At checkout, paste the code into the discount area to save between 10% – 20%!</div>
-					<div class="Code_Copy Row Space_Between Align_Items_Center">
+					<div class="Code_Copy Not_Copied Row Space_Between Align_Items_Center">
 						<span class="Affiliate_Code Panel_title">FIREDRAKEBEAUTYLABS</span>
 						<button onclick="navigator.clipboard.writeText('FIREDRAKEBEAUTYLABS');$('.Code_Copy').addClass('Copied');" class="Button_Block">Copy Code</button>
 					</div>
@@ -280,9 +283,9 @@
 					</div>
 					<div class="Row Space_Between">
 						<button class="Button_Block Prev_Slide">
-							Check Your List
+							<div class="Prev_Slide">Check Your List</div>
 						</button>
-						<button class="Button_Block Next_Slide">Next: Help Out the Builder
+						<button class="Button_Block Next_Slide"><div class="Next_Slide">Next: Help Out the Builder</div>
 						</button>
 					</div>
 				</div>
@@ -308,7 +311,7 @@
 						<button class="Button_Block">Open Your List in (9) Tabs</button>
 					</div>
 					<div class="Row Space_Between">
-	  			<button class="Button_Block Prev_Slide">Check Your List</button>
+	  			<button class="Button_Block Prev_Slide"><div class="Prev_Slide">Check Your List</div></button>
 	  			<button disabled class="Button_Block Next_Slide">
 	   			<div class="Next_Slide">Next: Help Out the Builder</div>
 	  			</button>

@@ -58,6 +58,11 @@ function modalClose(event) {
 		) {
 			$(".Modal").removeClass("On");
 		}
+		else if(
+			$(event.target).hasClass("Close")
+		) {
+			$(event.target).closest(".Modal").removeClass("On");
+		}
 }
 
 function shoppingListSlider (event){
