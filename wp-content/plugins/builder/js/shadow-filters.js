@@ -2,7 +2,15 @@ var PRICE_MIN = -1;
 var PRICE_MAX = -1;
 var FILTERS = {"colors": new Set(),
 			   "finishes": new Set(),
+				 "shipping": new Set(),
+				 "brand": new Set(),
 			   "characteristics": new Set(),
+				 "demographics": new Set(),
+				 "shift": new Set(),
+				 "vividness" new Set(),
+				 "lightness": new Set(),
+				 "size": new Set(),
+				 "shape": new Set(),
 				"countries": new Set()}
 
 function Toggle_Filter(event, filterset) {
@@ -55,6 +63,14 @@ function update(){
               'colors': Array.from(FILTERS['colors']),
               'finishes': Array.from(FILTERS['finishes']),
               'characteristics': Array.from(FILTERS['characteristics']),
+							'demographics': Array.from(FILTERS['demographics']),
+							'brand': Array.from(FILTERS['brand']),
+							'shift': Array.from(FILTERS['shift']),
+							'vividness': Array.from(FILTERS['vividness']),
+							'lightness': Array.from(FILTERS['lightness']),
+							'size': Array.from(FILTERS['size']),
+							'shape': Array.from(FILTERS['shape']),
+							'shipping': Array.from(FILTERS['shipping']),
               'countries': Array.from(FILTERS['countries']),
               'price_min': PRICE_MIN,
               'price_max': PRICE_MAX

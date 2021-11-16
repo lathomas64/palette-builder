@@ -11,38 +11,13 @@
 
 	<div class="Check_List Filterable">
 		<ul class="Column Gap_8">
+			<!-- we may have issues here because of ids being duplicated across instances of shipping countries -->
+			<?php foreach($shipping_options as $option){?>
 			<li>
-				<input id="c1" type="checkbox" />
-				<label for="c1">Checkbox</label>
+				<input onclick="Toggle_Filter(event, 'shipping');" id="<?php echo $option; ?>" type="checkbox" />
+				<label for="<?php echo $option; ?>"><?php echo $option; ?></label>
 			</li>
-			<li>
-				<input id="c2" type="checkbox" />
-				<label for="c2">Checkbox</label>
-			</li>
-			<li>
-				<input id="c3" type="checkbox" />
-				<label for="c3">Checkbox</label>
-			</li>
-			<li>
-				<input id="c4" type="checkbox" />
-				<label for="c4">Checkbox</label>
-			</li>
-			<li>
-				<input id="c5" type="checkbox" />
-				<label for="c5">Checkbox</label>
-			</li>
-			<li>
-				<input id="c6" type="checkbox" />
-				<label for="c6">Checkbox</label>
-			</li>
-			<li>
-				<input id="c7" type="checkbox" />
-				<label for="c7">Checkbox</label>
-			</li>
-			<li>
-				<input id="c8" type="checkbox" />
-				<label for="c8">Checkbox</label>
-			</li>
+		<?php } ?>
 		</ul>
 	</div>
 </div>

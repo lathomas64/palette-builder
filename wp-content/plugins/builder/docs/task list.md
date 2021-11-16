@@ -8,6 +8,7 @@
 	- [G] Markup for show temperature options button 
   	- [ ] brand name 
   - [I] Make Advanced Filters work on list
+  	- [ ] update actions/filters.php to filter on all things 
   	- [ ] add shipping to existing filter functions 
   	- [ ] add temperature options to filter functions
   	- [ ] copy from basic filters where possible

@@ -2,6 +2,8 @@
 ini_set("display_errors", "1");
 ini_set("display_startup_errors", "1");
 error_reporting(E_ALL);
+$shipping_options = array();
+$brand_list = array();
 if (!defined("ABSPATH")) {
 	/** Set up WordPress environment */
 	require_once "/usr/share/wordpress/wp-load.php";
@@ -126,6 +128,11 @@ $count = $shadows->found_posts;
 				}
 			}
 			if ($brand) {
+				$brand_name = get_post_field("post_title", $brand[0]);
+				if($brand_name && !in_array($brand_name, $brand_list)){
+						array_push($brand_list, $brand_name);
+				}
+
 				//get country from brand
 				$country_details = wp_get_post_terms($brand[0], 'tax_countries');
 				if($country_details)
@@ -137,6 +144,9 @@ $count = $shadows->found_posts;
 				if($shipping_details)
 				{
 					$ships = $shipping_details[0]->name;
+					if(!in_array($ships, $shipping_options)){
+						array_push($shipping_options, $ships);
+					}
 				}
 			}
 		}
@@ -169,7 +179,7 @@ $count = $shadows->found_posts;
 						<?php if ($brand) { ?>
 						data-country='<?php echo $country; ?>'
 						data-ships='<?php echo $ships; ?>'
-						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
+						data-brand='<?php echo $brand_name; ?>'
 						<?php } else { ?>
 						data-country='none'
 						data-brand='none'
