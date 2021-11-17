@@ -3,12 +3,14 @@
   - [I] Populate data into needed fields
   	- [x] populate price dropdown
   	- [ ] populate shipping list
+  		- [ ] change: shipping list should pull all options from the shipping_country taxonomy.
 		- [x] add shipping data to shadows
-		- [ ] use shipping data to create list for shipping input
+		- [x] use shipping data to create list for shipping input
 	- [G] Markup for show temperature options button 
   	- [ ] brand name 
   - [I] Make Advanced Filters work on list
   	- [ ] update actions/filters.php to filter on all things 
+  	- [ ] shipping_country filters should pull worldwide & country selected.
   	- [ ] add shipping to existing filter functions 
   	- [ ] add temperature options to filter functions
   	- [ ] copy from basic filters where possible
