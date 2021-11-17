@@ -5,6 +5,18 @@ button:disabled {
 	opacity:0;
 }
 
+.Wireframe {
+	border: 1px solid black;
+	background-color: rgba(0, 0, 0, .2);
+}
+
+.Wireframe.Share_Icon {
+	background-color:white;
+	aspect-ratio: 1 / 1;
+	width:16px;
+	text-align:center;
+}
+
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
 	input[type="checkbox"],
 	input[type="search"],

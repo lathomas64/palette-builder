@@ -1528,3 +1528,9 @@ button.Prev_Slide div::before {
  flex: 1 0 100%;
  height: fit-content;
 }
+
+.Share_Modal .Img_Container {
+		aspect-ratio: 1 / 1;
+		padding: 36px;
+		background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/10per.svg) repeat 0/100px;background-blend-mode: multiply, normal;
+}
