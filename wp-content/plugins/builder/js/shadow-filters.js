@@ -7,10 +7,11 @@ var FILTERS = {"colors": new Set(),
 			   "characteristics": new Set(),
 				 "demographics": new Set(),
 				 "shift": new Set(),
-				 "vividness" new Set(),
+				 "vividness": new Set(),
 				 "lightness": new Set(),
 				 "size": new Set(),
 				 "shape": new Set(),
+				 "temperature": new Set(),
 				"countries": new Set()}
 
 function Toggle_Filter(event, filterset) {
@@ -63,6 +64,7 @@ function update(){
               'colors': Array.from(FILTERS['colors']),
               'finishes': Array.from(FILTERS['finishes']),
               'characteristics': Array.from(FILTERS['characteristics']),
+							'temperature': Array.from(FILTERS['temperature']),
 							'demographics': Array.from(FILTERS['demographics']),
 							'brand': Array.from(FILTERS['brand']),
 							'shift': Array.from(FILTERS['shift']),
