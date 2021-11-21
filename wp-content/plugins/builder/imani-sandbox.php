@@ -8,17 +8,8 @@ if (!defined("ABSPATH")) {
 	/** Set up WordPress environment */
 	require_once "/usr/share/wordpress/wp-load.php";
 }
-$shipping_options = array();
-$shipping_options = get_terms( array(
-    'taxonomy' => 'tax_shipping',
-    'hide_empty' => false,
-) );
-function extract_name($object)
-{
-  return $object->name;
-}
-$shipping_options = array_map('extract_name', $shipping_options);
-print_r($shipping_options);
+print_r(json_encode($_REQUEST));
+pb_filter();
 ?>
 <hr>
 and thats the end...

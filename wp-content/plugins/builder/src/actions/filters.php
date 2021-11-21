@@ -225,12 +225,12 @@
             "orderby" => "title",
             "order" => "ASC",
             "cat" => "home",
-            "meta_query" => array(
+            "tax_query" => array(
               'relation' => 'AND',
               array(
-                'key' => 'shipping_country',
-                'value' => $filters['shipping_country'],
-                'compare' => 'in'
+                'taxonomy' => 'tax_shipping',
+                'field' => 'name',
+                'terms' => array_map('urldecode', $filters['shipping_country'])
               )
             )
             ];
