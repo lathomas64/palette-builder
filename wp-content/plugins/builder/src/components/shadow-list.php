@@ -2,12 +2,22 @@
 ini_set("display_errors", "1");
 ini_set("display_startup_errors", "1");
 error_reporting(E_ALL);
-$shipping_options = array();
 $brand_list = array();
 if (!defined("ABSPATH")) {
 	/** Set up WordPress environment */
 	require_once "/usr/share/wordpress/wp-load.php";
 }
+$shipping_options = array();
+
+$shipping_options = get_terms( array(
+    'taxonomy' => 'tax_shipping',
+    'hide_empty' => false,
+) );
+function extract_name($object)
+{
+  return $object->name;
+}
+$shipping_options = array_map('extract_name', $shipping_options);
 function extract_tax($tax_name, $the_tax)
 {
 	if(array_key_exists($tax_name, $the_tax))
@@ -144,9 +154,6 @@ $count = $shadows->found_posts;
 				if($shipping_details)
 				{
 					$ships = $shipping_details[0]->name;
-					if(!in_array($ships, $shipping_options)){
-						array_push($shipping_options, $ships);
-					}
 				}
 			}
 		}

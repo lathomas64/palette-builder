@@ -3,7 +3,7 @@
   - [I] Populate data into needed fields
   	- [x] populate price dropdown
   	- [ ] populate shipping list
-  		- [ ] change: shipping list should pull all options from the shipping_country taxonomy.
+  		- [x] change: shipping list should pull all options from the shipping_country taxonomy.
 		- [x] add shipping data to shadows
 		- [x] use shipping data to create list for shipping input
 	- [G] Markup for show temperature options button 
