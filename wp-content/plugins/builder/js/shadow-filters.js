@@ -18,6 +18,9 @@ function Toggle_Filter(event, filterset) {
 	var filter = event.target;
 	var type = filter.id;
 	var state = filter.checked;
+	if(filter.getAttribute('data-filter') != null){
+		type = filter.getAttribute('data-filter');
+	}
 
 	if(state) {
 		FILTERS[filterset].add(type);
@@ -72,7 +75,7 @@ function update(){
 							'lightness': Array.from(FILTERS['lightness']),
 							'size': Array.from(FILTERS['size']),
 							'shape': Array.from(FILTERS['shape']),
-							'shipping': Array.from(FILTERS['shipping']),
+							'shipping_country': Array.from(FILTERS['shipping']),
               'countries': Array.from(FILTERS['countries']),
               'price_min': PRICE_MIN,
               'price_max': PRICE_MAX
@@ -96,6 +99,7 @@ function update(){
 						count_element.textContent = "Showing " + count + " shadow" + (count > 1? "s":"");
             console.log('ajax successful');
             console.log(data);
+						console.log(data.length);
           },
           error: function(errorThrown){
           	  console.log('ajax error');
