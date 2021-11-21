@@ -1,19 +1,38 @@
 ## PRIRORITY RED
 *Advanced Filters*
   - [I] Populate data into needed fields
+  	- [x] populate price dropdown
+  	- [x] populate shipping list
+  		- [x] change: shipping list should pull all options from the shipping_country taxonomy.
+		- [x] add shipping data to shadows
+		- [x] use shipping data to create list for shipping input
+	- [x] Markup for show temperature options button 
+  	- [x] brand name 
   - [I] Make Advanced Filters work on list
+  	- [ ] update actions/filters.php to filter on all things 
+  	- [ ] shipping_country filters should pull worldwide & country selected.
+  	- [ ] add shipping to existing filter functions 
+  	- [ ] add temperature options to filter functions
+  	- [ ] reduce that list! go go go
 *Shopping List*
   - [G] HTML/CSS Edits
   - [G] Interactivity
   - [I] Data population
+  	- [ ] show shadows from story on first tab
+  	- [ ] remove shadows from list if x is clicked
+  	- [ ] make list of links for 3rd panel
+		- [ ] group or not based on brand
+		- [ ] pull data for where to link
 *Fill Story Shadows*
   - [I] Populate shadow data into stories card & have drawn svgs lazy load shadow image. (color > img)
+  	- [ ] ids in story -> colors/imgs for shadow image 
 *Populate Shadow Names in Palette*
   - [x] Have shadow name display on hover
 *Login/Signup Path*
   - [G] HTML/CSS Edits
   - [G] JS Interactivity
   - [I] User acct creation
+  	- [ ]  
   - [I] Making forms do things
   - [ ] Gumroad...stuff
     - [G] Create Account

@@ -2,10 +2,22 @@
 ini_set("display_errors", "1");
 ini_set("display_startup_errors", "1");
 error_reporting(E_ALL);
+$brand_list = array();
 if (!defined("ABSPATH")) {
 	/** Set up WordPress environment */
 	require_once "/usr/share/wordpress/wp-load.php";
 }
+$shipping_options = array();
+
+$shipping_options = get_terms( array(
+    'taxonomy' => 'tax_shipping',
+    'hide_empty' => false,
+) );
+function extract_name($object)
+{
+  return $object->name;
+}
+$shipping_options = array_map('extract_name', $shipping_options);
 function extract_tax($tax_name, $the_tax)
 {
 	if(array_key_exists($tax_name, $the_tax))
@@ -126,12 +138,22 @@ $count = $shadows->found_posts;
 				}
 			}
 			if ($brand) {
+				$brand_name = get_post_field("post_title", $brand[0]);
+				if($brand_name && !in_array($brand_name, $brand_list)){
+						array_push($brand_list, $brand_name);
+				}
+
 				//get country from brand
 				$country_details = wp_get_post_terms($brand[0], 'tax_countries');
 				if($country_details)
 				{
 					//$country = get_field('name', $country_details[0]);
 					$country = $country_details[0]->name;
+				}
+				$shipping_details = wp_get_post_terms ($brand[0], 'tax_shipping');
+				if($shipping_details)
+				{
+					$ships = $shipping_details[0]->name;
 				}
 			}
 		}
@@ -161,18 +183,17 @@ $count = $shadows->found_posts;
 						data-lightness='<?php echo $lightness; ?>'
 						data-lightness-sort='<?php echo $avg_lightness; ?>'
 						data-color-sort='<?php echo $avg_hue; ?>'
-						debug-brand='<?php print_r($brand); ?>'
-						debug-country='<?php print_r($country); ?>'
 						<?php if ($brand) { ?>
 						data-country='<?php echo $country; ?>'
-						data-brand='<?php echo get_post_field("post_title", $brand[0]); ?>'
+						data-ships='<?php echo $ships; ?>'
+						data-brand='<?php echo $brand_name; ?>'
 						<?php } else { ?>
 						data-country='none'
 						data-brand='none'
 						<?php } ?>
 						data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>'
 						draggable="true" ondragstart="drag(event)"
-						onclick="addShadow(0,<?php the_ID(); ?>);updateFooter();"
+						onclick="addShadow(currentStory.shadowCount,<?php the_ID(); ?>);updateFooter();"
 						class="Single_Pan_Card" href="#">
 				<div class="Card_Container Column Gap_8">
 					<div class="Shadow_Name"><?php the_title(); ?></div>

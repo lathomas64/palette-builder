@@ -2,13 +2,25 @@ var PRICE_MIN = -1;
 var PRICE_MAX = -1;
 var FILTERS = {"colors": new Set(),
 			   "finishes": new Set(),
+				 "shipping": new Set(),
+				 "brand": new Set(),
 			   "characteristics": new Set(),
+				 "demographics": new Set(),
+				 "shift": new Set(),
+				 "vividness": new Set(),
+				 "lightness": new Set(),
+				 "size": new Set(),
+				 "shape": new Set(),
+				 "temperature": new Set(),
 				"countries": new Set()}
 
 function Toggle_Filter(event, filterset) {
 	var filter = event.target;
 	var type = filter.id;
 	var state = filter.checked;
+	if(filter.getAttribute('data-filter') != null){
+		type = filter.getAttribute('data-filter');
+	}
 
 	if(state) {
 		FILTERS[filterset].add(type);
@@ -55,6 +67,15 @@ function update(){
               'colors': Array.from(FILTERS['colors']),
               'finishes': Array.from(FILTERS['finishes']),
               'characteristics': Array.from(FILTERS['characteristics']),
+							'temperature': Array.from(FILTERS['temperature']),
+							'demographics': Array.from(FILTERS['demographics']),
+							'brand': Array.from(FILTERS['brand']),
+							'shift': Array.from(FILTERS['shift']),
+							'vividness': Array.from(FILTERS['vividness']),
+							'lightness': Array.from(FILTERS['lightness']),
+							'size': Array.from(FILTERS['size']),
+							'shape': Array.from(FILTERS['shape']),
+							'shipping_country': Array.from(FILTERS['shipping']),
               'countries': Array.from(FILTERS['countries']),
               'price_min': PRICE_MIN,
               'price_max': PRICE_MAX
@@ -78,6 +99,7 @@ function update(){
 						count_element.textContent = "Showing " + count + " shadow" + (count > 1? "s":"");
             console.log('ajax successful');
             console.log(data);
+						console.log(data.length);
           },
           error: function(errorThrown){
           	  console.log('ajax error');
