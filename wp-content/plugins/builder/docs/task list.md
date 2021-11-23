@@ -10,6 +10,14 @@
   	- [x] brand name 
   - [I] Make Advanced Filters work on list
   	- [ ] update actions/filters.php to filter on all things 
+		- [ ] Brand characteristics
+		- [ ] Shipping Country
+		- [ ] Vividness?
+		- [ ] lightness?
+		- [ ] pan format
+		- [ ] pan shape
+		- [ ] owner demographics
+		- [ ] Brand name
   	- [ ] shipping_country filters should pull worldwide & country selected.
   	- [ ] add shipping to existing filter functions 
   	- [ ] add temperature options to filter functions
