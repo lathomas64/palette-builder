@@ -1531,6 +1531,28 @@ button.Prev_Slide div::before {
 
 .Share_Modal .Img_Container {
 		aspect-ratio: 1 / 1;
-		padding: 36px;
 		background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/10per.svg) repeat 0/100px;background-blend-mode: multiply, normal;
+}
+
+.Share_Modal .Palette_Container {
+			justify-content: center;
+  align-items: center;
+				padding: 32px;
+}
+
+/* .Share_Modal .Img_Container .Palette {
+	max-height:450px;
+} */
+
+.Share_Modal .Story_Grid .Shadow_Image_Container:active {
+ border: none;
+}
+
+.Share_Modal .Story_Grid .Shadow_Image_Container:hover {
+ cursor: default;
+}
+
+.Share_Modal .Img_Meta {
+	padding:16px;
+	font:var(---font-heading-6);
 }
