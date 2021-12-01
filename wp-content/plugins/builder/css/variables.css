@@ -158,15 +158,16 @@
 	--shadow-invisible: 3px 3px 0px rgb(0 0 0 / 0%);
 	--table-rest-shadow: -4px 0px 8px 0px rgb(0 0 0 / 10%);
 	
-	h-offset v-offset blur spread color
-	--palette-frame-rest: 11px 6px 11px 11px rgb(0 0 0 / 20%);
+/* 	h-offset v-offset blur spread color */
+	--palette-frame-rest: 0px 0px 18px 0px rgb(0 0 0 / 30%);
 	--lift-shadow: 3px 3px 0px var(--FDBL-black);
 	--drag-shadow: 1px 1px 0px var(--FDBL-black);
 	--inner-pan-shadow: inset 0px 0px 6px rgba(0 0 0 / 35%);
 	--inner-pan-shadow-small: inset 0px 0px 2px rgb(0 0 0 / 35%);
 	--button-selected: inset 2px 2px 1px 0px var(--FDBL-green-dark);
 	--inner-palette-shadow: inset 0px 0px 24px rgb(0 0 0);
-	--pan-shadow-on-palette: 0px 0px 6px 0px rgb(0 0 0);
+	--pan-shadow-on-palette: 0px 0px 6px 0px rgba(0 0 0 / 50%);
+	--pan-shadow-on-palette-small:0px 0px 2px 0px rgba(0 0 0 / 50%);
 
 	/**BORDERS**/
 	--shadow-border: 1px solid var(--FDBL-black);

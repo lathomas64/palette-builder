@@ -271,6 +271,7 @@ p {
 	padding: 4%;
 	border-radius: 4px;
 	box-shadow: var(--palette-frame-rest);
+	flex:1;
 }
 
 .Palette.Story_Size_8w_11t, .Palette.Story_Size_8w_9t, .Palette.Story_Size_11w_8t, .Palette.Story_Size_7w_9t, .Palette.Story_Size_8w_12t {
@@ -336,7 +337,7 @@ height: auto;
 }
 
 .Palette.Story_Size_6w_4t {
-	aspect-ratio: 3 / 2;
+	aspect-ratio: 3 / 2;`
 }
 
 .Palette.Story_Size_7w_2t {

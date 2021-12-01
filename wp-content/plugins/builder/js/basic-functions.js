@@ -66,7 +66,6 @@ function modalClose(event) {
 }
 
 function shoppingListSlider (event){
-	console.log(event.target);
 	if ($(event.target).is(".Next_Slide") && 
 				!$(event.target).attr("disabled")) {
 					$(this).closest(".Active_Panel").next().addClass("Active_Panel")
@@ -77,6 +76,10 @@ function shoppingListSlider (event){
 					$(this).closest(".Active_Panel").prev().addClass("Active_Panel")
 					$(this).closest(".Active_Panel").removeClass("Active_Panel")
 				}
+}
+
+function shareModalBGSwitcher (event){
+	//function to switch .img_container from light to dark
 }
 
 $(document).ready(function(event){
@@ -128,7 +131,7 @@ shadowCard.mouseenter(function() {
 			) {
 				shadowDetail.removeClass("Fade_In");
 				shadowDetail.css(
-				"left", ""
+				"left", "0"
 			);
 						shadowDetail.css(
 				"display", ""
@@ -139,7 +142,7 @@ shadowCard.mouseenter(function() {
 		shadowDetail.removeClass("Fade_In");
 		setTimeout (function() {
 			shadowDetail.css(
-				"left", ""
+				"left", "0"
 			);
 						shadowDetail.css(
 				"display", ""

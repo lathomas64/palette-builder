@@ -1531,18 +1531,18 @@ button.Prev_Slide div::before {
 
 .Share_Modal .Img_Container {
 		aspect-ratio: 1 / 1;
-		background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/10per.svg) repeat 0/100px;background-blend-mode: multiply, normal;
 }
 
-.Share_Modal .Palette_Container {
-			justify-content: center;
-  align-items: center;
-				padding: 32px;
-}
-
-/* .Share_Modal .Img_Container .Palette {
-	max-height:450px;
+/* .Share_Modal .Palette_Container {
+	justify-content: center;
+	align-items: center;
+	padding: 32px;
+	flex: 1;
 } */
+
+.Share_Modal .Story_Grid .Shadow_Image_Container {
+	border:none;
+}
 
 .Share_Modal .Story_Grid .Shadow_Image_Container:active {
  border: none;
@@ -1550,9 +1550,68 @@ button.Prev_Slide div::before {
 
 .Share_Modal .Story_Grid .Shadow_Image_Container:hover {
  cursor: default;
+ border: var(--grid-lines);
 }
 
-.Share_Modal .Img_Meta {
-	padding:16px;
-	font:var(---font-heading-6);
+/* .Share_Modal .Img_Container .Palette {
+	flex: 1;
+} */
+
+.Share_Modal .Img_Container .Img_Meta {
+	padding: 0 16px 16px 16px;
+	font: var(--font-heading-5);
+}
+
+.Share_Modal .Story_Grid .Shadow_Image_Container .Wrapper {
+ box-shadow: var(--pan-shadow-on-palette-small);
+}
+
+/**LIGHT BACKGROUND OPTIONS**/
+
+.Share_Modal .Img_Container.Light {
+	background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/03_Backgrounds/background-wood-light.jpg) no-repeat;
+	background-size:cover;
+	background-blend-mode: multiply, normal;
+}
+
+.Share_Modal .Img_Container.Light .Palette {
+	box-shadow: 0px 8px 18px 0px rgb(0 0 0 / 50%);
+}
+
+.Share_Modal .Img_Container.Light .Img_Meta {
+	opacity: 0.65;
+	color: var(--FDBL-black);
+	filter: grayscale(100%);
+}
+
+.Share_Modal .Img_Container.Light .Img_Meta .Watermark {
+ 	background: url(../assets/02_Branding/UPB-logo-temp.svg);
+ 	width: 100px;
+ 	height: 32px;
+ 	background-repeat: no-repeat;
+ }
+	
+	/**DARK BACKGROUND OPTIONS**/
+	
+.Share_Modal .Img_Container.Dark {
+	background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/03_Backgrounds/background-wood-dark.jpg) no-repeat;
+	background-size:cover;
+	background-blend-mode: multiply, normal;
+}
+
+.Share_Modal .Img_Container.Dark .Palette {
+	box-shadow: 0px 8px 18px 0px rgb(0 0 0 / 80%);
+}
+
+.Share_Modal .Img_Container.Dark .Img_Meta {
+	color: var(--FDBL-white-text);
+	opacity: 0.65;
+	filter: grayscale(100%);
+}
+
+.Share_Modal .Img_Container.Dark .Img_Meta .Watermark {
+	background: url(../assets/02_Branding/UPB-logo-temp-white.svg);
+	width: 100px;
+	height: 32px;
+	background-repeat: no-repeat;
 }
