@@ -11,6 +11,8 @@
   - [I] Make Advanced Filters work on list
   	- [ ] update actions/filters.php to filter on all things 
 		- [ ] Brand characteristics
+			- [ ] brand value on shadow is an array need to do some work to get that to work in a query.
+			- [ ] maybe look at https://www.advancedcustomfields.com/resources/bidirectional-relationships/
 		- [ ] Shipping Country
 		- [ ] Vividness?
 		- [ ] lightness?
