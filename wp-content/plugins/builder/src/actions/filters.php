@@ -253,13 +253,30 @@
             $args['tax_query'][] = $subquery;
           }
           if(array_key_exists('characteristics', $filters)){
-            //color filter stuff will go here;
+            $brand_args = [
+            "post_type" => "cpt_brand",
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "orderby" => "title",
+            "order" => "ASC",
+            "cat" => "home",
+            "tax_query" => array(
+              'relation' => 'AND',
+              array(
+                'taxonomy' => 'tax_brand_characteristic',
+                'field' => 'slug',
+                'terms' => array_map('urldecode', $filters['characteristics'])
+              )
+            )
+            ];
+            $brands = new WP_Query($brand_args);
+            $brand_ids = wp_list_pluck($brands->posts, "ID");
             $subquery = array(
-              'taxonomy' => 'tax_finish',
-              'field' => 'name',
-              'terms' => $filters['finishes']
+              'key' => 'brand',
+              'value' => $brand_ids,
+              'compare' => '='
             );
-            $args['tax_query'][] = $subquery;
+            $args['meta_query'][] = $subquery;
           }
           if($filters['price_min'] != -1){
             $subquery = array(
