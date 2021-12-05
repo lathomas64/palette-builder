@@ -1261,13 +1261,14 @@ label.Check_Select {
 	font-weight: 400;
 }
 
-#centerModal .Drawer_Overlay {
-  justify-content: center;
-  align-items: center;
-}
-
 #centerModal .Drawer_Container {
   aspect-ratio: 1 / 1;
-  height: 65%;
-  width: auto;
+		flex:1;
+  width: initial;
+}
+
+.Modal_Grid {
+	grid-template-columns: 5fr 6fr;
+	padding: 80px 10%;
+	gap: 60px;
 }

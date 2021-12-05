@@ -1293,7 +1293,7 @@ label.Remember {
 	font: var(--font-hero-heading);
 }
 
-.Build_List_Carousel .Panel_Title {
+.Build_List_Carousel .Panel_Title, .Share_Modal .Panel_Title {
  color: var(--FDBL-white-text);
  font: var(--font-heading-2);
 }
@@ -1425,7 +1425,7 @@ label.Remember {
 	fill: var(--FDBL-medium-gray);
 }
 
-.Build_List_Title .Subheading {
+.Build_List_Title .Subheading, .Share_Modal .Subheading {
 	font: var(--font-heading-1);
 	color: var(--FDBL-green-light);
 }
@@ -1533,12 +1533,12 @@ button.Prev_Slide div::before {
 		aspect-ratio: 1 / 1;
 }
 
-/* .Share_Modal .Palette_Container {
+.Share_Modal .Palette_Container {
 	justify-content: center;
 	align-items: center;
 	padding: 32px;
 	flex: 1;
-} */
+}
 
 .Share_Modal .Story_Grid .Shadow_Image_Container {
 	border:none;
@@ -1553,10 +1553,6 @@ button.Prev_Slide div::before {
  border: var(--grid-lines);
 }
 
-/* .Share_Modal .Img_Container .Palette {
-	flex: 1;
-} */
-
 .Share_Modal .Img_Container .Img_Meta {
 	padding: 0 16px 16px 16px;
 	font: var(--font-heading-5);
@@ -1564,6 +1560,36 @@ button.Prev_Slide div::before {
 
 .Share_Modal .Story_Grid .Shadow_Image_Container .Wrapper {
  box-shadow: var(--pan-shadow-on-palette-small);
+}
+
+.Share_Modal .Share_Img_Format form{
+	flex:1;
+	margin:0;
+}
+
+.Share_Modal .Share_Img_Format span {
+	font: var(--font-panel-section-title);
+	color: var(--FDBL-white-text);
+}
+
+.Share_Modal{
+	color: var(--FDBL-white-text);
+}
+
+.Share_Modal .Panel_Title {
+	
+}
+
+.Share_Modal input:not([type="submit"]):not([type="file"]) {
+	margin: 0px;
+}
+
+.Share_Modal .Share_Img_Format label {
+	font-weight: var(--type-weight-light);
+}
+
+.Share_Modal .Subheading {
+ font: var(--font-heading-4);
 }
 
 /**LIGHT BACKGROUND OPTIONS**/
