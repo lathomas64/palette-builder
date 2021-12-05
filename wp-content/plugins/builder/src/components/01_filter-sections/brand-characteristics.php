@@ -6,7 +6,7 @@
 <div class="Button_Group">
 	<ul class="Row Gap_8 Justify_Content_Flex_Start">
 		<li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="CF" type="checkbox" />
+			<input data-filter="cruelty-free" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="CF" type="checkbox" />
 			<label class="Filter_Button" for="CF"><nobr>Cruelty-Free</nobr></label>
 		</li>
 		<li>
@@ -14,7 +14,7 @@
 			<label class="Filter_Button" for="Veg">Vegan</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Indie" type="checkbox" />
+			<input data-filter="independently-owned-indie" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Indie" type="checkbox" />
 			<label class="Filter_Button" for="Indie">Indie</label>
 		</li>
 		<li>
