@@ -253,13 +253,39 @@
             $args['tax_query'][] = $subquery;
           }
           if(array_key_exists('characteristics', $filters)){
-            //color filter stuff will go here;
-            $subquery = array(
-              'taxonomy' => 'tax_finish',
-              'field' => 'name',
-              'terms' => $filters['finishes']
-            );
-            $args['tax_query'][] = $subquery;
+            $brand_args = [
+            "post_type" => "cpt_brand",
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "orderby" => "title",
+            "order" => "ASC",
+            "cat" => "home",
+            "tax_query" => array(
+              'relation' => 'AND',
+              array(
+                'taxonomy' => 'tax_brand_characteristic',
+                'field' => 'slug',
+                'terms' => array_map('urldecode', $filters['characteristics'])
+              )
+            )
+            ];
+            $brands = new WP_Query($brand_args);
+            $brand_ids = wp_list_pluck($brands->posts, "ID");
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+            	$merge = array_merge($shadows, $shadow_list);
+            	$shadows = $merge;
+            }
+            $shadows = array_unique($shadows);
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
+
           }
           if($filters['price_min'] != -1){
             $subquery = array(
