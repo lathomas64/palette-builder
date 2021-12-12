@@ -18,7 +18,7 @@
 		- [x] lightness?
 		- [ ] pan format
 		- [ ] pan shape
-		- [ ] owner demographics
+		- [x] owner demographics
 		- [ ] Brand name
   	- [ ] shipping_country filters should pull worldwide & country selected.
   	- [ ] add shipping to existing filter functions 

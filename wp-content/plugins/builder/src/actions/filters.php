@@ -181,20 +181,29 @@
             "tax_query" => array(
               'relation' => 'AND',
               array(
-                'taxonomy' => 'tax_demographic',
-                'field' => 'name',
+                'taxonomy' => 'tax_demographics',
+                'field' => 'slug',
                 'terms' => $filters['demographics']
               )
             )
             ];
             $brands = new WP_Query($brand_args);
-            $brand_ids = wp_list_pluck($brands->posts, "ID");
-            $subquery = array(
-              'key' => 'brand',
-              'value' => $brand_ids,
-              'compare' => 'in'
-            );
-            $args['meta_query'][] = $subquery;
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
+            }
+            $shadows = array_unique($shadows);
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
           }
           //brands should be ids of brands
           if(array_key_exists('brands', $filters)){
@@ -208,13 +217,22 @@
             "post__in" => $filters['brands'],
             ];
             $brands = new WP_Query($brand_args);
-            $brand_ids = wp_list_pluck($brands->posts, "ID");
-            $subquery = array(
-              'key' => 'brand',
-              'value' => $brand_ids,
-              'compare' => 'in'
-            );
-            $args['meta_query'][] = $subquery;
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
+            }
+            $shadows = array_unique($shadows);
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
           }
           if(array_key_exists('shipping_country', $filters)){
             if(!in_array('worldwide', $filters['shipping_country'])){
@@ -278,14 +296,19 @@
             "order" => "ASC",
             "cat" => "home",
             "tax_query" => array(
-              'relation' => 'AND',
-              array(
-                'taxonomy' => 'tax_brand_characteristic',
-                'field' => 'slug',
-                'terms' => array_map('urldecode', $filters['characteristics'])
-              )
+              'relation' => 'AND'
             )
             ];
+            // Doing this to AND instead of OR
+            foreach($filters['characteristics'] as $slug)
+            {
+              $characteristic = array(
+                'taxonomy' => 'tax_brand_characteristic',
+                'field' => 'slug',
+                'terms' => $slug
+              );
+              $brand_args["tax_query"][] = $characteristic;
+            }
             $brands = new WP_Query($brand_args);
             $brand_shadows = wp_list_pluck($brands->posts, "shadows");
             $shadows = array();

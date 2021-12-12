@@ -54,7 +54,7 @@
 			<label class="Filter_Button" for="Latinx">Latinx</label>
 		</li>
 		<li>
-			<input data-filter'woman' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Woman" type="checkbox" />
+			<input data-filter='woman' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Woman" type="checkbox" />
 			<label class="Filter_Button" for="Woman">Woman</label>
 		</li>
 		<li>
