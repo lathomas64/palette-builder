@@ -217,6 +217,9 @@
             $args['meta_query'][] = $subquery;
           }
           if(array_key_exists('shipping_country', $filters)){
+            if(!in_array('worldwide', $filters['shipping_country'])){
+              array_push($filters['shipping_country'], 'worldwide');
+            }
             //TODO I don't think this one will work how do we get around this?
             $brand_args = [
             "post_type" => "cpt_brand",
@@ -229,19 +232,33 @@
               'relation' => 'AND',
               array(
                 'taxonomy' => 'tax_shipping',
-                'field' => 'name',
+                'field' => 'slug',
                 'terms' => array_map('urldecode', $filters['shipping_country'])
               )
             )
             ];
             $brands = new WP_Query($brand_args);
             $brand_ids = wp_list_pluck($brands->posts, "ID");
-            $subquery = array(
-              'key' => 'brand',
-              'value' => $brand_ids,
-              'compare' => 'in'
-            );
-            $args['meta_query'][] = $subquery;
+            //print_r($brand_ids);
+            //die();
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
+            }
+            $shadows = array_unique($shadows);
+            //print_r($shadows);
+            //die();
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
           }
           if(array_key_exists('finishes', $filters)){
             //color filter stuff will go here;
@@ -270,13 +287,14 @@
             )
             ];
             $brands = new WP_Query($brand_args);
-            $brand_ids = wp_list_pluck($brands->posts, "ID");
             $brand_shadows = wp_list_pluck($brands->posts, "shadows");
             $shadows = array();
             foreach($brand_shadows as $shadow_list)
             {
-            	$merge = array_merge($shadows, $shadow_list);
-            	$shadows = $merge;
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
             }
             $shadows = array_unique($shadows);
             // TODO make this work with multiple values trying to do this.
