@@ -129,7 +129,7 @@
             //color filter stuff will go here;
             $subquery = array(
               'taxonomy' => 'tax_vividness',
-              'field' => 'name',
+              'field' => 'slug',
               'terms' => $filters['vividness']
             );
             $args['tax_query'][] = $subquery;
@@ -138,7 +138,7 @@
             //color filter stuff will go here;
             $subquery = array(
               'taxonomy' => 'tax_lightness',
-              'field' => 'name',
+              'field' => 'slug',
               'terms' => $filters['lightness']
             );
             $args['tax_query'][] = $subquery;
