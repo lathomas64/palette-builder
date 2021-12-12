@@ -14,8 +14,8 @@
 			- [x] brand value on shadow is an array need to do some work to get that to work in a query.
 			- [x] maybe look at https://www.advancedcustomfields.com/resources/bidirectional-relationships/
 		- [x] Shipping Country
-		- [ ] Vividness?
-		- [ ] lightness?
+		- [x] Vividness?
+		- [x] lightness?
 		- [ ] pan format
 		- [ ] pan shape
 		- [ ] owner demographics

@@ -18,11 +18,11 @@
 			</li>
 			<li>
 				<input data-filter="04-dark" onclick="Toggle_Filter(event, 'lightness');"  class="Filter_Button"id="Light_Level_4" type="checkbox" />
-				<label class="Light_Level_4 Filter_Button Dark" for="Light_Level_4 ">Dark</label>
+				<label class="Light_Level_4 Filter_Button Dark" for="Light_Level_4">Dark</label>
 			</li>
 			<li>
 				<input data-filter="05-blackened" onclick="Toggle_Filter(event, 'lightness');"  class="Filter_Button"id="Light_Level_5" type="checkbox" />
-				<label class="Light_Level_5 Filter_Button Dark" for="Light_Level_5 ">Blackened</label>
+				<label class="Light_Level_5 Filter_Button Dark" for="Light_Level_5">Blackened</label>
 			</li>
 		</ul>
 	</div>
