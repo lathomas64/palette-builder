@@ -77,10 +77,10 @@
 	</div>
 	<div class="Check_List Filterable">
 		<ul class="Column Gap_8">
-			<?php foreach($brand_list as $brand){?>
+			<?php foreach($brand_list as $brand_id => $brand_name){?>
 			<li>
-				<input onclick="Toggle_Filter(event, 'brand');" id="<?php echo $brand; ?>" type="checkbox" />
-				<label for="<?php echo $brand; ?>"><?php echo $brand; ?></label>
+				<input data-filter='<?php echo $brand_id ?>' onclick="Toggle_Filter(event, 'brand');" id="<?php echo $brand_name; ?>" type="checkbox" />
+				<label for="<?php echo $brand_name; ?>"><?php echo $brand_name; ?></label>
 			</li>
 		<?php } ?>
 		</ul>

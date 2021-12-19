@@ -117,8 +117,9 @@ $count = $shadows->found_posts;
 		}
 		if ($brand) {
 			$brand_name = get_post_field("post_title", $brand[0]);
+			$brand_id = get_post_field("ID", $brand[0]);
 			if($brand_name && !in_array($brand_name, $brand_list)){
-					array_push($brand_list, $brand_name);
+				$brand_list[$brand_id] = $brand_name;
 			}
 
 			//get country from brand

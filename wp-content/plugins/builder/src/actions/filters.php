@@ -198,6 +198,11 @@
               }
             }
             $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
             // TODO make this work with multiple values trying to do this.
             if(array_key_exists("post__in", $args)){
               $args["post__in"] = array_intersect($args["post__in"], $shadows);
@@ -206,7 +211,7 @@
             }
           }
           //brands should be ids of brands
-          if(array_key_exists('brands', $filters)){
+          if(array_key_exists('brand', $filters)){
             $brand_args = [
             "post_type" => "cpt_brand",
             "post_status" => "publish",
@@ -214,7 +219,7 @@
             "orderby" => "title",
             "order" => "ASC",
             "cat" => "home",
-            "post__in" => $filters['brands'],
+            "post__in" => $filters['brand'],
             ];
             $brands = new WP_Query($brand_args);
             $brand_shadows = wp_list_pluck($brands->posts, "shadows");
@@ -227,6 +232,11 @@
               }
             }
             $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
             // TODO make this work with multiple values trying to do this.
             if(array_key_exists("post__in", $args)){
               $args["post__in"] = array_intersect($args["post__in"], $shadows);
@@ -269,6 +279,11 @@
               }
             }
             $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
             //print_r($shadows);
             //die();
             // TODO make this work with multiple values trying to do this.
@@ -320,6 +335,11 @@
               }
             }
             $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
             // TODO make this work with multiple values trying to do this.
             if(array_key_exists("post__in", $args)){
               $args["post__in"] = array_intersect($args["post__in"], $shadows);

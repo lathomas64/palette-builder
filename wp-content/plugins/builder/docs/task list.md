@@ -19,7 +19,7 @@
 		- [ ] pan format
 		- [ ] pan shape
 		- [x] owner demographics
-		- [ ] Brand name
+		- [x] Brand name
   	- [ ] shipping_country filters should pull worldwide & country selected.
   	- [ ] add shipping to existing filter functions 
   	- [ ] add temperature options to filter functions
