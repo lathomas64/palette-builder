@@ -152,21 +152,21 @@
             );
             $args['tax_query'][] = $subquery;
           }
-          if(array_key_exists('pan_size', $filters)){
+          if(array_key_exists('size', $filters)){
             //color filter stuff will go here;
             $subquery = array(
               'taxonomy' => 'pan-width',
               'field' => 'slug',
-              'terms' => $filters['pan_size']
+              'terms' => $filters['size']
             );
             $args['tax_query'][] = $subquery;
           }
-          if(array_key_exists('pan_shape', $filters)){
+          if(array_key_exists('shape', $filters)){
             //color filter stuff will go here;
             $subquery = array(
               'taxonomy' => 'pan-shape',
               'field' => 'slug',
-              'terms' => $filters['pan_shape']
+              'terms' => $filters['shape']
             );
             $args['tax_query'][] = $subquery;
           }
