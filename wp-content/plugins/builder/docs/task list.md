@@ -16,14 +16,14 @@
 		- [x] Shipping Country
 		- [x] Vividness?
 		- [x] lightness?
-		- [ ] pan format
+		- [ ] pan format - size
 		- [ ] pan shape
 		- [x] owner demographics
 		- [x] Brand name
-  	- [ ] shipping_country filters should pull worldwide & country selected.
-  	- [ ] add shipping to existing filter functions 
+  	- [x] shipping_country filters should pull worldwide & country selected.
+  	- [x] add shipping to existing filter functions 
   	- [ ] add temperature options to filter functions
-  	- [ ] reduce that list! go go go
+		- [G] make show temperature options do something 
 *Shopping List*
   - [G] HTML/CSS Edits
   - [G] Interactivity

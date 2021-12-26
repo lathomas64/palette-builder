@@ -66,7 +66,7 @@
 		</label>
 		</li>
 		<li>
-			<input data-filter="square" onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="square" type="checkbox" />
+			<input data-filter="rectangle" onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="square" type="checkbox" />
 			<label class="Single_Pan_Card" for="square"><div class="Card_Container Column Gap_8">
 				<div class="Shadow_Name">Square</div>
 				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_37 Pan_Shape_Square">

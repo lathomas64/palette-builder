@@ -155,8 +155,8 @@
           if(array_key_exists('pan_size', $filters)){
             //color filter stuff will go here;
             $subquery = array(
-              'taxonomy' => 'tax_pan_size',
-              'field' => 'name',
+              'taxonomy' => 'pan-width',
+              'field' => 'slug',
               'terms' => $filters['pan_size']
             );
             $args['tax_query'][] = $subquery;
@@ -164,8 +164,8 @@
           if(array_key_exists('pan_shape', $filters)){
             //color filter stuff will go here;
             $subquery = array(
-              'taxonomy' => 'tax_pan_shape',
-              'field' => 'name',
+              'taxonomy' => 'pan-shape',
+              'field' => 'slug',
               'terms' => $filters['pan_shape']
             );
             $args['tax_query'][] = $subquery;
