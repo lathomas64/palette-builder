@@ -17,7 +17,7 @@
 		- [x] Vividness?
 		- [x] lightness?
 		- [ ] pan format - size
-		- [ ] pan shape
+		- [x] pan shape
 		- [x] owner demographics
 		- [x] Brand name
   	- [x] shipping_country filters should pull worldwide & country selected.
