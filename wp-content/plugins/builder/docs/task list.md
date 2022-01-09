@@ -16,7 +16,7 @@
 		- [x] Shipping Country
 		- [x] Vividness?
 		- [x] lightness?
-		- [ ] pan format
+		- [ ] pan format 
 		- [x] pan shape
 		- [x] owner demographics
 		- [x] Brand name
