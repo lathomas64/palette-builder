@@ -41,7 +41,7 @@
 *Populate Shadow Names in Palette*
   - [ ] Have shadow name display on hover
 *Login/Signup Path*
-  - [ ] HTML/CSS Edits
+  - [x] HTML/CSS Edits
   - [ ] JS Interactivity
   - [ ] User acct creation
 	- [ ]  
