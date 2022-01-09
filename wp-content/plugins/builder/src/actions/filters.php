@@ -1,4 +1,26 @@
 <?php
+    function pb_search_term($query, $taxonomy)
+    {
+      $terms = get_terms(
+        array(
+          'taxonomy' => $taxonomy,
+          'name__like' => $query
+        )
+      );
+      $slugs = wp_list_pluck($terms, 'slug');
+      return $slugs;
+    }
+
+    function pb_merge_terms($term_list, $taxonomy)
+    {
+      $terms = [];
+      foreach($term_list as $term) {
+        $slugs = pb_search_term($term, $taxonomy);
+        $terms = array_merge($terms, $slugs);
+      }
+      return $terms;
+    }
+
     function hex_to_hsl($color){
         $r = intval(substr($color, 1,2), 16);
         $g = intval(substr($color, 3,2), 16);
@@ -117,11 +139,33 @@
             $args['tax_query'][] = $subquery;
           }
           if(array_key_exists('temperature', $filters)){
+            /*
+              if no colors set or neutral is set, get all color_tags with temperature in them.
+              slug like temperature
+              if colors are set, get all color tags with temperature AND color in them.
+              slug like temperature AND name like colors
+            */
             //color filter stuff will go here;
+            // $subquery = array(
+            //   'taxonomy' => 'tax_color_tag',
+            //   'field' => 'slug',
+            //   'terms' => $filters['temperature']
+            // );
+            // TODO check if this handles the neutral case
+            $temp_terms = pb_merge_terms($filters['temperature'], 'tax_color_tag');
+            if(array_key_exists('colors', $filters))
+            {
+              $color_terms = pb_merge_terms($filters['colors'], 'tax_color_tag');
+              $terms = array_intersect($temp_terms, $color_terms);
+            }
+            else {
+              $terms = $temp_terms;
+            }
+
             $subquery = array(
-              'taxonomy' => 'tax_temperature',
-              'field' => 'name',
-              'terms' => $filters['colors']
+              'taxonomy' => 'tax_color_tag',
+              'field' => 'slug',
+              'terms' => $terms
             );
             $args['tax_query'][] = $subquery;
           }

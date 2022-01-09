@@ -37,7 +37,7 @@
 				<label 	class="Filter_Button Pink Dark"for="Pink">Pink</label>
 			</li>
 			<li>
-				<input data-filter="zNeutral" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Neutral" type="checkbox" />
+				<input data-filter="09 True Neutral" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Neutral" type="checkbox" />
 				<label 	class="Filter_Button Neutral Dark "for="Neutral">Neutral</label>
 			</li>
 		</ul>
@@ -54,19 +54,19 @@
 			<div>Show Temperature Options </div>
 		</div>
 	</label>
-		<div class="Temperature_Options Content Button_Group Column Gap_8">
+		<div class="Temperature_Options Button_Group Column Gap_8">
 			<div>Select temperatures to refine color choices above.</div>
 			<ul class="Row Gap_4 Justify_Content_Flex_Start">
 				<li>
-					<input onclick='Toggle_Filter(event, "colors");' class="Filter_Button" id="warm" type="checkbox" />
+					<input data-filter="warm" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button" id="warm" type="checkbox" />
 					<label class="Filter_Button Warm_Toned Red Dark" for="warm">Warm-Toned</label>
 				</li>
 				<li >
-					<input onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="neutralt" type="checkbox" />
+					<input data-filter="neutral" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button"id="neutralt" type="checkbox" />
 					<label class="Filter_Button Red  Dark"for="neutralt">Neutral-Toned</label>
 				</li>
 				<li >
-					<input onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="cool" type="checkbox" />
+					<input data-filter="cool" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button"id="cool" type="checkbox" />
 					<label class="Filter_Button Red Cool_Toned  Dark"for="cool">Cool-Toned</label>
 				</li>
 			</ul>

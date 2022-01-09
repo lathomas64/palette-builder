@@ -11,12 +11,12 @@
   - [ ] Make Advanced Filters work on list
 	  - [ ] update actions/filters.php to filter on all things
 		- [x] Brand characteristics
-			- [ ] brand value on shadow is an array need to do some work to get that to work in a query.
-			- [ ] maybe look at https://www.advancedcustomfields.com/resources/bidirectional-relationships/
+			- [x] brand value on shadow is an array need to do some work to get that to work in a query.
+			- [x] maybe look at https://www.advancedcustomfields.com/resources/bidirectional-relationships/
 		- [x] Shipping Country
 		- [x] Vividness?
 		- [x] lightness?
-		- [ ] pan format
+		- [x] pan format
 		- [x] pan shape
 		- [x] owner demographics
 		- [x] Brand name
