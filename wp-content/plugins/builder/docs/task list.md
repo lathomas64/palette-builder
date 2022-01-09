@@ -23,18 +23,20 @@
   	- [ ] shipping_country filters should pull worldwide & country selected.
   	- [ ] add shipping to existing filter functions 
   	- [ ] add temperature options to filter functions
-  	- [ ] reduce that list! go go go
+	  	- [ ] temperature selected by itself gets all color tags with that temperature
+	  	- [ ] temperature selected if color is selected gets color tags with that color AND that temperature ( i.e. 01 Warm 01 Red if red and warm are selected.)
+		- [ ] make show temperature options do something 
 *Shopping List*
   - [ ] HTML/CSS Edits
   - [ ] Interactivity
   - [ ] Data population
-  	- [ ] show shadows from story on first tab
-  	- [ ] remove shadows from list if x is clicked
-  	- [ ] make list of links for 3rd panel
-		- [ ] group or not based on brand
-		- [ ] pull data for where to link
+	  - [x] show shadows from story on first tab
+	  - [ ] remove shadows from list if x is clicked
+	  - [ ] make list of links for 3rd panel
+	  - [ ] group or not based on brand
+	  - [ ] pull data for where to link
 *Fill Story Shadows*
-  - [ ] Populate shadow data into stories card & have drawn svgs lazy load shadow image. (color > img)
+  - [x] Populate shadow data into stories card & have drawn svgs lazy load shadow image. (color > img)
   	- [ ] ids in story -> colors/imgs for shadow image 
 *Populate Shadow Names in Palette*
   - [ ] Have shadow name display on hover
