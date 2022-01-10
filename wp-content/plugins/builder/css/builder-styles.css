@@ -345,8 +345,7 @@ overflow:hidden;
 
 }
 
-.Helper_Box.Closed {
-
+.Helper_Box.Closed, .Temperature_Options.Closed {
 	max-height: 0px;
  opacity: 0;
  padding: 0px;
@@ -354,7 +353,6 @@ overflow:hidden;
  box-shadow: none;
  border: 0;
  transition: .2s;
-	
 }
 
 .Grid {

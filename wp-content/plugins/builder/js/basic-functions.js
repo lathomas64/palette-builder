@@ -245,6 +245,16 @@ storyDetail.mouseenter(function() {
 			$("#hideMeta").toggleClass("Minimized_Tab");
 		});
 	});
+	
+		//Controls Color Temperature Toggle
+	$("button#hideTemp").click(function(){
+  $(".Temperature_Options .Button_Group").slideToggle(100, function(){
+			$(".Temperature_Options #controlLabel").text(
+				$(this).is(':visible') ? "Hide Temperature Options" : "Show Temperature Options");
+			$("#tempPlus").toggle();
+   $("#tempMinus").toggle();
+		});
+	});
 
 
 // Changing panels with button click
