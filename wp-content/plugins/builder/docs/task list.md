@@ -8,23 +8,27 @@
 		- [x] use shipping data to create list for shipping input
 	- [x] Markup for show temperature options button
 	- [x] brand name
-  - [ ] Make Advanced Filters work on list
-	  - [ ] update actions/filters.php to filter on all things
+  - [x] Make Advanced Filters work on list
+	  - [x] update actions/filters.php to filter on all things
 		- [x] Brand characteristics
-			- [ ] brand value on shadow is an array need to do some work to get that to work in a query.
-			- [ ] maybe look at https://www.advancedcustomfields.com/resources/bidirectional-relationships/
+			- [x] brand value on shadow is an array need to do some work to get that to work in a query.
+			- [x] maybe look at https://www.advancedcustomfields.com/resources/bidirectional-relationships/
 		- [x] Shipping Country
 		- [x] Vividness?
 		- [x] lightness?
+<<<<<<< HEAD
 		- [ ] pan format 
+=======
+		- [x] pan format
+>>>>>>> d4a1aa1dc7d27e128a138e0748ecd7fb87c38fda
 		- [x] pan shape
 		- [x] owner demographics
 		- [x] Brand name
 	- [x] shipping_country filters should pull worldwide & country selected.
 	- [x] add shipping to existing filter functions
-	- [ ] add temperature options to filter functions
-		- [ ] temperature selected by itself gets all color tags with that temperature
-		- [ ] temperature selected if color is selected gets color tags with that color AND that temperature ( i.e. 01 Warm 01 Red if red and warm are selected.)
+	- [x] add temperature options to filter functions
+		- [x] temperature selected by itself gets all color tags with that temperature
+		- [x] temperature selected if color is selected gets color tags with that color AND that temperature ( i.e. 01 Warm 01 Red if red and warm are selected.)
 		- [ ] make show temperature options do something
 *Shopping List*
   - [ ] HTML/CSS Edits

@@ -1,5 +1,4 @@
 <div id="shadowDetail" class="Modal Shadow_Detail_Panel Flex_Container Column Justify_Content_Center Gap_16">
-	<?php edit_post_link(__('Edit Shadow')); ?>
 <div class="Single_Pan_Card">
 				<div class="Card_Container Column Gap_8 Align_Items_Center">
 					<div class="Column Align_Items_Center">
