@@ -73,27 +73,22 @@ function modalOpen(event){
 		$(event.target).parents().is(".Modal_Trigger.Log_In")
 	) {
 		$(".Login_Content").addClass("On");
-		$(".Login_Content").removeClass("Hidden");
+		$(".Register_Content").removeClass("On");
 }
 	if(
 		$(event.target).parents().is(".Modal_Trigger.Register")
 	) {
 		$(".Register_Content").addClass("On");
-		$(".Register_Content").removeClass("Hidden");
+		$(".Login_Content").removeClass("On");
 }
 };
 
 function modalClose(event) {
 	if (
 			$(".Modal").hasClass("On") && 
-			!$(event.target).parents().is(".Drawer_Overlay")
+			(!$(event.target).parents().is(".Drawer_Overlay") || $(event.target).parents().is(".Close"))
 		) {
-			$(".On").removeClass("On");
-		}
-		else if(
-			$(event.target).hasClass("Close")
-		) {
-			$(event.target).closest(".Modal").removeClass("On");
+			$(event.target).closest(".On").removeClass("On");
 		}
 }
 

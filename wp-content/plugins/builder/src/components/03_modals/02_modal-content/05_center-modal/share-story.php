@@ -9,12 +9,12 @@
 							<span>Background:</span>
 							<div class="Row Gap_8 Align_Items_Center">
 								<div class="Row Gap_4 Align_Items_flex_End">
-									<input type="radio" id="html" name="fav_language" value="HTML">
-									<label for="html">Light</label>
+									<input type="radio" id="lightBG" name="fav_language" value="HTML">
+									<label for="lightBG">Light</label>
 								</div>
 								<div class="Row Gap_4 Align_Items_flex_End">
-									<input type="radio" id="html" name="fav_language" value="HTML">
-									<label for="html">Dark</label>
+									<input type="radio" id="darkBG" name="fav_language" value="HTML">
+									<label for="darkBG">Dark</label>
 								</div>
 							</div>
 						</div>
@@ -22,12 +22,12 @@
 							<span>Shadow Names:</span>
 							<div class="Row Gap_8 Align_Items_Center">
 								<div class="Row Gap_4 Align_Items_flex_End">
-									<input type="radio" id="html" name="fav_language" value="HTML">
-									<label for="html">Show</label>
+									<input type="radio" id="namesOn" name="fav_language" value="HTML">
+									<label for="namesOn">Show</label>
 								</div>
 								<div class="Row Gap_4 Align_Items_flex_End">
-									<input type="radio" id="html" name="fav_language" value="HTML">
-									<label for="html">Don't Show</label>
+									<input type="radio" id="namesOff" name="fav_language" value="HTML">
+									<label for="namesOff">Don't Show</label>
 								</div>
 							</div>
 						</div>

@@ -3,9 +3,12 @@
 		<div class="Build_List_Title Column Gap_24">
 			<div class="Panel_Title">You're almost finished!</div>
 			<div class="Subheading">Just a few things first</div>
-			<button class="Text_Button Row Gap_4 Align_Items_Center Close"><div class="Icon_Container Column Justify_Content_Center">
-					  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.645 12.3433L3.30167 7L8.645 1.645L7 0L0 7L7 14L8.645 12.3433Z"></path></svg>
-						</div>Go back to your palette</button>
+			<button class="Text_Button Row Gap_4 Align_Items_Center Close">
+				<div class="Icon_Container Column Justify_Content_Center">
+					<svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.645 12.3433L3.30167 7L8.645 1.645L7 0L0 7L7 14L8.645 12.3433Z"></path></svg>
+				</div>
+				<span>Go back to your palette</span>
+				</button>
 			</div>
 		<div class="Build_List_Carousel Row">
 		<div class="Check_List Column Active_Panel Gap_32">
