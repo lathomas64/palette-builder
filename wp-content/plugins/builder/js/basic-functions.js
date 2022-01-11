@@ -25,30 +25,62 @@ else {
 };
 
 function modalOpen(event){
+	//Open Modal Container
 	if(
-		$(event.target).is(".Modal_Trigger.Center")
+		$(event.target).parents().is(".Modal_Trigger.Center")
 	) {
 		$('#centerModal').addClass("On");
 	}
 	if(
-		$(event.target).is(".Modal_Trigger.Left")
+		$(event.target).parents().is(".Modal_Trigger.Left")
 	) {
 		$('#leftDrawer').addClass("On");
 	}
 	if(
-		$(event.target).is(".Modal_Trigger.Right")
+		$(event.target).parents().is(".Modal_Trigger.Right")
 	) {
 		$('#rightDrawer').addClass("On");
 	}
-if(
-		$(event.target).is(".Modal_Trigger.List")
-	) {
-		$(".Check_List").addClass("Active_Panel");
-		$(".Copy_Code").removeClass("Active_Panel");
-		$(".Buy_Shadows").removeClass("Active_Panel");
-		build_shopping_list();
-		$('#listDrawer').addClass("On");
+	//Display Modal Content
+	if(
+			$(event.target).is(".Modal_Trigger.List")
+		) {
+			$(".Check_List").addClass("Active_Panel");
+			$(".Copy_Code").removeClass("Active_Panel");
+			$(".Buy_Shadows").removeClass("Active_Panel");
+			build_shopping_list();
+			$('#listDrawer').addClass("On");
+		}
+	if(
+			$(event.target).parents().is(".Modal_Trigger.Builder_Share")
+		) {
+			$(".Share_Modal").addClass("On");
+			$(".Share_Modal").removeClass("Hidden");
 	}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Help")
+	) {
+		$("#genericModal").addClass("On");
+		$("#genericModal").removeClass("Hidden");
+}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Disclaimer")
+	) {
+		$("#genericModal").addClass("On");
+		$("#genericModal").removeClass("Hidden");
+}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Log_In")
+	) {
+		$(".Login_Content").addClass("On");
+		$(".Login_Content").removeClass("Hidden");
+}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Register")
+	) {
+		$(".Register_Content").addClass("On");
+		$(".Register_Content").removeClass("Hidden");
+}
 };
 
 function modalClose(event) {
@@ -56,7 +88,7 @@ function modalClose(event) {
 			$(".Modal").hasClass("On") && 
 			!$(event.target).parents().is(".Drawer_Overlay")
 		) {
-			$(".Modal").removeClass("On");
+			$(".On").removeClass("On");
 		}
 		else if(
 			$(event.target).hasClass("Close")
