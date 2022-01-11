@@ -1,8 +1,7 @@
-	<div class="Login_Content Column Gap_8 Hidden">
-  <div class="Panel_Title">
-   <div class="Heading">Let's Get You Logged In!</div>
-  </div>
-		<div class="Body Small_Text">Deflector power at maximum. Energy discharge in six seconds. Warp reactor core primary coolant failure. Fluctuate phaser resonance frequencies.
+	<div class="Login_Content Column Gap_32 Hidden">
+		<div class="Panel_Title Column Gap_8">
+			<div class="Heading">Let's Get You Logged In!</div>
+			<div class="Body Small_Text">Deflector power at maximum. Energy discharge in six seconds. Warp reactor core primary coolant failure. Fluctuate phaser resonance frequencies.</div>
 		</div>
 		<div class="Column Gap_32">
 			<div class="Row Gap_24">

@@ -140,13 +140,14 @@
 		var(--type-weight-bold) 
 		var(--type-size-12) / var(--type-size-12) 
 		var(--e-global-typography-primary-font-family);
-	
-
-
-
-
-	--font-body-small: var(--type-weight-light) var(--type-size-16) / var(--type-size-18) var(--e-global-typography-primary-font-family);
-		--font-body-regular: var(--type-weight-light) var(--type-size-18) / var(--type-size-21) var(--e-global-typography-primary-font-family);
+		--font-body-small: 
+		var(--type-weight-light) 
+		var(--type-size-16) / var(--type-size-18) 
+		var(--e-global-typography-primary-font-family);
+	--font-body-regular: 
+	var(--type-weight-light) 
+	var(--type-size-18) / var(--type-size-21) 
+	var(--e-global-typography-primary-font-family);
 
 /**FORMS AND INPUTS**/
 

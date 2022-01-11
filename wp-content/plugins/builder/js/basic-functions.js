@@ -109,9 +109,29 @@ function shareModalBGSwitcher (event){
 	//function to switch .img_container from light to dark
 }
 
+function priceTree (event){
+	if (
+		!$("#Forward").hasClass("Invalid")
+	)
+	{
+		$(".Payment_Information").toggleClass("Hidden");
+		$("#Forward").toggleClass("Dark");
+	}
+	else if ( 
+		$(".Filter_Button.Price").is(':checked')
+	)
+	{
+		$("#Forward").removeClass("Invalid").text('Move Forward to Pay [selection here]');
+	} 
+}
+
 $(document).ready(function(event){
 
 $(resultsHeight);
+
+$(".Pay_Box").click(
+	priceTree
+);
 
 $(".Dismiss").click(
 	resultsHeight
@@ -364,7 +384,6 @@ storyDetail.mouseenter(function() {
 			}
 		}, 100);
 	});
-
 
 
 }); //end of document ready

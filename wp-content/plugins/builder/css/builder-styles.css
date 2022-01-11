@@ -1158,7 +1158,7 @@ label.Remember {
 	font-size: 14px;
 }
 
-#signinCloseBtn .Icon_Container svg {
+.Chev_Reverse .Icon_Container svg {
 	transform: scaleX(-1)
 }
 
@@ -1184,7 +1184,8 @@ label.Remember {
 .Pay_Box {
 	padding:32px;
 	box-shadow: -8px 8px 0px rgba(72, 113, 92, 1);
-	background-color: var(--FDBL-light-gray);
+	background-color: var(--FDBL-cool-white);
+	border: var(--standard-border);
 }
 
 .Pay_Box .PreHeading {
@@ -1638,4 +1639,8 @@ button.Prev_Slide div::before {
 	width: 100px;
 	height: 32px;
 	background-repeat: no-repeat;
+}
+
+.Filter_Button.Row {
+	display:flex;
 }
