@@ -273,7 +273,7 @@
 			<div class="Column Gap_24 Drawer_Container">
 				<div class="Column Gap_48">
 			  <div class="Section_Title">At checkout, paste the code into the discount area to save between 10% – 20%!</div>
-					<div class="Code_Copy Row Space_Between Align_Items_Center">
+					<div class="Code_Copy Row Space_Between Align_Items_Center Not_Copied">
 						<span class="Affiliate_Code Panel_title">FIREDRAKEBEAUTYLABS</span>
 						<button onclick="navigator.clipboard.writeText('FIREDRAKEBEAUTYLABS');$('.Code_Copy').addClass('Copied');" class="Button_Block">Copy Code</button>
 					</div>
@@ -308,7 +308,7 @@
 					</div>
 						<div class="Open_Links Invalid Row Space_Between Align_Items_Center">
 						<span class="Panel_Title">Ready to get your shadows?</span>
-						<button class="Button_Block">Open Your List in (9) Tabs</button>
+						<button onclick="open_tabs();" class="Button_Block">Open Your List in (9) Tabs</button>
 					</div>
 					<div class="Row Space_Between">
 	  			<button class="Button_Block Prev_Slide">Check Your List</button>

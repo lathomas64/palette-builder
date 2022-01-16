@@ -1,30 +1,30 @@
 let debug = null;
 let brand_shadows = {};//shopping list shadows separated by brand
-function populate_brand(brand_shadows, brand_div)
+function populate_brand(shadow_list, brand_div)
 {
     prototype_div = $($(brand_div).find('.List_Tile')[0]);
     while($(brand_div).find('.List_Tile').length > 1)
     {
       $(brand_div).find('.List_Tile')[1].remove();
     }
-    for(let index=0;index < brand_shadows.length; index++)
+    for(let index=0;index < shadow_list.length; index++)
     {
-      shadow = brand_shadows[index];
+      shadow = shadow_list[index];
       shadow_div = $(brand_div).find('.List_Tile')[index];
       if(shadow_div == undefined)
       {
         shadow_div = prototype_div.clone();
         $(brand_div).find('.List_Tile').append(shadow_div);
       }
-      $(shadow_div).find('img')[0].src = $(brand_shadows[index]).find('img')[0].src;
-      $(shadow_div).find('.Shade_Name')[0].textContent = brand_shadows[index].getAttribute('data-name');
-      $(shadow_div).find('.Shade_Finish')[0].textContent = brand_shadows[index].getAttribute('data-finish');
-      $(shadow_div).find('.Shade_Shift')[0].textContent = brand_shadows[index].getAttribute('data-shift');
-      $(shadow_div).find('.Shade_Color')[0].textContent = brand_shadows[index].getAttribute('data-color-tag');
-      $(shadow_div).find('.Shade_Vividness')[0].textContent = brand_shadows[index].getAttribute('data-vividness');
-      $(shadow_div).find('.Shade_Lightness')[0].textContent = brand_shadows[index].getAttribute('data-lightness');
-      $(shadow_div).find('.Shade_Size_Shape')[0].textContent = brand_shadows[index].getAttribute('data-shape')+", "+brand_shadows[index].getAttribute('data-size')+"mm";
-      $(shadow_div).find('.Price_Value')[0].textContent = brand_shadows[index].getAttribute('data-price');
+      $(shadow_div).find('img')[0].src = $(shadow_list[index]).find('img')[0].src;
+      $(shadow_div).find('.Shade_Name')[0].textContent = shadow_list[index].getAttribute('data-name');
+      $(shadow_div).find('.Shade_Finish')[0].textContent = shadow_list[index].getAttribute('data-finish');
+      $(shadow_div).find('.Shade_Shift')[0].textContent = shadow_list[index].getAttribute('data-shift');
+      $(shadow_div).find('.Shade_Color')[0].textContent = shadow_list[index].getAttribute('data-color-tag');
+      $(shadow_div).find('.Shade_Vividness')[0].textContent = shadow_list[index].getAttribute('data-vividness');
+      $(shadow_div).find('.Shade_Lightness')[0].textContent = shadow_list[index].getAttribute('data-lightness');
+      $(shadow_div).find('.Shade_Size_Shape')[0].textContent = shadow_list[index].getAttribute('data-shape')+", "+shadow_list[index].getAttribute('data-size')+"mm";
+      $(shadow_div).find('.Price_Value')[0].textContent = shadow_list[index].getAttribute('data-price');
     }
     $(brand_div).removeClass('Hidden');
 }
@@ -34,6 +34,11 @@ function build_shopping_list()
   brand_shadows = {};
   for(let index = 0; index < currentStory.shadows.length; index++)
   {
+    shadow = currentStory.shadows[index].getAttribute('data-shadow-id');
+    if(shadow == null)//skip empty shadows
+    {
+      continue;
+    }
     brand = currentStory.shadows[index].getAttribute('data-brand');
     if(!(brand in brand_shadows))
     {
@@ -75,7 +80,33 @@ function build_shopping_list()
 
 function remove_shopping_shadow(shadow_div)
 {
+  console.log(brand_shadows);
   shadow_div = $(shadow_div).parent();
   console.log(shadow_div);
+  //shadow_div.addClass("Hidden");
   //remove a shadow from the shopping list
+}
+
+function open_tabs(target_brand=None)
+{
+  if(target_brand == None)
+  {
+    for (brand_index in brand_shadows)
+    {
+      brand = brand_shadows[brand_index];
+      for (shadow_index in brand)
+      {
+        shadow = brand[shadow_index];
+        url = shadow.getAttribute('data-link');
+        window.open(url, '_blank');
+      }
+    }
+  } else {
+    for (shadow_index in brand_shadows[target_brand])
+    {
+      shadow = brand[shadow_index];
+      url = shadow.getAttribute('data-link');
+      window.open(url, '_blank');
+    }
+  }
 }

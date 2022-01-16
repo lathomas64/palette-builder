@@ -98,6 +98,7 @@ $count = $shadows->found_posts;
   	$brand = get_field("brand");
 
   	$colors = get_field("colors");
+		$link = get_field("product_url");
 		$avg_hue = get_field("avg_hue");
 		$avg_lightness = get_field("avg_lightness");
 		$avg_saturation = get_field("avg_saturation");
@@ -160,6 +161,7 @@ $count = $shadows->found_posts;
 						data-lightness='<?php echo $lightness; ?>'
 						data-lightness-sort='<?php echo $avg_lightness; ?>'
 						data-color-sort='<?php echo $avg_hue; ?>'
+						data-link='<?php echo $link; ?>'
 						<?php if ($brand) { ?>
 						data-country='<?php echo $country; ?>'
 						data-ships='<?php echo $ships; ?>'
