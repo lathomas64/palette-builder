@@ -37,7 +37,7 @@ function modalOpen(event){
 		$('#leftDrawer').addClass("On");
 	}
 	if(
-		$(event.target).parents().is(".Modal_Trigger.Right")
+		$(event.target).parents().is(".Modal_Trigger.Right") || $(event.target).is(".Modal_Trigger.Right")
 	) {
 		$('#rightDrawer').addClass("On");
 	}
@@ -92,6 +92,20 @@ function modalClose(event) {
 		}
 }
 
+//////Button Activation
+	$("#advancedFilterBtn").click(function(){
+		// $("#advancedFilterDrawer").addClass("On");
+		// $("#advancedFilterDrawer").addClass("Fade_In_Right");
+		$("#shadowFilterBtn").removeClass("Selected")
+		$("#shadowFilterBasic").removeClass("On")
+	});
+
+//////Button Close
+		$("#afCloseBtn").click(function(){
+		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
+		$("#advancedFilterDrawer").delay(3000).removeClass("On");
+	});
+
 function shoppingListSlider (event){
 	if ($(event.target).is(".Next_Slide") && 
 				!$(event.target).attr("disabled")) {
@@ -114,8 +128,8 @@ function priceTree (event){
 		!$("#Forward").hasClass("Invalid")
 	)
 	{
-		$(".Payment_Information").toggleClass("Hidden");
-		$("#Forward").toggleClass("Dark");
+		$(".Payment_Information").removeClass("Hidden");
+		$("#Forward").addClass("Dark");
 	}
 	else if ( 
 		$(".Filter_Button.Price").is(':checked')
@@ -346,25 +360,6 @@ storyDetail.mouseenter(function() {
 			$(element).find('.Wrapper').append(circle.clone());
 		}
 });
-
-////Advanced Filter Overlay
-
-//NOTE: advancedFilterDrawer & advancedFilterBtn were removed in refactoring. Code below needs to be reworked
-
-//////Button Activation
-	$("#advancedFilterBtn").click(function(){
-		// $("#advancedFilterDrawer").addClass("On");
-		// $("#advancedFilterDrawer").addClass("Fade_In_Right");
-		$("#shadowFilterBtn").removeClass("Selected")
-		$("#shadowFilterBasic").removeClass("On")
-	});
-
-//////Button Close
-		$("#afCloseBtn").click(function(){
-		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
-		$("#advancedFilterDrawer").delay(3000).removeClass("On");
-	});
-
 
 //////Close When Out-Click
 

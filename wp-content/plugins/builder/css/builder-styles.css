@@ -1197,8 +1197,13 @@ label.Remember {
 }
 
 .Filter_Button.Price {
-	background-color: var(--FDBL-green-dark);
-	color: var(--FDBL-white-text);
+	display: flex;
+	align-items: center;
+	background-color: var(--FDBL-yellow-medium);
+	color: var(--FDBL-black);
+	font: var(--font-accordion-section-title);
+	border-color: var(--FDBL-dark-gray);
+}
 }
 
 .Filter_Button.Price:hover{
@@ -1434,7 +1439,11 @@ label.Remember {
  text-transform: uppercase;
 }
 
-.Code_Copy.Not_Copied {
+.Code_Copy {
+	padding: 12px 20px;
+}
+
+.Not_Copied {
  border: 4px dashed #CFBD63;
  background-color: var(--FDBL-green-dark);
  padding: 24px;
@@ -1643,4 +1652,25 @@ button.Prev_Slide div::before {
 
 .Filter_Button.Row {
 	display:flex;
+}
+
+/**SIGN UP MODULE**/
+
+.SR_only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.Pay_Option_Custom .Currency_Symbol {
+	padding: 8px;
+	background-color: var(--FDBL-yellow-medium);
+	color: var(--FDBL-black);
+	border-radius: 2px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
 }

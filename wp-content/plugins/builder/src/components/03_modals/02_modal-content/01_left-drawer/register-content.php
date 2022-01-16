@@ -33,6 +33,7 @@
 		     	<div class="Heading">Name a Fair Price to Get Started</div>
 							</div>
 						</div>
+						<p>Need a bit of an explainer here. </p>
 						<div class="Color_Family Button_Group Row Gap_4 Justify_Content_Flex_Start">
 							<div class="Color_Family Button_Group Row Gap_4 Justify_Content_Flex_Start">
 							<input class="Filter_Button Price" id="payOp1" type="radio" name="price" />
@@ -41,16 +42,15 @@
 							<label class="Filter_Button Price" for="payOp2">$5.00</label>
 							<input class="Filter_Button Price" id="payOp3" type="radio" name="price" />
 							<label class="Filter_Button Price" for="payOp3">$10.00</label>
-							<input class="Filter_Button Price" id="payOpCustom" type="radio" name="price" />
-							<label class="Filter_Button Price Row Gap_4 Align_Items_Center" for="payOpCustom">
-								<div class="Icon_Container">
-									<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/></svg>
-								</div>
-								<div>Custom Amount</div>
-							</label>
+							<div class="Pay_Option_Custom Row Gap_0 Align_Items_Center">
+									<div class="Currency_Symbol">$</div>
+									<label class="Custom_Price_Input">
+											<span class="SR_Only">Other Amount</span>
+											<input type="number" class="" name="amount" step="1.00" min="1" placeholder="Other Amount" value="">
+									</label>
+							</div>
 							</div>
 						</div>
-						<p>Need a bit of an explainer here. </p>
 					</div>
 					<button id="Forward"class="Button_Block Invalid">Select a payment amount to move forward</button>
 					<div class="Payment_Information Hidden">
