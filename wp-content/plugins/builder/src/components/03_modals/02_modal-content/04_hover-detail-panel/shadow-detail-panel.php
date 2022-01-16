@@ -1,5 +1,4 @@
 <div id="shadowDetail" class="Modal Shadow_Detail_Panel Flex_Container Column Justify_Content_Center Gap_16">
-	<a class="Post_edit" href="#">edit shadow</a>
 <div class="Single_Pan_Card">
 				<div class="Card_Container Column Gap_8 Align_Items_Center">
 					<div class="Column Align_Items_Center">
@@ -8,7 +7,7 @@
 					</div>
 					<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
 						<div class="Wrapper">
-							<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/09/4thDimension-280x180.jpg" />
+							<img src="" />
 							<div class="Pan_Shadow"></div>
 						</div>
 					</div>

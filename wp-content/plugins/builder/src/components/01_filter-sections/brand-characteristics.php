@@ -6,27 +6,27 @@
 <div class="Button_Group">
 	<ul class="Row Gap_8 Justify_Content_Flex_Start">
 		<li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="CF" type="checkbox" />
+			<input data-filter="cruelty-free" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="CF" type="checkbox" />
 			<label class="Filter_Button" for="CF"><nobr>Cruelty-Free</nobr></label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Veg" type="checkbox" />
+			<input data-filter="veg" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Veg" type="checkbox" />
 			<label class="Filter_Button" for="Veg">Vegan</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Indie" type="checkbox" />
+			<input data-filter="independently-owned-indie" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Indie" type="checkbox" />
 			<label class="Filter_Button" for="Indie">Indie</label>
 		</li>
 		<li>
 		<li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Eco" type="checkbox" />
+			<input data-filter='eco' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Eco" type="checkbox" />
 			<label class="Filter_Button" for="Eco"><nobr>Eco-Friendly</nobr></label>
 		</li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="GF" type="checkbox" />
+			<input data-filter='gf' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="GF" type="checkbox" />
 			<label class="Filter_Button" for="GF"><nobr>Gluten Free</nobr></label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Halal" type="checkbox" />
+			<input data-filter='halal' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Halal" type="checkbox" />
 			<label class="Filter_Button" for="Halal">Halal</label>
 		</li>
 	</ul>
@@ -39,26 +39,26 @@
 <div class="Button_Group">
 	<ul class="Row Gap_8 Justify_Content_Flex_Start">
 		<li>
-			<input onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="AAPI" type="checkbox" />
+			<input data-filter='aapi' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="AAPI" type="checkbox" />
 			<label class="Filter_Button" for="AAPI">AAPI</label>
 		</li>
-			<input onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Black" type="checkbox" />
+			<input data-filter='black' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Black" type="checkbox" />
 			<label class="Filter_Button" for="Black"><nobr>	Black</nobr></label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Indigenous" type="checkbox" />
+			<input data-filter='indigenous' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Indigenous" type="checkbox" />
 			<label class="Filter_Button" for="Indigenous">Indigenous</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Latinx" type="checkbox" />
+			<input data-filter='latnix' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Latinx" type="checkbox" />
 			<label class="Filter_Button" for="Latinx">Latinx</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Woman" type="checkbox" />
+			<input data-filter='woman' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Woman" type="checkbox" />
 			<label class="Filter_Button" for="Woman">Woman</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="LGBTQ" type="checkbox" />
+			<input data-filter='lgbtq' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="LGBTQ" type="checkbox" />
 			<label class="Filter_Button" for="LGBTQ">LGBTQ+</label>
 		</li>
 	</ul>
@@ -77,10 +77,10 @@
 	</div>
 	<div class="Check_List Filterable">
 		<ul class="Column Gap_8">
-			<?php foreach($brand_list as $brand){?>
+			<?php foreach($brand_list as $brand_id => $brand_name){?>
 			<li>
-				<input onclick="Toggle_Filter(event, 'brand');" id="<?php echo $brand; ?>" type="checkbox" />
-				<label for="<?php echo $brand; ?>"><?php echo $brand; ?></label>
+				<input data-filter='<?php echo $brand_id ?>' onclick="Toggle_Filter(event, 'brand');" id="<?php echo $brand_name; ?>" type="checkbox" />
+				<label for="<?php echo $brand_name; ?>"><?php echo $brand_name; ?></label>
 			</li>
 		<?php } ?>
 		</ul>

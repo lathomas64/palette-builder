@@ -1,4 +1,26 @@
 <?php
+    function pb_search_term($query, $taxonomy)
+    {
+      $terms = get_terms(
+        array(
+          'taxonomy' => $taxonomy,
+          'name__like' => $query
+        )
+      );
+      $slugs = wp_list_pluck($terms, 'slug');
+      return $slugs;
+    }
+
+    function pb_merge_terms($term_list, $taxonomy)
+    {
+      $terms = [];
+      foreach($term_list as $term) {
+        $slugs = pb_search_term($term, $taxonomy);
+        $terms = array_merge($terms, $slugs);
+      }
+      return $terms;
+    }
+
     function hex_to_hsl($color){
         $r = intval(substr($color, 1,2), 16);
         $g = intval(substr($color, 3,2), 16);
@@ -117,11 +139,33 @@
             $args['tax_query'][] = $subquery;
           }
           if(array_key_exists('temperature', $filters)){
+            /*
+              if no colors set or neutral is set, get all color_tags with temperature in them.
+              slug like temperature
+              if colors are set, get all color tags with temperature AND color in them.
+              slug like temperature AND name like colors
+            */
             //color filter stuff will go here;
+            // $subquery = array(
+            //   'taxonomy' => 'tax_color_tag',
+            //   'field' => 'slug',
+            //   'terms' => $filters['temperature']
+            // );
+            // TODO check if this handles the neutral case
+            $temp_terms = pb_merge_terms($filters['temperature'], 'tax_color_tag');
+            if(array_key_exists('colors', $filters))
+            {
+              $color_terms = pb_merge_terms($filters['colors'], 'tax_color_tag');
+              $terms = array_intersect($temp_terms, $color_terms);
+            }
+            else {
+              $terms = $temp_terms;
+            }
+
             $subquery = array(
-              'taxonomy' => 'tax_temperature',
-              'field' => 'name',
-              'terms' => $filters['colors']
+              'taxonomy' => 'tax_color_tag',
+              'field' => 'slug',
+              'terms' => $terms
             );
             $args['tax_query'][] = $subquery;
           }
@@ -129,7 +173,7 @@
             //color filter stuff will go here;
             $subquery = array(
               'taxonomy' => 'tax_vividness',
-              'field' => 'name',
+              'field' => 'slug',
               'terms' => $filters['vividness']
             );
             $args['tax_query'][] = $subquery;
@@ -138,7 +182,7 @@
             //color filter stuff will go here;
             $subquery = array(
               'taxonomy' => 'tax_lightness',
-              'field' => 'name',
+              'field' => 'slug',
               'terms' => $filters['lightness']
             );
             $args['tax_query'][] = $subquery;
@@ -152,21 +196,21 @@
             );
             $args['tax_query'][] = $subquery;
           }
-          if(array_key_exists('pan_size', $filters)){
+          if(array_key_exists('size', $filters)){
             //color filter stuff will go here;
             $subquery = array(
-              'taxonomy' => 'tax_pan_size',
-              'field' => 'name',
-              'terms' => $filters['pan_size']
+              'taxonomy' => 'pan-width',
+              'field' => 'slug',
+              'terms' => $filters['size']
             );
             $args['tax_query'][] = $subquery;
           }
-          if(array_key_exists('pan_shape', $filters)){
+          if(array_key_exists('shape', $filters)){
             //color filter stuff will go here;
             $subquery = array(
-              'taxonomy' => 'tax_pan_shape',
-              'field' => 'name',
-              'terms' => $filters['pan_shape']
+              'taxonomy' => 'pan-shape',
+              'field' => 'slug',
+              'terms' => $filters['shape']
             );
             $args['tax_query'][] = $subquery;
           }
@@ -181,23 +225,37 @@
             "tax_query" => array(
               'relation' => 'AND',
               array(
-                'taxonomy' => 'tax_demographic',
-                'field' => 'name',
+                'taxonomy' => 'tax_demographics',
+                'field' => 'slug',
                 'terms' => $filters['demographics']
               )
             )
             ];
             $brands = new WP_Query($brand_args);
-            $brand_ids = wp_list_pluck($brands->posts, "ID");
-            $subquery = array(
-              'key' => 'brand',
-              'value' => $brand_ids,
-              'compare' => 'in'
-            );
-            $args['meta_query'][] = $subquery;
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
+            }
+            $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
           }
           //brands should be ids of brands
-          if(array_key_exists('brands', $filters)){
+          if(array_key_exists('brand', $filters)){
             $brand_args = [
             "post_type" => "cpt_brand",
             "post_status" => "publish",
@@ -205,18 +263,35 @@
             "orderby" => "title",
             "order" => "ASC",
             "cat" => "home",
-            "post__in" => $filters['brands'],
+            "post__in" => $filters['brand'],
             ];
             $brands = new WP_Query($brand_args);
-            $brand_ids = wp_list_pluck($brands->posts, "ID");
-            $subquery = array(
-              'key' => 'brand',
-              'value' => $brand_ids,
-              'compare' => 'in'
-            );
-            $args['meta_query'][] = $subquery;
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
+            }
+            $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
           }
           if(array_key_exists('shipping_country', $filters)){
+            if(!in_array('worldwide', $filters['shipping_country'])){
+              array_push($filters['shipping_country'], 'worldwide');
+            }
             //TODO I don't think this one will work how do we get around this?
             $brand_args = [
             "post_type" => "cpt_brand",
@@ -229,19 +304,38 @@
               'relation' => 'AND',
               array(
                 'taxonomy' => 'tax_shipping',
-                'field' => 'name',
+                'field' => 'slug',
                 'terms' => array_map('urldecode', $filters['shipping_country'])
               )
             )
             ];
             $brands = new WP_Query($brand_args);
             $brand_ids = wp_list_pluck($brands->posts, "ID");
-            $subquery = array(
-              'key' => 'brand',
-              'value' => $brand_ids,
-              'compare' => 'in'
-            );
-            $args['meta_query'][] = $subquery;
+            //print_r($brand_ids);
+            //die();
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
+            }
+            $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
+            //print_r($shadows);
+            //die();
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
           }
           if(array_key_exists('finishes', $filters)){
             //color filter stuff will go here;
@@ -253,13 +347,50 @@
             $args['tax_query'][] = $subquery;
           }
           if(array_key_exists('characteristics', $filters)){
-            //color filter stuff will go here;
-            $subquery = array(
-              'taxonomy' => 'tax_finish',
-              'field' => 'name',
-              'terms' => $filters['finishes']
-            );
-            $args['tax_query'][] = $subquery;
+            $brand_args = [
+            "post_type" => "cpt_brand",
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "orderby" => "title",
+            "order" => "ASC",
+            "cat" => "home",
+            "tax_query" => array(
+              'relation' => 'AND'
+            )
+            ];
+            // Doing this to AND instead of OR
+            foreach($filters['characteristics'] as $slug)
+            {
+              $characteristic = array(
+                'taxonomy' => 'tax_brand_characteristic',
+                'field' => 'slug',
+                'terms' => $slug
+              );
+              $brand_args["tax_query"][] = $characteristic;
+            }
+            $brands = new WP_Query($brand_args);
+            $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+            $shadows = array();
+            foreach($brand_shadows as $shadow_list)
+            {
+              if(gettype($shadow_list) == "array"){
+              	$merge = array_merge($shadows, $shadow_list);
+              	$shadows = $merge;
+              }
+            }
+            $shadows = array_unique($shadows);
+            if($shadows == null)
+            {
+              echo "[]";
+              die();
+            }
+            // TODO make this work with multiple values trying to do this.
+            if(array_key_exists("post__in", $args)){
+              $args["post__in"] = array_intersect($args["post__in"], $shadows);
+            } else {
+                $args["post__in"] = $shadows;
+            }
+
           }
           if($filters['price_min'] != -1){
             $subquery = array(

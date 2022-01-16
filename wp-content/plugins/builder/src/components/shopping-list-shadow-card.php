@@ -3,7 +3,7 @@
 		<div class="Shadow Grid_Container Gap_16 Align_Content_Center">
 	  <div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_26 Pan_Shape_Round">
 		<div class="Wrapper">
-			<img src="http://pb.rainbowcapitalism.com/wp-content/uploads/2021/10/Arcana.jpg">
+			<img src="../assets/temp-shadow-imgs/Arctic-Lime.jpg">
 			<div class="Pan_Shadow"></div>
 		</div>
 	</div>

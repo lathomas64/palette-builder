@@ -25,48 +25,74 @@ else {
 };
 
 function modalOpen(event){
+	//Open Modal Container
 	if(
-		$(event.target).is(".Modal_Trigger.Center")
+		$(event.target).parents().is(".Modal_Trigger.Center")
 	) {
 		$('#centerModal').addClass("On");
 	}
 	if(
-		$(event.target).is(".Modal_Trigger.Left")
+		$(event.target).parents().is(".Modal_Trigger.Left")
 	) {
 		$('#leftDrawer').addClass("On");
 	}
 	if(
-		$(event.target).is(".Modal_Trigger.Right")
+		$(event.target).parents().is(".Modal_Trigger.Right")
 	) {
 		$('#rightDrawer').addClass("On");
 	}
-if(
-		$(event.target).is(".Modal_Trigger.List")
-	) {
-		$(".Check_List").addClass("Active_Panel");
-		$(".Copy_Code").removeClass("Active_Panel");
-		$(".Buy_Shadows").removeClass("Active_Panel");
-		build_shopping_list();
-		$('#listDrawer').addClass("On");
+	//Display Modal Content
+	if(
+			$(event.target).is(".Modal_Trigger.List")
+		) {
+			$(".Check_List").addClass("Active_Panel");
+			$(".Copy_Code").removeClass("Active_Panel");
+			$(".Buy_Shadows").removeClass("Active_Panel");
+			build_shopping_list();
+			$('#listDrawer').addClass("On");
+		}
+	if(
+			$(event.target).parents().is(".Modal_Trigger.Builder_Share")
+		) {
+			$(".Share_Modal").addClass("On");
+			$(".Share_Modal").removeClass("Hidden");
 	}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Help")
+	) {
+		$("#genericModal").addClass("On");
+		$("#genericModal").removeClass("Hidden");
+}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Disclaimer")
+	) {
+		$("#genericModal").addClass("On");
+		$("#genericModal").removeClass("Hidden");
+}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Log_In")
+	) {
+		$(".Login_Content").addClass("On");
+		$(".Register_Content").removeClass("On");
+}
+	if(
+		$(event.target).parents().is(".Modal_Trigger.Register")
+	) {
+		$(".Register_Content").addClass("On");
+		$(".Login_Content").removeClass("On");
+}
 };
 
 function modalClose(event) {
 	if (
 			$(".Modal").hasClass("On") && 
-			!$(event.target).parents().is(".Drawer_Overlay")
+			(!$(event.target).parents().is(".Drawer_Overlay") || $(event.target).parents().is(".Close"))
 		) {
-			$(".Modal").removeClass("On");
-		}
-		else if(
-			$(event.target).hasClass("Close")
-		) {
-			$(event.target).closest(".Modal").removeClass("On");
+			$(event.target).closest(".On").removeClass("On");
 		}
 }
 
 function shoppingListSlider (event){
-	console.log(event.target);
 	if ($(event.target).is(".Next_Slide") && 
 				!$(event.target).attr("disabled")) {
 					$(this).closest(".Active_Panel").next().addClass("Active_Panel")
@@ -79,9 +105,33 @@ function shoppingListSlider (event){
 				}
 }
 
+function shareModalBGSwitcher (event){
+	//function to switch .img_container from light to dark
+}
+
+function priceTree (event){
+	if (
+		!$("#Forward").hasClass("Invalid")
+	)
+	{
+		$(".Payment_Information").toggleClass("Hidden");
+		$("#Forward").toggleClass("Dark");
+	}
+	else if ( 
+		$(".Filter_Button.Price").is(':checked')
+	)
+	{
+		$("#Forward").removeClass("Invalid").text('Move Forward to Pay [selection here]');
+	} 
+}
+
 $(document).ready(function(event){
 
 $(resultsHeight);
+
+$(".Pay_Box").click(
+	priceTree
+);
 
 $(".Dismiss").click(
 	resultsHeight
@@ -128,7 +178,7 @@ shadowCard.mouseenter(function() {
 			) {
 				shadowDetail.removeClass("Fade_In");
 				shadowDetail.css(
-				"left", ""
+				"left", "0"
 			);
 						shadowDetail.css(
 				"display", ""
@@ -139,7 +189,7 @@ shadowCard.mouseenter(function() {
 		shadowDetail.removeClass("Fade_In");
 		setTimeout (function() {
 			shadowDetail.css(
-				"left", ""
+				"left", "0"
 			);
 						shadowDetail.css(
 				"display", ""
@@ -242,6 +292,16 @@ storyDetail.mouseenter(function() {
 			$("#hideMeta").toggleClass("Minimized_Tab");
 		});
 	});
+	
+		//Controls Color Temperature Toggle
+	$("button#hideTemp").click(function(){
+  $(".Temperature_Options .Button_Group").slideToggle(100, function(){
+			$(".Temperature_Options #controlLabel").text(
+				$(this).is(':visible') ? "Hide Temperature Options" : "Show Temperature Options");
+			$("#tempPlus").toggle();
+   $("#tempMinus").toggle();
+		});
+	});
 
 
 // Changing panels with button click
@@ -324,7 +384,6 @@ storyDetail.mouseenter(function() {
 			}
 		}, 100);
 	});
-
 
 
 }); //end of document ready

@@ -59,15 +59,6 @@ $args = [
 	"cat" => "home",
 ];
 $brands = new WP_Query($args);
-$args = [
-	"post_type" => "tax_series",
-	"post_status" => "publish",
-	"posts_per_page" => -1,
-	"orderby" => "title",
-	"order" => "ASC",
-	"cat" => "home",
-];
-$series = new WP_Query($args);
 $count = $shadows->found_posts;
 ?>
 <div class="Results Column">
@@ -124,37 +115,24 @@ $count = $shadows->found_posts;
 		} else {
 			$size = "Irregular";
 		}
-		if(array_key_exists('tax_series', $the_tax)){
-			$series = $the_tax['tax_series'];
-			$explode = explode("=", $series);
-			$slug = $explode[1];
-			$series = substr($slug, 0,-1);
-
-			$details = get_terms('tax_series', array('slug'=>$series));
-			if(!$brand){
-				$brand_series = get_field('brand', $details[0]);
-				if($brand_series){
-						$brand = $brand_series; //how do we get the name from this?
-				}
+		if ($brand) {
+			$brand_name = get_post_field("post_title", $brand[0]);
+			$brand_id = get_post_field("ID", $brand[0]);
+			if($brand_name && !in_array($brand_name, $brand_list)){
+				$brand_list[$brand_id] = $brand_name;
 			}
-			if ($brand) {
-				$brand_name = get_post_field("post_title", $brand[0]);
-				if($brand_name && !in_array($brand_name, $brand_list)){
-						array_push($brand_list, $brand_name);
-				}
 
-				//get country from brand
-				$country_details = wp_get_post_terms($brand[0], 'tax_countries');
-				if($country_details)
-				{
-					//$country = get_field('name', $country_details[0]);
-					$country = $country_details[0]->name;
-				}
-				$shipping_details = wp_get_post_terms ($brand[0], 'tax_shipping');
-				if($shipping_details)
-				{
-					$ships = $shipping_details[0]->name;
-				}
+			//get country from brand
+			$country_details = wp_get_post_terms($brand[0], 'tax_countries');
+			if($country_details)
+			{
+				//$country = get_field('name', $country_details[0]);
+				$country = $country_details[0]->name;
+			}
+			$shipping_details = wp_get_post_terms ($brand[0], 'tax_shipping');
+			if($shipping_details)
+			{
+				$ships = $shipping_details[0]->name;
 			}
 		}
   	?>
@@ -173,7 +151,6 @@ $count = $shadows->found_posts;
 						data-height='<?php echo $height; ?>'
 						data-width='<?php echo $width; ?>'
 						data-shape='<?php echo $shape ?>'
-						data-series='<?php echo $series; ?>'
 						data-name='<?php the_title(); ?>'
 						data-shift='<?php echo $shift; ?>'
 						data-finish='<?php echo $finish; ?>'

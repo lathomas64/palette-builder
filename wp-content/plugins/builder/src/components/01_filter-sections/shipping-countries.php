@@ -14,7 +14,7 @@
 			<!-- we may have issues here because of ids being duplicated across instances of shipping countries -->
 			<?php foreach($shipping_options as $option){?>
 			<li>
-				<input onclick="Toggle_Filter(event, 'shipping');" id="<?php echo $option; ?>" type="checkbox" />
+				<input data-filter="<?php echo strtolower(str_replace(" ","-",$option)); ?>" onclick="Toggle_Filter(event, 'shipping');" id="<?php echo $option; ?>" type="checkbox" />
 				<label for="<?php echo $option; ?>"><?php echo $option; ?></label>
 			</li>
 		<?php } ?>

@@ -27,7 +27,7 @@
 					<div class="Property_Description"><button class="Text_Button Icon_Button Row Gap_4 Align_Items_Center">
 						<div class="Icon_Container">
 							<svg class="svgMinus" style="display:none;" width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1.40336H0V0.260498H8V1.40336Z" fill="#959595"></path></svg>
-							<svg class="svgPlus" width="" height="" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<svg class="svgPlus" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
 								</svg>
 	  	</div>

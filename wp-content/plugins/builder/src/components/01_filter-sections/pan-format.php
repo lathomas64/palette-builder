@@ -5,7 +5,7 @@
 <div class="Pan_Size Button_Group">
 	<ul class="Row Gap_16">
 		<li>
-			<input onclick='Toggle_Filter(event, "size");' class="Single_Pan_Card"id="26mm" type="checkbox"/>
+			<input data-filter="26" onclick='Toggle_Filter(event, "size");' class="Single_Pan_Card"id="26mm" type="checkbox"/>
 			<label class="Single_Pan_Card" for="26mm"><div class="Card_Container Column Gap_8">
 				<div class="Shadow_Name">26mm</div>
 				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_26 Pan_Shape_Square">
@@ -18,7 +18,7 @@
 		</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "size");' class="Single_Pan_Card"id="37mm" type="checkbox"/>
+			<input data-filter="37" onclick='Toggle_Filter(event, "size");' class="Single_Pan_Card"id="37mm" type="checkbox"/>
 			<label class="Single_Pan_Card" for="37mm"><div class="Card_Container Column Gap_8">
 				<div class="Shadow_Name">37mm</div>
 				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_37 Pan_Shape_37mm">
@@ -31,7 +31,7 @@
 		</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "size");' class="Single_Pan_Card"id="irregular" type="checkbox" />
+			<input data-filter='irregular' onclick='Toggle_Filter(event, "size");' class="Single_Pan_Card"id="irregular" type="checkbox" />
 			<label class="Single_Pan_Card" for="irregular"><div class="Card_Container Column Gap_8">
 				<div class="Shadow_Name">Irregular</div>
 				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_26 Pan_Shape_Irregular">
@@ -53,7 +53,7 @@
 <div class="Pan_Size Button_Group">
 	<ul class="Row Gap_16">
 		<li>
-			<input onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="Round" type="checkbox"/>
+			<input data-filter="round" onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="Round" type="checkbox"/>
 			<label class="Single_Pan_Card" for="Round"><div class="Card_Container Column Gap_8">
 				<div class="Shadow_Name">Round</div>
 				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_37 Pan_Shape_Round">
@@ -66,7 +66,7 @@
 		</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="square" type="checkbox" />
+			<input data-filter="rectangle" onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="square" type="checkbox" />
 			<label class="Single_Pan_Card" for="square"><div class="Card_Container Column Gap_8">
 				<div class="Shadow_Name">Square</div>
 				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_37 Pan_Shape_Square">
@@ -79,7 +79,7 @@
 		</label>
 		</li>
 		<li>
-			<input onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="Other" type="checkbox" />
+			<input data-filter='other' onclick='Toggle_Filter(event, "shape");' class="Single_Pan_Card"id="Other" type="checkbox" />
 			<label class="Single_Pan_Card" for="Other"><div class="Card_Container Column Gap_8">
 				<div class="Shadow_Name">Other</div>
 				<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_26 Pan_Shape_Irregular">
