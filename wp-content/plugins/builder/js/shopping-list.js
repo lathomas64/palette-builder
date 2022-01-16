@@ -14,7 +14,7 @@ function populate_brand(shadow_list, brand_div)
       if(shadow_div == undefined)
       {
         shadow_div = prototype_div.clone();
-        $(brand_div).find('.List_Tile').append(shadow_div);
+        $(brand_div).find('.List').append(shadow_div);
       }
       $(shadow_div).find('img')[0].src = $(shadow_list[index]).find('img')[0].src;
       $(shadow_div).find('.Shade_Name')[0].textContent = shadow_list[index].getAttribute('data-name');
