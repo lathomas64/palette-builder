@@ -43,6 +43,11 @@ function modalOpen(event){
 	}
 	//Display Modal Content
 	if(
+		$(event.target).is("#advancedFilterBtn")
+	) {
+		$('#advancedFilterContent').addClass("On");
+	}
+	if(
 			$(event.target).is(".Modal_Trigger.List")
 		) {
 			$(".Check_List").addClass("Active_Panel");
@@ -84,27 +89,27 @@ function modalOpen(event){
 };
 
 function modalClose(event) {
+	if($(".Modal").hasClass("On") && 
+		$(event.target).is("#advancedFilterBtn")
+	){
+		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
+	}
 	if (
 			$(".Modal").hasClass("On") && 
-			(!$(event.target).parents().is(".Drawer_Overlay") || $(event.target).parents().is(".Close"))
+			($(event.target).is(".Drawer_Overlay") || $(event.target).parents().is(".Close") || $(event.target).is("Close") )
 		) {
-			$(event.target).closest(".On").removeClass("On");
+			$(event.target).parents().removeClass("On");
 		}
 }
 
 //////Button Activation
-	$("#advancedFilterBtn").click(function(){
-		// $("#advancedFilterDrawer").addClass("On");
-		// $("#advancedFilterDrawer").addClass("Fade_In_Right");
-		$("#shadowFilterBtn").removeClass("Selected")
-		$("#shadowFilterBasic").removeClass("On")
-	});
 
-//////Button Close
-		$("#afCloseBtn").click(function(){
-		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
-		$("#advancedFilterDrawer").delay(3000).removeClass("On");
-	});
+
+// //////Button Close
+// 		$("#afCloseBtn").click(function(){
+// 		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
+// 		$("#advancedFilterDrawer").delay(3000).removeClass("On");
+// 	});
 
 function shoppingListSlider (event){
 	if ($(event.target).is(".Next_Slide") && 

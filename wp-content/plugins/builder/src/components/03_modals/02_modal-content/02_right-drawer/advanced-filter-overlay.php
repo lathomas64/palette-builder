@@ -105,8 +105,6 @@
 						</div>
 					</div>
 	    <div class="Row Justify_Content_Flex_End">
-			<button class="Button_Block Row Justify_Content_Center">
-	 <div>Apply All Filters and Close Search</div>
-	</button>
+			<button class="Button_Block Row Justify_Content_Center Close">Apply All Filters and Close Search</button>
 	    </div>
 	  </div>
