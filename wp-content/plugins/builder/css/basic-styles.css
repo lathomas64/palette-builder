@@ -15,11 +15,15 @@ fieldset {
 	background-color: rgba(0, 0, 0, .2);
 }
 
-.Wireframe.Share_Icon {
-	background-color:white;
+.Share_Icon {
 	aspect-ratio: 1 / 1;
-	width:16px;
+	width:32px;
 	text-align:center;
+}
+
+.Share_Icon img {
+	width:100%;
+	max-width:100%;
 }
 
 .Button_Group input[type="radio"] {

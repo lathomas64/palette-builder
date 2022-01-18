@@ -4,7 +4,7 @@
 		<!-- when we have an image add the image to the wrapper
     <img src="../assets/temp-shadow-imgs/Arsenic.jpg" />
     -->
-		<div class="Pan_Shadow" >
+		<div class="Pan_Shadow Column Justify_Content_Center">
 			<?php include "components/pan-controls.php"; ?>
 		</div>
 	</div>

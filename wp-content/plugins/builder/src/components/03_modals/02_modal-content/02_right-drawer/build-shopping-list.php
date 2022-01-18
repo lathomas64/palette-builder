@@ -17,7 +17,7 @@
 		  <div class="Panel_Title">Double Check Your List</div>
 		 </div>
 			<div class="Column Gap_24 Drawer_Container">
-				<div class="Column Gap_48">
+				<div class="Column Gap_32">
 			  <div class="Grid_Container Shopping_List_Summary Gap_32">
 		  		<div class="Palette Search_Grid_Card Palette_Summary Row Justify_Content_Center Story_Size_3w_3t">
 							<div class="Card_Container Column Gap_16 Reverse">

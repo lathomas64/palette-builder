@@ -1297,7 +1297,7 @@ label.Remember {
 	font: var(--font-hero-heading);
 }
 
-.Build_List_Carousel .Panel_Title, .Share_Modal .Panel_Title {
+.Build_List_Carousel .Panel_Title, .Share_Modal .Heading {
  color: var(--FDBL-white-text);
  font: var(--font-heading-2);
 }
@@ -1422,10 +1422,10 @@ label.Remember {
   box-shadow: var(--drag-shadow);
 }
 
-.Build_List_Title .Text_Button {
+.Drawer_Overlay .Text_Button  {
 	color: var(--FDBL-medium-gray);
 }
-.Build_List_Title .Text_Button svg {
+.Drawer_Overlay .Text_Button svg {
 	fill: var(--FDBL-medium-gray);
 }
 
@@ -1558,7 +1558,7 @@ button.Prev_Slide div::before {
 
 .Share_Modal .Story_Grid .Shadow_Image_Container:hover {
  cursor: default;
- border: var(--grid-lines);
+ border: none;
 }
 
 .Share_Modal .Img_Container .Img_Meta {
@@ -1575,8 +1575,8 @@ button.Prev_Slide div::before {
 	margin:0;
 }
 
-.Share_Modal .Share_Img_Format span {
-	font: var(--font-panel-section-title);
+.Share_Modal .Share_Img_Format div {
+	font: var(--font-accordion-section-title);
 	color: var(--FDBL-white-text);
 }
 
@@ -1584,8 +1584,9 @@ button.Prev_Slide div::before {
 	color: var(--FDBL-white-text);
 }
 
-.Share_Modal .Panel_Title {
-	
+.Share_Modal .Heading {
+	padding:0;
+	border-bottom:0;
 }
 
 .Share_Modal input:not([type="submit"]):not([type="file"]) {
@@ -1593,11 +1594,21 @@ button.Prev_Slide div::before {
 }
 
 .Share_Modal .Share_Img_Format label {
-	font-weight: var(--type-weight-light);
+	font: var(--font-body-regular);
 }
 
 .Share_Modal .Subheading {
  font: var(--font-heading-4);
+}
+
+.Share_Modal .Arrow{
+	display:none;
+}
+
+.Share_Modal .Shadow_Name {
+	font: var(--font-accordion-section-title);
+	text-shadow: 0px 0px 6px var(--FDBL-black);
+	background: none;
 }
 
 /**LIGHT BACKGROUND OPTIONS**/
@@ -1673,4 +1684,8 @@ button.Prev_Slide div::before {
 	border-radius: 2px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
+}
+
+.Modal .Grid_Container > .Column {
+	height: fit-content;
 }
