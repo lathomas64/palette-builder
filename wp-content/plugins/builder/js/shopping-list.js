@@ -25,6 +25,7 @@ function populate_brand(shadow_list, brand_div)
       $(shadow_div).find('.Shade_Lightness')[0].textContent = shadow_list[index].getAttribute('data-lightness');
       $(shadow_div).find('.Shade_Size_Shape')[0].textContent = shadow_list[index].getAttribute('data-shape')+", "+shadow_list[index].getAttribute('data-size')+"mm";
       $(shadow_div).find('.Price_Value')[0].textContent = shadow_list[index].getAttribute('data-price');
+      $(shadow_div).find('.Remove_Item')[0].setAttribute('onclick', "remove_shopping_shadow(this,'"+shadow_list[index].getAttribute('data-brand')+"', "+index+");");
     }
     $(brand_div).removeClass('Hidden');
 }
@@ -78,13 +79,18 @@ function build_shopping_list()
   }
 }
 
-function remove_shopping_shadow(shadow_div)
+function remove_shopping_shadow(shadow_div, brand, index)
 {
-  console.log(brand_shadows);
   shadow_div = $(shadow_div).parent();
-  console.log(shadow_div);
-  //shadow_div.addClass("Hidden");
-  //remove a shadow from the shopping list
+  if(brand_shadows[brand].length > 1)
+  {
+    brand_shadows[brand].pop(index);
+    shadow_div.remove();
+  } else {
+    delete brand_shadows[brand];
+    brand_div = shadow_div.parent().parent();
+    brand_div.remove();
+  }
 }
 
 function open_tabs(target_brand=None)

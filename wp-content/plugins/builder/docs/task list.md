@@ -31,8 +31,10 @@
   - [ ] Interactivity
   - [ ] Data population
 	  - [x] show shadows from story on first tab
-	  - [ ] remove shadows from list if x is clicked
+	  - [x] remove shadows from list if x is clicked
 	  - [ ] make list of links for 3rd panel
+		  - [x] list of links (regular)
+		  - [ ] split into list of links by brand if too many links.
 	  - [ ] group or not based on brand
 	  - [ ] pull data for where to link
 *Fill Story Shadows*
