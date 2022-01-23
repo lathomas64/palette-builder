@@ -30,13 +30,14 @@
   - [ ] HTML/CSS Edits
   - [ ] Interactivity
   - [ ] Data population
+	  - [ ] Populate if there are 5 or more brands
 	  - [x] show shadows from story on first tab
 	  - [x] remove shadows from list if x is clicked
 	  - [ ] make list of links for 3rd panel
 		  - [x] list of links (regular)
 		  - [ ] split into list of links by brand if too many links.
 	  - [ ] group or not based on brand
-	  - [ ] pull data for where to link
+	  - [x] pull data for where to link
 *Fill Story Shadows*
   - [x] Populate shadow data into stories card & have drawn svgs lazy load shadow image. (color > img)
 	- [ ] ids in story -> colors/imgs for shadow image
