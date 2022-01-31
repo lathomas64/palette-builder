@@ -100,6 +100,11 @@ function update(){
             console.log('ajax successful');
             console.log(data);
 						console.log(data.length);
+						parsed = JSON.parse(data);
+						for (let index in parsed)
+						{
+							load_shadow(parsed[index]);
+						}
           },
           error: function(errorThrown){
           	  console.log('ajax error');

@@ -12,6 +12,7 @@
 	<script src="../js/basic-functions.js"></script>
 	<script src="../js/shopping-list.js"></script>
 	<script src="../js/sort.js"></script>
+	<script src="../js/shadow-list.js"></script>
 </head>
 <body>
 	<div class="Wrap">

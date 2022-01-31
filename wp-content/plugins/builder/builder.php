@@ -16,6 +16,8 @@ add_action('wp_ajax_community_stories', 'community_stories');
 add_action('wp_ajax_nopriv_community_stories', 'community_stories');
 add_action('wp_ajax_save_story', 'save_story');
 add_action('wp_ajax_delete_story', 'delete_story');
+add_action('wp_ajax_get_shadow', 'get_shadow_data');
+add_action('wp_ajax_nopriv_get_shadow', 'get_shadow_data');
 
 function build_builder_redirect()
 {
@@ -24,5 +26,6 @@ function build_builder_redirect()
 
 include 'src/actions/filters.php';
 include 'src/actions/stories.php';
+include 'src/actions/shadows.php';
 
 ?>
