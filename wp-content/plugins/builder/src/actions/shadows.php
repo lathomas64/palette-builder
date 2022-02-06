@@ -68,8 +68,18 @@ function _extract_shadow_data($shadow)
 function get_shadow_data(){
   if ( isset($_REQUEST) ) {
     $id = $_REQUEST['id'];
-    $post = get_post($id);
-    $response = _extract_shadow_data($post);
+    if(is_array($id))
+    {
+      $response = array();
+      foreach($id as $shadow_id){
+        $post = get_post($shadow_id);
+        $data = _extract_shadow_data($post);
+        $response[] = $data;
+      }
+    } else {
+      $post = get_post($id);
+      $response = _extract_shadow_data($post);
+    }
     echo json_encode($response);
     die();
   }
