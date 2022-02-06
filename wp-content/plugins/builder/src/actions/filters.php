@@ -118,7 +118,7 @@
           $args = [
           "post_type" => "cpt_shadow",
           "post_status" => "publish",
-          "posts_per_page" => 20,
+          "posts_per_page" => -1,
           "orderby" => "title",
           "order" => "ASC",
           "cat" => "home",
