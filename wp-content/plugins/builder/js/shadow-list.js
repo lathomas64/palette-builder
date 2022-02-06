@@ -25,14 +25,24 @@ function load_shadows(ids)
                 shadow = parsed[index];
                 render_shadow(shadow);
               }
-              let count_element = document.getElementById('Shadow_Count');
-              console.log(count_element.textContent);
-              let count_parts = count_element.textContent.split(" ");
-              console.log(count_parts);
-              count_parts[1] = Number(count_parts[1]) + parsed.length;
-              console.log(count_parts);
-              count_element.textContent = count_parts.join(" ");
-              console.log(count_element.textContent);
+              let pans = $(".Results .Single_Pan_Card");
+  						let count_element = document.getElementById('Shadow_Count');
+  						let count = 0;
+              for(let i = 0; i < pans.length; i++){
+              	if(ids.includes(parseInt(pans[i].id))){
+              		//pans[i].style.display="block";
+  								pans[i].classList.remove("Hidden");
+  								count++;
+              	}
+              	else {
+  								pans[i].classList.add("Hidden");
+  							}
+              }
+
+  						count_element.textContent = "Showing " + count + " shadow" + (count > 1? "s":"");
+              console.log('ajax successful');
+              console.log(data);
+  						console.log(data.length);
 
             }
     });
@@ -41,37 +51,6 @@ function load_shadows(ids)
     return false;
   }
   //3 render shadows returned and update Shadow count element
-}
-
-function load_shadow(id)
-{
-  if(shadow_loaded(id))
-  {
-    console.log('shadow already loaded...skipping');
-    return false;
-  }
-  else {
-    jQuery.ajax({
-            url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
-            method: 'POST',
-            data: {
-                'action':'get_shadow', // This is our PHP function below
-                'id': id
-            },
-            success:function(data) {
-              parsed = JSON.parse(data);
-              console.log(parsed);
-              render_shadow(parsed);
-              let count_element = document.getElementById('Shadow_Count');
-              let count_parts = count_element.textContent.split(" ");
-              count_parts[1] = Number(count_parts[1]) + 1;
-              count_element.textContent = count_parts.join(" ");
-
-            }
-    });
-    return true;
-  }
-
 }
 
 function load_attribute(element, data, field)
