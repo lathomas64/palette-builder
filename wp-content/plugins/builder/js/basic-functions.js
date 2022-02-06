@@ -102,6 +102,15 @@ function modalClose(event) {
 		}
 }
 
+//////Button Activation
+
+
+// //////Button Close
+// 		$("#afCloseBtn").click(function(){
+// 		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
+// 		$("#advancedFilterDrawer").delay(3000).removeClass("On");
+// 	});
+
 function shoppingListSlider (event){
 	if ($(event.target).is(".Next_Slide") && 
 				!$(event.target).attr("disabled")) {
@@ -116,14 +125,7 @@ function shoppingListSlider (event){
 }
 
 function shareModalBGSwitcher (event){
-if ($("#lightBG").is(':checked')){
-	$("Img_Container").removeClass(".Dark");
-	$("Img_Container").addClass(".Light");
-}
-else if ($("#darkBG").is(':checked')){
-	$("Img_Container").removeClass(".Dark");
-	$("Img_Container").addClass(".Light");
-}
+	//function to switch .img_container from light to dark
 }
 
 function priceTree (event){
@@ -143,10 +145,6 @@ function priceTree (event){
 }
 
 $(document).ready(function(event){
-
-$("BG_Options").click(
-	shareModalBGSwitcher
-);
 
 $(resultsHeight);
 

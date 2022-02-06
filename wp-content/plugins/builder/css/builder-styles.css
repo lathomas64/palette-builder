@@ -158,7 +158,7 @@
 	padding: 8px;
 	background-color: rgb(255 255 255 / 40%);
 	opacity: 0.5;
-	position:relative;
+	position:relative;	
 	flex: 0 0 12%;
 	padding: 8px;
 	height:100%;
@@ -565,7 +565,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 	position:relative;
 	top:0;
 	transition: .1s;
-
+	
 }
 
 #Filter_By_Text:focus-visible::placeholder {
@@ -806,7 +806,7 @@ label {
 	border-top: 0;
 }
 
-/** FOR JS USE. WHEN USER SELECTS OPTIONS, THIS SHOULD POPULATE W/ CONTENT AND BECOME APPARENT TO USER.
+/** FOR JS USE. WHEN USER SELECTS OPTIONS, THIS SHOULD POPULATE W/ CONTENT AND BECOME APPARENT TO USER. 
 label.Trigger .Intro_Populated {
 	font: var(--font-body-small);
 	display:block;
@@ -925,7 +925,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 
 .Results #circleTemplate {
 	display:none;
-
+	
 }
 
 .Results .Body.Small_Text {
@@ -941,7 +941,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	width: 100%;
  height: auto;}
 
-.Search_Grid_Card .Wrapper {
+.Search_Grid_Card .Wrapper { 
 	display: grid;
 }
 
@@ -1022,7 +1022,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 .Properties_Table {
-
+	
 }
 
 .Properties_Table ul {
@@ -1039,7 +1039,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	text-transform:uppercase;
 	font: var(--font-property-label);
 	color: var(--FDBL-black);
-
+	
 }
 
 li.Property {
@@ -1050,7 +1050,7 @@ li.Property {
 .Property_Description {
 	font: var(--font-body-small);
 	font-weight: var(--type-weight-regular);
-
+	
 }
 
 .Badge {
@@ -1067,10 +1067,10 @@ li.Property {
 	height: 14px;
 	width: 14px;
 }
-/*
+
 .Brand_Characteristics {
 	padding: 0 8px;
-} */
+}
 
 .Brand_Characteristic.Badge {
  background-color: var(--FDBL-cool-white);
@@ -1267,13 +1267,13 @@ label.Remember {
   height: 100%;
   fill: rgb(9, 38, 42, 0.90);
 	}
-
+	
 	.Brand_Charateristics .Property_Name {
 		padding-bottom: 4px;
 	}
-
+	
 	/**SHOPPING LIST**/
-
+		
 .Build_List_Carousel > div {
 	transform: translateX(100px);
 	opacity: 0;
@@ -1291,7 +1291,7 @@ label.Remember {
 	transform: translateX(-100px);
 	transition:.3s;
 }
-
+		
 .Build_List_Title .Panel_Title {
 	color: var(--FDBL-white-text);
 	font: var(--font-hero-heading);
@@ -1319,11 +1319,11 @@ label.Remember {
 .Itemized_List .List_Tile:last-child {
  border-bottom: none;
 }
-
+	
 }
 
 .Brand_Group {
-
+	
 }
 
 .Brand_Group .Heading {
@@ -1384,8 +1384,8 @@ label.Remember {
 .List_Tile .Price_Widget .Title {
  color: var(--FDBL-dark-gray);
 	font: var(--font-nano-labels);
-	}
-
+	}	
+	
 .Brand_Group .Brand_Name {
 	font-size: 26px;
 }
@@ -1609,12 +1609,6 @@ button.Prev_Slide div::before {
 	font: var(--font-accordion-section-title);
 	text-shadow: 0px 0px 6px var(--FDBL-black);
 	background: none;
-	cursor: default;
-}
-
-.Share_Modal .Story_Grid .Shadow_Image_Container:active .Shadow_Controls {
-	opacity: 1;
-	transition-delay: 0s;
 }
 
 /**LIGHT BACKGROUND OPTIONS**/
@@ -1641,21 +1635,14 @@ button.Prev_Slide div::before {
  	height: 32px;
  	background-repeat: no-repeat;
  }
-
+	
 	/**DARK BACKGROUND OPTIONS**/
-
+	
 .Share_Modal .Img_Container.Dark {
 	background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/03_Backgrounds/background-wood-dark.jpg) no-repeat;
 	background-size:cover;
 	background-blend-mode: multiply, normal;
 }
-
-.Share_Modal .Img_Container.Light {
-	background: linear-gradient(180deg, var(--FDBL-white-text) 0%, var(--FDBL-white-text) 50%, var(--FDBL-white-text) 80%), url(../assets/03_Backgrounds/background-wood-light.jpg) no-repeat;
-	background-size:cover;
-	background-blend-mode: multiply, normal;
-}
-
 
 .Share_Modal .Img_Container.Dark .Palette {
 	box-shadow: 0px 8px 18px 0px rgb(0 0 0 / 80%);
@@ -1701,8 +1688,4 @@ button.Prev_Slide div::before {
 
 .Modal .Grid_Container > .Column {
 	height: fit-content;
-}
-
-.Build_List_Carousel .Drawer_Container {
-max-height: 500px;
 }
