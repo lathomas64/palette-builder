@@ -22,9 +22,6 @@ var currentStory = new Object();
 			console.log('no actions to redo');
 		}
 	}
-	function unique(list) {
-		return Array.from(new Set(list))
-	}
 	function share() {
 		var query = "?source=share";
 		var link = window.location.origin+window.location.pathname;
@@ -451,7 +448,6 @@ var currentStory = new Object();
 		}
 		if(shadow != null) {
 			image_element.src = shadow_data.getElementsByTagName('img')[0].src;
-
 			shadow_attributes = shadow_data.attributes;
 			for(index = 0; index < shadow_attributes.length; index++)
 			{
