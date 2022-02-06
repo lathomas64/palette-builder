@@ -9,7 +9,7 @@
 				<div class="Column Gap_16">
 					<div class="Option_Group Row Gap_16 Align_Items_Flex_End">
 						<div>Background:</div>
-						<div class="Row Gap_16 Align_Items_Center">
+						<div class="BG_Options Row Gap_16 Align_Items_Center">
 							<div class="Row Gap_8 Align_Items_Center">
 								<input type="radio" id="lightBG" name="bg_options" value="HTML">
 								<label for="lightBG">Light</label>
