@@ -48,6 +48,25 @@ function load_shadows(ids)
     });
     return true;
   } else {
+    //if we don't need to load any shadows just update the count and whats showing.
+    let pans = $(".Results .Single_Pan_Card");
+    let count_element = document.getElementById('Shadow_Count');
+    let count = 0;
+    for(let i = 0; i < pans.length; i++){
+      if(ids.includes(parseInt(pans[i].id))){
+        //pans[i].style.display="block";
+        pans[i].classList.remove("Hidden");
+        count++;
+      }
+      else {
+        pans[i].classList.add("Hidden");
+      }
+    }
+
+    count_element.textContent = "Showing " + count + " shadow" + (count > 1? "s":"");
+    console.log('ajax successful');
+    console.log(data);
+    console.log(data.length);
     return false;
   }
   //3 render shadows returned and update Shadow count element
