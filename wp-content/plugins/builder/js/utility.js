@@ -1,5 +1,5 @@
 
-def unique(list){
+function unique(list){
   let result = Array.from(new Set(list));
   return result;
 }
