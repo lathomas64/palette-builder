@@ -43,7 +43,7 @@ function extract_tax($tax_name, $the_tax)
 $args = [
 	"post_type" => "cpt_shadow",
 	"post_status" => "publish",
-	"posts_per_page" => -1,
+	"posts_per_page" => 20,
 	"orderby" => "title",
 	"order" => "ASC",
 	"cat" => "home",
@@ -64,7 +64,7 @@ $count = $shadows->found_posts;
 <div class="Results Column">
 	<div class="Results_Control_Bar Row Space_Between Align_Items_Center">
 		<div class="Body Small_Text">
-			<span id='Shadow_Count'> Showing <?php echo $count; ?> shadows </span>
+			<span id='Shadow_Count'>Showing <?php echo $count; ?> shadows</span>
 		</div>
 		<div class="Row Gap_24 Align_Items_Center">
 			<div class="Search">

@@ -3,8 +3,44 @@ function load_shadows(ids)
   /*
   take list of ids, filter out ones already loaded
   make request to backend to get shadow data for
-  all remaining shadows. 
+  all remaining shadows.
   */
+  //1 filter list via shadow_loaded.
+  filtered_ids = ids.filter(e => !shadow_loaded(e));
+  //2 ajax request with filtered list
+  if(filtered_ids.length > 0)
+  {
+    jQuery.ajax({
+            url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+            method: 'POST',
+            data: {
+                'action':'get_shadow', // This is our PHP function below
+                'id': filtered_ids
+            },
+            success:function(data) {
+              parsed = JSON.parse(data);
+              parsed = parsed.filter(e => e["ID"] != null);
+              for(let index in parsed)
+              {
+                shadow = parsed[index];
+                render_shadow(shadow);
+              }
+              let count_element = document.getElementById('Shadow_Count');
+              console.log(count_element.textContent);
+              let count_parts = count_element.textContent.split(" ");
+              console.log(count_parts);
+              count_parts[1] = Number(count_parts[1]) + parsed.length;
+              console.log(count_parts);
+              count_element.textContent = count_parts.join(" ");
+              console.log(count_element.textContent);
+
+            }
+    });
+    return true;
+  } else {
+    return false;
+  }
+  //3 render shadows returned and update Shadow count element
 }
 
 function load_shadow(id)
@@ -40,9 +76,6 @@ function load_shadow(id)
 
 function load_attribute(element, data, field)
 {
-  console.log(data);
-  console.log(field);
-  console.log(data[field]);
   element.setAttribute("data-"+field, data[field]);
   return element;
 }
@@ -71,7 +104,6 @@ function render_shadow(shadow_data)
   $(shadow_element).find(".Shadow_Image_Container")[0].setAttribute("class", element_class);
   for(let index in fields)
   {
-    console.log(fields[index]);
     shadow_element = load_attribute(shadow_element, shadow_data, fields[index]);
   }
   shadow_element.setAttribute("onclick", "addShadow(currentStory.shadowCount," + shadow_data.ID + ");updateFooter();");
@@ -80,7 +112,6 @@ function render_shadow(shadow_data)
 
 function shadow_loaded(id)
 {
-  console.log(id)
   shadow_id = "#"+id;
   shadow_element = $(shadow_id);
   is_loaded = Boolean(shadow_element.length);
