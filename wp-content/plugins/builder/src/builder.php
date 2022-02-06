@@ -13,6 +13,7 @@
 	<script src="../js/shopping-list.js"></script>
 	<script src="../js/sort.js"></script>
 	<script src="../js/shadow-list.js"></script>
+	<script src="../js/utility.js"></script>
 </head>
 <body>
 	<div class="Wrap">
