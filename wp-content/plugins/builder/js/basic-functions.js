@@ -16,6 +16,7 @@ function resultsHeight(event) {
 		var resultsContainerHeight = $(".Right_Panel").outerHeight() - $(".Helper_Box").outerHeight() - $(".Results_Control_Bar").outerHeight() - 48;
 
 		$(".Results_Container").css("height", resultsContainerHeight);
+		$(".Results_Container")[0].setAttribute("onscroll", "update(true);");
 	}
 }
 

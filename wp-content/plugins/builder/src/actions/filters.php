@@ -114,11 +114,11 @@
     {
         if ( isset($_REQUEST) ) {
           $filters = $_REQUEST;
-          $flatten_filters = json_encode($filters);
           $args = [
           "post_type" => "cpt_shadow",
           "post_status" => "publish",
           "posts_per_page" => 20,
+          "page" => $filters["page"],
           "orderby" => "title",
           "order" => "ASC",
           "cat" => "home",

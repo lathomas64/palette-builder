@@ -1,5 +1,6 @@
 var PRICE_MIN = -1;
 var PRICE_MAX = -1;
+var UPDATING_SHADOWS = false;
 var FILTERS = {"colors": new Set(),
 			   "finishes": new Set(),
 				 "shipping": new Set(),
@@ -45,10 +46,23 @@ function Update_Price(event, min_or_max) {
 	update();
 }
 
-function update(){
+function update(append=false){
+	if(UPDATING_SHADOWS)
+	{
+		return false;
+	}
+	else {
+		UPDATING_SHADOWS = true;
+	}
 	let matched = new Set();
 	let unmatched = new Set();
 	const shadows = document.getElementsByClassName("Single_Pan_Card");
+	if(append)
+	{
+		SHADOW_LIST_PAGE += 1;
+	} else {
+		SHADOW_LIST_PAGE = 1;
+	}
 
 	//filter colors
 	//filter finishes
@@ -64,6 +78,7 @@ function update(){
           data: {
               'action':'palette_builder_filter',
               'sanity': 'check',
+							'page': SHADOW_LIST_PAGE,
               'colors': Array.from(FILTERS['colors']),
               'finishes': Array.from(FILTERS['finishes']),
               'characteristics': Array.from(FILTERS['characteristics']),
@@ -82,7 +97,7 @@ function update(){
           },
           success:function(data) {
 						parsed = JSON.parse(data);
-						load_shadows(parsed);
+						load_shadows(parsed, append);
           },
           error: function(errorThrown){
           	  console.log('ajax error');
