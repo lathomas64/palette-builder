@@ -118,7 +118,7 @@
           "post_type" => "cpt_shadow",
           "post_status" => "publish",
           "posts_per_page" => 20,
-          "page" => $filters["page"],
+          "paged" => $filters["page"],
           "orderby" => "title",
           "order" => "ASC",
           "cat" => "home",
