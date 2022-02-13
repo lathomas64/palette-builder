@@ -1534,7 +1534,7 @@ button.Prev_Slide div::before {
 
 .Build_List_Carousel > div {
  flex: 1 0 100%;
- height: fit-content;
+	height: 100%;
 }
 
 .Share_Modal .Img_Container {
