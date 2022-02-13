@@ -104,6 +104,7 @@ function priceTree(event) {
 }
 
 $(document).ready(function (event) {
+	sort_children('data-color-sort', '#Shadow_Search .Results .Grid', true);
 	$("BG_Options").click(shareModalBGSwitcher);
 
 	$(resultsHeight);
