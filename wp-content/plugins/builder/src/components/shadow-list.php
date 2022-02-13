@@ -59,7 +59,7 @@ $args = [
 	"cat" => "home",
 ];
 $brands = new WP_Query($args);
-$count = min($shadows->found_posts, 20);
+$count = $shadows->found_posts;
 ?>
 <div class="Results Column">
 	<div class="Results_Control_Bar Row Space_Between Align_Items_Center">

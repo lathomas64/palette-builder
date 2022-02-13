@@ -1,4 +1,6 @@
-function load_shadows(ids)
+let SHADOW_LIST_PAGE = 1;
+
+function load_shadows(ids, append=false)
 {
   /*
   take list of ids, filter out ones already loaded
@@ -34,7 +36,7 @@ function load_shadows(ids)
   								pans[i].classList.remove("Hidden");
   								count++;
               	}
-              	else {
+              	else if(!append) {
   								pans[i].classList.add("Hidden");
   							}
               }
@@ -43,6 +45,7 @@ function load_shadows(ids)
               console.log('ajax successful');
               console.log(data);
   						console.log(data.length);
+              UPDATING_SHADOWS = false;
 
             }
     });
@@ -58,15 +61,13 @@ function load_shadows(ids)
         pans[i].classList.remove("Hidden");
         count++;
       }
-      else {
+      else if (!append) {
         pans[i].classList.add("Hidden");
       }
     }
 
     count_element.textContent = "Showing " + count + " shadow" + (count > 1? "s":"");
-    console.log('ajax successful');
-    console.log(data);
-    console.log(data.length);
+    UPDATING_SHADOWS = false;
     return false;
   }
   //3 render shadows returned and update Shadow count element
