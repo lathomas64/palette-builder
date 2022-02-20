@@ -31,9 +31,10 @@
   - [ ] Interactivity
   - [ ] Data population
 	  - [ ] Populate if there are 5 or more brands
+	  - [ ] Brand data update
 	  - [x] show shadows from story on first tab
 	  - [x] remove shadows from list if x is clicked
-	  - [ ] make list of links for 3rd panel
+	  - [x] make list of links for 3rd panel
 		  - [x] list of links (regular)
 		  - [ ] split into list of links by brand if too many links.
 	  - [ ] group or not based on brand
