@@ -32,6 +32,7 @@ function populate_brand(shadow_list, brand_div)
 
 function build_shopping_list()
 {
+  console.log('start build shopping list');
   brand_shadows = {};
   for(let index = 0; index < currentStory.shadows.length; index++)
   {
@@ -55,15 +56,27 @@ function build_shopping_list()
     //we have brand[index] and div[index] -> update div and show
     if(index < brands.length && index < brand_divs.length)
     {
+        console.log('---');
+        console.log(index);
+        console.log(brand_divs[index]);
+        console.log(brand_divs[index].firstElementChild);
+        console.log(brand_divs[index].firstElementChild.firstElementChild);
+        console.log(brand_divs[index].firstElementChild.firstElementChild.textContent);
         brand_divs[index].firstElementChild.firstElementChild.textContent = brands[index];
         populate_brand(brand_shadows[brands[index]], brand_divs[index]);
     }
     //we have brand[index] but no div[index] -> create div
     else if(index < brands.length && index >= brand_divs.length)
     {
-      let extra_div = $(brand_divs[0]).clone();
+      let extra_div = $(brand_divs[0]).clone()[0];
+      console.log('---');
+      console.log(index);
+      console.log(extra_div);
+      console.log(extra_div.firstElementChild);
+      console.log(extra_div.firstElementChild.firstElementChild);
+      console.log(extra_div.firstElementChild.firstElementChild.textContent);
       extra_div.firstElementChild.firstElementChild.textContent = brands[index];
-      divs_to_append.append(extra_div);
+      divs_to_append.push(extra_div);
       populate_brand(brand_shadows[brands[index]], extra_div);
     }
     //we have no brand[index] but do have div[index] -> hide div
@@ -72,10 +85,11 @@ function build_shopping_list()
     } else {
       console.log('this should never happen something has gone seriously wrong in build_shopping_list');
     }
+    // TODO: make brand characteristics show up
   }
   for(let index=0; index < divs_to_append.length; index++)
   {
-    brand_divs.append(divs_to_append[index]);
+    $('.Itemized_List').append(divs_to_append[index]);
   }
 }
 
