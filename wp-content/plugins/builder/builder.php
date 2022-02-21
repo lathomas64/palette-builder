@@ -19,6 +19,13 @@ add_action('wp_ajax_delete_story', 'delete_story');
 add_action('wp_ajax_get_shadow', 'get_shadow_data');
 add_action('wp_ajax_nopriv_get_shadow', 'get_shadow_data');
 
+add_filter('rest_cpt_shadow_collection_params', 'filter_add_rest_shadow_params', 10, 1);
+add_filter('rest_cpt_shadow_query', 'filter_add_rest_post_query', 10, 2);
+
+#add_filter('rest_cpt_story_collection_params', 'filter_add_rest_cpt_story_params', 10, 1);
+#add_filter('rest_cpt_story_size_collection_params', 'filter_add_story_size_params', 10, 1);
+add_filter('rest_prepare_cpt_shadow', 'shadow_add_data', 10, 3);
+
 function build_builder_redirect()
 {
     add_rewrite_rule( 'builder.php$', 'wp-content/plugins/builder/src/index.php', 'top' );

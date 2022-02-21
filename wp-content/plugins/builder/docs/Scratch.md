@@ -15,3 +15,7 @@ js and interactivity needs to happen still
 bugs/enhancements
 
 
+need to make
+* mechanism for getting brand data(characteristics/demographics) to shopping list
+
+acf rest api: https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow
