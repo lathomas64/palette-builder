@@ -115,11 +115,13 @@ function filter_add_rest_post_query($args, $request)
       'relation' => 'AND',
       'color_order' => array(
         'key' => 'avg_hue',
-        'compare' => 'exists'
+        'compare' => 'exists',
+        'type' => 'numeric'
       ),
       'lightness_order' => array(
         'key' => 'avg_lightness',
-        'compare' => 'exists'
+        'compare' => 'exists',
+        'type' => 'numeric'
       )
     );
     $args['orderby'] = array(
@@ -138,11 +140,13 @@ function filter_add_rest_post_query($args, $request)
       'relation' => 'AND',
       'lightness_order' => array(
         'key' => 'avg_lightness',
-        'compare' => 'exists'
+        'compare' => 'exists',
+        'type' => 'numeric'
       ),
       'color_order' => array(
         'key' => 'avg_hue',
-        'compare' => 'exists'
+        'compare' => 'exists',
+        'type' => 'numeric'
       )
     );
     $args['orderby'] = array(
@@ -161,11 +165,13 @@ function filter_add_rest_post_query($args, $request)
       'relation' => 'AND',
       'vividness_order' => array(
         'key' => 'avg_saturation',
-        'compare' => 'exists'
+        'compare' => 'exists',
+        'type' => 'numeric'
       ),
       'color_order' => array(
         'key' => 'avg_hue',
-        'compare' => 'exists'
+        'compare' => 'exists',
+        'type' => 'numeric'
       )
     );
     $args['orderby'] = array(
