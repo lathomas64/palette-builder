@@ -4,11 +4,11 @@
    <div class="Heading">Sort Shadows</div>
   </div>
   <div class="Column Gap_0">
-							<input onclick="sort_children('data-price', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_price_high_low">
+							<input onclick="SORT_FIELD='price';SORT_DIRECTION='desc';update();" class="Single_Select" type="radio" id="shadow_sort_price_high_low">
 				<label class="Single_Select" for="shadow_sort_price_high_low">
 				Price: High to Low
 				</label>
-				<input onclick="sort_children('data-price', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_price_low_high">
+				<input onclick="SORT_FIELD='price';SORT_DIRECTION='asc';update();" class="Single_Select" type="radio" id="shadow_sort_price_low_high">
 				<label class="Single_Select" for="shadow_sort_price_low_high">
 				Price: Low to High
 				</label>
