@@ -79,6 +79,31 @@ function load_attribute(element, data, field)
   return element;
 }
 
+function render_shadows(shadow_data_list, append=false)
+{
+  console.log(append);
+  ids = shadow_data_list.map(x => x.ID);
+  for(let index in shadow_data_list)
+  {
+    shadow = shadow_data_list[index];
+    render_shadow(shadow);
+  }
+  let pans = $(".Results .Single_Pan_Card");
+  for(let i = pans.length-1; i >= 0; i--){
+    shadow_element = pans[i];
+    if(ids.includes(parseInt(pans[i].id))){
+      //pans[i].style.display="block";
+      //shadow_element.parentNode.appendChild(shadow_element);
+      shadow_element.classList.remove("Hidden");
+    }
+    else if(!append) {
+      shadow_element.classList.add("Hidden");
+      shadow_element.parentNode.appendChild(shadow_element);
+    }
+  }
+  UPDATING_SHADOWS =false;
+}
+
 function render_shadow(shadow_data)
 {
   container = $(".Results_Container .Grid");
