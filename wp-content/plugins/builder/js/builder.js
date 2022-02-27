@@ -505,6 +505,7 @@ var currentStory = new Object();
 		image_classes += height;
 		image_classes += " Pan_Width_";
 		image_classes += width;
+		$("#shadowDetail a")[0].href = $("#shadowDetail a")[0].href.replace("{id}", shadow.attr('id'));
 		$("#shadowDetail img").attr("src", source_img);
 		$("#shadowDetail .Shadow_Image_Container").attr("class", image_classes);
 		$("#shadowDetail .Shadow_Name").text(name);
