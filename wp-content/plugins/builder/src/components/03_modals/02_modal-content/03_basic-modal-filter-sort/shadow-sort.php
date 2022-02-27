@@ -12,45 +12,37 @@
 				<label class="Single_Select" for="shadow_sort_price_low_high">
 				Price: Low to High
 				</label>
-				<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_color">
+				<input onclick="SORT_FIELD='color';SORT_DIRECTION='asc';update();" class="Single_Select" type="radio" id="shadow_sort_color">
 				<label class="Single_Select" for="shadow_sort_color">
 				Color
 				</label>
-			<input onclick="sort_children('data-color-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_color_reverse">
+			<input onclick="SORT_FIELD='color';SORT_DIRECTION='desc';update();" class="Single_Select" type="radio" id="shadow_sort_color_reverse">
 				<label class="Single_Select" for="shadow_sort_color_reverse">
 				Color Reverse
 				</label>
-				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_lightness_light_dark">
+				<input onclick="SORT_FIELD='lightness';SORT_DIRECTION='desc';update();" class="Single_Select" type="radio" id="shadow_sort_lightness_light_dark">
 				<label class="Single_Select" for="shadow_sort_lightness_light_dark">
 				Light to Dark
 				</label>
-				<input onclick="sort_children('data-lightness-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_lightness_dark_light">
+				<input onclick="SORT_FIELD='lightness';SORT_DIRECTION='asc';update();" class="Single_Select" type="radio" id="shadow_sort_lightness_dark_light">
 				<label class="Single_Select" for="shadow_sort_lightness_dark_light">
 				Dark to Light
 				</label>
-        <input onclick="sort_children('data-vividness-sort', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_vividness_vm">
+        <input onclick="SORT_FIELD='vividness';SORT_DIRECTION='desc';update();" class="Single_Select" type="radio" id="shadow_sort_vividness_vm">
 				<label class="Single_Select" for="shadow_sort_vividness_vm">
 				Vivid to Muted
 				</label>
-				<input onclick="sort_children('data-vividness-sort', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_vividness_mv">
+				<input onclick="SORT_FIELD='vividness';SORT_DIRECTION='asc';update();" class="Single_Select" type="radio" id="shadow_sort_vividness_mv">
 				<label class="Single_Select" for="shadow_sort_vividness_mv">
 				Muted to Vivid
 				</label>
-				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_name_az">
+				<input onclick="SORT_FIELD='name';SORT_DIRECTION='asc';update();" class="Single_Select" type="radio" id="shadow_sort_name_az">
 				<label class="Single_Select" for="shadow_sort_name_az">
 				Name: A to Z
 				</label>
-				<input onclick="sort_children('data-name', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_name_za">
+				<input onclick="SORT_FIELD='name';SORT_DIRECTION='desc';update();" class="Single_Select" type="radio" id="shadow_sort_name_za">
 				<label class="Single_Select" for="shadow_sort_name_za">
 				Name: Z to A
-				</label>
-				<input onclick="sort_children('data-brand', '#Shadow_Search .Results .Grid', false);" class="Single_Select" type="radio" id="shadow_sort_brand_za">
-				<label class="Single_Select" for="shadow_sort_brand_za">
-				Shadow Brand: Z to A
-				</label>
-				<input onclick="sort_children('data-brand', '#Shadow_Search .Results .Grid', true);" class="Single_Select" type="radio" id="shadow_sort_brand_az">
-				<label class="Single_Select" for="shadow_sort_brand_az">
-				Shadow Brand: A to Z
 				</label>
 		</div>
 
