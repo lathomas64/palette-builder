@@ -104,12 +104,12 @@ function filter_add_rest_post_query($args, $request)
     $args['orderby'] = 'meta_value_num title';
   } else if($args['orderby'] == 'color')
   {
-    $lightness_direction = 'DESC';
-    $color_direction = 'ASC';
-    if($args['order'] == 'DESC')
+    $lightness_direction = 'desc';
+    $color_direction = 'asc';
+    if($args['order'] == 'desc')
     {
-      $color_direction = 'DESC';
-      $lightness_direction = 'ASC';
+      $color_direction = 'desc';
+      $lightness_direction = 'asc';
     }
     $args['meta_query'] = array(
       'relation' => 'AND',
@@ -130,11 +130,11 @@ function filter_add_rest_post_query($args, $request)
     );
   } else if($args['orderby'] == 'lightness')
   {
-    $lightness_direction = 'ASC';
-    $color_direction = 'ASC';
-    if($args['order'] == 'DESC')
+    $lightness_direction = 'asc';
+    $color_direction = 'asc';
+    if($args['order'] == 'desc')
     {
-      $lightness_direction = 'DESC';
+      $lightness_direction = 'desc';
     }
     $args['meta_query'] = array(
       'relation' => 'AND',
@@ -155,11 +155,11 @@ function filter_add_rest_post_query($args, $request)
     );
   } else if($args['orderby'] == 'vividness')
   {
-    $vividness_direction = 'ASC';
-    $color_direction = 'ASC';
-    if($args['order'] == 'DESC')
+    $vividness_direction = 'asc';
+    $color_direction = 'asc';
+    if($args['order'] == 'desc')
     {
-      $vividness_direction = 'DESC';
+      $vividness_direction = 'desc';
     }
     $args['meta_query'] = array(
       'relation' => 'AND',
