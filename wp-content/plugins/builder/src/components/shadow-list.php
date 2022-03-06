@@ -53,7 +53,7 @@
 						class="Single_Pan_Card" href="#">
 				<div class="Card_Container Column Gap_8">
 					<div class="Shadow_Name">{{shadow.name}}</div>
-					<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_{{shadow.size}} Pan_Shape_{{shadow.shape}}">
+					<div v-bind:class="'Pan_Shape_'+shadow.shape+' Pan_Size_'+shadow.size" class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center">
 						<div class="Wrapper">
 							<img :src="shadow.img" />
 							<div class="Pan_Shadow"></div>

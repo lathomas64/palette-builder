@@ -1,4 +1,10 @@
-const API_SHADOW_BASE="https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish";
+const sort_dict = {
+  "price": "price",
+  "color": "color-sort",
+  "vividness": "vividness-sort",
+  "lightness": "lightness-sort",
+  "name": "name"
+}
 $(document).ready(function (event) {
 shadow_list = new Vue({
     el:".Results_Container .Grid",
@@ -14,6 +20,11 @@ shadow_list = new Vue({
   computed: {
     ids: function () {
       return this.shadows.map(shadow => shadow.id);
+    },
+    class: function(shadow) {
+      shape = "Pan_Shape_"+shadow.shape;
+      size = "Pan_Size_"+shadow.size;
+      return {shape: true, size: true}
     }
   },
   methods: {
@@ -32,6 +43,7 @@ shadow_list = new Vue({
       } else {
         this.page = 1;
       }
+      console.log(this.page);
       this.updating = true;
       let url = this.url_base;
       url += "&page="+this.page;
@@ -50,10 +62,27 @@ shadow_list = new Vue({
                   self.shadows = self.shadows.concat(data);
                 } else {
                   self.shadows = data;
+                  self.shadows.sort((lhs, rhs) => {
+                    let left = lhs[sort_dict[self.sort_field]];
+                    let right = rhs[sort_dict[self.sort_field]];
+                    let mult = 1;
+                    if(self.sort_direction == 'desc')
+                    {
+                      mult = -1;
+                    }
+                    if (left < right) {
+                        return -1 * mult;
+                    }
+                    if (left > right) {
+                        return 1 * mult;
+                    }
+                    return 0;
+                  });
                 }
                 self.updating = false;
               },
               error: function(errorThrown){
+                  console.log(url);
               	  console.log('ajax error');
                   console.log(errorThrown);
                   self.updating = false;
