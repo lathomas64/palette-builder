@@ -2,6 +2,35 @@
 // When X button is clicked, call drawer function and function to reveal content
 
 //SHADOW RESULTS HEIGHT CALC
+function openShadowDetail(target)
+{
+
+	var shadowDetail = $("#shadowDetail");
+	var arrangementSpace = $(".Builder");
+	var builderWidth = arrangementSpace.outerWidth();
+	var detailPanelWidth = shadowDetail.outerWidth();
+
+	$(target).addClass("Hovered");
+	update_shadow_detail($(target));
+	shadowDetail.css("left", builderWidth - detailPanelWidth);
+	shadowDetail.css("display", "flex");
+	setTimeout(function () {
+		shadowDetail.addClass("Fade_In");
+	}, 3000);
+}
+
+function closeShadowDetail(target)
+{
+	var shadowDetail = $("#shadowDetail");
+	$(target).removeClass("Hovered");
+	setTimeout(function () {
+		if ($(".Hovered").length == 0) {
+			shadowDetail.removeClass("Fade_In");
+			shadowDetail.css("left", "0");
+			shadowDetail.css("display", "");
+		}
+	}, 1000);
+}
 
 function resultsHeight(event) {
 	if ($(event.target).is(".Dismiss")) {
