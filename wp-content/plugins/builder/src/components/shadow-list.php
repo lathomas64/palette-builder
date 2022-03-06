@@ -1,70 +1,7 @@
-<?php
-ini_set("display_errors", "1");
-ini_set("display_startup_errors", "1");
-error_reporting(E_ALL);
-$brand_list = array();
-if (!defined("ABSPATH")) {
-	/** Set up WordPress environment */
-	require_once "/usr/share/wordpress/wp-load.php";
-}
-$shipping_options = array();
-
-$shipping_options = get_terms( array(
-    'taxonomy' => 'tax_shipping',
-    'hide_empty' => false,
-) );
-function extract_name($object)
-{
-  return $object->name;
-}
-$shipping_options = array_map('extract_name', $shipping_options);
-function extract_tax($tax_name, $the_tax)
-{
-	if(array_key_exists($tax_name, $the_tax))
-	{
-		$term = $the_tax[$tax_name];
-		$explode = explode("and", $term)[0];
-		$explode = explode(",", $explode)[0];
-		$explode = explode("=", $explode);
-		$slug = $explode[1];
-		//$term = substr($slug, 0,-1);
-		$term = $slug;
-		$term_details = get_terms($tax_name, array('slug'=>$term));
-		if($term_details){
-			$term_name = $term_details[0]->name;
-			return $term_name;
-		} else {
-			return "none";
-		}
-	} else {
-		return "none";
-	}
-}
-$args = [
-	"post_type" => "cpt_shadow",
-	"post_status" => "publish",
-	"posts_per_page" => 20,
-	"orderby" => "title",
-	"order" => "ASC",
-	"cat" => "home",
-];
-
-$shadows = new WP_Query($args);
-$args = [
-	"post_type" => "cpt_brand",
-	"post_status" => "publish",
-	"posts_per_page" => -1,
-	"orderby" => "title",
-	"order" => "ASC",
-	"cat" => "home",
-];
-$brands = new WP_Query($args);
-$count = $shadows->found_posts;
-?>
 <div class="Results Column">
 	<div class="Results_Control_Bar Row Space_Between Align_Items_Center">
 		<div class="Body Small_Text">
-			<span id='Shadow_Count'>Showing <?php echo $count; ?> shadows</span>
+			<span id='Shadow_Count'>Showing ?? shadows</span>
 		</div>
 		<div class="Row Gap_24 Align_Items_Center">
 			<div class="Search">
@@ -90,105 +27,40 @@ $count = $shadows->found_posts;
 		</div>
 	</div>
 	<div class="Column Results_Container">
-	<div class="Grid Row Gap_16">
-		<?php
-  while ($shadows->have_posts()):
-
-  	$shadows->the_post();
-  	$brand = get_field("brand");
-
-  	$colors = get_field("colors");
-		$link = get_field("product_url");
-		$avg_hue = get_field("avg_hue");
-		$avg_lightness = get_field("avg_lightness");
-		$avg_saturation = get_field("avg_saturation");
-		$the_tax = get_the_taxonomies(0, array('term_template' => '%1$s'));
-		$shift = extract_tax("tax_shift", $the_tax);
-		$finish = extract_tax("tax_finish", $the_tax);
-		$color_tag = extract_tax("tax_color_tag", $the_tax);
-		$vividness = extract_tax("tax_vividness", $the_tax);
-		$lightness = extract_tax("tax_lightness", $the_tax);
-		$height = extract_tax("pan-height", $the_tax);
-		$width = extract_tax("pan-width", $the_tax);
-		$shape = extract_tax("pan-shape", $the_tax);
-		if($height == $width) {
-			$size = $width;
-		} else {
-			$size = "Irregular";
-		}
-		if ($brand) {
-			$brand_name = get_post_field("post_title", $brand[0]);
-			$brand_id = get_post_field("ID", $brand[0]);
-			if($brand_name && !in_array($brand_name, $brand_list)){
-				$brand_list[$brand_id] = $brand_name;
-			}
-
-			//get country from brand
-			$country_details = wp_get_post_terms($brand[0], 'tax_countries');
-			if($country_details)
-			{
-				//$country = get_field('name', $country_details[0]);
-				$country = $country_details[0]->name;
-			}
-			$shipping_details = wp_get_post_terms ($brand[0], 'tax_shipping');
-			if($shipping_details)
-			{
-				$ships = $shipping_details[0]->name;
-			}
-		}
-  	?>
-			<a <?php
-				if ($colors) {
-					echo "data-colors='[";
-					foreach ($colors as $index => $color){
-						echo '"' . $color['color'] . '"';
-						if ($index < count($colors)-1){
-							echo ",";
-						}
-					}
-					echo "]'";
-				}
-				?> data-size='<?php echo $size; ?>'
-						data-height='<?php echo $height; ?>'
-						data-width='<?php echo $width; ?>'
-						data-shape='<?php echo $shape ?>'
-						data-name='<?php the_title(); ?>'
-						data-shift='<?php echo $shift; ?>'
-						data-finish='<?php echo $finish; ?>'
-						data-color-tag='<?php echo $color_tag; ?>'
-						data-vividness='<?php echo $vividness; ?>'
-						data-vividness-sort='<?php echo $avg_saturation; ?>'
-						data-lightness='<?php echo $lightness; ?>'
-						data-lightness-sort='<?php echo $avg_lightness; ?>'
-						data-color-sort='<?php echo $avg_hue; ?>'
-						data-link='<?php echo $link; ?>'
-						<?php if ($brand) { ?>
-						data-country='<?php echo $country; ?>'
-						data-ships='<?php echo $ships; ?>'
-						data-brand='<?php echo $brand_name; ?>'
-						<?php } else { ?>
-						data-country='none'
-						data-brand='none'
-						<?php } ?>
-						data-price='<?php echo get_field("price"); ?>' id='<?php the_ID(); ?>'
+		<div class="Grid Row Gap_16">
+			<a v-for='shadow in shadows' v-bind:data-size='shadow.size'
+						v-bind:data-height='shadow.height'
+						v-bind:data-width='shadow.width'
+						v-bind:data-shape='shadow.shape'
+						v-bind:data-name='shadow.name'
+						v-bind:data-shift='shadow.shift'
+						v-bind:data-finish='shadow.finish'
+						v-bind:data-color-tag='shadow.color_tag'
+						v-bind:data-vividness='shadow.vividness'
+						v-bind:data-vividness-sort='shadow.avg_saturation'
+						v-bind:data-lightness='shadow.lightness'
+						v-bind:data-lightness-sort='shadow.avg_lightness'
+						v-bind:data-color-sort='shadow.avg_hue'
+						v-bind:data-link='shadow.link'
+						v-bind:data-country='shadow.country'
+						v-bind:data-ships='shadow.ships'
+						v-bind:data-brand='shadow.brand_name'
+						v-bind:data-price='shadow.price' v-bind:id='shadow.ID'
 						draggable="true" ondragstart="drag(event)"
-						onclick="addShadow(currentStory.shadowCount,<?php the_ID(); ?>);updateFooter();"
+						@click="add_to_story(shadow)"
+						onMouseEnter="console.log('open');openShadowDetail(this);"
+						onMouseLeave="console.log('close');closeShadowDetail(this);"
 						class="Single_Pan_Card" href="#">
 				<div class="Card_Container Column Gap_8">
-					<div class="Shadow_Name"><?php the_title(); ?></div>
-					<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_<?php echo $size; ?> Pan_Shape_<?php echo $shape; ?>">
+					<div class="Shadow_Name">{{shadow.name}}</div>
+					<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Size_{{shadow.size}} Pan_Shape_{{shadow.shape}}">
 						<div class="Wrapper">
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>" />
+							<img :src="shadow.img" />
 							<div class="Pan_Shadow"></div>
 						</div>
 					</div>
 				</div>
 			</a>
-		<?php
-  endwhile;
-
-  wp_reset_postdata();
-  ?>
 	</div>
 	</div>
 </div>
