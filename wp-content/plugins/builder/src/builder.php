@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/builder-styles.css" />
 	<link rel="stylesheet" href="https://use.typekit.net/mxy5ujb.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 	<script src="../js/builder.js"></script>
 	<script src="../js/shadow-filters.js"></script>
 	<script src="../js/basic-functions.js"></script>
