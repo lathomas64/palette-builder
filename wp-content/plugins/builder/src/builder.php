@@ -16,6 +16,7 @@
 	<script src="../js/shadow-list.js"></script>
 	<script src="../js/utility.js"></script>
 	<script src="../js/api.js"></script>
+	<script src="../js/vue/shadow-list.js"></script>
 </head>
 <body>
 	<div class="Wrap">
