@@ -15,7 +15,8 @@ shadow_list = new Vue({
     sort_direction: 'asc',
     updating: false,
     url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish",
-    results_per_page: 20
+    results_per_page: 20,
+    filters: {}
   },
   computed: {
     ids: function () {
@@ -31,6 +32,15 @@ shadow_list = new Vue({
     add_to_story: function(id) {
       addShadow(currentStory.shadowCount,id);
       updateFooter();
+    },
+    add_filter: function(key, value) {
+      this.filters[key] = value;
+      this.load_shadows();
+      //make dictionary of filters here.
+    },
+    remove_filter: function(key) {
+      delete this.filters[key];
+      this.load_shadows();
     },
     load_shadows: function (append=false) {
       if(this.updating)
@@ -51,6 +61,10 @@ shadow_list = new Vue({
       url += "&order="+this.sort_direction;
       // TODO fix this value somewhere
       url += "&per_page="+this.results_per_page;
+      Object.entries(this.filters).forEach(([key, value]) => {
+        url += "&"+key+"="+value;
+      });
+      // TODO run through filters dictionary and add to url
       let self = this;
       jQuery.ajax({
               url: url,

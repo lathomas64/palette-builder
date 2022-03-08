@@ -179,6 +179,38 @@ function filter_add_rest_post_query($args, $request)
       'color_order' => $color_direction
     );
   }
+
+  $params = $request->get_params();
+  $args['tax_query'] = array (
+      'relation' => 'AND'
+  );
+  $shadow_filters = array(
+    'colors'=> 'tax_color_family',
+    'shift' => 'tax_shift',
+    'temperature' => 'tax_color_tag',
+    'finishes' => 'tax_finish',
+    'lightness' => 'tax_lightness',
+    'vividness' => 'tax'
+  );
+
+  foreach($shadow_filters as $param => $taxonomy)
+  {
+    //$taxonomy = $filters[$param];
+    if(isset($params[$param]))
+    {
+      $args['tax_query'][] = array(
+          'taxonomy' => $taxonomy,
+          'field' => 'name',
+          'terms' => explode(',', $params[$param])
+      );
+    }
+  }
+  
+
+  //characteristics, demographics, brand, size
+  //shape, shipping
+
+
   return $args;
 }
 
