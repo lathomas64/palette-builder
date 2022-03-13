@@ -190,7 +190,9 @@ function filter_add_rest_post_query($args, $request)
     'temperature' => 'tax_color_tag',
     'finishes' => 'tax_finish',
     'lightness' => 'tax_lightness',
-    'vividness' => 'tax'
+    'vividness' => 'tax_vividness',
+    'shape' => 'pan-shape',
+    'size' => 'pan-width'
   );
 
   foreach($shadow_filters as $param => $taxonomy)
@@ -205,10 +207,10 @@ function filter_add_rest_post_query($args, $request)
       );
     }
   }
-  
 
-  //characteristics, demographics, brand, size
-  //shape, shipping
+
+  //characteristics, demographics, brand
+  //shipping
 
 
   return $args;
