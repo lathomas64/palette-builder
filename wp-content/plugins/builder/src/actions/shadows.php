@@ -210,7 +210,7 @@ function filter_add_rest_post_query($args, $request)
 
 
   //characteristics, demographics, brand
-  //shipping
+  //shipping, price
 
 
   return $args;

@@ -22,6 +22,10 @@ shadow_list = new Vue({
     ids: function () {
       return this.shadows.map(shadow => shadow.id);
     },
+    shipping_options: function () {
+      let options = this.shadows.map(shadow => shadow.ships);
+      return options; // TODO this only returns current need to do query
+    },
     class: function(shadow) {
       shape = "Pan_Shape_"+shadow.shape;
       size = "Pan_Size_"+shadow.size;
@@ -34,12 +38,23 @@ shadow_list = new Vue({
       updateFooter();
     },
     add_filter: function(key, value) {
-      this.filters[key] = value;
+      if(!this.filters.hasOwnProperty(key))
+      {
+        this.filters[key] = new Set();
+      }
+      this.filters[key].add(value);
       this.load_shadows();
       //make dictionary of filters here.
     },
-    remove_filter: function(key) {
-      delete this.filters[key];
+    remove_filter: function(key, value) {
+      if(!this.filters.hasOwnProperty(key))
+      {
+        this.filters[key] = new Set();
+      }
+      else
+      {
+        this.filters[key].delete(value);
+      }
       this.load_shadows();
     },
     load_shadows: function (append=false) {
@@ -61,17 +76,25 @@ shadow_list = new Vue({
       url += "&order="+this.sort_direction;
       // TODO fix this value somewhere
       url += "&per_page="+this.results_per_page;
+      console.log(this.filters);
       Object.entries(this.filters).forEach(([key, value]) => {
-        url += "&"+key+"="+value;
+        if(value.size > 0)
+        {
+          url += "&"+key+"="+Array.from(value).join();
+        }
       });
       // TODO run through filters dictionary and add to url
       let self = this;
+      console.log(url);
       jQuery.ajax({
               url: url,
               method: 'GET',
-              success:function(data) {
-                console.log(data);
-                console.log(self.shadows);
+              success:function(data, status, xhr) {
+                self.total = xhr.getResponseHeader("X-WP-Total");
+                // Hack because i couldn't get updating that inside of
+                // vue to work easily and didn't want to spend a ton
+                // of time figuring out how -IT
+                $("#Shadow_Count").text("Showing "+self.total+" shadows");
                 if(append){
                   self.shadows = self.shadows.concat(data);
                 } else {
