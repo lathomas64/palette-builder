@@ -525,24 +525,6 @@ var currentStory = new Object();
 		$('#shadowDetail ul').children()[7].children[1].textContent = lightness;
 	}
 
-	function search_shadows(query)
-	{
-		var count = 0;
-		$(".Results .Single_Pan_Card").each(
-			function(index, element){
-				card = $(element);
-				text = card.find(".Shadow_Name").text().toLowerCase();
-				if(text.includes(query.toLowerCase()))
-				{
-					count += 1;
-					card.removeClass("Hidden");
-				} else {
-					card.addClass("Hidden");
-				}
-			});
-			$("#Shadow_Count").text("Showing "+count+" shadow(s)");
-	}
-
 	function flatten_story() {
 		story = []
 		for(var index = 0; index < currentStory.shadows.length; index++)

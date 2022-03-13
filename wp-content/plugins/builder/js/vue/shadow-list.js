@@ -11,6 +11,8 @@ shadow_list = new Vue({
     data: {
     shadows: [{ name: "Foo" }, { name: "Bar" }],
     page: 1,
+    waittime: 500,
+    search_timer: undefined,
     sort_field: 'color',
     sort_direction: 'asc',
     updating: false,
@@ -46,6 +48,14 @@ shadow_list = new Vue({
       this.load_shadows();
       //make dictionary of filters here.
     },
+    search: function(query) {
+      this.query = query;
+      clearTimeout(this.search_timer);
+      this.search_timer = setTimeout(() => {
+        this.load_shadows();
+      }, this.waittime);
+
+    },
     remove_filter: function(key, value) {
       if(!this.filters.hasOwnProperty(key))
       {
@@ -76,7 +86,10 @@ shadow_list = new Vue({
       url += "&order="+this.sort_direction;
       // TODO fix this value somewhere
       url += "&per_page="+this.results_per_page;
-      console.log(this.filters);
+      if(this.query)
+      {
+        url += "&search="+this.query;
+      }
       Object.entries(this.filters).forEach(([key, value]) => {
         if(value.size > 0)
         {
