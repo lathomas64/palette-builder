@@ -24,11 +24,13 @@ function Toggle_Filter(event, filterset) {
 	}
 
 	if(state) {
+		shadow_list.add_filter(filterset, type);
 		FILTERS[filterset].add(type);
 	} else {
+		shadow_list.remove_filter(filterset, type);
 		FILTERS[filterset].delete(type);
 	}
-	update();
+	//update();
 }
 
 function Update_Price(event, min_or_max) {
