@@ -163,6 +163,7 @@
 	padding: 8px;
 	height:100%;
 	margin-left:-5%;
+	display:none;
 }
 
 .Set_Aside:after {
@@ -347,17 +348,30 @@ overflow:hidden;
 
 .Helper_Box.Closed, .Temperature_Options.Closed {
 	max-height: 0px;
- opacity: 0;
- padding: 0px;
- overflow: hidden;
- box-shadow: none;
- border: 0;
- transition: .2s;
+	opacity: 0;
+	padding: 0px;
+	overflow: hidden;
+	box-shadow: none;
+	border: 0;
+	transition: .2s;
 }
 
 .Grid {
 	width: 100%;
 	justify-content: flex-start;
+}
+
+.Results_Container .Grid_Container, .Story_Results .Grid_Container {
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(20%, 1fr) );
+	grid-template-rows: repeat( auto-fit, minmax(var(--pan-size-37), 1fr) );
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-flow:initial;
+}
+
+.Story_Results .Grid_Container {
+	grid-template-rows: initial;
 }
 
 .Multi_Select {
@@ -372,11 +386,11 @@ overflow:hidden;
 
 .Card_Container {
 	border-top: 1px solid #959595;
-	width: var(--pan-size-37);
+	flex: 1 1 auto;
 }
 .Shadow_Image_Container {
-	width: var(--pan-size-37);
-	height: var(--pan-size-37);
+/* 	width: var(--pan-size-37);
+	height: var(--pan-size-37); */
 	border-radius: 50%;
 }
 
@@ -420,7 +434,7 @@ overflow:hidden;
 
 a.Single_Pan_Card, a.Search_Grid_Card {
 	text-decoration: none;
-	padding-top: 11px;
+/* 	padding-top: 11px; */
 	flex: 0 1 auto;
 }
 
@@ -444,6 +458,7 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 
 .Grid .Pan_Size_26.Shadow_Image_Container {
 	margin-top: -2px;
+	aspect-ratio: 1 / 1;
 }
 
 .Pan_Shape_Round .Pan_Shadow {
@@ -456,7 +471,7 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 }
 
 .Pan_Size_26 .Wrapper {
-	width: var(--pan-size-26);
+	/* width: var(--pan-size-26); */
 	height: var(--pan-size-26);
 }
 
@@ -517,12 +532,12 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 /**BASIC FILTER DROPDOWN**/
 
 .Singles_Filter {
- padding: 24px;
+	padding: 24px;
 	padding-bottom: 32px;
- width: 100%;
- height: fit-content;
- position: absolute;
- top: 260px;
+	width: 100%;
+	height: fit-content;
+	position: absolute;
+	top: 260px;
 	background: var(--system-white);
 	border: var(--standard-border);
 	box-shadow: var(--lift-shadow);
@@ -653,7 +668,7 @@ a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
 }
 
 .Singles_Filter .Select_Range select {
- padding: 8px 12px 8px 12px;
+	padding: 8px 12px 8px 12px;
 	background-position: right 10px top 58%;
 }
 
@@ -886,7 +901,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 .Search_Grid_Card .Card_Container {
- border: var(--pan-border);
+	border: var(--pan-border);
 	padding:8px;
 	flex: 1 0 auto;
 }
@@ -894,11 +909,11 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 
 .Search_Grid_Card .Card_Container > .Column {
 	flex: 1 0 auto;
- justify-content: center;
+	justify-content: center;
 }
 
 .Search_Grid_Card .Card_Title {
- margin-top:-16px;
+	margin-top:-16px;
 	padding: 0px 4px 0px 6px;
 
 }
@@ -909,18 +924,18 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 .Search_Grid_Card:hover .Card_Container {
- border: 2px solid var(--FDBL-green-light);
- box-shadow: var(--lift-shadow);
+	border: 2px solid var(--FDBL-green-light);
+	box-shadow: var(--lift-shadow);
 }
 
 .Search_Grid_Card:active .Card_Container {
- border: 2px solid var(--FDBL-yellow-medium);
+	border: 2px solid var(--FDBL-yellow-medium);
 	box-shadow: var(--drag-shadow);
 }
 
 .Search_Grid_Card:hover .Card_Title {
- color:var(--FDBL-black);
- transition: .3s;
+	color:var(--FDBL-black);
+	transition: .3s;
 }
 
 .Results #circleTemplate {
@@ -932,6 +947,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	font-weight:400;
 	padding-right: 16px;
 	border-right: var(--standard-border);
+	font-size: 16px;
 }
 
 .Search_Grid_Card #circleTemplate, .Palette_Summary #circleTemplate {
@@ -939,7 +955,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	border-radius: 50%;
 	border: var(--standard-border);
 	width: 100%;
- height: auto;}
+	height: auto;}
 
 .Search_Grid_Card .Wrapper { 
 	display: grid;
@@ -1011,10 +1027,10 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 .Shadow_Detail_Panel .Shadow_Name, .Palette_Summary .Card_Title {
-  font: var(--font-subsection-title);
-  color: var(--FDBL-black);
-  display: initial;
-  margin: 0;
+		font: var(--font-subsection-title);
+		color: var(--FDBL-black);
+		display: initial;
+		margin: 0;
 }
 
 .Shadow_Detail_Panel .Shadow_Brand, .Palette_Summary .Shadow_Brand {
@@ -1026,13 +1042,13 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 .Properties_Table ul {
-  display: block;
-  list-style-type: none;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0px;
-  padding-inline-start: 0;
+		display: block;
+		list-style-type: none;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		margin-inline-start: 0;
+		margin-inline-end: 0px;
+		padding-inline-start: 0;
 }
 
 .Property_Name {
@@ -1043,8 +1059,8 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 }
 
 li.Property {
- padding: 8px;
- border-bottom: var(--standard-border);
+	padding: 8px;
+	border-bottom: var(--standard-border);
 }
 
 .Property_Description {
@@ -1073,20 +1089,20 @@ li.Property {
 } */
 
 .Brand_Characteristic.Badge {
- background-color: var(--FDBL-cool-white);
- padding: 4px;
- border: var(--standard-border);
- border-radius: 4px;
- font: var(--font-filter-button);
+	background-color: var(--FDBL-cool-white);
+	padding: 4px;
+	border: var(--standard-border);
+	border-radius: 4px;
+	font: var(--font-filter-button);
 	height: fit-content;
 }
 
 /**STORY DETAIL PANEL**/
 
 .Palette_Summary.Search_Grid_Card .Card_Container {
- width: 100%;
- padding: 0;
- border: none;
+	width: 100%;
+	padding: 0;
+	border: none;
 }
 
 .Palette_Summary .Search_Grid_Card .Card_Container {
@@ -1094,11 +1110,11 @@ li.Property {
 }
 
 .Properties_Table ul.Palette_Contents  {
- width: 100%;
- margin-top:16px;
- max-height: 300px;
- overflow: scroll;
- position: relative;
+	width: 100%;
+	margin-top:16px;
+	max-height: 300px;
+	overflow: scroll;
+	position: relative;
 }
 
 ul.Palette_Contents li {
@@ -1106,10 +1122,10 @@ ul.Palette_Contents li {
 }
 
 .Palette_Contents > li {
- display: grid;
- grid-template-columns: repeat(2, 1fr);
- gap: 8px;
- border-bottom:none;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px;
+	border-bottom:none;
 
 }
 
@@ -1117,7 +1133,7 @@ li.Shadow_Name {
 	display:block;
 	margin:0;
 	font: var(--font-body-small);
- color: var(--FDBL-black);
+	color: var(--FDBL-black);
 }
 
 ul.Shadow_List, ul.Palette_Contents {
@@ -1125,7 +1141,7 @@ ul.Shadow_List, ul.Palette_Contents {
 }
 
 .Palette_Contents .Brand_Name {
- font-weight: 500;
+	font-weight: 500;
 }
 
 .Search_Grid_Card:hover .Card_Container {
@@ -1133,10 +1149,10 @@ ul.Shadow_List, ul.Palette_Contents {
 }
 
 .Scroll_Prompt {
- position: fixed;
- bottom: 24px;
- right: 24px;
- background-color: var(--system-white);
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	background-color: var(--system-white);
 }
 
 #shadowDetail.Modal, #storyDetail.Modal {
@@ -1145,7 +1161,7 @@ ul.Shadow_List, ul.Palette_Contents {
 }
 
 #shadowDetail.Fade_In, #storyDetail.Fade_In {
-		  -webkit-animation-name: fadeIn;
+				-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
 	animation-duration: .1s;
 	opacity:1;
@@ -1163,8 +1179,8 @@ label.Remember {
 }
 
 .Panel_Title .PreHeading {
- padding-bottom: 0px;
- border-color: var(--FDBL-light-gray);
+	padding-bottom: 0px;
+	border-color: var(--FDBL-light-gray);
 }
 
 /**Registration Panel **/
@@ -1222,17 +1238,18 @@ label.Remember {
 
 .Results .Single_Pan_Card {
 	opacity: 0;
- animation: fadeInBounce 0.3s cubic-bezier(.16,.75,.42,1.23) both;
+	animation: fadeInBounce 0.3s cubic-bezier(.16,.75,.42,1.23) both;
+	display: flex;
 }
 
 
 @keyframes fadeInBounce {
- 0% {
+	0% {
 		opacity: 0;
 		transform: translate3d(30%, 0, 0);
 	}
 	100% {
-    text-shadow: none;
+				text-shadow: none;
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
@@ -1258,14 +1275,14 @@ label.Remember {
 }
 
 .Badge .Icon_Container  {
-  width: 16px;
+		width: 16px;
 		height: 16px;
 	}
 
 .Badge .Icon_Container svg {
-  width: 100%;
-  height: 100%;
-  fill: rgb(9, 38, 42, 0.90);
+		width: 100%;
+		height: 100%;
+		fill: rgb(9, 38, 42, 0.90);
 	}
 	
 	.Brand_Charateristics .Property_Name {
@@ -1298,26 +1315,26 @@ label.Remember {
 }
 
 .Build_List_Carousel .Panel_Title, .Share_Modal .Heading {
- color: var(--FDBL-white-text);
- font: var(--font-heading-2);
+	color: var(--FDBL-white-text);
+	font: var(--font-heading-2);
 }
 
 .Build_List_Carousel .Drawer_Container {
- width: initial;
+	width: initial;
 	border-radius:4px;
- max-height: 640px;
- overflow: scroll;
+	max-height: 640px;
+	overflow: scroll;
 	padding: 40px;
 }
 
 .Summary_Data .Heading {
- font: var(--font-heading-3);
- border-bottom: 0;
- padding-bottom: 0;
+	font: var(--font-heading-3);
+	border-bottom: 0;
+	padding-bottom: 0;
 }
 
 .Itemized_List .List_Tile:last-child {
- border-bottom: none;
+	border-bottom: none;
 }
 	
 }
@@ -1327,7 +1344,7 @@ label.Remember {
 }
 
 .Brand_Group .Heading {
- font: var(--font-heading-4);
+	font: var(--font-heading-4);
 	font-size:28px;
 	padding-left: 8px;
 	padding-right: 8px;
@@ -1342,7 +1359,7 @@ label.Remember {
 }
 
 .List_Tile:hover {
- gap: 16px; }
+	gap: 16px; }
 
 .Shadow_Details {
 	grid-template-columns: 9fr 1fr;
@@ -1350,7 +1367,7 @@ label.Remember {
 }
 
 .List_Tile .Shade_Name {
- font: var(--font-heading-6);
+	font: var(--font-heading-6);
 }
 
 .List_Tile .Pan_Shadow {
@@ -1358,31 +1375,31 @@ label.Remember {
 }
 
 .Shadow.Grid_Container {
- grid-template-columns: 1fr 9fr;
- /* margin-bottom:16px; */
+	grid-template-columns: 1fr 9fr;
+	/* margin-bottom:16px; */
 }
 
 /* .Grid_Container .Shadow_Image_Container {
- width: 100%;
- height: auto;
+	width: 100%;
+	height: auto;
 } */
 
 .Shadow.Grid_Container .Shadow_Image_Container {
- width: initial;
- height: initial;
+	width: initial;
+	height: initial;
 }
 
 .Shadow.Grid_Container .Wrapper {
- width: initial;
- height: initial;
+	width: initial;
+	height: initial;
 }
 
 .List_Tile .Price_Widget .Price_Value {
- font: var(--font-heading-5);
+	font: var(--font-heading-5);
 }
 
 .List_Tile .Price_Widget .Title {
- color: var(--FDBL-dark-gray);
+	color: var(--FDBL-dark-gray);
 	font: var(--font-nano-labels);
 	}	
 	
@@ -1414,12 +1431,12 @@ label.Remember {
 }
 
 .Remove_Item:hover {
-  background-color: #943B47;
-  box-shadow: var(--lift-shadow);
+		background-color: #943B47;
+		box-shadow: var(--lift-shadow);
 }
 
 .Remove_Item:active {
-  box-shadow: var(--drag-shadow);
+		box-shadow: var(--drag-shadow);
 }
 
 .Drawer_Overlay .Text_Button  {
@@ -1435,8 +1452,8 @@ label.Remember {
 }
 
 .Build_List_Carousel .Section_Title {
- font: var(--font-heading-3);
- text-transform: uppercase;
+	font: var(--font-heading-3);
+	text-transform: uppercase;
 }
 
 .Code_Copy {
@@ -1444,19 +1461,19 @@ label.Remember {
 }
 
 .Not_Copied {
- border: 4px dashed #CFBD63;
- background-color: var(--FDBL-green-dark);
- padding: 24px;
+	border: 4px dashed #CFBD63;
+	background-color: var(--FDBL-green-dark);
+	padding: 24px;
 }
 
 .Code_Copy:hover {
- background-color: var(--FDBL-yellow-medium);
- border-color: var(--FDBL-black);
+	background-color: var(--FDBL-yellow-medium);
+	border-color: var(--FDBL-black);
 }
 
 .Code_Copy:hover button {
- background-color: var(--FDBL-black);
- border-color: var(--FDBL-yellow-medium);
+	background-color: var(--FDBL-black);
+	border-color: var(--FDBL-yellow-medium);
 	color: var(--FDBL-yellow-medium);
 }
 
@@ -1465,22 +1482,22 @@ label.Remember {
 }
 
 .Code_Copy.Copied {
- background-color: var(--FDBL-green-light);
- border-color: var(--FDBL-yellow-light);
+	background-color: var(--FDBL-green-light);
+	border-color: var(--FDBL-yellow-light);
 }
 
 .Code_Copy.Copied .Panel_title {
- color: var(--FDBL-dark-teal)
+	color: var(--FDBL-dark-teal)
 }
 
 .Code_Copy.Copied button {
- background-color: var(--FDBL-green-dark);
- border-color: var(--FDBL-white-text);
+	background-color: var(--FDBL-green-dark);
+	border-color: var(--FDBL-white-text);
 	color: var(--FDBL-white-text);
 }
 
 .Copy_Code .Drawer_Container, .Buy_Shadows .Drawer_Container {
- height: fit-content;
+	height: fit-content;
 }
 
 .Terms_Conditions {
@@ -1498,16 +1515,16 @@ label.Remember {
 }
 
 .Open_Links.Valid {
- background-color: var(--FDBL-green-light);
+	background-color: var(--FDBL-green-light);
 }
 
 .Open_Links .Panel_Title {
- color: var(--FDBL-black);
- font: var(--font-heading-4);
+	color: var(--FDBL-black);
+	font: var(--font-heading-4);
 }
 
 .Open_Links.Invalid {
- background-color: var(--FDBL-light-gray);
+	background-color: var(--FDBL-light-gray);
 }
 
 .Open_Links.Invalid .Panel_Title {
@@ -1528,12 +1545,12 @@ button.Prev_Slide div::before {
 }
 
 .Build_List_Carousel {
- flex-flow: row nowrap;
- overflow: hidden;
+	flex-flow: row nowrap;
+	overflow: hidden;
 }
 
 .Build_List_Carousel > div {
- flex: 1 0 100%;
+	flex: 1 0 100%;
 	height: 100%;
 }
 
@@ -1553,12 +1570,12 @@ button.Prev_Slide div::before {
 }
 
 .Share_Modal .Story_Grid .Shadow_Image_Container:active {
- border: none;
+	border: none;
 }
 
 .Share_Modal .Story_Grid .Shadow_Image_Container:hover {
- cursor: default;
- border: none;
+	cursor: default;
+	border: none;
 }
 
 .Share_Modal .Img_Container .Img_Meta {
@@ -1567,7 +1584,7 @@ button.Prev_Slide div::before {
 }
 
 .Share_Modal .Story_Grid .Shadow_Image_Container .Wrapper {
- box-shadow: var(--pan-shadow-on-palette-small);
+	box-shadow: var(--pan-shadow-on-palette-small);
 }
 
 .Share_Modal .Share_Img_Format form{
@@ -1598,7 +1615,7 @@ button.Prev_Slide div::before {
 }
 
 .Share_Modal .Subheading {
- font: var(--font-heading-4);
+	font: var(--font-heading-4);
 }
 
 .Share_Modal .Arrow{
@@ -1636,11 +1653,11 @@ button.Prev_Slide div::before {
 }
 
 .Share_Modal .Img_Container.Light .Img_Meta .Watermark {
- 	background: url(../assets/02_Branding/UPB-logo-temp.svg);
- 	width: 100px;
- 	height: 32px;
- 	background-repeat: no-repeat;
- }
+		background: url(../assets/02_Branding/UPB-logo-temp.svg);
+		width: 100px;
+		height: 32px;
+		background-repeat: no-repeat;
+	}
 	
 	/**DARK BACKGROUND OPTIONS**/
 	
@@ -1701,4 +1718,36 @@ button.Prev_Slide div::before {
 
 .Modal .Grid_Container > .Column {
 	height: fit-content;
+}
+
+/**RESPONSIVE STYLING**/
+
+@media only screen and (max-width: 1440px) {
+
+		.Right_Panel_Nav .Panel_Title {
+		line-height:18px;
+	}
+	
+	.Results_Control_Bar {
+		gap: 16px;
+	}
+	
+	.Results .Body.Small_Text {
+		border:none;
+	}
+	
+	.Results_Control_Bar .Filters {
+		flex: 1 1 auto;
+		justify-content: space-between;
+	}
+
+	.Right_Panel_Nav {
+				width: 13%;}
+	
+	button.oAuth.Button_Block.Row.Justify_Content_Flex_Start.Align_Items_Center.Gap_8 span {
+				font-size: 16px;
+	}
+	
+	
+	
 }

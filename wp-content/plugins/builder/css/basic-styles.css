@@ -59,24 +59,24 @@ fieldset {
 
 .Fade_In {
 	animation-duration: .1s;
-	  -webkit-animation-name: fadeIn;
+			-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
 	animation-timing-function: ease-in-out;
-	  -webkit-animation-timing-function: ease-in-out;
+			-webkit-animation-timing-function: ease-in-out;
 	overflow: hidden;
 }
 
 @keyframes fadeInRight {
-  0% {
-    -webkit-transform: translate3d(50px, 0, 0);
-    transform: translate3d(50px, 0, 0);
-    opacity: 0; }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1; } 
+		0% {
+				-webkit-transform: translate3d(50px, 0, 0);
+				transform: translate3d(50px, 0, 0);
+				opacity: 0; }
+		100% {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+				opacity: 1; }
 	}
-	
+
 	.Fade_Out_Right {
 	animation-name: fadeInRight;
 	animation-direction: reverse;
@@ -84,10 +84,10 @@ fieldset {
 
 .Fade_In_Right {
 	animation-duration: .2s;
-  -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out; 
+		-webkit-animation-name: fadeInRight;
+		animation-name: fadeInRight;
+		-webkit-animation-timing-function: ease-in-out;
+		animation-timing-function: ease-in-out;
 	}
 
 :focus-visible {
@@ -279,7 +279,7 @@ p {
 
 .Builder_Bottom {
 	flex: 1 1 auto;
-	
+
 }
 
 .Palette, .Palette_Summary .Palette {
@@ -320,9 +320,9 @@ padding:32px;
 .Palette_Container.Portrait_Square {
 	flex: 1 1 auto;
 	padding: 32px 0;
- max-height: 100%;
- max-width: 100%;
-	
+	max-height: 100%;
+	max-width: 100%;
+
 }
 
 .Landscape .Palette {
@@ -345,7 +345,7 @@ height: auto;
 .Palette.Story_Size_5w_4t {
 	aspect-ratio: 5 / 4;
 	width:85%!important;
-	
+
 }
 
 .Palette.Story_Size_6w_3t {
@@ -434,7 +434,7 @@ height: auto;
 
 /*5-wide Stories*/
 .Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_26,
-.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_Irregular, 
+.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_Irregular,
 .Story_Size_5w_5t .Shadow_Image_Container.Pan_Size_26,
 .Story_Size_5w_5t .Shadow_Image_Container.Pan_Size_Irregular,
 .Story_Size_5w_3t .Shadow_Image_Container.Pan_Size_26,
@@ -443,7 +443,7 @@ height: auto;
 	height: auto;
 }
 
-.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_37, 
+.Story_Size_5w_4t .Shadow_Image_Container.Pan_Size_37,
 .Story_Size_5w_5t .Shadow_Image_Container.Pan_Size_37 {
 	width: calc((100% / 5) * 1.42);
 	height: auto;
@@ -451,7 +451,7 @@ height: auto;
 
 /*6-wide stories*/
 .Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_26,
-.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_Irregular, 
+.Story_Size_6w_3t .Shadow_Image_Container.Pan_Size_Irregular,
 .Story_Size_6w_4t .Shadow_Image_Container.Pan_Size_26,
 .Story_Size_6w_4t .Shadow_Image_Container.Pan_Size_Irregular {
 	width: calc(100% / 6);
@@ -467,7 +467,7 @@ height: auto;
 
 /*7-wide stories*/
 .Story_Size_7w_2t .Shadow_Image_Container.Pan_Size_26,
-.Story_Size_7w_2t .Shadow_Image_Container.Pan_Size_Irregular, 
+.Story_Size_7w_2t .Shadow_Image_Container.Pan_Size_Irregular,
 .Story_Size_7w_5t .Shadow_Image_Container.Pan_Size_26,
 .Story_Size_7w_5t .Shadow_Image_Container.Pan_Size_Irregular,
 .Story_Size_7w_6t .Shadow_Image_Container.Pan_Size_26,
@@ -489,34 +489,34 @@ height: auto;
 }
 
 /*8-wide stories*/
-.Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_26, 
+.Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_26,
 .Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_Irregular,
-.Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_26, 
-.Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_Irregular, 
-.Story_Size_8w_12t .Shadow_Image_Container.Pan_Size_26, 
+.Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_26,
+.Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_Irregular,
+.Story_Size_8w_12t .Shadow_Image_Container.Pan_Size_26,
 .Story_Size_8w_12t .Shadow_Image_Container.Pan_Size_Irregular   {
-	width: calc(100% / 8); 
-	height:auto;	
+	width: calc(100% / 8);
+	height:auto;
 	}
-	
-.Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_37, 
+
+.Story_Size_8w_11t .Shadow_Image_Container.Pan_Size_37,
 .Story_Size_8w_9t .Shadow_Image_Container.Pan_Size_37,
 .Story_Size_8w_12t .Shadow_Image_Container.Pan_Size_37 {
 	width: calc((100% / 8) * 1.42);
-	height:auto;	
+	height:auto;
 	}
-	
+
 	/*11-wide stories*/
 
 .Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_26, .Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_Irregular {
-	width: calc(100% / 11); 
+	width: calc(100% / 11);
 	height:auto;
 	}
-	
-	.Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_37, 
+
+	.Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_37,
 	.Story_Size_11w_8t .Shadow_Image_Container.Pan_Size_37 {
 		width: calc((100% / 11) * 1.42);
-		height:auto;	
+		height:auto;
 		}
 
 /**COLORS AND BACKGROUNDS**/
@@ -682,6 +682,7 @@ input#Light_Level_4 + label {
 
 .Small_Text {
 	font-weight: var(--type-weight-regular);
+	font-size: 16px;
 }
 
 .Panel_Title {
@@ -694,11 +695,11 @@ input#Light_Level_4 + label {
 
 .PreHeading {
 	font: var(--font-body-small);
- font-weight: 600;
- text-transform: uppercase;
- font-size: 14px;
- color: var(--FDBL-medium-gray);
-	
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: var(--FDBL-medium-gray);
+
 }
 
 .Filter_Section .Heading {
@@ -723,6 +724,7 @@ input#Light_Level_4 + label {
 	text-align: center;
 	padding-bottom: 4px;
 	border-color: var(--FDBL-black);
+	border-bottom: var(--standard-border);
 }
 
 .Helper_Box div {
@@ -775,8 +777,8 @@ input[type="checkbox" i]:after{
 
 input[type="checkbox" i]:checked:after {
 	opacity:1;
- top: -5px;
- left: -2px;
+	top: -5px;
+	left: -2px;
 }
 
 ::-webkit-input-placeholder {
@@ -872,7 +874,7 @@ button {
 .Button_Block.Invalid, .Invalid .Button_Block {
 	background: var(--FDBL-medium-gray);
 	cursor:default;
-	
+
 }
 
 .Button_Block.Invalid:hover, .Invalid .Block_Button:hover {
@@ -906,11 +908,11 @@ button.Instagram.oAuth svg {
 }
 
 button.Instagram.oAuth {
-  color: #fff;
-  background: #f09433; 
-background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+		color: #fff;
+		background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 
 }
@@ -1052,9 +1054,9 @@ input[type="checkbox"].Filter_Button:checked + label,
 
 button.Filter_Button.Selected {
 	box-shadow: var(--button-selected);
- border: var(--shadow-border);
- background-color: var(--FDBL-dark-gray);
- color: var(--FDBL-white-text);
+	border: var(--shadow-border);
+	background-color: var(--FDBL-dark-gray);
+	color: var(--FDBL-white-text);
 }
 
 button.Filter_Button.Selected svg {
@@ -1073,20 +1075,27 @@ button.Filter_Button.Selected svg {
 }
 
 .Nav_Icon {
-	display: inline-block;
-	width: 56px;
-	height: 56px;
-	box-sizing: content-box;
+	display: flex;
+	/* width: 56px; */
+	/* height: 56px; */
+	box-sizing: border-box;
 	background-color: var(--FDBL-green-dark);
 	border-radius: 50%;
 	overflow: hidden;
 	text-align: center;
+	aspect-ratio: 1 / 1;
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	justify-content: center;
 }
 
 .Nav_Icon svg {
-	margin-top: 11px;
-	width: 32px;
-	height: 32px;
+	/* margin-top: 11px; */
+	width: 100%;
+	height: auto;
+	/* width: 32px; */
+	/* height: 32px; */
 	fill: var(--FDBL-white-text);
 }
 
@@ -1154,21 +1163,21 @@ button.Nav_Button:hover .Heading {
 .On {
 	display:flex;
 	transition: .1s;
-	
+
 }
 
 /**BASIC DROPDOWN**/
 
 .Basic_Dropdown {
 	position: absolute;
- left: 265px;
- top: 261px;
- width: fit-content;
- height: auto;
- box-shadow: var(--lift-shadow);
- padding: 24px 0px;
- border: var(--standard-border);
- background-color: var(--system-white);
+	left: 265px;
+	top: 261px;
+	width: fit-content;
+	height: auto;
+	box-shadow: var(--lift-shadow);
+	padding: 24px 0px;
+	border: var(--standard-border);
+	background-color: var(--system-white);
 }
 
 .Basic_Dropdown .Panel_Title {
@@ -1177,8 +1186,8 @@ button.Nav_Button:hover .Heading {
 }
 
 label.Single_Select {
-    font: var(--font-body-small);
-    padding: 12px 24px
+				font: var(--font-body-small);
+				padding: 12px 24px
 }
 
 label.Check_Select {
@@ -1202,65 +1211,65 @@ label.Check_Select {
 /*HOVER STYLES*/
 
 .Basic_Dropdown label.Single_Select:hover {
- font: var(--font-body-small);
- color: var(--FDBL-white-text);
- background-color: var(--FDBL-black);
+	font: var(--font-body-small);
+	color: var(--FDBL-white-text);
+	background-color: var(--FDBL-black);
 }
 
 .Basic_Dropdown label.Single_Select:active {
- font: var(--font-body-small);
- color: var(--FDBL-white-text);
- background-color: var(--FDBL-green-light);
+	font: var(--font-body-small);
+	color: var(--FDBL-white-text);
+	background-color: var(--FDBL-green-light);
 }
 
 .Results_Control_Bar {
- padding-bottom: 20px;
- border-bottom: var(--standard-border);
- border-color: var(--FDBL-light-gray);
+	padding-bottom: 20px;
+	border-bottom: var(--standard-border);
+	border-color: var(--FDBL-light-gray);
 }
 
 .drop-indicator {
- position: absolute;
- background: rgba(255, 255, 255, 0.2);
- border: 2px solid #fff;
- box-sizing: border-box;
- border-radius: 0.2rem;
- pointer-events: none;
- opacity: 0;
- transition: opacity 0.2s ease, transform 0.2s ease;
- transform: scale(0.9);
- z-index: 21;}
-	
+	position: absolute;
+	background: rgba(255, 255, 255, 0.2);
+	border: 2px solid #fff;
+	box-sizing: border-box;
+	border-radius: 0.2rem;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	transform: scale(0.9);
+	z-index: 21;}
+
 	label.Filter_Button  {/**Test to see how it goes**/
- display: block;
- background-color: rgba(237 237 237 / 50%);
- border: var(--shadow-border);
+	display: block;
+	background-color: rgba(237 237 237 / 50%);
+	border: var(--shadow-border);
 }
 
 .Number_Icon {
 	aspect-ratio: 1/1;
- background-color: var(--FDBL-yellow-medium);
- width: 40px;
- height: auto;
- text-align: center;
- border-radius: 50%;
- color: var(--FDBL-white-text);
+	background-color: var(--FDBL-yellow-medium);
+	width: 40px;
+	height: auto;
+	text-align: center;
+	border-radius: 50%;
+	color: var(--FDBL-white-text);
 	font: var(--font-cta-text-small);
 	line-height: 38px;
 }
-	
+
 .Grid_Test{
- padding: 80px;
- grid-template-columns: 5fr 5fr;
- gap: 80px;
- }
-	
-	
+	padding: 80px;
+	grid-template-columns: 5fr 5fr;
+	gap: 80px;
+	}
+
+
 .Shopping_List_Summary {
- padding: 24px;
- background-color: #F7F7F7;
- border: var(--standard-border);
- border-radius: 2px;
+	padding: 24px;
+	background-color: #F7F7F7;
+	border: var(--standard-border);
+	border-radius: 2px;
 	grid-template-columns: 3fr 7fr;
 }
 
@@ -1270,18 +1279,38 @@ label.Check_Select {
 }
 
 .Shadow.Badge {
- font: var(--font-filter-button);
+	font: var(--font-filter-button);
 	font-weight: 400;
 }
 
 #centerModal .Drawer_Container {
-  aspect-ratio: 1 / 1;
+		aspect-ratio: 1 / 1;
 		flex:1;
-  width: initial;
+		width: initial;
 }
 
 .Modal_Grid {
 	grid-template-columns: 5fr 6fr;
 	padding: 80px 10%;
 	gap: 60px;
+}
+
+
+@media only screen and (max-width: 1440px) {
+	
+	.Gap_16 {
+		gap: 8px;
+	}
+	.Gap_24 {
+		gap: 16px;
+	}
+	.Gap_32 {
+		gap: 24px;
+	}
+	.Gap_40 {
+		gap: 32px;
+	}
+	.Gap_48 {
+		gap: 40px;
+	}
 }

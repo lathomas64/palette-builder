@@ -3,7 +3,7 @@
 		<div class="Body Small_Text">
 			<span id='Shadow_Count'>Showing ?? shadows</span>
 		</div>
-		<div class="Row Gap_24 Align_Items_Center">
+		<div class="Row Gap_24 Align_Items_Center Filters">
 			<div class="Search">
 			<label class="Hidden">Start Typing to Filter List</label>
 			<input onkeyup="shadow_list.search(this.value)" id="Filter_By_Text" class="Input" placeholder="Search by name" type="search" />
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<div class="Column Results_Container">
-		<div class="Grid Row Gap_16">
+		<div class="Grid Row Gap_16 Grid_Container">
 			<a v-for='shadow in shadows' v-bind:data-size='shadow.size'
 						v-bind:data-height='shadow.height'
 						v-bind:data-width='shadow.width'
@@ -50,7 +50,7 @@
 						@click="add_to_story(shadow)"
 						onMouseEnter="console.log('open');openShadowDetail(this);"
 						onMouseLeave="console.log('close');closeShadowDetail(this);"
-						class="Single_Pan_Card" href="#">
+						class="Single_Pan_Card Flex_Container" href="#">
 				<div class="Card_Container Column Gap_8">
 					<div class="Shadow_Name">{{shadow.name}}</div>
 					<div v-bind:class="'Pan_Shape_'+shadow.shape+' Pan_Size_'+shadow.size" class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center">

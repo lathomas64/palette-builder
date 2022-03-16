@@ -20,7 +20,8 @@
 		</button>
 	</div>
 </div>
-	<div class="Story_Size Grid Row Gap_16">
+	<div class="Column Story_Results">
+	<div class="Story_Size Grid Row Gap_16 Grid_Container">
 		<a class="Search_Grid_Card Column Justify_Content_Center Story_Size_3w_3t" href="#">
 			<div class="Card_Container Column Gap_8">
 				<div class="Card_Title">9 Pans</div>
@@ -165,6 +166,7 @@
 					</div>
 			</div>
 		</a>
+	</div>
 	</div>
 	<a class="Search_Grid_Card_Template Hidden" href="#">
 		<div class="Card_Container Column Gap_8">

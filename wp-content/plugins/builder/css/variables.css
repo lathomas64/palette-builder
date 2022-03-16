@@ -1,7 +1,7 @@
 :root {
 	/**SIZES**/
 	--pan-size-37: 120px;
-	--pan-size-26: 84px;
+	--pan-size-26: 70%;
 	--pan-size-24: 77px;
 	--pan-size-21: 68px;
 	--story-container-size: 70%;
@@ -43,15 +43,19 @@
 	--type-size-24: 24px;
 	--type-size-29: 29px;
 	--type-size-32: 32px;
+	--type-size-40: 40px;
 	--type-size-48: 48px;
 	--type-size-56: 56px;
-	--type-size-40: 40px;
+	--type-size-96: 96px;
 	--type-size-1em: 1em;
 
 	/**FONT STYLES**/
 	/**font: font-style font-variant font-weight font-size/line-height font-family**/
 	
 	/**HEADINGS**/
+	--font-hero-heading: 
+	var(--type-weight-bold) 
+	var(--type-size-96) / var(--type-size-56) var(--e-global-typography-secondary-font-family);
 	--font-heading-1:
 		var(--type-weight-bold) 
 		var(--type-size-56) / var(--type-size-56) 
@@ -60,13 +64,13 @@
 		var(--type-weight-bold) 
 		var(--type-size-48) / var(--type-size-40) 
 		var(--e-global-typography-secondary-font-family);
+		--font-heading-3: 
+		var(--type-weight-bold) 
+		var(--type-size-40) / var(--type-size-40) 
+		var(--e-global-typography-secondary-font-family);
 	--font-heading-4: 
 		var(--type-weight-bold) 
 		var(--type-size-32) / var(--type-size-32) 
-		var(--e-global-typography-secondary-font-family);
---font-heading-3: 
-		var(--type-weight-bold) 
-		var(--type-size-40) / var(--type-size-40) 
 		var(--e-global-typography-secondary-font-family);
 	--font-heading-5: 
 		var(--type-weight-bold) 
@@ -76,10 +80,7 @@
 		var(--type-weight-bold) 
 		var(--type-size-21) / var(--type-size-21) 
 		var(--e-global-typography-secondary-font-family);
-		--font-hero-heading: 
-		var(--type-weight-bold) 
-		96px / 56px 
-		var(--e-global-typography-secondary-font-family);
+
 	
 
 	--font-panel-title: 
@@ -182,4 +183,22 @@
 /**FILLS**/
 --translucent-black-bg: rgb(9 38 42 / 95%);
 }
+
+@media only screen and (max-width: 1440px) {
+	:root {
+	--type-size-0: 0px;
+	--type-size-18: 16px;
+	--type-size-21: 18px;
+	--type-size-24: 21px;
+	--type-size-29: 24px;
+	--type-size-32: 29px;
+	--type-size-40: 32px;
+	--type-size-48: 40px;
+	--type-size-56: 48px;
+	--type-size-96: 56px;
+	--type-size-1em: 1em;
+
+}
+}
+
 

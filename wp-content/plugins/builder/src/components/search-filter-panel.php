@@ -2,7 +2,7 @@
 		<div class="Inner_Section_Wrap">
 				<div class="Flex_Container Row Reverse">
 					<div class="Right_Panel_Nav">
-						<div class="Column Gap_24">
+						<div class="Column Gap_16">
 								<div class="Panel_Title">Find Stuff</div>
 							<div class="Nav_Buttons_Container Column Gap_16">
 								<button class="Nav_Button Story_Size Column Gap_8 Align_Items_Center">
