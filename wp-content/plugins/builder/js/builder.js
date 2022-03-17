@@ -525,6 +525,24 @@ var currentStory = new Object();
 		$('#shadowDetail ul').children()[7].children[1].textContent = lightness;
 	}
 
+	function search_shadows(query)
+	{
+		var count = 0;
+		$(".Results .Single_Pan_Card").each(
+			function(index, element){
+				card = $(element);
+				text = card.find(".Shadow_Name").text().toLowerCase();
+				if(text.includes(query.toLowerCase()))
+				{
+					count += 1;
+					card.removeClass("Hidden");
+				} else {
+					card.addClass("Hidden");
+				}
+			});
+			$("#Shadow_Count").text("Showing "+count+" shadow(s)");
+	}
+
 	function flatten_story() {
 		story = []
 		for(var index = 0; index < currentStory.shadows.length; index++)
@@ -644,7 +662,7 @@ var currentStory = new Object();
 		});
 	}
 
-	function register_modal(buttonTarget, modalTarget)
+	function register_dropdown(buttonTarget, modalTarget)
 	{
 		var container = $(modalTarget);
 		var dropdownBtn = $(buttonTarget);
@@ -699,10 +717,10 @@ var currentStory = new Object();
 	}
 	$(document).ready(function(){
 		init();
-		register_modal("#Community_Story_Target .Filter_Button_Filter", "#CommunityStoryFilterBasic");
-		register_modal("#User_Story_Target .Filter_Button_Filter", "#UserStoryFilterBasic");
-		register_modal("#Community_Story_Target .Filter_Button_Sort", "#CommunityStorySortBasic");
-		register_modal("#User_Story_Target .Filter_Button_Sort", "#UserStorySortBasic");
-		register_modal("#shadowSortBtn", "#shadowSortBasic");
-		register_modal("#shadowFilterBtn", "#shadowFilterBasic");
+		register_dropdown("#Community_Story_Target .Filter_Button_Filter", "#CommunityStoryFilterBasic");
+		register_dropdown("#User_Story_Target .Filter_Button_Filter", "#UserStoryFilterBasic");
+		register_dropdown("#Community_Story_Target .Filter_Button_Sort", "#CommunityStorySortBasic");
+		register_dropdown("#User_Story_Target .Filter_Button_Sort", "#UserStorySortBasic");
+		register_dropdown("#shadowSortBtn", "#shadowSortBasic");
+		// register_dropdown("#shadowFilterBtn", "#shadowFilterBasic");
 	});

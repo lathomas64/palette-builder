@@ -61,7 +61,7 @@ function modalOpen(event) {
 		$("#rightDrawer").addClass("On");
 	}
 	//Display Modal Content
-	if ($(event.target).is("#advancedFilterBtn")) {
+	if ($(event.target).is("#shadowFilterBtn")) {
 		$("#advancedFilterContent").addClass("On");
 	}
 	if ($(event.target).is(".Modal_Trigger.List")) {
