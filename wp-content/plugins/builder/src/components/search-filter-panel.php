@@ -66,4 +66,5 @@
 					</div>
 				</div>
 		</div>
+		<?php include "components/03_modals/01_modal-formats/02_right-drawer.php"; ?>
 	</div>

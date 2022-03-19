@@ -83,12 +83,62 @@ fieldset {
 }
 
 .Fade_In_Right {
-	animation-duration: .2s;
+		animation-duration: .2s;
 		-webkit-animation-name: fadeInRight;
 		animation-name: fadeInRight;
 		-webkit-animation-timing-function: ease-in-out;
 		animation-timing-function: ease-in-out;
 	}
+
+@-webkit-keyframes slideInUp {
+			from {
+					-webkit-transform: translate3d(0, 100%, 0);
+					transform: translate3d(0, 100%, 0);
+					visibility: visible;
+			}
+90% {
+						-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+					visibility: visible;
+}
+	
+			to {
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+			}
+	}
+	@keyframes slideInUp {
+			from {
+					-webkit-transform: translate3d(0, 100%, 0);
+					transform: translate3d(0, 100%, 0);
+					visibility: visible;
+			}
+		90% {
+						-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+					visibility: visible;
+}
+	
+			to {
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+			}
+	}
+	
+	.slideInOut {
+		animation-name: slideInUp;
+		animation-direction: reverse;
+	}
+	
+	.slideInUp {
+			animation-duration: .2s;
+			-webkit-animation-name: slideInUp;
+			animation-name: slideInUp;
+				-webkit-animation-timing-function: ease-in-out;
+		animation-timing-function: ease-in-out;
+	}
+	
+
 
 :focus-visible {
 	outline-color: var(--FDBL-green-light);
@@ -110,6 +160,7 @@ fieldset {
 body {
 	margin: 0;
 	font: var(--font-body-small);
+	overflow:hidden;
 }
 
 section {
@@ -920,7 +971,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 /**TEXT BUTTONS**/
 
 button.Text_Button,
-label.Text_Button {
+label.Text_Button, .Text_Button {
 	background: none;
 	border: none;
 	margin-right: 8px;

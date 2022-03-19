@@ -1,7 +1,4 @@
-	<!-- Advanced Filter Modal -->
-	<?php include "components/03_modals/01_modal-formats/02_right-drawer.php"; ?>
-	
-	<!-- Left Drawer Panel -->
+<!-- Left Drawer Panel -->
 	<?php include "components/03_modals/01_modal-formats/01_left-drawer.php"; ?>
 	
 	<!-- Shadow Detail Hover Panel -->

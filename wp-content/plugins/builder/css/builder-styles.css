@@ -747,6 +747,18 @@ label {
 .Close_Modal .Text_Button {
 	color: var(--FDBL-dark-gray);
 	padding: 20px 0;
+	background-color: white;
+	border:none;
+	padding: 8px;
+	margin-right:0;
+	opacity: 80%;
+	transition: .1s;
+}
+
+.Close_Modal .Text_Button:hover {
+	opacity:100%;
+	transition: .1s;
+	border: var(--standard-border);
 }
 
 .Close_Modal .Icon_Container svg {
@@ -757,8 +769,8 @@ label {
 }
 
 .Accordion label.Trigger {
-	background: var(--system-white);
-	color: var(--FDBL-black);
+	background: var(--FDBL-dark-teal);
+
 	border: var(--standard-border);
 	border-color: var(--FDBL-light-gray);
 	border-radius: 4px;
@@ -767,6 +779,7 @@ label {
 
 .Accordion label.Trigger .Heading {
 	font: var(--font-subsection-title);
+	color: var(--FDBL-white-text);
 	padding: 0;
 	border: 0;
 }
@@ -778,7 +791,7 @@ label {
 
 .Accordion label.Trigger::after {
 	content: "";
-	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 14 14' fill='black'><path d='M14 8.00195H0V6.00195H14V8.00195Z'></path></svg>") no-repeat;
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 14 14' fill='white'><path d='M14 8.00195H0V6.00195H14V8.00195Z'></path></svg>") no-repeat;
 	height: 14px;
 	width: 14px;
 }
@@ -1720,6 +1733,22 @@ button.Prev_Slide div::before {
 	height: fit-content;
 }
 
+
+#rightDrawer.Modal {
+	position: sticky;
+	bottom:0;
+	height: fit-content;
+	max-height:60vh;
+	overflow: scroll;
+	width: 89%;
+	padding: 0px 32px;
+	background: var(--FDBL-cool-white);
+	}
+	
+	#rightDrawer .Panel_Content {
+		background: var(--FDBL-cool-white);
+		padding-bottom:32px;
+	}
 /**RESPONSIVE STYLING**/
 
 @media only screen and (max-width: 1440px) {
