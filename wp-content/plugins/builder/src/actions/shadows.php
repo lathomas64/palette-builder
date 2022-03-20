@@ -35,7 +35,7 @@ function _extract_shadow_data($shadow)
     $result['name'] = get_the_title($shadow);
     $result["shift"] = extract_taxonomy_data($shadow, "tax_shift");
     $result["finish"] = extract_taxonomy_data($shadow, "tax_finish");
-    $result["color-tag"] = extract_taxonomy_data($shadow, "tax_color_tag");
+    $result["color_tag"] = extract_taxonomy_data($shadow, "tax_color_tag");
 		$result["vividness"] = extract_taxonomy_data($shadow, "tax_vividness");
     $result["vividness-sort"] = get_post_field("avg_saturation", $shadow);
 		$result["lightness"] = extract_taxonomy_data($shadow, "tax_lightness");
