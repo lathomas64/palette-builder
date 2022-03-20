@@ -208,6 +208,52 @@ function filter_add_rest_post_query($args, $request)
     }
   }
 
+  if(isset($params["characteristics"]))
+  {
+    $brand_args = [
+    "post_type" => "cpt_brand",
+    "post_status" => "publish",
+    "posts_per_page" => -1,
+    "orderby" => "title",
+    "order" => "ASC",
+    "cat" => "home",
+    "tax_query" => array(
+      'relation' => 'AND'
+    )
+    ];
+    // Doing this to AND instead of OR
+    foreach($params['characteristics'] as $slug)
+    {
+      $characteristic = array(
+        'taxonomy' => 'tax_brand_characteristic',
+        'field' => 'slug',
+        'terms' => $slug
+      );
+      $brand_args["tax_query"][] = $characteristic;
+    }
+    $brands = new WP_Query($brand_args);
+    $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+    $shadows = array();
+    foreach($brand_shadows as $shadow_list)
+    {
+      if(gettype($shadow_list) == "array"){
+        $merge = array_merge($shadows, $shadow_list);
+        $shadows = $merge;
+      }
+    }
+    $shadows = array_unique($shadows);
+    if($shadows != null)
+    {
+      // TODO make this work with multiple values trying to do this.
+      if(array_key_exists("post__in", $args)){
+        $args["post__in"] = array_intersect($args["post__in"], $shadows);
+      } else {
+          $args["post__in"] = $shadows;
+      }
+    }
+
+  }
+
 
   //characteristics, demographics, brand
   //shipping, price
