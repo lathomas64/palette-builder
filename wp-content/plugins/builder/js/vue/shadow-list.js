@@ -5,6 +5,16 @@ const sort_dict = {
   "lightness": "lightness-sort",
   "name": "name"
 }
+shipping_options = [];
+brand_list = [];
+function init_lists(){
+  //shipping_list
+  shipping_url = "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/tax_shipping&per_page=100&_fields=slug,name"
+  pull_pages(shipping_url,"shipping_options");
+  //brand_list
+  brand_url = "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_brand&per_page=100&_fields=id,slug,title"
+  pull_pages(brand_url, "brand_list");
+}
 $(document).ready(function (event) {
 shadow_list = new Vue({
     el:".Results_Container .Grid",
@@ -16,7 +26,7 @@ shadow_list = new Vue({
     sort_field: 'color',
     sort_direction: 'asc',
     updating: false,
-    url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish",
+    url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish&pb_status=Active",
     results_per_page: 20,
     filters: {}
   },
@@ -25,8 +35,10 @@ shadow_list = new Vue({
       return this.shadows.map(shadow => shadow.id);
     },
     shipping_options: function () {
-      let options = this.shadows.map(shadow => shadow.ships);
-      return options; // TODO this only returns current need to do query
+      return paged_data["shipping_options"];
+    },
+    brand_list: function () {
+      return paged_data["brand_list"];
     },
     class: function(shadow) {
       shape = "Pan_Shape_"+shadow.shape;
@@ -151,4 +163,5 @@ shadow_list = new Vue({
     }
 );
 shadow_list.load_shadows();
+init_lists();
 });

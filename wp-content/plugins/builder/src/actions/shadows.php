@@ -35,7 +35,7 @@ function _extract_shadow_data($shadow)
     $result['name'] = get_the_title($shadow);
     $result["shift"] = extract_taxonomy_data($shadow, "tax_shift");
     $result["finish"] = extract_taxonomy_data($shadow, "tax_finish");
-    $result["color-tag"] = extract_taxonomy_data($shadow, "tax_color_tag");
+    $result["color_tag"] = extract_taxonomy_data($shadow, "tax_color_tag");
 		$result["vividness"] = extract_taxonomy_data($shadow, "tax_vividness");
     $result["vividness-sort"] = get_post_field("avg_saturation", $shadow);
 		$result["lightness"] = extract_taxonomy_data($shadow, "tax_lightness");
@@ -43,6 +43,7 @@ function _extract_shadow_data($shadow)
     $result['color-sort'] = get_post_field("avg_hue", $shadow);
     $result['link'] = get_post_field("product_url", $shadow);
     $result['price'] = get_post_field("price", $shadow);
+    $result['status'] = get_post_field("pb_status", $shadow);
     $brand = get_post_field("brand", $shadow);
     if ($brand) {
 			$result['brand'] = get_post_field("post_title", $brand[0]);
@@ -206,6 +207,61 @@ function filter_add_rest_post_query($args, $request)
           'terms' => explode(',', $params[$param])
       );
     }
+  }
+
+  if(isset($params["pb_status"]))
+  {
+    $args['meta_query'][] = array(
+      'key' => 'pb_status',
+      'value' => $params['pb_status'],
+      'compare' => 'IN'
+    );
+  }
+
+  if(isset($params["characteristics"]))
+  {
+    $brand_args = [
+    "post_type" => "cpt_brand",
+    "post_status" => "publish",
+    "posts_per_page" => -1,
+    "orderby" => "title",
+    "order" => "ASC",
+    "cat" => "home",
+    "tax_query" => array(
+      'relation' => 'AND'
+    )
+    ];
+    // Doing this to AND instead of OR
+    foreach($params['characteristics'] as $slug)
+    {
+      $characteristic = array(
+        'taxonomy' => 'tax_brand_characteristic',
+        'field' => 'slug',
+        'terms' => $slug
+      );
+      $brand_args["tax_query"][] = $characteristic;
+    }
+    $brands = new WP_Query($brand_args);
+    $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+    $shadows = array();
+    foreach($brand_shadows as $shadow_list)
+    {
+      if(gettype($shadow_list) == "array"){
+        $merge = array_merge($shadows, $shadow_list);
+        $shadows = $merge;
+      }
+    }
+    $shadows = array_unique($shadows);
+    if($shadows != null)
+    {
+      // TODO make this work with multiple values trying to do this.
+      if(array_key_exists("post__in", $args)){
+        $args["post__in"] = array_intersect($args["post__in"], $shadows);
+      } else {
+          $args["post__in"] = $shadows;
+      }
+    }
+
   }
 
 

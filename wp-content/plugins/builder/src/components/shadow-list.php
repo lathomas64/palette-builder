@@ -44,7 +44,7 @@
 						v-bind:data-link='shadow.link'
 						v-bind:data-country='shadow.country'
 						v-bind:data-ships='shadow.ships'
-						v-bind:data-brand='shadow.brand_name'
+						v-bind:data-brand='shadow.brand'
 						v-bind:data-price='shadow.price' v-bind:id='shadow.ID'
 						draggable="true" ondragstart="drag(event)"
 						@click="add_to_story(shadow)"
