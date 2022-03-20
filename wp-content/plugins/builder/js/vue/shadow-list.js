@@ -26,7 +26,7 @@ shadow_list = new Vue({
     sort_field: 'color',
     sort_direction: 'asc',
     updating: false,
-    url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish",
+    url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish&pb_status=Active",
     results_per_page: 20,
     filters: {}
   },
@@ -39,7 +39,7 @@ shadow_list = new Vue({
     },
     brand_list: function () {
       return paged_data["brand_list"];
-    }
+    },
     class: function(shadow) {
       shape = "Pan_Shape_"+shadow.shape;
       size = "Pan_Size_"+shadow.size;
