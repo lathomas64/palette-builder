@@ -1,5 +1,4 @@
-
-	<div class="Row Justify_Content_Space_Between">
+<div class="Row Justify_Content_Space_Between">
 		<div class="Panel_Title">
 			<div class="Heading">Find Shadows</div>
 		</div>

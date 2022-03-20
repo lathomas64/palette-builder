@@ -578,56 +578,56 @@ height: auto;
 .Light {
 	color: var(--FDBL-black);
 }
-.Red,
+.Red, .Filter_Button.Red,
 #Red + label,
 #warm + label,
 #cool + label,
 #neutralt + label {
 	background-color: #ff1a1a;
 }
-.Orange,
+.Orange, .Filter_Button.Orange,
 #Orange + label {
 	background-color: rgba(255, 128, 0, 1);
 }
-.Yellow,
+.Yellow, .Filter_Button.Yellow,
 #Yellow + label {
 	background-color: rgba(255, 255, 28, 1);
 }
-.Green,
+.Green, .Filter_Button.Green,
 #Green + label {
 	background-color: rgba(7, 255, 7, 1);
 }
-.Blue,
+.Blue, .Filter_Button.Blue,
 #Blue + label {
 	background-color: rgba(8, 255, 255, 1);
 }
-.Indigo,
+.Indigo, .Filter_Button.Indigo,
 #Indigo + label {
 	background-color: rgba(92, 11, 255, 1);
 }
-.Violet,
+.Violet, .Filter_Button.Violet,
 #Violet + label {
 	background-color: rgba(172, 5, 255, 1);
 }
-.Pink,
+.Pink, .Filter_Button.Pink,
 #Pink + label {
 	background-color: hsla(310, 98%, 49%, 1);
 }
-.Neutral,
+.Neutral, .Filter_Button.Neutral,
 #Neutral + label {
 	background-color: rgba(68, 50, 3, 1);
 }
-.Warm_Toned,
+.Warm_Toned, .Filter_Button.Warm_Toned,
 input#Warm + label {
 	filter: hue-rotate(20deg) brightness(112%);
 }
 
-.Cool_Toned,
+.Cool_Toned, .Filter_Button.Cool_Toned,
 #Cool.Red + label {
 	filter: hue-rotate(-20deg) brightness(120%);
 }
 
-.Neutral_Toned,
+.Neutral_Toned, .Filter_Button.Neutral_Toned,
 #neutralt.Red + label {
 	filter: hue-rotate(-20deg) brightness(120%);
 }
@@ -880,6 +880,10 @@ input {
 	padding: 0;
 	margin: 0;
 	overflow: visible;
+}
+
+.Button_Group.Grid_Container {
+	grid-template-columns: repeat( auto-fit, minmax(16%, 1fr) );
 }
 
 /**BUTTON STYLES**/

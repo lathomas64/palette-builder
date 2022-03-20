@@ -2,46 +2,17 @@
 	<div class="Section_Title">
 		<div class="Heading">Color Family</div>
 	</div>
-	<div class="Color_Family Button_Group">
-		<ul class="Row Gap_4 Justify_Content_Flex_Start">
-			<li>
-				<input data-filter="01 Red" onclick='Toggle_Filter(event, "colors");' class="Filter_Button" id="Red" type="checkbox" />
-				<label class="Filter_Button Red Dark" for="Red">Red</label>
-			</li>
-			<li >
-				<input data-filter="02 Orange" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Orange" type="checkbox" />
-				<label class="Filter_Button Orange Light"for="Orange">Orange</label>
-			</li>
-			<li >
-				<input data-filter="03 Yellow" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Yellow" type="checkbox" />
-				<label class="Filter_Button Yellow Light"for="Yellow">Yellow</label>
-			</li>
-			<li>
-				<input data-filter="04 Green" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Green" type="checkbox" />
-				<label 	class="Filter_Button Green Light"for="Green">Green</label>
-			</li>
-			<li>
-				<input data-filter="05 Blue" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Blue" type="checkbox" />
-				<label 	class="Filter_Button Blue Light"for="Blue">Blue</label>
-			</li>
-			<li>
-				<input data-filter="06 Indigo" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Indigo" type="checkbox" />
-				<label 	class="Filter_Button Indigo Dark"for="Indigo">Indigo</label>
-			</li>
-			<li>
-				<input data-filter="07 Violet" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Violet" type="checkbox" />
-				<label 	class="Filter_Button Violet Dark"for="Violet">Violet</label>
-			</li>
-			<li>
-				<input data-filter="08 Pink" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Pink" type="checkbox" />
-				<label 	class="Filter_Button Pink Dark"for="Pink">Pink</label>
-			</li>
-			<li>
-				<input data-filter="09 True Neutral" onclick='Toggle_Filter(event, "colors");' class="Filter_Button"id="Neutral" type="checkbox" />
-				<label 	class="Filter_Button Neutral Dark "for="Neutral">Neutral</label>
-			</li>
-		</ul>
-	</div>
+		<div class="Grid_Container Gap_4 Justify_Content_Flex_Start Color_Family Button_Group">
+			<button data-filter="01 Red" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Red Dark" id="Red">Red</button>
+				<button data-filter="02 Orange" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Orange Light"id="Orange">Orange</button>
+				<button data-filter="03 Yellow" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Yellow Light"id="Yellow">Yellow</button>
+				<button data-filter="04 Green" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Green Light"id="Green">Green</button>
+				<button data-filter="05 Blue" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Blue Light"id="Blue">Blue</button>
+				<button data-filter="06 Indigo" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Indigo Dark"id="Indigo" type="checkbox">Indigo</button>
+				<button data-filter="07 Violet" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Violet Dark"id="Violet">Violet</button>
+				<button data-filter="08 Pink" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Pink Dark"id="Pink">Pink</button>
+				<button data-filter="09 True Neutral" onclick='Toggle_Filter(event, "colors");' class="Filter_Button Neutral Dark"id="Neutral" type="checkbox">Neutral</button>
+			</div>
 		<div class="Temperature_Options Reverse Column Gap_8">
 		<button class="Text_Button Icon_Button Expand Row Gap_4 Justify_Content_Center Align_Items_Center" id="hideTemp">
 			<div class="Icon_Container">
@@ -52,22 +23,14 @@
 				</div>
 			<div id="controlLabel" >Show Temperature Options </div>
 	</button>
-		<div class="Temperature_Options Button_Group Column Gap_8" style="display:none;">
+		<div class="Temperature_Options_Drawer Column Gap_8" style="display:none;">
 			<div>Select temperatures to refine color choices above.</div>
-			<ul class="Row Gap_4 Justify_Content_Flex_Start">
-				<li>
-					<input data-filter="warm" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button" id="warm" type="checkbox" />
-					<label class="Filter_Button Warm_Toned Red Dark" for="warm">Warm-Toned</label>
-				</li>
-				<li >
-					<input data-filter="neutral" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button"id="neutralt" type="checkbox" />
-					<label class="Filter_Button Red  Dark"for="neutralt">Neutral-Toned</label>
-				</li>
-				<li >
-					<input data-filter="cool" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button"id="cool" type="checkbox" />
-					<label class="Filter_Button Red Cool_Toned  Dark"for="cool">Cool-Toned</label>
-				</li>
-			</ul>
+			<div class="Grid_Container Button_Group Gap_4 Justify_Content_Flex_Start">
+					<button data-filter="warm" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button Warm_Toned Red Dark" id="warm">Warm-Toned</button>
+					<button data-filter="neutral" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button Red  Dark"id="neutralt">Neutral-Toned</button>
+					<button data-filter="cool" onclick='Toggle_Filter(event, "temperature");' class="Filter_Button Red Cool_Toned  Dark"id="cool">Cool-Toned</button>
+
+			</div>
 	</div>
 </div>
 </div>
