@@ -1,27 +1,10 @@
 <div class="Section_Title">
 	<div class="Heading">Finish</div>
 </div>
-<div class="Finish Button_Group">
-	<ul class="Row Gap_4">
-		<li>
-			<input data-filter="matte" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button"id="Matte" type="checkbox" />
-			<label class="Filter_Button" for="Matte">Matte</label>
-		</li>
-		<li>
-			<input data-filter="satin" onclick='Toggle_Filter(event, "finishes");'class="Filter_Button" id="Satin" type="checkbox" />
-			<label class="Filter_Button"for="Satin">Satin</label>
-		</li>
-		<li>
-			<input data-filter="shimmer" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button"id="Shimmer" type="checkbox" />
-			<label class="Filter_Button"for="Shimmer">Shimmer</label>
-		</li>
-		<li>
-			<input data-filter="metallic" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button"id="Metallic" type="checkbox" />
-			<label class="Filter_Button"for="Metallic">Metallic</label>
-		</li>
-		<li>
-			<input data-filter="sparkle" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button"id="Sparkle" type="checkbox" />
-			<label class="Filter_Button"for="Sparkle">Sparkle</label>
-		</li>
-	</ul>
+<div class="Finish Button_Group Grid_Container Gap_4">
+			<button data-filter="matte" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button"id="Matte">Matte</button>
+			<button data-filter="satin" onclick='Toggle_Filter(event, "finishes");'class="Filter_Button" id="Satin">Satin</button>
+			<button data-filter="shimmer" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button" id="Shimmer">Shimmer</button>
+			<button data-filter="metallic" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button" id="Metallic">Metallic</button>
+			<button data-filter="sparkle" onclick='Toggle_Filter(event, "finishes");' class="Filter_Button" id="Sparkle">Sparkle</button>
 </div>

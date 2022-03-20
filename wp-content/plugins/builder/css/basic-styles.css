@@ -883,7 +883,19 @@ input {
 }
 
 .Button_Group.Grid_Container {
+	grid-template-columns: repeat( auto-fit, minmax(20%, 1fr) );
+}
+
+.Color .Button_Group.Grid_Container, .Finish.Button_Group.Grid_Container {
 	grid-template-columns: repeat( auto-fit, minmax(16%, 1fr) );
+}
+
+.Pan_Format .Button_Group.Grid_Container {
+	grid-template-rows: repeat( auto-fit, minmax(var(--pan-size-37), 1fr) );
+}
+
+.Pan_Format button {
+	background-color: var(--system-white);
 }
 
 /**BUTTON STYLES**/
