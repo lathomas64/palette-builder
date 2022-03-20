@@ -43,6 +43,7 @@ function _extract_shadow_data($shadow)
     $result['color-sort'] = get_post_field("avg_hue", $shadow);
     $result['link'] = get_post_field("product_url", $shadow);
     $result['price'] = get_post_field("price", $shadow);
+    $result['status'] = get_post_field("pb_status", $shadow);
     $brand = get_post_field("brand", $shadow);
     if ($brand) {
 			$result['brand'] = get_post_field("post_title", $brand[0]);
@@ -206,6 +207,15 @@ function filter_add_rest_post_query($args, $request)
           'terms' => explode(',', $params[$param])
       );
     }
+  }
+
+  if(isset($params["pb_status"]))
+  {
+    $args['meta_query'][] = array(
+      'key' => 'pb_status',
+      'value' => $params['pb_status'],
+      'compare' => 'IN'
+    );
   }
 
   if(isset($params["characteristics"]))
