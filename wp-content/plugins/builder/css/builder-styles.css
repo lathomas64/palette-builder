@@ -456,7 +456,7 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 	border-radius: 50%;
 }
 
-.Grid .Pan_Size_26.Shadow_Image_Container {
+.Grid .Shadow_Image_Container {
 	margin-top: -2px;
 	aspect-ratio: 1 / 1;
 }
