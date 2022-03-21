@@ -1,4 +1,13 @@
 <?php
+function pb_merge_terms($term_list, $taxonomy)
+{
+  $terms = [];
+  foreach($term_list as $term) {
+    $slugs = pb_search_term($term, $taxonomy);
+    $terms = array_merge($terms, $slugs);
+  }
+  return $terms;
+}
 
 function extract_taxonomy_data($shadow, $tax_name)
 {
@@ -48,6 +57,8 @@ function _extract_shadow_data($shadow)
     if ($brand) {
 			$result['brand'] = get_post_field("post_title", $brand[0]);
 			$result['brand_id'] = get_post_field("ID", $brand[0]);
+      #$brand_post = get_post($result['brand_id']);
+      $result['brand_characteristics'] = extract_taxonomy_data($brand[0], "tax_brand_characteristic");
 
 			//get country from brand
 			$country_details = wp_get_post_terms($brand[0], 'tax_countries');
@@ -207,6 +218,50 @@ function filter_add_rest_post_query($args, $request)
           'terms' => explode(',', $params[$param])
       );
     }
+  }
+
+  if(isset($params['temperature']))
+  {
+    $temp_terms = pb_merge_terms($params['temperature'], 'tax_color_tag');
+    if(isset($params['colors']))
+    {
+      $color_terms = pb_merge_terms($params['colors'], 'tax_color_tag');
+      $terms = array_intersect($temp_terms, $color_terms);
+    }
+    else {
+      $terms = $temp_terms;
+    }
+    $args['tax_query'][] = array(
+        'taxonomy' => 'tax_color_tag',
+        'field' => 'name',
+        'terms' => explode(',', $terms)
+    );
+
+  }
+
+  if(isset($params['brand']))
+  {
+    $brand_args = [
+    "post_type" => "cpt_brand",
+    "post_status" => "publish",
+    "posts_per_page" => -1,
+    "orderby" => "title",
+    "order" => "ASC",
+    "cat" => "home",
+    "post__in" => [$params['brand']],
+    ];
+    $brands = new WP_Query($brand_args);
+    $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+    $shadows = array();
+    foreach($brand_shadows as $shadow_list)
+    {
+      if(gettype($shadow_list) == "array"){
+        $merge = array_merge($shadows, $shadow_list);
+        $shadows = $merge;
+      }
+    }
+    $shadows = array_unique($shadows);
+    $args['post__in'] = $shadows;
   }
 
   if(isset($params["pb_status"]))

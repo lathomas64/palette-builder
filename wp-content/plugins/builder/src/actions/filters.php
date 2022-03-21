@@ -11,15 +11,7 @@
       return $slugs;
     }
 
-    function pb_merge_terms($term_list, $taxonomy)
-    {
-      $terms = [];
-      foreach($term_list as $term) {
-        $slugs = pb_search_term($term, $taxonomy);
-        $terms = array_merge($terms, $slugs);
-      }
-      return $terms;
-    }
+    
 
     function hex_to_hsl($color){
         $r = intval(substr($color, 1,2), 16);
