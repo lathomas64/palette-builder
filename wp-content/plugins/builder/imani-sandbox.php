@@ -8,28 +8,34 @@ if (!defined("ABSPATH")) {
 	/** Set up WordPress environment */
 	require_once "/usr/share/wordpress/wp-load.php";
 }
-$args = [
-"post_type" => "cpt_shadow",
+$brand = 20855;
+$brand_args = [
+"post_type" => "cpt_brand",
 "post_status" => "publish",
-"posts_per_page" => 10,
-"orderby" => $_GET['orderby'],
-"order" => "DESC",
+"posts_per_page" => -1,
+"orderby" => "title",
+"order" => "ASC",
 "cat" => "home",
-"meta_key" => "price",
-"tax_query" => array(
-	'relation' => 'AND'
-),
-'meta_query' => array(
-	'relation' => 'AND'
-)
+"post__in" => [$brand],
 ];
+print_r($brand_args);
+$brands = new WP_Query($brand_args);
+$brand_shadows = wp_list_pluck($brands->posts, "shadows");
+$shadows = array();
+foreach($brand_shadows as $shadow_list)
+{
+	if(gettype($shadow_list) == "array"){
+		$merge = array_merge($shadows, $shadow_list);
+		$shadows = $merge;
+	}
+}
+$shadows = array_unique($shadows);
+print_r($shadows);
 
-
-$shadows = new WP_Query($args);
-$filtered_shadows = wp_list_pluck($shadows->posts, "ID");
+$filtered_shadows = wp_list_pluck($shadows->posts, "brand");
+print('filtered shadows made.');
 print_r($filtered_shadows);
-print("\n---\n");
-print_r($_GET);
+print("<br>\n---<br>\n");
 ?>
 <hr>
 and thats the end...
