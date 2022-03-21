@@ -18,19 +18,10 @@ var FILTERS = {"colors": new Set(),
 function Toggle_Filter(event, filterset) {
 	var filter = event.target;
 	var type = filter.id;
-	var state = filter.checked;
 	if(filter.getAttribute('data-filter') != null){
 		type = filter.getAttribute('data-filter');
 	}
-
-	if(state) {
-		shadow_list.add_filter(filterset, type);
-		FILTERS[filterset].add(type);
-	} else {
-		shadow_list.remove_filter(filterset, type);
-		FILTERS[filterset].delete(type);
-	}
-	//update();
+	shadow_list.toggle_filter(filterset, type);
 }
 
 function Update_Price(event, min_or_max) {

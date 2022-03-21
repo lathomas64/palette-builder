@@ -27,7 +27,7 @@ shadow_list = new Vue({
     sort_direction: 'asc',
     updating: false,
     url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish&pb_status=Active",
-    results_per_page: 20,
+    results_per_page: 50,
     filters: {}
   },
   computed: {
@@ -59,6 +59,22 @@ shadow_list = new Vue({
       this.filters[key].add(value);
       this.load_shadows();
       //make dictionary of filters here.
+    },
+    toggle_filter: function(key, value) {
+      $("#Shadow_Count").text("Filtering...");
+      if(!this.filters.hasOwnProperty(key))
+      {
+        this.filters[key] = new Set();
+      }
+      //If we have the value unset it
+      if (this.filters[key].has(value))
+      {
+        this.filters[key].delete(value);
+      }
+      else {
+        this.filters[key].add(value);
+      }
+      this.load_shadows();
     },
     search: function(query) {
       this.query = query;
