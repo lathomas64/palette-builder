@@ -110,7 +110,7 @@
 							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.571429 8L0 7.42857L3.42857 4L0 0.571429L0.571429 0L4 3.42857L7.42857 0L8 0.571429L4.57143 4L8 7.42857L7.42857 8L4 4.57143L0.571429 8Z" ></path>
 						</svg>
 							</div>
-						<div class="Text_Button">reset filters</div>
+						<div class="Text_Button" onclick="shadow_list.reset_filters();">reset filters</div>
 					</button>
 								</div>
 					</div>
