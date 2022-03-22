@@ -261,7 +261,18 @@ function filter_add_rest_post_query($args, $request)
       }
     }
     $shadows = array_unique($shadows);
-    $args['post__in'] = $shadows;
+    if($shadows != null)
+    {
+      $args["post__in"] = $shadows;
+      // TODO handle multiple post__in the code below doesnt work
+      // if(array_key_exists("post__in", $args)){
+      //   $args["post__in"] = array_intersect($args["post__in"], $shadows);
+      // } else {
+      //     $args["post__in"] = $shadows;
+      // }
+    } else {
+      $args["post__in"] = array(0);
+    }
   }
 
   if(isset($params["pb_status"]))
@@ -286,16 +297,11 @@ function filter_add_rest_post_query($args, $request)
       'relation' => 'AND'
     )
     ];
-    // Doing this to AND instead of OR
-    foreach($params['characteristics'] as $slug)
-    {
-      $characteristic = array(
-        'taxonomy' => 'tax_brand_characteristic',
-        'field' => 'slug',
-        'terms' => $slug
-      );
-      $brand_args["tax_query"][] = $characteristic;
-    }
+    $brand_args['tax_query'][] = array(
+      'taxonomy' => 'tax_brand_characteristic',
+      'field' => 'slug',
+      'terms' => $params['characteristics']
+    );
     $brands = new WP_Query($brand_args);
     $brand_shadows = wp_list_pluck($brands->posts, "shadows");
     $shadows = array();
@@ -309,12 +315,15 @@ function filter_add_rest_post_query($args, $request)
     $shadows = array_unique($shadows);
     if($shadows != null)
     {
-      // TODO make this work with multiple values trying to do this.
-      if(array_key_exists("post__in", $args)){
-        $args["post__in"] = array_intersect($args["post__in"], $shadows);
-      } else {
-          $args["post__in"] = $shadows;
-      }
+      $args["post__in"] = $shadows;
+      // TODO handle multiple post__in the code below doesnt work
+      // if(array_key_exists("post__in", $args)){
+      //   $args["post__in"] = array_intersect($args["post__in"], $shadows);
+      // } else {
+      //     $args["post__in"] = $shadows;
+      // }
+    } else {
+      $args["post__in"] = array(0);
     }
 
   }
