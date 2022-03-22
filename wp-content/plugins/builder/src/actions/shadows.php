@@ -214,7 +214,7 @@ function filter_add_rest_post_query($args, $request)
     {
       $args['tax_query'][] = array(
           'taxonomy' => $taxonomy,
-          'field' => 'name',
+          'field' => 'slug',
           'terms' => explode(',', $params[$param])
       );
     }
