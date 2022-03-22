@@ -297,11 +297,20 @@ function filter_add_rest_post_query($args, $request)
       'relation' => 'AND'
     )
     ];
-    $brand_args['tax_query'][] = array(
-      'taxonomy' => 'tax_brand_characteristic',
-      'field' => 'slug',
-      'terms' => $params['characteristics']
-    );
+    // $brand_args['tax_query'][] = array(
+    //   'taxonomy' => 'tax_brand_characteristic',
+    //   'field' => 'slug',
+    //   'terms' => explode(",",$params['characteristics'])
+    // );
+    foreach(explode(",",$params['characteristics']) as $slug)
+    {
+    	$characteristic = array(
+    		'taxonomy' => 'tax_brand_characteristic',
+    		'field' => 'slug',
+    		'terms' => $slug
+    	);
+    	$brand_args["tax_query"][] = $characteristic;
+    }
     $brands = new WP_Query($brand_args);
     $brand_shadows = wp_list_pluck($brands->posts, "shadows");
     $shadows = array();
