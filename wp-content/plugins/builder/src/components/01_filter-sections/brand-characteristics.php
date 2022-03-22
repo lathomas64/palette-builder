@@ -20,7 +20,7 @@
 			<button data-filter='aapi' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="AAPI">AAPI</button>
 			<button data-filter='black' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Black">Black</button>
 			<button data-filter='indigenous' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Indigenous">Indigenous</button>
-			<button data-filter='latnix' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Latinx">Latinx</button>
+			<button data-filter='latinx' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Latinx">Latinx</button>
 			<button data-filter='lgbtq' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="LGBTQ" type="checkbox" />LGBTQ+</button>
 			<button data-filter='woman' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Woman">Woman</button>
 		</div>
