@@ -284,58 +284,69 @@ function filter_add_rest_post_query($args, $request)
     );
   }
 
-  if(isset($params["characteristics"]))
-  {
-    $brand_args = [
-    "post_type" => "cpt_brand",
-    "post_status" => "publish",
-    "posts_per_page" => -1,
-    "orderby" => "title",
-    "order" => "ASC",
-    "cat" => "home",
-    "tax_query" => array(
-      'relation' => 'AND'
-    )
-    ];
-    // $brand_args['tax_query'][] = array(
-    //   'taxonomy' => 'tax_brand_characteristic',
-    //   'field' => 'slug',
-    //   'terms' => explode(",",$params['characteristics'])
-    // );
-    foreach(explode(",",$params['characteristics']) as $slug)
-    {
-    	$characteristic = array(
-    		'taxonomy' => 'tax_brand_characteristic',
-    		'field' => 'slug',
-    		'terms' => $slug
-    	);
-    	$brand_args["tax_query"][] = $characteristic;
-    }
-    $brands = new WP_Query($brand_args);
-    $brand_shadows = wp_list_pluck($brands->posts, "shadows");
-    $shadows = array();
-    foreach($brand_shadows as $shadow_list)
-    {
-      if(gettype($shadow_list) == "array"){
-        $merge = array_merge($shadows, $shadow_list);
-        $shadows = $merge;
-      }
-    }
-    $shadows = array_unique($shadows);
-    if($shadows != null)
-    {
-      $args["post__in"] = $shadows;
-      // TODO handle multiple post__in the code below doesnt work
-      // if(array_key_exists("post__in", $args)){
-      //   $args["post__in"] = array_intersect($args["post__in"], $shadows);
-      // } else {
-      //     $args["post__in"] = $shadows;
-      // }
-    } else {
-      $args["post__in"] = array(0);
-    }
+  //These will be AND
+  $brand_filters = array(
+    'characteristics'=> 'tax_brand_characteristic',
+    'demographics' => 'tax_demographics'
+  );
 
+  foreach($brand_filters as $param => $taxonomy)
+  {
+    if(isset($params[$param]))
+    {
+      $brand_args = [
+      "post_type" => "cpt_brand",
+      "post_status" => "publish",
+      "posts_per_page" => -1,
+      "orderby" => "title",
+      "order" => "ASC",
+      "cat" => "home",
+      "tax_query" => array(
+        'relation' => 'AND'
+      )
+      ];
+      // $brand_args['tax_query'][] = array(
+      //   'taxonomy' => 'tax_brand_characteristic',
+      //   'field' => 'slug',
+      //   'terms' => explode(",",$params['characteristics'])
+      // );
+      foreach(explode(",",$params[$param]) as $slug)
+      {
+      	$characteristic = array(
+      		'taxonomy' => $taxonomy,
+      		'field' => 'slug',
+      		'terms' => $slug
+      	);
+      	$brand_args["tax_query"][] = $characteristic;
+      }
+      $brands = new WP_Query($brand_args);
+      $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+      $shadows = array();
+      foreach($brand_shadows as $shadow_list)
+      {
+        if(gettype($shadow_list) == "array"){
+          $merge = array_merge($shadows, $shadow_list);
+          $shadows = $merge;
+        }
+      }
+      $shadows = array_unique($shadows);
+      if($shadows != null)
+      {
+        //$args["post__in"] = $shadows;
+        // TODO handle multiple post__in the code below doesnt work
+        if(array_key_exists("post__in", $args) && $args['post__in']){
+          $args["post__in"] = array_intersect($args["post__in"], $shadows);
+        } else {
+            $args["post__in"] = $shadows;
+        }
+      } else {
+        $args["post__in"] = array(0);
+      }
+
+    }
   }
+
+
 
 
   //characteristics, demographics, brand
