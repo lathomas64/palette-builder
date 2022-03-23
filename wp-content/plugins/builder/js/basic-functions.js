@@ -1,5 +1,11 @@
-//Functions for showing left & right drawers
-// When X button is clicked, call drawer function and function to reveal content
+//SWITCH FILTER STATES
+
+function filterState(target) {
+	if ($(event.target).is(".Filter_Button") || $(event.target).parents().is(".Filter_Button"))
+	{
+	$(this).toggleClass("Selected");
+}
+}
 
 //SHADOW RESULTS HEIGHT CALC
 function openShadowDetail(target)
@@ -58,7 +64,7 @@ function modalOpen(event) {
 		$("#leftDrawer").addClass("On");
 	}
 	if ($(event.target).parents().is(".Modal_Trigger.Right") || $(event.target).is(".Modal_Trigger.Right")) {
-		$("#rightDrawer").addClass("On");
+		$("#rightDrawer").toggleClass("On");
 	}
 	//Display Modal Content
 	if ($(event.target).is("#shadowFilterBtn")) {
@@ -94,9 +100,7 @@ function modalOpen(event) {
 }
 
 function modalClose(event) {
-	if ($(".Modal").hasClass("On") && $(event.target).is("#advancedFilterBtn")) {
-		$("#advancedFilterDrawer").removeClass("Fade_In_Right");
-	}
+	console.log(event.target);
 	if ($(".Modal").hasClass("On") && ($(event.target).is(".Drawer_Overlay") || $(event.target).parents().is(".Close") || $(event.target).is("Close"))) {
 		$(event.target).parents().removeClass("On");
 	}
@@ -137,6 +141,8 @@ $(document).ready(function (event) {
 	$("BG_Options").click(shareModalBGSwitcher);
 
 	$(resultsHeight);
+	
+	$(".Filter_Button").click(filterState);
 
 	$(".Pay_Box").click(priceTree);
 

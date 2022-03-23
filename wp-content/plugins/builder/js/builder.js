@@ -675,7 +675,6 @@ var currentStory = new Object();
 						"top", dropdownLoc
 					);
 		container.toggleClass("On");
-		dropdownBtn.toggleClass("Selected");
 		});
 		$(document).click(function() {
 

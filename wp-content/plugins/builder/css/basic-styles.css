@@ -632,49 +632,49 @@ input#Warm + label {
 	filter: hue-rotate(-20deg) brightness(120%);
 }
 
-.Sat_Level_1,
+.Filter_Button.Sat_Level_1,
 #Sat_Level_1 + label {
 	background-color: hsl(0, 37%, 93%);
 }
-.Sat_Level_2,
+.Filter_Button.Sat_Level_2,
 #Sat_Level_2 + label {
 	background-color: hsl(0, 100%, 85%);
 }
-.Sat_Level_3,
+.Filter_Button.Sat_Level_3,
 #Sat_Level_3 + label {
 	background-color: hsl(0, 100%, 75%);
 }
-.Sat_Level_4,
+.Filter_Button.Sat_Level_4,
 #Sat_Level_4 + label {
 	background-color: hsl(0, 100%, 65%);
 }
-.Sat_Level_5,
+.Filter_Button.Sat_Level_5,
 #Sat_Level_5 + label {
 	background-color: hsl(0, 100%, 55%);
 }
 
-.Light_Level_5,
+.Filter_Button.Light_Level_5,
 input#Light_Level_5 + label {
 	background-color: hsl(0, 26%, 16%);
 }
-.Light_Level_4,
+.Filter_Button.Light_Level_4,
 input#Light_Level_4 + label {
 	background-color: hsl(0, 25%, 32%);
 }
-.Light_Level_3,
+.Filter_Button.Light_Level_3,
 #Light_Level_3 + label {
 	background-color: hsl(0, 25%, 48%);
 }
-.Light_Level_2,
+.Filter_Button.Light_Level_2,
 #Light_Level_2 + label {
 	background-color: hsl(0, 37%, 68%);
 }
-.Light_Level_1,
+.Filter_Button.Light_Level_1,
 #Light_Level_1 + label {
 	background-color: hsl(0, 100%, 95%);
 }
 
-.Color .Colors input:checked + label {
+.Color_Family .Filter_Button.Selected {
 	filter: brightness(90%);
 	-webkit-filter: brightness(90%);
 	-moz-filter: brightness(90%);
