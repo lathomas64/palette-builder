@@ -131,47 +131,6 @@ function render_shadow(shadow_data)
     shadow_element = load_attribute(shadow_element, shadow_data, fields[index]);
   }
   shadow_element.setAttribute("onclick", "addShadow(currentStory.shadowCount," + shadow_data.ID + ");updateFooter();");
-  // TODO this is hacky but we want to set shadowDetail to show up for new rendered shadows
-  var shadowDetail = $("#shadowDetail");
-  var arrangementSpace = $(".Builder");
-  var builderWidth = arrangementSpace.outerWidth();
-	var detailPanelWidth = shadowDetail.outerWidth();
-
-  $(shadow_element).mouseenter(function () {
-    $(this).addClass("Hovered");
-    update_shadow_detail($(this));
-    shadowDetail.css("left", builderWidth - detailPanelWidth);
-    shadowDetail.css("display", "flex");
-    setTimeout(function () {
-      shadowDetail.addClass("Fade_In");
-    }, 3000);
-  })
-  .mouseleave(function () {
-    $(this).removeClass("Hovered");
-    setTimeout(function () {
-      if ($(".Hovered").length == 0) {
-        shadowDetail.removeClass("Fade_In");
-        shadowDetail.css("left", "0");
-        shadowDetail.css("display", "");
-      }
-    }, 1000);
-  })
-  .mousedown(function () {
-    shadowDetail.removeClass("Fade_In");
-    setTimeout(function () {
-      shadowDetail.css("left", "0");
-      shadowDetail.css("display", "");
-    }, 101);
-  })
-  .mouseup(function () {
-    $(this).addClass("Hovered");
-    update_shadow_detail($(this));
-    shadowDetail.css("left", builderWidth - detailPanelWidth);
-    shadowDetail.css("display", "flex");
-    shadowDetail.addClass("Fade_In");
-  });
-  container.append(shadow_element);
-}
 
 function shadow_loaded(id)
 {

@@ -471,7 +471,7 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 }
 
 .Pan_Size_26 .Wrapper {
-	/* width: var(--pan-size-26); */
+	aspect-ratio: 1 / 1;
 	height: var(--pan-size-26);
 }
 
@@ -515,18 +515,13 @@ label.Single_Pan_Card:active .Wrapper {
 	box-shadow: var(--drag-shadow);
 }
 
-a.Single_Pan_Card:active .Pan_Size_26 .Pan_Shadow::after {
+a.Single_Pan_Card:active .Pan_Shadow::after {
 	content: "Drag To Palette";
 	opacity: 1;
 	transition: opacity 0.5s ease;
-	top: calc(var(--pan-size-26) + 8px);
-}
-
-a.Single_Pan_Card:active .Pan_Size_37 .Pan_Shadow::after {
-	content: "Drag To Palette";
-	opacity: 1;
-	transition: opacity 0.5s ease;
-	top: calc(var(--pan-size-37) + 8px);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /**BASIC FILTER DROPDOWN**/
@@ -768,54 +763,48 @@ label {
 .Accordion {
 }
 
-.Accordion label.Trigger {
+.Accordion .Trigger {
 	background: var(--FDBL-dark-teal);
-
 	border: var(--standard-border);
 	border-color: var(--FDBL-light-gray);
 	border-radius: 4px;
 	padding: 16px;
 }
 
-.Accordion label.Trigger .Heading {
+.Accordion .Trigger .Heading {
 	font: var(--font-subsection-title);
 	color: var(--FDBL-white-text);
 	padding: 0;
 	border: 0;
 }
 
-.Accordion label.Trigger .Intro {
+.Accordion .Trigger .Intro {
 	font: var(--font-body-small);
 	display: none;
 }
 
-.Accordion label.Trigger::after {
+.Accordion .Trigger::after {
 	content: "";
 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 14 14' fill='white'><path d='M14 8.00195H0V6.00195H14V8.00195Z'></path></svg>") no-repeat;
 	height: 14px;
 	width: 14px;
 }
 
-.Accordion label.Trigger:hover,
-.Accordion input:checked + label.Trigger {
-	background-color: var(--FDBL-dark-teal);
+.Accordion .Trigger:hover,
+.Accordion .Trigger.Selected:hover {
+	background-color: var(--FDBL-yellow-medium);
 }
 
-.Accordion input:checked + label.Trigger:hover {
-	background-color: var(--FDBL-green-medium);
+.Accordion .Trigger:hover .Heading {
+	color: var(--FDBL-black);
 }
 
-.Accordion label.Trigger:hover .Heading,
-.Accordion input:checked + label.Trigger .Heading {
-	color: var(--FDBL-white-text);
-}
-
-.Accordion label.Trigger:hover::after,
-.Accordion input:checked + label.Trigger::after {
+.Accordion .Trigger:hover::after,
+.Accordion .Trigger.Selected::after {
 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 14 14' fill='white'><path d='M14 8.00195H0V6.00195H14V8.00195Z'></path></svg>");
 }
 
-.Accordion label.Trigger:active {
+.Accordion .Trigger:active {
 	background-color: var(--FDBL-green-medium);
 }
 
@@ -834,24 +823,9 @@ label {
 	border-top: 0;
 }
 
-/** FOR JS USE. WHEN USER SELECTS OPTIONS, THIS SHOULD POPULATE W/ CONTENT AND BECOME APPARENT TO USER. 
-label.Trigger .Intro_Populated {
-	font: var(--font-body-small);
-	display:block;
-} **/
-
-.Accordion input:checked ~ .Content {
+.Accordion .Trigger.Selected ~ .Content {
 	max-height: 100vh;
 	opacity: 1;
-}
-
-.Accordion input:checked ~ label.Text_Button {
-	margin-top: 16px;
-	transition: margin-top 0.3s;
-}
-.Accordion input ~ label.Text_Button {
-	margin-top: 0px;
-	transition: margin-top 0.4s linear;
 }
 
 .Accordion .Filter_Button {
@@ -1738,16 +1712,24 @@ button.Prev_Slide div::before {
 	position: sticky;
 	bottom:0;
 	height: fit-content;
-	max-height:60vh;
+	max-height:75vh;
 	overflow: scroll;
 	width: 89%;
-	padding: 0px 32px;
+	padding: 16px 32px 0px;
 	background: var(--FDBL-cool-white);
+	border: var(--pan-border);
+	border-radius: var(--standard-border-radius);
+	box-shadow: var(--inner-pan-shadow);
 	}
 	
 	#rightDrawer .Panel_Content {
 		background: var(--FDBL-cool-white);
 		padding-bottom:32px;
+	}
+	
+	.Shadow_Filters .Panel_Title .Heading {
+		border:none;
+		padding:0;
 	}
 /**RESPONSIVE STYLING**/
 

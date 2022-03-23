@@ -1,13 +1,25 @@
 //SWITCH FILTER STATES
 
-function filterState(target) {
-	if ($(event.target).is(".Filter_Button") || $(event.target).parents().is(".Filter_Button"))
-	{
+function toggleSelect() {
 	$(this).toggleClass("Selected");
 }
+
+function filterBtnReset() {
+	$(".Accordion .Filter_Button").removeClass("Selected");
 }
 
-//SHADOW RESULTS HEIGHT CALC
+function toggleAccordion() {
+	
+		$(".Accordion .Trigger").toggleClass("Selected");
+		var text = $(".Toggle_Accordion .text").text();
+		$('.Toggle_Accordion .text').text(
+						text == "Open All" ? "Close All" : "Open All");
+			$("svg.svgPlus").toggleClass("Hidden");
+			$("svg.svgMinus").toggleClass("Hidden");
+		};
+
+
+//DETAIL HOVER PANEL
 function openShadowDetail(target)
 {
 
@@ -22,10 +34,10 @@ function openShadowDetail(target)
 	shadowDetail.css("display", "flex");
 	setTimeout(function () {
 		shadowDetail.addClass("Fade_In");
-	}, 3000);
+	}, 500);
 }
 
-function closeShadowDetail(target)
+function closeShadowDetail(target, fastClose=100)
 {
 	var shadowDetail = $("#shadowDetail");
 	$(target).removeClass("Hovered");
@@ -35,9 +47,10 @@ function closeShadowDetail(target)
 			shadowDetail.css("left", "0");
 			shadowDetail.css("display", "");
 		}
-	}, 1000);
+	}, fastClose);
 }
 
+//SHADOW RESULTS HEIGHT CALC
 function resultsHeight(event) {
 	if ($(event.target).is(".Dismiss")) {
 		var helperBox = $(event.target).closest(".Helper_Box");
@@ -142,7 +155,10 @@ $(document).ready(function (event) {
 
 	$(resultsHeight);
 	
-	$(".Filter_Button").click(filterState);
+	$(".Toggle_Accordion").click(toggleAccordion);
+	
+	$(".Filter_Button").click(toggleSelect);
+	$(".Accordion .Trigger").click(toggleSelect);
 
 	$(".Pay_Box").click(priceTree);
 
@@ -153,114 +169,6 @@ $(document).ready(function (event) {
 	$(".Modal").click(modalClose);
 
 	$("#listDrawer button").click(shoppingListSlider);
-
-	//Temporary hover JS for demo
-
-	var shadowDetail = $("#shadowDetail");
-	var shadowCard = $(".Results .Single_Pan_Card");
-	var searchPanel = $(".Right_Panel");
-	var arrangementSpace = $(".Builder");
-	var builderWidth = arrangementSpace.outerWidth();
-	var detailPanelWidth = shadowDetail.outerWidth();
-
-	shadowCard
-		.mouseenter(function () {
-			$(this).addClass("Hovered");
-			update_shadow_detail($(this));
-			shadowDetail.css("left", builderWidth - detailPanelWidth);
-			shadowDetail.css("display", "flex");
-			setTimeout(function () {
-				shadowDetail.addClass("Fade_In");
-			}, 3000);
-		})
-		.mouseleave(function () {
-			$(this).removeClass("Hovered");
-			setTimeout(function () {
-				if ($(".Hovered").length == 0) {
-					shadowDetail.removeClass("Fade_In");
-					shadowDetail.css("left", "0");
-					shadowDetail.css("display", "");
-				}
-			}, 1000);
-		})
-		.mousedown(function () {
-			shadowDetail.removeClass("Fade_In");
-			setTimeout(function () {
-				shadowDetail.css("left", "0");
-				shadowDetail.css("display", "");
-			}, 101);
-		})
-		.mouseup(function () {
-			$(this).addClass("Hovered");
-			update_shadow_detail($(this));
-			shadowDetail.css("left", builderWidth - detailPanelWidth);
-			shadowDetail.css("display", "flex");
-			shadowDetail.addClass("Fade_In");
-		});
-
-	shadowDetail
-		.mouseenter(function () {
-			$(this).addClass("Hovered");
-		})
-		.mouseleave(function () {
-			$(this).removeClass("Hovered");
-			setTimeout(function () {
-				if ($(".Hovered").length == 0) {
-					shadowDetail.removeClass("Fade_In");
-				}
-			}, 3000);
-		});
-
-	var storyDetail = $("#storyDetail");
-	var storyCard = $(".Story_Size .Search_Grid_Card");
-
-	storyCard
-		.mouseenter(function () {
-			$(this).addClass("Hovered");
-			update_shadow_detail($(this));
-			storyDetail.css("left", builderWidth - detailPanelWidth);
-			storyDetail.css("display", "flex");
-			setTimeout(function () {
-				storyDetail.addClass("Fade_In");
-			}, 1000);
-		})
-		.mouseleave(function () {
-			$(this).removeClass("Hovered");
-			setTimeout(function () {
-				if ($(".Hovered").length == 0) {
-					storyDetail.removeClass("Fade_In");
-					storyDetail.css("left", "");
-					storyDetail.css("display", "");
-				}
-			}, 3000);
-		})
-		.mousedown(function () {
-			storyDetail.removeClass("Fade_In");
-			setTimeout(function () {
-				storyDetail.css("left", "");
-				storyDetail.css("display", "");
-			}, 101);
-		})
-		.mouseup(function () {
-			$(this).addClass("Hovered");
-			update_shadow_detail($(this));
-			storyDetail.css("left", builderWidth - detailPanelWidth);
-			storyDetail.css("display", "flex");
-			storyDetail.addClass("Fade_In");
-		});
-
-	storyDetail
-		.mouseenter(function () {
-			$(this).addClass("Hovered");
-		})
-		.mouseleave(function () {
-			$(this).removeClass("Hovered");
-			setTimeout(function () {
-				if ($(".Hovered").length == 0) {
-					storyDetail.removeClass("Fade_In");
-				}
-			}, 3000);
-		});
 
 	//Controls Builder Bottom Toggle
 	$("#hideMeta").click(function () {

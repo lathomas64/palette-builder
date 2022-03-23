@@ -4,11 +4,11 @@
 	<div class="Heading">Brand Characteristics</div>
 </div>
 <div class="Grid_Container Button_Group Gap_8 Justify_Content_Flex_Start">
-			<button data-filter="cruelty-free" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="CF">Cruelty-Free</button>
+			<button data-filter="cruelty-free" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="CF"><nobr>Cruelty-Free</nobr></button>
 			<button data-filter="veg" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Veg">Vegan</button>
 			<button data-filter="independently-owned-indie" onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button">Indie</button>
-			<button data-filter='eco' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Eco">Eco-Friendly</button>
-		<button data-filter='gf' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="GF">Gluten Free</button>
+			<button data-filter='eco' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Eco"><nobr>Eco-Friendly</nobr></button>
+		<button data-filter='gf' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="GF"><nobr>Gluten Free</nobr></button>
 			<button data-filter='halal' onclick='Toggle_Filter(event, "characteristics");' class="Filter_Button" id="Halal">Halal</button>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 			<button data-filter='aapi' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="AAPI">AAPI</button>
 			<button data-filter='black' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Black">Black</button>
 			<button data-filter='indigenous' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Indigenous">Indigenous</button>
-			<button data-filter='latinx' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Latinx">Latinx</button>
+			<button data-filter='latnix' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Latinx">Latinx</button>
 			<button data-filter='lgbtq' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="LGBTQ" type="checkbox" />LGBTQ+</button>
 			<button data-filter='woman' onclick='Toggle_Filter(event, "demographics");' class="Filter_Button" id="Woman">Woman</button>
 		</div>
