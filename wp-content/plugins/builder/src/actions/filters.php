@@ -1,17 +1,7 @@
 <?php
-    function pb_search_term($query, $taxonomy)
-    {
-      $terms = get_terms(
-        array(
-          'taxonomy' => $taxonomy,
-          'name__like' => $query
-        )
-      );
-      $slugs = wp_list_pluck($terms, 'slug');
-      return $slugs;
-    }
-
     
+
+
 
     function hex_to_hsl($color){
         $r = intval(substr($color, 1,2), 16);

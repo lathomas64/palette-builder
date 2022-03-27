@@ -1,4 +1,15 @@
 <?php
+function pb_search_term($query, $taxonomy)
+{
+  $terms = get_terms(
+    array(
+      'taxonomy' => $taxonomy,
+      'name__like' => $query
+    )
+  );
+  $slugs = wp_list_pluck($terms, 'slug');
+  return $slugs;
+}
 function pb_merge_terms($term_list, $taxonomy)
 {
   $terms = [];
@@ -199,7 +210,6 @@ function filter_add_rest_post_query($args, $request)
   $shadow_filters = array(
     'colors'=> 'tax_color_family',
     'shift' => 'tax_shift',
-    'temperature' => 'tax_color_tag',
     'finishes' => 'tax_finish',
     'lightness' => 'tax_lightness',
     'vividness' => 'tax_vividness',
@@ -222,19 +232,19 @@ function filter_add_rest_post_query($args, $request)
 
   if(isset($params['temperature']))
   {
-    $temp_terms = pb_merge_terms($params['temperature'], 'tax_color_tag');
+    $temperature_terms = pb_merge_terms(explode(",",$params['temperature']), 'tax_color_tag');
     if(isset($params['colors']))
     {
-      $color_terms = pb_merge_terms($params['colors'], 'tax_color_tag');
-      $terms = array_intersect($temp_terms, $color_terms);
+      $color_terms = pb_merge_terms(explode(",",$params['colors']), 'tax_color_tag');
+      $terms = array_intersect($temperature_terms, $color_terms);
     }
     else {
-      $terms = $temp_terms;
+      $terms = $temperature_terms;
     }
     $args['tax_query'][] = array(
         'taxonomy' => 'tax_color_tag',
-        'field' => 'name',
-        'terms' => explode(',', $terms)
+        'field' => 'slug',
+        'terms' => $terms
     );
 
   }
