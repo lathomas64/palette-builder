@@ -1,3 +1,15 @@
+<?php
+
+$brand_args = [
+"post_type" => "cpt_brand",
+"post_status" => "publish",
+"posts_per_page" => -1,
+"orderby" => "title",
+"order" => "ASC",
+"cat" => "home",
+];
+$brands = new WP_Query($brand_args);
+?>
 <div class="Brand_Search Filter_Section Column Gap_24">
 	<div class="Brand_Characteristics Filter_Section Column Gap_8">
 	<div class="Section_Title">
@@ -38,10 +50,10 @@
 	</div>
 	<div class="Check_List Filterable">
 		<ul class="Column Gap_8">
-			<?php foreach($brand_list as $brand_id => $brand_name){?>
+			<?php while($brands->have_posts()){ $brands->the_post();?>
 			<li>
-				<input data-filter='<?php echo $brand_id ?>' onclick="Toggle_Filter(event, 'brand');" id="<?php echo $brand_name; ?>" type="checkbox" />
-				<label for="<?php echo $brand_name; ?>"><?php echo $brand_name; ?></label>
+				<input data-filter='<?php the_ID(); ?>' onclick="Toggle_Filter(event, 'brand');" id="<?php the_title(); ?>" type="checkbox" />
+				<label for="<?php the_title(); ?>"><?php the_title(); ?></label>
 			</li>
 		<?php } ?>
 		</ul>
