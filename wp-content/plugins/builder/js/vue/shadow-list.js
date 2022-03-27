@@ -60,6 +60,22 @@ shadow_list = new Vue({
       this.load_shadows();
       //make dictionary of filters here.
     },
+    price_min: function(value) {
+      this.filters["price_min"] = new Set();
+      if(value > 0)
+      {
+        this.filters["price_min"].add(value);
+      }
+      this.load_shadows();
+    },
+    price_max: function(value) {
+      this.filters["price_max"] = new Set();
+      if(value > 0)
+      {
+        this.filters["price_max"].add(value);
+      }
+      this.load_shadows();
+    },
     toggle_filter: function(key, value) {
       $("#Shadow_Count").text("Filtering...");
       if(!this.filters.hasOwnProperty(key))
