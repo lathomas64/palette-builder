@@ -15,8 +15,8 @@ var FILTERS = {"colors": new Set(),
 				 "temperature": new Set(),
 				"countries": new Set()}
 
-function Toggle_Filter(event, filterset) {
-	var filter = event.target;
+function Toggle_Filter(target, filterset) {
+	var filter = target;
 	var type = filter.id;
 	if(filter.getAttribute('data-filter') != null){
 		type = filter.getAttribute('data-filter');

@@ -22,7 +22,7 @@ $shipping_countries = get_terms(array(
 			<?php foreach($shipping_countries as $option){?>
 			<li>
 				<!-- <?php print_r($option); ?> -->
-				<input data-filter="<?php echo $option->slug; ?>" onclick="Toggle_Filter(event, 'shipping');" id="<?php echo $option->name; ?>" type="checkbox" />
+				<input data-filter="<?php echo $option->slug; ?>" onclick="Toggle_Filter(this, 'shipping');" id="<?php echo $option->name; ?>" type="checkbox" />
 				<label for="<?php echo $option->name; ?>"><?php echo $option->name; ?></label>
 			</li>
 		<?php } ?>
