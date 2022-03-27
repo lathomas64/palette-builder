@@ -346,10 +346,48 @@ function filter_add_rest_post_query($args, $request)
     }
   }
 
+  if(isset($params["shipping"]))
+  {
+    $brand_args = [
+    "post_type" => "cpt_brand",
+    "post_status" => "publish",
+    "posts_per_page" => -1,
+    "orderby" => "title",
+    "order" => "ASC",
+    "cat" => "home"
+    ];
+    $slugs = $params["shipping"]+",worldwide";
+    $characteristic = array(
+      'taxonomy' => "tax_shipping",
+      'field' => 'slug',
+      'terms' => $slugs
+    );
+    $brand_args["tax_query"] = $characteristic;
+    $brands = new WP_Query($brand_args);
+    $brand_shadows = wp_list_pluck($brands->posts, "shadows");
+    $shadows = array();
+    foreach($brand_shadows as $shadow_list)
+    {
+      if(gettype($shadow_list) == "array"){
+        $merge = array_merge($shadows, $shadow_list);
+        $shadows = $merge;
+      }
+    }
+    $shadows = array_unique($shadows);
+    if($shadows != null)
+    {
+      //$args["post__in"] = $shadows;
+      // TODO handle multiple post__in the code below doesnt work
+      if(array_key_exists("post__in", $args) && $args['post__in']){
+        $args["post__in"] = array_intersect($args["post__in"], $shadows);
+      } else {
+          $args["post__in"] = $shadows;
+      }
+    } else {
+      $args["post__in"] = array(0);
+    }
+  }
 
-
-
-  //characteristics, demographics, brand
   //shipping, price
 
 

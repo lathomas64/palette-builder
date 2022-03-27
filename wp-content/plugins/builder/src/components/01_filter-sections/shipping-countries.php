@@ -1,3 +1,10 @@
+<?php
+
+$shipping_countries = get_terms(array(
+    'taxonomy' => 'tax_shipping',
+    'hide_empty' => false,
+));
+?>
 <div class="Section_Title">
 	<div class="Heading">Shipping Country</div>
 </div>
@@ -12,10 +19,11 @@
 	<div class="Check_List Filterable">
 		<ul class="Column Gap_8">
 			<!-- we may have issues here because of ids being duplicated across instances of shipping countries -->
-			<?php foreach($shipping_options as $option){?>
+			<?php foreach($shipping_countries as $option){?>
 			<li>
-				<input data-filter="<?php echo strtolower(str_replace(" ","-",$option)); ?>" onclick="Toggle_Filter(event, 'shipping');" id="<?php echo $option; ?>" type="checkbox" />
-				<label for="<?php echo $option; ?>"><?php echo $option; ?></label>
+				<!-- <?php print_r($option); ?> -->
+				<input data-filter="<?php echo $option->slug; ?>" onclick="Toggle_Filter(event, 'shipping');" id="<?php echo $option->name; ?>" type="checkbox" />
+				<label for="<?php echo $option->name; ?>"><?php echo $option->name; ?></label>
 			</li>
 		<?php } ?>
 		</ul>
