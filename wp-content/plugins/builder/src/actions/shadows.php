@@ -388,6 +388,25 @@ function filter_add_rest_post_query($args, $request)
     }
   }
 
+  if(isset($params["price_min"])){
+    $subquery = array(
+      'key' => 'price',
+      'value' => (int) $params['price_min'],
+      'compare' => '>=',
+      'type' => 'NUMERIC'
+    );
+    $args['meta_query'][] = $subquery;
+  }
+  if(isset($params['price_max'])){
+    $subquery = array(
+      'key' => 'price',
+      'value' => (int) $params['price_max'],
+      'compare' => '<=',
+      'type' => 'NUMERIC'
+    );
+    $args['meta_query'][] = $subquery;
+  }
+
   //shipping, price
 
 
