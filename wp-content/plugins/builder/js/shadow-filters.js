@@ -31,12 +31,11 @@ function Update_Price(event, min_or_max) {
 	let index = event.target.options.selectedIndex;
 	let price = event.target.options[index].value;
 	if(min_or_max == "min"){
-		PRICE_MIN = price;
+		shadow_list.price_min(price);
 	} else {
-		PRICE_MAX = price;
+		shadow_list.price_max(price);
 	}
 	console.log(price);
-	update();
 }
 
 function update(append=false){
