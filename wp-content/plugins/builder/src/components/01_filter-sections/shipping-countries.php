@@ -12,11 +12,11 @@ $shipping_countries = get_terms(array(
 	<div class="Search">
 		<div class="Input Column Gap_4">
 			<label class="Input_Label">Start Typing to Filter List</label>
-			<input class="Input" placeholder="Give me a name" type="search" />
+			<input class="Input" onKeyUp="filter_list('.Shipping_List', this.value);" placeholder="Give me a name" type="search" />
 		</div>
 	</div>
 
-	<div class="Check_List Filterable">
+	<div class="Check_List Filterable Shipping_List">
 		<ul class="Column Gap_8">
 			<!-- we may have issues here because of ids being duplicated across instances of shipping countries -->
 			<?php foreach($shipping_countries as $option){?>

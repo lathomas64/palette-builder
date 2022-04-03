@@ -45,10 +45,10 @@ $brands = new WP_Query($brand_args);
 	<div class="Search">
 		<div class="Input Column Gap_4">
 			<label class="Input_Label">Start Typing to Filter List</label>
-			<input class="Input" placeholder="Give me a name" type="search" />
+			<input class="Input" onKeyUp="filter_list('.Brand_List', this.value);"  placeholder="Give me a name" type="search" />
 		</div>
 	</div>
-	<div class="Check_List Filterable">
+	<div class="Check_List Filterable Brand_List">
 		<ul class="Column Gap_8">
 			<?php while($brands->have_posts()){ $brands->the_post();?>
 			<li>

@@ -47,3 +47,11 @@ function pull_pages(url_base, key, page=1)
           }
   });
 }
+
+function filter_list(list, query)
+{
+  var value = query.toLowerCase();
+   $(list + " li").filter(function() {
+     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+   });
+}
