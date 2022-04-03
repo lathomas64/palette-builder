@@ -33,3 +33,6 @@ https://pb.rainbowcapitalism.com/?rest_route=%2Fwp%2Fv2%2Fcpt_shadow&status=publ
 
 
 https://pb.rainbowcapitalism.com/wp-admin/post.php?post={id}&action=edit
+
+
+remember: https://core.trac.wordpress.org/ticket/28099

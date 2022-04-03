@@ -8,34 +8,43 @@ if (!defined("ABSPATH")) {
 	/** Set up WordPress environment */
 	require_once "/usr/share/wordpress/wp-load.php";
 }
-$brand = 20855;
-$brand_args = [
-"post_type" => "cpt_brand",
+print('begin');
+
+$args = [
+"post_type" => "cpt_shadow",
 "post_status" => "publish",
-"posts_per_page" => -1,
+"posts_per_page" => 20,
 "orderby" => "title",
 "order" => "ASC",
 "cat" => "home",
-"post__in" => [$brand],
+"tax_query" => array(
+	'relation' => 'OR'
+),
+'meta_query' => array(
+	'relation' => 'AND'
+)
 ];
-print_r($brand_args);
-$brands = new WP_Query($brand_args);
-$brand_shadows = wp_list_pluck($brands->posts, "shadows");
-$shadows = array();
-foreach($brand_shadows as $shadow_list)
-{
-	if(gettype($shadow_list) == "array"){
-		$merge = array_merge($shadows, $shadow_list);
-		$shadows = $merge;
-	}
-}
-$shadows = array_unique($shadows);
-print_r($shadows);
+$terms = pb_merge_terms(explode(",",'warm'), 'tax_color_tag');
+print_r($terms);
+echo "<br><br>";
+$args['tax_query'][] = array(
+		'taxonomy' => 'tax_color_tag',
+		'field' => 'slug',
+		'terms' => $terms
+);
 
-$filtered_shadows = wp_list_pluck($shadows->posts, "brand");
-print('filtered shadows made.');
-print_r($filtered_shadows);
-print("<br>\n---<br>\n");
+print_r($args);
+echo "<br><br>";
+$shadows = new WP_Query($args);
+while($shadows->have_posts())
+{
+	$shadows->the_post();
+	echo "name:";
+	echo the_title();
+	echo "<br>price:";
+	echo get_field('price');
+	echo "<br>--<br><br>";
+}
 ?>
 <hr>
 and thats the end...
