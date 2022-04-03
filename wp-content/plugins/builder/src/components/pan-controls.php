@@ -7,7 +7,7 @@
 			<div class="Icon_Container"><?php include "../assets/01_Icons/pan-controls/arrow-left.svg"; ?>
 			</div>
 		</div>
-		<div class="Column Shadow_Name">Reign of Terra</div>
+		<div class="Column Shadow_Name">{{shadow.name}}</div>
 		<div class="Column Arrow Right_Arrow">
 			<div class="Icon_Container"><?php include "../assets/01_Icons/pan-controls/arrow-right.svg"; ?>
 			</div>
