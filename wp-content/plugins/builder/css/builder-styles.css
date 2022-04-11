@@ -591,7 +591,7 @@ a.Single_Pan_Card:active .Pan_Shadow::after {
 }
 
 .Check_List.Filterable {
-	height: 96px;
+	height: 170px;
 	overflow: scroll;
 	border-bottom: var(--standard-border);
 	padding: 8px;
@@ -646,6 +646,22 @@ a.Single_Pan_Card:active .Pan_Shadow::after {
 
 .Price_Shipping .Filter_Intro {
 	line-height: 10px;
+}
+
+.Price_Shipping .Select_Range:after {
+content: "";
+border-style: solid;
+border-width: 1.5px 1.5px 0 0;
+display: inline-block;
+height: 4px;
+transform: rotate(135deg);
+vertical-align: top;
+width: 0.45em;
+width: 4px;
+position: relative;
+top: 1px;
+right: 17px;
+border-color: var(--FDBL-black);
 }
 
 .Select_Range select {
@@ -843,14 +859,6 @@ label {
 
 .Accordion .Brand_Search li {
 	flex: initial;
-}
-
-.Color.Heading {
-	font: var(--font-accordion-section-title);
-}
-
-.Indent {
-	padding-left: 8px;
 }
 
 .Temperature_Options .Content {
@@ -1716,6 +1724,7 @@ button.Prev_Slide div::before {
 	overflow: scroll;
 	width: 89%;
 	padding: 16px 32px 0px;
+	padding-top: 8px;
 	background: var(--FDBL-cool-white);
 	border: var(--pan-border);
 	border-radius: var(--standard-border-radius);
@@ -1727,10 +1736,24 @@ button.Prev_Slide div::before {
 		padding-bottom:32px;
 	}
 	
+	.Shadow_Filters {
+		padding: 8px;
+		position: sticky;
+		top: 0;
+		background-color: var(--FDBL-cool-white);
+		}
+	
 	.Shadow_Filters .Panel_Title .Heading {
 		border:none;
 		padding:0;
 	}
+	
+	.Scrolled.Shadow_Filters {
+		background-color:black;
+	}
+	
+	
+
 /**RESPONSIVE STYLING**/
 
 @media only screen and (max-width: 1440px) {
@@ -1758,7 +1781,5 @@ button.Prev_Slide div::before {
 	button.oAuth.Button_Block.Row.Justify_Content_Flex_Start.Align_Items_Center.Gap_8 span {
 				font-size: 16px;
 	}
-	
-	
 	
 }

@@ -6,7 +6,7 @@
 		<div class="Row Gap_24 Align_Items_Center Filters">
 			<div class="Search">
 			<label class="Hidden">Start Typing to Filter List</label>
-			<input onkeyup="shadow_list.search(this.value)" id="Filter_By_Text" class="Input" placeholder="Search by name" type="search" />
+			<input onsearch="shadow_list.search(this.value)" onkeyup="shadow_list.search(this.value)" id="Filter_By_Text" class="Input" placeholder="Search by name" type="search" />
 	</div>
 			<div class="Row Gap_8">
 			<button id="advancedFilterBtn" class="Filter_Button Icon_Button Align_Items_Center Row Gap_4 Modal_Trigger Right">
@@ -28,7 +28,8 @@
 	</div>
 	<div class="Column Results_Container">
 		<div class="Grid Row Gap_16 Grid_Container">
-			<a v-for='shadow in shadows' v-bind:data-size='shadow.size'
+			<a v-for='shadow in shadows'
+						v-bind:data-size='shadow.size'
 						v-bind:data-height='shadow.height'
 						v-bind:data-width='shadow.width'
 						v-bind:data-shape='shadow.shape'
@@ -45,7 +46,8 @@
 						v-bind:data-country='shadow.country'
 						v-bind:data-ships='shadow.ships'
 						v-bind:data-brand='shadow.brand'
-						v-bind:data-price='shadow.price' v-bind:id='shadow.ID'
+						v-bind:data-price='shadow.price'
+						v-bind:id='shadow.ID'
 						draggable="true" ondragstart="drag(event)"
 						@click="add_to_story(shadow)"
 						onMouseEnter="console.log('open');openShadowDetail(this);"

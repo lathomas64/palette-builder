@@ -1,3 +1,12 @@
+//STICKY NAV BAR
+
+function stickyNav(){
+	var $sticky = $("#advancedFilters");
+	// $sticky.addClass('Scrolled');
+	$sticky.toggleClass('Scrolled', $('#rightDrawer').scrollTop() > $sticky.height());
+		console.log("boop");
+	};
+
 //SWITCH FILTER STATES
 
 function toggleSelect() {
@@ -9,7 +18,6 @@ function filterBtnReset() {
 }
 
 function toggleAccordion() {
-	
 		$(".Accordion .Trigger").toggleClass("Selected");
 		var text = $(".Toggle_Accordion .text").text();
 		$('.Toggle_Accordion .text').text(
@@ -113,9 +121,16 @@ function modalOpen(event) {
 }
 
 function modalClose(event) {
-	console.log(event.target);
-	if ($(".Modal").hasClass("On") && ($(event.target).is(".Drawer_Overlay") || $(event.target).parents().is(".Close") || $(event.target).is("Close"))) {
+	
+	var CloseClick = $(".Modal").hasClass("On") && ($(event.target).is(".Drawer_Overlay") || $(event.target).parents().is(".Close") || $(event.target).is("Close"));
+	
+	if (CloseClick) {
 		$(event.target).parents().removeClass("On");
+	}
+	
+	if ((CloseClick) && $(event.target).parents().is("#advancedFilters")) {
+		$("#advancedFilterBtn").removeClass("Selected");
+		
 	}
 }
 
