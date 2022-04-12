@@ -389,8 +389,7 @@ overflow:hidden;
 	flex: 1 1 auto;
 }
 .Shadow_Image_Container {
-/* 	width: var(--pan-size-37);
-	height: var(--pan-size-37); */
+	aspect-ratio: 1 / 1;
 	border-radius: 50%;
 }
 
@@ -471,7 +470,7 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 }
 
 .Pan_Size_26 .Wrapper {
-	aspect-ratio: 1 / 1;
+	/* aspect-ratio: 1 / 1; */
 	height: var(--pan-size-26);
 }
 
@@ -522,6 +521,10 @@ a.Single_Pan_Card:active .Pan_Shadow::after {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+#rightDrawer .Pan_Shadow::after {
+	display:none;
 }
 
 /**BASIC FILTER DROPDOWN**/
@@ -891,10 +894,6 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 	padding: 16px;
 }
 
-.Accordion .Single_Pan_Card .Wrapper {
-	border: var(--pan-border);
-}
-
 .Search_Grid_Card .Card_Container {
 	border: var(--pan-border);
 	padding:8px;
@@ -1001,12 +1000,6 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 .Shadow_Detail_Panel .Shadow_Image_Container {
 	width:calc(var(--pan-size-37) * 1.5);
 	height:calc(var(--pan-size-37) * 1.5);
-}
-
-.Shadow_Detail_Panel .Pan_Size_26 .Wrapper, .Pan_Size_37 .Wrapper {
-	aspect-ratio: 1 / 1;
-	width:100%;
-	height:auto;
 }
 
 .Shadow_Detail_Panel .Pan_Width_24.Pan_Height_21 .Wrapper {
@@ -1721,7 +1714,6 @@ button.Prev_Slide div::before {
 	bottom:0;
 	height: fit-content;
 	max-height:75vh;
-	overflow: scroll;
 	width: 89%;
 	}
 	
@@ -1732,6 +1724,7 @@ button.Prev_Slide div::before {
 	box-shadow: var(--inner-pan-shadow);
 	padding: 16px 32px 0px;
 	padding-top: 8px;
+	overflow: scroll;
 	}
 	
 	#rightdrawer #afCloseBtn {
@@ -1750,6 +1743,10 @@ button.Prev_Slide div::before {
 
 #rightdrawer #afCloseBtn:hover svg {
 	fill: var(--FDBL-black);
+}
+
+#rightdrawer .Text_Button {
+	margin-right:0;
 }
 
 	#rightDrawer .Panel_Content {

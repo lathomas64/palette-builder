@@ -50,8 +50,8 @@
 						v-bind:id='shadow.ID'
 						draggable="true" ondragstart="drag(event)"
 						@click="add_to_story(shadow)"
-						onMouseEnter="console.log('open');openShadowDetail(this);"
-						onMouseLeave="console.log('close');closeShadowDetail(this);"
+						onMouseEnter="openShadowDetail(this);"
+						onMouseLeave="closeShadowDetail(this);"
 						class="Single_Pan_Card Flex_Container" href="#">
 				<div class="Card_Container Column Gap_8">
 					<div class="Shadow_Name">{{shadow.name}}</div>

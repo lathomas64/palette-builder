@@ -1,4 +1,4 @@
-	<div onscroll="stickyNav(this)" id="rightDrawer" class="Modal slideInUp Column">
+	<div id="rightDrawer" class="Modal slideInUp Column">
 		<div class="Row Justify_Content_Flex_End">
 			<button id="afCloseBtn" class="Text_Button Icon_Button Row Gap_4 Align_Items_Center Close">
 		<div class="Icon_Container">

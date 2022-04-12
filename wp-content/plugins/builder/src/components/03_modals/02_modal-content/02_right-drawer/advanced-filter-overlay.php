@@ -1,4 +1,4 @@
-<div class="Filter_Wrapper">
+<div onscroll="stickyNav(this)" class="Filter_Wrapper">
 	<div class="Sticky Shadow_Filters Row Justify_Content_Space_Between">
 		<div class="Panel_Title">
 			<div class="Heading">Find Shadows</div>

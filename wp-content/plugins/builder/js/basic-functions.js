@@ -1,9 +1,8 @@
 //STICKY NAV BAR
-
 function stickyNav(){
-	var $sticky = $("#advancedFilters");
+	var $sticky = $(".Sticky");
 	// $sticky.addClass('Scrolled');
-	$sticky.toggleClass('Scrolled', $('#rightDrawer').scrollTop() > $sticky.height());
+	$sticky.toggleClass('Scrolled', $('.Filter_Wrapper').scrollTop() > $sticky.height());
 	};
 
 //SWITCH FILTER STATES
@@ -26,8 +25,6 @@ function toggleAccordion() {
 			$("svg.svgMinus").toggleClass("Hidden");
 		};
 
-
-//DETAIL HOVER PANEL
 function openShadowDetail(target)
 {
 
@@ -69,7 +66,6 @@ function resultsHeight(event) {
 		$(".Results_Container").css("height", resultsContainerHeight);
 	} else {
 		var resultsContainerHeight = $(".Right_Panel").outerHeight() - $(".Helper_Box").outerHeight() - $(".Results_Control_Bar").outerHeight() - 48;
-
 		$(".Results_Container").css("height", resultsContainerHeight);
 		$(".Results_Container")[0].setAttribute("onscroll", "shadow_list.load_shadows(true);");
 	}
@@ -121,16 +117,18 @@ function modalOpen(event) {
 
 function modalClose(event) {
 	
-	var CloseClick = $(".Modal").hasClass("On") && ($(event.target).is(".Drawer_Overlay") || $(event.target).parents().is(".Close") || $(event.target).is("Close"));
+	var CloseBtn = $(".Modal").hasClass("On") && ($(event.target).is(".Drawer_Overlay") || $(event.target).parents().is(".Close") || $(event.target).is("Close"));
 	
-	if (CloseClick) {
+	if ((CloseBtn) && $(event.target).parents().is("#rightDrawer")) {
+		$(".Filter_Wrapper").scrollTop(0);
+		$("#advancedFilterBtn").removeClass("Selected");
+		stickyNav();
+	}
+	
+	if (CloseBtn) {
 		$(event.target).parents().removeClass("On");
 	}
-	
-	if ((CloseClick) && $(event.target).parents().is("#rightDrawer")) {
-		$("#advancedFilterBtn").removeClass("Selected");
-		
-	}
+
 }
 
 function shoppingListSlider(event) {
