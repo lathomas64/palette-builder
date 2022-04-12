@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/builder-styles.css" />
 	<link rel="stylesheet" href="https://use.typekit.net/mxy5ujb.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="../js/external/link-filter.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 	<script src="../js/builder.js"></script>
 	<script src="../js/shadow-filters.js"></script>
@@ -210,7 +211,7 @@
 							<a href="#" class="Trigger Controls Button_Micro Row Gap_4 Justify_Content_Space_Between" id="hideMeta">
 										<div class="Icon_Container Flex_Container Column Align_Items_Center Justify_Content_Center">
 											<svg id="svgMinus" width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1.40336H0V0.260498H8V1.40336Z" fill="#959595"></path></svg>
-											<svg id="svgPlus" style="display:none;" width="" height="" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<svg id="svgPlus" width="8" height="2" style="display:none;" width="" height="" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
 </svg>
 										</div>
