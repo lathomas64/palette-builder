@@ -7,23 +7,23 @@
 	--story-container-size: 70%;
 
 	/**COLOR VALUES**/
-	--FDBL-black: #09262a;
+	--FDBL-black: rgba(9, 38, 42, 1);
 	--system-black: #000000;
 	--FDBL-white-text: rgb(258 249 247);
-	--system-white: #ffffff;
-	--FDBL-cool-white: #F7F7F7;
-	--FDBL-light-gray: #ededed;
-	--FDBL-medium-gray: #cccccc;
-	--FDBL-dark-gray: #959595;
-	--FDBL-dark-teal: #0e444b;
-	--FDBL-green-dark: #04473a;
-	--FDBL-green-medium: #48715c;
+	--system-white: rgba(255, 255, 255, 1);
+	--FDBL-cool-white: rgba(247, 247, 247, 1);
+	--FDBL-light-gray: rgba(237, 237, 237, 1);
+	--FDBL-medium-gray: rgba(204, 204, 204, 1);
+	--FDBL-dark-gray: rgba(149, 149, 149, 1);
+	--FDBL-dark-teal: rgba(14, 68, 75, 1);
+	--FDBL-green-dark: rgba(4, 71, 58, 1);
+	--FDBL-green-medium: rgba(72, 113, 92, 1);
 	--FDBL-green-medium-2: rgba(68, 173, 145, 1);
 	--FDBL-green-light: rgba(83, 212, 177, 1);
-	--FDBL-yellow-medium: #cebd63;
-	--FDBL-orange-light: #f08f5d;
-	--FDBL-yellow-light: #f8e968;
-	--FDBL-red-medium: #c7505f;
+	--FDBL-yellow-medium: rgba(206, 189, 99, 1);
+	--FDBL-orange-light: rgba(240, 143, 93, 1);
+	--FDBL-yellow-light: rgba(248, 233, 104, 1);
+	--FDBL-red-medium: rgba(199, 80, 95, 1);
 
 	/**TYPE VALUES**/
 	--e-global-typography-primary-font-family: bilo;

@@ -1723,20 +1723,41 @@ button.Prev_Slide div::before {
 	max-height:75vh;
 	overflow: scroll;
 	width: 89%;
-	padding: 16px 32px 0px;
-	padding-top: 8px;
+	}
+	
+	#rightDrawer .Filter_Wrapper {
 	background: var(--FDBL-cool-white);
 	border: var(--pan-border);
 	border-radius: var(--standard-border-radius);
 	box-shadow: var(--inner-pan-shadow);
+	padding: 16px 32px 0px;
+	padding-top: 8px;
 	}
 	
+	#rightdrawer #afCloseBtn {
+		padding: 8px;
+		margin-right: 0px;
+		background-color: var(--system-white);
+		border-radius: var(--standard-border-radius);
+		border: var(--standard-border);
+		opacity: .5;
+	}
+	
+	#rightdrawer #afCloseBtn:hover {
+		opacity:1;
+		color:var(--FDBL-black);
+	}
+
+#rightdrawer #afCloseBtn:hover svg {
+	fill: var(--FDBL-black);
+}
+
 	#rightDrawer .Panel_Content {
 		background: var(--FDBL-cool-white);
 		padding-bottom:32px;
 	}
-	
-	.Shadow_Filters {
+
+.Shadow_Filters {
 		padding: 8px;
 		position: sticky;
 		top: 0;
@@ -1749,7 +1770,15 @@ button.Prev_Slide div::before {
 	}
 	
 	.Scrolled.Shadow_Filters {
-		background-color:black;
+	background-color: var(--FDBL-cool-white);
+	top: -9px;
+	border-top: var(--standard-border);
+	border-bottom: var(--standard-border);
+	box-shadow: var(--inner-pan-shadow-small);
+	}
+	
+	.Scrolled.Shadow_Filters .Heading {
+		font:var(--font-accordion-section-title);
 	}
 	
 	

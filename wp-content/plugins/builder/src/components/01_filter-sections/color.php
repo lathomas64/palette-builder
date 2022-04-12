@@ -29,7 +29,7 @@
 		<div class="Temperature_Options Reverse Column Gap_8">
 		<button class="Text_Button Icon_Button Expand Row Gap_4 Justify_Content_Center Align_Items_Center" id="hideTemp">
 			<div class="Icon_Container">
-				<svg id="tempPlus" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"></path>
+				<svg width="8" height="2" id="tempPlus" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"></path>
 				</svg>
 				<svg id="tempMinus" style="display:none;"  width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg" style=""><path d="M8 1.40336H0V0.260498H8V1.40336Z" fill="#959595"></path>
 			</svg>

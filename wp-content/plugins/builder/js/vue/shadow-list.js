@@ -95,6 +95,7 @@ shadow_list = new Vue({
     reset_filters: function() {
       this.filters = {};
       this.load_shadows();
+      filterBtnReset();
     },
     search: function(query) {
       this.query = query;

@@ -4,7 +4,6 @@ function stickyNav(){
 	var $sticky = $("#advancedFilters");
 	// $sticky.addClass('Scrolled');
 	$sticky.toggleClass('Scrolled', $('#rightDrawer').scrollTop() > $sticky.height());
-		console.log("boop");
 	};
 
 //SWITCH FILTER STATES
@@ -18,7 +17,8 @@ function filterBtnReset() {
 }
 
 function toggleAccordion() {
-		$(".Accordion .Trigger").toggleClass("Selected");
+	var $AccTrigger = $(".Accordion .Trigger");
+		$AccTrigger.toggleClass("Selected", !$AccTrigger.hasClass("Selected"));
 		var text = $(".Toggle_Accordion .text").text();
 		$('.Toggle_Accordion .text').text(
 						text == "Open All" ? "Close All" : "Open All");
@@ -58,7 +58,6 @@ function closeShadowDetail(target, fastClose=100)
 	}, fastClose);
 }
 
-//SHADOW RESULTS HEIGHT CALC
 function resultsHeight(event) {
 	if ($(event.target).is(".Dismiss")) {
 		var helperBox = $(event.target).closest(".Helper_Box");
@@ -128,7 +127,7 @@ function modalClose(event) {
 		$(event.target).parents().removeClass("On");
 	}
 	
-	if ((CloseClick) && $(event.target).parents().is("#advancedFilters")) {
+	if ((CloseClick) && $(event.target).parents().is("#rightDrawer")) {
 		$("#advancedFilterBtn").removeClass("Selected");
 		
 	}

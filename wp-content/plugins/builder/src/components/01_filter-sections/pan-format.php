@@ -5,14 +5,14 @@
 <div class="Pan_Size Button_Group Grid_Container Gap_16">
 			<button 	data-filter="26" onclick='Toggle_Filter(this, "size");' class="Single_Pan_Card Flex_Container"id="26mm">
 				<div class="Card_Container Column Gap_8">
-				<div class="Shadow_Name">26mm</div>
-				<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Shape_Square Pan_Size_26">
-					<div class="Wrapper">
-						<img src="/wp-content/plugins/builder/assets/square.svg" />
-						<div class="Pan_Shadow"></div>
+					<div class="Shadow_Name">26mm</div>
+					<div class="Shadow_Image_Container Column Justify_Content_Center Align_Items_Center Pan_Size_26 Pan_Shape_Square">
+						<div class="Wrapper">
+							<img src="/wp-content/plugins/builder/assets/square.svg" />
+							<div class="Pan_Shadow"></div>
+						</div>
 					</div>
 				</div>
-			</div>
 		</button>
 			<button data-filter="37" onclick='Toggle_Filter(this, "size");' class="Single_Pan_Card Flex_Container"id="37mm">
 			<div class="Card_Container Column Gap_8">
