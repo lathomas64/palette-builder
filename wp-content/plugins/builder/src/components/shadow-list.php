@@ -29,32 +29,35 @@
 	<div class="Column Results_Container">
 		<div class="Grid Row Gap_16 Grid_Container">
 			<a v-for='shadow in shadows'
-						v-bind:data-size='shadow.size'
-						v-bind:data-height='shadow.height'
-						v-bind:data-width='shadow.width'
-						v-bind:data-shape='shadow.shape'
-						v-bind:data-name='shadow.name'
-						v-bind:data-shift='shadow.shift'
-						v-bind:data-finish='shadow.finish'
-						v-bind:data-color-tag='shadow.color_tag'
-						v-bind:data-vividness='shadow.vividness'
-						v-bind:data-vividness-sort='shadow.avg_saturation'
-						v-bind:data-lightness='shadow.lightness'
-						v-bind:data-lightness-sort='shadow.avg_lightness'
-						v-bind:data-color-sort='shadow.avg_hue'
-						v-bind:data-link='shadow.link'
-						v-bind:data-country='shadow.country'
-						v-bind:data-ships='shadow.ships'
-						v-bind:data-brand='shadow.brand'
-						v-bind:data-price='shadow.price'
-						v-bind:id='shadow.ID'
-						draggable="true" ondragstart="drag(event)"
-						@click="add_to_story(shadow)"
-						onMouseEnter="openShadowDetail(this);"
-						onMouseLeave="closeShadowDetail(this);"
-						class="Single_Pan_Card Flex_Container" href="#">
+			v-bind:data-size='shadow.size'
+			v-bind:data-height='shadow.height'
+			v-bind:data-width='shadow.width'
+			v-bind:data-shape='shadow.shape'
+			v-bind:data-name='shadow.name'
+			v-bind:data-shift='shadow.shift'
+			v-bind:data-finish='shadow.finish'
+			v-bind:data-color-tag='shadow.color_tag'
+			v-bind:data-vividness='shadow.vividness'
+			v-bind:data-vividness-sort='shadow.avg_saturation'
+			v-bind:data-lightness='shadow.lightness'
+			v-bind:data-lightness-sort='shadow.avg_lightness'
+			v-bind:data-color-sort='shadow.avg_hue'
+			v-bind:data-link='shadow.link'
+			v-bind:data-country='shadow.country'
+			v-bind:data-ships='shadow.ships'
+			v-bind:data-brand='shadow.brand'
+			v-bind:data-price='shadow.price'
+			v-bind:id='shadow.ID'
+			draggable="true" ondragstart="drag(event)"
+			@click="add_to_story(shadow)"
+			onMouseEnter="openShadowDetail(this);"
+			onMouseLeave="closeShadowDetail(this);"
+			class="Single_Pan_Card Column" href="#">
 				<div class="Card_Container Column Gap_8">
-					<div class="Shadow_Name">{{shadow.name}}</div>
+					<div class="Row Gap_4">
+						<div class="Shadow_Name Align_Items_Stretch">{{shadow.name}}</div>
+						<div class="Horiz_Rule"></div>
+					</div>
 					<div v-bind:class="'Pan_Shape_'+shadow.shape+' Pan_Size_'+shadow.size" class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center">
 						<div class="Wrapper">
 							<img :src="shadow.img" />

@@ -289,7 +289,7 @@ p {
 
 .Align_Items_Stretch {
 	align-items: Stretch;
-}/**Gina don't delete this it's item's not content**/
+}/**Gina don't delete this it's items not content**/
 
 .Align_Items_Center {
 	align-items: center;
@@ -309,6 +309,11 @@ p {
 
 .Indent {
 	padding-left:16px;
+}
+
+.Horiz_Rule {
+	border-bottom: var(--standard-border);
+	flex:1;
 }
 
 .Arrangement_Space {

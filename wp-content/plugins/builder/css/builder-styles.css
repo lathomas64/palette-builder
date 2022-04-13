@@ -385,7 +385,7 @@ overflow:hidden;
 /** CARD STYLES**/
 
 .Card_Container {
-	border-top: 1px solid #959595;
+	/* border-top: 1px solid #959595; */
 	flex: 1 1 auto;
 }
 .Shadow_Image_Container {
@@ -416,12 +416,16 @@ overflow:hidden;
 }
 
 .Shadow_Name, .Card_Title {
-	display: inline-block;
+	/* padding: 0 4px 0 0; */
+	/* display: inline-block; */
 	color: var(--FDBL-dark-gray);
-	background-color: var(--system-white);
-	margin: -11px auto 0 0;
+	/* background-color: var(--system-white); */
+	/* margin: -11px auto 0 0; */
 	font: var(--font-listing-card-title);
-	padding: 0 4px 0 0;
+	white-space: nowrap;
+	max-width:90%;
+	overflow:hidden;
+	text-overflow:ellipsis;
 }
 
 .Pan_Format .Shadow_Name {
