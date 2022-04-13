@@ -224,6 +224,10 @@ p {
 	display: flex;
 	flex-flow: row wrap;
 }
+
+.Row.Nowrap {
+	flex-flow: row nowrap;
+}
 .Gap_2 {
 	gap: 2px;
 }

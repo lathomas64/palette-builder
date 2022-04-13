@@ -416,11 +416,7 @@ overflow:hidden;
 }
 
 .Shadow_Name, .Card_Title {
-	/* padding: 0 4px 0 0; */
-	/* display: inline-block; */
 	color: var(--FDBL-dark-gray);
-	/* background-color: var(--system-white); */
-	/* margin: -11px auto 0 0; */
 	font: var(--font-listing-card-title);
 	white-space: nowrap;
 	max-width:90%;
@@ -438,7 +434,6 @@ overflow:hidden;
 
 a.Single_Pan_Card, a.Search_Grid_Card {
 	text-decoration: none;
-/* 	padding-top: 11px; */
 	flex: 0 1 auto;
 }
 
@@ -732,6 +727,10 @@ input:not([type="submit"]):not([type="file"]) {
 	padding: 8px;
 	border: var(--standard-border);
 	border-radius: 2px;
+}
+
+input.Other_Amt {
+	width: 100%;
 }
 
 label {
@@ -1284,7 +1283,23 @@ label.Remember {
 	}
 	
 	/**SHOPPING LIST**/
-		
+	
+.Build_List_Title .Text_Button {
+	color: var(--FDBL-white-text);
+}
+
+.Build_List_Title .Text_Button:hover {
+	color: var(--FDBL-yellow-medium);
+}
+
+.Build_List_Title .Text_Button svg {
+	fill: var(--FDBL-white-text);
+}
+
+.Build_List_Title .Text_Button:hover svg{
+	fill: var(--FDBL-yellow-medium);
+}
+
 .Build_List_Carousel > div {
 	transform: translateX(100px);
 	opacity: 0;
@@ -1344,25 +1359,54 @@ label.Remember {
 	padding-right: 8px;
 }
 
-.List_Tile {
-	grid-template-columns: 9.25fr .25fr;
+.List_Tile.Grid_Container {
+	grid-template-columns: repeat(30, 1fr);
+	grid-template-rows: 
 	border-bottom: var(--standard-border);
 	border-color: var(--FDBL-light-gray);
-	transition: 1s;
-	/* padding-bottom: 16px; */
+	transition: .3s;
+;;
+gap: 0px 8px;height: 65px;overflow: hidden;flex-flow: nowrap;}
+
+.List_Tile.Grid_Container:hover {
+	grid-template-columns: repeat(32, 1fr);
+}
+
+.List_Tile .Shadow_Image_Container {
+	grid-column: 1 / span 3;
+	grid-row: 1 / span 2;
+}
+
+.List_Tile .Shadow_Info {
+	grid-column: span 18;
+	grid-row: span 2;
+}
+
+.List_Tile .Shade_Name {
+	font: var(--font-heading-6);
+	grid-column: span 5;
+	grid-row: span 1;
+}
+
+.List_Tile .Shade_Size_Shape {
+	grid-column: span 5;
+	grid-row: 2 / span 1;
+}
+
+.List_Tile .Price_Widget {
+grid-column: 27 /span 4;
+grid-row: 1 / span 2;
 }
 
 .List_Tile:hover {
-	gap: 16px; }
+/* gap: 16px; } */}
 
 .Shadow_Details {
 	grid-template-columns: 9fr 1fr;
 	padding-bottom: 16px;
 }
 
-.List_Tile .Shade_Name {
-	font: var(--font-heading-6);
-}
+
 
 .List_Tile .Pan_Shadow {
 	box-shadow: var(--inner-pan-shadow-small);
@@ -1405,10 +1449,10 @@ label.Remember {
 	padding: 0px;
 	background: #c7505f;
 	border-radius: 0;
-	height: 100%;
+	
 	width: 0%;
 	opacity: 0;
-}
+transition: width .3s;}
 
 .Remove_Item svg {
 	fill: var(--FDBL-white-text);
@@ -1418,11 +1462,11 @@ label.Remember {
 
 .List_Tile:hover .Remove_Item {
 	width: 100%;
-	padding: 8px;
+	
 	opacity: 1;
-	height: 100%;
+	
 	border-radius: 4px;
-}
+grid-column: span 2;grid-row: span 2;}
 
 .Remove_Item:hover {
 		background-color: #943B47;
@@ -1711,7 +1755,7 @@ button.Prev_Slide div::before {
 }
 
 .Modal .Grid_Container > .Column {
-	height: fit-content;
+	/* height: fit-content; */
 }
 
 
@@ -1774,10 +1818,11 @@ button.Prev_Slide div::before {
 	
 	.Scrolled.Shadow_Filters {
 	background-color: var(--FDBL-cool-white);
-	top: -9px;
+	top: -16px;
 	border-top: var(--standard-border);
 	border-bottom: var(--standard-border);
 	box-shadow: var(--inner-pan-shadow-small);
+	z-index: 2;
 	}
 	
 	.Scrolled.Shadow_Filters .Heading {
@@ -1808,10 +1853,24 @@ button.Prev_Slide div::before {
 	}
 
 	.Right_Panel_Nav {
-				width: 13%;}
+	width: 13%;
+}
 	
 	button.oAuth.Button_Block.Row.Justify_Content_Flex_Start.Align_Items_Center.Gap_8 span {
-				font-size: 16px;
+	font-size: 16px;
+	}
+	
+	#rightDrawer.Modal {
+		width: 87%;
+	}
+	
+	#rightDrawer .Filter_Wrapper {
+		padding: 16px 16px 0px;
+	}
+	
+	.Accordion .Filter_Button {
+		font-size: var(--type-size-12);
+		letter-spacing: .5px;
 	}
 	
 }

@@ -34,23 +34,21 @@
 							</div>
 						</div>
 						<p>Need a bit of an explainer here. </p>
-						<div class="Color_Family Button_Group Row Gap_4 Justify_Content_Flex_Start">
-							<div class="Color_Family Button_Group Row Gap_4 Justify_Content_Flex_Start">
+						<div class="Color_Family Button_Group Row Nowrap Gap_4 Justify_Content_Flex_Start">
 							<input class="Filter_Button Price" id="payOp1" type="radio" name="price" />
 							<label class="Filter_Button Price" for="payOp1">$2.00</label>
 							<input class="Filter_Button Price" id="payOp2" type="radio" name="price" />
 							<label class="Filter_Button Price" for="payOp2">$5.00</label>
 							<input class="Filter_Button Price" id="payOp3" type="radio" name="price" />
 							<label class="Filter_Button Price" for="payOp3">$10.00</label>
-							<div class="Pay_Option_Custom Row Gap_0 Align_Items_Center">
+							<div class="Pay_Option_Custom Row Nowrap Gap_0 Align_Items_Center">
 									<div class="Currency_Symbol">$</div>
 									<label class="Custom_Price_Input">
 											<span class="SR_Only">Other Amount</span>
-											<input type="number" class="" name="amount" step="1.00" min="1" placeholder="Other Amount" value="">
+											<input type="number" class="Other_Amt" name="amount" step=".50" min="1.00" placeholder="Other Amount" value="">
 									</label>
 							</div>
 							</div>
-						</div>
 					</div>
 					<button id="Forward"class="Button_Block Invalid">Select a payment amount to move forward</button>
 					<div class="Payment_Information Hidden">
