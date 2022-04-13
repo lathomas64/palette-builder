@@ -414,6 +414,7 @@ overflow:hidden;
 	width: 100%;
 	height: 100%;
 }
+
 .Shadow_Name, .Card_Title {
 	display: inline-block;
 	color: var(--FDBL-dark-gray);
@@ -464,10 +465,10 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 	border-radius: 50%;
 }
 
-.Pan_Size_37 .Wrapper {
+/* .Pan_Size_37 .Wrapper {
 	width: var(--pan-size-37);
 	height: var(--pan-size-37);
-}
+} */
 
 .Pan_Size_26 .Wrapper {
 	/* aspect-ratio: 1 / 1; */
@@ -758,7 +759,7 @@ label {
 	margin-top: -20px;
 }
 
-.Close_Modal .Text_Button {
+#rightdrawer .Close_Modal .Text_Button {
 	color: var(--FDBL-dark-gray);
 	padding: 20px 0;
 	background-color: white;
@@ -769,13 +770,13 @@ label {
 	transition: .1s;
 }
 
-.Close_Modal .Text_Button:hover {
+#rightdrawer .Close_Modal .Text_Button:hover {
 	opacity:100%;
 	transition: .1s;
 	border: var(--standard-border);
 }
 
-.Close_Modal .Icon_Container svg {
+#rightdrawer .Close_Modal .Icon_Container svg {
 	fill: var(--FDBL-dark-gray);
 }
 
@@ -1019,6 +1020,7 @@ input:checked + label.Single_Pan_Card:hover .Wrapper {
 		color: var(--FDBL-black);
 		display: initial;
 		margin: 0;
+		max-width: 100%;
 }
 
 .Shadow_Detail_Panel .Shadow_Brand, .Palette_Summary .Shadow_Brand {
@@ -1427,10 +1429,10 @@ label.Remember {
 		box-shadow: var(--drag-shadow);
 }
 
-.Drawer_Overlay .Text_Button  {
+#rightdrawer .Drawer_Overlay .Text_Button  {
 	color: var(--FDBL-medium-gray);
 }
-.Drawer_Overlay .Text_Button svg {
+#rightdrawer .Drawer_Overlay .Text_Button svg {
 	fill: var(--FDBL-medium-gray);
 }
 
