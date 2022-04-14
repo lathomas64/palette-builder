@@ -1366,13 +1366,13 @@ label.Remember {
 	border-color: var(--FDBL-light-gray);
 	transition: .3s;
 ;;
-gap: 0px 8px;height: 65px;overflow: hidden;flex-flow: nowrap;}
+gap: 0px 8px;height: 65px;grid-auto-flow: column;}
 
 .List_Tile.Grid_Container:hover {
-	grid-template-columns: repeat(32, 1fr);
+	grid-template-columns: repeat(31, 1fr);
 }
 
-.List_Tile .Shadow_Image_Container {
+.List_Tile .Shadow_Image {
 	grid-column: 1 / span 3;
 	grid-row: 1 / span 2;
 }
@@ -1380,7 +1380,7 @@ gap: 0px 8px;height: 65px;overflow: hidden;flex-flow: nowrap;}
 .List_Tile .Shadow_Info {
 	grid-column: span 18;
 	grid-row: span 2;
-}
+row-gap: 0px;}
 
 .List_Tile .Shade_Name {
 	font: var(--font-heading-6);
@@ -1391,7 +1391,7 @@ gap: 0px 8px;height: 65px;overflow: hidden;flex-flow: nowrap;}
 .List_Tile .Shade_Size_Shape {
 	grid-column: span 5;
 	grid-row: 2 / span 1;
-}
+font-size: 14px;}
 
 .List_Tile .Price_Widget {
 grid-column: 27 /span 4;
@@ -1452,7 +1452,7 @@ grid-row: 1 / span 2;
 	
 	width: 0%;
 	opacity: 0;
-transition: width .3s;}
+transition: width .3s, padding .3s;}
 
 .Remove_Item svg {
 	fill: var(--FDBL-white-text);
@@ -1466,7 +1466,7 @@ transition: width .3s;}
 	opacity: 1;
 	
 	border-radius: 4px;
-grid-column: span 2;grid-row: span 2;}
+grid-column: span 1;grid-row: span 2;padding: 0 5px;}
 
 .Remove_Item:hover {
 		background-color: #943B47;
@@ -1752,10 +1752,6 @@ button.Prev_Slide div::before {
 	border-radius: 2px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
-}
-
-.Modal .Grid_Container > .Column {
-	/* height: fit-content; */
 }
 
 

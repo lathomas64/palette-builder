@@ -1362,6 +1362,13 @@ label.Check_Select {
 .Shadow.Badge {
 	font: var(--font-filter-button);
 	font-weight: 400;
+	padding: 0px 8px 4px 8px;
+	border-left: var(--standard-border);
+}
+
+.Shadow.Badge:first-of-type {
+	padding-left:0px;
+	border-left:none;
 }
 
 #centerModal .Drawer_Container {
