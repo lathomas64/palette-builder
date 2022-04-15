@@ -71,7 +71,39 @@
 	padding: 4px;
 	z-index:1;
 	transition-delay: 0.1s;
-}
+	grid-template-columns: repeat(10,1fr);
+	grid-template-rows: repeat(10,1fr);
+	}
+	
+	.Arrow.Up_Arrow {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
+		}
+		
+		.Arrow.Left_Arrow {
+		grid-column: 1 / 2;
+		grid-row: 2 / span 8;
+		}
+		
+		.Arrow.Remove {
+		grid-column: -2 / -2;
+		grid-row: -2 / -1;
+		}
+		
+		.Arrow.Down_Arrow {
+		grid-column: 1 / -1;
+		grid-row: 10 / 11;
+		}
+		
+		.Arrow.Right_Arrow {
+		grid-column: 10 / span 1;
+		grid-row: 2 / span 7;
+		}
+		
+		.Shadow_Name_Container {
+			grid-column: 2 / -2;
+			grid-row: 2 / -2;
+		}
 
 .Shadow_Controls .Icon_Container {
 	height: auto;
@@ -102,7 +134,7 @@
 	border-radius: 4px;
 	background-color: var(--FDBL-green-medium);
 	flex-wrap: wrap;
-	flex: 1;
+	
 	text-align: center;
 	margin: 0 8px;
 	cursor: pointer;
@@ -1825,7 +1857,47 @@ button.Prev_Slide div::before {
 		font:var(--font-accordion-section-title);
 	}
 	
-	
+
+/**SHADOW CONTROLS FOR SMALLER SIZES**/
+
+.Shadow_Controls.Sub_125 {
+grid-template-columns: repeat(5,1fr);
+grid-template-rows: repeat(5,1fr);
+padding:0px;
+}
+
+.Shadow_Controls.Sub_125 .Up_Arrow {
+	grid-column: 3;
+	grid-row: 5;
+}
+
+
+.Shadow_Controls.Sub_125 .Right_Arrow {
+	grid-column: 4;
+	grid-row: 5;
+	}
+
+.Shadow_Controls.Sub_125 .Down_Arrow {
+	grid-column: 2;
+	grid-row: 5;
+	}
+
+.Shadow_Controls.Sub_125 .Left_Arrow {
+	grid-column: 1 / 2;
+	grid-row: 5;
+}
+
+
+.Shadow_Controls.Sub_125 .Arrow.Remove {
+	grid-column: 5;
+	grid-row: 5;
+	}
+
+.Shadow_Controls.Sub_125 .Shadow_Name_Container {
+	grid-column: 1 / 6;
+	grid-row: 1 / 5;
+	}
+
 
 /**RESPONSIVE STYLING**/
 

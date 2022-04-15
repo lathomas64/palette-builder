@@ -1,11 +1,36 @@
-//STICKY NAV BAR
+function resizeControls () {
+	const shadowControls = document.querySelectorAll('.Shadow_Controls');
+console.log('boop 2');
+const resizeObserver = new ResizeObserver(entries => {
+	console.log('boop 5');
+	console.log(entries);
+		for (let entry of entries) {
+				// if(entry.contentBoxSize) {
+				// 		// Firefox implements `contentBoxSize` as a single content rect, rather than an array
+				// 		const contentBoxSize = Array.isArray(entry.contentBoxSize) ? entry.contentBoxSize[0] : entry.contentBoxSize;
+				// 		// h1Elem.style.fontSize = Math.max(1.5, contentBoxSize.inlineSize / 200) + 'rem';
+				// 		// pElem.style.fontSize = Math.max(1, contentBoxSize.inlineSize / 600) + 'rem';
+				// } else {
+				console.log('boop14');
+				if(entry.contentRect.width < 125) {
+					console.log(entry.target);
+					entry.target.classList.add('Sub_125');
+			}
+				// }
+		}
+});
+shadowControls.forEach(entry => {
+		resizeObserver.observe(entry);
+});
+}
+
+
+
 function stickyNav(){
 	var $sticky = $(".Sticky");
 	// $sticky.addClass('Scrolled');
 	$sticky.toggleClass('Scrolled', $('.Filter_Wrapper').scrollTop() > $sticky.height());
 	};
-
-//SWITCH FILTER STATES
 
 function toggleSelect() {
 	$(this).toggleClass("Selected");
@@ -162,6 +187,9 @@ function priceTree(event) {
 }
 
 $(document).ready(function (event) {
+	
+resizeControls();
+	
 	sort_children('data-color-sort', '#Shadow_Search .Results .Grid', true);
 	$("BG_Options").click(shareModalBGSwitcher);
 
@@ -253,4 +281,6 @@ $(document).ready(function (event) {
 			}
 		}, 100);
 	});
+	
+	
 }); //end of document ready
