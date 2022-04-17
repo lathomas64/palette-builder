@@ -1,5 +1,5 @@
 <div id="shareModal" class="Share_Modal Hidden"> <!-- Hide when finished-->
-	<div class="Grid_Container Modal_Grid Space_Between Drawer_Overlay"> 
+	<div class="Grid_Container Modal_Grid Space_Between Drawer_Overlay">
 		<div class="Column Gap_32">
 			<div class="Panel_Title Column Gap_8">
 				<div class="Heading">Share Your Palette</div>
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 			<div class="Row Gap_16 Align_Items_Center">
 				<div>Ready?</div>
 				<div class="Row Gap_8">
@@ -57,7 +57,7 @@
   	<div class="Img_Container Dark Column Space_Between">
 			<div class="Row Palette_Container">
 				<div class="Palette Story_Size_4w_3t Row">
-					<div id="Story_Grid" class="Story_Grid Column Justify_Content_Left Align_Items_Center">
+					<div id="shareStoryGrid" class="Story_Grid Column Justify_Content_Left Align_Items_Center">
 						<div class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Pan_Shape_Round Pan_Size_26">
 							<!-- display none for the prototype version when this is used remove display none -->
 							<div class="Wrapper"><img src="../assets/temp-shadow-imgs/Reign-of-Terra.jpg">
