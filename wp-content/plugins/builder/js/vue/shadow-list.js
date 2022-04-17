@@ -19,75 +19,43 @@ $(document).ready(function (event) {
 shadow_list = new Vue({
     el:".Results_Container .Grid",
     data: {
-    shadows: [{ name: "Foo" }, { name: "Bar" }],
-    page: 1,
-    waittime: 500,
-    search_timer: undefined,
-    sort_field: 'color',
-    sort_direction: 'asc',
-    updating: false,
-    url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish&pb_status=Active",
-    results_per_page: 50,
-    filters: {}
-  },
-  computed: {
-    ids: function () {
-      return this.shadows.map(shadow => shadow.id);
+      shadows: [{ name: "Foo" }, { name: "Bar" }],
+      page: 1,
+      waittime: 500,
+      search_timer: undefined,
+      sort_field: 'color',
+      sort_direction: 'asc',
+      updating: false,
+      url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish&pb_status=Active",
+      results_per_page: 50,
+      filters: {}
     },
-    shipping_options: function () {
-      return paged_data["shipping_options"];
-    },
-    brand_list: function () {
-      return paged_data["brand_list"];
-    },
-    class: function(shadow) {
-      shape = "Pan_Shape_"+shadow.shape;
-      size = "Pan_Size_"+shadow.size;
-      return {shape: true, size: true}
-    }
-  },
-  methods: {
-    add_to_story: function(id) {
-      addShadow(currentStory.shadowCount,id);
-      updateFooter();
-    },
-    add_filter: function(key, value) {
-      if(!this.filters.hasOwnProperty(key))
-      {
-        this.filters[key] = new Set();
+    computed: {
+      ids: function () {
+        return this.shadows.map(shadow => shadow.id);
+      },
+      shipping_options: function () {
+        return paged_data["shipping_options"];
+      },
+      brand_list: function () {
+        return paged_data["brand_list"];
+      },
+      class: function(shadow) {
+        shape = "Pan_Shape_"+shadow.shape;
+        size = "Pan_Size_"+shadow.size;
+        return {shape: true, size: true}
       }
-      this.filters[key].add(value);
-      this.load_shadows();
-      //make dictionary of filters here.
     },
-    price_min: function(value) {
-      this.filters["price_min"] = new Set();
-      if(value > 0)
-      {
-        this.filters["price_min"].add(value);
-      }
-      this.load_shadows();
-    },
-    price_max: function(value) {
-      this.filters["price_max"] = new Set();
-      if(value > 0)
-      {
-        this.filters["price_max"].add(value);
-      }
-      this.load_shadows();
-    },
-    toggle_filter: function(key, value) {
-      $("#Shadow_Count").text("Filtering...");
-      if(!this.filters.hasOwnProperty(key))
-      {
-        this.filters[key] = new Set();
-      }
-      //If we have the value unset it
-      if (this.filters[key].has(value))
-      {
-        this.filters[key].delete(value);
-      }
-      else {
+    methods: {
+      add_to_story: function(id) {
+        addShadow(currentStory.shadowCount,id);
+        updateFooter();
+      },
+      add_filter: function(key, value) {
+        if(!this.filters.hasOwnProperty(key))
+        {
+          this.filters[key] = new Set();
+        }
         this.filters[key].add(value);
       }
       this.load_shadows();
@@ -102,103 +70,145 @@ shadow_list = new Vue({
       clearTimeout(this.search_timer);
       this.search_timer = setTimeout(() => {
         this.load_shadows();
-      }, this.waittime);
-
-    },
-    remove_filter: function(key, value) {
-      if(!this.filters.hasOwnProperty(key))
-      {
-        this.filters[key] = new Set();
-      }
-      else
-      {
-        this.filters[key].delete(value);
-      }
-      this.load_shadows();
-    },
-    load_shadows: function (append=false) {
-      if(this.updating)
-      {
-        return;
-      }
-      if(append)
-      {
-        this.page += 1;
-      } else {
-        this.page = 1;
-      }
-      console.log(this.page);
-      this.updating = true;
-      let url = this.url_base;
-      url += "&page="+this.page;
-      url += "&orderby="+this.sort_field;
-      url += "&order="+this.sort_direction;
-      // TODO fix this value somewhere
-      url += "&per_page="+this.results_per_page;
-      if(this.query)
-      {
-        url += "&search="+this.query;
-      }
-      Object.entries(this.filters).forEach(([key, value]) => {
-        if(value.size > 0)
+        //make dictionary of filters here.
+      },
+      price_min: function(value) {
+        this.filters["price_min"] = new Set();
+        if(value > 0)
         {
-          url += "&"+key+"="+Array.from(value).join();
+          this.filters["price_min"].add(value);
         }
-      });
-      // TODO run through filters dictionary and add to url
-      let self = this;
-      console.log(url);
-      jQuery.ajax({
-              url: url,
-              method: 'GET',
-              success:function(data, status, xhr) {
-                self.total = xhr.getResponseHeader("X-WP-Total");
-                // Hack because i couldn't get updating that inside of
-                // vue to work easily and didn't want to spend a ton
-                // of time figuring out how -IT
-                $("#Shadow_Count").text("Showing "+self.total+" shadows");
-                if(append){
-                  self.shadows = self.shadows.concat(data);
-                } else {
-                  self.shadows = data;
-                  self.shadows.sort((lhs, rhs) => {
-                    let left = lhs[sort_dict[self.sort_field]];
-                    let right = rhs[sort_dict[self.sort_field]];
-                    let mult = 1;
-                    if(self.sort_direction == 'desc')
-                    {
-                      mult = -1;
-                    }
-                    if (left < right) {
-                        return -1 * mult;
-                    }
-                    if (left > right) {
-                        return 1 * mult;
-                    }
-                    return 0;
-                  });
-                }
-                self.updating = false;
-              },
-              error: function(errorThrown){
-                  console.log(url);
-              	  console.log('ajax error');
-                  console.log(errorThrown);
+        this.load_shadows();
+      },
+      price_max: function(value) {
+        this.filters["price_max"] = new Set();
+        if(value > 0)
+        {
+          this.filters["price_max"].add(value);
+        }
+        this.load_shadows();
+      },
+      toggle_filter: function(key, value) {
+        $("#Shadow_Count").text("Filtering...");
+        if(!this.filters.hasOwnProperty(key))
+        {
+          this.filters[key] = new Set();
+        }
+        //If we have the value unset it
+        if (this.filters[key].has(value))
+        {
+          this.filters[key].delete(value);
+        }
+        else {
+          this.filters[key].add(value);
+        }
+        this.load_shadows();
+      },
+      reset_filters: function() {
+        this.filters = {};
+        this.load_shadows();
+      },
+      search: function(query) {
+        this.query = query;
+        clearTimeout(this.search_timer);
+        this.search_timer = setTimeout(() => {
+          this.load_shadows();
+        }, this.waittime);
+
+      },
+      remove_filter: function(key, value) {
+        if(!this.filters.hasOwnProperty(key))
+        {
+          this.filters[key] = new Set();
+        }
+        else
+        {
+          this.filters[key].delete(value);
+        }
+        this.load_shadows();
+      },
+      load_shadows: function (append=false) {
+        if(this.updating)
+        {
+          return;
+        }
+        if(append)
+        {
+          this.page += 1;
+        } else {
+          this.page = 1;
+        }
+        console.log(this.page);
+        this.updating = true;
+        let url = this.url_base;
+        url += "&page="+this.page;
+        url += "&orderby="+this.sort_field;
+        url += "&order="+this.sort_direction;
+        // TODO fix this value somewhere
+        url += "&per_page="+this.results_per_page;
+        if(this.query)
+        {
+          url += "&search="+this.query;
+        }
+        Object.entries(this.filters).forEach(([key, value]) => {
+          if(value.size > 0)
+          {
+            url += "&"+key+"="+Array.from(value).join();
+          }
+        });
+        // TODO run through filters dictionary and add to url
+        let self = this;
+        console.log(url);
+        jQuery.ajax({
+                url: url,
+                method: 'GET',
+                success:function(data, status, xhr) {
+                  self.total = xhr.getResponseHeader("X-WP-Total");
+                  // Hack because i couldn't get updating that inside of
+                  // vue to work easily and didn't want to spend a ton
+                  // of time figuring out how -IT
+                  $("#Shadow_Count").text("Showing "+self.total+" shadows");
+                  if(append){
+                    self.shadows = self.shadows.concat(data);
+                  } else {
+                    self.shadows = data;
+                    self.shadows.sort((lhs, rhs) => {
+                      let left = lhs[sort_dict[self.sort_field]];
+                      let right = rhs[sort_dict[self.sort_field]];
+                      let mult = 1;
+                      if(self.sort_direction == 'desc')
+                      {
+                        mult = -1;
+                      }
+                      if (left < right) {
+                          return -1 * mult;
+                      }
+                      if (left > right) {
+                          return 1 * mult;
+                      }
+                      return 0;
+                    });
+                  }
                   self.updating = false;
-              }
-          });
-    },
-    sort: function (field, direction='asc') {
-      this.sort_field = field;
-      this.sort_direction = direction;
-      this.load_shadows();
-    },
-    shadow_loaded: function (id) {
-      return id in this.ids;
+                },
+                error: function(errorThrown){
+                    console.log(url);
+                	  console.log('ajax error');
+                    console.log(errorThrown);
+                    self.updating = false;
+                }
+            });
+      },
+      sort: function (field, direction='asc') {
+        this.sort_field = field;
+        this.sort_direction = direction;
+        this.load_shadows();
+      },
+      shadow_loaded: function (id) {
+        return id in this.ids;
+      }
     }
-  }
-    }
-);
+});
 shadow_list.load_shadows();
 init_lists();
 });
