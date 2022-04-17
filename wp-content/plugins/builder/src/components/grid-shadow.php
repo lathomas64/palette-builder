@@ -1,7 +1,7 @@
-<div  v-for'shadow in shadows'
-			style="display:none"
-			v-bind:class="'Pan_Shape_'+shadow.shape+' Pan_Size_'+shadow.size"
-			class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center Invisible"
+<div  v-for='(shadow, index) in computed_shadows'
+			v-bind:class="'Pan_Shape_'+shadow.shape+' Pan_Size_'+shadow.size+' '+shadow.invisible"
+			class="Shadow_Image_Container Column Align_Items_Center Justify_Content_Center"
+				v-bind:data-index=index
 				v-bind:data-shadow-id="shadow.ID"
 				v-bind:data-size='shadow.size'
 				v-bind:data-height='shadow.height'
@@ -20,7 +20,12 @@
 				v-bind:data-country='shadow.country'
 				v-bind:data-ships='shadow.ships'
 				v-bind:data-brand='shadow.brand'
-				v-bind:data-price='shadow.price'>
+				v-bind:data-price='shadow.price'
+				onDrop='shadow_story.drop(event, this)'
+				ondragover='allowDrop(event)'
+				ondragStart='drag(event, this)'
+				draggable='true'
+				>
   <!-- display none for the prototype version when this is used remove display none -->
 	<div class="Wrapper" >
 		<!-- when we have an image add the image to the wrapper

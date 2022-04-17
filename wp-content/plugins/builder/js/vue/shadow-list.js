@@ -57,20 +57,20 @@ shadow_list = new Vue({
           this.filters[key] = new Set();
         }
         this.filters[key].add(value);
-      }
-      this.load_shadows();
-    },
-    reset_filters: function() {
-      this.filters = {};
-      this.load_shadows();
-      filterBtnReset();
-    },
-    search: function(query) {
-      this.query = query;
-      clearTimeout(this.search_timer);
-      this.search_timer = setTimeout(() => {
         this.load_shadows();
-        //make dictionary of filters here.
+      },
+      reset_filters: function() {
+        this.filters = {};
+        this.load_shadows();
+        filterBtnReset();
+      },
+      search: function(query) {
+        this.query = query;
+        clearTimeout(this.search_timer);
+        this.search_timer = setTimeout(() => {
+          this.load_shadows();
+          //make dictionary of filters here.
+        });
       },
       price_min: function(value) {
         this.filters["price_min"] = new Set();
@@ -107,6 +107,7 @@ shadow_list = new Vue({
       reset_filters: function() {
         this.filters = {};
         this.load_shadows();
+        filterBtnReset();
       },
       search: function(query) {
         this.query = query;

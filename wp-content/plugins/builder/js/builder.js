@@ -336,8 +336,8 @@ var currentStory = new Object();
 			$('.Story_Grid')[0].setAttribute("class", "Story_Grid Column Justify_Content_Left Align_Items_Center");
 		}
 
-		$(".Palette")[0].setAttribute("class", "Palette "+size_class+" Flex_Container")
-		$(".Palette_Container")[0].setAttribute("class", "Palette_Container Flex_Container Column "+orientation+" Justify_Content_Center Align_Items_Center")
+		$(".Palette")[0].setAttribute("class", "Palette "+size_class+" Flex_Container");
+		$(".Palette_Container")[0].setAttribute("class", "Palette_Container Flex_Container Column "+orientation+" Justify_Content_Center Align_Items_Center");
 		updateFooter();
 	}
 
@@ -354,8 +354,8 @@ var currentStory = new Object();
 			console.log('we are exiting cascade without checking anything');
 			return;//we cannot do anything greater then the current length
 		}
-		if(index < currentStory.shadows.length-1 && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
-			cascadeShadows(parseInt(index)+1, currentStory.shadows[index].getAttribute('data-shadow-id'));
+		if(index < currentStory.shadows.length-1 && currentStory.shadows[index].ID != null) {
+			cascadeShadows(parseInt(index)+1, this.shadows[index].ID);
 		} else if(index == currentStory.shadows.length-1 && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
 			console.log('overflow');
 			overflow_shadows.push(currentStory.shadows[index].getAttribute('data-shadow-id'));
@@ -699,12 +699,12 @@ var currentStory = new Object();
 		catch(error) {
 
 		}
-		query = window.location.search;
-		params = new URLSearchParams(query);
-		currentStory.height = getUrlParam("height", 3);
-		currentStory.width = getUrlParam("width", 3);
-		reset();
-		resize(currentStory.width, currentStory.height);
+		// query = window.location.search;
+		// params = new URLSearchParams(query);
+		// height = getUrlParam("height", 3);
+		// width = getUrlParam("width", 3);
+		// shadow_story.reset();
+		// resize(width, height);
 		for (var index = 0; index < currentStory.height * currentStory.width; index++)
 		{
 			shadow = getUrlParam('shadows['+index+']', false);

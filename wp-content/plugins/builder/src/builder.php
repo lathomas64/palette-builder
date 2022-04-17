@@ -18,6 +18,7 @@
 	<script src="../js/utility.js"></script>
 	<script src="../js/api.js"></script>
 	<script src="../js/vue/shadow-list.js"></script>
+	<script src="../js/vue/shadow-story.js"></script>
 </head>
 <body>
 	<div class="Wrap">
@@ -173,7 +174,7 @@
 							<div class="Annoyed_Gina Flex_Container Justify_Content_Center Column">
 							<div class="Palette_Container Flex_Container Column Landscape Justify_Content_Center Align_Items_Center">
 							<div class="Palette Story_Size_11w_8t Flex_Container">
-								<div id="Story_Grid" class="Story_Grid Row Justify_Content_Left Align_Items_Center"><?php include "components/grid-shadow.php"; ?></div>
+								<div id="Story_Grid"  class="Story_Grid Row Justify_Content_Left Align_Items_Center"><?php include "components/grid-shadow.php"; ?></div>
 							</div>
 							</div>
 						</div>
