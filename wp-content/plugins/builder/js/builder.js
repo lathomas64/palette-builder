@@ -354,8 +354,8 @@ var currentStory = new Object();
 			console.log('we are exiting cascade without checking anything');
 			return;//we cannot do anything greater then the current length
 		}
-		if(index < currentStory.shadows.length-1 && currentStory.shadows[index].ID != null) {
-			cascadeShadows(parseInt(index)+1, this.shadows[index].ID);
+		if(index < currentStory.shadows.length-1 && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
+			cascadeShadows(parseInt(index)+1, currentStory.shadows[index].getAttribute('data-shadow-id'));
 		} else if(index == currentStory.shadows.length-1 && currentStory.shadows[index].getAttribute('data-shadow-id') != null) {
 			console.log('overflow');
 			overflow_shadows.push(currentStory.shadows[index].getAttribute('data-shadow-id'));

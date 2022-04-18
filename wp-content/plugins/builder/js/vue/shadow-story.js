@@ -25,6 +25,59 @@ $(document).ready(function (event) {
 
     },
     methods: {
+      shift_up: function(index) {
+        row = Math.floor(index / this.width);
+    		if(row == 0)
+    		{
+    			// TODO what do we do if they try to move up on the edge
+    			return;
+    		} else {
+    			this.swap(index, index-this.width);
+    		}
+      },
+      shift_left: function(index) {
+        position = index % this.width;
+    		if(position == 0)
+    		{
+    			// TODO what do we do if they try to move left on the edge
+    			//target = currentStory.width-1;
+    			return;
+    		} else {
+    			this.swap(index, index-1);
+    		}
+      },
+      shift_down: function(index) {
+        row = Math.floor(index / this.width);
+    		if(row == this.height-1)
+    		{
+    			// TODO what do we do if they try to move down on the edge
+    			return;
+    		} else {
+    			this.swap(index, index+parseInt(this.width));
+    		}
+      },
+      shift_right: function(index) {
+        position = index % this.width;
+    		if(position == this.width-1)
+    		{
+    			// TODO what do we do if they try to move right on the edge
+    			return;
+    		} else {
+    			this.swap(index, index+1);
+    		}
+      },
+      deleteShadow: function(index, undo=false){
+        // TODO handle undoing
+        updateShadow(index, null);
+        updateFooter();
+      },
+      swap: function(index, index2, undo=false)
+      {
+        shadow1 = this.shadows[index].ID;
+        shadow2 = this.shadows[index2].ID;
+        this.updateShadow(index, shadow2);
+        this.updateShadow(index2, shadow1);
+      },
       reset: function() {
         this.shadows = [],
         story_size = this.height * this.width;
@@ -61,7 +114,6 @@ $(document).ready(function (event) {
     			this.cascadeShadows(parseInt(index)+1, this.shadows[index].ID);
     		}
         else if(index == this.shadows.length-1 && this.shadows[index].ID != null) {
-    			console.log('overflow');
     			overflow.push(this.shadows[index].ID);
     		}
         this.updateShadow(index, id);
@@ -71,14 +123,15 @@ $(document).ready(function (event) {
       {
         if(id == null)
         {
-          this.shadows[index] = {
+          shadow_data = {
             "invisible":"Invisible",
             "shape":"Round",
             "size":"26"
           };
+          Vue.set(this.shadows, index, shadow_data);
         } else {
           shadow_data = shadow_list.shadows.filter(shadow=>shadow.ID == id)[0];
-          this.shadows[index] = shadow_data;
+          //this.shadows[index] = shadow_data;
           Vue.set(this.shadows, index, shadow_data);
         }
 
@@ -86,10 +139,7 @@ $(document).ready(function (event) {
       },
       drop: function(evt, caller)
       {
-        console.log(evt);
-        console.log(caller);
         var data = evt.dataTransfer.getData("shadow");
-        console.log(data);
         if(data) //dropping a shadow on here from the list
         {
           index = caller.getAttribute('data-index')
@@ -99,7 +149,9 @@ $(document).ready(function (event) {
         }
         else //swap shadows.
         {
-
+          let index = evt.dataTransfer.getData("index");
+  				let swap_index = caller.getAttribute('data-index');
+  				this.swap(index, swap_index);
         }
       }
     }
