@@ -12,6 +12,8 @@ kanban-plugin: basic
 - [ ] x to clear search field doesn't appear in firefox
 - [ ] Users
 - [ ] Save button
+- [ ] updateFooter
+- [ ] click on shadow in list to add to story
 
 
 ## done

@@ -5,6 +5,7 @@ $(document).ready(function (event) {
       "shadows": [{'name':'test'}],
       "width": 3,
       "height": 3,
+      "shadowCount": 0,
       "overflow": []
     },
     computed: {
@@ -25,7 +26,7 @@ $(document).ready(function (event) {
 
     },
     methods: {
-      shift_up: function(index) {
+      shift_up: function(index){
         row = Math.floor(index / this.width);
     		if(row == 0)
     		{
@@ -69,6 +70,7 @@ $(document).ready(function (event) {
       deleteShadow: function(index, undo=false){
         // TODO handle undoing
         updateShadow(index, null);
+        this.shadowCount--;
         updateFooter();
       },
       swap: function(index, index2, undo=false)
@@ -101,6 +103,7 @@ $(document).ready(function (event) {
       {
         //TODO add undo functionality here record original state and push to list
         this.cascadeShadows(index, id);
+        this.shadowCount++;
       },
       cascadeShadows: function(index, id)
       {
