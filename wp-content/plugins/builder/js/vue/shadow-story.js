@@ -69,7 +69,7 @@ $(document).ready(function (event) {
       },
       deleteShadow: function(index, undo=false){
         // TODO handle undoing
-        updateShadow(index, null);
+        this.updateShadow(index, null);
         this.shadowCount--;
         updateFooter();
       },
