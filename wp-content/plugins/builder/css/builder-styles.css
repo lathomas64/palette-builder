@@ -502,7 +502,7 @@ a.Single_Pan_Card, a.Search_Grid_Card {
 } */
 
 .Pan_Size_26 .Wrapper {
-	/* aspect-ratio: 1 / 1; */
+	aspect-ratio: 1 / 1;
 	height: var(--pan-size-26);
 }
 
