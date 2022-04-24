@@ -40,7 +40,7 @@
 				</div>
 				<div class="Builder_Controls Row Space_Between">
 					<div class="Terminal_Actions Row Justify_Content_Left Gap_24">
-						<a onclick="reset();return false;" href="#" class="Button_Micro Row Gap_8 Justify_Content_Space_Between">
+						<a onclick="shadow_story.reset();return false;" href="#" class="Button_Micro Row Gap_8 Justify_Content_Space_Between">
 							<div class="Builder_Reset">
 								<div class="Icon_Container">
 									<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">

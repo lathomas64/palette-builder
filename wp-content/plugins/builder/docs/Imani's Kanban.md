@@ -14,18 +14,18 @@ kanban-plugin: basic
 - [ ] different size shadows handling
 - [ ] restore undo/redo
 - [ ] fix rotate
-- [ ] fix start over
 
 
 ## in progress
 
 - [ ] vue stories
-- [ ] updateFooter
 
 
 ## done
 
+- [ ] fix start over
 - [ ] Story full  after on click
+- [ ] updateFooter
 - [ ] click on shadow in list to add to story
 - [ ] using X to clear search field doesn't reset shadows (chrome))
 - [ ] type to filter brand list
