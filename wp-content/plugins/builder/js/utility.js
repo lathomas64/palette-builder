@@ -64,3 +64,22 @@ function launch_modal(title, message)
   $("#genericModal .Panel_Title").text(title);
   $("#genericModal .Subheading").text(message);
 }
+
+function transpose(data, height, width)
+{
+  //takes a list representing a matrix and its height and width
+  //and returns another list representing it rotated clockwise
+  // x in range(0, w):
+	// y in range(0, h):
+	// 	transpose_next = w*(h-(y+1))+x
+  transposed = [];
+  for(let x = 0; x < width; x++)
+  {
+    for(let y = 0; y < height; y++)
+    {
+      next_index = width * (height - (y+1))+x;
+      transposed.push(data[next_index]);
+    }
+  }
+  return transposed;
+}

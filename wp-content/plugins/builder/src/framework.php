@@ -99,7 +99,7 @@
 							</div>
 							<div>Undo</div>
 						</a>
-						<a href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+						<a onclick="shadow_story.rotate();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
 							<div class="Builder_Rotate">
 								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path

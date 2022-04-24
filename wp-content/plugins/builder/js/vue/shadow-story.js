@@ -96,6 +96,13 @@ $(document).ready(function (event) {
         this.updateShadow(index, shadow2);
         this.updateShadow(index2, shadow1);
       },
+      rotate: function() {
+        transposed = transpose(this.shadows, this.height, this.width);
+        this.shadows = transposed;
+        width = this.height;
+        height = this.width;
+        this.resize(width, height);
+      },
       reset: function() {
         this.shadows = [],
         story_size = this.height * this.width;
