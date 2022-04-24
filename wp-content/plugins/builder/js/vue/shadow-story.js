@@ -95,8 +95,7 @@ $(document).ready(function (event) {
       resize: function(width, height) {
         this.height = height;
         this.width = width;
-        $(".Palette")[0].setAttribute("class", "Palette "+this.size_class+" Flex_Container")
-    		$(".Palette_Container")[0].setAttribute("class", "Palette_Container Flex_Container Column "+this.orientation+" Justify_Content_Center Align_Items_Center")
+        $(".Palette")[0].setAttribute("class", "Palette "+this.size_class+" Flex_Container " + this.orientation)
         // TODO logic for dropping shadows?
       },
       addShadow: function(index, id)
