@@ -107,6 +107,7 @@ $(document).ready(function (event) {
             "size":"26"
           })
         }
+        updateFooter();
       },
       resize: function(width, height) {
         this.height = height;

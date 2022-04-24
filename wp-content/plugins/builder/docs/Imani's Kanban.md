@@ -11,13 +11,16 @@ kanban-plugin: basic
 - [ ] x to clear search field doesn't appear in firefox
 - [ ] Users
 - [ ] Save button
-- [ ] updateFooter
 - [ ] different size shadows handling
+- [ ] restore undo/redo
+- [ ] fix rotate
+- [ ] fix start over
 
 
 ## in progress
 
 - [ ] vue stories
+- [ ] updateFooter
 
 
 ## done

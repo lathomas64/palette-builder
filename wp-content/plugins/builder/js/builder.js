@@ -75,21 +75,21 @@ var currentStory = new Object();
 		var brands=[];
 		var countries=[];
 		var price=0;
-		for (var index = 0; index < currentStory.height * currentStory.width; index++)
+		for (var index = 0; index < shadow_story.height * shadow_story.width; index++)
 		{
-			if (currentStory.shadows[index].getAttribute('data-shadow-id') != null){
+			if (shadow_story.has_shadow(index)){
 					shadowCount++;
-					shadow = currentStory.shadows[index];
-					brands.push(shadow.getAttribute('data-brand'));
-					countries.push(shadow.getAttribute('data-country'));
-					price += Number(shadow.getAttribute('data-price'));
+					shadow = shadow_story.shadows[index];
+					brands.push(shadow.brand);
+					countries.push(shadow.country);
+					price += Number(shadow.price);
 				}
 		}
 		brands = unique(brands);
 		countries = unique(countries);
-		currentStory.brands = brands;
-		currentStory.countries = countries;
-		currentStory.shadowCount = shadowCount;
+		shadow_story.brands = brands;
+		shadow_story.countries = countries;
+		shadow_story.shadowCount = shadowCount;
 		document.getElementById('Footer_Shadow_Count').innerHTML=shadowCount.toLocaleString("en-US", {"minimumIntegerDigits":2});
 		document.getElementById('Footer_Brand_Count').innerHTML=brands.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
 		document.getElementById('Footer_Country_Count').innerHTML=countries.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
