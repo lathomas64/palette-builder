@@ -13,7 +13,7 @@ $(document).ready(function (event) {
         return this.shadows;
       },
       orientation: function() {
-        if(this.height > this.width) {
+        if(this.height >= this.width) {
           return "Portrait_Square";
         }
         else {
