@@ -9,6 +9,16 @@ $(document).ready(function (event) {
       "overflow": []
     },
     computed: {
+      first_empty_index: function () {
+        for(let index = 0; index < this.shadows.length; index++)
+        {
+          if(this.shadows[index].invisible !== undefined)
+          {
+            return index;
+          }
+        }
+        return -1;
+      },
       computed_shadows: function () {
         return this.shadows;
       },

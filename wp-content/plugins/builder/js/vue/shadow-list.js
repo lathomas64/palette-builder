@@ -48,8 +48,14 @@ shadow_list = new Vue({
     },
     methods: {
       add_to_story: function(id) {
-        addShadow(currentStory.shadowCount,id);
-        updateFooter();
+        index = shadow_story.first_empty_index;
+        if(index > -1) {
+          shadow_story.addShadow(index, id);
+          updateFooter();
+        }
+        else {
+          alert("Story Full - replace this with a modal please Imani.");
+        }
       },
       add_filter: function(key, value) {
         if(!this.filters.hasOwnProperty(key))

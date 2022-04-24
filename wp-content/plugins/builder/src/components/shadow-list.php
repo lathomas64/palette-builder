@@ -49,7 +49,7 @@
 			v-bind:data-price='shadow.price'
 			v-bind:id='shadow.ID'
 			draggable="true" ondragstart="drag(event)"
-			@click="add_to_story(shadow)"
+			@click="add_to_story(shadow.ID)"
 			onMouseEnter="openShadowDetail(this);"
 			onMouseLeave="closeShadowDetail(this);"
 			class="Single_Pan_Card Column" href="#">

@@ -13,11 +13,16 @@ kanban-plugin: basic
 - [ ] Users
 - [ ] Save button
 - [ ] updateFooter
-- [ ] click on shadow in list to add to story
+
+
+## in progress
+
+- [ ] Story full modal on click
 
 
 ## done
 
+- [ ] click on shadow in list to add to story
 - [ ] using X to clear search field doesn't reset shadows (chrome))
 - [ ] type to filter brand list
 - [ ] type to filter shipping list
