@@ -114,7 +114,7 @@
 				</div>
 			</div>
 			<div class="Builder Grid_Container">
-				<div class="Palette Story_Size_11w_8t Flex_Container">
+				<div class="Palette Story_Size_11w_8t Flex_Container Landscape">
 					<div id="Story_Grid" class="Story_Grid Row Justify_Content_Left Align_Items_Center"><?php include "components/grid-shadow.php"; ?></div>
 				</div>
 			</div>
