@@ -55,3 +55,12 @@ function filter_list(list, query)
      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
    });
 }
+
+function launch_modal(title, message)
+{
+  $("#centerModal").addClass("On");
+  $("#genericModal").addClass("On");
+	$("#genericModal").removeClass("Hidden");
+  $("#genericModal .Panel_Title").text(title);
+  $("#genericModal .Subheading").text(message);
+}

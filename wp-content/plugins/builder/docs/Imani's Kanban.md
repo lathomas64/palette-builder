@@ -8,20 +8,21 @@ kanban-plugin: basic
 
 - [ ] limit brand list brands
 - [ ] speed up initial page load
-- [ ] vue stories
 - [ ] x to clear search field doesn't appear in firefox
 - [ ] Users
 - [ ] Save button
 - [ ] updateFooter
+- [ ] different size shadows handling
 
 
 ## in progress
 
-- [ ] Story full modal on click
+- [ ] vue stories
 
 
 ## done
 
+- [ ] Story full  after on click
 - [ ] click on shadow in list to add to story
 - [ ] using X to clear search field doesn't reset shadows (chrome))
 - [ ] type to filter brand list
