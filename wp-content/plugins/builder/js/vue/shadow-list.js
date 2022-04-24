@@ -54,7 +54,9 @@ shadow_list = new Vue({
           updateFooter();
         }
         else {
-          alert("Story Full - replace this with a modal please Imani.");
+          //launch_modal("Story Full", "The current story cannot fit anymore shadows.");
+          $("#"+id+" .Pan_Shadow").after('<div id="Story_Full">Story Full</div>');
+          setTimeout(() => $("#Story_Full").text(""), 2000);
         }
       },
       add_filter: function(key, value) {
