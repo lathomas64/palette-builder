@@ -9,16 +9,6 @@ $(document).ready(function (event) {
       "overflow": []
     },
     computed: {
-      first_empty_index: function () {
-        for(let index = 0; index < this.shadows.length; index++)
-        {
-          if(this.shadows[index].invisible !== undefined)
-          {
-            return index;
-          }
-        }
-        return -1;
-      },
       computed_shadows: function () {
         return this.shadows;
       },
@@ -36,6 +26,22 @@ $(document).ready(function (event) {
 
     },
     methods: {
+      first_empty_index: function () {
+        for(let index = 0; index < this.shadows.length; index++)
+        {
+          console.log(index);
+          if(!this.has_shadow(index))
+          {
+            return index;
+          }
+        }
+        return -1;
+      },
+      has_shadow: function(index) {
+        console.log(index);
+        empty = this.shadows[index].invisible !== undefined;
+        return !empty;
+      },
       shift_up: function(index){
         row = Math.floor(index / this.width);
     		if(row == 0)

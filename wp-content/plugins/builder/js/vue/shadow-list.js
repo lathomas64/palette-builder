@@ -48,7 +48,7 @@ shadow_list = new Vue({
     },
     methods: {
       add_to_story: function(id) {
-        index = shadow_story.first_empty_index;
+        index = shadow_story.first_empty_index();
         if(index > -1) {
           shadow_story.addShadow(index, id);
           updateFooter();
@@ -56,7 +56,7 @@ shadow_list = new Vue({
         else {
           //launch_modal("Story Full", "The current story cannot fit anymore shadows.");
           $("#"+id+" .Pan_Shadow").after('<div id="Story_Full">Story Full</div>');
-          setTimeout(() => $("#Story_Full").text(""), 2000);
+          setTimeout(() => $("#Story_Full").remove(), 500);
         }
       },
       add_filter: function(key, value) {
