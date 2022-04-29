@@ -26,10 +26,23 @@ $(document).ready(function (event) {
 
     },
     methods: {
+      flatten: function() {
+        let shadows = []
+        for(let index = 0; index < this.shadows.length; index++)
+        {
+          if(this.has_shadow(index))
+          {
+            shadows.push(this.shadows[index].ID);
+          }
+          else {
+            shadows.push(null);
+          }
+        }
+        return shadows;
+      },
       first_empty_index: function () {
         for(let index = 0; index < this.shadows.length; index++)
         {
-          console.log(index);
           if(!this.has_shadow(index))
           {
             return index;
@@ -38,7 +51,6 @@ $(document).ready(function (event) {
         return -1;
       },
       has_shadow: function(index) {
-        console.log(index);
         empty = this.shadows[index].invisible !== undefined;
         return !empty;
       },
@@ -119,6 +131,19 @@ $(document).ready(function (event) {
       resize: function(width, height) {
         this.height = height;
         this.width = width;
+        story_size = this.height * this.width;
+        for (var i = this.shadows.length; i < story_size; i++)
+        {
+          this.shadows.push({
+            "invisible":"Invisible",
+            "shape":"Round",
+            "size":"26"
+          });
+        }
+        if(story_size < this.shadows.length)
+        {
+          this.shadows = this.shadows.slice(0, story_size);
+        }
         $(".Palette")[0].setAttribute("class", "Palette "+this.size_class+" Flex_Container " + this.orientation)
         // TODO logic for dropping shadows?
       },

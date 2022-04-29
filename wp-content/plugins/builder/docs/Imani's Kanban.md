@@ -4,21 +4,25 @@ kanban-plugin: basic
 
 ---
 
+## nice to have
+
+- [ ] x to clear search field doesn't appear in firefox
+
+
 ## todo
 
 - [ ] limit brand list brands
 - [ ] speed up initial page load
-- [ ] x to clear search field doesn't appear in firefox
 - [ ] Users
-- [ ] Save button
 - [ ] different size shadows handling
 - [ ] restore undo/redo
-- [ ] fix rotate
+- [ ] if shadows is smaller then width * height pad it with empty shadows
 
 
 ## in progress
 
 - [ ] vue stories
+- [ ] story sizes
 
 
 ## done
@@ -26,6 +30,8 @@ kanban-plugin: basic
 - [ ] fix start over
 - [ ] Story full  after on click
 - [ ] updateFooter
+- [ ] Save button
+- [ ] fix rotate
 - [ ] click on shadow in list to add to story
 - [ ] using X to clear search field doesn't reset shadows (chrome))
 - [ ] type to filter brand list

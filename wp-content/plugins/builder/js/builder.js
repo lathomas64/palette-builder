@@ -555,16 +555,16 @@ var currentStory = new Object();
 	function save() {
 		console.log('This should save the current story to the current logged in user');
 		name = prompt('What do you want to name the current story?');
-		currentStory.name = name;
+		shadow_story.name = name;
 		jQuery.ajax({
 						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
 						method: 'POST',
 						data: {
 								'action':'save_story', // This is our PHP function below
 								'name': name,
-								'height': currentStory.height,
-								'width': currentStory.width,
-								'story': flatten_story()
+								'height': shadow_story.height,
+								'width': shadow_story.width,
+								'story': shadow_story.flatten()
 						},
 						success:function(data) {
 							console.log(data);
