@@ -11,12 +11,15 @@ kanban-plugin: basic
 
 ## todo
 
+- [ ] if shadows is smaller then width * height pad it with empty shadows
 - [ ] limit brand list brands
 - [ ] speed up initial page load
 - [ ] Users
 - [ ] different size shadows handling
 - [ ] restore undo/redo
-- [ ] if shadows is smaller then width * height pad it with empty shadows
+- [ ] sort Story Sizes
+- [ ] sort stories
+- [ ] share
 
 
 ## in progress
