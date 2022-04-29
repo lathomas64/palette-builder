@@ -575,9 +575,9 @@ var currentStory = new Object();
 		var story = JSON.parse(element.getAttribute("data-story-json"));
 		if(story != null){
 			console.log(story);
-			resize(story.width, story.height);
+			shadow_story.resize(story.width, story.height);
 			for(var index = 0; index < story.shadows.length; index++){
-				updateShadow(index, story.shadows[index]);
+				shadow_story.updateShadow(index, story.shadows[index]);
 			}
 			updateFooter();
 		}
