@@ -35,17 +35,17 @@
 						</div>
 						<p>Need a bit of an explainer here. </p>
 						<div class="Color_Family Button_Group Row Nowrap Gap_4 Justify_Content_Flex_Start">
-							<input class="Filter_Button Price" id="payOp1" type="radio" name="price" />
+							<input class="Filter_Button Price" onclick="fireGumroadEmbed(2);" id="payOp1" type="radio" name="price" />
 							<label class="Filter_Button Price" for="payOp1">$2.00</label>
-							<input class="Filter_Button Price" id="payOp2" type="radio" name="price" />
+							<input class="Filter_Button Price" onclick="fireGumroadEmbed(5);" id="payOp2" type="radio" name="price" />
 							<label class="Filter_Button Price" for="payOp2">$5.00</label>
-							<input class="Filter_Button Price" id="payOp3" type="radio" name="price" />
+							<input class="Filter_Button Price" onclick="fireGumroadEmbed(10);" id="payOp3" type="radio" name="price" />
 							<label class="Filter_Button Price" for="payOp3">$10.00</label>
 							<div class="Pay_Option_Custom Row Nowrap Gap_0 Align_Items_Center">
 									<div class="Currency_Symbol">$</div>
 									<label class="Custom_Price_Input">
 											<span class="SR_Only">Other Amount</span>
-											<input type="number" class="Other_Amt" name="amount" step=".50" min="1.00" placeholder="Other Amount" value="">
+											<input onchange="fireGumroadEmbed(this.value);priceTree();" type="number" class="Other_Amt" name="amount" step=".50" min="1.00" placeholder="Other Amount" value="">
 									</label>
 							</div>
 							</div>
@@ -58,7 +58,10 @@
 		     	<div class="Heading">Let Us Know Your Payment Information</div>
 							</div>
 						</div>
-						<img src="../assets/paypal-screenshot-temp.jpg"/ style="margin-bottom:32px;">
+						<!-- todo replace this with the actual product -->
+						<!-- attach here -->
+						<div id="gumroad-target">
+						</div>
 <!--						<div class="Column Gap_16">
 							<div> paypal stuff</div>
 							<div class="Column Gap_8">

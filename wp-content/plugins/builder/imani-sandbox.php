@@ -9,42 +9,20 @@ if (!defined("ABSPATH")) {
 	require_once "/usr/share/wordpress/wp-load.php";
 }
 print('begin');
-
-$args = [
-"post_type" => "cpt_shadow",
-"post_status" => "publish",
-"posts_per_page" => 20,
-"orderby" => "title",
-"order" => "ASC",
-"cat" => "home",
-"tax_query" => array(
-	'relation' => 'OR'
-),
-'meta_query' => array(
-	'relation' => 'AND'
-)
-];
-$terms = pb_merge_terms(explode(",",'warm'), 'tax_color_tag');
-print_r($terms);
-echo "<br><br>";
-$args['tax_query'][] = array(
-		'taxonomy' => 'tax_color_tag',
-		'field' => 'slug',
-		'terms' => $terms
-);
-
-print_r($args);
-echo "<br><br>";
-$shadows = new WP_Query($args);
-while($shadows->have_posts())
-{
-	$shadows->the_post();
-	echo "name:";
-	echo the_title();
-	echo "<br>price:";
-	echo get_field('price');
-	echo "<br>--<br><br>";
-}
 ?>
+
 <hr>
-and thats the end...
+embed:
+<script src="https://gumroad.com/js/gumroad-embed.js"></script>
+<script src="js/external/gumroad.js"></script>
+<!--
+<div class="gumroad-product-embed">
+	<a href="https://imanisells.gumroad.com/l/khiHk?price=10&wanted=true">Loading...</a>
+</div>
+-->
+<input type="button" onclick="fireGumroadEmbed(2);">$2</input>
+<input type="button" onclick="fireGumroadEmbed(5);">$5</input>
+<input type="button" onclick="fireGumroadEmbed(10);">$10</input>
+<div id="gumroad-target">
+</div>
+<? wp_footer(); ?>
