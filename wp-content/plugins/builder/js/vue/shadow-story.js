@@ -22,8 +22,19 @@ $(document).ready(function (event) {
       },
       size_class: function() {
         return "Story_Size_"+this.width+"w_"+this.height+"t"
+      },
+      brands: function() {
+        result = new Set();
+        for(let index = 0; index < this.shadows.length; index++)
+        {
+          let brand = this.shadows[index].brand;
+          if(brand != undefined)
+          {
+            result.add(brand);
+          }
+        }
+        return Array.from(result);
       }
-
     },
     methods: {
       flatten: function() {
