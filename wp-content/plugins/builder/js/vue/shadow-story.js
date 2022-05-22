@@ -6,7 +6,9 @@ $(document).ready(function (event) {
       "width": 3,
       "height": 3,
       "shadowCount": 0,
-      "overflow": []
+      "overflow": [],
+      "undo_stack": [],
+      "redo_stack": []
     },
     computed: {
       computed_shadows: function () {
@@ -37,6 +39,22 @@ $(document).ready(function (event) {
       }
     },
     methods: {
+      undo: function () {
+        if(this.undo_stack.length > 0)
+    		{
+    			this.undo_stack.pop()();
+    		} else {
+    			console.log('no actions to undo');
+    		}
+      },
+      redo: function () {
+        if(this.redo_stack.length > 0)
+    		{
+    			this.redo_stack.pop()();
+    		} else {
+    			console.log('no actions to redo');
+    		}
+      },
       flatten: function() {
         let shadows = []
         for(let index = 0; index < this.shadows.length; index++)
@@ -118,6 +136,13 @@ $(document).ready(function (event) {
         shadow2 = this.shadows[index2].ID;
         this.updateShadow(index, shadow2);
         this.updateShadow(index2, shadow1);
+        if(undo)
+    		{
+    			this.redo_stack.push(()=>this.swap(index,index2));
+    		}
+    		else {
+    			this.undo_stack.push(()=>this.swap(index,index2, true));
+    		}
       },
       rotate: function() {
         transposed = transpose(this.shadows, this.height, this.width);
@@ -213,7 +238,7 @@ $(document).ready(function (event) {
         {
           let index = evt.dataTransfer.getData("index");
   				let swap_index = caller.getAttribute('data-index');
-  				this.swap(index, swap_index);
+          this.swap(index, swap_index);
         }
       }
     }

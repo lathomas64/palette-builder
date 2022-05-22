@@ -23,7 +23,7 @@
 				v-bind:data-price='shadow.price'
 				onDrop='shadow_story.drop(event, this)'
 				ondragover='allowDrop(event)'
-				ondragStart='drag(event, this)'
+				ondragStart='drag(event, this.getAttribute("data-index"))'
 				draggable='true'
 				>
   <!-- display none for the prototype version when this is used remove display none -->
