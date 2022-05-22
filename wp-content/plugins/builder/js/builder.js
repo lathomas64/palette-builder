@@ -75,6 +75,10 @@ var currentStory = new Object();
 		var brands=[];
 		var countries=[];
 		var price=0;
+		if (typeof(shadow_story) === "undefined")
+		{
+			return;//we're not ready to update the footer.
+		}
 		for (var index = 0; index < shadow_story.height * shadow_story.width; index++)
 		{
 			if (shadow_story.has_shadow(index)){
