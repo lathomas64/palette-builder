@@ -29,7 +29,6 @@ kanban-plugin: basic
 - [ ] shopping list brand badges update
 - [ ] save: show save dropdown if logged in or log in/register dropdown otherwise
 - [ ] add class to active sort
-- [ ] error message if nothing returned for filter
 
 
 ## in progress
@@ -38,6 +37,7 @@ kanban-plugin: basic
 
 ## done
 
+- [ ] error message if nothing returned for filter
 - [ ] add delay to filter: restart if requested again
 - [ ] price secondary sort a-z
 - [ ] [[shadow_story not defined error]]
