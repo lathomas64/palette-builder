@@ -1,7 +1,7 @@
 <div class="Results Column">
 	<div class="Results_Control_Bar Row Space_Between Align_Items_Center">
 		<div class="Body Small_Text">
-			<span id='Shadow_Count'>Showing ?? shadows</span>
+			<span id='Shadow_Count'>Loading shadows...</span>
 		</div>
 		<div class="Row Gap_24 Align_Items_Center Filters">
 			<div class="Search">
@@ -28,6 +28,7 @@
 	</div>
 	<div class="Column Results_Container">
 		<div class="Grid Row Gap_16 Grid_Container">
+			<div id="EmptyShadowListMessage" class="hidden">Sorry to say no shadows matched your search...</div>
 			<a v-for='shadow in shadows'
 			v-bind:data-size='shadow.size'
 			v-bind:data-height='shadow.height'

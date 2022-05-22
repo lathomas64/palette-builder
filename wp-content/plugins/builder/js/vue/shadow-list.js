@@ -146,6 +146,12 @@ shadow_list = new Vue({
                   // vue to work easily and didn't want to spend a ton
                   // of time figuring out how -IT
                   $("#Shadow_Count").text("Showing "+self.total+" shadows");
+                  if (self.total == 0)
+                  {
+                    $("#EmptyShadowListMessage").removeClass("hidden");
+                  } else {
+                    $("#EmptyShadowListMessage").addClass("hidden");
+                  }
                   if(append){
                     self.shadows = self.shadows.concat(data);
                   } else {
