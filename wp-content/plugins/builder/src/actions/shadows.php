@@ -123,8 +123,13 @@ function filter_add_rest_post_query($args, $request)
 {
   if($args['orderby'] == 'price')
   {
+    $price_direction = $args['order'];
+    $name_direction = 'asc';
     $args['meta_key'] = 'price';
-    $args['orderby'] = 'meta_value_num title';
+    $args['orderby'] = array(
+      'meta_value_num' => $price_direction,
+      'title' => $name_direction
+    );
   } else if($args['orderby'] == 'color')
   {
     $lightness_direction = 'desc';
