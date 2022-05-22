@@ -1,3 +1,10 @@
+function sort_label(element)
+{//handle labels in sort when we are doing sort things
+  $(element).parent().children('label').removeClass('Active');
+  //$('label.Active').removeClass('Active');
+  $('label[for="'+element.id+'"]').addClass('Active');
+}
+
 function compare_attribute(attribute, asc)
 {
   function inner_compare(a, b){
