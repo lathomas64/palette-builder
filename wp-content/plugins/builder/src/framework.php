@@ -18,6 +18,7 @@
 	<script src="../js/basic-functions.js"></script>
 	<script src="../js/shopping-list.js"></script>
 	<script src="../js/sort.js"></script>
+	<script src="../js/user.js"></script>
 	<script src="../js/shadow-list.js"></script>
 	<script src="../js/utility.js"></script>
 	<script src="../js/api.js"></script>

@@ -30,18 +30,11 @@ function pull_pages(url_base, key, page=1)
           method: 'GET',
           async: false,
           success:function(data, status, xhr) {
-            // console.log(url);
-            // console.log(paged_data[key]);
-            // console.log(data);
             paged_data[key] = paged_data[key].concat(data);
-            // console.log(paged_data[key]);
             pages = xhr.getResponseHeader("X-WP-TotalPages");
-            // console.log(pages);
-            // console.log(page);
             if(page < pages)
             {
               new_url = url.replace("&page="+page, "&page="+(page+1));
-              // console.log(new_url);
               pull_pages(new_url, key, page+1);
             }
           }
@@ -82,4 +75,35 @@ function transpose(data, height, width)
     }
   }
   return transposed;
+}
+
+
+function wordpress_action(action, data, callback)
+{
+  if(action)
+  {
+    data["action"] = action;
+  }
+  jQuery.ajax({
+          url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+          method: 'POST',
+          data: data,
+          success:function(data) {
+            console.log(data);
+            callback();
+          }
+  });
+}
+
+//test purposes
+function ajax_call(url)
+{
+  jQuery.ajax({
+          url: url, // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+          method: 'POST',
+          data: {},
+          success:function(data) {
+            console.log(data);
+          }
+  });
 }

@@ -7,7 +7,8 @@ function gumroad_register() {
   //if data is good make user account at subscriber level
   //wp_create_user( 'johndoe', 'passwordgoeshere', 'john.doe@example.com' );
   //https://developer.wordpress.org/reference/functions/wp_create_user/
-  return 'ack';
+  echo(json_encode($_REQUEST));
+  die();
 }
 
 ?>

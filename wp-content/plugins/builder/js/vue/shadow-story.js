@@ -224,6 +224,7 @@ $(document).ready(function (event) {
   width = getUrlParam("width", 3);
   shadow_story.resize(width, height);
   shadow_story.reset();
+  init();
 });
 //empty shadows get pan size 26 , pan shape round, Invisible
 //look at this for guidance: https://stackoverflow.com/questions/48455909/condition-in-v-bindstyle

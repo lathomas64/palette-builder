@@ -18,6 +18,7 @@ add_action('wp_ajax_save_story', 'save_story');
 add_action('wp_ajax_delete_story', 'delete_story');
 add_action('wp_ajax_get_shadow', 'get_shadow_data');
 add_action('wp_ajax_nopriv_get_shadow', 'get_shadow_data');
+add_action('wp_ajax_gumroad_register', 'gumroad_register');
 add_action('wp_ajax_nopriv_gumroad_register', 'gumroad_register');
 
 add_filter('rest_cpt_shadow_collection_params', 'filter_add_rest_shadow_params', 10, 1);
