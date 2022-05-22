@@ -59,27 +59,6 @@ shadow_list = new Vue({
           setTimeout(() => $("#Story_Full").remove(), 500);
         }
       },
-      add_filter: function(key, value) {
-        if(!this.filters.hasOwnProperty(key))
-        {
-          this.filters[key] = new Set();
-        }
-        this.filters[key].add(value);
-        this.load_shadows();
-      },
-      reset_filters: function() {
-        this.filters = {};
-        this.load_shadows();
-        filterBtnReset();
-      },
-      search: function(query) {
-        this.query = query;
-        clearTimeout(this.search_timer);
-        this.search_timer = setTimeout(() => {
-          this.load_shadows();
-          //make dictionary of filters here.
-        });
-      },
       price_min: function(value) {
         this.filters["price_min"] = new Set();
         if(value > 0)
@@ -125,22 +104,12 @@ shadow_list = new Vue({
         }, this.waittime);
 
       },
-      remove_filter: function(key, value) {
-        if(!this.filters.hasOwnProperty(key))
-        {
-          this.filters[key] = new Set();
-        }
-        else
-        {
-          this.filters[key].delete(value);
-        }
-        this.load_shadows();
-      },
       load_shadows: function (append=false) {
-        if(this.updating)
+        if(this.updating && append)
         {
           return;
         }
+        clearTimeout(this.load_shadow_timeout);
         if(append)
         {
           this.page += 1;
@@ -168,7 +137,7 @@ shadow_list = new Vue({
         // TODO run through filters dictionary and add to url
         let self = this;
         console.log(url);
-        jQuery.ajax({
+        data = {
                 url: url,
                 method: 'GET',
                 success:function(data, status, xhr) {
@@ -206,7 +175,8 @@ shadow_list = new Vue({
                     console.log(errorThrown);
                     self.updating = false;
                 }
-            });
+        };
+        this.load_shadow_timeout = setTimeout(jQuery.ajax, this.waittime, data);
       },
       sort: function (field, direction='asc') {
         this.sort_field = field;
