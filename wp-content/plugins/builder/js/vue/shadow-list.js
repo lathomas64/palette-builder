@@ -20,19 +20,20 @@ shadow_list = new Vue({
     el:".Results_Container .Grid",
     data: {
       shadows: [{ name: "Foo" }, { name: "Bar" }],
+      all_shadows: [],
       page: 1,
       waittime: 500,
       search_timer: undefined,
       sort_field: 'color',
       sort_direction: 'asc',
       updating: false,
-      url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish&pb_status=Active",
+      url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow",
       results_per_page: 50,
       filters: {}
     },
     computed: {
       ids: function () {
-        return this.shadows.map(shadow => shadow.id);
+        return this.all_shadows.map(shadow => shadow.ID);
       },
       shipping_options: function () {
         return paged_data["shipping_options"];
@@ -47,6 +48,25 @@ shadow_list = new Vue({
       }
     },
     methods: {
+      pull_shadow_data: function(id, callback) {
+        let url = this.url_base;
+        let self = this;
+        url += "/"+id;
+        console.log(url);
+        jQuery.ajax({
+          url: url,
+          method: 'GET',
+          success: function(data, status, xhr) {
+            self.all_shadows.push(data);
+            callback(data);
+          },
+          error: function(errorThrown){
+              console.log(url);
+              console.log('ajax error');
+              console.log(errorThrown);
+          }
+        });
+      },
       add_to_story: function(id) {
         index = shadow_story.first_empty_index();
         if(index > -1) {
@@ -119,6 +139,7 @@ shadow_list = new Vue({
         console.log(this.page);
         this.updating = true;
         let url = this.url_base;
+        url += "&status=publish&pb_status=Active";
         url += "&page="+this.page;
         url += "&orderby="+this.sort_field;
         url += "&order="+this.sort_direction;
@@ -152,6 +173,8 @@ shadow_list = new Vue({
                   } else {
                     $("#EmptyShadowListMessage").addClass("hidden");
                   }
+                  self.all_shadows.concat(data);
+                  self.all_shadows = unique(self.all_shadows);
                   if(append){
                     self.shadows = self.shadows.concat(data);
                   } else {
@@ -190,7 +213,7 @@ shadow_list = new Vue({
         this.load_shadows();
       },
       shadow_loaded: function (id) {
-        return id in this.ids;
+        return this.ids.includes(id);
       }
     }
 });

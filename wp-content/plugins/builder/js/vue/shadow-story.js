@@ -8,7 +8,8 @@ $(document).ready(function (event) {
       "shadowCount": 0,
       "overflow": [],
       "undo_stack": [],
-      "redo_stack": []
+      "redo_stack": [],
+      "restore_list": []
     },
     computed: {
       computed_shadows: function () {
@@ -80,6 +81,7 @@ $(document).ready(function (event) {
         return -1;
       },
       has_shadow: function(index) {
+        console.log(index);
         empty = this.shadows[index].invisible !== undefined;
         return !empty;
       },
@@ -164,7 +166,11 @@ $(document).ready(function (event) {
         }
         updateFooter();
       },
-      resize: function(width, height) {
+      resize: function(width, height, undo=false) {
+        old_width = this.width;
+        old_height = this.height;
+        original = [...this.shadows];
+        this.restore_list.push(original);
         this.height = height;
         this.width = width;
         story_size = this.height * this.width;
@@ -182,6 +188,17 @@ $(document).ready(function (event) {
         }
         $(".Palette")[0].setAttribute("class", "Palette "+this.size_class+" Flex_Container " + this.orientation)
         // TODO logic for dropping shadows?
+        this.undo_stack.push(()=>{
+  				console.log('undoing resize...');
+  				this.resize(old_width, old_height,true);
+  				restore = restore_list.pop();
+  				for(var i = 0; i < restore.length; i++)
+  				{
+  					updateShadow(i, restore[i]);
+  					currentStory.shadows[i].setAttribute('data-index', i);
+  				}
+  				redo_stack.push(()=>resize(width, height));
+  			});
       },
       addShadow: function(index, id)
       {
@@ -217,9 +234,25 @@ $(document).ready(function (event) {
           };
           Vue.set(this.shadows, index, shadow_data);
         } else {
-          shadow_data = shadow_list.shadows.filter(shadow=>shadow.ID == id)[0];
-          //this.shadows[index] = shadow_data;
-          Vue.set(this.shadows, index, shadow_data);
+          if(shadow_list.shadow_loaded(id))
+          {
+            shadow_data = shadow_list.all_shadows.filter(shadow=>shadow.ID == id)[0];
+            //this.shadows[index] = shadow_data;
+            Vue.set(this.shadows, index, shadow_data);
+          }
+          else {
+            var self = this;
+            // TODO set this to some kind of loading image
+            shadow_data = {
+              "invisible":"Invisible",
+              "shape":"Round",
+              "size":"26"
+            };
+            Vue.set(this.shadows, index, shadow_data);
+            shadow_list.pull_shadow_data(id, function(data) {
+              Vue.set(self.shadows, index, data);
+            });
+          }
         }
 
         //shadow_data = $('#'+id)[0];
