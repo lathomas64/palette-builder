@@ -249,6 +249,7 @@ resizeControls();
 		var width = widthxheight[1];
 		var height = widthxheight[2];
 		$(this).attr("onclick", "shadow_story.resize(" + width + "," + height + ");return false;");
+		$(this).attr("data-size", width * height)
 		$(element)
 			.find(".Card_Title")
 			.text(width * height + " Pans");

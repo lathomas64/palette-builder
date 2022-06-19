@@ -724,6 +724,7 @@ var currentStory = new Object();
 		register_dropdown("#User_Story_Target .Filter_Button_Filter", "#UserStoryFilterBasic");
 		register_dropdown("#Community_Story_Target .Filter_Button_Sort", "#CommunityStorySortBasic");
 		register_dropdown("#User_Story_Target .Filter_Button_Sort", "#UserStorySortBasic");
+		register_dropdown("#Story_Size .Filter_Button_Sort", "#StorySizeSortBasic");
 		register_dropdown("#shadowSortBtn", "#shadowSortBasic");
 		// register_dropdown("#shadowFilterBtn", "#shadowFilterBasic");
 	});
