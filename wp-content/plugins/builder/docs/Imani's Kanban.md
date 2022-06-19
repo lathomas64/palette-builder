@@ -19,8 +19,6 @@ kanban-plugin: basic
 - [ ] [[Users]]
 - [ ] [[vue stories]]
 - [ ] restore undo/redo
-- [ ] sort Story Sizes
-- [ ] sort stories
 - [ ] filter stories
 - [ ] share-create preview html
 - [ ] share-create preview image
@@ -41,6 +39,8 @@ kanban-plugin: basic
 - [ ] add delay to filter: restart if requested again
 - [ ] price secondary sort a-z
 - [ ] [[shadow_story not defined error]]
+- [ ] sort stories
+- [ ] sort Story Sizes
 - [ ] build shopping list
 - [ ] if shadows is smaller then width * height pad it with empty shadows
 - [ ] story sizes

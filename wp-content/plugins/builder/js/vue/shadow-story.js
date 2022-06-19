@@ -15,6 +15,19 @@ $(document).ready(function (event) {
       computed_shadows: function () {
         return this.shadows;
       },
+      share_url: function() {
+        let base_url = location.protocol + '//' + location.host + location.pathname;
+        let share_url = base_url + "?height="+this.height;
+        share_url += "&width="+this.width;
+        for(let index = 0; index < this.shadows.length; index++)
+        {
+          if(this.has_shadow(index))
+          {
+            share_url += "&shadows["+index+"]="+this.shadows[index].ID;
+          }
+        }
+        return share_url;
+      },
       orientation: function() {
         if(this.height >= this.width) {
           return "Portrait_Square";
@@ -81,7 +94,6 @@ $(document).ready(function (event) {
         return -1;
       },
       has_shadow: function(index) {
-        console.log(index);
         empty = this.shadows[index].invisible !== undefined;
         return !empty;
       },

@@ -696,7 +696,7 @@ var currentStory = new Object();
 
 
 
-	function init() {
+	function init() { // TODO move this into shadow-story.js
 		try {
 			openTab(false, 'size');
 		}
@@ -709,17 +709,17 @@ var currentStory = new Object();
 		// width = getUrlParam("width", 3);
 		// shadow_story.reset();
 		// resize(width, height);
-		for (var index = 0; index < currentStory.height * currentStory.width; index++)
+		for (var index = 0; index < shadow_story.height * shadow_story.width; index++)
 		{
 			shadow = getUrlParam('shadows['+index+']', false);
 			if (shadow) {
-				updateShadow(index, shadow);
+				shadow_story.updateShadow(index, shadow);
 			}
 		}
 		updateFooter();
 	}
+
 	$(document).ready(function(){
-		init();
 		register_dropdown("#Community_Story_Target .Filter_Button_Filter", "#CommunityStoryFilterBasic");
 		register_dropdown("#User_Story_Target .Filter_Button_Filter", "#UserStoryFilterBasic");
 		register_dropdown("#Community_Story_Target .Filter_Button_Sort", "#CommunityStorySortBasic");
