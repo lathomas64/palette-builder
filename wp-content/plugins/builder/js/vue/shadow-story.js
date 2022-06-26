@@ -16,7 +16,7 @@ $(document).ready(function (event) {
         return this.shadows;
       },
       share_url: function() {
-        let base_url = location.protocol + '//' + location.host + location.pathname;
+        let base_url = location.origin + location.pathname;
         let share_url = base_url + "?height="+this.height;
         share_url += "&width="+this.width;
         for(let index = 0; index < this.shadows.length; index++)

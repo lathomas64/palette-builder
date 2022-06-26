@@ -22,7 +22,6 @@ kanban-plugin: basic
 - [ ] filter stories
 - [ ] share-create preview html
 - [ ] share-create preview image
-- [ ] share-url
 - [ ] shopping list populate shadow image
 - [ ] shopping list brand badges update
 - [ ] save: show save dropdown if logged in or log in/register dropdown otherwise
@@ -42,6 +41,7 @@ kanban-plugin: basic
 - [ ] sort stories
 - [ ] sort Story Sizes
 - [ ] build shopping list
+- [ ] share-url
 - [ ] if shadows is smaller then width * height pad it with empty shadows
 - [ ] story sizes
 - [ ] fix start over
