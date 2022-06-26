@@ -6,7 +6,7 @@
 		<div class="Column Gap_32">
 			<div class="Row Gap_24">
 				<button class="Google oAuth Button_Block Row Justify_Content_Flex_Start Align_Items_Center Gap_8">
-					<div class="Icon_Container">							
+					<div class="Icon_Container">
 						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M19.4555 8.15401C19.5785 8.81301 19.6455 9.50201 19.6455 10.221C19.6455 15.845 15.8815 19.844 10.1965 19.844C8.9037 19.8444 7.62344 19.59 6.42894 19.0955C5.23443 18.6009 4.14908 17.8758 3.2349 16.9616C2.32072 16.0475 1.59563 14.9621 1.10107 13.7676C0.606499 12.5731 0.352145 11.2929 0.35254 10C0.352145 8.70716 0.606499 7.42691 1.10107 6.2324C1.59563 5.0379 2.32072 3.95255 3.2349 3.03837C4.14908 2.12419 5.23443 1.3991 6.42894 0.904533C7.62344 0.409966 8.9037 0.155612 10.1965 0.156006C12.8545 0.156006 15.0755 1.13401 16.7795 2.72201L14.0045 5.49701V5.49001C12.9715 4.50601 11.6605 4.00101 10.1965 4.00101C6.94854 4.00101 4.30854 6.74501 4.30854 9.99401C4.30854 13.242 6.94854 15.992 10.1965 15.992C13.1435 15.992 15.1495 14.307 15.5615 11.993H10.1965V8.15401H19.4565H19.4555Z"/></path></svg>
 						</div>
@@ -29,17 +29,17 @@
 			 	<div class="Column Gap_16">
 						<div class="Input Column Gap_4">
 			   	<label class="Input_Label" for="username">Username</label>
-			   	<input class="Input" type="text" placeholder="Enter Username" id="username" required>
+			   	<input class="Input" type="text" placeholder="Enter Username" id="login_username" required>
 						</div>
 						<div class="Input Column Gap_4">
 		    	<label class="Input_Label" for="password">Password</label>
-		    	<input id="password" class="Input" type="password" placeholder="Enter Password">
+		    	<input id="login_password" class="Input" type="password" placeholder="Enter Password">
 						</div>
 						<div class="Column Gap_24">
 						<div class="Row Space_Between Align_Items_Center">
 							<div class="Row Justify_Content_Flex_Start Align_Items_Center Gap_8 Reverse">
 								<label class="Checkbox Remember" for="remember">Remember me</label>
-			    	<input class="Input"type="checkbox" id="remember"> 
+			    	<input class="Input"type="checkbox" id="remember">
 							</div>
 		    	<button type="Submit" class="Button_Block Row Align_Items_center">Log In and Save Story</button>
 						</div>

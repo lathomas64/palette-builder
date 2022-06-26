@@ -62,30 +62,28 @@
 						<!-- attach here -->
 						<div id="gumroad-target">
 						</div>
-<!--						<div class="Column Gap_16">
+						<div class="Column Gap_16">
 							<div> paypal stuff</div>
 							<div class="Column Gap_8">
   		<div class="Panel_Title">
    		<div class="PreHeading Divider">Or</div>
   		</div>
 		</div>
- 							<form action="/action_page.php" method="post">
 								<div class="Column Gap_16">
 									<div class="Input Column Gap_4">
 	   						<label class="Input_Label" for="username">Username</label>
-	   						<input class="Input" type="text" placeholder="Enter Username" id="username" required>
+	   						<input class="Input" type="text" placeholder="Enter Username" id="register_username" required>
 									</div>
 									<div class="Input Column Gap_4">
     						<label class="Input_Label" for="password">Password</label>
-    						<input id="password" class="Input" type="password" placeholder="Enter Password">
+    						<input id="register_password" class="Input" type="password" placeholder="Enter Password">
 									</div>
 									<div class="Column Gap_24">
-									<div class="Row Space_Between Align_Items_Center"> -->
-    						<button type="Submit" class="Button_Block Row Align_Items_center">Submit Payment and Create Account</button>
-<!-- 									</div>
+									<div class="Row Space_Between Align_Items_Center">
+    						<button onclick="submitUserData()" type="Submit" class="Button_Block Row Align_Items_center">Submit Payment and Create Account</button>
+ 									</div>
 									</div>
 								</div>
-							</form> -->
 						</div>
 					</div>
 				</div>
