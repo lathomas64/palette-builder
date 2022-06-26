@@ -76,7 +76,7 @@ shadow_list = new Vue({
         else {
           //launch_modal("Story Full", "The current story cannot fit anymore shadows.");
           $("#"+id+" .Pan_Shadow").after('<div id="Story_Full">Story Full</div>');
-          setTimeout(() => $("#Story_Full").remove(), 500);
+          setTimeout(() => $("#Story_Full").remove(), 100);
         }
       },
       price_min: function(value) {
