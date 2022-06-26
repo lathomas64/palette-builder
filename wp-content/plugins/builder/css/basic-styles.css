@@ -345,6 +345,7 @@ p {
 	padding: 32px;
 	grid-template-columns: minmax(0, 1fr);
 	grid-template-rows: minmax(0, 1fr);
+	place-content: center;
 }
 
 .Builder_Bottom {
@@ -362,8 +363,8 @@ p {
 	padding: 4%;
 	border-radius: 4px;
 	box-shadow: var(--palette-frame-rest);
-/* box-sizing: content-box; */max-width: 100%;
-				max-height: 100%;margin: auto;
+	max-width: 100%; max-height: 100%; /*! margin: auto; */ height: 100%; width: auto;
+	/*! box-sizing: content-box; */
 	}
 
 .Palette.Story_Size_8w_11t, .Palette.Story_Size_8w_9t, .Palette.Story_Size_11w_8t, .Palette.Story_Size_7w_9t, .Palette.Story_Size_8w_12t {
@@ -389,12 +390,14 @@ p {
 /**STORY SIZES**/
 
 .Palette.Landscape  {
-width:100%;
+/*! width:100%; */
+/*! height:auto; */
 }
 
 .Palette.Portrait_Square {
-	height: 100%;
-width: auto;}
+	/*! height: 100%; */
+/*! width: auto; */
+}
 
 /**LANDSCAPE SIZES **/
 
@@ -402,8 +405,26 @@ width: auto;}
 	aspect-ratio: 4 / 3;
 }
 
-.Palette.Story_Size_5w_4t {
-	aspect-ratio: 5 / 4;
+.Palette.Story_Size_3w_4t {
+	aspect-ratio: 3 / 4;
+}
+
+.Palette.Story_Size_5w_3t {
+	aspect-ratio: 5 / 3;
+
+}
+
+.Palette.Story_Size_3w_5t {
+	aspect-ratio: 3 / 5;
+
+}
+
+.Palette.Story_Size_5w_3t {
+	aspect-ratio: 5 / 3;
+
+}
+.Palette.Story_Size_3w_5t {
+	aspect-ratio: 3 / 5;
 
 }
 
@@ -411,24 +432,48 @@ width: auto;}
 	aspect-ratio: 2 / 1;
 }
 
+.Palette.Story_Size_3w_6t {
+	aspect-ratio: 1 / 2;
+}
+
 .Palette.Story_Size_6w_4t {
 	aspect-ratio: 3 / 2;
+}
+
+.Palette.Story_Size_4w_6t {
+	aspect-ratio: 2 / 3;
 }
 
 .Palette.Story_Size_7w_2t {
 	aspect-ratio: 7 / 2;
 }
 
+.Palette.Story_Size_2w_7t {
+	aspect-ratio: 2 / 7;
+}
+
 .Palette.Story_Size_7w_5t {
 	aspect-ratio: 7 / 5;
+}
+
+.Palette.Story_Size_5w_7t {
+	aspect-ratio: 5 / 7;
 }
 
 .Palette.Story_Size_7w_6t {
 	aspect-ratio: 7 / 6;
 }
 
+.Palette.Story_Size_6w_7t {
+	aspect-ratio: 6 / 7;
+}
+
 .Palette.Story_Size_11w_8t {
 	aspect-ratio: 11 / 8;
+}
+
+.Palette.Story_Size_8w_11t {
+	aspect-ratio: 8 / 11;
 }
 
 /**PORTRAIT_SQUARE_SIZES **/
@@ -442,16 +487,28 @@ aspect-ratio: 1 / 1;
 	aspect-ratio: 7 / 9;
 }
 
-.Palette.Story_Size_8w_9t {
-	aspect-ratio: 8 / 9;
+.Palette.Story_Size_9w_7t {
+	aspect-ratio: 9 / 7;
+}
+
+.Palette.Story_Size_7w_9t {
+	aspect-ratio: 7 / 9;
 }
 
 .Palette.Story_Size_8w_11t {
 	aspect-ratio: 8 / 11;
 }
 
+.Palette.Story_Size_11w_8t {
+	aspect-ratio: 11 / 8;
+}
+
 .Palette.Story_Size_8w_12t {
 	aspect-ratio: 8 / 12;
+}
+
+.Palette.Story_Size_12w_8t {
+	aspect-ratio: 12 / 8;
 }
 
 /**PAN SCALING FOR PALETTE RATIOS**/
