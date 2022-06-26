@@ -75,21 +75,25 @@ var currentStory = new Object();
 		var brands=[];
 		var countries=[];
 		var price=0;
-		for (var index = 0; index < currentStory.height * currentStory.width; index++)
+		if (typeof(shadow_story) === "undefined")
 		{
-			if (currentStory.shadows[index].getAttribute('data-shadow-id') != null){
+			return;//we're not ready to update the footer.
+		}
+		for (var index = 0; index < shadow_story.height * shadow_story.width; index++)
+		{
+			if (shadow_story.has_shadow(index)){
 					shadowCount++;
-					shadow = currentStory.shadows[index];
-					brands.push(shadow.getAttribute('data-brand'));
-					countries.push(shadow.getAttribute('data-country'));
-					price += Number(shadow.getAttribute('data-price'));
+					shadow = shadow_story.shadows[index];
+					brands.push(shadow.brand);
+					countries.push(shadow.country);
+					price += Number(shadow.price);
 				}
 		}
 		brands = unique(brands);
 		countries = unique(countries);
-		currentStory.brands = brands;
-		currentStory.countries = countries;
-		currentStory.shadowCount = shadowCount;
+		shadow_story.brands = brands;
+		shadow_story.countries = countries;
+		shadow_story.shadowCount = shadowCount;
 		document.getElementById('Footer_Shadow_Count').innerHTML=shadowCount.toLocaleString("en-US", {"minimumIntegerDigits":2});
 		document.getElementById('Footer_Brand_Count').innerHTML=brands.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
 		document.getElementById('Footer_Country_Count').innerHTML=countries.length.toLocaleString("en-US", {"minimumIntegerDigits":2});
@@ -555,16 +559,16 @@ var currentStory = new Object();
 	function save() {
 		console.log('This should save the current story to the current logged in user');
 		name = prompt('What do you want to name the current story?');
-		currentStory.name = name;
+		shadow_story.name = name;
 		jQuery.ajax({
 						url: '/wp-admin/admin-ajax.php', // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
 						method: 'POST',
 						data: {
 								'action':'save_story', // This is our PHP function below
 								'name': name,
-								'height': currentStory.height,
-								'width': currentStory.width,
-								'story': flatten_story()
+								'height': shadow_story.height,
+								'width': shadow_story.width,
+								'story': shadow_story.flatten()
 						},
 						success:function(data) {
 							console.log(data);
@@ -575,9 +579,9 @@ var currentStory = new Object();
 		var story = JSON.parse(element.getAttribute("data-story-json"));
 		if(story != null){
 			console.log(story);
-			resize(story.width, story.height);
+			shadow_story.resize(story.width, story.height);
 			for(var index = 0; index < story.shadows.length; index++){
-				updateShadow(index, story.shadows[index]);
+				shadow_story.updateShadow(index, story.shadows[index]);
 			}
 			updateFooter();
 		}
@@ -692,7 +696,7 @@ var currentStory = new Object();
 
 
 
-	function init() {
+	function init() { // TODO move this into shadow-story.js
 		try {
 			openTab(false, 'size');
 		}
@@ -705,21 +709,22 @@ var currentStory = new Object();
 		// width = getUrlParam("width", 3);
 		// shadow_story.reset();
 		// resize(width, height);
-		for (var index = 0; index < currentStory.height * currentStory.width; index++)
+		for (var index = 0; index < shadow_story.height * shadow_story.width; index++)
 		{
 			shadow = getUrlParam('shadows['+index+']', false);
 			if (shadow) {
-				updateShadow(index, shadow);
+				shadow_story.updateShadow(index, shadow);
 			}
 		}
 		updateFooter();
 	}
+
 	$(document).ready(function(){
-		init();
 		register_dropdown("#Community_Story_Target .Filter_Button_Filter", "#CommunityStoryFilterBasic");
 		register_dropdown("#User_Story_Target .Filter_Button_Filter", "#UserStoryFilterBasic");
 		register_dropdown("#Community_Story_Target .Filter_Button_Sort", "#CommunityStorySortBasic");
 		register_dropdown("#User_Story_Target .Filter_Button_Sort", "#UserStorySortBasic");
+		register_dropdown("#Story_Size .Filter_Button_Sort", "#StorySizeSortBasic");
 		register_dropdown("#shadowSortBtn", "#shadowSortBasic");
 		// register_dropdown("#shadowFilterBtn", "#shadowFilterBasic");
 	});

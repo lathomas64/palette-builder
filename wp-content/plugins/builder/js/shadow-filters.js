@@ -21,6 +21,7 @@ function Toggle_Filter(target, filterset) {
 	if(filter.getAttribute('data-filter') != null){
 		type = filter.getAttribute('data-filter');
 	}
+
 	shadow_list.toggle_filter(filterset, type);
 }
 

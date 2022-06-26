@@ -7,16 +7,18 @@
 	<link rel="stylesheet" type="text/css" href="../css/builder-styles.css" />
 	<link rel="stylesheet" href="https://use.typekit.net/mxy5ujb.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="../js/external/link-filter.min.js"></script>
 	<!-- for production use this version
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+	<script src="https://gumroad.com/js/gumroad-embed.js"></script>
+	<script src="../js/external/gumroad.js"></script>
 	<script src="../js/builder.js"></script>
 	<script src="../js/shadow-filters.js"></script>
 	<script src="../js/basic-functions.js"></script>
 	<script src="../js/shopping-list.js"></script>
 	<script src="../js/sort.js"></script>
+	<script src="../js/user.js"></script>
 	<script src="../js/shadow-list.js"></script>
 	<script src="../js/utility.js"></script>
 	<script src="../js/api.js"></script>
@@ -40,7 +42,7 @@
 				</div>
 				<div class="Builder_Controls Row Space_Between">
 					<div class="Terminal_Actions Row Justify_Content_Left Gap_24">
-						<a onclick="reset();return false;" href="#" class="Button_Micro Row Gap_8 Justify_Content_Space_Between">
+						<a onclick="shadow_story.reset();return false;" href="#" class="Button_Micro Row Gap_8 Justify_Content_Space_Between">
 							<div class="Builder_Reset">
 								<div class="Icon_Container">
 									<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +79,7 @@
 						</div>
 					</div>
 					<div class="Working_Actions Row Justify_Content_Left Gap_24">
-						<a onclick="redo();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+						<a onclick="shadow_story.redo();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
 							<div class="Builder_Redo">
 								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
@@ -88,7 +90,7 @@
 							</div>
 							<div>Redo</div>
 						</a>
-						<a onclick="undo();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+						<a onclick="shadow_story.undo();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
 							<div class="Builder_Undo">
 								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
@@ -99,7 +101,7 @@
 							</div>
 							<div>Undo</div>
 						</a>
-						<a href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
+						<a onclick="shadow_story.rotate();return false;" href="#" class="Button_Micro Row Gap_4 Justify_Content_Space_Between">
 							<div class="Builder_Rotate">
 								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path

@@ -7,6 +7,7 @@ function populate_brand(shadow_list, brand_div)
     {
       $(brand_div).find('.List_Tile')[1].remove();
     }
+    console.log(shadow_list);
     for(let index=0;index < shadow_list.length; index++)
     {
       shadow = shadow_list[index];
@@ -16,16 +17,16 @@ function populate_brand(shadow_list, brand_div)
         shadow_div = prototype_div.clone();
         $(brand_div).find('.List').append(shadow_div);
       }
-      $(shadow_div).find('img')[0].src = $(shadow_list[index]).find('img')[0].src;
-      $(shadow_div).find('.Shade_Name')[0].textContent = shadow_list[index].getAttribute('data-name');
-      $(shadow_div).find('.Shade_Finish')[0].textContent = shadow_list[index].getAttribute('data-finish');
-      $(shadow_div).find('.Shade_Shift')[0].textContent = shadow_list[index].getAttribute('data-shift');
-      $(shadow_div).find('.Shade_Color')[0].textContent = shadow_list[index].getAttribute('data-color-tag');
-      $(shadow_div).find('.Shade_Vividness')[0].textContent = shadow_list[index].getAttribute('data-vividness');
-      $(shadow_div).find('.Shade_Lightness')[0].textContent = shadow_list[index].getAttribute('data-lightness');
-      $(shadow_div).find('.Shade_Size_Shape')[0].textContent = shadow_list[index].getAttribute('data-shape')+", "+shadow_list[index].getAttribute('data-size')+"mm";
-      $(shadow_div).find('.Price_Value')[0].textContent = shadow_list[index].getAttribute('data-price');
-      $(shadow_div).find('.Remove_Item')[0].setAttribute('onclick', "remove_shopping_shadow(this,'"+shadow_list[index].getAttribute('data-brand')+"', "+index+");");
+      $(shadow_div).find('img')[0].src = shadow.img;
+      $(shadow_div).find('.Shade_Name')[0].textContent = shadow.name;
+      $(shadow_div).find('.Shade_Finish')[0].textContent = shadow.finish;
+      $(shadow_div).find('.Shade_Shift')[0].textContent = shadow.shift;
+      $(shadow_div).find('.Shade_Color')[0].textContent = shadow.color_tag;
+      $(shadow_div).find('.Shade_Vividness')[0].textContent = shadow.vividness;
+      $(shadow_div).find('.Shade_Lightness')[0].textContent = shadow.lightness;
+      $(shadow_div).find('.Shade_Size_Shape')[0].textContent = shadow.shape+", "+shadow.size+"mm";
+      $(shadow_div).find('.Price_Value')[0].textContent = shadow.price;
+      $(shadow_div).find('.Remove_Item')[0].setAttribute('onclick', "remove_shopping_shadow(this,'"+shadow.brand+"', "+index+");");
     }
     $(brand_div).removeClass('Hidden');
 }
@@ -34,21 +35,21 @@ function build_shopping_list()
 {
   console.log('start build shopping list');
   brand_shadows = {};
-  for(let index = 0; index < currentStory.shadows.length; index++)
+  for(let index = 0; index < shadow_story.shadows.length; index++)
   {
-    shadow = currentStory.shadows[index].getAttribute('data-shadow-id');
-    if(shadow == null)//skip empty shadows
+    shadow = shadow_story.shadows[index];
+    if(shadow.ID == null)//skip empty shadows
     {
       continue;
     }
-    brand = currentStory.shadows[index].getAttribute('data-brand');
+    brand = shadow.brand;
     if(!(brand in brand_shadows))
     {
       brand_shadows[brand] = [];
     }
-    brand_shadows[brand].push(currentStory.shadows[index]);
+    brand_shadows[brand].push(shadow);
   }
-  brands = currentStory.brands;
+  brands = shadow_story.brands;
   brand_divs = $('.Itemized_List').children();
   divs_to_append = [];
   for(let index=0;index<Math.max(brands.length, brand_divs.length);index++)
@@ -63,6 +64,8 @@ function build_shopping_list()
         console.log(brand_divs[index].firstElementChild.firstElementChild);
         console.log(brand_divs[index].firstElementChild.firstElementChild.textContent);
         brand_divs[index].firstElementChild.firstElementChild.textContent = brands[index];
+        console.log(brands[index]);
+        console.log(brand_shadows);
         populate_brand(brand_shadows[brands[index]], brand_divs[index]);
     }
     //we have brand[index] but no div[index] -> create div
@@ -117,7 +120,7 @@ function open_tabs(target_brand=None)
       for (shadow_index in brand)
       {
         shadow = brand[shadow_index];
-        url = shadow.getAttribute('data-link');
+        url = shadow.link;
         window.open(url, '_blank');
       }
     }
@@ -125,7 +128,7 @@ function open_tabs(target_brand=None)
     for (shadow_index in brand_shadows[target_brand])
     {
       shadow = brand[shadow_index];
-      url = shadow.getAttribute('data-link');
+      url = shadow.link;
       window.open(url, '_blank');
     }
   }

@@ -20,19 +20,20 @@ shadow_list = new Vue({
     el:".Results_Container .Grid",
     data: {
       shadows: [{ name: "Foo" }, { name: "Bar" }],
+      all_shadows: [],
       page: 1,
       waittime: 500,
       search_timer: undefined,
       sort_field: 'color',
       sort_direction: 'asc',
       updating: false,
-      url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish&pb_status=Active",
+      url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow",
       results_per_page: 50,
       filters: {}
     },
     computed: {
       ids: function () {
-        return this.shadows.map(shadow => shadow.id);
+        return this.all_shadows.map(shadow => shadow.ID);
       },
       shipping_options: function () {
         return paged_data["shipping_options"];
@@ -47,30 +48,36 @@ shadow_list = new Vue({
       }
     },
     methods: {
-      add_to_story: function(id) {
-        addShadow(currentStory.shadowCount,id);
-        updateFooter();
-      },
-      add_filter: function(key, value) {
-        if(!this.filters.hasOwnProperty(key))
-        {
-          this.filters[key] = new Set();
-        }
-        this.filters[key].add(value);
-        this.load_shadows();
-      },
-      reset_filters: function() {
-        this.filters = {};
-        this.load_shadows();
-        filterBtnReset();
-      },
-      search: function(query) {
-        this.query = query;
-        clearTimeout(this.search_timer);
-        this.search_timer = setTimeout(() => {
-          this.load_shadows();
-          //make dictionary of filters here.
+      pull_shadow_data: function(id, callback) {
+        let url = this.url_base;
+        let self = this;
+        url += "/"+id;
+        console.log(url);
+        jQuery.ajax({
+          url: url,
+          method: 'GET',
+          success: function(data, status, xhr) {
+            self.all_shadows.push(data);
+            callback(data);
+          },
+          error: function(errorThrown){
+              console.log(url);
+              console.log('ajax error');
+              console.log(errorThrown);
+          }
         });
+      },
+      add_to_story: function(id) {
+        index = shadow_story.first_empty_index();
+        if(index > -1) {
+          shadow_story.addShadow(index, id);
+          updateFooter();
+        }
+        else {
+          //launch_modal("Story Full", "The current story cannot fit anymore shadows.");
+          $("#"+id+" .Pan_Shadow").after('<div id="Story_Full">Story Full</div>');
+          setTimeout(() => $("#Story_Full").remove(), 100);
+        }
       },
       price_min: function(value) {
         this.filters["price_min"] = new Set();
@@ -117,22 +124,12 @@ shadow_list = new Vue({
         }, this.waittime);
 
       },
-      remove_filter: function(key, value) {
-        if(!this.filters.hasOwnProperty(key))
-        {
-          this.filters[key] = new Set();
-        }
-        else
-        {
-          this.filters[key].delete(value);
-        }
-        this.load_shadows();
-      },
       load_shadows: function (append=false) {
-        if(this.updating)
+        if(this.updating && append)
         {
           return;
         }
+        clearTimeout(this.load_shadow_timeout);
         if(append)
         {
           this.page += 1;
@@ -142,6 +139,7 @@ shadow_list = new Vue({
         console.log(this.page);
         this.updating = true;
         let url = this.url_base;
+        url += "&status=publish&pb_status=Active";
         url += "&page="+this.page;
         url += "&orderby="+this.sort_field;
         url += "&order="+this.sort_direction;
@@ -160,7 +158,7 @@ shadow_list = new Vue({
         // TODO run through filters dictionary and add to url
         let self = this;
         console.log(url);
-        jQuery.ajax({
+        data = {
                 url: url,
                 method: 'GET',
                 success:function(data, status, xhr) {
@@ -169,6 +167,14 @@ shadow_list = new Vue({
                   // vue to work easily and didn't want to spend a ton
                   // of time figuring out how -IT
                   $("#Shadow_Count").text("Showing "+self.total+" shadows");
+                  if (self.total == 0)
+                  {
+                    $("#EmptyShadowListMessage").removeClass("hidden");
+                  } else {
+                    $("#EmptyShadowListMessage").addClass("hidden");
+                  }
+                  self.all_shadows.concat(data);
+                  self.all_shadows = unique(self.all_shadows);
                   if(append){
                     self.shadows = self.shadows.concat(data);
                   } else {
@@ -198,7 +204,8 @@ shadow_list = new Vue({
                     console.log(errorThrown);
                     self.updating = false;
                 }
-            });
+        };
+        this.load_shadow_timeout = setTimeout(jQuery.ajax, this.waittime, data);
       },
       sort: function (field, direction='asc') {
         this.sort_field = field;
@@ -206,7 +213,7 @@ shadow_list = new Vue({
         this.load_shadows();
       },
       shadow_loaded: function (id) {
-        return id in this.ids;
+        return this.ids.includes(id);
       }
     }
 });

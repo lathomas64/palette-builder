@@ -36,3 +36,29 @@ https://pb.rainbowcapitalism.com/wp-admin/post.php?post={id}&action=edit
 
 
 remember: https://core.trac.wordpress.org/ticket/28099
+
+
+h:3,w:4
+
+0,1,2,3
+4,5,6,7
+8,9,10,11
+
+
+8,4,0
+9,5,1
+10,6,2
+11,7,3
+
+
+w*(h-1),w*(h-2),w*(h-3)
+w*(h-1)+1...
+...
+w*(h-1)+(w-1)...
+
+
+x in range(0, w):
+	y in range(0, h):
+		transpose_next = w*(h-(y+1))+x
+
+8,4,0,9,5,110,6,2,11,7,3

@@ -68,4 +68,9 @@ define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', true );
 define('WP_MEMORY_LIMIT', '256M');
 define( 'WP_MAX_MEMORY_LIMIT', '256M' );
+define( 'WP_SENTRY_PHP_DSN', 'https://3fce04f241ea4be4b9625aec6c755b45@o1285853.ingest.sentry.io/6498761' );
+define( 'WP_SENTRY_ERROR_TYPES', E_ALL & ~E_DEPRECATED & ~E_NOTICE & ~E_USER_DEPRECATED );
+define( 'WP_SENTRY_SEND_DEFAULT_PII', true );
+define( 'WP_SENTRY_ENV', 'development' );
+define( 'WP_SENTRY_BROWSER_DSN', 'https://3bdee831c4d54eeea79b8d5621a1e087@o1285853.ingest.sentry.io/6498781' );
 ?>

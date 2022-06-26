@@ -15,4 +15,6 @@
 		</div>
 	</div>
 	<?php include "components/story-size-list.php"; ?>
+	<!-- Sort Dropdown -->
+	<?php include "components/03_modals/02_modal-content/03_basic-modal-filter-sort/size-sort.php"; ?>
 </div>

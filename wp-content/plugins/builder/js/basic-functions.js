@@ -141,15 +141,15 @@ function modalOpen(event) {
 }
 
 function modalClose(event) {
-	
+
 	var CloseBtn = $(".Modal").hasClass("On") && ($(event.target).is(".Drawer_Overlay") || $(event.target).parents().is(".Close") || $(event.target).is("Close"));
-	
+
 	if ((CloseBtn) && $(event.target).parents().is("#rightDrawer")) {
 		$(".Filter_Wrapper").scrollTop(0);
 		$("#advancedFilterBtn").removeClass("Selected");
 		stickyNav();
 	}
-	
+
 	if (CloseBtn) {
 		$(event.target).parents().removeClass("On");
 	}
@@ -187,16 +187,16 @@ function priceTree(event) {
 }
 
 $(document).ready(function (event) {
-	
+
 resizeControls();
-	
+
 	sort_children('data-color-sort', '#Shadow_Search .Results .Grid', true);
 	$("BG_Options").click(shareModalBGSwitcher);
 
 	$(resultsHeight);
-	
+
 	$(".Toggle_Accordion").click(toggleAccordion);
-	
+
 	$(".Filter_Button").click(toggleSelect);
 	$(".Accordion .Trigger").click(toggleSelect);
 
@@ -248,7 +248,8 @@ resizeControls();
 		var widthxheight = classes.match(/(\d+)w_(\d+)/);
 		var width = widthxheight[1];
 		var height = widthxheight[2];
-		$(this).attr("onclick", "resize(" + width + "," + height + ");return false;");
+		$(this).attr("onclick", "shadow_story.resize(" + width + "," + height + ");return false;");
+		$(this).attr("data-size", width * height)
 		$(element)
 			.find(".Card_Title")
 			.text(width * height + " Pans");
@@ -281,6 +282,6 @@ resizeControls();
 			}
 		}, 100);
 	});
-	
-	
+
+
 }); //end of document ready
