@@ -1,5 +1,5 @@
 //handle communications with the api
-const API_SHADOW_BASE="https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow&status=publish";
+const API_SHADOW_BASE="https://"+window.location.host+"/?rest_route=/wp/v2/cpt_shadow&status=publish";
 let CURRENT_PAGE = 1;
 let SORT_FIELD = 'color';
 let SORT_DIRECTION = 'asc';
@@ -14,17 +14,17 @@ function fetch_api(append)
   url += "&order="+SORT_DIRECTION;
   // TODO fix this value somewhere
   url += "&per_page=20";
-  console.log(url);
+  // console.log(url);
   jQuery.ajax({
           url: url,
           method: 'GET',
           success:function(data) {
-            console.log(data);
+            // console.log(data);
             render_shadows(data, append);
           },
           error: function(errorThrown){
-          	  console.log('ajax error');
-              console.log(errorThrown);
+          	  // console.log('ajax error');
+              // console.log(errorThrown);
               UPDATING_SHADOWS = false;
           }
       });

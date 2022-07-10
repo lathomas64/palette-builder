@@ -9,10 +9,10 @@ shipping_options = [];
 brand_list = [];
 function init_lists(){
   //shipping_list
-  shipping_url = "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/tax_shipping&per_page=100&_fields=slug,name"
+  shipping_url = "https://"+window.location.host+"/?rest_route=/wp/v2/tax_shipping&per_page=100&_fields=slug,name"
   pull_pages(shipping_url,"shipping_options");
   //brand_list
-  brand_url = "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_brand&per_page=100&_fields=id,slug,title"
+  brand_url = "https://"+window.location.host+"/?rest_route=/wp/v2/cpt_brand&per_page=100&_fields=id,slug,title"
   pull_pages(brand_url, "brand_list");
 }
 $(document).ready(function (event) {
@@ -27,7 +27,7 @@ shadow_list = new Vue({
       sort_field: 'color',
       sort_direction: 'asc',
       updating: false,
-      url_base: "https://pb.rainbowcapitalism.com/?rest_route=/wp/v2/cpt_shadow",
+      url_base: "https://"+window.location.host+"/?rest_route=/wp/v2/cpt_shadow",
       results_per_page: 50,
       filters: {}
     },
